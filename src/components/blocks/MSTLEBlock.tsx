@@ -191,94 +191,103 @@ export default function MSTLEBlock() {
             id: 'curriculum',
             subheading: 'Curriculum',
             content: (
-                <div className="flex flex-col gap-component-gap-sm">
-                    <p className="text-isd-font-1">
-                        Students are required to complete at least 30 credits of
-                        courses, including 9 credits of core courses, 6 credits
-                        of technical or science elective courses and 6 credits
-                        of entrepreneurship or leadership elective courses
-                        offered by the School Business and Management, the
-                        School of Engineering, the School of Science and the
-                        Division of Public Policy, as well as a 9-credit project
-                        course. <br/>For details, please refer to the {' '}
-                        <span className="text-isd-secondary font-[700] underline">
-                            <a href="https://prog-crs.hkust.edu.hk/pgprog/2024-25/msc-tle">
-                                Postgraduate Program
-                            </a>
-                        </span>
-                        , 
-                        <span className="text-isd-secondary font-[700] underline">
-                            <a href="https://prog-crs.hkust.edu.hk/pgcourse/2022-23/MTLE">
-                                Course Catalog
-                            </a>
-                        </span>
-                         and 
-                        <span className="text-isd-secondary font-[700] underline">
-                            Program Brochure
-                        </span>
-                        .
-                    </p>
-                    <div className="flex flex-col items-center">
-                        <p className="text-h2 leading-[32px] text-isd-primary text-center">
-                            30 Credits
+                <div className="flex flex-col gap-component-gap">
+                    <div className="flex flex-col gap-component-gap-sm">
+                        <p className="text-isd-font-1">
+                            Students are required to complete at least 30
+                            credits of courses, including 9 credits of core
+                            courses, 6 credits of technical or science elective
+                            courses and 6 credits of entrepreneurship or
+                            leadership elective courses offered by the School
+                            Business and Management, the School of Engineering,
+                            the School of Science and the Division of Public
+                            Policy, as well as a 9-credit project course. <br />
+                            For details, please refer to the {' '}
+                            <span className="text-isd-secondary font-[700] underline">
+                                <a href="https://prog-crs.hkust.edu.hk/pgprog/2024-25/msc-tle">
+                                    Postgraduate Program
+                                </a>
+                            </span>
+                            , 
+                            <span className="text-isd-secondary font-[700] underline">
+                                <a href="https://prog-crs.hkust.edu.hk/pgcourse/2022-23/MTLE">
+                                    Course Catalog
+                                </a>
+                            </span>
+                             and 
+                            <span className="text-isd-secondary font-[700] underline">
+                                Program Brochure
+                            </span>
+                            .
                         </p>
-                        <div className="w-full border-b-2 border-isd-primary mt-2"></div>
-                    </div>
-
-                    <table className="flex items-center justify-between w-full">
                         <div className="flex flex-col gap-element-gap">
-                            <div className="text-h2 font-bold flex items-center gap-[6px] text-center">
-                                <div className="bg-isd-primary-2 text-isd-primary p-element-gap min-w-80 flex-1">
-                                    Core Courses
-                                    <br />
-                                    (9 credits)
-                                </div>
-                                <div>
-                                    <Plus
-                                        className="mx-element-gap-sm text-isd-primary"
-                                        size={24}
-                                    />
-                                </div>
-                                <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1">
-                                    Elective Courses
-                                    <br />
-                                    (12 credits)
-                                </div>
-                                <div>
-                                    <Plus
-                                        className="mx-element-gap-sm text-isd-primary"
-                                        size={24}
-                                    />
-                                </div>
-                                <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1">
-                                    TLE Project
-                                    <br />
-                                    (9 credits)
-                                </div>
+                            <div className="flex flex-col items-center">
+                                <p className="text-h2 leading-[32px] text-isd-primary text-center">
+                                    30 Credits
+                                </p>
+                                <div className="w-full border-b-2 border-isd-primary mt-2"></div>
                             </div>
-                            <div className="text-sm flex gap-[30px] text-isd-font-3">
-                                <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit">
-                                    <p>
-                                        Technology Leadership and
-                                        Entrepreneurship
-                                    </p>
-                                    <p>Product Development and Prototyping</p>
-                                    <p>Start-up Workshop</p>
-                                </div>
-                                <div className="flex-1 bg-isd-secondary-1 p-element-gap">
-                                    Elective courses are a selection of
-                                    entrepreneurship and leadership as well as
-                                    technology and science related courses
-                                    chosen from the portfolio of the School of
-                                    Business and Management, the School of
-                                    Engineering, the School of Science, and the
-                                    Academy of Interdisciplinary Studies.
-                                </div>
-                                <div className="flex-1 p-element-gap" />
-                            </div>
-                        </div>
-                    </table>
 
+                            <table className="flex items-center justify-between w-full">
+                                <div className="flex flex-col gap-element-gap">
+                                    <div className="text-h2 font-bold flex items-center gap-[6px] text-center">
+                                        <div className="bg-isd-primary-2 text-isd-primary p-element-gap min-w-80 flex-1">
+                                            Core Courses
+                                            <br />
+                                            (9 credits)
+                                        </div>
+                                        <div>
+                                            <Plus
+                                                className="mx-element-gap-sm text-isd-primary"
+                                                size={24}
+                                            />
+                                        </div>
+                                        <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1">
+                                            Elective Courses
+                                            <br />
+                                            (12 credits)
+                                        </div>
+                                        <div>
+                                            <Plus
+                                                className="mx-element-gap-sm text-isd-primary"
+                                                size={24}
+                                            />
+                                        </div>
+                                        <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1">
+                                            TLE Project
+                                            <br />
+                                            (9 credits)
+                                        </div>
+                                    </div>
+                                    <div className="text-sm flex gap-[30px] text-isd-font-3">
+                                        <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit">
+                                            <p>
+                                                Technology Leadership and
+                                                Entrepreneurship
+                                            </p>
+                                            <p>
+                                                Product Development and
+                                                Prototyping
+                                            </p>
+                                            <p>Start-up Workshop</p>
+                                        </div>
+                                        <div className="flex-1 bg-isd-secondary-1 p-element-gap">
+                                            Elective courses are a selection of
+                                            entrepreneurship and leadership as
+                                            well as technology and science
+                                            related courses chosen from the
+                                            portfolio of the School of Business
+                                            and Management, the School of
+                                            Engineering, the School of Science,
+                                            and the Academy of Interdisciplinary
+                                            Studies.
+                                        </div>
+                                        <div className="flex-1 p-element-gap" />
+                                    </div>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
                     <div className="text-isd-font-3 text-sm">
                         *Classes are normally held on weekday evenings from
                         Monday to Friday; on Saturday mornings or afternoons.
@@ -293,102 +302,110 @@ export default function MSTLEBlock() {
             id: 'adm-app',
             subheading: 'Admission & Application',
             content: (
-                <div className="flex flex-col gap-component-gap-sm items-start">
-                    <p className="text-isd-font-1">
-                        Applicants should have obtained a bachelor&apos;s degree
-                        from a recognized institution, or an approved equivalent
-                        qualification. For English Proficiency Requirements,
-                        please refer to {' '}
-                        <span className="text-isd-secondary font-[700] underline">
-                            <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
-                                {' '}
-                                HKUST Fok Ying Tung Graduate School
-                            </a>
-                        </span>
-                        . All applicants are considered on a competitive and
-                        rolling basis. Early online application is strongly
-                        recommended.
-                    </p>
+                <div className="flex flex-col gap-component-gap  items-start">
+                    <div className="flex flex-col gap-[24]">
+                        <div>
+                            <p className="text-isd-font-1">
+                                Applicants should have obtained a
+                                bachelor&apos;s degree from a recognized
+                                institution, or an approved equivalent
+                                qualification. For English Proficiency
+                                Requirements, please refer to {' '}
+                                <span className="text-isd-secondary font-[700] underline">
+                                    <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
+                                        {' '}
+                                        HKUST Fok Ying Tung Graduate School
+                                    </a>
+                                </span>
+                                . All applicants are considered on a competitive
+                                and rolling basis. Early online application is
+                                strongly recommended.
+                            </p>
+                        </div>
+                        <div className="bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center w-fit">
+                            Apply Now
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-[24]">
+                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                            Faculty Members
+                        </h3>
 
-                    <div className="bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center">
-                        Apply Now
+                        <p className="text-isd-font-1">
+                            This program is a gateway for students to learn from
+                            our professors with diverse knowledge and research
+                            experience in the field gained from some of the top
+                            engineering institutions from around the world.
+                        </p>
+
+                        <a className="cursor-pointer" href="/people">
+                            <div className="bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center w-fit">
+                                ISD Faculty List
+                            </div>
+                        </a>
                     </div>
 
-                    <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
-                        Faculty Members
-                    </h3>
+                    <div className="flex flex-col gap-[24]">
+                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                            Contact Us{' '}
+                        </h3>
 
-                    <p className="text-isd-font-1">
-                        This program is a gateway for students to learn from our
-                        professors with diverse knowledge and research
-                        experience in the field gained from some of the top
-                        engineering institutions from around the world.
-                    </p>
-
-                    <a className="cursor-pointer" href="/people">
-                        <div className="bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center">
-                            ISD Faculty List
+                        <div className="flex-1 flex flex-col gap-[12px]">
+                            <table>
+                                <tbody className="leading-[16px] text-[12px]">
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Email
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            <a href="mailto:enquirytle@ust.hk">
+                                                enquirytle@ust.hk
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Tel
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            +852 3469 2957
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Address
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Room 5591, Lift 29-30, The Hong Kong
+                                            University of Science and
+                                            Technology, Clear Water Bay, Hong
+                                            Kong
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Linkedin
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            <a href="https://www.linkedin.com/school/hkust/">
+                                                {' '}
+                                                Click to view more
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            YouTube
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            <a href="https://www.youtube.com/user/hkust">
+                                                Click to view more
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </a>
-
-                    <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
-                        Contact Us{' '}
-                    </h3>
-
-                    <div className="flex-1 flex flex-col gap-[12px]">
-                        <table>
-                            <tbody className="leading-[16px] text-[12px]">
-                                <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        Email
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        <a href="mailto:enquirytle@ust.hk">
-                                            enquirytle@ust.hk
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        Tel
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        +852 3469 2957
-                                    </td>
-                                </tr>
-                                <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        Address
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        Room 5591, Lift 29-30, The Hong Kong
-                                        University of Science and Technology,
-                                        Clear Water Bay, Hong Kong
-                                    </td>
-                                </tr>
-                                <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        Linkedin
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        <a href="https://www.linkedin.com/school/hkust/">
-                                            {' '}
-                                            Click to view more
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        YouTube
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        <a href="https://www.youtube.com/user/hkust">
-                                            Click to view more
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             ),
