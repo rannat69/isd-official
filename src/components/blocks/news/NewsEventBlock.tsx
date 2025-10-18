@@ -23,7 +23,7 @@ export default function NewsEventBlock({ news }: { news?: News[] }) {
     return (
         <div
             className={
-                'container w-full flex flex-col py-section-gap gap-section-title-gap' +
+                'container flex flex-col py-section-gap gap-section-title-gap' +
                 ' dot-pattern before:top-[-95px] before:right-[-60px] [--dot-color:var(--isd-primary-2)]'
             }
         >
@@ -45,7 +45,7 @@ export default function NewsEventBlock({ news }: { news?: News[] }) {
                 }
 
                 return (
-                    <div className="grid grid-cols-1 gap-x-section-gap gap-y-component-gap divide-y-1 divide-isd-primary-3">
+                    <div className="grid grid-cols-1  divide-y-1 divide-isd-primary-3">
                         {list.map((news) => (
                             <div key={news.title}>
                                 <NewsCard

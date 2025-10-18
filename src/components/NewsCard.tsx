@@ -34,7 +34,12 @@ export default function NewsCard({
     const router = useRouter();
 
     return (
-        <div className="flex h-[360px] ">
+        <div
+            className="flex h-[360px] py-component-gap-sm gap-component-gap-sm "
+            onClick={() =>
+                router.push(`/news/read-more${id ? `?id=${id}` : ''}`)
+            }
+        >
             <div className="relative w-[600px] h-[288px] flex-shrink-0 overflow-hidden ">
                 {/* NOTE - photo always available either a valid image or a placeholder */}
                 <Image
@@ -45,46 +50,36 @@ export default function NewsCard({
                     sizes="600px"
                 />
             </div>
-            <div className="flex flex-col justify-between flex-1 text-justify">
-                <div className="flex flex-col gap-footer-gap">
-                    <div className="text-md text-isd-secondary">{type}</div>
-                    <div className="text-h2 text-isd-font-1">{title}</div>
+            <div className="flex flex-col flex-1 text-justify gap-[12px]">
+                <div className="text-md text-isd-secondary">{type}</div>
+                <div className="text-h2 text-isd-font-1">{title}</div>
 
-                    {type != 'Events' && details && (
-                        <div className="text-md text-isd-font-3 text">
-                            {details
-                                .slice(0, 300)
-                                .replaceAll('xTx', '')
-                                .replaceAll('xETx', '')}
-                            ...{' '}
-                        </div>
-                    )}
+                {type != 'Events' && details && (
+                    <div className="text-md text-isd-font-3">
+                        {details
+                            .slice(0, 300)
+                            .replaceAll('xTx', '')
+                            .replaceAll('xETx', '')}
+                        ...{' '}
+                    </div>
+                )}
 
-                    <button
-                        className="flex cursor-pointer relative items-end gap-[6px] text-footer leading-[15px] text-isd-secondary"
-                        onClick={() =>
-                            router.push(
-                                `/news/read-more${id ? `?id=${id}` : ''}`
-                            )
-                        }
-                    >
-                        <span>Read more</span>
+                {type === 'Event' && (
+                    <div>
+                        <div>{evt_date}</div>
+                        <div>{evt_time}</div>
+                        <div>{evt_location}</div>
+                    </div>
+                )}
 
-                        <ArrowRight size={12} />
-                    </button>
+                <div className="text-md text-isd-font-2">
+                    {type != 'Event' &&
+                        new Date(date).toLocaleDateString('en-UK', {
+                            day: '2-digit',
+                            month: 'long',
+                            year: 'numeric',
+                        })}
                 </div>
-
-                <div>
-                    {type === 'Event' && (
-                        <div>
-                            <div>{evt_date}</div>
-                            <div>{evt_time}</div>
-                            <div>{evt_location}</div>
-                        </div>
-                    )}
-                </div>
-
-                <div>{type != 'Event' && date}</div>
             </div>
         </div>
     );
