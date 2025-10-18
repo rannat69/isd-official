@@ -1,19 +1,8 @@
 'use client';
 
-import { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter, useSearchParams } from 'next/navigation';
-import {
-    ArrowRight,
-    Mail,
-    Phone,
-    MapPin,
-    Link2,
-    X,
-    Clock,
-    Calendar,
-} from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { MapPin, Clock, Calendar } from 'lucide-react';
 
 import { resolveNewsPhoto } from '@/lib/newsImages';
 
@@ -44,7 +33,7 @@ export default function NewsCard({
 
     return (
         <div
-            className="flex h-[360px] py-component-gap-sm gap-component-gap-sm "
+            className="flex h-[360px] py-component-gap-sm gap-component-gap-sm cursor-pointer "
             onClick={() =>
                 router.push(`/news/read-more${id ? `?id=${id}` : ''}`)
             }
