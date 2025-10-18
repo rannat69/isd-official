@@ -4,7 +4,16 @@ import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { ArrowRight, Mail, Phone, MapPin, Link2, X } from 'lucide-react';
+import {
+    ArrowRight,
+    Mail,
+    Phone,
+    MapPin,
+    Link2,
+    X,
+    Clock,
+    Calendar,
+} from 'lucide-react';
 
 import { resolveNewsPhoto } from '@/lib/newsImages';
 
@@ -46,7 +55,7 @@ export default function NewsCard({
                     src={resolveNewsPhoto(pictures[0])}
                     alt={`${title}`}
                     fill
-                    className="object-cover"
+                    className="object-cover aspect-[499/250]"
                     sizes="600px"
                 />
             </div>
@@ -64,16 +73,59 @@ export default function NewsCard({
                     </div>
                 )}
 
-                {type === 'Event' && (
-                    <div>
-                        <div>{evt_date}</div>
-                        <div>{evt_time}</div>
-                        <div>{evt_location}</div>
+                {type === 'Events' && (
+                    <div className="flex flex-col text-md text-isd-font-2 gap-[14px]">
+                        {evt_date && (
+                            <div className="flex gap-[12px] items-center">
+                                <div className="bg-isd-primary-2 p-[7px] rounded-[18px]">
+                                    {' '}
+                                    <Calendar
+                                        size={22}
+                                        className="text-isd-primary"
+                                    />
+                                </div>
+                                <div className="leading-[26px]">
+                                    {new Date(evt_date).toLocaleDateString(
+                                        'en-GB',
+                                        {
+                                            day: '2-digit',
+                                            month: 'long',
+                                            year: 'numeric',
+                                        }
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
+                        {evt_time && (
+                            <div className="flex gap-[12px] items-center">
+                                <div className="bg-isd-primary-2 p-[7px] rounded-[18px]">
+                                    <Clock
+                                        size={22}
+                                        className="text-isd-primary"
+                                    />
+                                </div>
+                                <div className="leading-[26px]">{evt_time}</div>
+                            </div>
+                        )}
+                        {evt_location && (
+                            <div className="flex gap-[12px] items-center">
+                                <div className="bg-isd-primary-2 p-[7px] rounded-[18px]">
+                                    <MapPin
+                                        size={22}
+                                        className="text-isd-primary"
+                                    />
+                                </div>
+                                <div className="leading-[26px]">
+                                    {evt_location}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 )}
 
                 <div className="text-md text-isd-font-2">
-                    {type != 'Event' &&
+                    {type != 'Events' &&
                         new Date(date).toLocaleDateString('en-UK', {
                             day: '2-digit',
                             month: 'long',

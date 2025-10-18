@@ -27,7 +27,7 @@ export default function NewsEventBlock({ news }: { news?: News[] }) {
                 ' dot-pattern before:top-[-95px] before:right-[-60px] [--dot-color:var(--isd-primary-2)]'
             }
         >
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
                 {' '}
                 <h1 className="text-h1 offset-text-background ">
                     News & Events

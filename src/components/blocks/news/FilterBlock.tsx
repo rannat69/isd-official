@@ -66,7 +66,7 @@ export default function FilterBlock() {
 
     return (
         <div>
-            <div className="container w-full flex gap-component-gap-sm">
+            <div className=" w-full flex gap-component-gap-sm">
                 <SelectNews
                     id="type-select"
                     options={typeList}
