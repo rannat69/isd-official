@@ -23,7 +23,7 @@ export default function NewsEventBlock({ news }: { news?: News[] }) {
     return (
         <div
             className={
-                'container w-full flex flex-col pt-section-gap gap-section-title-gap' +
+                'container w-full flex flex-col py-section-gap gap-section-title-gap' +
                 ' dot-pattern before:top-[-95px] before:right-[-60px] [--dot-color:var(--isd-primary-2)]'
             }
         >
@@ -45,7 +45,7 @@ export default function NewsEventBlock({ news }: { news?: News[] }) {
                 }
 
                 return (
-                    <div className="grid grid-cols-1 gap-x-section-gap gap-y-component-gap scroll-mt-[295px]">
+                    <div className="grid grid-cols-1 gap-x-section-gap gap-y-component-gap divide-y-1 divide-isd-primary-3">
                         {list.map((news) => (
                             <div key={news.title}>
                                 <NewsCard
@@ -63,18 +63,20 @@ export default function NewsEventBlock({ news }: { news?: News[] }) {
                                 />
                             </div>
                         ))}
-
-                        {totalRecords < newsEvents.length && (
-                            <div
-                                className="flex justify-center text-lg text-isd-secondary border-b-1 mx-auto"
-                                onClick={() => loadMore()}
-                            >
-                                Load More <ChevronsDown />
-                            </div>
-                        )}
                     </div>
                 );
             })()}
+
+            {totalRecords < newsEvents.length && (
+                <div className="flex justify-center ">
+                    <div
+                        className="flex justify-center text-lg text-isd-secondary border-b-1 w-fit "
+                        onClick={() => loadMore()}
+                    >
+                        Load More <ChevronsDown />
+                    </div>{' '}
+                </div>
+            )}
         </div>
     );
 }

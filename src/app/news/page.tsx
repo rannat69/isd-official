@@ -27,7 +27,7 @@ export default function PeoplePage({
     });
 
     return (
-        <div className="min-h-screen flex flex-col pb-component-gap">
+        <div className="min-h-screen flex flex-col ">
             <HeroImage image={HeroImageFile} />
     
             {/* Render blocks according to selected role */}

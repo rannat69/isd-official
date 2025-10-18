@@ -34,7 +34,7 @@ export default function NewsCard({
     const router = useRouter();
 
     return (
-        <div className="flex gap-component-gap-sm">
+        <div className="flex h-[360px] ">
             <div className="relative w-[600px] h-[288px] flex-shrink-0 overflow-hidden ">
                 {/* NOTE - photo always available either a valid image or a placeholder */}
                 <Image

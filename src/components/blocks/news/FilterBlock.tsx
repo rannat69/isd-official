@@ -66,7 +66,7 @@ export default function FilterBlock() {
 
     return (
         <div>
-            <div className="container w-full flex">
+            <div className="container w-full flex gap-component-gap-sm">
                 <SelectNews
                     id="type-select"
                     options={typeList}
@@ -77,7 +77,7 @@ export default function FilterBlock() {
                         applyFilters({ type: val, year });
                     }}
                     placeholder="Filter by type"
-                    className="w-[180px]"
+                    className="w-fit"
                 />
 
                 <SelectNews
@@ -90,7 +90,7 @@ export default function FilterBlock() {
                         applyFilters({ type, year: val });
                     }}
                     placeholder="Filter by year"
-                    className="w-[180px]"
+                    className="w-fit"
                 />
             </div>
         </div>
