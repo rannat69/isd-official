@@ -13,6 +13,11 @@ export default function Footer() {
         {
             title: 'About ISD',
             subheadings: ['Head’s Message', 'What is ISD', 'Join Us'],
+            links: [
+                '/about-isd/#heads-message',
+                '/about-isd#what-is-isd',
+                '/about-isd#join-us',
+            ],
         },
         {
             title: 'People',
