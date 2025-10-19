@@ -50,20 +50,6 @@ export default function FilterBlock() {
         router.push(`/news/${qs ? `?${qs}` : ''}`);
     }
 
-    function handleSearch() {
-        applyFilters({ type, year });
-    }
-
-    function handleClear() {
-        setType('all');
-        setYear('all');
-
-        applyFilters({
-            type: 'all',
-            year: 'all',
-        });
-    }
-
     return (
         <div>
             <div className=" w-full flex gap-component-gap-sm">

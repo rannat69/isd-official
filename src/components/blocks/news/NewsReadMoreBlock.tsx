@@ -24,6 +24,9 @@ export default function NewsReadMoreBlock() {
     const year = 'all';
     const id = Number(params.get('id'));
     // Prepare filtered lists per role context
+
+    console.log(id);
+
     const newsList = filterAndSortNews(newsEvents as News[], {
         type,
         year,

@@ -1,11 +1,12 @@
 'use client';
 
 import NewsReadMoreBlock from '@/components/blocks/news/NewsReadMoreBlock';
-import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function NewsReadMoreButtonPage() {
-    const searchParams = useSearchParams();
-    const params = new URLSearchParams(searchParams?.toString() ?? '');
-
-    return <NewsReadMoreBlock />;
+    return (
+        <Suspense fallback="Loading...">
+            <NewsReadMoreBlock />;
+        </Suspense>
+    );
 }
