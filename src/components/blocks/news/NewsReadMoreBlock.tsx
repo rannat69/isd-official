@@ -1,3 +1,5 @@
+'use client';
+
 import filterAndSortNews, { News } from '@/lib/newsFilter';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
@@ -135,10 +137,7 @@ export default function NewsReadMoreBlock() {
 
     return (
         <>
-            <div
-                className="container flex flex-col bg-white  mt-component-gap-sm mb-section-gap"
-                onClick={(e) => e.stopPropagation()}
-            >
+            <div className="container flex flex-col bg-white  mt-component-gap-sm mb-section-gap">
                 <div className="flex flex-col gap-component-gap-sm">
                     {' '}
                     <button
@@ -159,7 +158,7 @@ export default function NewsReadMoreBlock() {
                                 key={index}
                                 src={resolveNewsPhoto(image)}
                                 alt={`Carousel Image ${index + 1}`}
-                                className={`absolute inset-0 w-full h-full object-cover transition-opacity linear duration-1000 ${
+                                className={`absolute inset-0 w-full h-full object-cover transition-opacity linear ${
                                     index === currentIndex
                                         ? 'opacity-100'
                                         : 'opacity-0'
