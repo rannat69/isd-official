@@ -1,11 +1,20 @@
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import data from '@/data/news_events.json';
+import { resolveFirstImage } from '@/lib/newsImages';
+import { type NewsEntry } from '@/lib/newsFilter';
 
 export function generateStaticParams() {
-    return [{ id: 'lol' }];
+    const items = data as NewsEntry[];
+    return items.map((it) => ({ id: String(it.id) }));
 }
 
-export default function NewsDetailPage() {
+export default function NewsDetailPage({ params }: { params: { id: string } }) {
+    const items = data as NewsEntry[];
+    const item = items.find((it) => String(it.id) === params.id);
+    if (!item) return null;
+    const img = resolveFirstImage(item.pictures);
+
     return (
         <div className="container pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">
             <div className="flex flex-col gap-component-gap-sm">
@@ -18,70 +27,90 @@ export default function NewsDetailPage() {
                 </Link>
 
                 <div className="flex flex-col gap-section-title-gap">
-                    <h1 className="text-h1">
-                        Nine ISD Faculty Members Recognized Among the World’s
-                        Top 2% of Most-Cited Scientists for 2025
-                    </h1>
+                    <h1 className="text-h1">{item.title}</h1>
 
-                    <div className="w-full h-[480px] bg-isd-font-2/10" />
+                    <div className="w-full bg-isd-font-2/10">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src={img.src}
+                            alt={item.title}
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    </div>
 
                     <div className="flex flex-col gap-component-gap text-md text-isd-font-1">
-                        <div className="flex flex-col gap-[24px]">
-                            <p>
-                                This year, we have nine ISD faculty members
-                                recognized as being in the world’s Top 2% of the
-                                Most-Cited Scientists for 2025! 
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-[24px]">
-                            <h2 className="text-[36px] leading=[36px] font-bold text-primary">
-                                Career-long & Single-year Impact
-                            </h2>
-                            <p>
-                                Prof. Song GUO
-                                <br />
-                                Prof. Mo LI
-                                <br />
-                                Prof. Chi Ying TSUI
-                                <br />
-                                Prof. Qian ZHANG
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-[24px]">
-                            <h2 className="text-[36px] leading=[36px] font-bold text-primary">
-                                Career-long & Single-year Impact
-                            </h2>
-                            <p>Prof. Zexiang LI</p>
-                        </div>
-
-                        <div className="flex flex-col gap-[24px]">
-                            <h2 className="text-[36px] leading=[36px] font-bold text-primary">
-                                Career-long & Single-year Impact
-                            </h2>
-                            <p>
-                                Prof. Arash KAZEMIAN <br />
-                                Prof. Yuan LIU
-                                <br />
-                                Prof. Dongfang XU
-                                <br />
-                                Prof. Sai Kit YEUNG
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-[24px]">
-                            <p>
-                                They are ranked and selected by Stanford
-                                University based on their citation scores, out
-                                of 100,000 scientists. <br />
-                                Congratulations on this remarkable achievement
-                                and the high level of research excellence!
-                            </p>
-                        </div>
+                        {renderContent(item.details)}
                     </div>
                 </div>
             </div>
         </div>
     );
+}
+
+// Interpret markdown-style headings (# ...) and paragraphs
+function renderContent(text: string) {
+    const parts: Array<{ type: 'heading' | 'paragraph'; content: string }> = [];
+    const lines = text.split(/\r?\n/);
+    let buffer: string[] = [];
+    const flushParagraph = () => {
+        const content = buffer.join('\n').trim();
+        buffer = [];
+        if (content) parts.push({ type: 'paragraph', content });
+    };
+    for (const line of lines) {
+        const headingMatch = /^\s*#\s+(.*)$/.exec(line);
+        if (headingMatch) {
+            flushParagraph();
+            const content = headingMatch[1].trim();
+            if (content) parts.push({ type: 'heading', content });
+        } else {
+            buffer.push(line);
+        }
+    }
+    flushParagraph();
+
+    // Group headings with the immediate following paragraph to ensure a 24px gap between them
+    const groups: Array<{ heading?: string; paragraph?: string }> = [];
+    for (let i = 0; i < parts.length; i++) {
+        const current = parts[i];
+        if (current.type === 'heading') {
+            const next = parts[i + 1];
+            if (next && next.type === 'paragraph') {
+                groups.push({
+                    heading: current.content,
+                    paragraph: next.content,
+                });
+                i++; // skip the paragraph we've just paired
+            } else {
+                groups.push({ heading: current.content });
+            }
+        } else {
+            groups.push({ paragraph: current.content });
+        }
+    }
+
+    return groups.map((g, idx) => {
+        const paragraphLines = g.paragraph
+            ? g.paragraph.split(/\n+/).map((l, i) => (
+                  <span key={i}>
+                      {l}
+                      <br />
+                  </span>
+              ))
+            : null;
+        return (
+            <div key={idx} className="flex flex-col gap-[24px]">
+                {g.heading ? (
+                    <h2 className="text-[36px] leading=[36px] font-bold text-primary">
+                        {g.heading}
+                    </h2>
+                ) : null}
+                {g.paragraph ? <p>{paragraphLines}</p> : null}
+            </div>
+        );
+    });
 }
