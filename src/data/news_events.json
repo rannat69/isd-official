@@ -6,7 +6,7 @@
         "evt_location": null,
         "evt_time": null,
         "id": 1,
-        "pictures": ["/src/assets/newsEvt/news.2025.04.07.jpg"],
+        "pictures": ["/src/assets/news/news.2025.04.07.jpg"],
         "title": "Collaboration on Implementation of Octopus-inspired Manipulation Strategies in Soft Continuum Robot Arms with Artificial Suction Cups",
         "type": "News"
     },
@@ -17,7 +17,7 @@
         "evt_location": null,
         "evt_time": null,
         "id": 3,
-        "pictures": ["/src/assets/newsEvt/ach.2024.03.08.jpg"],
+        "pictures": ["/src/assets/news/ach.2024.03.08.jpg"],
         "title": "HKUST Student Team Awarded 1st Runner Up in the RoboMaster University League (RMUL)",
         "type": "Achievements"
     },
@@ -28,7 +28,7 @@
         "evt_location": "Room 5619 (Lift 31 & 32), Academic Building, HKUST",
         "evt_time": "17:00",
         "id": 4,
-        "pictures": ["/src/assets/newsEvt/evt.2024.10.29.png"],
+        "pictures": ["/src/assets/news/evt.2024.10.29.png"],
         "title": "[ISD Seminar] Smart Community Design: Education, Research & Practice for Social Change in the Intelligent Age",
         "type": "Events"
     },
@@ -39,7 +39,7 @@
         "evt_location": "HKUST Campus (July 2-8) → Dongguan (July 8-12)",
         "evt_time": null,
         "id": 5,
-        "pictures": ["/src/assets/newsEvt/evt.2025.07.02.png"],
+        "pictures": ["/src/assets/news/evt.2025.07.02.png"],
         "title": "HKUST InnoBay Bootcamp 2025: Your Gateway to Innovation and Entrepreneurship",
         "type": "Events"
     },
@@ -50,7 +50,7 @@
         "evt_location": null,
         "evt_time": null,
         "id": 6,
-        "pictures": ["/src/assets/newsEvt/news.2025.15.10.png"],
+        "pictures": ["/src/assets/news/news.2025.15.10.png"],
         "title": "Nine ISD Faculty Members Recognized Among the World’s Top 2% of Most-Cited Scientists for 2025",
         "type": "News"
     },
@@ -61,7 +61,7 @@
         "evt_location": null,
         "evt_time": null,
         "id": 7,
-        "pictures": ["/src/assets/newsEvt/news.2025.09.02.png"],
+        "pictures": ["/src/assets/news/news.2025.09.02.png"],
         "title": "Prof. Qijia SHAO Selected as Emerging Rockstar in IEEE Pervasive Computing magazine",
         "type": "News"
     },
@@ -73,12 +73,12 @@
         "evt_time": null,
         "id": 8,
         "pictures": [
-            "/src/assets/newsEvt/news.2025.08.21.01.png",
-            "/src/assets/newsEvt/news.2025.08.21.02.png",
-            "/src/assets/newsEvt/news.2025.08.21.03.png",
-            "/src/assets/newsEvt/news.2025.08.21.04.png",
-            "/src/assets/newsEvt/news.2025.08.21.05.png",
-            "/src/assets/newsEvt/news.2025.08.21.06.png"
+            "/src/assets/news/news.2025.08.21.01.png",
+            "/src/assets/news/news.2025.08.21.02.png",
+            "/src/assets/news/news.2025.08.21.03.png",
+            "/src/assets/news/news.2025.08.21.04.png",
+            "/src/assets/news/news.2025.08.21.05.png",
+            "/src/assets/news/news.2025.08.21.06.png"
         ],
         "title": "Minister of Education of China Jinpeng HUAI Visited ISDworks!, Witnessed Students' Innovative Achievement in Innovation",
         "type": "News"
@@ -91,11 +91,11 @@
         "evt_time": null,
         "id": 9,
         "pictures": [
-            "/src/assets/newsEvt/news.2025.07.28.01.png",
-            "/src/assets/newsEvt/news.2025.07.28.02.png",
-            "/src/assets/newsEvt/news.2025.07.28.03.png",
-            "/src/assets/newsEvt/news.2025.07.28.04.png",
-            "/src/assets/newsEvt/news.2025.07.28.05.png"
+            "/src/assets/news/news.2025.07.28.01.png",
+            "/src/assets/news/news.2025.07.28.02.png",
+            "/src/assets/news/news.2025.07.28.03.png",
+            "/src/assets/news/news.2025.07.28.04.png",
+            "/src/assets/news/news.2025.07.28.05.png"
         ],
         "title": "InnoBay Summer Camp 2025 - Turning Marine Innovation into Action in the Greater Bay Area ",
         "type": "News"
@@ -108,10 +108,10 @@
         "evt_time": null,
         "id": 10,
         "pictures": [
-            "/src/assets/newsEvt/news.2025.07.07.01.jpg",
-            "/src/assets/newsEvt/news.2025.07.07.02.jpg",
-            "/src/assets/newsEvt/news.2025.07.07.03.jpg",
-            "/src/assets/newsEvt/news.2025.07.07.04.jpg"
+            "/src/assets/news/news.2025.07.07.01.jpg",
+            "/src/assets/news/news.2025.07.07.02.jpg",
+            "/src/assets/news/news.2025.07.07.03.jpg",
+            "/src/assets/news/news.2025.07.07.04.jpg"
         ],
         "title": "ISD PhD Students Won Red Dot: Best of the Best Design Award 2025",
         "type": "News"
@@ -123,7 +123,7 @@
         "evt_location": "Room 4503 (Lift 25-26), Academic Building, HKUST",
         "evt_time": "10:00 ",
         "id": 11,
-        "pictures": ["/src/assets/newsEvt/evt.2024.10.22.png"],
+        "pictures": ["/src/assets/news/evt.2024.10.22.png"],
         "title": "[ISD Seminar] Introduction to F1Tenth Robotic Driving and Underwater Internet of Things ",
         "type": "Events"
     }
