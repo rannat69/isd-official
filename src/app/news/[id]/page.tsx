@@ -105,7 +105,7 @@ function renderContent(text: string) {
         return (
             <div key={idx} className="flex flex-col gap-[24px]">
                 {g.heading ? (
-                    <h2 className="text-[36px] leading=[36px] font-bold text-primary">
+                    <h2 className="text-[36px] leading-9 font-bold text-primary">
                         {g.heading}
                     </h2>
                 ) : null}
