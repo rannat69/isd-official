@@ -8,7 +8,7 @@ export default function ImageTitleCard({
     title: string;
 }) {
     return (
-        <div className="w-96 bg-white rounded-[10px] outline-1 outline-isd-primary-3 inline-flex flex-col justify-start items-start">
+        <div className="w-full bg-white rounded-[10px] outline-1 outline-isd-primary-3 inline-flex flex-col justify-start items-start">
             <Image
                 src={imageSrc}
                 alt={title}
