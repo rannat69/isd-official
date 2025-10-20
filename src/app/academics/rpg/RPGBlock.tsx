@@ -167,7 +167,7 @@ export default function RPGBlock() {
                 <div className="flex flex-col gap-18">
                     {TextContent.map((section) => (
                         <div key={section.id}>
-                            <h2 className="text-4xl font-bold capitalize leading-9 text-primary mb-6">
+                            <h2 className="text-[36px] leading-[36px] font-bold capitalize text-primary mb-6">
                                 {section.title}
                             </h2>
                             {Array.isArray(section.paragraphs)
