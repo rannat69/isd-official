@@ -1,53 +1,79 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import data from '@/data/news_events.json';
 import {
     filterNews,
     sortNews,
     type NewsEntry,
     type CategoryFilter,
-    NewsType,
+    getYears,
 } from '@/lib/newsFilter';
 import { resolveFirstImage } from '@/lib/newsImages';
 import NewsCard from '@/components/NewsCard';
 import EventCard from '@/components/EventCard';
 import Select, { type Option } from '@/components/Select';
-import { useSearchParams } from 'next/navigation';
 
 export default function NewsListBlock() {
-    const searchParam = useSearchParams();
-    const categoryParam = searchParam.get('cat');
     const allItems = data as NewsEntry[];
-    const [category, setCategory] = useState<CategoryFilter>('All');
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const pathname = usePathname();
 
-    useEffect(() => {
-        console.log(categoryParam);
-        setCategory(categoryParam ? (categoryParam as CategoryFilter) : 'All');
-    }, [categoryParam]);
+    const category: CategoryFilter = useMemo(() => {
+        return (searchParams.get('category') as CategoryFilter) || 'all';
+    }, [searchParams]);
 
-    const [year, setYear] = useState<number | 'All'>('All');
+    const year: number | 'all' = useMemo(() => {
+        const raw = searchParams.get('year');
+        if (!raw) return 'all';
+        const n = Number(raw);
+        return Number.isFinite(n) ? (n as number) : 'all';
+    }, [searchParams]);
+
+    const categoryOptions: Option[] = [
+        { value: 'all', label: 'All Category' },
+        { value: 'news', label: 'News' },
+        { value: 'events', label: 'Events' },
+        { value: 'achievements', label: 'Achievements' },
+    ];
+
+    const yearOptions: Option[] = useMemo(() => {
+        const ys = getYears(allItems);
+        return [
+            { value: 'all', label: 'Year' },
+            ...ys.map((y) => ({ value: y, label: String(y) })),
+        ];
+    }, [allItems]);
+
     const items = sortNews(
         filterNews(allItems, {
-            category: category,
-            year: year,
+            category,
+            year,
         })
     );
 
-    const categoryOptions: Option[] = [
-        { value: 'All', label: 'All Category' },
-        { value: 'News', label: 'News' },
-        { value: 'Events', label: 'Events' },
-        { value: 'Achievements', label: 'Achievements' },
-    ];
-    const yearOptions: Option[] = [
-        { value: 'All', label: 'Year' },
-        { value: 2025, label: '2025' },
-        { value: 2024, label: '2024' },
-        { value: 2023, label: '2023' },
-        { value: 2022, label: '2022' },
-        { value: 2021, label: '2021' },
-    ];
+    function updateSearchParams(next: {
+        category?: CategoryFilter;
+        year?: number | 'all';
+    }) {
+        const params = new URLSearchParams(searchParams.toString());
+        if (next.category !== undefined) {
+            const p = (() => {
+                return next.category === 'all' ? null : next.category;
+            })();
+            if (!p) params.delete('category');
+            else params.set('category', p);
+        }
+        if (next.year !== undefined) {
+            if (next.year === 'all') params.delete('year');
+            else params.set('year', String(next.year));
+        }
+        const qs = params.toString();
+        router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+    }
+
     return (
         <div className="dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container flex flex-col py-section-gap gap-0">
@@ -61,7 +87,9 @@ export default function NewsListBlock() {
                             options={categoryOptions}
                             value={category}
                             onChange={(v) =>
-                                setCategory((v as CategoryFilter) ?? 'All')
+                                updateSearchParams({
+                                    category: (v as CategoryFilter) ?? 'all',
+                                })
                             }
                             placeholder="All Category"
                             triggerClassName="text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
@@ -70,7 +98,9 @@ export default function NewsListBlock() {
                             options={yearOptions}
                             value={year}
                             onChange={(v) =>
-                                setYear((v as number | 'All') ?? 'All')
+                                updateSearchParams({
+                                    year: (v as number) ?? 'all',
+                                })
                             }
                             placeholder="Year"
                             triggerClassName="text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
@@ -83,7 +113,7 @@ export default function NewsListBlock() {
                         const href = `/news/${item.id}`;
                         const img = resolveFirstImage(item.pictures);
                         const formattedDate = formatDate(item.date);
-                        if (item.type === 'Events') {
+                        if (item.type === 'events') {
                             return (
                                 <EventCard
                                     key={item.id}
@@ -101,7 +131,7 @@ export default function NewsListBlock() {
                                 key={item.id}
                                 href={href}
                                 category={
-                                    item.type === 'Achievements'
+                                    item.type === 'achievements'
                                         ? 'Achievement'
                                         : 'News'
                                 }
