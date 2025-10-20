@@ -53,7 +53,7 @@ export default function AcademicAndIndustrialPartnersBlock() {
                 </h3>
                 <p className="text-isd-font-3">
                     We also collaborate with various industrial partners,
-                    including
+                    including&nbsp;
                     <a
                         href="https://www.hkstp.org/"
                         className="font-bold text-isd-secondary underline"
