@@ -8,7 +8,7 @@ import { AreaChart } from 'lucide-react';
 export default function FilterBlock() {
     const roles = [
         { value: 'all', label: 'All Roles' },
-        { value: 'faculty', label: 'ISD Faculty' },
+        { value: 'faculty', label: 'Faculty' },
         { value: 'staff', label: 'ISD Staff' },
     ];
 
