@@ -1,21 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import data from '@/data/news_events.json';
 import {
     filterNews,
     sortNews,
     type NewsEntry,
     type CategoryFilter,
+    NewsType,
 } from '@/lib/newsFilter';
 import { resolveFirstImage } from '@/lib/newsImages';
 import NewsCard from '@/components/NewsCard';
 import EventCard from '@/components/EventCard';
 import Select, { type Option } from '@/components/Select';
+import { useSearchParams } from 'next/navigation';
 
 export default function NewsListBlock() {
+    const searchParam = useSearchParams();
+    const categoryParam = searchParam.get('cat');
     const allItems = data as NewsEntry[];
     const [category, setCategory] = useState<CategoryFilter>('All');
+
+    useEffect(() => {
+        console.log(categoryParam);
+        setCategory(categoryParam ? (categoryParam as CategoryFilter) : 'All');
+    }, [categoryParam]);
+
     const [year, setYear] = useState<number | 'All'>('All');
     const items = sortNews(
         filterNews(allItems, {
