@@ -24,7 +24,7 @@ export default function ProgramBlock() {
         {
             heading: 'Postgraduate',
             content: 'MPhil & PhD Program',
-            link: '/academics/pg/rpg',
+            link: '/academics/rpg',
         },
         {
             heading: 'Postgraduate',
