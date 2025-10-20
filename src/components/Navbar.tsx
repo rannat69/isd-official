@@ -1,9 +1,14 @@
+'use client';
+
 import HKUSTLogo from '@/assets/hkust-logo.svg';
 import ISDLogo from '@/assets/isd-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Navbar() {
+    const [selectedItem, setSelectedItem] = useState('');
+
     const navItems = [
         {
             name: 'About ISD',
@@ -105,7 +110,12 @@ export default function Navbar() {
                         <div className="relative group pb-2" key={item.name}>
                             <Link
                                 href={item.href}
-                                className="relative z-50 text-isd-font-3 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4"
+                                className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
+                                    selectedItem === item.name
+                                        ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
+                                        : 'text-isd-font-3'
+                                }`}
+                                onClick={() => setSelectedItem(item.name)}
                             >
                                 {item.name}
                             </Link>
