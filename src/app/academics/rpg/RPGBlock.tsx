@@ -153,7 +153,7 @@ export default function RPGBlock() {
     ];
 
     return (
-        <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
+        <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap text-md text-isd-font-1">
             <div className="flex flex-col gap-9">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     MPhil & PhD Program
