@@ -259,7 +259,7 @@ export default function MSTLEBlock() {
                                             (9 credits)
                                         </div>
                                     </div>
-                                    <div className="text-sm flex gap-[30px] text-isd-font-3">
+                                    <div className="text-sm flex gap-[6px] text-isd-font-3">
                                         <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit">
                                             <p>
                                                 Technology Leadership and
@@ -270,6 +270,11 @@ export default function MSTLEBlock() {
                                                 Prototyping
                                             </p>
                                             <p>Start-up Workshop</p>
+                                        </div>
+                                        <div>
+                                            <div className="w-[24px]">
+                                                
+                                            </div>
                                         </div>
                                         <div className="flex-1 bg-isd-secondary-1 p-element-gap">
                                             Elective courses are a selection of
@@ -282,6 +287,7 @@ export default function MSTLEBlock() {
                                             and the Academy of Interdisciplinary
                                             Studies.
                                         </div>
+                                        <div className="w-[24px]"></div>
                                         <div className="flex-1 p-element-gap" />
                                     </div>
                                 </div>
