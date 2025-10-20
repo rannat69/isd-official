@@ -8,7 +8,7 @@
         "id": 1,
         "pictures": ["/src/assets/news/news.2025.04.07.jpg"],
         "title": "Collaboration on Implementation of Octopus-inspired Manipulation Strategies in Soft Continuum Robot Arms with Artificial Suction Cups",
-        "type": "News"
+        "type": "news"
     },
     {
         "date": "2024-03-28",
@@ -19,7 +19,7 @@
         "id": 3,
         "pictures": ["/src/assets/news/ach.2024.03.08.jpg"],
         "title": "HKUST Student Team Awarded 1st Runner Up in the RoboMaster University League (RMUL)",
-        "type": "Achievements"
+        "type": "achievements"
     },
     {
         "date": "2024-10-29",
@@ -30,7 +30,7 @@
         "id": 4,
         "pictures": ["/src/assets/news/evt.2024.10.29.png"],
         "title": "[ISD Seminar] Smart Community Design: Education, Research & Practice for Social Change in the Intelligent Age",
-        "type": "Events"
+        "type": "events"
     },
     {
         "date": "2025-07-02",
@@ -41,7 +41,7 @@
         "id": 5,
         "pictures": ["/src/assets/news/evt.2025.07.02.png"],
         "title": "HKUST InnoBay Bootcamp 2025: Your Gateway to Innovation and Entrepreneurship",
-        "type": "Events"
+        "type": "events"
     },
     {
         "date": "2025-10-14",
@@ -52,7 +52,7 @@
         "id": 6,
         "pictures": ["/src/assets/news/news.2025.15.10.png"],
         "title": "Nine ISD Faculty Members Recognized Among the World’s Top 2% of Most-Cited Scientists for 2025",
-        "type": "News"
+        "type": "news"
     },
     {
         "date": "2025-09-02",
@@ -63,7 +63,7 @@
         "id": 7,
         "pictures": ["/src/assets/news/news.2025.09.02.png"],
         "title": "Prof. Qijia SHAO Selected as Emerging Rockstar in IEEE Pervasive Computing magazine",
-        "type": "News"
+        "type": "news"
     },
     {
         "date": "2025-08-21",
@@ -81,7 +81,7 @@
             "/src/assets/news/news.2025.08.21.06.png"
         ],
         "title": "Minister of Education of China Jinpeng HUAI Visited ISDworks!, Witnessed Students' Innovative Achievement in Innovation",
-        "type": "News"
+        "type": "news"
     },
     {
         "date": "2025-07-28",
@@ -98,7 +98,7 @@
             "/src/assets/news/news.2025.07.28.05.png"
         ],
         "title": "InnoBay Summer Camp 2025 - Turning Marine Innovation into Action in the Greater Bay Area ",
-        "type": "News"
+        "type": "news"
     },
     {
         "date": "2025-07-07",
@@ -114,7 +114,7 @@
             "/src/assets/news/news.2025.07.07.04.jpg"
         ],
         "title": "ISD PhD Students Won Red Dot: Best of the Best Design Award 2025",
-        "type": "News"
+        "type": "news"
     },
     {
         "date": "2024-10-22",
@@ -125,6 +125,6 @@
         "id": 11,
         "pictures": ["/src/assets/news/evt.2024.10.22.png"],
         "title": "[ISD Seminar] Introduction to F1Tenth Robotic Driving and Underwater Internet of Things ",
-        "type": "Events"
+        "type": "events"
     }
 ]

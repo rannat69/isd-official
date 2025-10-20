@@ -1,4 +1,4 @@
-export type NewsType = 'News' | 'Achievements' | 'Events';
+export type NewsType = 'news' | 'achievements' | 'events';
 
 export interface NewsEntry {
     id: number;
@@ -12,21 +12,21 @@ export interface NewsEntry {
     evt_location?: string | null;
 }
 
-export type CategoryFilter = 'All' | NewsType;
+export type CategoryFilter = 'all' | NewsType;
 export type SortOption = 'newest' | 'oldest';
 
 export interface ListOptions {
     category?: CategoryFilter;
-    year?: number | 'All';
+    year?: number | 'all';
     sort?: SortOption;
 }
 
 export function filterNews(items: NewsEntry[], opts: ListOptions = {}) {
-    const { category = 'All', year = 'All' } = opts;
+    const { category = 'all', year = 'all' } = opts;
     return items.filter((it) => {
-        const inCategory = category === 'All' || it.type === category;
+        const inCategory = category === 'all' || it.type === category;
         const inYear =
-            year === 'All' || new Date(it.date).getFullYear() === Number(year);
+            year === 'all' || new Date(it.date).getFullYear() === Number(year);
         return inCategory && inYear;
     });
 }
