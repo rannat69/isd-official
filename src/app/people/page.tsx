@@ -1,6 +1,6 @@
 import HeroImageFile from '@/assets/people/all.jpg';
 
-import HeroImage from '@/components/HeroImage';
+import HeroImagePeople from '@/components/HeroImagePeople';
 import FilterBlock from '@/components/blocks/people/FilterBlock';
 import FacultyBlock from '@/components/blocks/people/FacultyBlock';
 import StaffBlock from '@/components/blocks/people/StaffBlock';
@@ -54,7 +54,8 @@ export default function PeoplePage({
 
     return (
         <div className="min-h-screen flex flex-col ">
-            <HeroImage image={HeroImageFile} />
+            <HeroImagePeople image={HeroImageFile} />
+
             <FilterBlock />
             {/* Render blocks according to selected role */}
             {(role === 'all' || role === 'faculty') && (
@@ -68,7 +69,6 @@ export default function PeoplePage({
             {(role === 'all' || role === 'staff') && (
                 <StaffBlock people={staffList} />
             )}
-     
         </div>
     );
 }
