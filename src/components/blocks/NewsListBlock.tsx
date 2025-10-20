@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import data from '@/data/news_events.json';
 import {
@@ -14,12 +14,14 @@ import { resolveFirstImage } from '@/lib/newsImages';
 import NewsCard from '@/components/NewsCard';
 import EventCard from '@/components/EventCard';
 import Select, { type Option } from '@/components/Select';
+import { ChevronsDown } from 'lucide-react';
 
 export default function NewsListBlock() {
     const allItems = data as NewsEntry[];
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
+    const [visibleCount, setVisibleCount] = useState<number>(5);
 
     const category: CategoryFilter = useMemo(() => {
         return (searchParams.get('category') as CategoryFilter) || 'all';
@@ -52,6 +54,16 @@ export default function NewsListBlock() {
             category,
             year,
         })
+    );
+
+    // Reset visible items when filters change
+    useEffect(() => {
+        setVisibleCount(5);
+    }, [category, year]);
+
+    const visibleItems = useMemo(
+        () => items.slice(0, Math.max(0, visibleCount)),
+        [items, visibleCount]
     );
 
     function updateSearchParams(next: {
@@ -109,7 +121,7 @@ export default function NewsListBlock() {
                 </div>
 
                 <div className="flex flex-col divide-y divide-isd-primary-3">
-                    {items.map((item) => {
+                    {visibleItems.map((item) => {
                         const href = `/news/${item.id}`;
                         const img = resolveFirstImage(item.pictures);
                         const formattedDate = formatDate(item.date);
@@ -143,6 +155,23 @@ export default function NewsListBlock() {
                         );
                     })}
                 </div>
+
+                {visibleCount < items.length && (
+                    <button
+                        onClick={() =>
+                            setVisibleCount((c) =>
+                                Math.min(c + 5, items.length)
+                            )
+                        }
+                        className="cursor-pointer self-center text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                        aria-label="Load more news and events"
+                    >
+                        <div className="flex items-center gap-[12px]">
+                            Load more
+                            <ChevronsDown size={18} />
+                        </div>
+                    </button>
+                )}
             </div>
         </div>
     );
