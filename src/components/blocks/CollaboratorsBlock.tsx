@@ -66,6 +66,7 @@ export default function CollabortorsBlock() {
                     design process.  Mentors are also invited regularly to give
                     share in lectures or seminars; allowing students to keep
                     up-to-date with the new landscape in design and engineering.
+                    <br />
                     ISD hopes to foster closer mentorship between the project
                     mentors and students.  Students will communicate with their
                     mentors via email or over the phone for no more than two
