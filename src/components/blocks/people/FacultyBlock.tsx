@@ -38,7 +38,7 @@ export default function FacultyBlock({
 
                 return (
                     <div
-                        className="grid grid-cols-2 gap-x-section-gap gap-y-component-gap scroll-mt-[295px]"
+                        className="grid grid-cols-2 gap-x-section-gap gap-y-section-title-gap scroll-mt-[295px]"
                         id={type === 'affiliate' ? 'affiliate' : 'faculty'}
                     >
                         {list.map((person) => (

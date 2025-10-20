@@ -53,7 +53,7 @@ export default function PeoplePage({
               });
 
     return (
-        <div className="min-h-screen flex flex-col pb-component-gap">
+        <div className="min-h-screen flex flex-col ">
             <HeroImage image={HeroImageFile} />
             <FilterBlock />
             {/* Render blocks according to selected role */}
@@ -68,6 +68,7 @@ export default function PeoplePage({
             {(role === 'all' || role === 'staff') && (
                 <StaffBlock people={staffList} />
             )}
+     
         </div>
     );
 }
