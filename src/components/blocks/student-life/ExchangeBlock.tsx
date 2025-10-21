@@ -9,7 +9,7 @@ export default function ExchangeBlock() {
     const [readMore, setReadMore] = useState<boolean>(false);
 
     return (
-        <div className=" overflow-clip flex flex-col gap-section-title-gap">
+        <div className=" overflow-clip flex flex-col gap-[41px]">
             <h1 className="text-h1 offset-text-background">Exchange</h1>
 
             <>
