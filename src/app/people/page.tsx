@@ -55,19 +55,22 @@ export default function PeoplePage({
     return (
         <div className="min-h-screen flex flex-col ">
             <HeroImagePeople image={HeroImageFile} />
-
             <FilterBlock />
             {/* Render blocks according to selected role */}
             {(role === 'all' || role === 'faculty') && (
-                <FacultyBlock people={facultyList} />
+                <>
+                    <div className="dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
+                    <FacultyBlock people={facultyList} />
+                </>
             )}
-
             {/*(role === 'all' || role === 'affiliate') && (
                 <FacultyBlock type="affiliate" people={affiliateList} />
             )*/}
-
             {(role === 'all' || role === 'staff') && (
-                <StaffBlock people={staffList} />
+                <>
+                    <div className="dot-pattern before:top-[-45px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
+                    <StaffBlock people={staffList} />
+                </>
             )}
         </div>
     );

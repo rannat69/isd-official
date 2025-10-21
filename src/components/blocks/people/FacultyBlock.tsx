@@ -15,9 +15,7 @@ export default function FacultyBlock({
         <div
             className={
                 'container w-full flex flex-col pt-section-gap py-section-gap gap-section-title-gap' +
-                (type !== 'affiliate'
-                    ? ' dot-pattern before:top-[-95px] before:right-[-60px] [--dot-color:var(--isd-secondary-1)]'
-                    : '')
+                (type !== 'affiliate' ? ' ' : '')
             }
         >
             <h1 className="text-h1 offset-text-background uppercase">
