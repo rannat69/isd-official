@@ -1,32 +1,36 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { X } from 'lucide-react';
-import { resolveCompPhoto } from './StudentCompetitionsBlock';
 
 interface Internship {
     name: string;
-    title: string;
+    program: string;
+    company: string;
+    period: string;
     description: string;
-    moreInfoLink: string;
-    picture: string;
+    moreInfo: string;
+    pictures: StaticImageData[];
 }
 
 interface InternshipReadMoreProps {
-    picture: string;
     name: string;
-    title: string;
+    program: string;
+    company: string;
+    period: string;
     description: string;
-    moreInfoLink: string;
+    moreInfo: string;
+    pictures: StaticImageData[];
     setDetailsOpen: (value: Internship | null) => void;
     detailsOpen: boolean;
 }
 
 export default function InternshipReadMore({
-    picture,
     name,
-    title,
+    program,
+    company,
+    period,
     description,
-    moreInfoLink,
+    moreInfo,
+    pictures,
     setDetailsOpen,
     detailsOpen,
 }: InternshipReadMoreProps) {
@@ -38,7 +42,7 @@ export default function InternshipReadMore({
                     onClick={() => setDetailsOpen(null)}
                 >
                     <div
-                        className="flex flex-col w-full max-w-[1044px] bg-white my-[220px] px-component-gap py-component-gap-sm gap-component-gap-sm items-end"
+                        className="flex flex-col w-full max-w-[1044px] bg-white my-[220px] px-component-gap pb-component-gap pt-component-gap-sm gap-component-gap-sm items-end"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -49,35 +53,47 @@ export default function InternshipReadMore({
                             <span className="text-sm">Close</span>
                         </button>
 
-                        <div className="flex justify-center relative w-full h-[506px] flex-shrink-0 overflow-hidden">
+                        {pictures.length > 1 ? (
+                            <div className="flex w-full gap-component-gap-sm">
+                                {pictures.map((pic, index) => (
+                                    <div key={index} className="block h-full self-center">
+                                        <Image
+                                            key={index}
+                                            src={pic}
+                                            alt={`${name} - ${company} - ${index + 1}`}
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
                             <Image
-                                src={resolveCompPhoto(picture)}
-                                alt={`${name}`}
-                                className="object-cover w-full"
-                                width={900}
-                                height={506}
+                                src={pictures[0]}
+                                alt={`${name} - ${company}`}
+                                className="object-cover w-full h-full"
                             />
-                        </div>
+                        )}
 
                         <div className="flex flex-col gap-[24px] w-full ">
                             <div className="text-h2 font-bold text-primary border-b-1 border-isd-font-2 pb-[10px]">
-                                {title}
+                                {program} ({name})
                             </div>
 
                             <div className="flex flex-col gap-[12px]">
+                                <p className="text-md text-isd-secondary">
+                                    Internship company: {company}
+                                    <br />
+                                    Internship period: {period}
+                                </p>
+
                                 <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
                                     <div>{description}</div>
                                 </div>
 
-                                {moreInfoLink != '' && (
-                                    <Link
-                                        className="text-md text-isd-secondary underline"
-                                        href={moreInfoLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        More info
-                                    </Link>
+                                {moreInfo != '' && (
+                                    <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
+                                        <div>{moreInfo}</div>
+                                    </div>
                                 )}
                             </div>
                         </div>

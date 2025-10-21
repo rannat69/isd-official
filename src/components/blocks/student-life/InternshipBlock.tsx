@@ -1,258 +1,97 @@
 import { StaticImageData } from 'next/image';
-import StudentComp01 from '@/assets/studentlife/student-comp-1.jpg';
-import StudentComp02 from '@/assets/studentlife/student-comp-2.jpg';
-import StudentComp03 from '@/assets/studentlife/student-comp-3.jpg';
-import StudentComp04 from '@/assets/studentlife/student-comp-4.jpg';
-import StudentComp05 from '@/assets/studentlife/student-comp-5.jpg';
-import StudentComp06 from '@/assets/studentlife/student-comp-6.jpg';
-import StudentComp07 from '@/assets/studentlife/student-comp-7.jpg';
-import StudentComp08 from '@/assets/studentlife/student-comp-8.jpg';
-import StudentComp09 from '@/assets/studentlife/student-comp-9.jpg';
-import StudentComp10 from '@/assets/studentlife/student-comp-10.jpg';
-import StudentComp11 from '@/assets/studentlife/student-comp-11.jpg';
-import StudentComp12 from '@/assets/studentlife/student-comp-12.jpg';
-import StudentComp13 from '@/assets/studentlife/student-comp-13.jpg';
-import StudentComp14 from '@/assets/studentlife/student-comp-14.jpg';
-import StudentComp15 from '@/assets/studentlife/student-comp-15.jpg';
-import StudentComp16 from '@/assets/studentlife/student-comp-16.jpg';
-import StudentComp17 from '@/assets/studentlife/student-comp-17.jpg';
-import StudentComp18 from '@/assets/studentlife/student-comp-18.jpg';
-import StudentComp19 from '@/assets/studentlife/student-comp-19.jpg';
-import StudentComp20 from '@/assets/studentlife/student-comp-20.jpg';
-import StudentComp21 from '@/assets/studentlife/student-comp-21.jpg';
-import StudentComp22 from '@/assets/studentlife/student-comp-22.jpg';
+import Intern01 from '@/assets/studentlife/intern-1.jpg';
+import Intern02 from '@/assets/studentlife/intern-2.jpg';
+import Intern03 from '@/assets/studentlife/intern-3.jpg';
+import Intern04 from '@/assets/studentlife/intern-4.jpg';
+import Intern05 from '@/assets/studentlife/intern-5.jpg';
+import Intern06 from '@/assets/studentlife/intern-6.jpg';
+import Intern07 from '@/assets/studentlife/intern-7.jpg';
+import Intern08 from '@/assets/studentlife/intern-8.jpg';
+import Intern09 from '@/assets/studentlife/intern-9.jpg';
+import Intern10 from '@/assets/studentlife/intern-10.jpg';
+import Intern11 from '@/assets/studentlife/intern-11.jpg';
+import Intern12 from '@/assets/studentlife/intern-12.jpg';
+import Intern13 from '@/assets/studentlife/intern-13.jpg';
 
-import noneImg from '@/assets/studentlife/noneImg.png';
 import InternshipReadMore from './InternshipReadMore';
 import { Fragment, useState } from 'react';
 import ImageCard from '@/components/ImageCard';
-
-type Img = StaticImageData | string;
-
-export const internImages: Record<string, Img> = {
-    'student-comp-1.jpg': StudentComp01,
-    'student-comp-2.jpg': StudentComp02,
-    'student-comp-3.jpg': StudentComp03,
-    'student-comp-4.jpg': StudentComp04,
-    'student-comp-5.jpg': StudentComp05,
-    'student-comp-6.jpg': StudentComp06,
-    'student-comp-7.jpg': StudentComp07,
-    'student-comp-8.jpg': StudentComp08,
-    'student-comp-9.jpg': StudentComp09,
-    'student-comp-10.jpg': StudentComp10,
-    'student-comp-11.jpg': StudentComp11,
-    'student-comp-12.jpg': StudentComp12,
-    'student-comp-13.jpg': StudentComp13,
-    'student-comp-14.jpg': StudentComp14,
-    'student-comp-15.jpg': StudentComp15,
-    'student-comp-16.jpg': StudentComp16,
-    'student-comp-17.jpg': StudentComp17,
-    'student-comp-18.jpg': StudentComp18,
-    'student-comp-19.jpg': StudentComp19,
-    'student-comp-20.jpg': StudentComp20,
-    'student-comp-21.jpg': StudentComp21,
-    'student-comp-22.jpg': StudentComp22,
-};
-
-export function resolveInternPhoto(photo?: string): Img {
-    if (!photo) return noneImg;
-    // normalize: remove leading slashes and optional "src/" or "assets/" prefixes
-    const cleaned = photo
-        .replace(/^\/+/, '')
-        .replace(/^src\//, '')
-        .replace(/^assets\//, '');
-    const name = cleaned.split('/').pop();
-    console.log('Resolving photo:', photo, '->', cleaned, '->', name);
-    if (!name) return noneImg;
-    return internImages[name] ?? noneImg;
-}
-
 interface Internship {
     name: string;
-    title: string;
+    program: string;
+    company: string;
+    period: string;
     description: string;
-    moreInfoLink: string;
-    picture: string;
+    moreInfo: string;
+    pictures: StaticImageData[];
 }
 
 const internships: Internship[] = [
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-1.jpg',
-    },
-    {
-        name: 'Mashiat LAMISA',
-        title: 'Mashiat LAMISA [BSc in ISD] - Virtual HealthHACK 2020',
-        description: 'Winner of Virtual HealthHACK 2020 - Social Category',
-        moreInfoLink: 'https://hkinnovationnode.mit.edu/programs/healthhack/',
-        picture: '/assets/studentlife/student-comp-2.jpg',
-    },
-    {
-        name: 'HUI Tsun Kit',
-        title: ' HUI Tsun Kit, Davon [MPhil TLE] - Smart Washroom AIoT Solution',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-3.jpg',
+        name: 'HU Ruyu, Lethe',
+        program: 'BSc ISD student',
+        company: 'atomSTEM',
+        period: 'Dec 2020 - Feb 2021',
         description:
-            'Winner of 2020 Award of the Year and ICT Startup Grand Award',
+            'Designed Python and robotics courses for primary school students.',
+        moreInfo:
+            "It is totally a wonderful trip to design a course as instructor instead of student, and take care of students' feeling and interests while keeping the course efficient. During this internship, I have learnt about course designing and organizing. What's more, making friends with colleagues and collaborate with each other is such a good experience that it was so hard to say goodbye.",
+        pictures: [Intern01, Intern02],
     },
     {
-        name: 'Fung Kwong Chiu',
-        title: 'Fung Kwong Chiu, Michael [MPhil TLE]',
-
+        name: 'TANG Jin',
+        program: 'BSc ISD student',
+        company: 'Xiaomi Communications Co. Ltd.',
+        period: 'Feb 2020 - Aug 2020',
         description:
-            "Top 10 of the entrepreneurship competition in AUA Entrepreneurship Initiative Online Program\n\nFinalist for Hong Kong leg of the 6th China International College Students' 'Internet Plus' Innovation and Entrepreneurship Competition\n\nAwardee of the HKUST Entrepreneurship Acceleration Fund, 2019-2020 Spring\n\nThe Best Performance Teams MentorHUB , 2020",
-
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-4.jpg',
+            'Product manager designing commercial monitors and cooperating with ID, GTM and QC teams.',
+        moreInfo:
+            "I'm in gap period and having my internship in BeiJin, as a product manager in Xiaomi. My main job is to design the commercial monitor and cooperate with many different teams like ID, GTM and QC at the same time... It's lucky that I have half year to go thought a complete commercial project and watch the product finally go into the market! During the whole intern, I was able to use the knowledge I leant in ISD to assist my work and apply them in the product! I feel really meaningful by watching a product coming out from 0 to 1. Overall speaking, this is a valuable opportunity for me and thank for the whole team I worked with!",
+        pictures: [Intern03, Intern04],
     },
     {
-        name: 'LAM Wing Tung',
-        title: 'LAM Wing Tung, Winnie [MPhil TLE]',
+        name: 'WONG Tat Hang',
+        program: 'BSc ISD student',
+        company: 'Swimtelligence Limited',
+        period: 'Aug 2019 - May 2021',
         description:
-            'LAM Wing Tung, Winnie;  TSANG Ka Wing, Taylor [MPhil TLE] - Silver Award at the 6th China International College Students’ “Internet+” Innovation and Entrepreneurship Competition\n\n LAM Wing Tung, Winnie;  TSANG Ka Wing, Taylor; YU Shing Chun[MPhil TLE]  - 第12屆”挑戰杯”中國大學生創業計劃競賽銀奬\n\nLAM Wing Tung, Winnie with her team - The 6th Hong Kong University Student Innovation and Entrepreneurship Competition First prize of Social Enterprise / Culture & Creative Services ',
-        moreInfoLink: 'http://www.tiaozhanbei.net/',
-        picture: '/assets/studentlife/student-comp-5.jpg',
+            'Developed drowning detection wearable device for swimmers, registered company and secured funding.',
+        moreInfo:
+            'Through connections made in ISD courses, I was eventually connected with a group of spirited CUHK medical students hoping to develop a drowning detection wearable device for swimmers. We got along together well and decided to register a company to work on the idea. To get funding for our idea, we developed physical working prototypes for our idea and pitched our idea to startup funds. Our company was eventually funded by the Science Park STEP program and was granted 100K HKD throughout a 1-year period. The funding enabled us to pursue the idea further and refine our product and idea. Although eventually we disbanded the company, this experience taught me the ins and outs of launching a startup and I am excited to give it another try!',
+        pictures: [Intern05, Intern06],
     },
     {
-        name: 'CHEUNG, Ngai, John',
-        title: 'CHEUNG, Ngai, John [MPhil TLE]  - 五軸全自動3D打印技術',
+        name: 'Mark Anthony FUNG',
+        program: 'BSc ISD student',
+        company: 'Neurotech, Hong Kong',
+        period: 'July 2020 - Present',
         description:
-            'Silver Award in Student Innovation Award, Hong Kong ICT Awards 2020',
-        moreInfoLink: 'https://icta.hkace.org.hk/',
-        picture: '/assets/studentlife/student-comp-6.jpg',
+            'Designed testing rigs for animals and molds for casting medical silicone parts.',
+        moreInfo:
+            'During my summer break, I was very fortunate to be given the opportunity to join Neurotech – a biotechnology company specializing in active medical implants – as an intern. My job is to design testing rigs for animals and also design molds for casting medical silicone parts. These tasks were significant tasks for the project, so this made me feel like I am part of the team and I am directly contributing to the progress of the project (unlike the typical interns I heard of which only does some trivial tasks). I am able to utilize my skills and knowledge in areas I have never thought of, like in the biomedical field. I was also able to experience going to laboratories in the HKU Medical School to do some tests and work with the professors and doctors there! Overall, I learned and experienced a lot and I am very thankful to the people that gave me this opportunity.',
+        pictures: [Intern07, Intern08],
     },
     {
-        name: 'FUNG, Ka Yan, Gabrielle and FUNG, Kwong Chiu, Michael',
-        title: 'FUNG, Ka Yan, Gabrielle and FUNG, Kwong Chiu, Michael [MPhil TLE]  - Deep-Learning-Based Technology for Dyslexia Pre-screening',
+        name: 'Jiakun ZHENG, Jack',
+        program: 'BSc ISD student',
+        company: 'ePropulsion',
+        period: 'June - September 2020',
         description:
-            'Bronze Award in Student Innovation Award, Hong Kong ICT Awards 2020',
-        moreInfoLink: 'https://icta.hkace.org.hk/',
-        picture: '/assets/studentlife/student-comp-7.jpg',
-    },
-
-    {
-        name: 'SO, Chak Hei Aaron',
-        title: 'SO, Chak Hei Aaron [MPhil TLE] - Cura Health Limited',
-        description: 'YDC Best Business Plan Award 2019 ',
-        moreInfoLink:
-            'https://daretochange.ydc.org.hk/tc/showcase-curabox.aspx',
-        picture: '/assets/studentlife/student-comp-8.jpg',
+            'Motor driver software engineer working on electronic power systems for boats.',
+        moreInfo:
+            'I worked for ePropulsion, which is a company manufacturing electronic power system for boats, from June 11 to Sept 3. During the three-month internship, I worked as a motor driver software engineer. I found that motor driver is a complicated system which requires broad knowledge from not only electronic software and hardware, but also electromagnetics, mechanics, etc. The comprehensive fields of knowledge and systematic way of thinking I learned from ISD helps me a lot to solve engineering problems in my internship work experience.',
+        pictures: [Intern09, Intern10],
     },
     {
         name: 'Mashiat LAMISA',
-        title: 'Mashiat LAMISA [BSc in ISD] with two UBC team members',
+        program: 'BSc ISD student',
+        company: 'WeLab Bank',
+        period: 'July - September 2020',
         description:
-            'Empower Women Through Technology Prize at Vancouver’s all-female “cmd-f” 24-hour hackathon, while on exchange at the University of British Columbia (UBC)',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-9.jpg',
-    },
-    {
-        name: 'MOLIN, Oscar and WU Jiajie',
-        title: 'MOLIN, Oscar and WU Jiajie [MPhil TLE] with their team - PhoMedics Limited',
-        description:
-            'Gold Award in HKUST-Sino One Million Dollar Entrepreneurship Competition 2020 ',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-10.jpg',
-    },
-    {
-        name: 'OKTAVIUS, Andreas Kenny',
-        title: 'OKTAVIUS, Andreas Kenny [MPhil TLE] with his team - Point Fit Technology Limited',
-        description:
-            'Student Team Award and Best Video Award in Sino One Million Dollar Entrepreneurship Competition 2020\n\nFirst Prize in the CEIBS INNOVATIE China 2020- Connective for the Future Competition',
-        moreInfoLink:
-            'https://www.linkedin.com/posts/hkust-mba_musthavemba-mba-casecompetitions-activity-6664020016083677184-kszW',
-        picture: '/assets/studentlife/student-comp-11.jpg',
-    },
-    {
-        name: 'WONG, Ka Chin',
-        title: 'WONG, Ka Chin [ MPhil TLE] with his team- SPES Tech',
-        description:
-            'President Award and GF Innovation Award in HKUST-Sino One Million Dollar Entrepreneurship Competition 2020\n\nFirst Prize of "Challenge Cup" National Undergraduate Curricular Academic Science and Technology Works\nThird Prize of Beijing Hong Kong Youth Entrepreneurship competition\nTechnology Start-up Support Scheme for University\nHKSTP IncuBio Programme',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-12.jpg',
-    },
-    {
-        name: 'SO, Chak Hei Aaron',
-        title: 'SO, Chak Hei Aaron [MPhil TLE] - Marketemy Limited',
-        description:
-            'Entrepreneur Organisation Global Student Entrepreneur Awards Hong Kong 2018',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-13.jpg',
-    },
-    {
-        name: 'Ali SHAMAZ',
-        title: 'Ali SHAMAZ  [BSc in ISD] with his team - The Mills Fabrica Techstyle & Design',
-        description:
-            'Focus Area Awards in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-14.jpg',
-    },
-    {
-        name: 'CHAN Kai Chi, Eagle',
-        title: 'CHAN Kai Chi, Eagle [MPhil TLE] with his team',
-        description: 'Champion in Value Creation for Technology Award',
-        moreInfoLink:
-            'http://exh.hktdc.com/2019/efairdaily/efse_ict/issue_4.html',
-        picture: '/assets/studentlife/student-comp-15.jpg',
-    },
-    {
-        name: 'CHAN, Sau Kin, Samuel',
-        title: 'CHAN, Sau Kin, Samuel [MPhil TLE] with his team – ClickerMaker',
-        description:
-            'Focus Area Awards-- Social Services & Enterprise Prize in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-16.jpg',
-    },
-    {
-        name: 'LAM Wing Tung, Winnie; TSANG Ka Wing, Taylor',
-        title: 'LAM Wing Tung, Winnie; TSANG Ka Wing, Taylor [MPhil TLE] with their team - FLY healthtech',
-        description:
-            'Student Team Award in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-17.jpg',
-    },
-    {
-        name: 'Mashiat LAMISA and Xuelai WEI',
-        title: 'Mashiat LAMISA and Xuelai WEI [BSc in ISD] with their team',
-        description: 'Champion in MedTech Hackathon HK 2019',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-18.jpg',
-    },
-    {
-        name: 'SHU Yiwei, Ervin',
-        title: 'SHU Yiwei, Ervin [MPhil TLE] with his team - Horizon Biochip',
-        description:
-            'President Award and Focus Area Awards- Healthcare Prize  in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-19.jpg',
-    },
-
-    {
-        name: 'Tat Hang WONG, Yukai ZHANG and Jin TANG',
-        title: 'Tat Hang WONG, Yukai ZHANG and Jin TANG [BSc in ISD] with their team',
-        description: '1st winner in APDEC x IDEA Design Challenge',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-20.jpg',
-    },
-    {
-        name: 'WONG Ka Chin, Leo',
-        title: 'WONG Ka Chin, Leo [MPhil TLE] with his team – SPES Tech',
-        description:
-            'Gold Prize in The 5th Hong Kong University Student Innovation and Entrepreneurship Competition\n\nGold Prize of The 5th China College Students "Internet Plus" Innovation and Entrepreneurship Competition\n\nU*STAR Award of the Startup Acceleration Program HKUST TTC\n\nThe Proof-of-Concept Fund of HKUST TTC\n\nFirst Runner Up of HKUST MBA Internal Business Plan Competition\n\nTechnology Start-up Support Scheme for University\n\nMerck China Acceleration Programme\n\nTop 3 Award o FYP+ Scheme of Hong Kong X Foundation',
-        moreInfoLink:
-            'https://idendron.hku.hk/the-5th-hong-kong-university-student-innovation-and-entrepreneurship-competition/',
-        picture: '/assets/studentlife/student-comp-21.jpg',
-    },
-    {
-        name: 'Zhengyu FU',
-        title: 'Zhengyu FU [BSc in ISD] with his team',
-        description:
-            'Champion in Cybersecurity Competition co-hosted by SBM and China Everbright Bank',
-        moreInfoLink: '',
-        picture: '/assets/studentlife/student-comp-22.jpg',
+            'Product Intern at WeLab, an up and coming virtual bank in Hong Kong.',
+        moreInfo:
+            "This summer, I got the opportunity to work as a Product Intern at WeLab – which is a up and coming virtual bank in Hong Kong. Being an intern at WeLab debunked a myth believed by my past self from 2016 where a fictional intern's job was to make tea for their supervisor. If you're a nerd like me, this would probably be the most interesting part of this post where I dissect what my assignments looked like in this internship.",
+        pictures: [Intern11, Intern12, Intern13],
     },
 ];
 
@@ -278,9 +117,9 @@ export default function InternshipBlock() {
                         <Fragment key={index}>
                             <ImageCard
                                 key={index}
-                                title={intern.title}
-                                imageSrc={resolveInternPhoto(intern.picture)}
-                                description={intern.description}
+                                title={`${intern.name} - ${intern.company}`}
+                                imageSrc={intern.pictures[0]}
+                                description={`Internship company: ${intern.company}\nInternship period: ${intern.period}`}
                                 onClick={() => setReadMore(intern)}
                                 lineLimit={2}
                             />

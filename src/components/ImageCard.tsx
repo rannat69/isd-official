@@ -38,7 +38,7 @@ export default function ImageCard({
 
                     <p
                         className={
-                            'md:text-sm text-xs text-isd-font-3 ' +
+                            'md:text-sm text-xs text-isd-font-3 whitespace-pre-wrap ' +
                             (lineLimit ? ` line-clamp-${lineLimit}` : '')
                         }
                     >
