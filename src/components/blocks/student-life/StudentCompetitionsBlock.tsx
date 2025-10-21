@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 import StudentCompTitle from '@/assets/studentlife/student-comp-title.jpg';
@@ -28,6 +27,7 @@ import StudentComp22 from '@/assets/studentlife/student-comp-22.jpg';
 import noneImg from '@/assets/studentlife/noneImg.png';
 import StudentCompetitionReadMore from './StudentCompetitionReadMore';
 import { useState } from 'react';
+import ImageCard from '@/components/ImageCard';
 
 type Img = StaticImageData | string;
 
@@ -148,8 +148,7 @@ const studentComps: StudentCompetition[] = [
         title: 'Mashiat LAMISA [BSc in ISD] with two UBC team members',
         description:
             'Empower Women Through Technology Prize at Vancouver’s all-female “cmd-f” 24-hour hackathon, while on exchange at the University of British Columbia (UBC)',
-        moreInfoLink:
-            '',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-9.jpg',
     },
     {
@@ -190,8 +189,7 @@ const studentComps: StudentCompetition[] = [
         title: 'Ali SHAMAZ  [BSc in ISD] with his team - The Mills Fabrica Techstyle & Design',
         description:
             'Focus Area Awards in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink:
-            '',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-14.jpg',
     },
     {
@@ -207,8 +205,7 @@ const studentComps: StudentCompetition[] = [
         title: 'CHAN, Sau Kin, Samuel [MPhil TLE] with his team – ClickerMaker',
         description:
             'Focus Area Awards-- Social Services & Enterprise Prize in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink:
-            '',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-16.jpg',
     },
     {
@@ -216,8 +213,7 @@ const studentComps: StudentCompetition[] = [
         title: 'LAM Wing Tung, Winnie; TSANG Ka Wing, Taylor [MPhil TLE] with their team - FLY healthtech',
         description:
             'Student Team Award in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink:
-            '',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-17.jpg',
     },
     {
@@ -232,8 +228,7 @@ const studentComps: StudentCompetition[] = [
         title: 'SHU Yiwei, Ervin [MPhil TLE] with his team - Horizon Biochip',
         description:
             'President Award and Focus Area Awards- Healthcare Prize  in One Million Dollar Entrepreneurship Competition 2019',
-        moreInfoLink:
-            '',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-19.jpg',
     },
 
@@ -265,23 +260,6 @@ const studentComps: StudentCompetition[] = [
 
 export default function StudentCompetitionsBlock() {
     const [readMore, setReadMore] = useState<StudentCompetition | null>(null);
-
-    const truncateText = (text: string, maxLength: number) => {
-        const cleanedText = text.replace(/\n/g, ' ');
-
-        if (cleanedText.length <= maxLength) {
-            return { truncated: false, text: cleanedText };
-        }
-
-        const truncatedText = cleanedText.slice(0, maxLength);
-        const lastSpaceIndex = truncatedText.lastIndexOf(' ');
-        const finalText = truncatedText.slice(
-            0,
-            lastSpaceIndex !== -1 ? lastSpaceIndex : maxLength
-        );
-
-        return { truncated: true, text: finalText };
-    };
 
     return (
         <div className=" overflow-clip flex flex-col  gap-section-title-gap ">
@@ -337,58 +315,24 @@ export default function StudentCompetitionsBlock() {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap justify-between gap-y-[41px]">
-                    {studentComps.map((comp, index) => {
-                        const { truncated, text } = truncateText(
-                            comp.description,
-                            70
-                        );
-
-                        return (
-                            <div
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] auto-cols-min gap-component-gap-sm">
+                    {studentComps.map((comp, index) => (
+                        <>
+                            <ImageCard
                                 key={index}
-                                className="border rounded-[10px] cursor-pointer flex flex-col  w-[calc(100%-10px)] md:w-[calc(100%-10px)] lg:w-[calc(50%-10px)]"
-                                onClick={() => {
-                                    if (readMore === comp) {
-                                        setReadMore(null);
-                                    } else {
-                                        setReadMore(comp);
-                                    }
-                                }}
-                            >
-                                <div>
-                                    <Image
-                                        src={resolveCompPhoto(comp.picture)}
-                                        alt="Student competition"
-                                        className="w-full h-[252px] object-cover"
-                                        width={432}
-                                        height={288}
-                                    />
-                                </div>
-
-                                <div className="flex flex-col px-element-gap  py-[18px] gap-element-gap">
-                                    <div className="flex justify-between items-center">
-                                        {' '}
-                                        {/* Flex pour aligner le contenu */}
-                                        <h2 className="text-h2 font-bold text-primary">
-                                            {comp.name}
-                                        </h2>
-                                        <ArrowRight className="text-primary" />
-                                    </div>
-                                    <p className="text-sm text-isd-font-3 whitespace-pre-line">
-                                        {text}
-                                        {truncated && '...'}
-                                    </p>
-                                </div>
-
-                                <StudentCompetitionReadMore
-                                    {...comp}
-                                    setDetailsOpen={setReadMore}
-                                    detailsOpen={readMore === comp}
-                                />
-                            </div>
-                        );
-                    })}
+                                title={comp.title}
+                                imageSrc={resolveCompPhoto(comp.picture)}
+                                description={comp.description}
+                                onClick={() => setReadMore(comp)}
+                                lineLimit={2}
+                            />
+                            <StudentCompetitionReadMore
+                                {...comp}
+                                detailsOpen={readMore === comp}
+                                setDetailsOpen={setReadMore}
+                            />
+                        </>
+                    ))}
                 </div>
             </div>
         </div>
