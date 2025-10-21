@@ -272,9 +272,7 @@ export default function MSTLEBlock() {
                                             <p>Start-up Workshop</p>
                                         </div>
                                         <div>
-                                            <div className="w-[24px]">
-                                                
-                                            </div>
+                                            <div className="w-[24px]"></div>
                                         </div>
                                         <div className="flex-1 bg-isd-secondary-1 p-element-gap">
                                             Elective courses are a selection of

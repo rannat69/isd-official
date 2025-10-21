@@ -29,7 +29,10 @@ export default function Navbar() {
             href: '/people?role=faculty&area=all&tag=regular',
             submenu: {
                 items: [
-                    { name: 'Faculty', href: '/people?role=faculty&area=all&tag=regular' },
+                    {
+                        name: 'Faculty',
+                        href: '/people?role=faculty&area=all&tag=regular',
+                    },
                     { name: 'ISD Staff', href: '/people?role=staff' },
                 ],
             },
