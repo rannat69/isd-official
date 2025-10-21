@@ -19,7 +19,7 @@ export default function ImageCard({
     lineLimit?: number;
 }) {
     const content = () => (
-        <div className="flex flex-col rounded-xl border border-isd-primary-3 cursor-pointer">
+        <div className="flex flex-col rounded-xl border border-isd-primary-3 cursor-pointer h-full overflow-hidden">
             <Image
                 src={imageSrc}
                 alt={title}
@@ -30,7 +30,7 @@ export default function ImageCard({
             <div className="flex-1">
                 <div className="py-element-gap px-[14px] flex flex-col gap-element-gap h-full">
                     <div className="flex flex-row text-primary items-center">
-                        <h2 className="flex-1 md:text-h2 text-md font-bold line-clamp-2">
+                        <h2 className="flex-1 md:text-h2 text-md font-bold line-clamp-1">
                             {title}
                         </h2>
                         <ArrowRight size={20} strokeWidth={3} />
@@ -50,11 +50,11 @@ export default function ImageCard({
     );
 
     return onClick ? (
-        <button onClick={onClick} className="w-full text-left">
+        <button onClick={onClick} className="w-full text-left h-full">
             {content()}
         </button>
     ) : (
-        <Link href={link} className="w-full text-left">
+        <Link href={link} className="w-full text-left h-full">
             {content()}
         </Link>
     );
