@@ -3,10 +3,11 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import StudentCompetitionsBlock from './student-life/StudentCompetitionsBlock';
+import ExtraActivitivesBlock from './student-life/ExtraActivitiesBlock';
+import InternshipBlock from './student-life/InternshipBlock';
 import ExchangeBlock from './student-life/ExchangeBlock';
 import AlumniSharingBlock from './student-life/AlumniSharingBlock';
 import UsefulLinksBlock from './student-life/UsefulLinksBlock';
-import ExtraActivitivesBlock from './student-life/ExtraActivitiesBlock';
 
 export default function StudentLifeBlock() {
     const searchParams = useSearchParams();
@@ -61,7 +62,7 @@ export default function StudentLifeBlock() {
             <div className=" overflow-y-clip flex flex-col  gap-component-gap-sm text-md leading-[28px] text-isd-font-1">
                 {page === 'stud-comp' && <StudentCompetitionsBlock />}
                 {page === 'extra-act' && <ExtraActivitivesBlock />}
-                {page === 'intern' && <IntershipsBlock />}
+                {page === 'intern' && <InternshipBlock />}
                 {page === 'exchange' && <ExchangeBlock />}
                 {page === 'alumni' && <AlumniSharingBlock />}
                 {page === 'links' && <UsefulLinksBlock />}
