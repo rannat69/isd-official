@@ -35,11 +35,11 @@ export default function StudentCompetitionReadMore({
         <>
             {detailsOpen && (
                 <div
-                    className="fixed top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center z-50 overflow-auto"
+                    className="fixed  top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center   z-50 overflow-auto"
                     onClick={() => setDetailsOpen(null)}
                 >
                     <div
-                        className="flex flex-col bg-white m-[198px] px-component-gap py-component-gap-sm gap-component-gap-sm items-end"
+                        className="flex flex-col container bg-white my-[5%] px-component-gap py-component-gap-sm gap-component-gap-sm items-end  "
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -50,11 +50,11 @@ export default function StudentCompetitionReadMore({
                             <span className="text-sm">Close</span>
                         </button>
 
-                        <div className="relative w-[900px] h-[506px] flex-shrink-0 overflow-hidden">
+                        <div className="flex justify-center relative w-full h-[506px] flex-shrink-0 overflow-hidden">
                             <Image
                                 src={resolveCompPhoto(picture)}
                                 alt={`${name}`}
-                                className="w-[900px] h-[506px] object-cover" // Ajoutez ces classes
+                                className="object-cover"
                                 width={900}
                                 height={506}
                             />
@@ -66,7 +66,7 @@ export default function StudentCompetitionReadMore({
                             </div>
 
                             <div className="flex flex-col gap-[12px]">
-                                <div className="flex flex-col gap-footer-gap">
+                                <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
                                     <div>{description}</div>
                                 </div>
 

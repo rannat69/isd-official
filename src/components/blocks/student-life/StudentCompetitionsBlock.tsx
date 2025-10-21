@@ -221,44 +221,67 @@ const studentComps: StudentCompetition[] = [
         picture: '/assets/studentlife/student-comp-17.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'Mashiat LAMISA and Xuelai WEI',
+        title: 'Mashiat LAMISA and Xuelai WEI [BSc in ISD] with their team',
+        description: 'Champion in MedTech Hackathon HK 2019',
+        moreInfoLink: 'https://www.dreamcatchers.hku.hk/?p=57491',
         picture: '/assets/studentlife/student-comp-18.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'SHU Yiwei, Ervin',
+        title: 'SHU Yiwei, Ervin [MPhil TLE] with his team - Horizon Biochip',
+        description:
+            'President Award and Focus Area Awards- Healthcare Prize  in One Million Dollar Entrepreneurship Competition 2019',
+        moreInfoLink:
+            'https://onemilliondollar.ust.hk/2019/awards_announcement',
         picture: '/assets/studentlife/student-comp-19.jpg',
     },
+
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'Tat Hang WONG, Yukai ZHANG and Jin TANG',
+        title: 'Tat Hang WONG, Yukai ZHANG and Jin TANG [BSc in ISD] with their team',
+        description: '1st winner in APDEC x IDEA Design Challenge',
+        moreInfoLink: 'http://apdec.ti.unpar.ac.id/',
         picture: '/assets/studentlife/student-comp-20.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'WONG Ka Chin, Leo',
+        title: 'WONG Ka Chin, Leo [MPhil TLE] with his team – SPES Tech',
+        description:
+            'Gold Prize in The 5th Hong Kong University Student Innovation and Entrepreneurship Competition\n\nGold Prize of The 5th China College Students "Internet Plus" Innovation and Entrepreneurship Competition\n\nU*STAR Award of the Startup Acceleration Program HKUST TTC\n\nThe Proof-of-Concept Fund of HKUST TTC\n\nFirst Runner Up of HKUST MBA Internal Business Plan Competition\n\nTechnology Start-up Support Scheme for University\n\nMerck China Acceleration Programme\n\nTop 3 Award o FYP+ Scheme of Hong Kong X Foundation',
+        moreInfoLink:
+            'https://idendron.hku.hk/the-5th-hong-kong-university-student-innovation-and-entrepreneurship-competition/',
         picture: '/assets/studentlife/student-comp-21.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'Zhengyu FU',
+        title: 'Zhengyu FU [BSc in ISD] with his team',
+        description:
+            'Champion in Cybersecurity Competition co-hosted by SBM and China Everbright Bank',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-22.jpg',
     },
 ];
 
 export default function StudentCompetitionsBlock() {
     const [readMore, setReadMore] = useState<StudentCompetition | null>(null);
+
+    const truncateText = (text: string, maxLength: number) => {
+        const cleanedText = text.replace(/\n/g, ' ');
+
+        if (cleanedText.length <= maxLength) {
+            return { truncated: false, text: cleanedText };
+        }
+
+        const truncatedText = cleanedText.slice(0, maxLength);
+        const lastSpaceIndex = truncatedText.lastIndexOf(' ');
+        const finalText = truncatedText.slice(
+            0,
+            lastSpaceIndex !== -1 ? lastSpaceIndex : maxLength
+        );
+
+        return { truncated: true, text: finalText };
+    };
 
     return (
         <div className=" overflow-clip flex flex-col  gap-section-title-gap ">
@@ -314,12 +337,17 @@ export default function StudentCompetitionsBlock() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-[60px] gap-y-[41px]">
+                <div className="flex flex-wrap justify-between gap-y-[41px]">
                     {studentComps.map((comp, index) => {
+                        const { truncated, text } = truncateText(
+                            comp.description,
+                            70
+                        );
+
                         return (
                             <div
                                 key={index}
-                                className="border rounded-[10px] cursor-pointer"
+                                className="border rounded-[10px] cursor-pointer flex flex-col  w-[calc(100%-10px)] md:w-[calc(100%-10px)] lg:w-[calc(50%-10px)]"
                                 onClick={() => {
                                     if (readMore === comp) {
                                         setReadMore(null);
@@ -332,21 +360,24 @@ export default function StudentCompetitionsBlock() {
                                     <Image
                                         src={resolveCompPhoto(comp.picture)}
                                         alt="Student competition"
-                                        className="w-[432px] h-[288px] object-cover" // Ajoutez ces classes
+                                        className="w-full h-[252px] object-cover"
                                         width={432}
                                         height={288}
                                     />
                                 </div>
 
-                                <div className="flex flex-col px-element-gap py-[24px] gap-element-gap">
-                                    <h2 className="text-h2 font-bold text-primary ">
-                                        <div className="flex justify-between items-center">
+                                <div className="flex flex-col px-element-gap  py-[18px] gap-element-gap">
+                                    <div className="flex justify-between items-center">
+                                        {' '}
+                                        {/* Flex pour aligner le contenu */}
+                                        <h2 className="text-h2 font-bold text-primary">
                                             {comp.name}
-                                            <ArrowRight className="text-primary" />
-                                        </div>
-                                    </h2>
-                                    <p className="text-sm text-isd-font-3">
-                                        {comp.description}
+                                        </h2>
+                                        <ArrowRight className="text-primary" />
+                                    </div>
+                                    <p className="text-sm text-isd-font-3 whitespace-pre-line">
+                                        {text}
+                                        {truncated && '...'}
                                     </p>
                                 </div>
 
