@@ -14,24 +14,24 @@ export default function InternshipBlock() {
                         ISD works with our industrial partners to provide
                         students with real-world perspective and design and
                         technical skills through projects, internship, and
-                        mentorship.  ISD students work on industry-related
+                        mentorship. ISD students work on industry-related
                         problems and projects throughout the program and along
                         the way, have ample opportunities to meet and consult
-                        with our industrial partners.  In their final year, our
+                        with our industrial partners. In their final year, our
                         students work on company-sponsored Capstone projects
                         that utilize what they&apos;ve learned throughout the
                         program and challenge them to be innovators, designers
-                        and/or entrepreneurs.  Students and faculty advisors
-                        work closely with the industrial partners having
-                        frequent communication sessions, prototyping reviews,
-                        and tracking of progress to ensure project success.
-                        Through the interactions with the industrial partners,
-                        our students gain valuable knowledge and real-world
-                        experience.   In turn, our industrial partners gain
-                        fresh insights from our students and also project
-                        results that can be used in their company.  Our
-                        industrial partners can also have opportunities to
-                        recruit excellent students into their company. 
+                        and/or entrepreneurs. Students and faculty advisors work
+                        closely with the industrial partners having frequent
+                        communication sessions, prototyping reviews, and
+                        tracking of progress to ensure project success. Through
+                        the interactions with the industrial partners, our
+                        students gain valuable knowledge and real-world
+                        experience. In turn, our industrial partners gain fresh
+                        insights from our students and also project results that
+                        can be used in their company. Our industrial partners
+                        can also have opportunities to recruit excellent
+                        students into their company.
                     </p>
                 </div>
             ),
@@ -43,11 +43,12 @@ export default function InternshipBlock() {
                     <p>
                         While all HKUST students are encouraged and supported
                         for outside exchange as part of Academy of
-                        Interdisciplinary Studies' coordinated exchange program,
-                        the strong project-based focus of ISD curriculum is also
-                        highly regarded in certain international institutions;
-                        and careful study plan mapping with partner institutions
-                        enriches the overall exchange experience.
+                        Interdisciplinary Studies&apos;coordinated exchange
+                        program, the strong project-based focus of ISD
+                        curriculum is also highly regarded in certain
+                        international institutions; and careful study plan
+                        mapping with partner institutions enriches the overall
+                        exchange experience.
                         <br /> The following institutions&apos; curriculum and/
                         or available project-based learning opportunities are
                         considered strong complement to ISD students&apos; study

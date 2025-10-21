@@ -46,7 +46,7 @@ export default function Navbar() {
                         name: 'Internship & Exchange',
                         href: '/academics/internship',
                     },
-                    { name: 'Facilities', href: '/academics' },
+                    { name: 'Facilities', href: '/academics/facilities' },
                 ],
             },
         },
