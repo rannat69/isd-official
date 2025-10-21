@@ -134,7 +134,7 @@ export default function NewsListBlock() {
                                     date={formattedDate}
                                     time={item.evt_time ?? null}
                                     location={item.evt_location ?? null}
-                                    imageSrc={img.src}
+                                    image={img}
                                 />
                             );
                         }
@@ -150,7 +150,7 @@ export default function NewsListBlock() {
                                 title={item.title}
                                 excerpt={stripTags(item.details)}
                                 date={formattedDate}
-                                imageSrc={img.src}
+                                image={img}
                             />
                         );
                     })}

@@ -1,17 +1,19 @@
+import Image, { StaticImageData } from 'next/image';
+
 export default function NewsCard({
     href,
     category,
     title,
     excerpt,
     date,
-    imageSrc,
+    image,
 }: {
     href: string;
     category: 'News' | 'Achievement';
     title: string;
     excerpt: string;
     date: string;
-    imageSrc: string;
+    image: StaticImageData;
 }) {
     return (
         <a
@@ -19,9 +21,8 @@ export default function NewsCard({
             href={href}
         >
             <div className="w-[396px] h-[240px] bg-isd-font-2/10">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src={imageSrc}
+                <Image
+                    src={image}
                     alt={title}
                     style={{
                         width: '100%',

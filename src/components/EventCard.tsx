@@ -1,4 +1,5 @@
 import { Calendar, Clock, MapPin } from 'lucide-react';
+import Image, { StaticImageData } from 'next/image';
 
 export default function EventCard({
     href,
@@ -6,14 +7,14 @@ export default function EventCard({
     date,
     time,
     location,
-    imageSrc,
+    image,
 }: {
     href: string;
     title: string;
     date: string;
     time?: string | null;
     location?: string | null;
-    imageSrc: string;
+    image: StaticImageData;
 }) {
     return (
         <a
@@ -21,9 +22,8 @@ export default function EventCard({
             href={href}
         >
             <div className="w-[396px] h-[240px] bg-isd-font-2/10">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src={imageSrc}
+                <Image
+                    src={image}
                     alt={title}
                     style={{
                         width: '100%',
