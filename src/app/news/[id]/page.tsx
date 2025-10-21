@@ -1,8 +1,10 @@
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import data from '@/data/news_events.json';
-import { resolveFirstImage } from '@/lib/newsImages';
+import { resolveImages } from '@/lib/newsImages';
 import { type NewsEntry } from '@/lib/newsFilter';
+import Carousel from '@/components/Carousel';
+import Image from 'next/image';
 
 export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -13,7 +15,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
     const items = data as NewsEntry[];
     const item = items.find((it) => String(it.id) === params.id);
     if (!item) return null;
-    const img = resolveFirstImage(item.pictures);
+    const images = resolveImages(item.pictures);
 
     return (
         <div className="container pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">
@@ -29,17 +31,21 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
                 <div className="flex flex-col gap-section-title-gap">
                     <h1 className="text-h1">{item.title}</h1>
 
-                    <div className="w-full bg-isd-font-2/10">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src={img.src}
-                            alt={item.title}
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                            }}
-                        />
+                    <div className="w-full bg-isd-font-2/10 relative">
+                        {images.length > 1 ? (
+                            <div className="h-[480px]">
+                                <Carousel images={images} />
+                            </div>
+                        ) : (
+                            <Image
+                                src={images[0]}
+                                alt={item.title}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            />
+                        )}
                     </div>
 
                     <div className="flex flex-col gap-component-gap text-md text-isd-font-1">

@@ -61,13 +61,10 @@ export function resolveNewsImage(path?: string | null): StaticImageData {
     return imageByFileName[fileName] ?? noneImg;
 }
 
-export function resolveFirstImage(
-    paths?: Array<string | null>
-): StaticImageData {
-    if (!paths || paths.length === 0) return noneImg;
-    for (const p of paths) {
-        const img = resolveNewsImage(p || undefined);
-        if (img) return img;
-    }
-    return noneImg;
+export function resolveImages(paths?: Array<string | null>): StaticImageData[] {
+    if (!paths || paths.length === 0) return [noneImg];
+    const images = paths
+        .map((p) => resolveNewsImage(p || undefined))
+        .filter((img) => img !== noneImg);
+    return images.length > 0 ? images : [noneImg];
 }
