@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from '../../Select';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { AreaChart } from 'lucide-react';
 
 export default function FilterBlock() {
     const roles = [
@@ -33,7 +32,8 @@ export default function FilterBlock() {
     const searchParams = useSearchParams();
 
     // initialize from URL so the UI reflects the current page state
-    const initialRole = searchParams?.get('role') ?? 'all';
+    // (defaults - role: faculty, area: all, keyword: '', tag: '')
+    const initialRole = searchParams?.get('role') ?? 'faculty';
     const initialArea = searchParams?.get('area') ?? 'all';
     const initialKeyword = searchParams?.get('keyword') ?? '';
     const initialTag = searchParams?.get('tag') ?? '';
@@ -96,12 +96,11 @@ export default function FilterBlock() {
     }
 
     function handleClear() {
-        setRole('all');
+        setRole('faculty');
         setArea('all');
         setKeyword('');
-        setTag('');
         applyFilters({
-            role: 'all',
+            role: 'faculty',
             area: 'all',
             keyword: '',
             tag: '',
@@ -116,7 +115,6 @@ export default function FilterBlock() {
             ></div>
             <div className="container w-full flex pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
                 <div className="flex gap-component-gap-sm ">
-                    {/* TODO - set default to Faculty remove placeholder */}
                     <Select
                         id="role-select"
                         options={roles}
@@ -127,7 +125,6 @@ export default function FilterBlock() {
                             applyFilters({ role: val, area, keyword, tag });
                         }}
                         className="min-w-[150px]"
-                        // placeholder="Filter by Role"
                     />
 
                     <Select
@@ -138,11 +135,7 @@ export default function FilterBlock() {
                             const val = String(v);
                             setArea(val);
 
-                            if (
-                                val !== 'all' &&
-                                tag != '' &&
-                                tag != 'regular'
-                            ) {
+                            if (tag != '' && tag != 'regular') {
                                 setDisplayTags('regular');
                                 setTag('');
                                 applyFilters({
