@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 export default function FilterBlock() {
     const roles = [
         { value: 'faculty', label: 'Faculty' },
-        { value: 'staff', label: 'ISD Staff' },
+        { value: 'staff', label: 'Staff' },
     ];
 
     const areas = [
