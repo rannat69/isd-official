@@ -26,7 +26,7 @@ import StudentComp22 from '@/assets/studentlife/student-comp-22.jpg';
 
 import noneImg from '@/assets/studentlife/noneImg.png';
 import StudentCompetitionReadMore from './StudentCompetitionReadMore';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import ImageCard from '@/components/ImageCard';
 
 type Img = StaticImageData | string;
@@ -317,7 +317,7 @@ export default function StudentCompetitionsBlock() {
 
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] auto-cols-min gap-component-gap-sm">
                     {studentComps.map((comp, index) => (
-                        <>
+                        <Fragment key={index}>
                             <ImageCard
                                 key={index}
                                 title={comp.title}
@@ -331,7 +331,7 @@ export default function StudentCompetitionsBlock() {
                                 detailsOpen={readMore === comp}
                                 setDetailsOpen={setReadMore}
                             />
-                        </>
+                        </Fragment>
                     ))}
                 </div>
             </div>
