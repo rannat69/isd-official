@@ -320,7 +320,7 @@ export default function StudentCompetitionsBlock() {
                         <Fragment key={index}>
                             <ImageCard
                                 key={index}
-                                title={comp.title}
+                                title={comp.name}
                                 imageSrc={resolveCompPhoto(comp.picture)}
                                 description={comp.description}
                                 onClick={() => setReadMore(comp)}
