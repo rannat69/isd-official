@@ -7,14 +7,13 @@ import { AreaChart } from 'lucide-react';
 
 export default function FilterBlock() {
     const roles = [
-        { value: 'all', label: 'All Roles' },
         { value: 'faculty', label: 'Faculty' },
         { value: 'staff', label: 'ISD Staff' },
     ];
 
     const areas = [
         { value: 'all', label: 'All Areas' },
-        { value: 'health_tech', label: 'Health Tech' },
+        { value: 'health_tech', label: 'Health-Tech' },
         { value: 'sustainable_tech', label: 'Sustainable-Tech' },
         { value: 'design_tech', label: 'Design-Tech' },
         { value: 'marine_tech', label: 'Marine-Tech' },
@@ -43,15 +42,29 @@ export default function FilterBlock() {
     const [area, setArea] = useState<string>(initialArea);
     const [keyword, setKeyword] = useState<string>(initialKeyword);
     const [tag, setTag] = useState<string>(initialTag);
+    const [displayTags, setDisplayTags] = useState<string>('all');
 
     const paramString = searchParams?.toString() ?? '';
 
     useEffect(() => {
         // keep state synced if the user navigates with back/forward
-        setRole(searchParams?.get('role') ?? 'all');
+        setRole(searchParams?.get('role') ?? 'faculty');
         setArea(searchParams?.get('area') ?? 'all');
         setKeyword(searchParams?.get('keyword') ?? '');
-        setTag(searchParams?.get('tag') ?? '');
+        setTag(searchParams?.get('tag') ?? 'regular');
+
+        if (
+            searchParams?.get('area') != 'all' &&
+            searchParams?.get('role') === 'faculty'
+        ) {
+            setDisplayTags('regular');
+        } else {
+            if (searchParams?.get('role') === 'faculty') {
+                setDisplayTags('all');
+            } else {
+                setDisplayTags('none');
+            }
+        }
     }, [paramString, searchParams]);
 
     function applyFilters(newParams?: {
@@ -72,7 +85,10 @@ export default function FilterBlock() {
 
         // push so page updates and server component will re-render
         const qs = params.toString();
-        router.push(`/people${qs ? `?${qs}` : ''}`);
+
+        // if  tag, add #faculty at the end
+
+        router.push(`/people${qs ? `?${qs}` : ''}#select`);
     }
 
     function handleSearch() {
@@ -94,34 +110,55 @@ export default function FilterBlock() {
 
     return (
         <div className="bg-isd-primary-2">
+            <div
+                id="select"
+                className="absolute top-[50%] left-0 w-full h-0 invisible"
+            ></div>
             <div className="container w-full flex pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
-                <Select
-                    id="role-select"
-                    options={roles}
-                    value={role}
-                    onChange={(v) => {
-                        const val = String(v);
-                        setRole(val);
-                        applyFilters({ role: val, area, keyword, tag });
-                    }}
-                    placeholder="Filter by Role"
-                    className="w-[180px]"
-                />
+                <div className="flex gap-component-gap-sm ">
+                    <Select
+                        id="role-select"
+                        options={roles}
+                        value={role}
+                        onChange={(v) => {
+                            const val = String(v);
+                            setRole(val);
+                            applyFilters({ role: val, area, keyword, tag });
+                        }}
+                        placeholder="Filter by Role"
+                    />
 
-                <Select
-                    id="area-select"
-                    options={areas}
-                    value={area}
-                    onChange={(v) => {
-                        const val = String(v);
-                        setArea(val);
-                        applyFilters({ role, area: val, keyword, tag });
-                    }}
-                    placeholder="Filter by area"
-                    className="w-[180px]"
-                />
+                    <Select
+                        id="area-select"
+                        options={areas}
+                        value={area}
+                        onChange={(v) => {
+                            const val = String(v);
+                            setArea(val);
 
-                <div className="flex gap-element-gap flex-1">
+                            if (
+                                val !== 'all' &&
+                                tag != '' &&
+                                tag != 'regular'
+                            ) {
+                                setDisplayTags('regular');
+                                setTag('');
+                                applyFilters({
+                                    role,
+                                    area: val,
+                                    keyword,
+                                    tag: '',
+                                });
+                            } else {
+                                applyFilters({ role, area: val, keyword, tag });
+                            }
+                        }}
+                        placeholder="Filter by area"
+                        className="w-[159px]"
+                    />
+                </div>
+
+                <div className="flex gap-[24px] flex-1">
                     <input
                         type="text"
                         placeholder="Keyword Search"
@@ -147,7 +184,7 @@ export default function FilterBlock() {
                 </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center gap-component-gap-sm mb-component-gap-sm h-[46px]">
                 {tags.map((leTag) => (
                     <button
                         key={leTag.value}
@@ -170,11 +207,11 @@ export default function FilterBlock() {
                                 });
                             }
                         }}
-                        className={` text-sm p-footer-gap  border w-40 m-3 rounded-xl  ${
+                        className={`text-sm py-[10px]  border rounded-full ${
                             tag === leTag.value
-                                ? 'bg-isd-primary h-component-gap text-white'
-                                : 'bg-white h-component-gap text-isd-primary'
-                        }`}
+                                ? 'text-isd-primary font-bold border-2 px-[16px]'
+                                : 'text-isd-font-3 px-element-gap'
+                        } ${displayTags === 'none' || (displayTags === 'regular' && leTag.value != 'regular') ? 'invisible' : ''}`}
                     >
                         {leTag.label}
                     </button>

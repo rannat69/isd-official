@@ -21,11 +21,11 @@ export default function Navbar() {
         },
         {
             name: 'People',
-            href: '/people',
+            href: '/people?role=faculty&area=all&tag=regular',
             submenu: {
                 items: [
-                    { name: 'Faculty', href: '/people#faculty' },
-                    { name: 'ISD Staff', href: '/people#staff' },
+                    { name: 'Faculty', href: '/people?role=faculty&area=all&tag=regular' },
+                    { name: 'ISD Staff', href: '/people?role=staff' },
                 ],
             },
         },
