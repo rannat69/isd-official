@@ -12,7 +12,6 @@ export default function StudentLifeBlock() {
     const initialPage = searchParams.get('page') ?? '';
 
     const [page, setPage] = useState<string>(initialPage);
-    
 
     return (
         <div className="container py-section-gap flex gap-component-gap">
