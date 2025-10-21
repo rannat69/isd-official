@@ -206,5 +206,18 @@
     "role": "Assistant Manager",
     "surname": "CHAN",
     "type": "ISD Staff"
+  },
+  {
+    "details": null,
+    "email": "seanyong@ust.hk",
+    "id": 57,
+    "link": null,
+    "location": "Rm 4223",
+    "name": "Mr Vi Jun Sean",
+    "phone": null,
+    "photo": null,
+    "role": "Teaching Associate",
+    "surname": "YONG",
+    "type": "ISD Staff"
   }
 ]
