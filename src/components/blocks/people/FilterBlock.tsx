@@ -127,30 +127,37 @@ export default function FilterBlock() {
                         className="min-w-[150px]"
                     />
 
-                    <Select
-                        id="area-select"
-                        options={areas}
-                        value={area}
-                        onChange={(v) => {
-                            const val = String(v);
-                            setArea(val);
+                    {role === 'staff' ? null : (
+                        <Select
+                            id="area-select"
+                            options={areas}
+                            value={area}
+                            onChange={(v) => {
+                                const val = String(v);
+                                setArea(val);
 
-                            if (tag != '' && tag != 'regular') {
-                                setDisplayTags('regular');
-                                setTag('');
-                                applyFilters({
-                                    role,
-                                    area: val,
-                                    keyword,
-                                    tag: '',
-                                });
-                            } else {
-                                applyFilters({ role, area: val, keyword, tag });
-                            }
-                        }}
-                        placeholder="Filter by area"
-                        className="min-w-[220px]"
-                    />
+                                if (tag != '' && tag != 'regular') {
+                                    setDisplayTags('regular');
+                                    setTag('');
+                                    applyFilters({
+                                        role,
+                                        area: val,
+                                        keyword,
+                                        tag: '',
+                                    });
+                                } else {
+                                    applyFilters({
+                                        role,
+                                        area: val,
+                                        keyword,
+                                        tag,
+                                    });
+                                }
+                            }}
+                            placeholder="Filter by area"
+                            className="min-w-[220px]"
+                        />
+                    )}
                 </div>
 
                 <div className="flex gap-[24px] flex-1">
