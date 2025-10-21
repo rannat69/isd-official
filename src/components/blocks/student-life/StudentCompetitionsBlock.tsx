@@ -25,7 +25,156 @@ import StudentComp20 from '@/assets/studentlife/student-comp-20.jpg';
 import StudentComp21 from '@/assets/studentlife/student-comp-21.jpg';
 import StudentComp22 from '@/assets/studentlife/student-comp-22.jpg';
 
-const studentComps = ['test', 'test3', 'test4', 'test5'];
+const studentComps = [
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+    {
+        name: 'Mashiat LAMISA',
+        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
+        description: "Silver Award in HKUST President's Cup 2021",
+        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        picture: { StudentComp01 },
+    },
+];
 
 export default function StudentCompetitionsBlock() {
     return (
@@ -87,7 +236,7 @@ export default function StudentCompetitionsBlock() {
                         return (
                             <div key={index} className="border rounded-[10px]">
                                 <h2 className="text-4xl font-bold text-primary">
-                                    {comp}
+                                    {comp.name}
                                 </h2>
                                 <p className="text-md text-isd-font-1">
                                     Lorem ipsum dolor sit amet consectetur
@@ -95,7 +244,7 @@ export default function StudentCompetitionsBlock() {
                                 </p>
                                 <div className="flex items-center gap-[12px]">
                                     <Link
-                                        href={'/student-life/' + comp}
+                                        href={'/student-life/'}
                                         className="text-isd-secondary font-bold underline"
                                     >
                                         Read more
