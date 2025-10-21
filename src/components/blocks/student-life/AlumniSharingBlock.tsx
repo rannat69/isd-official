@@ -1,7 +1,7 @@
 import StudentImage from '@/assets/studentlife/mashiat-lamisa.jpg';
 import Image from 'next/image';
 
-export default function UsefulLinksBlock() {
+export default function AlumniSharingBlock() {
     return (
         <div className=" overflow-clip flex flex-col gap-section-title-gap">
             <h1 className="text-h1 offset-text-background">Alumni Sharing</h1>
