@@ -107,14 +107,14 @@ export default function ExchangeBlock() {
                                 previously independent projects, formerly known
                                 as Student Academic Systems Initiative (SASI),
                                 and HR Finance Renewal to replace 20-year old
-                                legacy systems and switch to Workday as UBC's
+                                legacy systems and switch to Workday as UBC&apos;s
                                 core enterprise system. My role is to design and
                                 produce training content in the form of
                                 developing websites and editing videos for the
                                 UBC student and staff body to adapt and
                                 transition to the new Workday system smoothly
                                 and fast. So far, I have designed 100+ web
-                                content tutorials on Workday's application in
+                                content tutorials on Workday&apos;s application in
                                 Finance and HR and counting. I built a great
                                 relationship with my supervisor in that program
                                 and even though I am back in Hong Kong now, I am
@@ -185,7 +185,7 @@ export default function ExchangeBlock() {
                                 <a href="https://www.linkedin.com/in/dama-correch-926551164/">
                                     Dama Correch
                                 </a>
-                                 and I were awarded the 'Empower Women Through
+                                 and I were awarded the &apos;Empower Women Through
                                 Technology’ prize by 
                                 <a href="https://www.linkedin.com/company/sap/">
                                     SAP
