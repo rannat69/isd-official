@@ -1,5 +1,8 @@
 import TextCard from '@/components/TextCard';
 export default function ProgramBlock() {
+
+
+    
     const programsInfo = [
         {
             heading: 'Undergraduate',
