@@ -56,7 +56,10 @@ export default function InternshipReadMore({
                         {pictures.length > 1 ? (
                             <div className="flex w-full gap-component-gap-sm">
                                 {pictures.map((pic, index) => (
-                                    <div key={index} className="block h-full self-center">
+                                    <div
+                                        key={index}
+                                        className="block h-full self-center"
+                                    >
                                         <Image
                                             key={index}
                                             src={pic}
