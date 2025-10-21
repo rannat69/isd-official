@@ -1,3 +1,5 @@
+'use client';
+
 import HeroImageFile from '@/assets/people/all.jpg';
 
 import HeroImagePeople from '@/components/HeroImagePeople';
@@ -7,29 +9,15 @@ import StaffBlock from '@/components/blocks/people/StaffBlock';
 import faculty from '@/data/faculty.json';
 import staff from '@/data/staff.json';
 import { filterAndSortPeople, Person } from '@/lib/peopleFilter';
+import { useSearchParams } from 'next/navigation';
 
-export default function PeoplePage({
-    searchParams,
-}: {
-    searchParams?: { [key: string]: string | string[] | undefined };
-}) {
-    const role = Array.isArray(searchParams?.role)
-        ? searchParams?.role[0]
-        : (searchParams?.role ?? 'all');
-    const area = Array.isArray(searchParams?.area)
-        ? searchParams?.area[0]
-        : (searchParams?.area ?? 'all');
-    ('sort_position');
-    const keyword = Array.isArray(searchParams?.keyword)
-        ? searchParams?.keyword[0]
-        : (searchParams?.keyword ?? '');
+export default function PeoplePage() {
+    const searchParams = useSearchParams();
 
-    const tag = Array.isArray(searchParams?.tag)
-        ? searchParams?.tag[0]
-        : (searchParams?.tag ?? '');
-
-    // Default to sorting by position
-    const sortBy = 'sort_position';
+    const role = searchParams.get('role') || 'all';
+    const area = searchParams.get('area') || 'all';
+    const keyword = searchParams.get('keyword') || '';
+    const tag = searchParams.get('tag') || '';
 
     // Prepare filtered lists per role context
     const facultyList =
