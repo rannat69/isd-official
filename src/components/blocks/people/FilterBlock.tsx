@@ -109,10 +109,10 @@ export default function FilterBlock() {
 
     return (
         <div className="bg-isd-primary-2">
-            <div
+            {/* <div
                 id="select"
                 className="absolute top-[50%] left-0 w-full h-0 invisible"
-            ></div>
+            ></div> */}
             <div className="container w-full flex pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
                 <div className="flex gap-component-gap-sm ">
                     <Select
@@ -179,46 +179,48 @@ export default function FilterBlock() {
                 </div>
             </div>
 
-            <div className="flex justify-center gap-component-gap-sm mb-component-gap-sm h-[46px]">
-                {tags.map((leTag) => (
-                    <button
-                        key={leTag.value}
-                        onClick={() => {
-                            if (tag !== leTag.value) {
-                                setTag(leTag.value);
-                                applyFilters({
-                                    role,
-                                    area,
-                                    keyword,
-                                    tag: leTag.value,
-                                });
-                            } else {
-                                setTag('');
-                                applyFilters({
-                                    role,
-                                    area,
-                                    keyword,
-                                    tag: '',
-                                });
-                            }
-                        }}
-                        className={`text-sm py-[10px]  border rounded-full px-element-gap ${
-                            tag === leTag.value
-                                ? 'text-isd-primary font-bold border-2'
-                                : 'text-isd-font-3'
-                        } ${
-                            displayTags === 'none'
-                                ? 'invisible'
-                                : displayTags === 'regular' &&
-                                    leTag.value !== 'regular'
-                                  ? 'hidden'
-                                  : ''
-                        }`}
-                    >
-                        {leTag.label}
-                    </button>
-                ))}
-            </div>
+            {displayTags === 'none' ? null : (
+                <div className="flex justify-center gap-component-gap-sm mb-component-gap-sm h-fit">
+                    {tags.map((leTag) => (
+                        <button
+                            key={leTag.value}
+                            onClick={() => {
+                                if (tag !== leTag.value) {
+                                    setTag(leTag.value);
+                                    applyFilters({
+                                        role,
+                                        area,
+                                        keyword,
+                                        tag: leTag.value,
+                                    });
+                                } else {
+                                    setTag('');
+                                    applyFilters({
+                                        role,
+                                        area,
+                                        keyword,
+                                        tag: '',
+                                    });
+                                }
+                            }}
+                            className={`text-sm py-[10px]  border rounded-full px-element-gap ${
+                                tag === leTag.value
+                                    ? 'text-isd-primary font-bold border-2'
+                                    : 'text-isd-font-3'
+                            } ${
+                                displayTags === 'none'
+                                    ? 'invisible'
+                                    : displayTags === 'regular' &&
+                                        leTag.value !== 'regular'
+                                      ? 'hidden'
+                                      : ''
+                            }`}
+                        >
+                            {leTag.label}
+                        </button>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
