@@ -116,6 +116,7 @@ export default function FilterBlock() {
             ></div>
             <div className="container w-full flex pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
                 <div className="flex gap-component-gap-sm ">
+                    {/* TODO - set default to Faculty remove placeholder */}
                     <Select
                         id="role-select"
                         options={roles}
@@ -125,7 +126,8 @@ export default function FilterBlock() {
                             setRole(val);
                             applyFilters({ role: val, area, keyword, tag });
                         }}
-                        placeholder="Filter by Role"
+                        className="min-w-[150px]"
+                        // placeholder="Filter by Role"
                     />
 
                     <Select
@@ -154,7 +156,7 @@ export default function FilterBlock() {
                             }
                         }}
                         placeholder="Filter by area"
-                        className="w-[159px]"
+                        className="min-w-[220px]"
                     />
                 </div>
 
@@ -207,10 +209,10 @@ export default function FilterBlock() {
                                 });
                             }
                         }}
-                        className={`text-sm py-[10px]  border rounded-full ${
+                        className={`text-sm py-[10px]  border rounded-full px-element-gap ${
                             tag === leTag.value
-                                ? 'text-isd-primary font-bold border-2 px-[16px]'
-                                : 'text-isd-font-3 px-element-gap'
+                                ? 'text-isd-primary font-bold border-2'
+                                : 'text-isd-font-3'
                         } ${
                             displayTags === 'none'
                                 ? 'invisible'

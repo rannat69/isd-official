@@ -169,11 +169,13 @@ export default function Select({
                 disabled={disabled}
                 onClick={handleToggle}
                 onKeyDown={handleKeyDown}
-                className="w-full flex items-center justify-between px-[12px] h-component-gap-sm bg-white focus:outline-none"
+                className="w-full flex items-center justify-between px-[12px] h-component-gap-sm  bg-white focus:outline-none min-w-[120px] gap-9"
             >
                 <span id={`${id}-label`} className="truncate">
                     {selected ? (
-                        selected.label
+                        <span className="text-primary font-bold">
+                            {selected.label}
+                        </span>
                     ) : (
                         <span className="text-gray-400">{placeholder}</span>
                     )}
@@ -181,7 +183,7 @@ export default function Select({
 
                 <ChevronDown
                     size={18}
-                    className={`transform transition-transform ${open ? '-rotate-180' : 'rotate-0'}`}
+                    className={`text-primary transform transition-transform ${open ? '-rotate-180' : 'rotate-0'}`}
                 />
             </button>
 
