@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import HeroImageFile from '@/assets/carousel-4.jpg';
 
 import HeroImage from '@/components/HeroImage';
@@ -7,7 +8,9 @@ export default function AcademicsPage() {
     return (
         <div className="min-h-screen flex flex-col items-center">
             <HeroImage image={HeroImageFile} />
-            <StudentLifeBlock />
+            <Suspense fallback={<div />}>
+                <StudentLifeBlock />
+            </Suspense>
         </div>
     );
 }
