@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import StudentCompetitionsBlock from './student-life/StudentCompetitionsBlock';
+import AlumniSharingBlock from './student-life/AlumniSharingBlock';
 import UsefulLinksBlock from './student-life/UsefulLinksBlock';
 
 export default function StudentLifeBlock() {
