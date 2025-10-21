@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import StudentCompetitionsBlock from './student-life/StudentCompetitionsBlock';
 import ExchangeBlock from './student-life/ExchangeBlock';
 import AlumniSharingBlock from './student-life/AlumniSharingBlock';
@@ -11,10 +11,11 @@ export default function StudentLifeBlock() {
     const searchParams = useSearchParams();
 
     const router = useRouter();
-
-    const initialPage = searchParams.get('page') ?? '';
-
-    const [page, setPage] = useState<string>(initialPage);
+    const [page, setPage] = useState<string>('stud-comp');
+    useEffect(() => {
+        const initialPage = searchParams.get('page') ?? 'stud-comp';
+        setPage(initialPage);
+    }, [searchParams]);
 
     return (
         <div className="container py-section-gap flex gap-component-gap">
