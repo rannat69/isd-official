@@ -117,7 +117,8 @@ export default function InternshipBlock() {
                         <Fragment key={index}>
                             <ImageCard
                                 key={index}
-                                title={`${intern.name} - ${intern.company}`}
+                                // title={`${intern.name} - ${intern.company}`}
+                                title={intern.name}
                                 imageSrc={intern.pictures[0]}
                                 description={`Internship company: ${intern.company}\nInternship period: ${intern.period}`}
                                 onClick={() => setReadMore(intern)}
