@@ -54,7 +54,7 @@ export default function StudentCompetitionReadMore({
                             <Image
                                 src={resolveCompPhoto(picture)}
                                 alt={`${name}`}
-                                className="object-cover"
+                                className="object-cover w-full"
                                 width={900}
                                 height={506}
                             />
