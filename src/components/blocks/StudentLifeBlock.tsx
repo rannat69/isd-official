@@ -6,6 +6,7 @@ import StudentCompetitionsBlock from './student-life/StudentCompetitionsBlock';
 import ExchangeBlock from './student-life/ExchangeBlock';
 import AlumniSharingBlock from './student-life/AlumniSharingBlock';
 import UsefulLinksBlock from './student-life/UsefulLinksBlock';
+import ExtraActivitivesBlock from './student-life/ExtraActivitiesBlock';
 
 export default function StudentLifeBlock() {
     const searchParams = useSearchParams();
