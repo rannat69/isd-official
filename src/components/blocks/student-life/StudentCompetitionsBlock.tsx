@@ -26,6 +26,8 @@ import StudentComp21 from '@/assets/studentlife/student-comp-21.jpg';
 import StudentComp22 from '@/assets/studentlife/student-comp-22.jpg';
 
 import noneImg from '@/assets/studentlife/noneImg.png';
+import StudentCompetitionReadMore from './StudentCompetitionReadMore';
+import { useState } from 'react';
 
 type Img = StaticImageData | string;
 
@@ -54,7 +56,7 @@ export const compImages: Record<string, Img> = {
     'student-comp-22.jpg': StudentComp22,
 };
 
-function resolveCompPhoto(photo?: string): Img {
+export function resolveCompPhoto(photo?: string): Img {
     if (!photo) return noneImg;
     // normalize: remove leading slashes and optional "src/" or "assets/" prefixes
     const cleaned = photo
@@ -67,125 +69,155 @@ function resolveCompPhoto(photo?: string): Img {
     return compImages[name] ?? noneImg;
 }
 
-const studentComps = [
+interface StudentCompetition {
+    name: string;
+    title: string;
+    description: string;
+    moreInfoLink: string;
+    picture: string;
+}
+
+const studentComps: StudentCompetition[] = [
     {
         name: 'Mashiat LAMISA',
         title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
         description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-1.jpg',
     },
     {
         name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        title: 'Mashiat LAMISA [BSc in ISD] - Virtual HealthHACK 2020',
+        description: 'Winner of Virtual HealthHACK 2020 - Social Category',
+        moreInfoLink: 'https://hkinnovationnode.mit.edu/programs/healthhack/',
         picture: '/assets/studentlife/student-comp-2.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'HUI Tsun Kit',
+        title: ' HUI Tsun Kit, Davon [MPhil TLE] - Smart Washroom AIoT Solution',
+        moreInfoLink: 'https://www.hkictawards.hk/award.php?year=2020&aid=4',
         picture: '/assets/studentlife/student-comp-3.jpg',
+        description:
+            'Winner of 2020 Award of the Year and ICT Startup Grand Award',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'Fung Kwong Chiu',
+        title: 'Fung Kwong Chiu, Michael [MPhil TLE]',
+
+        description:
+            "Top 10 of the entrepreneurship competition in AUA Entrepreneurship Initiative Online Program\n\nFinalist for Hong Kong leg of the 6th China International College Students' 'Internet Plus' Innovation and Entrepreneurship Competition\n\nAwardee of the HKUST Entrepreneurship Acceleration Fund, 2019-2020 Spring\n\nThe Best Performance Teams MentorHUB , 2020",
+
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-4.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'LAM Wing Tung',
+        title: 'LAM Wing Tung, Winnie [MPhil TLE]',
+        description:
+            'LAM Wing Tung, Winnie;  TSANG Ka Wing, Taylor [MPhil TLE] - Silver Award at the 6th China International College Students’ “Internet+” Innovation and Entrepreneurship Competition\n\n LAM Wing Tung, Winnie;  TSANG Ka Wing, Taylor; YU Shing Chun[MPhil TLE]  - 第12屆”挑戰杯”中國大學生創業計劃競賽銀奬\n\nLAM Wing Tung, Winnie with her team - The 6th Hong Kong University Student Innovation and Entrepreneurship Competition First prize of Social Enterprise / Culture & Creative Services ',
+        moreInfoLink: 'http://www.tiaozhanbei.net/',
         picture: '/assets/studentlife/student-comp-5.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'CHEUNG, Ngai, John',
+        title: 'CHEUNG, Ngai, John [MPhil TLE]  - 五軸全自動3D打印技術',
+        description:
+            'Silver Award in Student Innovation Award, Hong Kong ICT Awards 2020',
+        moreInfoLink: 'https://icta.hkace.org.hk/',
         picture: '/assets/studentlife/student-comp-6.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'FUNG, Ka Yan, Gabrielle and FUNG, Kwong Chiu, Michael',
+        title: 'FUNG, Ka Yan, Gabrielle and FUNG, Kwong Chiu, Michael [MPhil TLE]  - Deep-Learning-Based Technology for Dyslexia Pre-screening',
+        description:
+            'Bronze Award in Student Innovation Award, Hong Kong ICT Awards 2020',
+        moreInfoLink: 'https://icta.hkace.org.hk/',
         picture: '/assets/studentlife/student-comp-7.jpg',
     },
 
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'SO, Chak Hei Aaron',
+        title: 'SO, Chak Hei Aaron [MPhil TLE] - Cura Health Limited',
+        description: 'YDC Best Business Plan Award 2019 ',
+        moreInfoLink:
+            'https://daretochange.ydc.org.hk/tc/showcase-curabox.aspx',
         picture: '/assets/studentlife/student-comp-8.jpg',
     },
     {
         name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        title: 'Mashiat LAMISA [BSc in ISD] with two UBC team members',
+        description:
+            'Empower Women Through Technology Prize at Vancouver’s all-female “cmd-f” 24-hour hackathon, while on exchange at the University of British Columbia (UBC)',
+        moreInfoLink:
+            'https://seng.ust.hk/news/20200330/undergraduate-students-app-promote-womens-rights-won-all-female-hackathon',
         picture: '/assets/studentlife/student-comp-9.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'MOLIN, Oscar and WU Jiajie',
+        title: 'MOLIN, Oscar and WU Jiajie [MPhil TLE] with their team - PhoMedics Limited',
+        description:
+            'Gold Award in HKUST-Sino One Million Dollar Entrepreneurship Competition 2020 ',
+        moreInfoLink: 'https://onemilliondollar.ust.hk/awards_announcement',
         picture: '/assets/studentlife/student-comp-10.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'OKTAVIUS, Andreas Kenny',
+        title: 'OKTAVIUS, Andreas Kenny [MPhil TLE] with his team - Point Fit Technology Limited',
+        description:
+            'Student Team Award and Best Video Award in Sino One Million Dollar Entrepreneurship Competition 2020\n\nFirst Prize in the CEIBS INNOVATIE China 2020- Connective for the Future Competition',
+        moreInfoLink:
+            'https://www.linkedin.com/posts/hkust-mba_musthavemba-mba-casecompetitions-activity-6664020016083677184-kszW',
         picture: '/assets/studentlife/student-comp-11.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'WONG, Ka Chin',
+        title: 'WONG, Ka Chin [ MPhil TLE] with his team- SPES Tech',
+        description:
+            'President Award and GF Innovation Award in HKUST-Sino One Million Dollar Entrepreneurship Competition 2020\n\nFirst Prize of "Challenge Cup" National Undergraduate Curricular Academic Science and Technology Works\nThird Prize of Beijing Hong Kong Youth Entrepreneurship competition\nTechnology Start-up Support Scheme for University\nHKSTP IncuBio Programme',
+        moreInfoLink: 'https://onemilliondollar.ust.hk/awards_announcement',
         picture: '/assets/studentlife/student-comp-12.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'SO, Chak Hei Aaron',
+        title: 'SO, Chak Hei Aaron [MPhil TLE] - Marketemy Limited',
+        description:
+            'Entrepreneur Organisation Global Student Entrepreneur Awards Hong Kong 2018',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-13.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
-        picture: '/assets/studentlife/student-comp-14',
+        name: 'Ali SHAMAZ',
+        title: 'Ali SHAMAZ  [BSc in ISD] with his team - The Mills Fabrica Techstyle & Design',
+        description:
+            'Focus Area Awards in One Million Dollar Entrepreneurship Competition 2019',
+        moreInfoLink:
+            'https://onemilliondollar.ust.hk/2019/awards_announcement',
+        picture: '/assets/studentlife/student-comp-14.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'CHAN Kai Chi, Eagle',
+        title: 'CHAN Kai Chi, Eagle [MPhil TLE] with his team',
+        description: 'Champion in Value Creation for Technology Award',
+        moreInfoLink:
+            'http://exh.hktdc.com/2019/efairdaily/efse_ict/issue_4.html',
         picture: '/assets/studentlife/student-comp-15.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'CHAN, Sau Kin, Samuel',
+        title: 'CHAN, Sau Kin, Samuel [MPhil TLE] with his team – ClickerMaker',
+        description:
+            'Focus Area Awards-- Social Services & Enterprise Prize in One Million Dollar Entrepreneurship Competition 2019',
+        moreInfoLink:
+            'https://onemilliondollar.ust.hk/2019/awards_announcement',
         picture: '/assets/studentlife/student-comp-16.jpg',
     },
     {
-        name: 'Mashiat LAMISA',
-        title: "Mashiat LAMISA [BSc in ISD] - HKUST President's Cup 2021",
-        description: "Silver Award in HKUST President's Cup 2021",
-        moreInfoLink: 'https://presidentscup.ust.hk/winning-projects?year=2021',
+        name: 'LAM Wing Tung, Winnie; TSANG Ka Wing, Taylor',
+        title: 'LAM Wing Tung, Winnie; TSANG Ka Wing, Taylor [MPhil TLE] with their team - FLY healthtech',
+        description:
+            'Student Team Award in One Million Dollar Entrepreneurship Competition 2019',
+        moreInfoLink:
+            'https://onemilliondollar.ust.hk/2019/awards_announcement',
         picture: '/assets/studentlife/student-comp-17.jpg',
     },
     {
@@ -226,6 +258,8 @@ const studentComps = [
 ];
 
 export default function StudentCompetitionsBlock() {
+    const [readMore, setReadMore] = useState<StudentCompetition | null>(null);
+
     return (
         <div className=" overflow-clip flex flex-col  gap-section-title-gap ">
             <h1 className="text-h1 offset-text-background ">
@@ -283,32 +317,44 @@ export default function StudentCompetitionsBlock() {
                 <div className="grid grid-cols-2 gap-x-[60px] gap-y-[41px]">
                     {studentComps.map((comp, index) => {
                         return (
-                            <div key={index} className="border rounded-[10px]">
+                            <div
+                                key={index}
+                                className="border rounded-[10px] cursor-pointer"
+                                onClick={() => {
+                                    if (readMore === comp) {
+                                        setReadMore(null);
+                                    } else {
+                                        setReadMore(comp);
+                                    }
+                                }}
+                            >
                                 <div>
-                                    {comp.picture.src}
                                     <Image
                                         src={resolveCompPhoto(comp.picture)}
                                         alt="Student competition"
-                                        className=" h-full"
+                                        className="w-[432px] h-[288px] object-cover" // Ajoutez ces classes
+                                        width={432}
+                                        height={288}
                                     />
                                 </div>
 
-                                <h2 className="text-4xl font-bold text-primary">
-                                    {comp.name}
-                                </h2>
-                                <p className="text-md text-isd-font-1">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quisquam, quod.
-                                </p>
-                                <div className="flex items-center gap-[12px]">
-                                    <Link
-                                        href={'/student-life/'}
-                                        className="text-isd-secondary font-bold underline"
-                                    >
-                                        Read more
-                                    </Link>
-                                    <ArrowRight className="text-isd-secondary" />
+                                <div className="flex flex-col px-element-gap py-[24px] gap-element-gap">
+                                    <h2 className="text-h2 font-bold text-primary ">
+                                        <div className="flex justify-between items-center">
+                                            {comp.name}
+                                            <ArrowRight className="text-primary" />
+                                        </div>
+                                    </h2>
+                                    <p className="text-sm text-isd-font-3">
+                                        {comp.description}
+                                    </p>
                                 </div>
+
+                                <StudentCompetitionReadMore
+                                    {...comp}
+                                    setDetailsOpen={setReadMore}
+                                    detailsOpen={readMore === comp}
+                                />
                             </div>
                         );
                     })}

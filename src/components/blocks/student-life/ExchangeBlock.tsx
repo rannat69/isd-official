@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function ExchangeBlock() {
     return (
         <div className=" overflow-clip flex flex-col gap-section-title-gap">
-            <h1 className="text-h1 offset-text-background">Alumni Sharing</h1>
+            <h1 className="text-h1 offset-text-background">Exchange</h1>
 
             <>
                 <div className="flex gap-[24px]">

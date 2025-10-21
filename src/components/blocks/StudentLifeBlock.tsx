@@ -20,37 +20,37 @@ export default function StudentLifeBlock() {
         <div className="container py-section-gap flex gap-component-gap">
             <div className="flex flex-col text-lg cursor-pointer">
                 <div
-                    className={` h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'stud-comp' ? 'bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
+                    className={` h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'stud-comp' ? 'font-bold text-isd-primary bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
                     onClick={() => setPage('stud-comp')}
                 >
                     Student Competitions
                 </div>
                 <div
-                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'extra-act' ? 'bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
+                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'extra-act' ? 'font-bold text-isd-primary  bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
                     onClick={() => setPage('extra-act')}
                 >
                     Extracurricular activities
                 </div>
                 <div
-                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'intern' ? 'bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
+                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'intern' ? 'font-bold  text-isd-primary bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
                     onClick={() => setPage('intern')}
                 >
                     Internships
                 </div>
                 <div
-                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'exchange' ? 'bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
+                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'exchange' ? 'font-bold text-isd-primary  bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
                     onClick={() => setPage('exchange')}
                 >
                     Exchange
                 </div>
                 <div
-                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'alumni' ? 'bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
+                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'alumni' ? 'font-bold  text-isd-primary bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
                     onClick={() => setPage('alumni')}
                 >
                     Alumni Sharing
                 </div>
                 <div
-                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'links' ? 'bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
+                    className={`h-[54px] whitespace-nowrap px-element-gap py-[10px] ${page === 'links' ? 'font-bold  text-isd-primary bg-isd-primary-2 border-l-3 border-isd-primary' : ''}`}
                     onClick={() => setPage('links')}
                 >
                     Useful Links

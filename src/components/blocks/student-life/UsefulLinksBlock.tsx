@@ -26,7 +26,7 @@ export default function UsefulLinksBlock() {
         },
         {
             title: 'ISD Design Studio Booking Form',
-            url: '/resources/isd_design_studio_booking_form.pdf',
+            url: '/resources/isd_design_studio_booking_form_0.pdf',
         },
     ];
 
