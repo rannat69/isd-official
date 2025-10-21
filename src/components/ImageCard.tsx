@@ -18,6 +18,15 @@ export default function ImageCard({
     description: string;
     lineLimit?: number;
 }) {
+    // Tailwind is dumb.
+    const lineClampClass: Record<number, string> = {
+        1: 'line-clamp-1',
+        2: 'line-clamp-2',
+        3: 'line-clamp-3',
+        4: 'line-clamp-4',
+        5: 'line-clamp-5',
+    };
+
     const content = () => (
         <div className="flex flex-col rounded-xl border border-isd-primary-3 cursor-pointer h-full overflow-hidden">
             <Image
@@ -39,7 +48,7 @@ export default function ImageCard({
                     <p
                         className={
                             'md:text-sm text-xs text-isd-font-3 whitespace-pre-wrap ' +
-                            (lineLimit ? ` line-clamp-${lineLimit}` : '')
+                            (lineLimit ? lineClampClass[lineLimit] : '')
                         }
                     >
                         {description}
