@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
-import { useState } from 'react';
+import Image from 'next/image';
 import { X } from 'lucide-react';
 import { resolveCompPhoto } from './StudentCompetitionsBlock';
 
@@ -35,11 +34,11 @@ export default function StudentCompetitionReadMore({
         <>
             {detailsOpen && (
                 <div
-                    className="fixed  top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center   z-50 overflow-auto"
+                    className="fixed top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center   z-50 overflow-auto"
                     onClick={() => setDetailsOpen(null)}
                 >
                     <div
-                        className="flex flex-col container bg-white my-[5%] px-component-gap py-component-gap-sm gap-component-gap-sm items-end  "
+                        className="flex flex-col w-full max-w-[1044px] bg-white my-[220px] px-component-gap py-component-gap-sm gap-component-gap-sm items-end"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
