@@ -10,7 +10,7 @@ import {
     type CategoryFilter,
     getYears,
 } from '@/lib/newsFilter';
-import { resolveFirstImage } from '@/lib/newsImages';
+import { resolveImages } from '@/lib/newsImages';
 import NewsCard from '@/components/NewsCard';
 import EventCard from '@/components/EventCard';
 import Select, { type Option } from '@/components/Select';
@@ -123,7 +123,7 @@ export default function NewsListBlock() {
                 <div className="flex flex-col divide-y divide-isd-primary-3">
                     {visibleItems.map((item) => {
                         const href = `/news/${item.id}`;
-                        const img = resolveFirstImage(item.pictures);
+                        const img = resolveImages(item.pictures)[0];
                         const formattedDate = formatDate(item.date);
                         if (item.type === 'events') {
                             return (
