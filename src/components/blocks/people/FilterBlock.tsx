@@ -211,7 +211,14 @@ export default function FilterBlock() {
                             tag === leTag.value
                                 ? 'text-isd-primary font-bold border-2 px-[16px]'
                                 : 'text-isd-font-3 px-element-gap'
-                        } ${displayTags === 'none' || (displayTags === 'regular' && leTag.value != 'regular') ? 'invisible' : ''}`}
+                        } ${
+                            displayTags === 'none'
+                                ? 'invisible'
+                                : displayTags === 'regular' &&
+                                    leTag.value !== 'regular'
+                                  ? 'hidden'
+                                  : ''
+                        }`}
                     >
                         {leTag.label}
                     </button>
