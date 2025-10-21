@@ -1,27 +1,3 @@
-// Deviation from Curriculum (UG)
-// Information and procedures:
-// https://registry.hkust.edu.hk/resource-library/deviation-curriculum-ug
-// Application form:
-// https://registry.hkust.edu.hk/system/files?file=internal/gr-23.pdf
-
-// Minor Program (UG)
-// Information and procedures:
-// https://registry.hkust.edu.hk/resource-library/minor-program-ug
-
-// Additional Major (UG)
-// Information and procedures:
-// https://registry.hkust.edu.hk/resource-library/additional-major-ug
-// Application form:
-// https://registry.hkust.edu.hk/system/files/internal/Form%20RR-47.pdf
-
-// Credit Transfer
-// Information and procedures:
-// https://registry.hkust.edu.hk/resource-library/courses-taken-elsewhere-during-registration-ug
-
-// ISD Design Studio Booking
-// Booking form:
-// isd_design_studio_booking_form.pdf
-
 export default function UsefulLinksBlock() {
     const links = [
         {
