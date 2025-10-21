@@ -62,24 +62,18 @@ export default function Navbar() {
         { name: 'Collaborators', href: '/collaborators' },
         {
             name: 'Student Life',
-            href: '/student-life?page=stud-comp',
+            href: '/student-life',
             submenu: {
                 items: [
-                    {
-                        name: 'Student Competitions',
-                        href: '/student-life?page=stud-comp',
-                    },
+                    { name: 'Student Competitions', href: '/student-life' },
                     {
                         name: 'Extracurricular Activities',
-                        href: '/student-life?page=extra-act',
+                        href: '/student-life',
                     },
-                    { name: 'Internships', href: '/student-life?page=intern' },
-                    { name: 'Exchange', href: '/student-life?page=exchange' },
-                    {
-                        name: 'Alumni Sharing',
-                        href: '/student-life?page=alumni',
-                    },
-                    { name: 'Useful Links', href: '/student-life?page=links' },
+                    { name: 'Internships', href: '/student-life' },
+                    { name: 'Exchange', href: '/student-life' },
+                    { name: 'Alumni Sharing', href: '/student-life' },
+                    { name: 'Useful Links', href: '/student-life' },
                 ],
             },
         },

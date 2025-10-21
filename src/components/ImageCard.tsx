@@ -7,19 +7,15 @@ export default function ImageCard({
     imageSrc,
     title,
     link = '#',
-    onClick,
     description,
-    lineLimit,
 }: {
     imageSrc: StaticImageData | string;
     title: string;
     link?: string;
-    onClick?: () => void;
     description: string;
-    lineLimit?: number;
 }) {
-    const content = () => (
-        <div className="flex flex-col rounded-xl border border-isd-primary-3 cursor-pointer h-full overflow-hidden">
+    return (
+        <div className="flex flex-col w-full h-full rounded-xl border border-isd-primary-3">
             <Image
                 src={imageSrc}
                 alt={title}
@@ -29,33 +25,20 @@ export default function ImageCard({
             />
             <div className="flex-1">
                 <div className="py-element-gap px-[14px] flex flex-col gap-element-gap h-full">
-                    <div className="flex flex-row text-primary items-center">
-                        <h2 className="flex-1 md:text-h2 text-md font-bold line-clamp-1">
+                    <Link
+                        href={link}
+                        className="flex items-center justify-between text-isd-primary"
+                    >
+                        <h2 className="md:text-h2 text-md font-bold">
                             {title}
                         </h2>
                         <ArrowRight size={20} strokeWidth={3} />
-                    </div>
-
-                    <p
-                        className={
-                            'md:text-sm text-xs text-isd-font-3 whitespace-pre-wrap ' +
-                            (lineLimit ? ` line-clamp-${lineLimit}` : '')
-                        }
-                    >
+                    </Link>
+                    <p className="md:text-sm text-xs text-isd-font-3">
                         {description}
                     </p>
                 </div>
             </div>
         </div>
-    );
-
-    return onClick ? (
-        <button onClick={onClick} className="w-full text-left h-full">
-            {content()}
-        </button>
-    ) : (
-        <Link href={link} className="w-full text-left h-full">
-            {content()}
-        </Link>
     );
 }
