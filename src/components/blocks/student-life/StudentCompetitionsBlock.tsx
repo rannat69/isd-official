@@ -95,7 +95,7 @@ const studentComps: StudentCompetition[] = [
     {
         name: 'HUI Tsun Kit',
         title: ' HUI Tsun Kit, Davon [MPhil TLE] - Smart Washroom AIoT Solution',
-        moreInfoLink: 'https://www.hkictawards.hk/award.php?year=2020&aid=4',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-3.jpg',
         description:
             'Winner of 2020 Award of the Year and ICT Startup Grand Award',
@@ -149,7 +149,7 @@ const studentComps: StudentCompetition[] = [
         description:
             'Empower Women Through Technology Prize at Vancouver’s all-female “cmd-f” 24-hour hackathon, while on exchange at the University of British Columbia (UBC)',
         moreInfoLink:
-            'https://seng.ust.hk/news/20200330/undergraduate-students-app-promote-womens-rights-won-all-female-hackathon',
+            '',
         picture: '/assets/studentlife/student-comp-9.jpg',
     },
     {
@@ -157,7 +157,7 @@ const studentComps: StudentCompetition[] = [
         title: 'MOLIN, Oscar and WU Jiajie [MPhil TLE] with their team - PhoMedics Limited',
         description:
             'Gold Award in HKUST-Sino One Million Dollar Entrepreneurship Competition 2020 ',
-        moreInfoLink: 'https://onemilliondollar.ust.hk/awards_announcement',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-10.jpg',
     },
     {
@@ -174,7 +174,7 @@ const studentComps: StudentCompetition[] = [
         title: 'WONG, Ka Chin [ MPhil TLE] with his team- SPES Tech',
         description:
             'President Award and GF Innovation Award in HKUST-Sino One Million Dollar Entrepreneurship Competition 2020\n\nFirst Prize of "Challenge Cup" National Undergraduate Curricular Academic Science and Technology Works\nThird Prize of Beijing Hong Kong Youth Entrepreneurship competition\nTechnology Start-up Support Scheme for University\nHKSTP IncuBio Programme',
-        moreInfoLink: 'https://onemilliondollar.ust.hk/awards_announcement',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-12.jpg',
     },
     {
@@ -191,7 +191,7 @@ const studentComps: StudentCompetition[] = [
         description:
             'Focus Area Awards in One Million Dollar Entrepreneurship Competition 2019',
         moreInfoLink:
-            'https://onemilliondollar.ust.hk/2019/awards_announcement',
+            '',
         picture: '/assets/studentlife/student-comp-14.jpg',
     },
     {
@@ -208,7 +208,7 @@ const studentComps: StudentCompetition[] = [
         description:
             'Focus Area Awards-- Social Services & Enterprise Prize in One Million Dollar Entrepreneurship Competition 2019',
         moreInfoLink:
-            'https://onemilliondollar.ust.hk/2019/awards_announcement',
+            '',
         picture: '/assets/studentlife/student-comp-16.jpg',
     },
     {
@@ -217,14 +217,14 @@ const studentComps: StudentCompetition[] = [
         description:
             'Student Team Award in One Million Dollar Entrepreneurship Competition 2019',
         moreInfoLink:
-            'https://onemilliondollar.ust.hk/2019/awards_announcement',
+            '',
         picture: '/assets/studentlife/student-comp-17.jpg',
     },
     {
         name: 'Mashiat LAMISA and Xuelai WEI',
         title: 'Mashiat LAMISA and Xuelai WEI [BSc in ISD] with their team',
         description: 'Champion in MedTech Hackathon HK 2019',
-        moreInfoLink: 'https://www.dreamcatchers.hku.hk/?p=57491',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-18.jpg',
     },
     {
@@ -233,7 +233,7 @@ const studentComps: StudentCompetition[] = [
         description:
             'President Award and Focus Area Awards- Healthcare Prize  in One Million Dollar Entrepreneurship Competition 2019',
         moreInfoLink:
-            'https://onemilliondollar.ust.hk/2019/awards_announcement',
+            '',
         picture: '/assets/studentlife/student-comp-19.jpg',
     },
 
@@ -241,7 +241,7 @@ const studentComps: StudentCompetition[] = [
         name: 'Tat Hang WONG, Yukai ZHANG and Jin TANG',
         title: 'Tat Hang WONG, Yukai ZHANG and Jin TANG [BSc in ISD] with their team',
         description: '1st winner in APDEC x IDEA Design Challenge',
-        moreInfoLink: 'http://apdec.ti.unpar.ac.id/',
+        moreInfoLink: '',
         picture: '/assets/studentlife/student-comp-20.jpg',
     },
     {

@@ -61,7 +61,7 @@ export default function StudentCompetitionReadMore({
                         </div>
 
                         <div className="flex flex-col gap-[24px] w-full ">
-                            <div className="text-h2 font-bold text-primary border-b-1 border-isd-font-2 h-section-title-gap">
+                            <div className="text-h2 font-bold text-primary border-b-1 border-isd-font-2 pb-[10px]">
                                 {title}
                             </div>
 
@@ -70,12 +70,16 @@ export default function StudentCompetitionReadMore({
                                     <div>{description}</div>
                                 </div>
 
-                                <Link
-                                    className="text-md text-isd-secondary underline"
-                                    href={moreInfoLink}
-                                >
-                                    More info
-                                </Link>
+                                {moreInfoLink != '' && (
+                                    <Link
+                                        className="text-md text-isd-secondary underline"
+                                        href={moreInfoLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        More info
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     </div>
