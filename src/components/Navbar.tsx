@@ -1,13 +1,17 @@
 'use client';
 
 import HKUSTLogo from '@/assets/hkust-logo.svg';
+import HKUSTLogoWhite from '@/assets/hkust-logo-white.svg';
 import ISDLogo from '@/assets/isd-logo.svg';
+import { ChevronRight, Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Navbar() {
     const [selectedItem, setSelectedItem] = useState('');
+
+    const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
     const navItems = [
         {
@@ -91,67 +95,143 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="bg-white px-section-gap sticky z-40 top-12 py-8">
-            <div className="flex items-center justify-between">
-                <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
-                    <Link href="https://hkust.edu.hk/">
-                        <Image
-                            src={HKUSTLogo}
-                            alt="HKUST Logo"
-                            width={180}
-                            height={44.4}
-                            className="pr-[11px]"
-                        />
-                    </Link>
-                    <Link href="/">
-                        <Image
-                            src={ISDLogo}
-                            alt="ISD Logo"
-                            width={263}
-                            height={27}
-                        />
-                    </Link>
-                </div>
+        <>
+            <nav className="bg-white px-element-gap md:px-element-gap lg:px-section-gap sticky z-40 top-12 py-8">
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
+                        <Link href="https://hkust.edu.hk/">
+                            <Image
+                                src={HKUSTLogo}
+                                alt="HKUST Logo"
+                                width={180}
+                                height={44.4}
+                                className="pr-[11px]"
+                                style={{ minWidth: '180px', height: '44.4px' }}
+                            />
+                        </Link>
+                        <Link href="/">
+                            <Image
+                                src={ISDLogo}
+                                alt="ISD Logo"
+                                width={263}
+                                height={27}
+                                style={{ minWidth: '263px', height: '27px' }}
+                            />
+                        </Link>
+                    </div>
 
-                <div className="inline-flex justify-center items-center gap-element-gap pt-2">
-                    {navItems.map((item, i) => (
-                        <div className="relative group pb-2" key={item.name}>
-                            <Link
-                                href={item.href}
-                                className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
-                                    selectedItem === item.name
-                                        ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
-                                        : 'text-isd-font-3'
-                                }`}
-                                onClick={() => setSelectedItem(item.name)}
+                    <div className="hidden lg:inline-flex  justify-center items-center gap-element-gap pt-2">
+                        {navItems.map((item, i) => (
+                            <div
+                                className="relative group pb-2  "
+                                key={item.name}
                             >
-                                {item.name}
-                            </Link>
-
-                            {item.submenu && (
-                                <div
-                                    className={
-                                        'absolute mt-2 hidden group-hover:block group-focus-within:block bg-white shadow-lg shadow-black/30 z-40' +
-                                        (i === navItems.length - 1
-                                            ? ' right-0'
-                                            : ' left-0')
-                                    }
+                                <Link
+                                    href={item.href}
+                                    className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
+                                        selectedItem === item.name
+                                            ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
+                                            : 'text-isd-font-3'
+                                    }`}
+                                    onClick={() => setSelectedItem(item.name)}
                                 >
-                                    {item.submenu.items.map((subItem) => (
+                                    {item.name}
+                                </Link>
+
+                                {item.submenu && (
+                                    <div
+                                        className={
+                                            'absolute mt-2 hidden group-hover:block group-focus-within:block bg-white shadow-lg shadow-black/30 z-40' +
+                                            (i === navItems.length - 1
+                                                ? ' right-0'
+                                                : ' left-0')
+                                        }
+                                    >
+                                        {item.submenu.items.map((subItem) => (
+                                            <Link
+                                                key={subItem.name}
+                                                href={subItem.href}
+                                                className="block px-4 py-2 text-isd-font-3 text-nav-sub hover:bg-gray-100 whitespace-nowrap"
+                                            >
+                                                {subItem.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    <Menu
+                        className="block lg:hidden "
+                        onClick={() => setDisplayMobileMenu(true)}
+                    />
+                </div>
+            </nav>
+
+            {displayMobileMenu && (
+                <div className="fixed h-full w-full  z-51 bg-isd-primary">
+                    <div className="flex justify-end p-4">
+                        <button
+                            className="text-isd-font-3 text-nav"
+                            onClick={() => setDisplayMobileMenu(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                    <div className="flex flex-col p-component-gap-sm gap-[16px] items-start  h-full ">
+                        {navItems.map((item) => (
+                            <>
+                                <div
+                                    onClick={() =>
+                                        selectedItem != item.name
+                                            ? setSelectedItem(item.name)
+                                            : setSelectedItem('')
+                                    }
+                                    className="flex justify-between items-center  w-full border-b-1  pb-[10px] border-white"
+                                >
+                                    <div>
+                                        {item.submenu ? (
+                                            <div className="text-white text-nav py-2 ">
+                                                {item.name}
+                                            </div>
+                                        ) : (
+                                            <Link
+                                                key={item.name}
+                                                href={item.href}
+                                                className="text-white text-nav py-2 "
+                                                onClick={() => {
+                                                    setSelectedItem(item.name);
+                                                    setDisplayMobileMenu(false);
+                                                }}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        )}
+                                    </div>
+                                    <div className="text-white">
+                                        <ChevronRight />
+                                    </div>
+                                </div>
+
+                                {selectedItem === item.name &&
+                                    item.submenu?.items.map((subItem) => (
                                         <Link
+                                            onClick={() => {
+                                                setDisplayMobileMenu(false);
+                                            }}
                                             key={subItem.name}
                                             href={subItem.href}
-                                            className="block px-4 py-2 text-isd-font-3 text-nav-sub hover:bg-gray-100 whitespace-nowrap"
+                                            className="block px-4 py-2 text-white text-nav-sub whitespace-nowrap"
                                         >
                                             {subItem.name}
                                         </Link>
                                     ))}
-                                </div>
-                            )}
-                        </div>
-                    ))}
+                            </>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </nav>
+            )}
+        </>
     );
 }
