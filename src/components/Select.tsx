@@ -3,15 +3,8 @@
 import { ChevronDown } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
-// From GPT 5:
-// A TypeScript rewrite of the simple accessible dropdown built with React + Tailwind
-// - Keyboard navigation (ArrowUp / ArrowDown / Enter / Escape)
-// - Typeahead (type letters to jump to option)
-// - Click-to-open, click outside to close
-// - ARIA roles & attributes for accessibility
-
-type Option = {
-    value: string | number;
+export type Option = {
+    value: string | number | null;
     label: string;
 };
 
@@ -22,7 +15,8 @@ type CustomSelectProps = {
     placeholder?: string;
     disabled?: boolean;
     id?: string;
-    className?: string;
+    className?: string; // container
+    triggerClassName?: string; // exact button style from caller
 };
 
 function useOnClickOutside(
@@ -57,6 +51,7 @@ export default function Select({
     disabled = false,
     id = 'custom-select',
     className = '',
+    triggerClassName = '',
 }: CustomSelectProps) {
     const [open, setOpen] = useState<boolean>(false);
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
@@ -69,12 +64,9 @@ export default function Select({
     useOnClickOutside([containerRef], () => setOpen(false));
 
     useEffect(() => {
-        if (!open) {
-            setHighlightedIndex(-1);
-        }
+        if (!open) setHighlightedIndex(-1);
     }, [open]);
 
-    // reset typeahead buffer after short delay
     useEffect(() => {
         if (!typeaheadBuf) return;
         const t = window.setTimeout(() => setTypeaheadBuf(''), 700);
@@ -129,16 +121,13 @@ export default function Select({
                 buttonRef.current?.focus();
                 break;
             default: {
-                // typeahead support
                 if (e.key.length === 1 && /\S/.test(e.key)) {
                     const buf = (typeaheadBuf + e.key).toLowerCase();
                     setTypeaheadBuf(buf);
                     const idx = options.findIndex((o) =>
                         o.label.toLowerCase().startsWith(buf)
                     );
-                    if (idx >= 0) {
-                        setHighlightedIndex(idx);
-                    }
+                    if (idx >= 0) setHighlightedIndex(idx);
                 }
             }
         }
@@ -157,7 +146,7 @@ export default function Select({
     return (
         <div
             ref={containerRef}
-            className={`relative inline-block text-left text-isd-font-3 text-sm ${className}`}
+            className={`relative inline-block ${className}`}
         >
             <button
                 id={id}
@@ -169,13 +158,11 @@ export default function Select({
                 disabled={disabled}
                 onClick={handleToggle}
                 onKeyDown={handleKeyDown}
-                className="w-full flex items-center justify-between px-[12px] h-component-gap-sm  bg-white focus:outline-none min-w-[120px] gap-9"
+                className={triggerClassName}
             >
                 <span id={`${id}-label`} className="truncate">
                     {selected ? (
-                        <span className="text-primary font-bold">
-                            {selected.label}
-                        </span>
+                        selected.label
                     ) : (
                         <span className="text-gray-400">{placeholder}</span>
                     )}
@@ -183,7 +170,7 @@ export default function Select({
 
                 <ChevronDown
                     size={18}
-                    className={`text-primary transform transition-transform ${open ? '-rotate-180' : 'rotate-0'}`}
+                    className={`transform transition-transform ${open ? '-rotate-180' : 'rotate-0'}`}
                 />
             </button>
 
@@ -191,7 +178,7 @@ export default function Select({
                 <div
                     role="dialog"
                     aria-modal="false"
-                    className="absolute z-50 w-full bg-white shadow-lg shadow-black/30 left-0"
+                    className="absolute z-50 bg-white shadow-lg shadow-black/30 left-0 min-w-full w-min"
                 >
                     <ul
                         role="listbox"
@@ -221,9 +208,7 @@ export default function Select({
                                     }
                                     onMouseLeave={() => setHighlightedIndex(-1)}
                                     onClick={() => handleSelect(opt)}
-                                    className={`select-none px-[12px] py-2 flex items-center justify-between gap-2 text-sm ${
-                                        isHighlighted ? 'bg-isd-primary-2' : ''
-                                    }`}
+                                    className={`select-none px-element-gap py-[6px] flex items-center text-isd-font-3 text-sm ${isHighlighted ? 'bg-isd-primary-2' : ''}`}
                                 >
                                     <span className="truncate">
                                         {opt.label}
