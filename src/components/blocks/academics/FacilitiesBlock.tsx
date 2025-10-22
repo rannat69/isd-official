@@ -10,6 +10,7 @@ import F08 from '@/assets/academics/facilities/fac.08.jpg';
 import F09 from '@/assets/academics/facilities/fac.09.jpg';
 import F10 from '@/assets/academics/facilities/fac.10.jpg';
 import F11 from '@/assets/academics/facilities/fac.11.jpg';
+import CarouselTriple from '@/components/CarouselTriple';
 
 const images = [F01, F02, F03, F04, F05, F06, F07, F08, F09, F10, F11];
 
@@ -111,9 +112,9 @@ export default function FacilitiesBlock() {
                         <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Equipment Gallery
                         </h3>
-                        <div className="w-full bg-isd-font-2/10 relative">
-                            <div className="h-[480px]">
-                                <Carousel images={images} />
+                        <div className="w-full  relative">
+                            <div>
+                                <CarouselTriple images={images} />
                             </div>
                         </div>
                     </div>
