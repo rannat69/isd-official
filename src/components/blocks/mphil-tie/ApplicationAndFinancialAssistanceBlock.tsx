@@ -45,9 +45,11 @@ export default function ApplicationAndFinancialAssistanceBlock() {
                 Please apply through:
             </p>
 
-            <button className="bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center">
-                Online Application
-            </button>
+            <a href=" https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/online-application ">
+                <button className="cursor-pointer bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center">
+                    Online Application
+                </button>
+            </a>
         </div>
     );
 }

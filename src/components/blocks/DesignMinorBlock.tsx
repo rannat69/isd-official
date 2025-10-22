@@ -25,7 +25,7 @@ export default function DesignMinorBlock() {
                 <p>
                     Please visit{' '}
                     <a
-                        href=""
+                        href="https://ugadmin.hkust.edu.hk/prog_crs/ug/202526/pdf/minor-desn.pdf"
                         className="font-bold text-isd-secondary underline"
                     >
                         Undergraduate Minor Program in Design

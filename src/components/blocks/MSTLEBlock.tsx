@@ -214,10 +214,11 @@ export default function MSTLEBlock() {
                                     Course Catalog
                                 </a>
                             </span>
-                             and 
+                            
+                            {/* and 
                             <span className="text-isd-secondary font-[700] underline">
                                 Program Brochure
-                            </span>
+                            </span>*/}
                             .
                         </p>
                         <div className="flex flex-col gap-element-gap">
@@ -317,7 +318,6 @@ export default function MSTLEBlock() {
                                 Requirements, please refer to {' '}
                                 <span className="text-isd-secondary font-[700] underline">
                                     <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
-                                        {' '}
                                         HKUST Fok Ying Tung Graduate School
                                     </a>
                                 </span>
@@ -326,9 +326,11 @@ export default function MSTLEBlock() {
                                 strongly recommended.
                             </p>
                         </div>
-                        <div className="bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center w-fit">
-                            Apply Now
-                        </div>
+                        <a className="cursor-pointer" href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/online-application">
+                            <div className="cursor-pointer bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center w-fit">
+                                Apply Now
+                            </div>
+                        </a>
                     </div>
                     <div className="flex flex-col gap-[24]">
                         <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
