@@ -33,7 +33,7 @@ export default function Navbar() {
                         name: 'Faculty',
                         href: '/people?role=faculty&area=all&tag=regular',
                     },
-                    { name: 'ISD Staff', href: '/people?role=staff' },
+                    { name: 'Staff', href: '/people?role=staff' },
                 ],
             },
         },
