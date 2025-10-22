@@ -129,8 +129,6 @@ export default function ScholarshipsBlock() {
                                 {section.content}
                             </div>
                         ))}
-
-                     
                     </div>
                 </div>
             </div>
