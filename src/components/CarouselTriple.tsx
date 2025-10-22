@@ -8,7 +8,7 @@ interface CarouselProps {
     images: StaticImageData[];
 }
 
-export default function Carousel({ images }: CarouselProps) {
+export default function CarouselTriple({ images }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const imagesPerSlide = 3;
     const totalSlides = Math.ceil(images.length / imagesPerSlide);
@@ -78,17 +78,17 @@ export default function Carousel({ images }: CarouselProps) {
             {/* Navigation Buttons */}
             <div className="flex justify-end gap-[12px]">
                 <button
-                    className={`pointer-events-auto cursor-pointer ${currentIndex === 0 ? 'text-isd-secondary-1' : 'text-isd-secondary'} border-1 rounded-full`}
+                    className={`pointer-events-auto cursor-pointer ${currentIndex === 0 ? 'text-isd-secondary-1' : 'text-isd-secondary'} border-2 rounded-full`}
                     onClick={handlePrevious}
                 >
-                    <ArrowLeft size={28} strokeWidth={1} />
+                    <ArrowLeft size={28} strokeWidth={2} />
                 </button>
 
                 <button
-                    className={`pointer-events-auto cursor-pointer ${currentIndex === totalSlides - 1 ? 'text-isd-secondary-1' : 'text-isd-secondary'} border-1 rounded-full`}
+                    className={`pointer-events-auto cursor-pointer ${currentIndex === totalSlides - 1 ? 'text-isd-secondary-1' : 'text-isd-secondary'} border-2 rounded-full`}
                     onClick={handleNext}
                 >
-                    <ArrowRight size={28} strokeWidth={1} />
+                    <ArrowRight size={28} strokeWidth={2} />
                 </button>
             </div>
 
