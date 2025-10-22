@@ -3,7 +3,8 @@
 import HKUSTLogo from '@/assets/hkust-logo.svg';
 import HKUSTLogoWhite from '@/assets/hkust-logo-white.svg';
 import ISDLogo from '@/assets/isd-logo.svg';
-import { ChevronRight, Menu } from 'lucide-react';
+import ISDLogoWhite from '@/assets/isd-logo-white.svg';
+import { ChevronRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -95,8 +96,10 @@ export default function Navbar() {
     ];
 
     return (
-        <>
-            <nav className="bg-white px-element-gap md:px-element-gap lg:px-section-gap sticky z-40 top-12 py-8">
+        <div>
+            <nav
+                className={`bg-white px-element-gap md:px-element-gap lg:px-section-gap sticky z-40 top-12 py-8 ${displayMobileMenu ? 'hidden' : ''}`}
+            >
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
                         <Link href="https://hkust.edu.hk/">
@@ -106,7 +109,7 @@ export default function Navbar() {
                                 width={180}
                                 height={44.4}
                                 className="pr-[11px]"
-                                style={{ minWidth: '180px', height: '44.4px' }}
+                                style={{ minWidth: '90px', height: '44.4px' }}
                             />
                         </Link>
                         <Link href="/">
@@ -115,7 +118,7 @@ export default function Navbar() {
                                 alt="ISD Logo"
                                 width={263}
                                 height={27}
-                                style={{ minWidth: '263px', height: '27px' }}
+                                style={{ minWidth: '130px', height: '27px' }}
                             />
                         </Link>
                     </div>
@@ -170,16 +173,35 @@ export default function Navbar() {
             </nav>
 
             {displayMobileMenu && (
-                <div className="fixed h-full w-full  z-51 bg-isd-primary">
-                    <div className="flex justify-end p-4">
-                        <button
-                            className="text-isd-font-3 text-nav"
+                <div className=" w-full  z-51 bg-isd-primary pb-component-gap-sm">
+                    <div className="flex justify-between items-center px-element-gap pb-[24px]">
+                        <Link href="https://hkust.edu.hk/">
+                            <Image
+                                src={HKUSTLogoWhite}
+                                alt="HKUST Logo"
+                                width={112}
+                                height={44.4}
+                                className="pr-[11px]"
+                                style={{ minWidth: '90px', height: '44.4px' }}
+                            />
+                        </Link>
+                        <Link href="/">
+                            <Image
+                                src={ISDLogoWhite}
+                                alt="ISD Logo"
+                                width={147}
+                                height={27}
+                                style={{ minWidth: '130px', height: '27px' }}
+                            />
+                        </Link>
+                        <X
+                            size={18}
+                            className="text-white "
                             onClick={() => setDisplayMobileMenu(false)}
-                        >
-                            Close
-                        </button>
+                        />
                     </div>
-                    <div className="flex flex-col p-component-gap-sm gap-[16px] items-start  h-full ">
+
+                    <div className="flex flex-col  gap-[16px] items-start  h-full px-component-gap-sm ">
                         {navItems.map((item) => (
                             <>
                                 <div
@@ -232,6 +254,6 @@ export default function Navbar() {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }
