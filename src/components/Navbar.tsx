@@ -53,9 +53,12 @@ export default function Navbar() {
             href: '/news',
             submenu: {
                 items: [
-                    { name: 'News', href: '/news' },
-                    { name: 'Events', href: '/news' },
-                    { name: 'Achievement', href: '/news' },
+                    { name: 'News', href: '/news?category=news' },
+                    { name: 'Events', href: '/news?category=events' },
+                    {
+                        name: 'Achievement',
+                        href: '/news?category=achievements',
+                    },
                 ],
             },
         },
