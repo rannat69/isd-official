@@ -40,33 +40,33 @@ export default function HealthTechBlock() {
 
 const HealthTechTopics = [
     {
-        title: 'Energy Storage',
+        title: 'Wearable biomarker sensing',
         description:
-            'Advanced manufacturing of solid-state lithium batteries as energy storage device for next-generation EV and portable electronic devices',
+            'Laser manufacturing of sweat biomarker sensing devices towards evidence-based physiological monitoring.',
         supervisor: 'Mitch LI',
     },
     {
-        title: 'Zero Carbon Architecture and future cities',
+        title: 'Food 3D printing',
         description:
-            'Smart building envelop design with advanced integrated renewable energy systems such as colour and semi-transparent photovoltaics. Low-carbon and resilient urban infrastructure for future cities.',
+            'Soft food 3D printing for elderly with swallowing difficulties.',
+        supervisor: 'Mitch LI',
+    },
+    {
+        title: 'Elderly-friendly smart home system design',
+        description:
+            'AI-empowered home system design with care of elderlys, integrating smart lighting, colour, wearable facilities, interactive devices.',
         supervisor: 'Changying XIANG',
     },
     {
-        title: 'Urban Region 3D Reconstruction',
+        title: 'Ubiquitous Computing',
         description:
-            'Using 3D reconstruction technique to create digital twins of buildings for planning, analysis and facility inspectation.',
-        supervisor: 'Yuan LIU',
+            'Our research focuses on developing deployable healthcare systems and generalizable AI algorithms for collecting and analyzing human physical and physiological data. We aim to close the sensing-reasoning-intervention loop to address real-world challenges in areas such as autism support and elderly care.',
+        supervisor: 'Qijia SHAO',
     },
     {
-        title: 'Robot-aware modular integrated building (MIC) design and construction',
+        title: 'Minimally invasive surgery',
         description:
-            'Design and construction of modular integrated buildings (MIC) tailored for temporary structures, optimized specifically for robotic assembly and construction.',
-        supervisor: 'Ziqi WANG',
-    },
-    {
-        title: 'Elastic Large Model Agent Serving at the Edge',
-        description:
-            'An elastic framework designed to optimize large model (LM) agent serving at the edge. By reducing latency and resource consumption while maintaining high accuracy and adaptability across varying edge conditions, it becomes essential for the development and deployment of LM-based edge intelligence.',
-        supervisor: 'Wenchao XU',
+            'Design novel surgical tools that can enter the body through a small opening and perform complex, accurate surgical procedures. ',
+        supervisor: 'Richard GU',
     },
 ];
