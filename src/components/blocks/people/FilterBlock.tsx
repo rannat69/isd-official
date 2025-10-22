@@ -124,7 +124,9 @@ export default function FilterBlock() {
                             setRole(val);
                             applyFilters({ role: val, area, keyword, tag });
                         }}
-                        className="min-w-[150px]"
+                        className="min-w-[130px]"
+                        triggerClassName="w-full flex items-center justify-between px-[12px] h-component-gap-sm bg-white focus:outline-none font-bold text-isd-primary"
+                        itemClassName="px-[12px]"
                     />
 
                     {role === 'staff' ? null : (
@@ -155,7 +157,13 @@ export default function FilterBlock() {
                                 }
                             }}
                             placeholder="Filter by area"
-                            className="min-w-[220px]"
+                            className="min-w-[180px]"
+                            triggerClassName={`w-full flex items-center justify-between px-[12px] h-component-gap-sm bg-white focus:outline-none ${
+                                area === 'all'
+                                    ? 'text-isd-font-3'
+                                    : 'font-bold text-isd-primary'
+                            }`}
+                            itemClassName="px-[12px]"
                         />
                     )}
                 </div>

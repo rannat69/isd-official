@@ -31,7 +31,7 @@ export default function PeopleContent() {
               });
 
     const staffList =
-        role === 'faculty' || role === 'affiliate'
+        role === 'faculty'
             ? []
             : filterAndSortPeople(staff as Person[], {
                   keyword,

@@ -17,6 +17,7 @@ type CustomSelectProps = {
     id?: string;
     className?: string; // container
     triggerClassName?: string; // exact button style from caller
+    itemClassName?: string; // individual item style from caller
 };
 
 function useOnClickOutside(
@@ -52,6 +53,7 @@ export default function Select({
     id = 'custom-select',
     className = '',
     triggerClassName = '',
+    itemClassName = '',
 }: CustomSelectProps) {
     const [open, setOpen] = useState<boolean>(false);
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
@@ -208,7 +210,7 @@ export default function Select({
                                     }
                                     onMouseLeave={() => setHighlightedIndex(-1)}
                                     onClick={() => handleSelect(opt)}
-                                    className={`select-none px-element-gap py-[6px] flex items-center text-isd-font-3 text-sm ${isHighlighted ? 'bg-isd-primary-2' : ''}`}
+                                    className={`select-none py-[6px] flex items-center text-isd-font-3 text-sm ${isHighlighted ? 'bg-isd-primary-2' : ''} ${itemClassName ? itemClassName : 'px-element-gap'}`}
                                 >
                                     <span className="truncate">
                                         {opt.label}

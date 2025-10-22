@@ -99,19 +99,21 @@ export function filterAndSortPeople(items: Person[], options: Options = {}) {
         return tokens.every((t) => hay.includes(t));
     });
 
-    // filter by tag
-    if (tag) {
-        filtered = filtered.filter((it) => {
-            if (!Array.isArray(it.tags)) return false;
-            return it.tags.includes(tag);
-        });
-    }
+    // filter by tag or area only if faculty
+    if (context === 'faculty') {
+        if (tag) {
+            filtered = filtered.filter((it) => {
+                if (!Array.isArray(it.tags)) return false;
+                return it.tags.includes(tag);
+            });
+        }
 
-    if (area !== 'all') {
-        filtered = filtered.filter((it) => {
-            if (!Array.isArray(it.areas)) return false;
-            return it.areas.includes(area);
-        });
+        if (area !== 'all') {
+            filtered = filtered.filter((it) => {
+                if (!Array.isArray(it.areas)) return false;
+                return it.areas.includes(area);
+            });
+        }
     }
 
     const sorted = filtered.slice();
