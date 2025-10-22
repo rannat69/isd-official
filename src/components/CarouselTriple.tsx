@@ -1,8 +1,8 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
-import { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 interface CarouselProps {
     images: StaticImageData[];
@@ -32,7 +32,6 @@ export default function Carousel({ images }: CarouselProps) {
         setCurrentIndex(index);
     };
 
-    const startIndex = currentIndex * imagesPerSlide;
     return (
         <div className="relative w-full h-full overflow-hidden">
             {/* Image Slides */}

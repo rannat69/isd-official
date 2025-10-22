@@ -1,4 +1,3 @@
-import Carousel from '@/components/Carousel';
 import F01 from '@/assets/academics/facilities/fac.01.jpg';
 import F02 from '@/assets/academics/facilities/fac.02.jpg';
 import F03 from '@/assets/academics/facilities/fac.03.jpg';
