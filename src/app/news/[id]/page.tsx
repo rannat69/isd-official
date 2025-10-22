@@ -11,9 +11,15 @@ export function generateStaticParams() {
     return items.map((it) => ({ id: String(it.id) }));
 }
 
-export default function NewsDetailPage({ params }: { params: { id: string } }) {
+export default async function NewsDetailPage({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}) {
+    const resolvedParams = await params;
+
     const items = data as NewsEntry[];
-    const item = items.find((it) => String(it.id) === params.id);
+    const item = items.find((it) => String(it.id) === resolvedParams.id);
     if (!item) return null;
     const images = resolveImages(item.pictures);
 
