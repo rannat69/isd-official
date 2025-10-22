@@ -62,7 +62,6 @@ export default function FilterBlock() {
             if (searchParams?.get('role') === 'faculty') {
                 setDisplayTags('all');
             } else {
-                setTag('');
                 setDisplayTags('none');
             }
         }
