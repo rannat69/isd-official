@@ -14,19 +14,19 @@ export default function ResourceBlock() {
                 <ImageCard
                     imageSrc={ScholarshipsImg}
                     title="Scholarships"
-                    // link="/scholarships"
+                    link="/academics/scholarships"
                     description="Several dedicated partners share our vision of creating new modes of engineering education. As part of our partnership program, they provide valuable resources in forms of financial and in-kind support to the Division."
                 />
                 <ImageCard
                     imageSrc={ExcangeImg}
                     title="Internship & Exchange"
-                    // link="/internships"
+                    link="/academics/internship"
                     description="ISD students can enjoy a range of internship opportunities offered by our industrial partners, and participate in exchange program coordinated by Academy of Interdisciplinary Studies."
                 />
                 <ImageCard
                     imageSrc={FacilitiesImg}
                     title="Facilities"
-                    // link="/facilities"
+                    link="/academics/facilities"
                     description="The division has two main design and prototyping facilities. The Design Studio is a teaching unit as well as a small 3D printing unit with small hand tools. Most of the first year design classes are held in the Design Studio."
                 />
             </div>
