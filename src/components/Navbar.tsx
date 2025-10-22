@@ -26,12 +26,14 @@ export default function Navbar() {
         },
         {
             name: 'People',
-            href: '/people',
+            href: '/people?role=faculty&area=all&tag=regular',
             submenu: {
                 items: [
-                    { name: 'ISD Faculty', href: '/people' },
-                    { name: 'Affiliates', href: '/people' },
-                    { name: 'ISD Staff', href: '/people' },
+                    {
+                        name: 'Faculty',
+                        href: '/people?role=faculty&area=all&tag=regular',
+                    },
+                    { name: 'ISD Staff', href: '/people?role=staff' },
                 ],
             },
         },
