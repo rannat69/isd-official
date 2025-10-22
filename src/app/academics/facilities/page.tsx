@@ -1,4 +1,4 @@
-import HeroImageFile from '@/assets/scholarships-hero.jpg';
+import HeroImageFile from '@/assets/facilities-hero.jpg';
 
 import HeroImage from '@/components/HeroImage';
 import FacilitiesBlock from '@/components/blocks/academics/FacilitiesBlock';
