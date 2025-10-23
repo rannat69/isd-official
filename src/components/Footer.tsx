@@ -137,8 +137,12 @@ export default function Footer() {
                         />
                         <div className="flex flex-col justify-center">
                             <div className="flex flex-row gap-[36px] text-callout-link">
-                                <span>Privacy</span>
-                                <span>Sitemap</span>
+                                <Link href="https://dataprivacy.ust.hk/university-data-privacy-policy-statement/">
+                                    Privacy
+                                </Link>
+                                <Link href="https://dataprivacy.hkust.edu.hk/sitemap">
+                                    Sitemap
+                                </Link>
                             </div>
                             <p className="text-callout mt-2">
                                 Copyright &copy; The Hong Kong University of
