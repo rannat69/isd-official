@@ -156,36 +156,65 @@ export default function Footer() {
                         />
                         <span className="text-callout">Follow HKUST on</span>
                         <div className="flex flex-row gap-[12px] items-center h-full">
-                            <Image
-                                src={FacebookIcon}
-                                alt="Facebook Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={InstagramIcon}
-                                alt="Instagram Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={LinkedinIcon}
-                                alt="LinkedIn Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={YoutubeIcon}
-                                alt="YouTube Logo"
-                                width={36}
-                                height={36}
-                            />
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.facebook.com/hkust/"
+                            >
+                                <Image
+                                    src={FacebookIcon}
+                                    alt="Facebook Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.instagram.com/hkust/"
+                            >
+                                <Image
+                                    src={InstagramIcon}
+                                    alt="Instagram Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.linkedin.com/school/hkust/"
+                            >
+                                <Image
+                                    src={LinkedinIcon}
+                                    alt="LinkedIn Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.youtube.com/user/hkust"
+                            >
+                                <Image
+                                    src={YoutubeIcon}
+                                    alt="YouTube Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            {/*
                             <Image
                                 src={WechatIcon}
                                 alt="WeChat Logo"
                                 width={36}
                                 height={36}
-                            />
+                            />*/}
                         </div>
                     </div>
                 </div>
