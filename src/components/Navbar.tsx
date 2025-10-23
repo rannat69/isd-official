@@ -166,7 +166,7 @@ export default function Navbar() {
                     </div>
 
                     <Menu
-                        className="block lg:hidden "
+                        className="block lg:hidden text-isd-primary "
                         onClick={() => setDisplayMobileMenu(true)}
                     />
                 </div>
@@ -175,25 +175,34 @@ export default function Navbar() {
             {displayMobileMenu && (
                 <div className=" w-full  z-51 bg-isd-primary pb-component-gap-sm">
                     <div className="flex justify-between items-center px-element-gap pb-[24px]">
-                        <Link href="https://hkust.edu.hk/">
-                            <Image
-                                src={HKUSTLogoWhite}
-                                alt="HKUST Logo"
-                                width={112}
-                                height={44.4}
-                                className="pr-[11px]"
-                                style={{ minWidth: '90px', height: '44.4px' }}
-                            />
-                        </Link>
-                        <Link href="/">
-                            <Image
-                                src={ISDLogoWhite}
-                                alt="ISD Logo"
-                                width={147}
-                                height={27}
-                                style={{ minWidth: '130px', height: '27px' }}
-                            />
-                        </Link>
+                        <div className='flex items-center'>
+                            {' '}
+                            <Link href="https://hkust.edu.hk/">
+                                <Image
+                                    src={HKUSTLogoWhite}
+                                    alt="HKUST Logo"
+                                    width={112}
+                                    height={44.4}
+                                    className="pr-[11px] border-r-1"
+                                    style={{
+                                        minWidth: '90px',
+                                        height: '44.4px',
+                                    }}
+                                />
+                            </Link>
+                            <Link href="/">
+                                <Image
+                                    src={ISDLogoWhite}
+                                    alt="ISD Logo"
+                                    width={147}
+                                    height={27}
+                                    style={{
+                                        minWidth: '130px',
+                                        height: '27px',
+                                    }}
+                                />
+                            </Link>
+                        </div>
                         <X
                             size={18}
                             className="text-white "
