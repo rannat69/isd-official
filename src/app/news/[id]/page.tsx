@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import data from '@/data/news_events.json';
 import { resolveImages } from '@/lib/newsImages';
@@ -34,9 +34,10 @@ export default async function NewsDetailPage({
                     Back
                 </Link>
 
-                <div className="flex flex-col gap-section-title-gap">
+                <div
+                    className={`flex flex-col ${item.type === 'events' ? 'gap-component-gap-sm' : 'gap-section-title-gap'}`}
+                >
                     <h1 className="text-h1">{item.title}</h1>
-
                     <div className="w-full bg-isd-font-2/10 relative">
                         {images.length > 1 ? (
                             <div className="h-[480px]">
@@ -53,9 +54,50 @@ export default async function NewsDetailPage({
                             />
                         )}
                     </div>
+                    <div className="flex flex-col gap-[24px]">
+                        {item.type === 'events' && (
+                            <div className="flex flex-col gap-[24px]">
+                                <h2 className="text-[36px] leading-9 font-bold text-primary">
+                                    Event Info
+                                </h2>
+                                <div className="flex flex-col gap-[4px]">
+                                    <div className="flex items-center gap-[12px]">
+                                        <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
+                                            <Calendar size={22} />
+                                        </div>
 
-                    <div className="flex flex-col gap-component-gap text-md text-isd-font-1">
-                        {renderContent(item.details)}
+                                        <p className="text-md text-isd-font-3">
+                                            {item.evt_date}
+                                        </p>
+                                    </div>
+                                    {item.evt_time ? (
+                                        <div className="flex items-center gap-[12px]">
+                                            <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
+                                                <Clock size={22} />
+                                            </div>
+
+                                            <p className="text-md text-isd-font-3">
+                                                {item.evt_time}
+                                            </p>
+                                        </div>
+                                    ) : null}
+                                    {item.evt_location ? (
+                                        <div className="flex items-center gap-[12px]">
+                                            <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
+                                                <MapPin size={22} />
+                                            </div>
+
+                                            <p className="text-md text-isd-font-3">
+                                                {item.evt_location}
+                                            </p>
+                                        </div>
+                                    ) : null}
+                                </div>
+                            </div>
+                        )}
+                        <div className="flex flex-col gap-component-gap text-md text-isd-font-1">
+                            {renderContent(item.details)}
+                        </div>
                     </div>
                 </div>
             </div>

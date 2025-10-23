@@ -3,22 +3,22 @@ import { ArrowRight } from 'lucide-react';
 export default function NewsAndEventsBlock() {
     const news = [
         {
-            title: 'HKUST InnoBay Bootcamp',
-            date: '2025-07-02',
+            title: 'Nine ISD Faculty Members Top 2% Most-Cited Scientists 2025',
+            date: '2025-10-14',
             description:
-                'One of the unique strengths of the Integrative Systems and Design program is the integration of design and technology to solve real-world problems.',
+                'Nine ISD Faculty Members Recognized Among the World’s Top 2% of Most-Cited Scientists for 2025.',
         },
         {
-            title: 'HKUST InnoBay Bootcamp',
-            date: '2025-07-02',
+            title: 'Event : [ISD Seminar] From Fragmented Conversations to Structured Signals',
+            date: '2025-09-18',
             description:
-                'One of the unique strengths of the Integrative Systems and Design program is the integration of design and technology to solve real-world problems.',
+                'Multilingual Language AI for Sales Compliance, Business Insights, and Contact Center Analytics.',
         },
         {
-            title: 'HKUST InnoBay Bootcamp',
+            title: 'Prof. Qijia SHAO Selected as Emerging Rockstar in IEEE Pervasive Computing magazine',
             date: '2025-07-02',
             description:
-                'One of the unique strengths of the Integrative Systems and Design program is the integration of design and technology to solve real-world problems.',
+                'Prof. Qijia SHAO was selected as an Emerging Rockstar and featured in an interview in IEEE Pervasive Computing magazine (Volume 24, Issue 2, April-June 2025)!',
         },
     ];
 
@@ -41,13 +41,14 @@ export default function NewsAndEventsBlock() {
                                 'flex flex-col text-black rounded-sm p-element-gap pt-component-gap-sm gap-[12px] ' +
                                 (i % 2
                                     ? 'bg-isd-secondary-1 text-isd-secondary'
-                                    : 'bg-isd-primary-2 text-isd-primary')
+                                    : 'bg-isd-primary-2 text-isd-primary') +
+                                ' flex-1 min-h-[200px] '
                             }
                             key={i}
                         >
-                            <h2 className="text-h2 font-bold">{news.title}</h2>
+                            <h2 className="text-h2 font-bold line-clamp-3">{news.title}</h2>
                             <span className="text-lg">{news.date}</span>
-                            <p className="text-md text-isd-font-3">
+                            <p className="text-md text-isd-font-3 line-clamp-3">
                                 {news.description}
                             </p>
                         </div>

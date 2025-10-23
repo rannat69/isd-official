@@ -121,12 +121,16 @@ export default function NewsListBlock() {
                 </div>
 
                 <div className="flex flex-col divide-y divide-isd-primary-3">
+
+
+
                     {visibleItems.map((item) => {
                         const href = `/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
                         const formattedDate = formatDate(item.date);
                         if (item.type === 'events') {
                             return (
+                               
                                 <EventCard
                                     key={item.id}
                                     href={href}
