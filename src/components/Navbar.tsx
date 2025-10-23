@@ -1,18 +1,13 @@
 'use client';
 
 import HKUSTLogo from '@/assets/hkust-logo.svg';
-import HKUSTLogoWhite from '@/assets/hkust-logo-white.svg';
 import ISDLogo from '@/assets/isd-logo.svg';
-import ISDLogoWhite from '@/assets/isd-logo-white.svg';
-import { ChevronRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Navbar() {
     const [selectedItem, setSelectedItem] = useState('');
-
-    const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
     const navItems = [
         {
@@ -38,7 +33,7 @@ export default function Navbar() {
                         name: 'Faculty',
                         href: '/people?role=faculty&area=all&tag=regular',
                     },
-                    { name: 'ISD Staff', href: '/people?role=staff' },
+                    { name: 'Staff', href: '/people?role=staff' },
                 ],
             },
         },
@@ -48,9 +43,12 @@ export default function Navbar() {
             submenu: {
                 items: [
                     { name: 'Programs', href: '/academics#programs' },
-                    { name: 'Scholarships', href: '/academics' },
-                    { name: 'Internship & Exchange', href: '/academics' },
-                    { name: 'Facilities', href: '/academics' },
+                    { name: 'Scholarships', href: '/academics/scholarships' },
+                    {
+                        name: 'Internship & Exchange',
+                        href: '/academics/internship',
+                    },
+                    { name: 'Facilities', href: '/academics/facilities' },
                 ],
             },
         },
@@ -96,10 +94,8 @@ export default function Navbar() {
     ];
 
     return (
-        <div>
-            <nav
-                className={`bg-white px-element-gap md:px-element-gap lg:px-section-gap sticky z-40 top-12 py-8 ${displayMobileMenu ? 'hidden' : ''}`}
-            >
+        <div className="hidden lg:block">
+            <nav className="bg-white px-section-gap sticky z-40 top-12 py-8">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
                         <Link href="https://hkust.edu.hk/">
@@ -109,7 +105,6 @@ export default function Navbar() {
                                 width={180}
                                 height={44.4}
                                 className="pr-[11px]"
-                                style={{ minWidth: '90px', height: '44.4px' }}
                             />
                         </Link>
                         <Link href="/">
@@ -118,15 +113,14 @@ export default function Navbar() {
                                 alt="ISD Logo"
                                 width={263}
                                 height={27}
-                                style={{ minWidth: '130px', height: '27px' }}
                             />
                         </Link>
                     </div>
 
-                    <div className="hidden lg:inline-flex  justify-center items-center gap-element-gap pt-2">
+                    <div className="inline-flex justify-center items-center gap-element-gap pt-2">
                         {navItems.map((item, i) => (
                             <div
-                                className="relative group pb-2  "
+                                className="relative group pb-2"
                                 key={item.name}
                             >
                                 <Link
@@ -164,105 +158,8 @@ export default function Navbar() {
                             </div>
                         ))}
                     </div>
-
-                    <Menu
-                        className="block lg:hidden text-isd-primary "
-                        onClick={() => setDisplayMobileMenu(true)}
-                    />
                 </div>
             </nav>
-
-            {displayMobileMenu && (
-                <div className=" w-full  z-51 bg-isd-primary pb-component-gap-sm">
-                    <div className="flex justify-between items-center px-element-gap pb-[24px]">
-                        <div className='flex items-center'>
-                            {' '}
-                            <Link href="https://hkust.edu.hk/">
-                                <Image
-                                    src={HKUSTLogoWhite}
-                                    alt="HKUST Logo"
-                                    width={112}
-                                    height={44.4}
-                                    className="pr-[11px] border-r-1"
-                                    style={{
-                                        minWidth: '90px',
-                                        height: '44.4px',
-                                    }}
-                                />
-                            </Link>
-                            <Link href="/">
-                                <Image
-                                    src={ISDLogoWhite}
-                                    alt="ISD Logo"
-                                    width={147}
-                                    height={27}
-                                    style={{
-                                        minWidth: '130px',
-                                        height: '27px',
-                                    }}
-                                />
-                            </Link>
-                        </div>
-                        <X
-                            size={18}
-                            className="text-white "
-                            onClick={() => setDisplayMobileMenu(false)}
-                        />
-                    </div>
-
-                    <div className="flex flex-col  gap-[16px] items-start  h-full px-component-gap-sm ">
-                        {navItems.map((item) => (
-                            <>
-                                <div
-                                    onClick={() =>
-                                        selectedItem != item.name
-                                            ? setSelectedItem(item.name)
-                                            : setSelectedItem('')
-                                    }
-                                    className="flex justify-between items-center  w-full border-b-1  pb-[10px] border-white"
-                                >
-                                    <div>
-                                        {item.submenu ? (
-                                            <div className="text-white text-nav py-2 ">
-                                                {item.name}
-                                            </div>
-                                        ) : (
-                                            <Link
-                                                key={item.name}
-                                                href={item.href}
-                                                className="text-white text-nav py-2 "
-                                                onClick={() => {
-                                                    setSelectedItem(item.name);
-                                                    setDisplayMobileMenu(false);
-                                                }}
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        )}
-                                    </div>
-                                    <div className="text-white">
-                                        <ChevronRight />
-                                    </div>
-                                </div>
-
-                                {selectedItem === item.name &&
-                                    item.submenu?.items.map((subItem) => (
-                                        <Link
-                                            onClick={() => {
-                                                setDisplayMobileMenu(false);
-                                            }}
-                                            key={subItem.name}
-                                            href={subItem.href}
-                                            className="block px-4 py-2 text-white text-nav-sub whitespace-nowrap"
-                                        >
-                                            {subItem.name}
-                                        </Link>
-                                    ))}
-                            </>
-                        ))}
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
