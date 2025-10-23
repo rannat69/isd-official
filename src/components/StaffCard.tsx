@@ -17,7 +17,7 @@ export default function StaffCard({
 }) {
     return (
         <div
-            className={`flex justify-between flex-1 border-l-3 items-center h-[96px] px-[24px] text-justify ${className}`}
+            className={`flex justify-between flex-1 border-l-3 items-center h-[96px] px-[24px] text-left ${className}`}
         >
             <div className="flex flex-col gap-footer-gap">
                 <div className="text-h2 text-isd-font-1">{name}</div>
@@ -36,9 +36,9 @@ export default function StaffCard({
                     </a>
                 )}
                 {location && (
-                    <>
+                    <div data-tooltip={location}>
                         <MapPin size={24} />
-                    </>
+                    </div>
                 )}
             </div>
         </div>
