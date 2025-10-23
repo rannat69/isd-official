@@ -8,6 +8,8 @@ import YoutubeIcon from '@/assets/youtube-icon.png';
 import InstagramIcon from '@/assets/instagram-icon.png';
 import FootLogo from '@/assets/award-white.svg';
 
+import HKUSTWechat from '@/assets/mainsite_Wechat_Eng_new.jpg';
+
 export default function Footer() {
     const navTitles = [
         {
@@ -212,13 +214,19 @@ export default function Footer() {
                                 />
                             </Link>
 
-                            {/*
-                            <Image
-                                src={WechatIcon}
-                                alt="WeChat Logo"
-                                width={36}
-                                height={36}
-                            />*/}
+                            {/* TODO */}
+                            <Link
+                                href={HKUSTWechat.src}
+                                target="_blank"
+                                // rel="noopener noreferrer"
+                            >
+                                <Image
+                                    src={WechatIcon}
+                                    alt="WeChat Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>
