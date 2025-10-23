@@ -21,8 +21,11 @@ export default function Footer() {
         },
         {
             title: 'People',
-            subheadings: ['ISD Faculty', 'Affiliates', 'ISD Staff'],
-            links: ['/people#faculty', '/people#affiliates', '/people#staff'],
+            subheadings: ['ISD Faculty', 'ISD Staff'],
+            links: [
+                '/people?role=faculty&area=all&tag=regular',
+                '/people?role=staff',
+            ],
         },
         {
             title: 'Academics',
@@ -34,15 +37,19 @@ export default function Footer() {
             ],
             links: [
                 '/academics#programs',
-                '/academics#scholarships',
-                '/academics#internship-and-exchange',
-                '/academics#facilities',
+                '/academics/scholarships',
+                '/academics/internship-and-exchange',
+                '/academics/facilities',
             ],
         },
         {
             title: 'News & Events',
             subheadings: ['News', 'Events', 'Achievement'],
-            links: ['/news#news', '/news#events', '/news#achievement'],
+            links: [
+                '/news?category=news',
+                '/news?category=events',
+                '/news?category=achievements',
+            ],
         },
         {
             title: 'Student Life',
@@ -54,11 +61,11 @@ export default function Footer() {
                 'Alumni Sharing',
             ],
             links: [
-                '/student-life#student-competitions',
-                '/student-life#extracurricular-activities',
-                '/student-life#internship',
-                '/student-life#exchange',
-                '/student-life#alumni-sharing',
+                '/student-life?page=stud-comp',
+                '/student-life?page=extra-act',
+                '/student-life?page=intern',
+                '/student-life?page=exchange',
+                '/student-life?page=alumni',
             ],
         },
     ];
@@ -114,8 +121,8 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="justify-start font-bold uppercase flex flex-row gap-component-gap-sm">
-                        <p>research</p>
-                        <p>collaboration</p>
+                        <Link href="/research">research</Link>
+                        <Link href="/collaborators">collaboration</Link>
                     </div>
                 </div>
 
