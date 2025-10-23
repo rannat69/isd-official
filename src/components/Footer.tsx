@@ -214,12 +214,7 @@ export default function Footer() {
                                 />
                             </Link>
 
-                            {/* TODO */}
-                            <Link
-                                href={HKUSTWechat.src}
-                                target="_blank"
-                                // rel="noopener noreferrer"
-                            >
+                            <Link href={HKUSTWechat.src} target="_blank">
                                 <Image
                                     src={WechatIcon}
                                     alt="WeChat Logo"
