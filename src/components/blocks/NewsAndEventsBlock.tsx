@@ -46,7 +46,9 @@ export default function NewsAndEventsBlock() {
                             }
                             key={i}
                         >
-                            <h2 className="text-h2 font-bold line-clamp-3">{news.title}</h2>
+                            <h2 className="text-h2 font-bold line-clamp-3">
+                                {news.title}
+                            </h2>
                             <span className="text-lg">{news.date}</span>
                             <p className="text-md text-isd-font-3 line-clamp-3">
                                 {news.description}
