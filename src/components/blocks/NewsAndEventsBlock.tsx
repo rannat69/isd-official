@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function NewsAndEventsBlock() {
     const news = [
@@ -29,10 +30,13 @@ export default function NewsAndEventsBlock() {
             </h1>
 
             <div className="flex flex-col gap-[12px]">
-                <span className="text-sm text-isd-primary font-bold self-end flex gap-[6px]">
+                <Link
+                    href="/news"
+                    className="text-sm text-isd-primary font-bold self-end flex gap-[6px]"
+                >
                     View all
                     <ArrowRight size={20} strokeWidth={3} />
-                </span>
+                </Link>
 
                 <div className="flex md:flex-row flex-col gap-component-gap-sm">
                     {news.map((news, i) => (
