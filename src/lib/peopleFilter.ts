@@ -1,4 +1,5 @@
 export type Person = {
+    id: number;
     name: string;
     details?: string | null;
     role?: string | null;
@@ -33,6 +34,7 @@ const facultyPositionOrder = [
     'part-time lecturer',
     'research assistant professor',
     'adjunct professor',
+    'assistant professor',
 ];
 
 const staffPositionOrder = [
@@ -118,11 +120,15 @@ export function filterAndSortPeople(items: Person[], options: Options = {}) {
 
     const sorted = filtered.slice();
 
-    // sort by position using rank then name as tiebreaker
+    // sort by position using id then rank then name as tiebreaker
     sorted.sort((a, b) => {
-        const ra = positionRank(a.position ?? a.role ?? '', context);
-        const rb = positionRank(b.position ?? b.role ?? '', context);
-        if (ra !== rb) return ra - rb;
+        // First, compare by id
+        if (a.id !== b.id) return a.id - b.id; // Assuming id is numeric
+
+        // Useless for now but might serve later
+        //const ra = positionRank(a.position ?? a.role ?? '', context);
+        //const rb = positionRank(b.position ?? b.role ?? '', context);
+        //if (ra !== rb) return ra - rb;
         return nameKey(a.name).localeCompare(nameKey(b.name));
     });
 
