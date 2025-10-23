@@ -8,6 +8,8 @@ import YoutubeIcon from '@/assets/youtube-icon.png';
 import InstagramIcon from '@/assets/instagram-icon.png';
 import FootLogo from '@/assets/award-white.svg';
 
+import HKUSTWechat from '@/assets/mainsite_Wechat_Eng_new.jpg';
+
 export default function Footer() {
     const navTitles = [
         {
@@ -137,8 +139,12 @@ export default function Footer() {
                         />
                         <div className="flex flex-col justify-center">
                             <div className="flex flex-row gap-[36px] text-callout-link">
-                                <span>Privacy</span>
-                                <span>Sitemap</span>
+                                <Link href="https://dataprivacy.ust.hk/university-data-privacy-policy-statement/">
+                                    Privacy
+                                </Link>
+                                <Link href="https://dataprivacy.hkust.edu.hk/sitemap">
+                                    Sitemap
+                                </Link>
                             </div>
                             <p className="text-callout mt-2">
                                 Copyright &copy; The Hong Kong University of
@@ -156,36 +162,66 @@ export default function Footer() {
                         />
                         <span className="text-callout">Follow HKUST on</span>
                         <div className="flex flex-row gap-[12px] items-center h-full">
-                            <Image
-                                src={FacebookIcon}
-                                alt="Facebook Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={InstagramIcon}
-                                alt="Instagram Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={LinkedinIcon}
-                                alt="LinkedIn Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={YoutubeIcon}
-                                alt="YouTube Logo"
-                                width={36}
-                                height={36}
-                            />
-                            <Image
-                                src={WechatIcon}
-                                alt="WeChat Logo"
-                                width={36}
-                                height={36}
-                            />
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.facebook.com/hkust/"
+                            >
+                                <Image
+                                    src={FacebookIcon}
+                                    alt="Facebook Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.instagram.com/hkust/"
+                            >
+                                <Image
+                                    src={InstagramIcon}
+                                    alt="Instagram Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.linkedin.com/school/hkust/"
+                            >
+                                <Image
+                                    src={LinkedinIcon}
+                                    alt="LinkedIn Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.youtube.com/user/hkust"
+                            >
+                                <Image
+                                    src={YoutubeIcon}
+                                    alt="YouTube Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
+
+                            <Link href={HKUSTWechat.src} target="_blank">
+                                <Image
+                                    src={WechatIcon}
+                                    alt="WeChat Logo"
+                                    width={36}
+                                    height={36}
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>
