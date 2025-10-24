@@ -6,7 +6,7 @@ import JoinUsBlock from '@/components/blocks/JoinUsBlock';
 
 export default function AboutISD() {
     return (
-        <div className="min-h-screen flex flex-col items-center">
+        <div className="min-h-screen flex flex-col   lg:items-center">
             <HeroCarouselBlock />
             <AboutISDNavbarBlock />
             <HeadsMessageBlock />

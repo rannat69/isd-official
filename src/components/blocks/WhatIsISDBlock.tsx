@@ -1,14 +1,14 @@
 export default function WhatIsISDBlock() {
     return (
         <div
-            className="container overflow-clip flex flex-col pt-section-gap gap-section-title-gap scroll-mt-[95px]"
+            className="container overflow-clip flex flex-col pt-component-gap lg:pt-section-gap gap-[24px] lg:gap-section-title-gap scroll-mt-[95px]"
             id="what-is-isd"
         >
-            <h1 className="text-h1 offset-text-background uppercase">
+            <h1 className="text-h2 lg:text-h1 offset-text-background uppercase">
                 WHAT IS ISD
             </h1>
 
-            <div className="flex flex-col gap-component-gap-sm">
+            <div className="flex flex-col gap-[24px] lg:gap-component-gap-sm">
                 <p className="text-md text-isd-font-1 text-justify">
                     Integrative Systems and Design is a new paradigm for
                     educating technologists and innovators. A more holistic
