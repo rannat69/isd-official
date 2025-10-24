@@ -1,10 +1,15 @@
 'use client';
 
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 const useHash = () => {
-    const [hash, setHash] = React.useState(window.location.hash);
-    React.useEffect(() => {
+    const [hash, setHash] = useState('');
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        setHash(window.location.hash);
+
         const onHashChanged = () => setHash(window.location.hash);
         const { pushState, replaceState } = window.history;
         window.history.pushState = function (...args) {
@@ -20,6 +25,7 @@ const useHash = () => {
             window.removeEventListener('hashchange', onHashChanged);
         };
     }, []);
+
     return hash;
 };
 
