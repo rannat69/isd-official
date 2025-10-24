@@ -134,7 +134,7 @@ export default function Navbar() {
                             {item.submenu && (
                                 <div
                                     className={
-                                        'absolute mt-2 hidden group-hover:block group-focus-within:block bg-white shadow-lg shadow-black/30 z-40' +
+                                        'absolute mt-2 hidden group-hover:block bg-white shadow-lg shadow-black/30 z-40' +
                                         (i === navItems.length - 1
                                             ? ' right-0'
                                             : ' left-0')
