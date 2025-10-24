@@ -61,7 +61,6 @@ function nameKey(name?: string) {
     return (last + ' ' + first).toLowerCase();
 }
 
-
 function positionRank(
     position?: string | null,
     context: Options['context'] = 'faculty'

@@ -131,11 +131,10 @@ export default function NavbarMobile() {
                 onClick={handleClick}
             >
                 <div className="text-white text-nav py-2">{item.name}</div>
-             
-                    <div className="text-white">
-                        <ChevronRight />
-                    </div>
-              
+
+                <div className="text-white">
+                    <ChevronRight />
+                </div>
             </div>
         );
     };
@@ -266,7 +265,7 @@ export default function NavbarMobile() {
                                 )}
 
                                 {selectedItem === item.name && (
-                                    <div className="flex flex-col gap-[6px] py-[4px]">
+                                    <div className="flex flex-col gap-[6px] py-[4px] ">
                                         {item.submenu?.items.map((subItem) => (
                                             <Link
                                                 onClick={() => {
