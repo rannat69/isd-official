@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import NavbarMobile from '@/components/NavbarMobile';
+import FooterMobile from '@/components/FooterMobile';
 
 const mulish = Mulish({
     subsets: ['latin'],
@@ -24,13 +25,14 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="isd-official">
             <body
-                className={`${mulish.className} antialiased min-h-screen flex flex-col`}
+                className={`${mulish.className} antialiased min-h-screen flex flex-col mt-[21px]`}
             >
                 <Header />
                 <Navbar />
                 <NavbarMobile />
                 <main className="flex-1">{children}</main>
                 <Footer />
+                <FooterMobile />
             </body>
         </html>
     );

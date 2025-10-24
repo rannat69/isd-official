@@ -83,8 +83,8 @@ export default function Footer() {
             ],
         },
     ];
-    return (
-        <footer className="bg-isd-primary text-white py-[61px] ">
+    return (   
+        <footer className="hidden lg:block bg-isd-primary text-white py-[61px] ">
             <div className="container hidden lg:flex flex-col gap-[60px]">
                 <div>
                     <div className="flex flex-row justify-start divide-x-1 divide-white gap-component-gap-sm pb-[24px]">
