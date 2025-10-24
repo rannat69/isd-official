@@ -79,9 +79,9 @@ export default function CollabortorsBlock() {
 
     return (
         <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
-            <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap-sm text-md  text-isd-font-1">
-                <div className="flex flex-col gap-component-gap">
-                    <h1 className="text-h1 offset-text-background text-isd-font-1">
+            <div className="container overflow-y-clip flex flex-col py-component-gap lg:py-section-gap gap-[24px] lg:gap-component-gap-sm text-md  text-isd-font-1">
+                <div className="flex flex-col gap-[24px] lg:gap-component-gap">
+                    <h1 className="text-h2 lg:text-h1 offset-text-background text-isd-font-1">
                         Academics and Industry Partners{' '}
                     </h1>
 
