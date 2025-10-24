@@ -2,92 +2,155 @@
 
 import HKUSTLogo from '@/assets/hkust-logo.svg';
 import ISDLogo from '@/assets/isd-logo.svg';
+import useHash from '@/lib/getHash';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function Navbar() {
-    const [selectedItem, setSelectedItem] = useState('');
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const hash = useHash();
 
     const navItems = [
         {
             name: 'About ISD',
             href: '/about-isd',
+            pathnameKeyword: 'about-isd',
             submenu: {
                 items: [
                     {
                         name: "Head's Message",
                         href: '/about-isd#heads-message',
+                        pathnameKeyword: 'heads-message',
                     },
-                    { name: 'What is ISD', href: '/about-isd#what-is-isd' },
-                    { name: 'Join Us', href: '/about-isd#join-us' },
+                    {
+                        name: 'What is ISD',
+                        href: '/about-isd#what-is-isd',
+                        pathnameKeyword: 'what-is-isd',
+                    },
+                    {
+                        name: 'Join Us',
+                        href: '/about-isd#join-us',
+                        pathnameKeyword: 'join-us',
+                    },
                 ],
             },
         },
         {
             name: 'People',
             href: '/people?role=faculty&area=all&tag=regular',
+            pathnameKeyword: 'people',
             submenu: {
                 items: [
                     {
                         name: 'Faculty',
                         href: '/people?role=faculty&area=all&tag=regular',
+                        pathnameKeyword: 'faculty',
                     },
-                    { name: 'Staff', href: '/people?role=staff' },
+                    {
+                        name: 'Staff',
+                        href: '/people?role=staff',
+                        pathnameKeyword: 'staff',
+                    },
                 ],
             },
         },
         {
             name: 'Academics',
             href: '/academics',
+            pathnameKeyword: 'academics',
             submenu: {
                 items: [
-                    { name: 'Programs', href: '/academics#programs' },
-                    { name: 'Scholarships', href: '/academics/scholarships' },
+                    {
+                        name: 'Programs',
+                        href: '/academics#programs',
+                        pathnameKeyword: 'programs',
+                    },
+                    {
+                        name: 'Scholarships',
+                        href: '/academics/scholarships',
+                        pathnameKeyword: 'scholarships',
+                    },
                     {
                         name: 'Internship & Exchange',
                         href: '/academics/internship',
+                        pathnameKeyword: 'internship',
                     },
-                    { name: 'Facilities', href: '/academics/facilities' },
+                    {
+                        name: 'Facilities',
+                        href: '/academics/facilities',
+                        pathnameKeyword: 'facilities',
+                    },
                 ],
             },
         },
-        { name: 'Research', href: '/research' },
+        { name: 'Research', href: '/research', pathnameKeyword: 'research' },
         {
             name: 'News & Events',
             href: '/news',
+            pathnameKeyword: 'news',
             submenu: {
                 items: [
-                    { name: 'News', href: '/news?category=news' },
-                    { name: 'Events', href: '/news?category=events' },
+                    {
+                        name: 'News',
+                        href: '/news?category=news',
+                        pathnameKeyword: '=news',
+                    },
+                    {
+                        name: 'Events',
+                        href: '/news?category=events',
+                        pathnameKeyword: 'events',
+                    },
                     {
                         name: 'Achievement',
                         href: '/news?category=achievements',
+                        pathnameKeyword: 'achievements',
                     },
                 ],
             },
         },
-        { name: 'Collaborators', href: '/collaborators' },
+        {
+            name: 'Collaborators',
+            href: '/collaborators',
+            pathnameKeyword: 'collaborators',
+        },
         {
             name: 'Student Life',
             href: '/student-life?page=stud-comp',
+            pathnameKeyword: 'student-life',
             submenu: {
                 items: [
                     {
                         name: 'Student Competitions',
-                        href: '/student-life?page=stud-comp',
+                        href: '/student-life/?page=stud-comp',
+                        pathnameKeyword: 'stud-comp',
                     },
                     {
                         name: 'Extracurricular Activities',
                         href: '/student-life?page=extra-act',
+                        pathnameKeyword: 'extra-act',
                     },
-                    { name: 'Internships', href: '/student-life?page=intern' },
-                    { name: 'Exchange', href: '/student-life?page=exchange' },
+                    {
+                        name: 'Internships',
+                        href: '/student-life?page=intern',
+                        pathnameKeyword: 'intern',
+                    },
+                    {
+                        name: 'Exchange',
+                        href: '/student-life?page=exchange',
+                        pathnameKeyword: 'exchange',
+                    },
                     {
                         name: 'Alumni Sharing',
                         href: '/student-life?page=alumni',
+                        pathnameKeyword: 'alumni',
                     },
-                    { name: 'Useful Links', href: '/student-life?page=links' },
+                    {
+                        name: 'Useful Links',
+                        href: '/student-life?page=links',
+                        pathnameKeyword: 'links',
+                    },
                 ],
             },
         },
@@ -122,11 +185,10 @@ export default function Navbar() {
                             <Link
                                 href={item.href}
                                 className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
-                                    selectedItem === item.name
+                                    pathname.includes(item.pathnameKeyword)
                                         ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
                                         : 'text-isd-font-3'
                                 }`}
-                                onClick={() => setSelectedItem(item.name)}
                             >
                                 {item.name}
                             </Link>
@@ -144,7 +206,7 @@ export default function Navbar() {
                                         <Link
                                             key={subItem.name}
                                             href={subItem.href}
-                                            className="block px-4 py-2 text-isd-font-3 text-nav-sub hover:bg-gray-100 whitespace-nowrap"
+                                            className={`block px-4 py-2 text-nav-sub hover:bg-gray-100 whitespace-nowrap ${pathname.includes(subItem.pathnameKeyword) || searchParams.toString().includes(subItem.pathnameKeyword) || hash.includes(subItem.pathnameKeyword) ? 'text-isd-primary font-bold underline' : 'text-isd-font-3'}`}
                                         >
                                             {subItem.name}
                                         </Link>
