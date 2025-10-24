@@ -20,7 +20,9 @@ export default function StaffCard({
             className={`flex justify-between flex-1 border-l-3 items-center h-[96px] px-[24px] text-left ${className}`}
         >
             <div className="flex flex-col gap-footer-gap">
-                <div className="text-h2 text-isd-font-1">{name}</div>
+                <div className="text-[20px] font-bold leading-[26px] text-isd-font-1">
+                    {name}
+                </div>
                 <div className="text-md">{role}</div>
             </div>
 
