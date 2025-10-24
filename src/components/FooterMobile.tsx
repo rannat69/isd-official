@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import HKUSTLogoWhite from '@/assets/hkust-logo-white.svg';
 import LinkedinIcon from '@/assets/linkedin-icon.png';
 import FacebookIcon from '@/assets/facebook-icon.png';
 import WechatIcon from '@/assets/wechat-icon.png';
