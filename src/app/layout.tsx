@@ -10,7 +10,6 @@ import FooterMobile from '@/components/FooterMobile';
 
 import { Suspense } from 'react';
 
-
 const mulish = Mulish({
     subsets: ['latin'],
 });
@@ -35,7 +34,7 @@ export default function RootLayout({
 
                 <Suspense>
                     <Navbar />
-                <NavbarMobile />
+                    <NavbarMobile />
                 </Suspense>
 
                 <main className="flex-1">{children}</main>
