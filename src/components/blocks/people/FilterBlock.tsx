@@ -113,8 +113,8 @@ export default function FilterBlock() {
                 id="select"
                 className="absolute top-[50%] left-0 w-full h-0 invisible"
             ></div> */}
-            <div className="container w-full flex pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
-                <div className="flex gap-component-gap-sm ">
+            <div className="container w-full flex lg:flex-row flex-col pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
+                <div className="flex gap-component-gap-sm lg:w-fit w-full justify-between">
                     <Select
                         id="role-select"
                         options={roles}
@@ -168,7 +168,7 @@ export default function FilterBlock() {
                     )}
                 </div>
 
-                <div className="flex gap-[24px] flex-1">
+                <div className="flex gap-[24px] flex-1 lg:flex-row flex-col w-full">
                     <input
                         type="text"
                         placeholder="Keyword Search"
@@ -177,20 +177,22 @@ export default function FilterBlock() {
                         onKeyDown={(e) => {
                             if (e.key === 'Enter') handleSearch();
                         }}
-                        className="bg-white px-[12px] flex-1 h-component-gap-sm text-isd-font-1 placeholder:text-isd-font-3 focus:outline-none"
+                        className="bg-white px-3 py-[6px] flex-1 h-component-gap-sm text-isd-font-1 placeholder:text-isd-font-3 focus:outline-none"
                     />
-                    <button
-                        onClick={handleSearch}
-                        className="bg-isd-primary w-section-gap h-component-gap-sm text-white"
-                    >
-                        Search
-                    </button>
-                    <button
-                        onClick={handleClear}
-                        className="bg-white w-section-gap h-component-gap-sm text-isd-primary"
-                    >
-                        Clear
-                    </button>
+                    <div className="flex flex-row gap-component-gap-sm justify-start">
+                        <button
+                            onClick={handleSearch}
+                            className="bg-isd-primary w-section-gap h-component-gap-sm text-white"
+                        >
+                            Search
+                        </button>
+                        <button
+                            onClick={handleClear}
+                            className="bg-white w-section-gap h-component-gap-sm text-isd-primary"
+                        >
+                            Clear
+                        </button>
+                    </div>
                 </div>
             </div>
 
