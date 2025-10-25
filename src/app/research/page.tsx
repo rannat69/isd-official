@@ -7,6 +7,11 @@ import HealthTechBlock from './HealthTechBlock';
 import DesignTechBlock from './DesignTechBlock';
 import EmergentThemesBlock from './EmergentThemesBlock';
 import FloatingNav from '@/components/FloatingNav';
+import SustainableTechBlockMobile from './mobile/SustainableTechBlockMobile';
+import MarineTechBlockMobile from './mobile/MarineTechBlockMobile';
+import HealthTechBlockMobile from './mobile/HealthTechBlockMobile';
+import DesignTechBlockMobile from './mobile/DesignTechBlockMobile';
+import EmergentThemesBlockMobile from './mobile/EmergentThemesBlockMobile';
 
 export default function ResearchPage() {
     const sections = [
@@ -19,28 +24,39 @@ export default function ResearchPage() {
     return (
         <div className="min-h-screen flex flex-col">
             <HeroImage image={ResearchHero} />
-            <FloatingNav sections={sections} title="Research Areas" />
-            <Heading />
 
-            <section id="sustainable-tech" className="scroll-mt-24">
-                <SustainableTechBlock />
-            </section>
+            <div className="hidden lg:block">
+                <FloatingNav sections={sections} title="Research Areas" />
+                <Heading />
 
-            <section id="marine-tech" className="scroll-mt-24">
-                <MarineTechBlock />
-            </section>
+                <section id="sustainable-tech" className="scroll-mt-24">
+                    <SustainableTechBlock />
+                </section>
 
-            <section id="health-tech" className="scroll-mt-24">
-                <HealthTechBlock />
-            </section>
+                <section id="marine-tech" className="scroll-mt-24">
+                    <MarineTechBlock />
+                </section>
 
-            <section id="design-tech" className="scroll-mt-24">
-                <DesignTechBlock />
-            </section>
+                <section id="health-tech" className="scroll-mt-24">
+                    <HealthTechBlock />
+                </section>
 
-            <section id="emergent-themes" className="scroll-mt-24">
-                <EmergentThemesBlock />
-            </section>
+                <section id="design-tech" className="scroll-mt-24">
+                    <DesignTechBlock />
+                </section>
+
+                <section id="emergent-themes" className="scroll-mt-24">
+                    <EmergentThemesBlock />
+                </section>
+            </div>
+
+            <div className="block lg:hidden">
+                <Heading />
+                <SustainableTechBlockMobile />
+                <MarineTechBlockMobile /> <HealthTechBlockMobile />{' '}
+                <DesignTechBlockMobile />
+                <EmergentThemesBlockMobile />
+            </div>
         </div>
     );
 }
