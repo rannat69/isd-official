@@ -180,42 +180,46 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                <div className="inline-flex justify-center items-center gap-element-gap pt-2">
-                    {navItems.map((item, i) => (
-                        <div className="relative group pb-2" key={item.name}>
-                            <Link
-                                href={item.href}
-                                className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
-                                    pathname.includes(item.pathnameKeyword)
-                                        ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
-                                        : 'text-isd-font-3'
-                                }`}
+                    <div className="inline-flex justify-center items-center gap-element-gap pt-2">
+                        {navItems.map((item, i) => (
+                            <div
+                                className="relative group pb-2"
+                                key={item.name}
                             >
-                                {item.name}
-                            </Link>
-
-                            {item.submenu && (
-                                <div
-                                    className={
-                                        'absolute mt-2 hidden group-hover:block bg-white shadow-lg shadow-black/30 z-40' +
-                                        (i === navItems.length - 1
-                                            ? ' right-0'
-                                            : ' left-0')
-                                    }
+                                <Link
+                                    href={item.href}
+                                    className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
+                                        pathname.includes(item.pathnameKeyword)
+                                            ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
+                                            : 'text-isd-font-3'
+                                    }`}
                                 >
-                                    {item.submenu.items.map((subItem) => (
-                                        <Link
-                                            key={subItem.name}
-                                            href={subItem.href}
-                                            className={`block px-4 py-2 text-nav-sub hover:bg-gray-100 whitespace-nowrap ${pathname.includes(subItem.pathnameKeyword) || searchParams.toString().includes(subItem.pathnameKeyword) || hash.includes(subItem.pathnameKeyword) ? 'text-isd-primary font-bold underline' : 'text-isd-font-3'}`}
-                                        >
-                                            {subItem.name}
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    ))}
+                                    {item.name}
+                                </Link>
+
+                                {item.submenu && (
+                                    <div
+                                        className={
+                                            'absolute mt-2 hidden group-hover:block bg-white shadow-lg shadow-black/30 z-40' +
+                                            (i === navItems.length - 1
+                                                ? ' right-0'
+                                                : ' left-0')
+                                        }
+                                    >
+                                        {item.submenu.items.map((subItem) => (
+                                            <Link
+                                                key={subItem.name}
+                                                href={subItem.href}
+                                                className={`block px-4 py-2 text-nav-sub hover:bg-gray-100 whitespace-nowrap ${pathname.includes(subItem.pathnameKeyword) || searchParams.toString().includes(subItem.pathnameKeyword) || hash.includes(subItem.pathnameKeyword) ? 'text-isd-primary font-bold underline' : 'text-isd-font-3'}`}
+                                            >
+                                                {subItem.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </nav>
         </div>
