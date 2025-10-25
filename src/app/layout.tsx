@@ -4,8 +4,10 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
 import NavbarMobile from '@/components/NavbarMobile';
 import FooterMobile from '@/components/FooterMobile';
+
 import { Suspense } from 'react';
 
 const mulish = Mulish({
@@ -26,14 +28,13 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="isd-official">
             <body
-                className={`${mulish.className} antialiased min-h-screen flex flex-col mt-[21px]`}
+                className={`${mulish.className} antialiased min-h-screen flex flex-col  mt-[21px] lg:mt-0`}
             >
                 <Header />
 
-
                 <Suspense>
-                        <Navbar />
-                <NavbarMobile />
+                    <Navbar />
+                    <NavbarMobile />
                 </Suspense>
 
                 <main className="flex-1">{children}</main>
