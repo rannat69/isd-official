@@ -48,10 +48,26 @@ export default function NavbarMobile() {
             href: '/academics',
             submenu: {
                 items: [
-                    { name: 'Programs', href: '/academics#programs' },
-                    { name: 'Scholarships', href: '/academics' },
-                    { name: 'Internship & Exchange', href: '/academics' },
-                    { name: 'Facilities', href: '/academics' },
+                       {
+                        name: 'Programs',
+                        href: '/academics#programs',
+                        pathnameKeyword: 'programs',
+                    },
+                    {
+                        name: 'Scholarships',
+                        href: '/academics/scholarships',
+                        pathnameKeyword: 'scholarships',
+                    },
+                    {
+                        name: 'Internship & Exchange',
+                        href: '/academics/internship',
+                        pathnameKeyword: 'internship',
+                    },
+                    {
+                        name: 'Facilities',
+                        href: '/academics/facilities',
+                        pathnameKeyword: 'facilities',
+                    },
                 ],
             },
         },
