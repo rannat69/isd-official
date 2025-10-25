@@ -9,7 +9,7 @@ export default function HeroImage({
 }) {
     return (
         <div
-            className={`w-full relative overflow-hidden ${people ? 'h-[684px]' : 'h-[612px]'}`}
+            className={`w-full relative overflow-hidden ${people ? 'lg:h-[684px]' : 'lg:h-[612px]'}`}
         >
             <Image
                 src={image}
