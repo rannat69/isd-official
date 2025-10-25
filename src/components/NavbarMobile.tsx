@@ -48,7 +48,7 @@ export default function NavbarMobile() {
             href: '/academics',
             submenu: {
                 items: [
-                       {
+                    {
                         name: 'Programs',
                         href: '/academics#programs',
                         pathnameKeyword: 'programs',

@@ -1,5 +1,5 @@
 import TextCard from '@/components/TextCard';
-export default function ProgramBlock() {
+export default function ProgramBlockMobile() {
     const programsInfo = [
         {
             heading: 'Undergraduate',
@@ -34,9 +34,9 @@ export default function ProgramBlock() {
     ];
 
     return (
-        <div className="hidden lg:block dot-pattern before:top-[-95px] before:right-[10px] [--dot-color:var(--isd-secondary-1)]">
-            <div className="container relative overflow-clip flex flex-col py-section-gap gap-section-title-gap">
-                <h1 className="text-h1 offset-text-background uppercase">
+        <div className="block lg:hidden">
+            <div className="container relative overflow-clip flex flex-col py-component-gap gap-[24px]">
+                <h1 className="text-h2 lg:text-h1 offset-text-background uppercase">
                     Programs
                 </h1>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-section-title-gap">
@@ -50,10 +50,6 @@ export default function ProgramBlock() {
                     ))}
                 </div>
             </div>
-            <div
-                className="dot-pattern before:bottom-[25px] before:left-[-90px] [--dot-color:var(--isd-secondary-1)] "
-                aria-hidden
-            />
         </div>
     );
 }
