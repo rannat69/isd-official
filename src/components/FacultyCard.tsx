@@ -41,7 +41,7 @@ export default function FacultyCard({
                     sizes="221px"
                 />
             </div>
-            <div className="flex flex-col justify-between flex-1 text-justify">
+            <div className="flex flex-col justify-between flex-1 text-left">
                 <div className="flex flex-col gap-footer-gap">
                     <div className="text-h2 text-isd-font-1">{name}</div>
                     <div className="text-md text-isd-secondary">{role}</div>
@@ -50,7 +50,7 @@ export default function FacultyCard({
                             ? `Primary appointment: ${primaryApt}`
                             : null}
                     </div>
-                    <div className="text-md text-isd-font-3 text">
+                    <div className="text-md text-isd-font-3 line-clamp-3 break-words">
                         {keywords.map((kw, index) => (
                             <span key={kw}>
                                 {kw}

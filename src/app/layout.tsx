@@ -4,8 +4,12 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
 import NavbarMobile from '@/components/NavbarMobile';
 import FooterMobile from '@/components/FooterMobile';
+
+import { Suspense } from 'react';
+
 
 const mulish = Mulish({
     subsets: ['latin'],
@@ -28,8 +32,12 @@ export default function RootLayout({
                 className={`${mulish.className} antialiased min-h-screen flex flex-col mt-[21px]`}
             >
                 <Header />
-                <Navbar />
+
+                <Suspense>
+                    <Navbar />
                 <NavbarMobile />
+                </Suspense>
+
                 <main className="flex-1">{children}</main>
                 <Footer />
                 <FooterMobile />

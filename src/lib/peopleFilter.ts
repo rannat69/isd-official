@@ -22,30 +22,30 @@ type Options = {
     tag?: string;
 };
 
-const facultyPositionOrder = [
-    'head',
-    'chair professor',
-    'chair professor (joint)',
-    'professor',
-    'professor (joint)',
-    'associate professor',
-    'associate professor (joint)',
-    'lecturer',
-    'part-time lecturer',
-    'research assistant professor',
-    'adjunct professor',
-    'assistant professor',
-];
+// const facultyPositionOrder = [
+//     'head',
+//     'chair professor',
+//     'chair professor (joint)',
+//     'professor',
+//     'professor (joint)',
+//     'associate professor',
+//     'associate professor (joint)',
+//     'lecturer',
+//     'part-time lecturer',
+//     'research assistant professor',
+//     'adjunct professor',
+//     'assistant professor',
+// ];
 
-const staffPositionOrder = [
-    'senior manager',
-    'assistant manager',
-    'officer',
-    'senior technical officer',
-    'technical officer',
-    'teaching associate',
-    'instructional assistant',
-];
+// const staffPositionOrder = [
+//     'senior manager',
+//     'assistant manager',
+//     'officer',
+//     'senior technical officer',
+//     'technical officer',
+//     'teaching associate',
+//     'instructional assistant',
+// ];
 
 function normalize(s?: string | null) {
     if (!s) return '';
@@ -61,19 +61,19 @@ function nameKey(name?: string) {
     return (last + ' ' + first).toLowerCase();
 }
 
-function positionRank(
-    position?: string | null,
-    context: Options['context'] = 'faculty'
-) {
-    const pos = normalize(position);
-    if (context === 'staff') {
-        const idx = staffPositionOrder.findIndex((p) => pos.includes(p));
-        return idx >= 0 ? idx : staffPositionOrder.length;
-    }
-    // faculty/affiliate or default
-    const idx = facultyPositionOrder.findIndex((p) => pos.includes(p));
-    return idx >= 0 ? idx : facultyPositionOrder.length;
-}
+// function positionRank(
+//     position?: string | null,
+//     context: Options['context'] = 'faculty'
+// ) {
+//     const pos = normalize(position);
+//     if (context === 'staff') {
+//         const idx = staffPositionOrder.findIndex((p) => pos.includes(p));
+//         return idx >= 0 ? idx : staffPositionOrder.length;
+//     }
+//     // faculty/affiliate or default
+//     const idx = facultyPositionOrder.findIndex((p) => pos.includes(p));
+//     return idx >= 0 ? idx : facultyPositionOrder.length;
+// }
 
 export function filterAndSortPeople(items: Person[], options: Options = {}) {
     const {
