@@ -21,7 +21,7 @@ export default function StaffBlock({ people }: { people?: Person[] }) {
                 }
 
                 return (
-                    <div className="grid grid-cols-3 gap-y-component-gap-sm gap-x-component-gap">
+                    <div className="grid lg:grid-cols-3 gap-y-component-gap-sm gap-x-component-gap">
                         {list.map((member, i) => (
                             <StaffCard
                                 key={i}
