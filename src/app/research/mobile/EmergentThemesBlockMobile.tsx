@@ -17,7 +17,7 @@ export default function EmergentThemesBlockMobile() {
                     <div className="flex basis-1/2 flex-col gap-[12px] justify-center">
                         <SubHeading text="Emergent Themes" />
                         {/* Top: Image */}
-                        <div className="flex flex-col gap-4 basis-1/2 justify-center">
+                        <div className="flex flex-col gap-[12px] basis-1/2 justify-center">
                             <Image
                                 src={EmergentImg1}
                                 alt="Emergent Theme 1"

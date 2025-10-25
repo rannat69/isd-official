@@ -12,7 +12,7 @@ export default function SustainableTechBlockMobile() {
                     <div className="flex basis-1/2 flex-col gap-[24px] justify-center">
                         <SubHeading text="Sustainable-Tech" />
                         {/* Top: Image */}
-                        <div className="flex flex-col basis-1/2 justify-center">
+                        <div className="flex flex-col basis-1/2 justify-center gap-[12px]">
                             <Image
                                 src={sustainableTech}
                                 alt="Sustainable Tech"
