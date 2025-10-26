@@ -11,9 +11,9 @@ export default function HeadsMessageBlock() {
                 HEAD&apos;S MESSAGE
             </h1>
 
-            <div className="flex lg:flex-row flex-col items-start lg:gap-component-gap gap-component-gap-sm">
+            <div className="flex lg:flex-row flex-col lg:items-start items-center lg:gap-component-gap gap-component-gap-sm">
                 <div className="flex flex-col lg:border-r-3 border-isd-primary">
-                    <div className="lg:w-[360px] lg:h-[468px] w-auto h-auto aspect-[360/468]">
+                    <div className="lg:w-[360px] lg:h-[468px] w-auto h-auto aspect-[360/468] max-w-[425px]">
                         <Image
                             src={Qian}
                             alt="Qian's Profile Picture"
