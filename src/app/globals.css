@@ -41,6 +41,78 @@
     /* Element within Component */
     --footer-gap: 6px;
     /* Footer content to content */
+
+    /* Font sizes */
+    --h1: 48px;
+    --h2: 24px;
+    --nav: 16px;
+    --lg: 20px;
+    --md: 17px;
+    --sm: 15px;
+    --footer-header: 15px;
+    --footer: 15px;
+    --callout: 12px;
+    --callout-link: 12px;
+
+    /* Line heights */
+    --h1--line-height: 60px;
+    --h2--line-height: 28px;
+    --nav--line-height: 26px;
+    --lg--line-height: 26px;
+    --md--line-height: 26px;
+    --sm--line-height: 24px;
+    --footer-header--line-height: 18px;
+    --footer--line-height: 18px;
+    --callout--line-height: 12px;
+    --callout-link--line-height: 12px;
+
+    /* Font weights */
+    --h1--font-weight: bold;
+    --h2--font-weight: bold;
+    --nav--font-weight: bold;
+    --footer-header--font-weight: bold;
+    --callout-link--font-weight: bold;
+
+    /* Letter spacing */
+    --footer--letter-spacing: -0.8%;
+    --callout--letter-spacing: -0.8%;
+    --callout-link--letter-spacing: -0.8%;
+}
+
+@media (max-width: 64rem) {
+
+    /* lg */
+    :root {
+        /* idk what's happening with the new spacing guidelines so some of these aren't filled in */
+        --section-gap: 72px;
+        --section-title-gap: 24px;
+        --component-gap: 36px;
+        --component-gap-sm: 24px;
+
+
+        /* Font sizes */
+        --h1: 28px;
+        --h2: 22px;
+        --nav: 17px;
+        /* h3 is replaced with lg */
+        --lg: 20px;
+        --md: 17px;
+        --sm: 15px;
+
+        /* Line heights */
+        --h1--line-height: 34px;
+        --h2--line-height: 28px;
+        --nav--line-height: 26px;
+        --lg--line-height: 25px;
+        --md--line-height: 22px;
+        --sm--line-height: 21px;
+
+        /* Font weights */
+        --h1--font-weight: bold;
+        --h2--font-weight: bold;
+        --lg--font-weight: bold;
+        --nav--font-weight: bold;
+    }
 }
 
 /* Register custom colors with Tailwind v4 */
@@ -66,35 +138,36 @@
     --max-width-container: var(--container-max-width);
 
     /* Font sizes */
-    --text-h1: 48px;
-    --text-h2: 24px;
-    --text-nav: 16px;
-    --text-lg: 20px;
-    --text-md: 17px;
-    --text-sm: 15px;
-    --text-footer-header: 15px;
-    --text-footer: 15px;
-    --text-callout: 12px;
-    --text-callout-link: 12px;
+    --text-h1: var(--h1);
+    --text-h2: var(--h2);
+    --text-nav: var(--nav);
+    --text-lg: var(--lg);
+    --text-md: var(--md);
+    --text-sm: var(--sm);
+    --text-footer-header: var(--footer-header);
+    --text-footer: var(--footer);
+    --text-callout: var(--callout);
+    --text-callout-link: var(--callout-link);
 
     /* Line heights */
-    --text-h1--line-height: 60px;
-    --text-h2--line-height: 28px;
-    --text-nav--line-height: 26px;
-    --text-lg--line-height: 26px;
-    --text-md--line-height: 26px;
-    --text-sm--line-height: 24px;
-    --text-footer-header--line-height: 18px;
-    --text-footer--line-height: 18px;
-    --text-callout--line-height: 12px;
-    --text-callout-link--line-height: 12px;
+    --text-h1--line-height: var(--h1--line-height);
+    --text-h2--line-height: var(--h2--line-height);
+    --text-nav--line-height: var(--nav--line-height);
+    --text-lg--line-height: var(--lg--line-height);
+    --text-md--line-height: var(--md--line-height);
+    --text-sm--line-height: var(--sm--line-height);
+    --text-footer-header--line-height: var(--footer-header--line-height);
+    --text-footer--line-height: var(--footer--line-height);
+    --text-callout--line-height: var(--callout--line-height);
+    --text-callout-link--line-height: var(--callout-link--line-height);
 
     /* Font weights */
-    --text-h1--font-weight: bold;
-    --text-h2--font-weight: bold;
-    --text-nav--font-weight: bold;
-    --text-footer-header--font-weight: bold;
-    --text-callout-link--font-weight: bold;
+    --text-h1--font-weight: var(--h1--font-weight);
+    --text-h2--font-weight: var(--h2--font-weight);
+    --text-nav--font-weight: var(--nav--font-weight);
+    --text-lg--font-weight: var(--lg--font-weight);
+    --text-footer-header--font-weight: var(--footer-header--font-weight);
+    --text-callout-link--font-weight: var(--callout-link--font-weight);
 
     /* Letter spacing */
     --text-footer--letter-spacing: -0.8%;
@@ -137,12 +210,12 @@
     /* if the rectangle should overlap the baseline area use a small positive bottom (overlapping upward) */
     bottom: 0;
     /* tweak this to line up precisely */
-    width: 252px;
-    height: 24px;
     background: var(--isd-primary-2);
     z-index: -1;
     /* behind the text (headline z-index is 1) */
     pointer-events: none;
+
+    @apply lg:w-[252px] lg:h-[24px] w-[72px] h-[16px];
 }
 
 .dot-pattern {
