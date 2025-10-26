@@ -49,7 +49,7 @@ export default function Carousel({ images }: CarouselProps) {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute z-0 w-full h-full flex items-center justify-between px-12 pointer-events-none">
+            <div className="absolute z-0 w-full h-full flex items-center justify-between lg:px-12 px-2 pointer-events-none">
                 <button
                     className="pointer-events-auto cursor-pointer"
                     onClick={handlePrevious}
