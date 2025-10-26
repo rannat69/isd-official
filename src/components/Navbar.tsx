@@ -171,7 +171,7 @@ export default function Navbar() {
             className={`lg:bg-white lg:px-section-gap sticky z-40 top-12 lg:py-8 transition-colors duration-300 ${mobileMenuOpen ? 'bg-isd-primary' : 'bg-white'}`}
         >
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center justify-between">
+            <div className="hidden 2xl:flex items-center justify-between">
                 <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
                     <Link href="https://hkust.edu.hk/">
                         <Image
@@ -233,7 +233,7 @@ export default function Navbar() {
 
             {/* Mobile Navigation */}
             <div
-                className={`md:hidden flex items-center justify-between p-[18px]`}
+                className={`2xl:hidden flex items-center justify-between p-[18px]`}
             >
                 <div
                     className={`flex items-center gap-[7px] divide-x-1 ${
@@ -308,7 +308,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {mobileMenuOpen && (
-                <div className="md:hidden text-white bg-isd-primary px-9 pb-9">
+                <div className="lg:hidden text-white bg-isd-primary px-9 pb-9">
                     {navItems.map((item) => (
                         <div key={item.name}>
                             <div className="flex items-center justify-between border-b border-white">
