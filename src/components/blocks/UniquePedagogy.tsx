@@ -27,17 +27,17 @@ export default function UniquePedagogy() {
 
     return (
         <div className="w-full bg-isd-primary-2">
-            <div className="container flex flex-col py-section-gap gap-section-title-gap">
+            <div className="container flex flex-col lg:py-section-gap py-component-gap-sm gap-section-title-gap">
                 <h1 className="text-h1 uppercase">UNIQUE PEDAGOGY</h1>
-                <div className="flex items-stretch gap-component-gap-sm">
-                    <div className="flex-shrink-0 overflow-hidden w-[384px]">
+                <div className="flex items-stretch flex-col lg:flex-row lg:gap-component-gap-sm gap-component-gap">
+                    <div className="flex-shrink-0 overflow-hidden lg:w-[384px] lg:max-h-none sm:max-h-[346px] w-auto max-h-[236px]">
                         <Image
                             src={PedagogyImage}
                             alt="Pedagogy Image"
-                            className="object-cover h-full"
+                            className="object-cover lg:w-auto lg:h-full w-full h-auto"
                         />
                     </div>
-                    <div className="flex flex-col gap-section-title-gap">
+                    <div className="flex flex-col lg:gap-section-title-gap gap-component-gap">
                         {items.map((item, i) => (
                             <div
                                 key={item.title}
