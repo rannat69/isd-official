@@ -27,9 +27,9 @@ export default function AboutISDBlock() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="flex flex-1 items-center justify-between min-h-[72px] p-element-gap bg-isd-primary rounded-sm"
+                            className="flex flex-1 items-center justify-between min-h-[72px] px-element-gap bg-isd-primary rounded-sm"
                         >
-                            <span className="text-h2 font-bold">
+                            <span className="lg:text-h2 text-lg font-bold">
                                 {link.title}
                             </span>
                             <ArrowRight size={20} strokeWidth={3} />
