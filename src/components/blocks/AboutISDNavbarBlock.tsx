@@ -6,7 +6,7 @@ export default function AboutISDNavbarBlock() {
     ];
 
     return (
-        <div className="w-full overflow-clip pt-section-gap gap-section-title-gap dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-secondary-1)]">
+        <div className="lg:block hidden w-full overflow-clip pt-section-gap gap-section-title-gap dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-secondary-1)]">
             <div className="w-full flex items-center justify-center gap-component-gap-sm divide-x-2 divide-isd-font-2/30 text-isd-font-2">
                 {links.map((link) => (
                     <a
