@@ -168,10 +168,10 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`lg:bg-white lg:px-section-gap sticky z-40 top-12 lg:py-8 transition-colors duration-300 ${mobileMenuOpen ? 'bg-isd-primary' : 'bg-white'}`}
+            className={`xl:bg-white xl:px-section-gap sticky z-40 top-12 xl:py-8 transition-colors duration-300 ${mobileMenuOpen ? 'bg-isd-primary' : 'bg-white'}`}
         >
             {/* Desktop Navigation */}
-            <div className="hidden 2xl:flex items-center justify-between">
+            <div className="hidden xl:flex items-center justify-between">
                 <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
                     <Link href="https://hkust.edu.hk/">
                         <Image
@@ -233,7 +233,7 @@ export default function Navbar() {
 
             {/* Mobile Navigation */}
             <div
-                className={`2xl:hidden flex items-center justify-between p-[18px]`}
+                className={`xl:hidden flex items-center justify-between p-[18px]`}
             >
                 <div
                     className={`flex items-center gap-[7px] divide-x-1 ${
@@ -245,17 +245,13 @@ export default function Navbar() {
                             <Image
                                 src={HKUSTLogoWhiteFull}
                                 alt="HKUST Logo"
-                                width={112.1}
-                                height={27.7}
-                                className="pr-[7px]"
+                                className="w-[112.1px] h-[27.7px] md:w-[180px] md:h-[44.4px] pr-[7px]"
                             />
                         ) : (
                             <Image
                                 src={HKUSTLogo}
                                 alt="HKUST Logo"
-                                width={112.1}
-                                height={27.7}
-                                className="pr-[7px]"
+                                className="w-[112.1px] h-[27.7px] md:w-[180px] md:h-[44.4px] pr-[7px]"
                             />
                         )}
                     </Link>
@@ -264,15 +260,13 @@ export default function Navbar() {
                             <Image
                                 src={ISDLogoWhite}
                                 alt="ISD Logo"
-                                width={147}
-                                height={16.8}
+                                className="w-[147px] h-[16.8px] md:w-[263px] md:h-[27px]"
                             />
                         ) : (
                             <Image
                                 src={ISDLogo}
                                 alt="ISD Logo"
-                                width={147}
-                                height={16.8}
+                                className="w-[147px] h-[16.8px] md:w-[263px] md:h-[27px]"
                             />
                         )}
                     </Link>
@@ -308,7 +302,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {mobileMenuOpen && (
-                <div className="lg:hidden text-white bg-isd-primary px-9 pb-9">
+                <div className="xl:hidden text-white bg-isd-primary px-9 pb-9">
                     {navItems.map((item) => (
                         <div key={item.name}>
                             <div className="flex items-center justify-between border-b border-white">
