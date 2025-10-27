@@ -17,7 +17,7 @@ export default function NewsCard({
 }) {
     return (
         <a
-            className="flex flex-col 2xl:flex-row gap-component-gap lg:h-[360px] items-center pb-[24px] lg:pb-[0px]"
+            className="flex flex-col 2xl:flex-row gap-component-gap 2xl:h-[360px] items-center pb-[24px] 2xl:pb-[0px]"
             href={href}
         >
             <div className="hidden 2xl:block w-[396px] h-[240px] bg-isd-font-2/10">
