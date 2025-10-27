@@ -18,7 +18,7 @@ export default function EventCard({
 }) {
     return (
         <a
-            className="flex flex-col 2xl:flex-row gap-component-gap 2xl:h-[360px] items-center pb-[24px] 2xl:pb-[0px]"
+            className="flex flex-col 2xl:flex-row gap-component-gap 2xl:h-[360px] 2xl:items-center pb-[24px] 2xl:pb-[0px]"
             href={href}
         >
             <div className=" hidden 2xl:block w-[396px] h-[240px] bg-isd-font-2/10">
@@ -67,15 +67,15 @@ export default function EventCard({
             </div>
 
             <div className="flex 2xl:hidden flex-1 flex-col gap-[12px]">
-                <p className="text-h2 text-secondary">Event</p>
-                <h2 className="text-h2 text-primary">{title}</h2>
+                <p className="text-h2 text-[22px] leading-[28px] text-secondary">Event</p>
+                <h2 className="text-h2 text-[22px] leading-[28px] text-primary">{title}</h2>
                 <div className="flex flex-col gap-[4px]">
                     <div className="flex items-center gap-[12px]">
                         <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
                             <Calendar size={22} />
                         </div>
 
-                        <p className="text-md text-isd-font-3">{date}</p>
+                        <p className="text-md text-isd-font-3 leading-[22px] 2xl:leading-[26px]">{date}</p>
                     </div>
                     {time ? (
                         <div className="flex items-center gap-[12px]">
@@ -83,7 +83,7 @@ export default function EventCard({
                                 <Clock size={22} />
                             </div>
 
-                            <p className="text-md text-isd-font-3">{time}</p>
+                            <p className="text-md text-isd-font-3 leading-[22px] 2xl:leading-[26px]">{time}</p>
                         </div>
                     ) : null}
                     {location ? (
@@ -92,7 +92,7 @@ export default function EventCard({
                                 <MapPin size={22} />
                             </div>
 
-                            <p className="text-md text-isd-font-3">
+                            <p className="text-md text-isd-font-3 leading-[22px] 2xl:leading-[26px]">
                                 {location}
                             </p>
                         </div>

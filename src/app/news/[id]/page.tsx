@@ -37,7 +37,7 @@ export default async function NewsDetailPage({
                 <div
                     className={`flex flex-col ${item.type === 'events' ? 'gap-component-gap-sm' : 'gap-section-title-gap'}`}
                 >
-                    <h1 className="text-h1">{item.title}</h1>
+                    <h1 className=" text-h1 text-[28px] leading-[34px] 2xl:text-[36px]">{item.title}</h1>
                     <div className="w-full bg-isd-font-2/10 relative">
                         {images.length > 1 ? (
                             <div className="h-[480px]">
@@ -57,7 +57,7 @@ export default async function NewsDetailPage({
                     <div className="flex flex-col gap-[24px]">
                         {item.type === 'events' && (
                             <div className="flex flex-col gap-[24px]">
-                                <h2 className="text-[36px] leading-9 font-bold text-primary">
+                                <h2 className="text-[28px] 2xl:text-[36px] leading-9 font-bold text-primary">
                                     Event Info
                                 </h2>
                                 <div className="flex flex-col gap-[4px]">
@@ -95,7 +95,7 @@ export default async function NewsDetailPage({
                                 </div>
                             </div>
                         )}
-                        <div className="flex flex-col gap-component-gap text-md text-isd-font-1">
+                        <div className="flex flex-col gap-component-gap text-sm 2xl:text-md leading-[21px] 2xl:leading-[24px] text-isd-font-1">
                             {renderContent(item.details)}
                         </div>
                     </div>
@@ -159,9 +159,9 @@ function renderContent(text: string) {
         return (
             <div key={idx} className="flex flex-col gap-[24px]">
                 {g.heading ? (
-                    <h2 className="text-[36px] leading-9 font-bold text-primary">
+                    <h1 className="text-[28px] 2xl:text-[36px] leading-9 font-bold text-primary ">
                         {g.heading}
-                    </h2>
+                    </h1>
                 ) : null}
                 {g.paragraph ? <p>{paragraphLines}</p> : null}
             </div>

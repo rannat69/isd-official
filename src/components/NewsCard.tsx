@@ -32,6 +32,7 @@ export default function NewsCard({
                 />
             </div>
             <div className="hidden 2xl:flex flex-1 flex-col gap-[12px]">
+                
                 <p className="text-h2 text-secondary">{category}</p>
                 <h2 className="text-h2 text-primary">{title}</h2>
                 <p className="text-md text-isd-font-3 line-clamp-3">
@@ -41,8 +42,8 @@ export default function NewsCard({
             </div>
 
             <div className="flex 2xl:hidden flex-1 flex-col gap-[12px]">
-                <p className="text-h2 text-secondary">{category}</p>
-                <h2 className="text-h2 text-primary">{title}</h2>
+                <p className="text-h2 text-[22px] leading-[28px] text-secondary">{category}</p>
+                <h2 className="text-h2 text-[22px] leading-[28px] text-primary">{title}</h2>
 
                 <div className="block 2xl:hidden w-[198px] h-[120px] bg-isd-font-2/10">
                     <Image
@@ -56,10 +57,10 @@ export default function NewsCard({
                     />
                 </div>
 
-                <p className="text-md text-isd-font-3 line-clamp-3">
+                <p className="text-md leading-[22px] 2xl:leading-[26px] text-isd-font-3 line-clamp-3">
                     {excerpt}
                 </p>
-                <span className="text-isd-font-2 text-md">{date}</span>
+                <span className="text-isd-font-2 text-md leading-[22px] 2xl:leading-[26px]">{date}</span>
             </div>
         </a>
     );
