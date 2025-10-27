@@ -17,12 +17,12 @@ export default function ExchangeBlock() {
                     <Image
                         src={ExchangeImage1}
                         alt="Student"
-                        className="h-[300px] object-cover"
+                        className="h-[150px] lg:h-[300px] object-cover"
                     />
                     <Image
                         src={ExchangeImage2}
                         alt="Student"
-                        className="h-[300px] object-cover"
+                        className="h-[150px] lg:h-[300px] object-cover"
                     />
                 </div>
                 <div className="flex flex-col gap-[24px] text-md">
