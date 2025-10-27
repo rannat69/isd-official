@@ -51,18 +51,18 @@ export default function FloatingNav({
 
     return (
         // use sticky so the nav sits below the hero image but becomes fixed when scrolled
-        <div className="sticky top-57 z-20 w-full">
+        <div className="sticky top-57 z-50 mt-4 w-full">
             <div className="relative">
                 <button
                     aria-label={open ? 'Close navigation' : 'Open navigation'}
                     onClick={() => setOpen((v) => !v)}
-                    className="absolute w-fit h-fit lg:p-[12px] p-[6px] bg-isd-secondary text-white shadow-lg flex items-center justify-center"
+                    className="absolute lg:top-[47px] top-[-15px] lg:left-[-64px] left-[-2px] transform rotate-90 w-fit h-fit px-[12px] py-[11px] bg-isd-secondary text-white shadow-lg flex items-center justify-center"
                 >
                     {open ? (
                         <div />
                     ) : (
-                        <div className="flex flex-row [writing-mode:vertical-lr] justify-center items-center gap-2">
-                            <span className="lg:block hidden">{title}</span>
+                        <div className="flex flex-row justify-center items-center gap-2">
+                            <span className="hidden lg:block">{title}</span>
                             <ChevronsRight />
                         </div>
                     )}
