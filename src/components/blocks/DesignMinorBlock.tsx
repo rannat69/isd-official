@@ -124,7 +124,7 @@ export default function DesignMinorBlock() {
 
                 <div className="flex flex-col gap-component-gap">
                     {content.map((section, index) => (
-                        <div key={index} className="flex flex-col gap-[24px]">
+                        <div key={index} className="flex flex-col gap-[12px]">
                             {section.subheading && (
                                 <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                                     {section.subheading}
