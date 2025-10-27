@@ -182,13 +182,13 @@ export default function FilterBlock() {
                     <div className="flex flex-row gap-component-gap-sm justify-start">
                         <button
                             onClick={handleSearch}
-                            className="bg-isd-primary w-section-gap py-[6px] h-fit lg:h-component-gap-sm text-white"
+                            className="bg-isd-primary lg:w-section-gap lg:px-0 px-[18px] py-[6px] h-fit lg:h-component-gap-sm text-white"
                         >
                             Search
                         </button>
                         <button
                             onClick={handleClear}
-                            className="bg-white w-section-gap py-[6px] h-fit lg:h-component-gap-sm text-isd-primary"
+                            className="bg-white lg:w-section-gap lg:px-0 px-[18px] py-[6px] h-fit lg:h-component-gap-sm text-isd-primary"
                         >
                             Clear
                         </button>
