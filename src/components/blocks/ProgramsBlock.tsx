@@ -39,7 +39,7 @@ export default function ProgramBlock() {
                 <h1 className="text-h1 offset-text-background uppercase">
                     Programs
                 </h1>
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-section-title-gap">
+                <div className="grid lg:grid-cols-4 justify-center items-center gap-[48px] lg:gap-section-title-gap">
                     {programsInfo.map((program, index) => (
                         <TextCard
                             key={index}
