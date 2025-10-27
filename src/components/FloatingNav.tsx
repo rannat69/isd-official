@@ -62,7 +62,7 @@ export default function FloatingNav({
                         <div />
                     ) : (
                         <div className="flex flex-row [writing-mode:vertical-lr] justify-center items-center gap-2">
-                            <span className='lg:block hidden'>{title}</span>
+                            <span className="lg:block hidden">{title}</span>
                             <ChevronsRight />
                         </div>
                     )}
