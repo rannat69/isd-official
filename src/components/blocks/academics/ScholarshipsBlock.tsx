@@ -4,7 +4,7 @@ export default function ScholarshipsBlock() {
             subheading: 'Chinachem PrimeMovership',
             content: (
                 <div className="flex flex-col gap-[24px]">
-                    <p>
+                    <p className="text-justify">
                         This scholarship aims to support ISD students with high
                         achievement in innovative technologies design and with
                         entrepreneurial potential. Up to 10 scholarships of
@@ -46,7 +46,7 @@ export default function ScholarshipsBlock() {
             subheading: 'DJI RoboMaster Scholarship',
             content: (
                 <div className="flex flex-col gap-[24px]">
-                    <p>
+                    <p className="text-justify">
                         These scholarships are for Year 1 Mainland students
                         admitted to the BSc program in Integrative Systems and
                         Design.
@@ -100,13 +100,13 @@ export default function ScholarshipsBlock() {
     ];
 
     return (
-        <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+        <div className="w-full lg:dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap text-md  text-isd-font-1">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     Scholarships
                 </h1>
                 <div className="flex flex-col gap-component-gap-sm">
-                    <p>
+                    <p className="text-justify">
                         Several dedicated partners shared our vision of creating
                         new modes of engineering education. As part of our part
                         partnership program, they provide valuable resources in
@@ -122,7 +122,7 @@ export default function ScholarshipsBlock() {
                                 className="flex flex-col gap-[24px]"
                             >
                                 {section.subheading && (
-                                    <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                                    <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                                         {section.subheading}
                                     </h3>
                                 )}
