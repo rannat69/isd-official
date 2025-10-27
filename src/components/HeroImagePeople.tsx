@@ -14,7 +14,7 @@ export default function HeroImage({
             <Image
                 src={image}
                 alt={`Hero Banner Image`}
-                className={`object-cover w-full h-full ${people ? 'object-[center]' : 'object-[center]'}`}
+                className={`object-cover w-full h-full ${people ? 'object-[25%_80%]' : 'object-[center]'}`}
             />
         </div>
     );
