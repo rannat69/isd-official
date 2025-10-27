@@ -48,6 +48,11 @@ export default function StudentLifeBlock() {
 
     const [page, setPage] = useState<StudentLifePageKey>('stud-comp');
 
+    const [activeMenuId, setActiveMenuId] = useState('stud-comp');
+    const handleMenuClick = (id: string) => {
+        setActiveMenuId(id);
+    };
+
     useEffect(() => {
         const initialPage = searchParams.get('page') ?? 'stud-comp';
         setPage(initialPage as StudentLifePageKey);
@@ -61,8 +66,8 @@ export default function StudentLifeBlock() {
     };
 
     return (
-        <div className="container py-section-gap flex gap-component-gap">
-            <div className="flex flex-col text-lg min-w-[324px]">
+        <div className="container py-section-gap flex flex-col lg:flex-row gap-component-gap">
+            <div className="hidden lg:flex flex-col text-lg min-w-[324px]">
                 {pages.map((p) => (
                     <div
                         key={p.key}
@@ -77,6 +82,24 @@ export default function StudentLifeBlock() {
                     </div>
                 ))}
             </div>
+
+            <div className="w-full  flex flex-wrap lg:hidden items-center justify-center gap-component-gap-sm divide-isd-font-2/30 text-isd-font-2">
+                {pages.map((p) => (
+                    <div
+                        key={p.key}
+                        id={p.key}
+                        onClick={() => handlePageChange(p.key)}
+                        className={`text-h2 text-center cursor-pointer pb-3 ${
+                            page === p.key
+                                ? 'text-isd-secondary border-b-3 border-isd-secondary'
+                                : 'text-isd-font-2'
+                        }`}
+                    >
+                        {p.name}
+                    </div>
+                ))}
+            </div>
+
             <div className="flex flex-col gap-component-gap-sm text-md leading-[28px] text-isd-font-1">
                 {pages.find((p) => p.key === page)?.component}
             </div>
