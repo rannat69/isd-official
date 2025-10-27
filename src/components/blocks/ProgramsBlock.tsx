@@ -53,7 +53,7 @@ export default function ProgramBlock() {
                     </div>
                 </div>
                 <div
-                    className="dot-pattern before:bottom-[25px] before:left-[-90px] [--dot-color:var(--isd-secondary-1)] "
+                    className="hidden lg:dot-pattern before:bottom-[25px] before:left-[-90px] [--dot-color:var(--isd-secondary-1)] "
                     aria-hidden
                 />
             </>
@@ -62,11 +62,11 @@ export default function ProgramBlock() {
 
     return (
         <>
-            <div className="hidden xl:block dot-pattern before:top-[-95px] before:right-[10px] [--dot-color:var(--isd-secondary-1)]">
+            <div className="hidden lg:block dot-pattern before:top-[-95px] before:right-[10px] [--dot-color:var(--isd-secondary-1)]">
                 <ProgramBlockContent />
             </div>
 
-            <div className="block xl:hidden ">
+            <div className="block lg:hidden ">
                 <ProgramBlockContent />
             </div>
         </>
