@@ -56,7 +56,7 @@ export default function FloatingNav({
                 <button
                     aria-label={open ? 'Close navigation' : 'Open navigation'}
                     onClick={() => setOpen((v) => !v)}
-                    className="absolute w-fit h-fit lg:p-[12px] p-[6pxOh ] bg-isd-secondary text-white shadow-lg flex items-center justify-center"
+                    className="absolute w-fit h-fit lg:p-[12px] p-[6px] bg-isd-secondary text-white shadow-lg flex items-center justify-center"
                 >
                     {open ? (
                         <div />
