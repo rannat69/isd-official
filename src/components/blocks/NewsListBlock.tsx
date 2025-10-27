@@ -86,10 +86,10 @@ export default function NewsListBlock() {
         router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     }
 
-    return (
-        <div className="dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
-            <div className="container flex flex-col py-component-gap 2xl:py-section-gap gap-0">
-                <div className="flex flex-col 2xl:flex-row justify-between  gap-[24px] pb-[24px]">
+    const NewsListBlockContent = () => {
+        return (
+            <div className="container flex flex-col py-component-gap xl:py-section-gap gap-0">
+                <div className="flex flex-col xl:flex-row justify-between  gap-[24px] pb-[24px]">
                     <h1 className="text-h1 offset-text-background text-isd-font-1 text-balance">
                         News & Events
                     </h1>
@@ -104,7 +104,7 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="All Category"
-                            triggerClassName="text-isd-secondary text-sm 2xl:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                            triggerClassName="text-isd-secondary text-sm xl:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
                         />
                         <Select
                             options={yearOptions}
@@ -115,12 +115,12 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="Year"
-                            triggerClassName="text-isd-secondary text-sm 2xl:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                            triggerClassName="text-isd-secondary text-sm xl:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
                         />
                     </div>
                 </div>
 
-                <div className="flex flex-col divide-y divide-isd-primary-3 gap-[24px] 2xl:gap-[0px]">
+                <div className="flex flex-col divide-y divide-isd-primary-3 gap-[24px] xl:gap-[0px]">
                     {visibleItems.map((item) => {
                         const href = `/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
@@ -173,7 +173,19 @@ export default function NewsListBlock() {
                     </button>
                 )}
             </div>
-        </div>
+        );
+    };
+
+    return (
+        <>
+            <div className="hidden xl:block dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+                <NewsListBlockContent />
+            </div>
+
+            <div className="block xl:hidden">
+                <NewsListBlockContent />
+            </div>
+        </>
     );
 }
 
