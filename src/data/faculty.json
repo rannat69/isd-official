@@ -95,7 +95,6 @@
         ],
         "tags": [
             "regular"
-            
         ]
     },
     {
@@ -388,7 +387,6 @@
         ],
         "tags": [
             "regular"
-            
         ]
     },
     {
@@ -661,7 +659,6 @@
         ],
         "tags": [
             "regular"
-            
         ]
     },
     {
@@ -686,7 +683,6 @@
         ],
         "tags": [
             "regular"
-            
         ]
     },
     {
@@ -709,6 +705,9 @@
         "role": "Professor",
         "surname": "TSUI",
         "type": "ISD Faculty",
+        "areas": [
+            "health_tech"
+        ],
         "tags": [
             "regular"
         ]
