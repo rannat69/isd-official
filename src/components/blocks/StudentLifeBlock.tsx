@@ -84,7 +84,7 @@ export default function StudentLifeBlock() {
             </h1>
             <Select
                 triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
-                className="lg:hidden"
+                className="lg:hidden w-fit"
                 options={pages.map((p) => ({
                     label: p.name,
                     value: p.key,
