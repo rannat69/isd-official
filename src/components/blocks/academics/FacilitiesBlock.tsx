@@ -76,7 +76,7 @@ export default function FacilitiesBlock() {
     ];
 
     return (
-        <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+        <div className="w-full lg:dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap text-md  text-isd-font-1">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     Facilities
@@ -87,14 +87,17 @@ export default function FacilitiesBlock() {
                         {content.map((section, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col gap-[24px]"
+                                className="flex flex-col gap-[24px] mb-9"
                             >
                                 {section.subheading && (
-                                    <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                                    <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                                         {section.subheading}
                                     </h3>
                                 )}
-                                {section.content}
+                                <div className="text-justify">
+                                    {' '}
+                                    {section.content}
+                                </div>
                             </div>
                         ))}
                         <iframe
@@ -108,7 +111,7 @@ export default function FacilitiesBlock() {
                         ></iframe>
                     </div>
                     <div className="flex flex-col gap-[24px]">
-                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                        <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Equipment Gallery
                         </h3>
                         <div className="w-full  relative">
