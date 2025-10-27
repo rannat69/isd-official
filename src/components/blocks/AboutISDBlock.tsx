@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 export default function AboutISDBlock() {
     const links = [
-        { title: "Head's Message", href: '/heads-message' },
-        { title: 'What is ISD', href: '/what-is-isd' },
-        { title: 'Academics', href: '/academics' },
+        { title: "Head's Message", href: '/about-isd#heads-message' },
+        { title: 'What is ISD', href: '/about-isd#what-is-isd' },
+        { title: 'Academics', href: '/about-isd#academics' },
     ];
 
     return (
