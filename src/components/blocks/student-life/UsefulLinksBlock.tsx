@@ -32,9 +32,11 @@ export default function UsefulLinksBlock() {
 
     return (
         <div className=" overflow-clip flex flex-col gap-section-title-gap">
-            <h1 className="text-h1 offset-text-background">Useful Links</h1>
+            <h1 className="lg:block hidden text-h1 offset-text-background">
+                Useful Links
+            </h1>
 
-            <div className="flex flex-col gap-[24px] text-md">
+            <div className="flex flex-col gap-[24px]">
                 <p className="text-isd-font-1">
                     Students may access frequently used documents in the
                     following links: 

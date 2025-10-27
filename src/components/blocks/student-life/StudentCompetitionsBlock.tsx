@@ -262,13 +262,13 @@ export default function StudentCompetitionsBlock() {
     const [readMore, setReadMore] = useState<StudentCompetition | null>(null);
 
     return (
-        <div className=" overflow-clip flex flex-col  gap-section-title-gap ">
-            <h1 className="text-h1 offset-text-background ">
+        <div className="overflow-clip flex flex-col gap-section-title-gap">
+            <h1 className="lg:block hidden text-h1 offset-text-background">
                 Student Competitions
             </h1>
 
             <div className="flex flex-col gap-component-gap-sm">
-                <p className="text-md text-isd-font-1">
+                <p className="text-isd-font-1">
                     Healthy competitions are a great way to elevate
                     students&apos; learning experience. At ISD, we offer support
                     for student teams to attend a diverse range of competitions
@@ -285,7 +285,7 @@ export default function StudentCompetitionsBlock() {
                 />
 
                 <div className="flex flex-col gap-[12px]">
-                    <p className="text-md text-isd-font-1">
+                    <p className="text-isd-font-1">
                         Many ISD student projects have high potential to
                         competitions related to design and/or technology. Our
                         division encourages students to actively participate in
@@ -315,7 +315,7 @@ export default function StudentCompetitionsBlock() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] auto-cols-min gap-component-gap-sm">
+                <div className="lg:grid flex flex-col grid-cols-[repeat(auto-fill,minmax(360px,1fr))] auto-cols-min gap-component-gap-sm">
                     {studentComps.map((comp, index) => (
                         <Fragment key={index}>
                             <ImageCard
