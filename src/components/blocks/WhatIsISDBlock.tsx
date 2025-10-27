@@ -24,10 +24,10 @@ export default function WhatIsISDBlock() {
                     systems, and entrepreneurial spirit.
                 </p>
 
-                <div className="flex flex-col gap-[24px] border-l-3 border-isd-primary px-component-gap-sm py-element-gap bg-isd-primary-2 p-element-gap">
+                <div className="flex flex-col gap-[24px] border-l-3 border-isd-primary lg:px-component-gap-sm p-element-gap bg-isd-primary-2">
                     <h2 className="text-h2 text-isd-primary">ISD Mission</h2>
                     <ul>
-                        <li className="text-md text-isd-font-1 text-justify">
+                        <li className="text-md text-isd-font-1">
                             <span className="italic font-bold text-isd-primary pr-[12px]">
                                 To
                             </span>
@@ -35,7 +35,7 @@ export default function WhatIsISDBlock() {
                             learning, and transdisciplinary research in
                             integrative systems design
                         </li>
-                        <li className="text-md text-isd-font-1 text-justify">
+                        <li className="text-md text-isd-font-1">
                             <span className="italic font-bold text-isd-primary pr-[12px]">
                                 To
                             </span>
@@ -43,7 +43,7 @@ export default function WhatIsISDBlock() {
                             with unique talents and learning potentials, to
                             contribute fully to society and the world
                         </li>
-                        <li className="text-md text-isd-font-1 text-justify">
+                        <li className="text-md text-isd-font-1">
                             <span className="italic font-bold text-isd-primary pr-[12px]">
                                 To
                             </span>
@@ -52,17 +52,17 @@ export default function WhatIsISDBlock() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-col gap-[24px] border-l-3 border-isd-secondary px-component-gap-sm py-element-gap bg-isd-secondary-1 p-element-gap">
+                <div className="flex flex-col gap-[24px] border-l-3 border-isd-secondary lg:px-component-gap-sm p-element-gap bg-isd-secondary-1">
                     <h2 className="text-h2 text-isd-secondary">ISD Vision</h2>
                     <ul>
-                        <li className="text-md text-isd-font-1 text-justify">
+                        <li className="text-md text-isd-font-1">
                             <span className="italic font-bold text-isd-secondary pr-[12px]">
                                 To
                             </span>
                             be a Division that epitomizes the use of
                             experiential learning in systems design
                         </li>
-                        <li className="text-md text-isd-font-1 text-justify">
+                        <li className="text-md text-isd-font-1">
                             <span className="italic font-bold text-isd-secondary pr-[12px]">
                                 To
                             </span>

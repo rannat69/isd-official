@@ -84,11 +84,102 @@ export default function Footer() {
         },
     ];
     return (
-        <footer className="hidden lg:block bg-isd-primary text-white py-[61px] ">
-            <div className="container hidden lg:flex flex-col gap-[60px]">
+        <footer className="bg-isd-primary text-white lg:py-[61px]">
+            <div className="lg:hidden container py-9 flex flex-col justify-center items-center gap-9">
+                <div className="flex flex-col items-center">
+                    <span className=" mb-3 text-xs">Follow HKUST on</span>
+                    <div className="flex flex-row gap-[12px] h-full">
+                        <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.facebook.com/hkust/"
+                        >
+                            <Image
+                                src={FacebookIcon}
+                                alt="Facebook Logo"
+                                width={36}
+                                height={36}
+                            />
+                        </Link>
+
+                        <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.instagram.com/hkust/"
+                        >
+                            <Image
+                                src={InstagramIcon}
+                                alt="Instagram Logo"
+                                width={36}
+                                height={36}
+                            />
+                        </Link>
+
+                        <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/school/hkust/"
+                        >
+                            <Image
+                                src={LinkedinIcon}
+                                alt="LinkedIn Logo"
+                                width={36}
+                                height={36}
+                            />
+                        </Link>
+
+                        <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.youtube.com/user/hkust"
+                        >
+                            <Image
+                                src={YoutubeIcon}
+                                alt="YouTube Logo"
+                                width={36}
+                                height={36}
+                            />
+                        </Link>
+
+                        <Link href={HKUSTWechat.src} target="_blank">
+                            <Image
+                                src={WechatIcon}
+                                alt="WeChat Logo"
+                                width={36}
+                                height={36}
+                            />
+                        </Link>
+                    </div>
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-row gap-3 text-callout-link">
+                        <Link href="https://dataprivacy.ust.hk/university-data-privacy-policy-statement/">
+                            Privacy
+                        </Link>
+                        <div className="w-px h-3 bg-white"></div>
+                        <Link href="https://dataprivacy.hkust.edu.hk/sitemap">
+                            Sitemap
+                        </Link>
+                    </div>
+                    <Image
+                        src={HKUSTLogoWhite}
+                        alt="HKUST Logo"
+                        width={160}
+                        height={50}
+                        // className="object-cover"
+                    />
+
+                    <p className="text-callout text-center">
+                        Copyright &copy; The Hong Kong University of Science and
+                        Technology. All rights reserved.
+                    </p>
+                </div>
+            </div>
+
+            <div className="container flex flex-col gap-[60px]">
                 <div>
                     <div className="flex flex-row justify-start divide-x-1 divide-white gap-component-gap-sm pb-[24px]">
-                        <div className="flex flex-row justify-start gap-component-gap-sm w-full text-nowrap pr-component-gap-sm">
+                        <div className="hidden lg:flex flex-row justify-start gap-component-gap-sm w-full text-nowrap pr-component-gap-sm">
                             {navTitles.map((nav) => (
                                 <div key={nav.title} className="flex flex-col">
                                     <h3 className="font-bold uppercase mb-[24px]">
@@ -107,7 +198,7 @@ export default function Footer() {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-row justify-start gap-component-gap-sm">
+                        <div className="flex-row justify-start gap-component-gap-sm hidden lg:flex">
                             {divisionInfo.map((nav) => (
                                 <div key={nav.title} className="flex flex-col">
                                     <h3 className="font-bold uppercase mb-[24px]">
@@ -122,13 +213,13 @@ export default function Footer() {
                             ))}
                         </div>
                     </div>
-                    <div className="justify-start font-bold uppercase flex flex-row gap-component-gap-sm">
+                    <div className="justify-start font-bold uppercase hidden lg:flex flex-row gap-component-gap-sm">
                         <Link href="/research">research</Link>
                         <Link href="/collaborators">collaboration</Link>
                     </div>
                 </div>
 
-                <div className="flex flex-row justify-between">
+                <div className="hidden lg:flex flex-row justify-between">
                     <div className="flex flex-row gap-[24px]">
                         <Image
                             src={HKUSTLogoWhite}
