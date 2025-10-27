@@ -113,8 +113,8 @@ export default function DesignMinorBlock() {
         },
     ];
 
-    return (
-        <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+    const DesignMinorBlockContent = () => {
+        return (
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap-sm text-md  text-isd-font-1">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     Design Minor
@@ -135,6 +135,18 @@ export default function DesignMinorBlock() {
                     ))}
                 </div>
             </div>
-        </div>
+        );
+    };
+
+    return (
+        <>
+            <div className="hidden lg:block w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+                <DesignMinorBlockContent />
+            </div>
+
+            <div className="block lg:hidden w-full ">
+                <DesignMinorBlockContent />
+            </div>
+        </>
     );
 }
