@@ -8,6 +8,7 @@ import InternshipBlock from './student-life/InternshipBlock';
 import ExchangeBlock from './student-life/ExchangeBlock';
 import AlumniSharingBlock from './student-life/AlumniSharingBlock';
 import UsefulLinksBlock from './student-life/UsefulLinksBlock';
+import Select from '../Select';
 
 type StudentLifePageKey =
     | 'stud-comp'
@@ -61,8 +62,8 @@ export default function StudentLifeBlock() {
     };
 
     return (
-        <div className="container py-section-gap flex gap-component-gap">
-            <div className="flex flex-col text-lg min-w-[324px]">
+        <div className="container py-section-gap flex lg:flex-row flex-col lg:gap-component-gap gap-component-gap-sm">
+            <div className="lg:flex hidden flex-col text-lg">
                 {pages.map((p) => (
                     <div
                         key={p.key}
@@ -77,7 +78,24 @@ export default function StudentLifeBlock() {
                     </div>
                 ))}
             </div>
-            <div className="flex flex-col gap-component-gap-sm text-md leading-[28px] text-isd-font-1">
+
+            <h1 className="lg:hidden text-h1 offset-text-background ">
+                Student Life
+            </h1>
+            <Select
+                triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
+                className="lg:hidden w-fit"
+                options={pages.map((p) => ({
+                    label: p.name,
+                    value: p.key,
+                }))}
+                value={pages.find((p) => p.key === page)?.key}
+                onChange={(value) =>
+                    handlePageChange(value as StudentLifePageKey)
+                }
+                itemClassName="px-[12px] py-[12px] text-xl text-isd-font-2"
+            />
+            <div className="flex flex-col gap-component-gap-sm text-sm leading-[28px] text-isd-font-1">
                 {pages.find((p) => p.key === page)?.component}
             </div>
         </div>
