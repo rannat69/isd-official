@@ -18,7 +18,6 @@
         "role": "Head of ISD / Tencent Professor of Engineering and Chair Professor of CSE",
         "surname": "ZHANG",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "health_tech"
         ],
@@ -44,7 +43,6 @@
         "role": "Assistant Professor",
         "surname": "LIU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "sustainable_tech",
             "design_tech"
@@ -56,7 +54,7 @@
     {
         "details": "Prof. Yunlong Zi, PhD, FInstP, SMIEEE, FIAAM, is an Associate Professor in Thrust of Sustainable Energy and Environment in Hong Kong University of Science and Technology – Guangzhou (HKUST-GZ). Prof. Zi received his Ph.D. in Physics from Purdue University in 2014; his Bachelor of Engineering in Materials Science and Engineering from Tsinghua University in 2009. Before joining HKUST, he worked as an Assistant Professor at the Chinese University of Hong Kong during 2017-2022, and a Postdoctoral Fellow at Georgia Institute of Technology during 2014-2017. Prof. Zi is an active scholar in the field of triboelectric nanogenerator for high-performance energy harvesting. He coined the field of tribo-photonics toward the self-powered wireless sensing solutions. He has published over 150 journal publications with total citation of over 16000. Prof. Zi was honored as Fellow of Institute of Physics (FInstP) 2023; Senior Member of IEEE (SMIEEE) 2023; MIT Technological Review 35 Innovators Under 35 Asia & Pacific 2022; Nano Energy Award winner 2021. He was also as Fellow of International Association of Advanced Materials (FIAAM) 2021; Vebleo Fellow 2021; the winner of MRS Postdoctoral Award by Materials Research Society in 2017; the Emerging Investigators by Journal of Materials Chemistry C in 2018; MINE Young Investigator Finalist in 2018; and one of “5 students who are transformation makers” as highlighted in Purdue homepage in 2013.",
         "email": "ylzi@hkust-gz.edu.cn",
-        "id": 106,
+        "id": 107,
         "keywords": [
             "High-performance mechanical energy harvesting through triboelectric nanogenerator",
             "Tribo-photonics toward novel self-powered wireless solution"
@@ -69,7 +67,6 @@
         "role": "Associate Professor",
         "surname": "ZI",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "SEE (GZ)",
         "tags": [
             "joint_appointment"
@@ -78,7 +75,7 @@
     {
         "details": "Prof. Tracy Mok joined the Division of Integrative Systems and Design (ISD) at The Hong Kong University of Science and Technology (HKUST) at the end of March 2025. Prior to joining HKUST, she served at the School of Fashion and Textiles (formerly the Institute of Textiles and Clothing) at The Hong Kong Polytechnic University for 20 years. During her tenure, she held the position of Associate Head for the Institute of Textiles and Clothing, assisting its upgrade to an independent school. Prof. Mok’s research interests focus on artificial intelligence in design technology applications, including 2D and 3D computer-aided design, digital human modelling, cloth simulation, XR and interaction design, 2D and 3D pose estimation, ergonomics and smart healthcare applications. She also conducts data science, industrial and system optimization, and sustainability research. Since 2012, she has successfully secured research fudning over HK$46 million, published over 150 research articles in world-leading top-tier research journals, and holds a number of trademark, patents, software copyrights, and licenses. Her research findings have received widespread recognition from both academia and business, making a significant impact on the fashion industry. Notably, with her guidance, one of her PhD graduates commercialized their research technology through a startup, which secured venture investment of over 20 million RMB. Prof. Mok’s achievements include winning 14 prestigious international awards, such as the Gold Medal of the 35th International Exhibition of Inventions of Geneva and the Silver Medal of the 1st Asia Exhibition of Inventions Hong Kong. Additionally, Prof. Mok is dedicated to serving the education community and the society at large. She has served as the Associate Director of the Research Centre for Future Fashion and Textiles, Executive Committee Member of the Hong Kong Institution of Textile and Apparel (HKITA), a vetting committee member of the Create Smart Initiative for CreateHK of Hong Kong SAR government, as well as a steering committee member of the Artificial Intelligence Special Committee of the China Textile Engineering Society, among other roles.",
         "email": "tracymok@ust.hk",
-        "id": 6,
+        "id": 8,
         "keywords": [
             "AI in DesignTech Applications",
             "2D/3D Computer-aided Design",
@@ -93,13 +90,12 @@
         "role": "Associate Professor",
         "surname": "MOK",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "areas": [
             "design_tech"
         ],
         "tags": [
-            "regular",
-            "joint_appointment"
+            "regular"
+            
         ]
     },
     {
@@ -119,7 +115,6 @@
         "role": "Assistant Professor",
         "surname": "GU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "health_tech",
             "design_tech"
@@ -145,7 +140,6 @@
         "role": "Assistant Professor",
         "surname": "XU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "sustainable_tech"
         ],
@@ -173,7 +167,6 @@
         "role": "Research Assistant Professor",
         "surname": "KAZEMIAN",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "research_track"
         ]
@@ -198,7 +191,6 @@
         "role": "Assistant Professor",
         "surname": "HU",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "MAE",
         "tags": [
             "joint_appointment"
@@ -222,7 +214,6 @@
         "role": "Professor",
         "surname": "LI",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "CSE",
         "tags": [
             "joint_appointment"
@@ -247,7 +238,6 @@
         "role": "Professor",
         "surname": "LI",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "design_tech"
         ],
@@ -274,7 +264,6 @@
         "role": "Assistant Professor",
         "surname": "SHAO",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "health_tech"
         ],
@@ -300,7 +289,6 @@
         "role": "Assistant Professor",
         "surname": "WANG",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "sustainable_tech",
             "design_tech"
@@ -326,7 +314,6 @@
         "role": "Associate Professor of Engineering Education",
         "surname": "LEUNG",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "teaching_track"
         ]
@@ -348,7 +335,6 @@
         "role": "Professor",
         "surname": "JONEJA",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "sustainable_tech",
             "design_tech"
@@ -375,7 +361,6 @@
         "role": "Lecturer",
         "surname": "LEUNG",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "teaching_track"
         ]
@@ -398,13 +383,12 @@
         "role": "Professor",
         "surname": "YEUNG",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "areas": [
             "marine_tech"
         ],
         "tags": [
-            "regular",
-            "joint_appointment"
+            "regular"
+            
         ]
     },
     {
@@ -423,7 +407,6 @@
         "role": "Professor",
         "surname": "LI",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "ECE",
         "tags": [
             "joint_appointment"
@@ -446,7 +429,6 @@
         "role": "Adjunct Professor",
         "surname": "YEE",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "adjunct"
         ]
@@ -469,7 +451,6 @@
         "role": "Research Assistant Professor",
         "surname": "XU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "research_track"
         ]
@@ -491,8 +472,7 @@
         "photo": "/src/assets/people/larry.jpg",
         "role": "Part-time Lecturer",
         "surname": "KOO",
-        "type": "ISD Faculty",
-        "isJointApt": false
+        "type": "ISD Faculty"
     },
     {
         "details": "Jack first obtained his BS and MS degrees in Electrical Engineering and Computer Sciences from the University of California, Berkeley. He subsequently worked at Hewlett Packard, Schlumberger, and a startup in the Silicon Valley.\n\nIn 1994, Jack completed his doctorate study in Electronic Engineering at the Hong Kong University of Science and Technology and became the HKUST’s first PhD graduate. Jack then continued his post-doctoral research at Stanford University. In 1998, Jack returned to the Faculty of Electronic Engineering of HKUST and received his tenure.\n\nJack is a holder of multiple invention patents, including the first patent to be awarded to the School of Engineering at HKUST, and has published at leading IEEE journals and conferences.\n\nIn 1999, Jack started Perception Digital, a company providing digital signal processor-based turn-key solutions to several Fortune 500 companies and technology leaders. Perception Digital eventually went public on the main board at the Hong Kong Stock Exchange. Jack also served as the Chairman and CEO of the company.\n\nHe had also started and ran as the Managing Director of a banking software company, which was eventually absorbed by a local bank. Products include securities trading platform, workflow, and other essential local banking IT needs.\n\nJack completed his Kellogg-HKUST EMBA program in 2010.\n\nHe is passionate in teaching and education. He was an invited Professor about Digital Transformations at Skolkovo School of Management in Moscow and has taught similar subject in executive education in Hong Kong and Shanghai.\n\nJack had also served on the Board as Independent Director on several Hong Kong listed company and SemiLEDs (Nasdaq stock code: LEDS). On LEDS, he was on the audit committee of the Board.\n\nJack is a recipient of the 10 Most Outstanding Young Persons in Hong Kong (2000), Young Industrialist Award (2005), and Ernst & Young Entrepreneur of The Year 2009 China award. In 2010, he was bestowed an Honorary Fellowship at the Hong Kong University of Science and Technology.\n\nJack also serves as a member of several committees in Hong Kong, such as the HKSAR Solicitors Disciplinary Tribunal, Appeal Tribunal Panel of Planning and Lands Branch – HKSAR Development Bureau, HKSAR Innovation and Technology Fund (ITF) Advisory Committee and Enterprise Support Scheme (ESS) Assessment Panel, Innovation Technology Venture Fund (ITVF) Panel and the Green Tech Fund of the Environmental Protection Department.\n\nJack is now a Member of the Council of the Hong Kong University of Science and Technology. He is a former Chairman of the International Advancement and Outreach Committee of the Council, a member of the Audit Committee, a member of the HKUST Guangzhou Campus Working Group, Chairman of the Search Committee for the Vice President of Research and Development. He was also the Vice-Chairman of the Knowledge Transfer Committee of the Council. He was a member of the Search Committees for the President of the HKUST.\n\nJack is currently the Chairman of Swanland.AI, investing in and nurturing a wide range of startups, including intelligence design, smart home, green technology, insurance tech, and many more. As a hobby, he is active in publishing his technology thoughts on his blog (https://www.jacklau.info/ ), and various technology implementations on http://www.Medium.com.\n\nA sample collection of videos related can be found here ( https://www.youtube.com/playlist?list=PLDOnuPQOCwCV9JMVXGjEUdG36IZa5qUEh ).\n\nJack is also passionate in teaching. He teaches at both the Business School and the Engineering School. His courses include Digital Transformation, Entrepreneurship, Design Thinking, and A.I. for FinTech.\n\nRecreationally, he is a certified Yoga instructor, and an avid golfer.",
@@ -511,7 +491,6 @@
         "role": "Adjunct Professor",
         "surname": "LAU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "adjunct"
         ]
@@ -533,7 +512,6 @@
         "role": "Assistant Professor",
         "surname": "SCHARFF",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "marine_tech"
         ],
@@ -562,7 +540,6 @@
         "role": "Assistant Professor",
         "surname": "XIANG",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "sustainable_tech",
             "health_tech"
@@ -588,7 +565,6 @@
         "role": "Associate Professor of Engineering Education",
         "surname": "CHAN",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "CIVL",
         "tags": [
             "joint_appointment"
@@ -597,7 +573,7 @@
     {
         "details": "Dr. Mingming Fan is an Assistant Professor in the Computational Media and Arts (CMA) thrust at Hong Kong University of Science and Technology (GZ). He was an Assistant Professor at Rochester Institute of Technology between 2019 and 2021. He received a Ph.D. in Computer Science from the University of Toronto in 2019 and an MS in Computer Science from Tsinghua University. His research interests lie in the intersection of Human-Computer Interaction (HCI), Aging and Accessibility, and Artificial Intelligence (AI). Specifically, his research focuses on AI-Assisted User Experience (UX) Design, Accessibility and Assistive Technology, AR/VR, and Mobile and Wearable Interaction. His research has been published at top-tier conferences and journals, such as CHI, ACM Transactions on Computer-Human Interaction (TOCHI), UbiComp/IMWUT, ASSETS, ACM Transactions on Accessible Computing (TACCESS), and IEEE Transactions on Visualization and Computer Graphics (TVCG). His research has won a Best Paper Award at CHI 2019, a Best Paper Honorable Mention Award at UbiComp 2015, and a Best Artifact Award (2nd Place) at ASSETS 2020.\n\nPrimary Appointment: Computational Media and Arts Thrust Area",
         "email": "mingmingfan@ust.hk",
-        "id": 107,
+        "id": 106,
         "keywords": [
             "Human-Computer Interaction",
             "Ubiquitous Computing",
@@ -613,7 +589,6 @@
         "role": "Associate Professor",
         "surname": "FAN",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "CMA (GZ)",
         "tags": [
             "joint_appointment"
@@ -636,7 +611,6 @@
         "role": "Lecturer",
         "surname": "LAU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "teaching_track"
         ]
@@ -658,7 +632,6 @@
         "role": "Assistant Professor",
         "surname": "BRAUD",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "areas": [
             "design_tech"
         ],
@@ -669,7 +642,7 @@
     {
         "details": "Guijun Li, Mitch, received his B.Sc. degree in Physics from Nanjing University, and Ph.D. degree in Electrical and Electronic Engineering from University of Hong Kong. Currently, he is an Assistant Professor in the Division of Integrative Systems and Design in The Hong Kong University of Science and Technology. Mitch is focusing on developing advanced manufacturing technologies and applications. He received Young Scientist Award of 2019 Optoelectronic Global Conference from IEEE Photonic Society, and Emerging investigator 2020 from Journal of Materials Chemistry C in Royal Society of Chemistry. He is the chair of IEEE Hong Kong Magnetics Chapter and vice-chair of IEEE Hong Kong EDDSC joint chapter.",
         "email": "mitchli@ust.hk",
-        "id": 8,
+        "id": 6,
         "keywords": [
             "Advanced manufacturing",
             "Photonics"
@@ -682,14 +655,13 @@
         "role": "Associate Professor",
         "surname": "LI",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "areas": [
             "sustainable_tech",
             "health_tech"
         ],
         "tags": [
-            "regular",
-            "joint_appointment"
+            "regular"
+            
         ]
     },
     {
@@ -709,13 +681,12 @@
         "role": "Associate Professor",
         "surname": "SONG",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "areas": [
             "marine_tech"
         ],
         "tags": [
-            "regular",
-            "joint_appointment"
+            "regular"
+            
         ]
     },
     {
@@ -738,7 +709,6 @@
         "role": "Professor",
         "surname": "TSUI",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "regular"
         ]
@@ -760,7 +730,6 @@
         "role": "Adjunct Assistant Professor",
         "surname": "LING",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "adjunct"
         ]
@@ -782,7 +751,6 @@
         "role": "Adjunct Professor",
         "surname": "HUANG",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "adjunct"
         ]
@@ -804,7 +772,6 @@
         "role": "Professor Emeritus",
         "surname": "GOONETILLEKE",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "emeritus"
         ]
@@ -825,7 +792,6 @@
         "role": "Chair Professor",
         "surname": "GUO",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "CSE",
         "tags": [
             "joint_appointment"
@@ -834,7 +800,7 @@
     {
         "details": "Prof. Liuqing YANG received her Ph.D. degree in Electrical and Computer Engineering from the University of Minnesota, Minneapolis, in 2004. Prior to joining Hong Kong University of Science and Technology (Guangzhou), she has been a faculty member with the Department of Electrical and Computer Engineering, at University of Florida, Colorado State University, and University of Minnesota.",
         "email": "lqyang@ust.hk",
-        "id": 103,
+        "id": 102,
         "keywords": [
             "Wireless Communications and Networking (WCN)"
         ],
@@ -846,7 +812,6 @@
         "role": "Chair Professor",
         "surname": "YANG",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "INTR (GZ)",
         "tags": [
             "joint_appointment"
@@ -871,7 +836,6 @@
         "role": "Research Assistant Professor",
         "surname": "ZHOU",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "research_track"
         ]
@@ -879,7 +843,7 @@
     {
         "details": "Prof. Xin ZHANG is Swire Professor of Aerospace Engineering, Chair Professor of Department of Mechanical and Aerospace Engineering and Division of Integrative Systems and Design at the Hong Kong University of Science and Technology. Prof. Zhang holds a Ph.D degree in fluid mechanics from the Cambridge University, UK and B.Eng in aerospace engineering from Beijing University of Aeronautics and Astronautics, China. He is a fellow of the Royal Aeronautical Society.\n\nProf. Zhang conducts research and lectures in aerodynamics and aeroacoustics, in particular aircraft aerodynamics and noise. He has conducted experimental and computational research in the area of unsteady aerodynamics, ground effect aerodynamics, aeroacoustics, and aircraft noise. He is an authority in the area of aircraft noise including both airframe and propulsive unit noise. He performed research in its understanding, developed novel and accurate numerical schemes for its prediction, devised methods for noise attenuation, and designed and constructed predictive codes based on physics for noise prediction which are being used by industry.\n\nHis research over a period of 25 years led to the establishment of Airbus Aircraft Noise Technology Centre (ANTC) at Southampton in 2008 (see www.soton.ac.uk/antc ), which is a major centre of excellent in aircraft noise technology. The centre is the only Airbus university based technology centre in the world. ANTC works in the areas of airframe noise, engine noise, physics based aircraft noise models, computational aeroacoustics, aircraft interior noise modelling, sound transmission, and noise control, all with Airbus. Airbus, a company that produces around half of the world’s aircraft and employs more than 60,000 people across the EU, has integrated the outcomes of Zhang’s research into its key design processes. He has occupied the chair of Airbus Professor of Aircraft Engineering and served as the director of ANTC since 2008.\n\nProf. Zhang has published over 200 papers including 95 archival papers. He has been a highly productive and effective educator, establishing the first MSc course in racing car aerodynamics in the world at Southampton. To date, he has supervised nearly 50 PhD/EngD students as main supervisor; these students currently hold diverse positions in academia, aerospace and automobile industries, government, and other sectors.",
         "email": "aexzhang@ust.hk",
-        "id": 102,
+        "id": 103,
         "keywords": [
             "Aeroacoustics",
             "Aerodynamics"
@@ -892,7 +856,6 @@
         "role": "Chair Professor",
         "surname": "ZHANG",
         "type": "ISD Faculty",
-        "isJointApt": true,
         "primaryApt": "MAE",
         "tags": [
             "joint_appointment"
@@ -915,7 +878,6 @@
         "role": "Professor",
         "surname": "CHOW",
         "type": "ISD Faculty",
-        "isJointApt": false,
         "tags": [
             "affiliate"
         ]
