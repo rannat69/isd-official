@@ -114,23 +114,25 @@ export default function DesignMinorBlock() {
     ];
 
     return (
-        <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+        <div className="w-full lg:dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap-sm text-md  text-isd-font-1">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     Design Minor
                 </h1>
 
-                <p>Design for good. Design for a difference.</p>
+                <p className="text-sm">
+                    Design for good. Design for a difference.
+                </p>
 
                 <div className="flex flex-col gap-component-gap">
                     {content.map((section, index) => (
                         <div key={index} className="flex flex-col gap-[24px]">
                             {section.subheading && (
-                                <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                                <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                                     {section.subheading}
                                 </h3>
                             )}
-                            {section.content}
+                            <div className="text-sm">{section.content}</div>
                         </div>
                     ))}
                 </div>
