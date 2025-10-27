@@ -113,8 +113,8 @@ export default function FilterBlock() {
                 id="select"
                 className="absolute top-[50%] left-0 w-full h-0 invisible"
             ></div> */}
-            <div className="container w-full flex pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
-                <div className="flex gap-component-gap-sm ">
+            <div className="container w-full flex lg:flex-row flex-col pt-section-gap pb-component-gap-sm gap-component-gap-sm items-center">
+                <div className="flex gap-component-gap-sm lg:w-fit w-full justify-between">
                     <Select
                         id="role-select"
                         options={roles}
@@ -125,7 +125,7 @@ export default function FilterBlock() {
                             applyFilters({ role: val, area, keyword, tag });
                         }}
                         className="min-w-[130px]"
-                        triggerClassName="w-full flex items-center justify-between px-[12px] h-component-gap-sm bg-white focus:outline-none font-bold text-isd-primary"
+                        triggerClassName="w-full flex items-center justify-between px-[12px] py-[6px] h-fit lg:h-component-gap-sm bg-white focus:outline-none font-bold text-isd-primary"
                         itemClassName="px-[12px]"
                     />
 
@@ -158,7 +158,7 @@ export default function FilterBlock() {
                             }}
                             placeholder="Filter by area"
                             className="min-w-[180px]"
-                            triggerClassName={`w-full flex items-center justify-between px-[12px] h-component-gap-sm bg-white focus:outline-none ${
+                            triggerClassName={`w-full flex items-center justify-between px-[12px] py-[6px] h-fit lg:h-component-gap-sm bg-white focus:outline-none ${
                                 area === 'all'
                                     ? 'text-isd-font-3'
                                     : 'font-bold text-isd-primary'
@@ -168,7 +168,7 @@ export default function FilterBlock() {
                     )}
                 </div>
 
-                <div className="flex gap-[24px] flex-1">
+                <div className="flex gap-[24px] flex-1 lg:flex-row flex-col w-full">
                     <input
                         type="text"
                         placeholder="Keyword Search"
@@ -177,25 +177,27 @@ export default function FilterBlock() {
                         onKeyDown={(e) => {
                             if (e.key === 'Enter') handleSearch();
                         }}
-                        className="bg-white px-[12px] flex-1 h-component-gap-sm text-isd-font-1 placeholder:text-isd-font-3 focus:outline-none"
+                        className="bg-white px-3 py-[6px] flex-1 h-component-gap-sm text-isd-font-1 placeholder:text-isd-font-3 focus:outline-none"
                     />
-                    <button
-                        onClick={handleSearch}
-                        className="bg-isd-primary w-section-gap h-component-gap-sm text-white"
-                    >
-                        Search
-                    </button>
-                    <button
-                        onClick={handleClear}
-                        className="bg-white w-section-gap h-component-gap-sm text-isd-primary"
-                    >
-                        Clear
-                    </button>
+                    <div className="flex flex-row gap-component-gap-sm justify-start">
+                        <button
+                            onClick={handleSearch}
+                            className="bg-isd-primary lg:w-section-gap lg:px-0 px-[18px] py-[6px] h-fit lg:h-component-gap-sm text-white"
+                        >
+                            Search
+                        </button>
+                        <button
+                            onClick={handleClear}
+                            className="bg-white lg:w-section-gap lg:px-0 px-[18px] py-[6px] h-fit lg:h-component-gap-sm text-isd-primary"
+                        >
+                            Clear
+                        </button>
+                    </div>
                 </div>
             </div>
 
             {displayTags === 'none' ? null : (
-                <div className="flex justify-center gap-component-gap-sm mb-component-gap-sm h-fit">
+                <div className="flex lg:justify-center lg:gap-component-gap-sm h-fit flex-wrap gap-3 px-4 pb-9 justify-start">
                     {tags.map((leTag) => (
                         <button
                             key={leTag.value}
@@ -218,7 +220,7 @@ export default function FilterBlock() {
                                     });
                                 }
                             }}
-                            className={`text-sm py-[10px]  border rounded-full px-element-gap ${
+                            className={`text-sm lg:py-[10px] py-[6px] border rounded-full px-element-gap ${
                                 tag === leTag.value
                                     ? 'text-isd-primary font-bold border-2'
                                     : 'text-isd-font-3'

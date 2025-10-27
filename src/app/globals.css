@@ -180,10 +180,17 @@
 /* Simple container helper */
 .container {
     max-width: calc(var(--container-max-width) + 2 * var(--component-gap-sm));
-    padding-left: var(--component-gap-sm);
-    padding-right: var(--component-gap-sm);
+    padding-left: var(--element-gap);
+    padding-right: var(--element-gap);
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--component-gap-sm);
+        padding-right: var(--component-gap-sm);
+    }
 }
 
 .text-isd-font-3 {
