@@ -14,10 +14,10 @@ export default function HeroCarouselBlock() {
     return (
         <div className="w-full relative overflow-hidden">
             <Carousel images={images} />
-            <div className="absolute -z-1 w-full h-full bg-gradient-to-b via-transparent to-black"></div>
-            <div className="container z-1 text-white flex flex-col justify-end py-[64px] h-[612px]">
+            <div className="absolute -z-1 w-full lg:h-full h-[260px] bg-gradient-to-b via-transparent to-black"></div>
+            <div className="container z-1 text-white flex flex-col justify-end py-[32px] h-[260px] lg:py-[64px] lg:h-[612px]">
                 <div className="flex justify-between items-center gap-20 text-pretty">
-                    <div className="flex flex-col lg:gap-0 gap-[6px]">
+                    <div className="flex flex-col lg:gap-0 gap-[6px] px-6">
                         <h1 className="lg:text-h1 lg:text-[36px] text-lg">
                             Welcome to
                         </h1>
