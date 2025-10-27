@@ -45,6 +45,8 @@
 
 /* Register custom colors with Tailwind v4 */
 @theme {
+    --breakpoint-xl: 87.5rem; /* 1400px */
+
     --color-isd-primary: var(--isd-primary);
     --color-isd-primary-2: var(--isd-primary-2);
     --color-isd-primary-3: var(--isd-primary-3);
