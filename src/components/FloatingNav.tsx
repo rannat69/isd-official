@@ -51,7 +51,7 @@ export default function FloatingNav({
 
     return (
         // use sticky so the nav sits below the hero image but becomes fixed when scrolled
-        <div className="sticky top-57 z-50 w-full">
+        <div className="sticky top-57 z-20 w-full">
             <div className="relative">
                 <button
                     aria-label={open ? 'Close navigation' : 'Open navigation'}
