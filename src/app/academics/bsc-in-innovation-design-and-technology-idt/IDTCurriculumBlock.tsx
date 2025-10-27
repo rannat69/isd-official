@@ -25,7 +25,9 @@ export default function IDTCurriculumBlock() {
     return (
         <div className="flex flex-col gap-[72px]">
             <div className="flex flex-col gap-9">
-                <h2 className="text-4xl font-bold text-primary">Curriculum</h2>
+                <h2 className="lg:text-4xl text-h2 font-bold text-primary">
+                    Curriculum
+                </h2>
                 <div>
                     <p>
                         Every student entering HKUST needs to complete 30
