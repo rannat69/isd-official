@@ -25,7 +25,7 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="isd-official">
             <body
-                className={`${mulish.className} antialiased min-h-screen flex flex-col  mt-[21px] lg:mt-0`}
+                className={`${mulish.className} antialiased min-h-screen flex flex-col`}
             >
                 <Header />
 
