@@ -77,8 +77,8 @@ export default function CollabortorsBlock() {
         },
     ];
 
-    return (
-        <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+    const CollaboratorsBlockContent = () => {
+        return (
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap-sm text-md  text-isd-font-1">
                 <div className="flex flex-col gap-component-gap">
                     <h1 className="text-h1 offset-text-background text-isd-font-1">
@@ -107,6 +107,18 @@ export default function CollabortorsBlock() {
                     ))}
                 </div>
             </div>
-        </div>
+        );
+    };
+
+    return (
+        <>
+            <div className="hidden lg:block w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+                <CollaboratorsBlockContent />
+            </div>
+
+            <div className="block lg:hidden  w-full ">
+                <CollaboratorsBlockContent />
+            </div>
+        </>
     );
 }
