@@ -372,8 +372,7 @@ export default function Navbar() {
                                                             hash.includes(
                                                                 subItem.pathnameKeyword
                                                             )
-                                                                ? // NOTE: Maybe change to  ? 'underline font-bold'
-                                                                  ''
+                                                                ? 'font-bold'
                                                                 : ''
                                                         }`}
                                                     >
