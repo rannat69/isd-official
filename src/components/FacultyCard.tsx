@@ -48,18 +48,15 @@ export default function FacultyCard({
                     <div className="lg:text-md text-sm text-isd-secondary">
                         {role}
                     </div>
-                    <div className="text-md text-isd-font-3 text">
+                    <div className="text-md text-isd-font-3">
                         {primaryApt
                             ? `Primary appointment: ${primaryApt}`
                             : null}
                     </div>
-                    <div className="text-md text-isd-font-3 line-clamp-3 break-words hidden lg:block">
-                        {keywords.map((kw, index) => (
-                            <span key={kw}>
-                                {kw}
-                                {index < keywords.length - 1 && ', '}
-                            </span>
-                        ))}
+                    <div className='hidden lg:block'>
+                        <span className="text-md text-isd-font-3 overflow-hidden break-words line-clamp-3">
+                            {keywords.join(', ')}
+                        </span>
                     </div>
                     <div className="lg:block hidden">
                         <ReadMoreButton
