@@ -18,10 +18,10 @@ export default function EventCard({
 }) {
     return (
         <a
-            className="flex flex-col xl:flex-row gap-component-gap xl:h-[360px] xl:items-center pb-[24px] xl:pb-[0px]"
+            className="flex flex-col lg:flex-row gap-component-gap lg:h-[360px] lg:items-center pb-[24px] lg:pb-[0px]"
             href={href}
         >
-            <div className=" hidden xl:block w-[396px] h-[240px] bg-isd-font-2/10">
+            <div className=" hidden lg:block w-[396px] h-[240px] bg-isd-font-2/10">
                 <Image
                     src={image}
                     alt={title}
@@ -32,7 +32,7 @@ export default function EventCard({
                     }}
                 />
             </div>
-            <div className="hidden xl:flex  flex-1 flex-col gap-[12px]">
+            <div className="hidden lg:flex  flex-1 flex-col gap-[12px]">
                 <p className="text-h2 text-secondary">Event</p>
                 <h2 className="text-h2 text-primary">{title}</h2>
                 <div className="flex flex-col gap-[4px]">
@@ -66,7 +66,7 @@ export default function EventCard({
                 </div>
             </div>
 
-            <div className="flex xl:hidden flex-1 flex-col gap-[12px]">
+            <div className="flex lg:hidden flex-1 flex-col gap-[12px]">
                 <p className="text-h2 text-[22px] leading-[28px] text-secondary">
                     Event
                 </p>
@@ -79,7 +79,7 @@ export default function EventCard({
                             <Calendar size={22} />
                         </div>
 
-                        <p className="text-md text-isd-font-3 leading-[22px] xl:leading-[26px]">
+                        <p className="text-md text-isd-font-3 leading-[22px] lg:leading-[26px]">
                             {date}
                         </p>
                     </div>
@@ -89,7 +89,7 @@ export default function EventCard({
                                 <Clock size={22} />
                             </div>
 
-                            <p className="text-md text-isd-font-3 leading-[22px] xl:leading-[26px]">
+                            <p className="text-md text-isd-font-3 leading-[22px] lg:leading-[26px]">
                                 {time}
                             </p>
                         </div>
@@ -100,7 +100,7 @@ export default function EventCard({
                                 <MapPin size={22} />
                             </div>
 
-                            <p className="text-md text-isd-font-3 leading-[22px] xl:leading-[26px]">
+                            <p className="text-md text-isd-font-3 leading-[22px] lg:leading-[26px]">
                                 {location}
                             </p>
                         </div>
