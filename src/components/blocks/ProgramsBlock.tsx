@@ -33,27 +33,42 @@ export default function ProgramBlock() {
         },
     ];
 
-    return (
-        <div className="hidden lg:block dot-pattern before:top-[-95px] before:right-[10px] [--dot-color:var(--isd-secondary-1)]">
-            <div className="container relative overflow-clip flex flex-col py-section-gap gap-section-title-gap">
-                <h1 className="text-h1 offset-text-background uppercase">
-                    Programs
-                </h1>
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-section-title-gap">
-                    {programsInfo.map((program, index) => (
-                        <TextCard
-                            key={index}
-                            heading={program.heading}
-                            content={program.content}
-                            link={program.link}
-                        />
-                    ))}
+    const ProgramBlockContent = () => {
+        return (
+            <>
+                {' '}
+                <div className="container relative overflow-clip flex flex-col py-section-gap gap-section-title-gap">
+                    <h1 className="text-h1 offset-text-background uppercase">
+                        Programs
+                    </h1>
+                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-section-title-gap">
+                        {programsInfo.map((program, index) => (
+                            <TextCard
+                                key={index}
+                                heading={program.heading}
+                                content={program.content}
+                                link={program.link}
+                            />
+                        ))}
+                    </div>
                 </div>
+                <div
+                    className="dot-pattern before:bottom-[25px] before:left-[-90px] [--dot-color:var(--isd-secondary-1)] "
+                    aria-hidden
+                />
+            </>
+        );
+    };
+
+    return (
+        <>
+            <div className="hidden xl:block dot-pattern before:top-[-95px] before:right-[10px] [--dot-color:var(--isd-secondary-1)]">
+                <ProgramBlockContent />
             </div>
-            <div
-                className="dot-pattern before:bottom-[25px] before:left-[-90px] [--dot-color:var(--isd-secondary-1)] "
-                aria-hidden
-            />
-        </div>
+
+            <div className="block xl:hidden ">
+                <ProgramBlockContent />
+            </div>
+        </>
     );
 }
