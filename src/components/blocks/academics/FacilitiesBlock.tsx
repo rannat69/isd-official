@@ -9,7 +9,9 @@ import F08 from '@/assets/academics/facilities/fac.08.jpg';
 import F09 from '@/assets/academics/facilities/fac.09.jpg';
 import F10 from '@/assets/academics/facilities/fac.10.jpg';
 import F11 from '@/assets/academics/facilities/fac.11.jpg';
+import Carousel from '@/components/Carousel';
 import CarouselTriple from '@/components/CarouselTriple';
+import Image from 'next/image';
 
 const images = [F01, F02, F03, F04, F05, F06, F07, F08, F09, F10, F11];
 
@@ -114,8 +116,25 @@ export default function FacilitiesBlock() {
                         <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Equipment Gallery
                         </h3>
-                        <div className="w-full  relative">
-                            <div>
+                        <div className="w-full relative">
+                            <div className="lg:hidden">
+                                <div className="flex flex-row overflow-x-auto">
+                                    {images.map((image, index) => (
+                                        <div
+                                            key={index}
+                                            className="relative lg:w-[400px] lg:h-[400px] w-64 h-64 flex-shrink-0 mx-2"
+                                        >
+                                            <Image
+                                                src={image}
+                                                alt={`Facility Image ${index + 1}`}
+                                                fill
+                                                className="object-cover rounded-lgn aspect-square"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="hidden lg:block">
                                 <CarouselTriple images={images} />
                             </div>
                         </div>
