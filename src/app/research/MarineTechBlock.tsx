@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function MarineTechBlock() {
     return (
         <div className="w-full bg-isd-primary-2">
-            <div className="container flex flex-col gap-component-gap-sm py-section-gap max-w-full">
+            <div className="container lg:flex hidden flex-col gap-component-gap-sm py-section-gap max-w-full">
                 <div className="flex flex-row items-center gap-component-gap">
                     {/* Left: Research Info */}
                     <div className="flex basis-1/2 flex-col gap-[12px] justify-center">
@@ -32,6 +32,25 @@ export default function MarineTechBlock() {
                             className="w-full h-auto rounded-lg aspect-[1.5] object-cover"
                         />
                     </div>
+                </div>
+            </div>
+
+            <div className="container lg:hidden flex flex-col py-component-gap-sm gap-component-gap-sm">
+                <SubHeading text="Marine-Tech" />
+                <div className="flex flex-col gap-[12px]">
+                    <Image
+                        src={marineTech}
+                        alt="Marine-Tech"
+                        className="w-full h-auto rounded-lg aspect-[1.5] object-cover"
+                    />
+                    {marineTechTopics.map((topic) => (
+                        <ResearchInfoCard
+                            key={topic.title}
+                            title={topic.title}
+                            description={topic.description}
+                            supervisor={topic.supervisor}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ import Image from 'next/image';
 export default function EmergentThemesBlock() {
     return (
         <div>
-            <div className="container flex flex-col gap-[12px] py-section-gap max-w-full">
+            <div className="container lg:flex hidden flex-col gap-[12px] py-section-gap max-w-full">
                 <div className="flex flex-row items-center gap-component-gap">
                     {/* Left: Image */}
                     <div className="flex flex-col gap-4 basis-1/2 justify-center">
@@ -59,6 +59,38 @@ export default function EmergentThemesBlock() {
                             />
                         ))}
                     </div>
+                </div>
+            </div>
+
+            <div className="container lg:hidden flex flex-col py-component-gap-sm gap-component-gap-sm">
+                <SubHeading text="Emergent-Tech" />
+                <div className="flex flex-col gap-[12px]">
+                    <Image
+                        src={EmergentImg1}
+                        alt="Emergent Themes"
+                        className="w-full h-auto rounded-lg aspect-[1.5] object-cover"
+                    />
+                    <Image
+                        src={EmergentImg2}
+                        alt="Sustainable Tech"
+                        className="w-full h-auto rounded-lg aspect-[1.5] object-cover"
+                    />
+                    {EmergentThemesTopics1.map((topic) => (
+                        <ResearchInfoCard
+                            key={topic.title}
+                            title={topic.title}
+                            description={topic.description}
+                            supervisor={topic.supervisor}
+                        />
+                    ))}
+                    {EmergentThemesTopics2.map((topic) => (
+                        <ResearchInfoCard
+                            key={topic.title}
+                            title={topic.title}
+                            description={topic.description}
+                            supervisor={topic.supervisor}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function SustainableTechBlock() {
     return (
         <div>
-            <div className="container flex flex-col gap-component-gap-sm py-section-gap max-w-full">
+            <div className="container lg:flex hidden flex-col gap-component-gap-sm py-section-gap max-w-full">
                 <div className="flex flex-row items-center gap-component-gap">
                     {/* Left: Image */}
                     <div className="flex basis-1/2 justify-center">
@@ -32,6 +32,25 @@ export default function SustainableTechBlock() {
                             />
                         ))}
                     </div>
+                </div>
+            </div>
+
+            <div className="container lg:hidden flex flex-col py-component-gap-sm gap-component-gap-sm">
+                <SubHeading text="Sustainable-Tech" />
+                <div className="flex flex-col gap-[12px]">
+                    <Image
+                        src={sustainableTech}
+                        alt="Sustainable-Tech"
+                        className="w-full h-auto rounded-lg aspect-[1.5] object-cover"
+                    />
+                    {sustainableTechTopics.map((topic) => (
+                        <ResearchInfoCard
+                            key={topic.title}
+                            title={topic.title}
+                            description={topic.description}
+                            supervisor={topic.supervisor}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
