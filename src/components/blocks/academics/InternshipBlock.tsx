@@ -60,7 +60,7 @@ export default function InternshipBlock() {
     ];
 
     return (
-        <div className="w-full dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+        <div className="w-full lg:dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap text-md  text-isd-font-1">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     Internship & Exchange{' '}
@@ -73,11 +73,13 @@ export default function InternshipBlock() {
                                 className="flex flex-col gap-[24px]"
                             >
                                 {section.subheading && (
-                                    <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                                    <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                                         {section.subheading}
                                     </h3>
                                 )}
-                                {section.content}
+                                <div className="text-justify">
+                                    {section.content}
+                                </div>
                             </div>
                         ))}
 
