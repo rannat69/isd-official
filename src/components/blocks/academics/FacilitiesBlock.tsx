@@ -89,7 +89,7 @@ export default function FacilitiesBlock() {
                         {content.map((section, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col gap-[24px] mb-9"
+                                className="flex flex-col lg:gap-[24px] gap-[12px] mb-9"
                             >
                                 {section.subheading && (
                                     <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
@@ -111,7 +111,7 @@ export default function FacilitiesBlock() {
                             allowFullScreen
                         ></iframe>
                     </div>
-                    <div className="flex flex-col gap-[24px]">
+                    <div className="flex flex-col lg:gap-[24px] gap-[12px]">
                         <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Equipment Gallery
                         </h3>

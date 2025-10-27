@@ -119,10 +119,10 @@ export default function ScholarshipsBlock() {
                         {content.map((section, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col gap-[24px]"
+                                className="flex flex-col lg:gap-[24px] gap-[12px]"
                             >
                                 {section.subheading && (
-                                    <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                                    <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold text-isd-primary">
                                         {section.subheading}
                                     </h3>
                                 )}
