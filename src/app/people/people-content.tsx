@@ -45,7 +45,7 @@ export default function PeopleContent() {
             {/* Render blocks according to selected role */}
             {(role === 'all' || role === 'faculty') && (
                 <>
-                    <div className="dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
+                    <div className="lg:dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
                     <FacultyBlock people={facultyList} />
                 </>
             )}
@@ -54,7 +54,7 @@ export default function PeopleContent() {
             )*/}
             {(role === 'all' || role === 'staff') && (
                 <>
-                    <div className="dot-pattern before:top-[-45px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
+                    <div className="lg:dot-pattern before:top-[-45px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
                     <StaffBlock people={staffList} />
                 </>
             )}

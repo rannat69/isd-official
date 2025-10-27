@@ -93,12 +93,13 @@
         "role": "Associate Professor",
         "surname": "MOK",
         "type": "ISD Faculty",
-        "isJointApt": false,
+        "isJointApt": true,
         "areas": [
             "design_tech"
         ],
         "tags": [
-            "regular"
+            "regular",
+            "joint_appointment"
         ]
     },
     {
@@ -397,12 +398,13 @@
         "role": "Professor",
         "surname": "YEUNG",
         "type": "ISD Faculty",
-        "isJointApt": false,
+        "isJointApt": true,
         "areas": [
             "marine_tech"
         ],
         "tags": [
-            "regular"
+            "regular",
+            "joint_appointment"
         ]
     },
     {
@@ -680,13 +682,14 @@
         "role": "Associate Professor",
         "surname": "LI",
         "type": "ISD Faculty",
-        "isJointApt": false,
+        "isJointApt": true,
         "areas": [
             "sustainable_tech",
             "health_tech"
         ],
         "tags": [
-            "regular"
+            "regular",
+            "joint_appointment"
         ]
     },
     {
@@ -706,12 +709,13 @@
         "role": "Associate Professor",
         "surname": "SONG",
         "type": "ISD Faculty",
-        "isJointApt": false,
+        "isJointApt": true,
         "areas": [
             "marine_tech"
         ],
         "tags": [
-            "regular"
+            "regular",
+            "joint_appointment"
         ]
     },
     {

@@ -14,12 +14,12 @@ export default function FacultyBlock({
     return (
         <div
             className={
-                'container w-full flex flex-col pt-section-gap py-section-gap gap-section-title-gap' +
+                'container px-[18px] w-full flex flex-col pt-section-gap py-section-gap  gap-section-title-gap' +
                 (type !== 'affiliate' ? ' ' : '')
             }
         >
             <h1 className="text-h1 offset-text-background uppercase">
-                {type === 'affiliate' ? ' Affiliates' : 'ISD Faculty'}
+                {type === 'affiliate' ? ' Affiliates' : 'Faculty'}
             </h1>
 
             {(() => {
@@ -36,7 +36,7 @@ export default function FacultyBlock({
 
                 return (
                     <div
-                        className="grid grid-cols-2 gap-x-component-gap gap-y-section-title-gap scroll-mt-[295px]"
+                        className="grid grid-col-1 gap-6 lg:grid-cols-2 lg:gap-x-component-gap lg:gap-y-section-title-gap scroll-mt-[295px]"
                         id={type === 'affiliate' ? 'affiliate' : 'faculty'}
                     >
                         {list.map((person) => (

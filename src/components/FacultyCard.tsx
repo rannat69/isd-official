@@ -30,9 +30,8 @@ export default function FacultyCard({
     primaryApt,
 }: FacultyCardProps) {
     return (
-        <div className="flex gap-component-gap-sm">
-            <div className="relative w-[221px] h-[288px] flex-shrink-0 overflow-hidden border-l-3 border-isd-primary">
-                {/* NOTE - photo always available either a valid image or a placeholder */}
+        <div className="flex lg:gap-component-gap-sm gap-6">
+            <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden border-l-3 border-isd-primary">
                 <Image
                     src={photo}
                     alt={`${name}'s photo`}
@@ -43,14 +42,18 @@ export default function FacultyCard({
             </div>
             <div className="flex flex-col justify-between flex-1 text-left">
                 <div className="flex flex-col gap-footer-gap">
-                    <div className="text-h2 text-isd-font-1">{name}</div>
-                    <div className="text-md text-isd-secondary">{role}</div>
+                    <div className="lg:text-h2 text-lg font-bold text-isd-font-1">
+                        {name}
+                    </div>
+                    <div className="lg:text-md text-sm text-isd-secondary">
+                        {role}
+                    </div>
                     <div className="text-md text-isd-font-3 text">
                         {primaryApt
                             ? `Primary appointment: ${primaryApt}`
                             : null}
                     </div>
-                    <div className="text-md text-isd-font-3 line-clamp-3 break-words">
+                    <div className="text-md text-isd-font-3 line-clamp-3 break-words hidden lg:block">
                         {keywords.map((kw, index) => (
                             <span key={kw}>
                                 {kw}
@@ -58,57 +61,56 @@ export default function FacultyCard({
                             </span>
                         ))}
                     </div>
-                    <ReadMoreButton
-                        name={name}
-                        role={role}
-                        keywords={keywords}
-                        photo={photo}
-                        email={email}
-                        phone={phone}
-                        location={location}
-                        link={link}
-                        details={details}
-                        primaryApt={primaryApt}
-                    />
+                    <div className="lg:block hidden">
+                        <ReadMoreButton
+                            name={name}
+                            role={role}
+                            keywords={keywords}
+                            photo={photo}
+                            email={email}
+                            phone={phone}
+                            location={location}
+                            link={link}
+                            details={details}
+                            primaryApt={primaryApt}
+                        />
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-[24px] before:content-[''] before:bg-isd-primary before:w-[111px] before:h-[3px]">
-                    <div className="flex gap-element-gap">
+                    <div className="flex lg:gap-element-gap gap-3 ">
                         {email && (
                             <a
                                 href={`mailto:${email}`}
-                                className="p-[9px] rounded-full bg-isd-primary-2"
+                                className="lg:p-[9px] p-[5px] rounded-full w-fit h-fit bg-isd-primary-2"
                                 data-tooltip={email}
                             >
-                                <Mail size={24} className="text-isd-primary" />
+                                <Mail className="text-isd-primary lg:size-[24px] size-[20px]" />
                             </a>
                         )}
                         {phone && (
                             <a
                                 href={`tel:${phone}`}
-                                className="p-[9px] rounded-full bg-isd-primary-2"
+                                className="lg:p-[9px] p-[5px] rounded-full w-fit h-fit bg-isd-primary-2"
                                 data-tooltip={phone}
                             >
-                                <Phone size={24} className="text-isd-primary" />
+                                <Phone className="text-isd-primary lg:size-[24px] size-[20px]" />
                             </a>
                         )}
                         {location && (
                             <div
-                                className="p-[9px] rounded-full bg-isd-primary-2"
+                                className="lg:p-[9px] p-[5px] rounded-full w-fit h-fit bg-isd-primary-2"
                                 data-tooltip={location}
                             >
-                                <MapPin
-                                    size={24}
-                                    className="text-isd-primary"
-                                />
+                                <MapPin className="text-isd-primary lg:size-[24px] size-[20px]" />
                             </div>
                         )}
                         {link && (
                             <Link
                                 href={link}
-                                className="p-[9px] rounded-full bg-isd-primary-2"
+                                className="lg:p-[9px] p-[5px] rounded-full w-fit h-fit bg-isd-primary-2"
                             >
-                                <Link2 size={24} className="text-isd-primary" />
+                                <Link2 className="text-isd-primary lg:size-[24px] size-[20px]" />
                             </Link>
                         )}
                     </div>

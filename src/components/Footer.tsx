@@ -23,7 +23,7 @@ export default function Footer() {
         },
         {
             title: 'People',
-            subheadings: ['ISD Faculty', 'ISD Staff'],
+            subheadings: ['Faculty', 'Staff'],
             links: [
                 '/people?role=faculty&area=all&tag=regular',
                 '/people?role=staff',
