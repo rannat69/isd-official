@@ -14,7 +14,7 @@ export default function FacultyBlock({
     return (
         <div
             className={
-                'container px-[18px] w-full flex flex-col pt-section-gap lg:py-section-gap gap-section-title-gap' +
+                'container px-[18px] w-full flex flex-col pt-section-gap py-section-gap  gap-section-title-gap' +
                 (type !== 'affiliate' ? ' ' : '')
             }
         >
