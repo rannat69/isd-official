@@ -53,7 +53,7 @@ export default function FacultyCard({
                             ? `Primary appointment: ${primaryApt}`
                             : null}
                     </div>
-                    <div className='hidden lg:block'>
+                    <div className="hidden lg:block">
                         <span className="text-md text-isd-font-3 overflow-hidden break-words line-clamp-3">
                             {keywords.join(', ')}
                         </span>
