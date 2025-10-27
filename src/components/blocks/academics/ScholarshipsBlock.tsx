@@ -3,7 +3,7 @@ export default function ScholarshipsBlock() {
         {
             subheading: 'Chinachem PrimeMovership',
             content: (
-                <div className="flex flex-col gap-[24px]">
+                <div className="flex flex-col gap-[24px] text-sm">
                     <p className="text-justify">
                         This scholarship aims to support ISD students with high
                         achievement in innovative technologies design and with
@@ -45,7 +45,7 @@ export default function ScholarshipsBlock() {
         {
             subheading: 'DJI RoboMaster Scholarship',
             content: (
-                <div className="flex flex-col gap-[24px]">
+                <div className="flex flex-col gap-[24px] text-sm">
                     <p className="text-justify">
                         These scholarships are for Year 1 Mainland students
                         admitted to the BSc program in Integrative Systems and
@@ -106,7 +106,7 @@ export default function ScholarshipsBlock() {
                     Scholarships
                 </h1>
                 <div className="flex flex-col gap-component-gap-sm">
-                    <p className="text-justify">
+                    <p className="text-justify text-sm">
                         Several dedicated partners shared our vision of creating
                         new modes of engineering education. As part of our part
                         partnership program, they provide valuable resources in
