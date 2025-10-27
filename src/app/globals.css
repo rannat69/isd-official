@@ -245,6 +245,8 @@
     background-size: 26px 24px;
     background-repeat: repeat;
     z-index: -1;
+
+    @apply lg:block hidden;
 }
 
 @plugin "daisyui/theme" {

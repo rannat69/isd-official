@@ -70,18 +70,20 @@ export default function InternshipBlock() {
                         {content.map((section, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col gap-[24px]"
+                                className="flex flex-col lg:gap-[24px] gap-[12px]"
                             >
                                 {section.subheading && (
-                                    <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                                    <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                                         {section.subheading}
                                     </h3>
                                 )}
-                                {section.content}
+                                <div className="text-justify text-sm">
+                                    {section.content}
+                                </div>
                             </div>
                         ))}
 
-                        <div className="flex flex-1 justify-between">
+                        <div className="flex lg:flex-1 flex-wrap justify-center gap-component-gap-sm">
                             <Image
                                 src={Logo1}
                                 alt="logo1"
