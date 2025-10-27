@@ -17,10 +17,10 @@ export default function NewsCard({
 }) {
     return (
         <a
-            className="flex gap-component-gap h-[360px] items-center"
+            className="flex flex-col 2xl:flex-row gap-component-gap lg:h-[360px] items-center pb-[24px] lg:pb-[0px]"
             href={href}
         >
-            <div className="w-[396px] h-[240px] bg-isd-font-2/10">
+            <div className="hidden 2xl:block w-[396px] h-[240px] bg-isd-font-2/10">
                 <Image
                     src={image}
                     alt={title}
@@ -31,9 +31,31 @@ export default function NewsCard({
                     }}
                 />
             </div>
-            <div className="flex-1 flex flex-col gap-[12px]">
+            <div className="hidden 2xl:flex flex-1 flex-col gap-[12px]">
                 <p className="text-h2 text-secondary">{category}</p>
                 <h2 className="text-h2 text-primary">{title}</h2>
+                <p className="text-md text-isd-font-3 line-clamp-3">
+                    {excerpt}
+                </p>
+                <span className="text-isd-font-2 text-md">{date}</span>
+            </div>
+
+            <div className="flex 2xl:hidden flex-1 flex-col gap-[12px]">
+                <p className="text-h2 text-secondary">{category}</p>
+                <h2 className="text-h2 text-primary">{title}</h2>
+
+                <div className="block 2xl:hidden w-[198px] h-[120px] bg-isd-font-2/10">
+                    <Image
+                        src={image}
+                        alt={title}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                        }}
+                    />
+                </div>
+
                 <p className="text-md text-isd-font-3 line-clamp-3">
                     {excerpt}
                 </p>

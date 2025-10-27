@@ -89,7 +89,7 @@ export default function NewsListBlock() {
     return (
         <div className="dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container flex flex-col py-section-gap gap-0">
-                <div className="flex justify-between">
+                <div className="flex flex-col 2xl:flex-row justify-between  gap-[24px] pb-[24px]">
                     <h1 className="text-h1 offset-text-background text-isd-font-1 text-balance">
                         News & Events
                     </h1>
@@ -120,7 +120,7 @@ export default function NewsListBlock() {
                     </div>
                 </div>
 
-                <div className="flex flex-col divide-y divide-isd-primary-3">
+                <div className="flex flex-col divide-y divide-isd-primary-3 gap-[24px] 2xl:gap-[0px]">
                     {visibleItems.map((item) => {
                         const href = `/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
