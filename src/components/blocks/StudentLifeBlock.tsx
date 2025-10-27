@@ -48,11 +48,6 @@ export default function StudentLifeBlock() {
 
     const [page, setPage] = useState<StudentLifePageKey>('stud-comp');
 
-    const [activeMenuId, setActiveMenuId] = useState('stud-comp');
-    const handleMenuClick = (id: string) => {
-        setActiveMenuId(id);
-    };
-
     useEffect(() => {
         const initialPage = searchParams.get('page') ?? 'stud-comp';
         setPage(initialPage as StudentLifePageKey);
