@@ -35,7 +35,7 @@ export default function Carousel({ images }: CarouselProps) {
     return (
         <>
             {/* Image Layer */}
-            <div className="absolute -z-1 w-full h-full">
+            <div className="absolute -z-1 w-full lg:h-full h-[260px]">
                 {images.map((image, index) => (
                     <Image
                         key={index}
@@ -49,7 +49,7 @@ export default function Carousel({ images }: CarouselProps) {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute z-0 w-full h-full flex items-center justify-between px-12 pointer-events-none">
+            <div className="absolute z-0 w-full lg:h-full h-[260px] flex items-center justify-between lg:px-12 px-2 pointer-events-none">
                 <button
                     className="pointer-events-auto cursor-pointer"
                     onClick={handlePrevious}
@@ -65,7 +65,7 @@ export default function Carousel({ images }: CarouselProps) {
             </div>
 
             {/* Dot Indicators */}
-            <div className="absolute z-0 w-full h-full pb-3 flex items-end justify-center gap-2 px-12 pointer-events-none">
+            <div className="absolute z-0 w-full lg:h-full h-[260px] pb-3 flex items-end justify-center gap-2 px-12 pointer-events-none">
                 {images.map((_, index) => (
                     <button
                         key={index}
