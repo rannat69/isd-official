@@ -100,7 +100,7 @@ export default function ScholarshipsBlock() {
     ];
 
     return (
-        <div className="w-full lg:dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
+        <div className="w-full  dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap text-md  text-isd-font-1">
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     Scholarships
