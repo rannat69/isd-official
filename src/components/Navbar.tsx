@@ -157,7 +157,6 @@ export default function Navbar() {
     ];
 
     return (
-        <div className="hidden lg:block">
             <nav className="bg-white px-section-gap sticky z-40 top-12 py-8">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[11px] divide-x-1 divide-isd-primary">
@@ -182,10 +181,7 @@ export default function Navbar() {
 
                     <div className="inline-flex justify-center items-center gap-element-gap pt-2">
                         {navItems.map((item, i) => (
-                            <div
-                                className="relative group pb-2"
-                                key={item.name}
-                            >
+                        <div className="relative group pb-2" key={item.name}>
                                 <Link
                                     href={item.href}
                                     className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
@@ -222,6 +218,5 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
-        </div>
     );
 }
