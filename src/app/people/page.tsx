@@ -29,7 +29,7 @@ function PeopleContentSkeleton() {
 export default function PeoplePage() {
     return (
         <div className="min-h-screen flex flex-col">
-            <HeroImagePeople image={HeroImageFile} people />
+            <HeroImagePeople image={HeroImageFile} />
 
             {/* 
               Wrap all client components in a Suspense boundary in order for useSearchParams() to work correctly
