@@ -54,7 +54,7 @@ export default function FacultyCard({
                             : null}
                     </div>
                     <div className="hidden lg:block">
-                        <span className="text-md text-isd-font-3 overflow-hidden break-words line-clamp-3">
+                        <span className="text-md text-isd-font-3 break-words line-clamp-3">
                             {keywords.join(', ')}
                         </span>
                     </div>

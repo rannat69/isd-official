@@ -12,10 +12,10 @@ export default function ImageCard({
     lineLimit,
 }: {
     imageSrc: StaticImageData | string;
-    title: string;
+    title: React.ReactNode;
     link?: string;
     onClick?: () => void;
-    description: string;
+    description: React.ReactNode;
     lineLimit?: number;
 }) {
     // Tailwind is dumb.
@@ -31,7 +31,7 @@ export default function ImageCard({
         <div className="flex flex-col rounded-xl border border-isd-primary-3 cursor-pointer h-full overflow-hidden">
             <Image
                 src={imageSrc}
-                alt={title}
+                alt={imageSrc.toString()}
                 className="h-[15.75rem] w-full object-cover rounded-t-lg"
                 width={500}
                 height={300}

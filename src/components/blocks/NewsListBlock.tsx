@@ -89,7 +89,7 @@ export default function NewsListBlock() {
     return (
         <div className="dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container flex flex-col py-section-gap gap-0">
-                <div className="flex justify-between">
+                <div className="flex sm:flex-row flex-col justify-between sm:items-center items-start gap-component-gap-sm">
                     <h1 className="text-h1 offset-text-background text-isd-font-1 text-balance">
                         News & Events
                     </h1>
@@ -104,7 +104,7 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="All Category"
-                            triggerClassName="text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                            triggerClassName="text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center sm:px-element-gap gap-[12px] sm:pb-0 pb-[6px]"
                         />
                         <Select
                             options={yearOptions}
@@ -115,12 +115,12 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="Year"
-                            triggerClassName="text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                            triggerClassName="text-isd-secondary text-lg border-b border-secondary h-component-gap-sm flex items-center sm:px-element-gap gap-[12px] sm:pb-0 pb-[6px]"
                         />
                     </div>
                 </div>
 
-                <div className="flex flex-col divide-y divide-isd-primary-3">
+                <div className="flex flex-col lg:divide-y lg:gap-0 gap-component-gap-sm lg:py-0 py-component-gap-sm divide-isd-primary-3">
                     {visibleItems.map((item) => {
                         const href = `/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
