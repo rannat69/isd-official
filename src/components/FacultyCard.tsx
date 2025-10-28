@@ -58,20 +58,18 @@ export default function FacultyCard({
                             {keywords.join(', ')}
                         </span>
                     </div>
-                    <div className="lg:block hidden">
-                        <ReadMoreButton
-                            name={name}
-                            role={role}
-                            keywords={keywords}
-                            photo={photo}
-                            email={email}
-                            phone={phone}
-                            location={location}
-                            link={link}
-                            details={details}
-                            primaryApt={primaryApt}
-                        />
-                    </div>
+                    <ReadMoreButton
+                        name={name}
+                        role={role}
+                        keywords={keywords}
+                        photo={photo}
+                        email={email}
+                        phone={phone}
+                        location={location}
+                        link={link}
+                        details={details}
+                        primaryApt={primaryApt}
+                    />
                 </div>
 
                 <div className="flex flex-col gap-[24px] before:content-[''] before:bg-isd-primary before:w-[111px] before:h-[3px]">
