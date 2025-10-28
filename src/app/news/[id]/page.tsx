@@ -38,9 +38,9 @@ export default async function NewsDetailPage({
                     className={`flex flex-col ${item.type === 'events' ? 'gap-component-gap-sm' : 'gap-section-title-gap'}`}
                 >
                     <h1 className="text-h1">{item.title}</h1>
-                    <div className="w-full bg-isd-font-2/10 relative">
+                    <div className="w-full relative">
                         {images.length > 1 ? (
-                            <div className="h-[480px]">
+                            <div className="lg:h-[480px] h-[260px]">
                                 <Carousel images={images} />
                             </div>
                         ) : (
