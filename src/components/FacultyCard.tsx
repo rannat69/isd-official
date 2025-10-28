@@ -277,7 +277,7 @@ export default function FacultyCard({
 
                         {details && (
                             <div className="flex flex-col gap-[24px]">
-                                <div className="flex items-center h-section-title-gap border-b border-b-isd-font-2">
+                                <div className="flex items-center h-[48px] border-b border-b-isd-font-2">
                                     <h2 className="text-h2 text-isd-primary">
                                         Details
                                     </h2>
