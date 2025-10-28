@@ -40,7 +40,7 @@ export default function Footer() {
             links: [
                 '/academics#programs',
                 '/academics/scholarships',
-                '/academics/internship-and-exchange',
+                '/academics/internship',
                 '/academics/facilities',
             ],
         },
