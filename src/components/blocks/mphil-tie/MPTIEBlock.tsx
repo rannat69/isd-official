@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SummaryBlock from './SummaryBlock';
 import EducationalObjectiveBlock from './EducationalObjectiveBlock';
 import LearningOutcomeBlock from './LearningOutcomeBlock';
@@ -8,9 +8,18 @@ import ResearchAreasBlock from './ResearchAreasBlock';
 import AcademicAndIndustrialPartnersBlock from './AcademicAndIndustrialPartnersBlock';
 import ApplicationAndFinancialAssistanceBlock from './ApplicationAndFinancialAssistanceBlock';
 import ProgramContactBlock from './ProgramContactBlock';
+import Select from '@/components/Select';
 
 export default function MPTIEBlock() {
     const [activeContentId, setActiveContentId] = useState('edu-obj');
+
+    useEffect(() => {
+        setActiveContentId('edu-obj');
+    }, []);
+
+    const handleMenuClick = (id: string) => {
+        setActiveContentId(id);
+    };
 
     const content = [
         {
@@ -59,11 +68,11 @@ export default function MPTIEBlock() {
     return (
         <>
             <div
-                className="dot-pattern before:bottom-[-1150px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]"
+                className="lg:dot-pattern before:bottom-[-1150px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]"
                 aria-hidden
             />
             <div
-                className="dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
+                className="lg:dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
                 aria-hidden
             />
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
@@ -72,7 +81,7 @@ export default function MPTIEBlock() {
                         MPhil in Technology Innovation and Entrepreneurship
                         (TIE)
                     </h1>
-                    <div className="w-full flex items-center gap-component-gap-sm text-isd-font-2">
+                    <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (
                             <span
                                 key={link.id}
@@ -87,13 +96,24 @@ export default function MPTIEBlock() {
                             </span>
                         ))}
                     </div>
+                    <Select
+                        triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
+                        className="lg:hidden"
+                        options={content.map((link) => ({
+                            label: link.title,
+                            value: link.id,
+                        }))}
+                        value={activeContentId}
+                        onChange={(value) => handleMenuClick(value as string)}
+                        itemClassName="px-[12px] py-[12px] text-xl text-isd-font-2"
+                    />
                 </div>
 
                 {content.map((section, index) => (
                     <div
                         key={index}
                         id={section.id}
-                        className={`flex flex-col gap-component-gap text-md leading-[28px] text-isd-font-1 ${
+                        className={`flex flex-col gap-component-gap lg:text-md text-sm leading-[28px] text-isd-font-1 ${
                             activeContentId === section.id ? '' : 'hidden'
                         }`}
                     >
