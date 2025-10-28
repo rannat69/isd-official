@@ -158,43 +158,47 @@ export default function RPGBlock() {
                 <h1 className="text-h1 offset-text-background text-isd-font-1">
                     MPhil & PhD Program
                 </h1>
-                <p>
+                <p className="text-sm">
                     The Division of ISD offers the opportunity for creative
                     students to engage in research on a wide variety of topics
                     towards either a Master&apos;s or a PhD degree.
                 </p>
 
-                <div className="flex flex-col gap-18">
+                <div className="flex flex-col lg:gap-18 gap-9">
                     {TextContent.map((section) => (
                         <div key={section.id}>
-                            <h2 className="text-[36px] leading-[36px] font-bold capitalize text-primary mb-6">
+                            <h2 className="lg:text-[36px] text-h2 leading-[36px] font-bold capitalize text-primary mb-6">
                                 {section.title}
                             </h2>
-                            {Array.isArray(section.paragraphs)
-                                ? section.paragraphs.map((para, index) => (
-                                      <div key={index}>
-                                          <p className="mb-4">{para}</p>
-                                          {section.id === 'goals' &&
-                                              index === 1 && (
-                                                  <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-component-gap-sm my-6 items-center">
-                                                      {ImageTitleCardContent.map(
-                                                          (card, index) => (
-                                                              <ImageTitleCard
-                                                                  key={index}
-                                                                  imageSrc={
-                                                                      card.imageSrc
-                                                                  }
-                                                                  title={
-                                                                      card.title
-                                                                  }
-                                                              />
-                                                          )
-                                                      )}
-                                                  </div>
-                                              )}
-                                      </div>
-                                  ))
-                                : section.paragraphs}
+                            {Array.isArray(section.paragraphs) ? (
+                                section.paragraphs.map((para, index) => (
+                                    <div key={index}>
+                                        <p className="mb-4 text-sm">{para}</p>
+                                        {section.id === 'goals' &&
+                                            index === 1 && (
+                                                <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-component-gap-sm my-6 items-center">
+                                                    {ImageTitleCardContent.map(
+                                                        (card, index) => (
+                                                            <ImageTitleCard
+                                                                key={index}
+                                                                imageSrc={
+                                                                    card.imageSrc
+                                                                }
+                                                                title={
+                                                                    card.title
+                                                                }
+                                                            />
+                                                        )
+                                                    )}
+                                                </div>
+                                            )}
+                                    </div>
+                                ))
+                            ) : (
+                                <div className="text-sm">
+                                    {section.paragraphs}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
