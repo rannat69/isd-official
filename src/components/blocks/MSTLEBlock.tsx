@@ -396,8 +396,8 @@ const CurriculumContent = () => (
         <div className="flex items-center justify-center lg:justify-between w-full">
             <div className="flex flex-col gap-element-gap">
                 <div className="text-h2 font-bold flex flex-col gap-element-gap lg:flex-row items-center lg:gap-[6px] text-center">
-                    <div className="bg-isd-primary-2 text-isd-primary p-element-gap min-w-80 flex-1">
-                        <div className="flex lg:flex-col flex-row text-center justify-center w-full">
+                    <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1 w-full">
+                        <div className="flex lg:flex-col flex-wrap text-center justify-center w-full">
                             <span>Core Courses</span>
                             <span className="ml-1"> (9 credits)</span>
                         </div>
@@ -411,7 +411,7 @@ const CurriculumContent = () => (
                         />
                     </div>
                     <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1 w-full">
-                        <div className="flex lg:flex-col flex-row text-center justify-center w-full">
+                        <div className="flex lg:flex-col flex-wrap text-center justify-center w-full">
                             <span>Elective Courses</span>
                             <span className="ml-1"> (12 credits)</span>
                         </div>
@@ -426,7 +426,7 @@ const CurriculumContent = () => (
                         />
                     </div>
                     <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1 w-full">
-                        <div className="flex lg:flex-col flex-row text-center justify-center w-full">
+                        <div className="flex lg:flex-col flex-wrap text-center justify-center w-full">
                             <span>TLE Project</span>
                             <span className="ml-1"> (9 credits)</span>
                         </div>
