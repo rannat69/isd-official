@@ -176,7 +176,7 @@ export default function RPGBlock() {
                                         <p className="mb-4 text-sm">{para}</p>
                                         {section.id === 'goals' &&
                                             index === 1 && (
-                                                <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-component-gap-sm my-6 items-center">
+                                                <div className="lg:grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] flex flex-col gap-component-gap-sm my-6 items-center">
                                                     {ImageTitleCardContent.map(
                                                         (card, index) => (
                                                             <ImageTitleCard
