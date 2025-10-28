@@ -180,7 +180,7 @@ export default function MSTLEBlock() {
             id: 'curriculum',
             subheading: 'Curriculum',
             content: (
-                <div className="flex flex-col gap-component-gap">
+                <div className="flex flex-col lg:gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
                         <p className="text-isd-font-1">
                             Students are required to complete at least 30
@@ -390,61 +390,79 @@ const CurriculumContent = () => (
             <p className="text-h2 leading-[32px] text-isd-primary text-center">
                 30 Credits
             </p>
-            <div className="w-full border-b-2 border-isd-primary mt-2"></div>
+            <div className="w-full border-b-2 border-isd-primary mt-2 mb-4"></div>
         </div>
 
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-center lg:justify-between w-full">
             <div className="flex flex-col gap-element-gap">
-                <div className="text-h2 font-bold flex items-center gap-[6px] text-center">
+                <div className="text-h2 font-bold flex flex-col gap-element-gap lg:flex-row items-center lg:gap-[6px] text-center">
                     <div className="bg-isd-primary-2 text-isd-primary p-element-gap min-w-80 flex-1">
-                        Core Courses
-                        <br />
-                        (9 credits)
+                        <div className="flex lg:flex-col flex-row text-center justify-center w-full">
+                            <span>Core Courses</span>
+                            <span className="ml-1"> (9 credits)</span>
+                        </div>
+                        <div className="lg:hidden">{coreCoursesContent}</div>
                     </div>
+
                     <div>
                         <Plus
-                            className="mx-element-gap-sm text-isd-primary"
+                            className="mx-element-gap-sm text-isd-primary hidden lg:block"
                             size={24}
                         />
                     </div>
-                    <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1">
-                        Elective Courses
-                        <br />
-                        (12 credits)
+                    <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1 w-full">
+                        <div className="flex lg:flex-col flex-row text-center justify-center w-full">
+                            <span>Elective Courses</span>
+                            <span className="ml-1"> (12 credits)</span>
+                        </div>
+                        <div className="lg:hidden">
+                            {electiveCoursesContent}
+                        </div>
                     </div>
                     <div>
                         <Plus
-                            className="mx-element-gap-sm text-isd-primary"
+                            className="mx-element-gap-sm text-isd-primary hidden lg:block"
                             size={24}
                         />
                     </div>
-                    <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1">
-                        TLE Project
-                        <br />
-                        (9 credits)
+                    <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1 w-full">
+                        <div className="flex lg:flex-col flex-row text-center justify-center w-full">
+                            <span>TLE Project</span>
+                            <span className="ml-1"> (9 credits)</span>
+                        </div>
                     </div>
                 </div>
                 <div className="text-sm flex gap-[6px] text-isd-font-3">
-                    <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit">
-                        <p>Technology Leadership and Entrepreneurship</p>
-                        <p>Product Development and Prototyping</p>
-                        <p>Start-up Workshop</p>
+                    <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit hidden lg:block">
+                        {coreCoursesContent}
                     </div>
                     <div>
                         <div className="w-[24px]"></div>
                     </div>
-                    <div className="flex-1 bg-isd-secondary-1 p-element-gap">
-                        Elective courses are a selection of entrepreneurship and
-                        leadership as well as technology and science related
-                        courses chosen from the portfolio of the School of
-                        Business and Management, the School of Engineering, the
-                        School of Science, and the Academy of Interdisciplinary
-                        Studies.
+                    <div className="flex-1 bg-isd-secondary-1 p-element-gap hidden lg:block">
+                        {electiveCoursesContent}
                     </div>
-                    <div className="w-[24px]"></div>
-                    <div className="flex-1 p-element-gap" />
+                    <div className="hidden lg:block w-[24px]"></div>
+                    <div className="hidden lg:block flex-1 p-element-gap" />
                 </div>
             </div>
         </div>
+    </div>
+);
+
+const coreCoursesContent = (
+    <div className="flex flex-col text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
+        <p>Technology Leadership and Entrepreneurship</p>
+        <p>Product Development and Prototyping</p>
+        <p>Start-up Workshop</p>
+    </div>
+);
+
+const electiveCoursesContent = (
+    <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
+        Elective courses are a selection of entrepreneurship and leadership as
+        well as technology and science related courses chosen from the portfolio
+        of the School of Business and Management, the School of Engineering, the
+        School of Science and the Academy of Interdisciplinary Studies.
     </div>
 );
