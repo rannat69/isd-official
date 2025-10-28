@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 
 export default function EventCard({
@@ -66,48 +66,8 @@ export default function EventCard({
                 </div>
             </div>
 
-            <div className="flex lg:hidden flex-1 flex-col gap-[12px]">
-                <p className="text-h2 text-[22px] leading-[28px] text-secondary">
-                    Event
-                </p>
-                <h2 className="text-h2 text-[22px] leading-[28px] text-primary">
-                    {title}
-                </h2>
-                <div className="flex flex-col gap-[4px]">
-                    <div className="flex items-center gap-[12px]">
-                        <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
-                            <Calendar size={22} />
-                        </div>
-
-                        <p className="text-md text-isd-font-3 leading-[22px] lg:leading-[26px]">
-                            {date}
-                        </p>
-                    </div>
-                    {time ? (
-                        <div className="flex items-center gap-[12px]">
-                            <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
-                                <Clock size={22} />
-                            </div>
-
-                            <p className="text-md text-isd-font-3 leading-[22px] lg:leading-[26px]">
-                                {time}
-                            </p>
-                        </div>
-                    ) : null}
-                    {location ? (
-                        <div className="flex items-center gap-[12px]">
-                            <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
-                                <MapPin size={22} />
-                            </div>
-
-                            <p className="text-md text-isd-font-3 leading-[22px] lg:leading-[26px]">
-                                {location}
-                            </p>
-                        </div>
-                    ) : null}
-                </div>
-
-                <div className="w-[198px] h-[120px] bg-isd-font-2/10">
+            <div className="flex lg:hidden flex-1 flex-col border-1 border-isd-font-2 rounded-lg">
+                <div className="w-full h-[252px] bg-isd-font-2/10">
                     <Image
                         src={image}
                         alt={title}
@@ -117,6 +77,22 @@ export default function EventCard({
                             objectFit: 'cover',
                         }}
                     />
+                </div>
+
+                <div className="px-section-title-gap py-[18px] flex flex-col gap-[12px]">
+                    {' '}
+                    <div className="flex items-center justify-between">
+                        <h2 className="text-md font-bold text-primary  line-clamp-2 lg:line-clamp-none">
+                            {title}
+                        </h2>
+                        <div className="text-primary">
+                            <ArrowRight size={14} strokeWidth={3} />
+                        </div>
+                    </div>
+                    <div>
+                        <p className="text-sm text-secondary">Event</p>
+                        <span className="text-isd-font-2 text-sm">{date}</span>
+                    </div>
                 </div>
             </div>
         </a>

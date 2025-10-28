@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 
 export default function NewsCard({
@@ -40,15 +41,8 @@ export default function NewsCard({
                 <span className="text-isd-font-2 text-md">{date}</span>
             </div>
 
-            <div className="flex lg:hidden flex-1 flex-col gap-[12px]">
-                <p className="text-h2 text-[22px] leading-[28px] text-secondary">
-                    {category}
-                </p>
-                <h2 className="text-h2 text-[22px] leading-[28px] text-primary">
-                    {title}
-                </h2>
-
-                <div className="block lg:hidden w-[198px] h-[120px] bg-isd-font-2/10">
+            <div className="flex lg:hidden flex-1 flex-col border-1 border-isd-font-2 rounded-lg">
+                <div className="w-full h-[252px] bg-isd-font-2/10">
                     <Image
                         src={image}
                         alt={title}
@@ -60,12 +54,21 @@ export default function NewsCard({
                     />
                 </div>
 
-                <p className="text-md leading-[22px] lg:leading-[26px] text-isd-font-3 line-clamp-3">
-                    {excerpt}
-                </p>
-                <span className="text-isd-font-2 text-md leading-[22px] lg:leading-[26px]">
-                    {date}
-                </span>
+                <div className="px-section-title-gap py-[18px] flex flex-col gap-[12px]">
+                    {' '}
+                    <div className="flex items-center justify-between">
+                        <h2 className="text-md font-bold text-primary  line-clamp-2 lg:line-clamp-none">
+                            {title}
+                        </h2>
+                        <div className="text-primary">
+                            <ArrowRight size={14} strokeWidth={3} />
+                        </div>
+                    </div>
+                    <div>
+                        <p className="text-sm text-secondary">{category}</p>
+                        <span className="text-isd-font-2 text-sm">{date}</span>
+                    </div>
+                </div>
             </div>
         </a>
     );

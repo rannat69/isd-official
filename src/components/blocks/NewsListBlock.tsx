@@ -41,6 +41,13 @@ export default function NewsListBlock() {
         { value: 'achievements', label: 'Achievements' },
     ];
 
+        const categoryOptionsMobile: Option[] = [
+        { value: 'all', label: 'All' },
+        { value: 'news', label: 'News' },
+        { value: 'events', label: 'Events' },
+        { value: 'achievements', label: 'Achievements' },
+    ];
+
     const yearOptions: Option[] = useMemo(() => {
         const ys = getYears(allItems);
         return [
@@ -104,7 +111,19 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="All Category"
-                            triggerClassName="text-isd-secondary text-sm lg:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
+                            triggerClassName="hidden lg:flex text-isd-secondary text-lg  border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
+                        />
+
+                        <Select
+                            options={categoryOptionsMobile}
+                            value={category}
+                            onChange={(v) =>
+                                updateSearchParams({
+                                    category: (v as CategoryFilter) ?? 'all',
+                                })
+                            }
+                            placeholder="All"
+                            triggerClassName="flex lg:hidden text-isd-secondary text-lg  border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
                         />
                         <Select
                             options={yearOptions}
@@ -115,7 +134,7 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="Year"
-                            triggerClassName="text-isd-secondary text-sm lg:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
+                            triggerClassName="text-isd-secondary text-lg  border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
                         />
                     </div>
                 </div>
@@ -178,11 +197,7 @@ export default function NewsListBlock() {
 
     return (
         <>
-            <div className="hidden lg:block dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
-                <NewsListBlockContent />
-            </div>
-
-            <div className="block lg:hidden">
+            <div className="dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
                 <NewsListBlockContent />
             </div>
         </>
