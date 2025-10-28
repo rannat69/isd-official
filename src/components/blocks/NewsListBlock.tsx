@@ -104,7 +104,7 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="All Category"
-                            triggerClassName="text-isd-secondary text-sm lg:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                            triggerClassName="text-isd-secondary text-sm lg:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
                         />
                         <Select
                             options={yearOptions}
@@ -115,7 +115,7 @@ export default function NewsListBlock() {
                                 })
                             }
                             placeholder="Year"
-                            triggerClassName="text-isd-secondary text-sm lg:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px]"
+                            triggerClassName="text-isd-secondary text-sm lg:text-lg border-b border-secondary h-component-gap-sm flex items-center px-element-gap gap-[12px] font-bold lg:font-normal"
                         />
                     </div>
                 </div>
