@@ -81,7 +81,7 @@ export default function InternshipBlock() {
                             </div>
                         ))}
 
-                        <div className="flex flex-1 justify-between">
+                        <div className="flex flex-col lg:flex-row flex-1 justify-between ">
                             <Image
                                 src={Logo1}
                                 alt="logo1"
