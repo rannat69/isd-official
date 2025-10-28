@@ -57,7 +57,7 @@ export default async function NewsDetailPage({
                     <div className="flex flex-col gap-[24px]">
                         {item.type === 'events' && (
                             <div className="flex flex-col gap-[24px]">
-                                <h2 className="text-[36px] leading-9 font-bold text-primary">
+                                <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
                                     Event Info
                                 </h2>
                                 <div className="flex flex-col gap-[4px]">
@@ -66,7 +66,7 @@ export default async function NewsDetailPage({
                                             <Calendar size={22} />
                                         </div>
 
-                                        <p className="text-md text-isd-font-3">
+                                        <p className="lg:text-md text-sm text-isd-font-3">
                                             {item.evt_date}
                                         </p>
                                     </div>
@@ -76,7 +76,7 @@ export default async function NewsDetailPage({
                                                 <Clock size={22} />
                                             </div>
 
-                                            <p className="text-md text-isd-font-3">
+                                            <p className="lg:text-md text-sm text-isd-font-3">
                                                 {item.evt_time}
                                             </p>
                                         </div>
@@ -87,7 +87,7 @@ export default async function NewsDetailPage({
                                                 <MapPin size={22} />
                                             </div>
 
-                                            <p className="text-md text-isd-font-3">
+                                            <p className="lg:text-md text-sm text-isd-font-3">
                                                 {item.evt_location}
                                             </p>
                                         </div>
@@ -157,9 +157,12 @@ function renderContent(text: string) {
               ))
             : null;
         return (
-            <div key={idx} className="flex flex-col gap-[24px]">
+            <div
+                key={idx}
+                className="flex flex-col lg:gap-[24px] gap-[12px] lg:text-md text-sm"
+            >
                 {g.heading ? (
-                    <h2 className="text-[36px] leading-9 font-bold text-primary">
+                    <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
                         {g.heading}
                     </h2>
                 ) : null}
