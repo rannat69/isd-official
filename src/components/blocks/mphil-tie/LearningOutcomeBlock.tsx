@@ -23,7 +23,7 @@ export default function LearningOutcomeBlock() {
                     {outcomes.map((outcome) => (
                         <li
                             key={outcome}
-                            className="flex before:text-center before:content-['•'] leading-[26px] before:w-component-gap-sm"
+                            className="flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm"
                         >
                             {outcome}
                         </li>
