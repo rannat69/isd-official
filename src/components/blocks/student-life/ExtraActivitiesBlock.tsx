@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function ExtraActivitivesBlock() {
     return (
         <div className=" overflow-clip flex flex-col gap-[41px]">
-            <h1 className="text-h1 offset-text-background">
+            <h1 className="lg:block hidden text-h1 offset-text-background">
                 Extracurricular Activities
             </h1>
 

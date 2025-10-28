@@ -56,13 +56,13 @@ export default function FloatingNav({
                 <button
                     aria-label={open ? 'Close navigation' : 'Open navigation'}
                     onClick={() => setOpen((v) => !v)}
-                    className="absolute left-[-64px] top-[47px] transform rotate-90 w-fit h-fit px-[12px] py-[11px] bg-isd-secondary text-white shadow-lg flex items-center justify-center"
+                    className="absolute lg:top-[47px] top-[-15px] lg:left-[-64px] left-[-2px] transform rotate-90 w-fit h-fit px-[12px] py-[11px] bg-isd-secondary text-white shadow-lg flex items-center justify-center"
                 >
                     {open ? (
                         <div />
                     ) : (
                         <div className="flex flex-row justify-center items-center gap-2">
-                            <span>{title}</span>
+                            <span className="hidden lg:block">{title}</span>
                             <ChevronsRight />
                         </div>
                     )}

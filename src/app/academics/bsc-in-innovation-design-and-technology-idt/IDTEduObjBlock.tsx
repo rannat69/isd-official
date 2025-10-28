@@ -1,6 +1,6 @@
 export default function IDTEduObjBlock() {
     return (
-        <div className="flex flex-col gap-[72px]">
+        <div className="flex flex-col gap-component-gap">
             <p>
                 The Division of Integrative Systems and Design developed its
                 <b className="text-isd-secondary">
@@ -27,8 +27,8 @@ export default function IDTEduObjBlock() {
                 integration of design skills while developing expertise in
                 different engineering disciplines.
             </p>
-            <div className="flex flex-col gap-6">
-                <h2 className="text-4xl font-bold text-primary">
+            <div className="flex flex-col lg:gap-6 gap-[12px]">
+                <h2 className="lg:text-4xl text-h2 font-bold text-primary">
                     Educational Objectives
                 </h2>
                 <div className="flex flex-col gap-3">
@@ -69,8 +69,8 @@ export default function IDTEduObjBlock() {
                     </li>
                 </ul>
             </div>
-            <div className="flex flex-col gap-[24px] border-l-[5px] border-isd-primary p-component-gap-sm bg-isd-primary-2">
-                <h2 className="text-4xl font-bold text-primary">
+            <div className="flex flex-col gap-[36px] border-l-[5px] border-isd-primary bg-isd-primary-2 p-[36px] pl-[31px]">
+                <h2 className="lg:text-4xl text-h2 font-bold text-primary">
                     Learning Outcomes
                 </h2>
                 <ul className="list-disc list-outside pl-6">

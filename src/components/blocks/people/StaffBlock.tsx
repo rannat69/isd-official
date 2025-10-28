@@ -8,9 +8,7 @@ export default function StaffBlock({ people }: { people?: Person[] }) {
             className="container w-full flex flex-col py-section-gap gap-section-title-gap scroll-mt-[75px]"
             id="staff"
         >
-            <h1 className="text-h1 offset-text-background uppercase">
-                ISD Staff
-            </h1>
+            <h1 className="text-h1 offset-text-background uppercase">Staff</h1>
 
             {(() => {
                 const list = people ?? staff;
@@ -21,7 +19,7 @@ export default function StaffBlock({ people }: { people?: Person[] }) {
                 }
 
                 return (
-                    <div className="grid grid-cols-3 gap-y-component-gap-sm gap-x-component-gap">
+                    <div className="grid lg:grid-cols-3 gap-y-component-gap-sm gap-x-component-gap">
                         {list.map((member, i) => (
                             <StaffCard
                                 key={i}

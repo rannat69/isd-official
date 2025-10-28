@@ -3,8 +3,10 @@ import Image from 'next/image';
 
 export default function AlumniSharingBlock() {
     return (
-        <div className=" overflow-clip flex flex-col gap-section-title-gap">
-            <h1 className="text-h1 offset-text-background">Alumni Sharing</h1>
+        <div className="overflow-clip flex flex-col gap-section-title-gap">
+            <h1 className="lg:block hidden text-h1 offset-text-background">
+                Alumni Sharing
+            </h1>
 
             <>
                 <Image
@@ -12,8 +14,8 @@ export default function AlumniSharingBlock() {
                     alt="Student"
                     className="w-480px h-480px"
                 />
-                <div className="flex flex-col gap-[24px] text-md">
-                    <h2 className="text-isd-primary text-[36px] leading-[36px] font-bold">
+                <div className="flex flex-col gap-[24px]">
+                    <h2 className="text-isd-primary lg:text-[36px] lg:leading-[36px] text-h2 font-bold">
                         Mashiat LAMISA (BSc ISD student)
                     </h2>
                     <div className="flex flex-col gap-[12px]">

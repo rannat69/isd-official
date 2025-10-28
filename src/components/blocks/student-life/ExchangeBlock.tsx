@@ -10,7 +10,9 @@ export default function ExchangeBlock() {
 
     return (
         <div className=" overflow-clip flex flex-col gap-[41px]">
-            <h1 className="text-h1 offset-text-background">Exchange</h1>
+            <h1 className="lg:block hidden text-h1 offset-text-background">
+                Exchange
+            </h1>
 
             <>
                 <div className="flex gap-[24px]">
@@ -25,8 +27,8 @@ export default function ExchangeBlock() {
                         className="h-[300px] object-cover"
                     />
                 </div>
-                <div className="flex flex-col gap-[24px] text-md">
-                    <h2 className="text-isd-primary text-[36px] leading-[36px] font-bold">
+                <div className="flex flex-col gap-[24px]">
+                    <h2 className="text-isd-primary lg:text-[36px] lg:leading-[36px] text-h2 font-bold">
                         Mashiat LAMISA (BSc ISD student)
                     </h2>
                     <div className="flex flex-col gap-[12px]">

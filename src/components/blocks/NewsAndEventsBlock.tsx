@@ -38,7 +38,7 @@ export default function NewsAndEventsBlock() {
                     <ArrowRight size={20} strokeWidth={3} />
                 </Link>
 
-                <div className="flex md:flex-row flex-col gap-component-gap-sm">
+                <div className="flex lg:flex-row flex-col lg:gap-component-gap-sm gap-component-gap">
                     {news.map((news, i) => (
                         <div
                             className={
@@ -53,7 +53,9 @@ export default function NewsAndEventsBlock() {
                             <h2 className="text-h2 font-bold line-clamp-3">
                                 {news.title}
                             </h2>
-                            <span className="text-lg">{news.date}</span>
+                            <span className="lg:text-lg text-md leading-[26px]">
+                                {news.date}
+                            </span>
                             <p className="text-md text-isd-font-3 line-clamp-3">
                                 {news.description}
                             </p>

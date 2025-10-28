@@ -11,9 +11,9 @@ export default function HeadsMessageBlock() {
                 HEAD&apos;S MESSAGE
             </h1>
 
-            <div className="flex items-start gap-component-gap">
-                <div className="flex flex-col border-r-3 border-isd-primary">
-                    <div className="w-[360px] h-[468px]">
+            <div className="flex lg:flex-row flex-col lg:items-start items-center lg:gap-component-gap gap-component-gap-sm">
+                <div className="flex flex-col lg:border-r-3 border-isd-primary">
+                    <div className="lg:w-[360px] lg:h-[468px] w-auto h-auto aspect-[360/468] max-w-[425px]">
                         <Image
                             src={Qian}
                             alt="Qian's Profile Picture"
@@ -22,7 +22,7 @@ export default function HeadsMessageBlock() {
                             className="object-cover w-full h-full"
                         />
                     </div>
-                    <div className="flex flex-col bg-isd-primary-2 py-element-gap px-component-gap-sm gap-[12px]">
+                    <div className="flex flex-col lg:items-start items-center lg:text-start text-center lg:bg-isd-primary-2 py-element-gap lg:px-component-gap-sm px-component-gap gap-[12px]">
                         <h2 className="text-h2 leading-[32px] text-isd-primary">
                             Prof Qian ZHANG
                         </h2>
@@ -37,7 +37,7 @@ export default function HeadsMessageBlock() {
                 <div className="flex flex-col gap-[36px] text-md text-isd-font-1 font-medium">
                     <div className="flex flex-col gap-[12px]">
                         <div className="flex gap-[22px]">
-                            <div className='className="w-[42.667px] h-[37.338px]"'>
+                            <div className="lg:block hidden">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="44"
@@ -51,7 +51,7 @@ export default function HeadsMessageBlock() {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-bold text-isd-secondary">
+                            <p className="font-bold text-isd-secondary lg:text-start text-justify">
                                 Welcome to the Division of Integrative Systems
                                 and Design (ISD), the newest academic unit in
                                 the Academy of Interdisciplinary Studies at the
