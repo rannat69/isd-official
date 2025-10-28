@@ -39,7 +39,7 @@ export default function ImageCard({
             <div className="flex-1">
                 <div className="py-element-gap px-[14px] flex flex-col gap-element-gap h-full">
                     <div className="flex flex-row text-primary items-center">
-                        <h2 className="flex-1 md:text-h2 text-md font-bold line-clamp-1">
+                        <h2 className="flex-1 text-h2 font-bold line-clamp-1">
                             {title}
                         </h2>
                         <ArrowRight size={20} strokeWidth={3} />
@@ -47,7 +47,7 @@ export default function ImageCard({
 
                     <p
                         className={
-                            'md:text-sm text-xs text-isd-font-3 whitespace-pre-wrap ' +
+                            'text-sm leading-[24px] text-isd-font-3 whitespace-pre-wrap ' +
                             (lineLimit ? lineClampClass[lineLimit] : '')
                         }
                     >
