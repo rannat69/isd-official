@@ -88,14 +88,21 @@ export default function ReadMoreButton({
 
             {detailsOpen && (
                 <div
-                    className="fixed top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center z-50 overflow-auto"
+                    className="fixed top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center z-50 overflow-x-auto"
                     onClick={() => setDetailsOpen(false)}
                 >
                     <div
-                        className="flex flex-col bg-white m-[198px] p-component-gap gap-section-title-gap items-center"
+                        className="flex flex-col bg-white lg:m-[198px] p-component-gap gap-section-title-gap items-center"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="flex items-center gap-component-gap-sm">
+                        <button
+                            className="lg:hidden text-isd-primary cursor-pointer flex gap-footer-gap h-component-gap-sm items-center justify-start sticky bg-white w-full z-10 top-0 py-component-gap"
+                            onClick={() => setDetailsOpen(false)}
+                        >
+                            <X size={24} />
+                            <span className="text-sm">Close</span>
+                        </button>
+                        <div className="flex lg:flex-row flex-col items-center gap-component-gap-sm w-full text-wrap">
                             <div className="relative w-[221px] h-[288px] flex-shrink-0 overflow-hidden">
                                 <Image
                                     src={photo}
@@ -106,27 +113,27 @@ export default function ReadMoreButton({
                                 />
                             </div>
 
-                            <div className="flex flex-col gap-[24px]">
+                            <div className="flex flex-col gap-[24px] w-full">
                                 <div className="text-h2 text-isd-font-1">
                                     {name}
                                 </div>
 
                                 <div className="flex flex-col gap-footer-gap">
-                                    <div className="text-md text-isd-secondary">
+                                    <div className="lg:text-md text-sm text-isd-secondary">
                                         {role}
                                     </div>
-                                    <div className="text-md text-isd-font-3 text">
+                                    <div className="lg:text-md text-sm text-isd-font-3 text">
                                         {primaryApt
                                             ? `Primary appointment: ${primaryApt}`
                                             : null}
                                     </div>
 
-                                    <div className="text-md text-isd-font-3 text">
+                                    <div className="lg:text-md text-sm text-isd-font-3 text">
                                         {keywords?.join(', ')}
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap gap-x-section-title-gap gap-y-[12px]">
+                                <div className="flex flex-col lg:flex-wrap gap-x-section-title-gap gap-y-[12px] w-full text-wrap">
                                     {email && (
                                         <a
                                             href={`mailto:${email}`}
@@ -138,7 +145,7 @@ export default function ReadMoreButton({
                                                     className="text-isd-primary"
                                                 />
                                             </div>
-                                            <span className="text-isd-primary text-md">
+                                            <span className="text-isd-primary lg:text-md text-sm">
                                                 {email}
                                             </span>
                                         </a>
@@ -154,7 +161,7 @@ export default function ReadMoreButton({
                                                     className="text-isd-primary"
                                                 />
                                             </div>
-                                            <span className="text-isd-primary text-md">
+                                            <span className="text-isd-primary lg:text-md text-sm">
                                                 {phone}
                                             </span>
                                         </a>
@@ -167,7 +174,7 @@ export default function ReadMoreButton({
                                                     className="text-isd-primary"
                                                 />
                                             </div>
-                                            <span className="text-isd-primary text-md">
+                                            <span className="text-isd-primary lg:text-md text-sm">
                                                 {location}
                                             </span>
                                         </div>
@@ -175,7 +182,7 @@ export default function ReadMoreButton({
                                     {link && (
                                         <Link
                                             href={link}
-                                            className="flex gap-[12px] items-center"
+                                            className="flex gap-[12px] items-center w-full"
                                         >
                                             <div className="p-[9px] rounded-full bg-isd-primary-2 flex gap-[12px]">
                                                 <Link2
@@ -183,7 +190,7 @@ export default function ReadMoreButton({
                                                     className="text-isd-primary"
                                                 />
                                             </div>
-                                            <span className="text-isd-primary text-md">
+                                            <span className="text-isd-primary lg:text-md text-sm line-clamp-2">
                                                 {link}
                                             </span>
                                         </Link>
@@ -200,7 +207,7 @@ export default function ReadMoreButton({
                                     </h2>
                                 </div>
 
-                                <div className="text-md text-isd-font-3 text-start">
+                                <div className="lg:text-md text-sm text-isd-font-3 text-start">
                                     <div className="whitespace-pre-wrap">
                                         <span>{format(details)}</span>
                                     </div>
@@ -209,7 +216,7 @@ export default function ReadMoreButton({
                         )}
 
                         <button
-                            className="text-isd-primary cursor-pointer flex gap-footer-gap bg-isd-primary-2 w-section-gap h-component-gap-sm items-center justify-center"
+                            className="hidden lg:flex text-isd-primary cursor-pointer gap-footer-gap bg-isd-primary-2 w-section-gap h-component-gap-sm items-center justify-center"
                             onClick={() => setDetailsOpen(false)}
                         >
                             <X size={24} />
