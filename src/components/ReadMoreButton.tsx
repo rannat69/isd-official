@@ -96,7 +96,7 @@ export default function ReadMoreButton({
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
-                            className="lg:hidden text-isd-primary cursor-pointer flex gap-footer-gap h-component-gap-sm items-center justify-start sticky bg-white w-full z-10 top-0 py-component-gap"
+                            className="lg:hidden text-isd-primary cursor-pointer flex gap-footer-gap h-component-gap-sm items-center justify-end sticky bg-white w-full z-10 top-0 py-component-gap"
                             onClick={() => setDetailsOpen(false)}
                         >
                             <X size={24} />
