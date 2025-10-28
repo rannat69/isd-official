@@ -31,7 +31,7 @@ export default function FacultyCard({
 }: FacultyCardProps) {
     return (
         <div className="flex lg:gap-component-gap-sm gap-6">
-            <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden border-l-3 border-isd-primary">
+            <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden lg:border-l-3 border-isd-primary">
                 <Image
                     src={photo}
                     alt={`${name}'s photo`}

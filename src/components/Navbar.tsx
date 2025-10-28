@@ -309,9 +309,7 @@ export default function Navbar() {
                                 <Link
                                     href={item.href}
                                     onClick={() => {
-                                        if (!item.submenu) {
-                                            setMobileMenuOpen(false);
-                                        }
+                                        setMobileMenuOpen(false);
                                     }}
                                     className={`block py-3 text-nav ${
                                         pathname.includes(item.pathnameKeyword)
