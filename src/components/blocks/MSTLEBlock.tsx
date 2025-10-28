@@ -1,59 +1,47 @@
 'use client';
 import { Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import Select from '@/components/Select';
 
 export default function MSTLEBlock() {
-    const [activeContentId, setActiveContentId] = useState('edu-obj');
-    const [activeMenuId, setActiveMenuId] = useState('edu-obj-menu');
-
+    const [activeMenuId, setActiveMenuId] = useState('');
     const menu = [
         {
             title: 'Educational Objectives',
             id: 'edu-obj',
-            idMenu: 'edu-obj-menu',
         },
-        { title: 'Curriculum', id: 'curriculum', idMenu: 'curriculum-menu' },
+        { title: 'Curriculum', id: 'curriculum' },
         {
             title: 'Admission & Application',
             id: 'adm-app',
-            idMenu: 'adm-app-menu',
         },
     ];
 
     useEffect(() => {
-        // Set initial active state
-        setActiveContentId('edu-obj');
-        setActiveMenuId('edu-obj-menu');
+        setActiveMenuId('edu-obj');
     }, []);
 
-    const handleMenuClick = (id: string, idMenu: string) => {
-        setActiveContentId(id);
-        setActiveMenuId(idMenu);
+    const handleMenuClick = (id: string) => {
+        setActiveMenuId(id);
     };
 
     const contentMenu = [
         {
             content: (
                 <div className="flex flex-col gap-component-gap-sm">
-                    <div className="flex flex-col gap-component-gap-sm">
+                    <div className="flex flex-col lg:gap-component-gap-sm">
                         <h1 className="text-h1 offset-text-background text-isd-font-1 ">
                             Master of Science in Technology Leadership and
                             Entrepreneurship
                         </h1>
                         <div className="w-auto overflow-clip">
-                            <div className="w-full flex items-center gap-component-gap-sm text-isd-font-2">
+                            <div className="lg:flex hidden w-full items-center gap-component-gap-sm text-isd-font-2">
                                 {menu.map((link) => (
                                     <div
                                         key={link.id}
-                                        id={link.idMenu}
-                                        onClick={() =>
-                                            handleMenuClick(
-                                                link.id,
-                                                link.idMenu
-                                            )
-                                        }
+                                        onClick={() => handleMenuClick(link.id)}
                                         className={`text-h2 h-[60px] flex items-center box-border cursor-pointer ${
-                                            activeMenuId === link.idMenu
+                                            activeMenuId === link.id
                                                 ? 'text-isd-secondary border-b-3 border-isd-secondary'
                                                 : 'text-isd-font-2'
                                         }`}
@@ -72,6 +60,7 @@ export default function MSTLEBlock() {
     const content = [
         {
             id: 'edu-obj',
+            subheading: 'Educational Objectives & Learning Outcomes',
             content: (
                 <div className="flex flex-col gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
@@ -86,7 +75,7 @@ export default function MSTLEBlock() {
                             tuned to our website.
                         </p>
                         <div className="flex flex-col gap-[24px]">
-                            <h2 className="font-bold text-[36px] leading-[36px] text-isd-primary">
+                            <h2 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
                                 Educational Objectives
                             </h2>
                             <div className="flex flex-col gap-[12px]">
@@ -114,7 +103,7 @@ export default function MSTLEBlock() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-[24px] border-l-5 bg-isd-primary-2 border-l-isd-primary text-isd-font-1 p-component-gap-sm">
-                        <h2 className="font-bold text-[36px] leading-[36px] text-isd-primary">
+                        <h2 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
                             Learning Outcomes
                         </h2>
                         <div className="gap-[12px] flex flex-col text-md">
@@ -140,7 +129,7 @@ export default function MSTLEBlock() {
                     </div>
 
                     <div className="flex flex-col gap-[24px]">
-                        <h2 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                        <h2 className="lg:text-[36px] text-h2 leading-[36px] font-isd-font-1 text-isd-primary">
                             Major Components
                         </h2>
                         <div className="flex-1 flex flex-col gap-[12px]">
@@ -220,77 +209,8 @@ export default function MSTLEBlock() {
                             </span>*/}
                             .
                         </p>
-                        <div className="flex flex-col gap-element-gap">
-                            <div className="flex flex-col items-center">
-                                <p className="text-h2 leading-[32px] text-isd-primary text-center">
-                                    30 Credits
-                                </p>
-                                <div className="w-full border-b-2 border-isd-primary mt-2"></div>
-                            </div>
-
-                            <table className="flex items-center justify-between w-full">
-                                <div className="flex flex-col gap-element-gap">
-                                    <div className="text-h2 font-bold flex items-center gap-[6px] text-center">
-                                        <div className="bg-isd-primary-2 text-isd-primary p-element-gap min-w-80 flex-1">
-                                            Core Courses
-                                            <br />
-                                            (9 credits)
-                                        </div>
-                                        <div>
-                                            <Plus
-                                                className="mx-element-gap-sm text-isd-primary"
-                                                size={24}
-                                            />
-                                        </div>
-                                        <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1">
-                                            Elective Courses
-                                            <br />
-                                            (12 credits)
-                                        </div>
-                                        <div>
-                                            <Plus
-                                                className="mx-element-gap-sm text-isd-primary"
-                                                size={24}
-                                            />
-                                        </div>
-                                        <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1">
-                                            TLE Project
-                                            <br />
-                                            (9 credits)
-                                        </div>
-                                    </div>
-                                    <div className="text-sm flex gap-[6px] text-isd-font-3">
-                                        <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit">
-                                            <p>
-                                                Technology Leadership and
-                                                Entrepreneurship
-                                            </p>
-                                            <p>
-                                                Product Development and
-                                                Prototyping
-                                            </p>
-                                            <p>Start-up Workshop</p>
-                                        </div>
-                                        <div>
-                                            <div className="w-[24px]"></div>
-                                        </div>
-                                        <div className="flex-1 bg-isd-secondary-1 p-element-gap">
-                                            Elective courses are a selection of
-                                            entrepreneurship and leadership as
-                                            well as technology and science
-                                            related courses chosen from the
-                                            portfolio of the School of Business
-                                            and Management, the School of
-                                            Engineering, the School of Science,
-                                            and the Academy of Interdisciplinary
-                                            Studies.
-                                        </div>
-                                        <div className="w-[24px]"></div>
-                                        <div className="flex-1 p-element-gap" />
-                                    </div>
-                                </div>
-                            </table>
-                        </div>
+                        {/* TODO waiting for mobile layout */}
+                        <CurriculumContent />
                     </div>
                     <div className="text-isd-font-3 text-sm">
                         *Classes are normally held on weekday evenings from
@@ -302,7 +222,6 @@ export default function MSTLEBlock() {
             ),
         },
         {
-            // FIXME: Still a bit of difference from Figma
             id: 'adm-app',
             subheading: 'Admission & Application',
             content: (
@@ -335,7 +254,7 @@ export default function MSTLEBlock() {
                         </a>
                     </div>
                     <div className="flex flex-col gap-[24]">
-                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Faculty Members
                         </h3>
 
@@ -354,7 +273,7 @@ export default function MSTLEBlock() {
                     </div>
 
                     <div className="flex flex-col gap-[24]">
-                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Contact Us{' '}
                         </h3>
 
@@ -423,31 +342,39 @@ export default function MSTLEBlock() {
     return (
         <>
             {' '}
-            {activeContentId === 'edu-obj' && (
-                <div
-                    className="dot-pattern before:bottom-[-1110px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]"
-                    // aria-hidden
-                />
+            {activeMenuId === 'edu-obj' && (
+                <div className="lg:dot-pattern before:bottom-[-1110px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]" />
             )}
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
                 {contentMenu.map((section, index) => (
                     <div key={index}>{section.content}</div>
                 ))}
+                <Select
+                    triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
+                    className="lg:hidden"
+                    options={menu.map((link) => ({
+                        label: link.title,
+                        value: link.id,
+                    }))}
+                    value={activeMenuId}
+                    onChange={(value) => handleMenuClick(value as string)}
+                    itemClassName="px-[12px] py-[12px] text-xl text-isd-font-2"
+                />
 
                 {content.map((section, index) => (
                     <div
                         key={index}
                         id={section.id}
                         className={`flex flex-col gap-[24px] ${
-                            activeContentId === section.id ? '' : 'hidden'
+                            activeMenuId === section.id ? '' : 'hidden'
                         }`}
                     >
                         {section.subheading && (
-                            <h3 className="text-[36px] leading-[36px] font-bold text-isd-primary">
+                            <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
                                 {section.subheading}
                             </h3>
                         )}
-                        <div className="text-md leading-[28px] text-isd-font-1">
+                        <div className="lg:text-md text-sm leading-[28px] text-isd-font-1">
                             {section.content}
                         </div>
                     </div>
@@ -456,3 +383,68 @@ export default function MSTLEBlock() {
         </>
     );
 }
+
+const CurriculumContent = () => (
+    <div className="flex flex-col gap-element-gap">
+        <div className="flex flex-col items-center">
+            <p className="text-h2 leading-[32px] text-isd-primary text-center">
+                30 Credits
+            </p>
+            <div className="w-full border-b-2 border-isd-primary mt-2"></div>
+        </div>
+
+        <div className="flex items-center justify-between w-full">
+            <div className="flex flex-col gap-element-gap">
+                <div className="text-h2 font-bold flex items-center gap-[6px] text-center">
+                    <div className="bg-isd-primary-2 text-isd-primary p-element-gap min-w-80 flex-1">
+                        Core Courses
+                        <br />
+                        (9 credits)
+                    </div>
+                    <div>
+                        <Plus
+                            className="mx-element-gap-sm text-isd-primary"
+                            size={24}
+                        />
+                    </div>
+                    <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1">
+                        Elective Courses
+                        <br />
+                        (12 credits)
+                    </div>
+                    <div>
+                        <Plus
+                            className="mx-element-gap-sm text-isd-primary"
+                            size={24}
+                        />
+                    </div>
+                    <div className="bg-isd-primary-2 text-isd-primary p-element-gap flex-1">
+                        TLE Project
+                        <br />
+                        (9 credits)
+                    </div>
+                </div>
+                <div className="text-sm flex gap-[6px] text-isd-font-3">
+                    <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit">
+                        <p>Technology Leadership and Entrepreneurship</p>
+                        <p>Product Development and Prototyping</p>
+                        <p>Start-up Workshop</p>
+                    </div>
+                    <div>
+                        <div className="w-[24px]"></div>
+                    </div>
+                    <div className="flex-1 bg-isd-secondary-1 p-element-gap">
+                        Elective courses are a selection of entrepreneurship and
+                        leadership as well as technology and science related
+                        courses chosen from the portfolio of the School of
+                        Business and Management, the School of Engineering, the
+                        School of Science, and the Academy of Interdisciplinary
+                        Studies.
+                    </div>
+                    <div className="w-[24px]"></div>
+                    <div className="flex-1 p-element-gap" />
+                </div>
+            </div>
+        </div>
+    </div>
+);
