@@ -41,7 +41,7 @@ export default function NewsListBlock() {
         { value: 'achievements', label: 'Achievements' },
     ];
 
-        const categoryOptionsMobile: Option[] = [
+    const categoryOptionsMobile: Option[] = [
         { value: 'all', label: 'All' },
         { value: 'news', label: 'News' },
         { value: 'events', label: 'Events' },
