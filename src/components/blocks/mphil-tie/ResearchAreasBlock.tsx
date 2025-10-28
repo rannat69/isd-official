@@ -15,7 +15,7 @@ export default function ResearchAreasBlock() {
 
     return (
         <div className="flex flex-col gap-[24px]">
-            <h2 className="text-[36px] leading-[36px] font-bold text-isd-primary">
+            <h2 className="lg:text-[36px] text-h2 leading-[36px] font-bold text-isd-primary">
                 Research Areas
             </h2>
 

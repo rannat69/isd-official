@@ -8,7 +8,7 @@ export default function AcademicsPage() {
         <div className="min-h-screen flex flex-col">
             <HeroImage image={HeroImageFile} />
             <div
-                className="dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-primary-2)]"
+                className="lg:dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-primary-2)]"
                 // aria-hidden
             />
             <MSTLEBlock />
