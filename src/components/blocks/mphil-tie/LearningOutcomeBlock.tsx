@@ -12,7 +12,7 @@ export default function LearningOutcomeBlock() {
 
     return (
         <div className="flex flex-col gap-[24px] border-l-5 bg-isd-primary-2 border-l-isd-primary text-isd-font-1 p-component-gap-sm">
-            <h2 className="font-bold text-[36px] leading-[36px] text-isd-primary">
+            <h2 className="lg:text-[36px] text-h2 font-bold leading-[36px] text-isd-primary">
                 Learning Outcomes
             </h2>
             <div className="gap-[12px] flex flex-col text-md">
