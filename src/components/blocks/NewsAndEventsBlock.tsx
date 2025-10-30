@@ -1,27 +1,31 @@
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { NewsEntry } from '@/lib/newsFilter';
+import data from '@/data/news_events.json';
 
 export default function NewsAndEventsBlock() {
-    const news = [
-        {
-            title: 'Nine ISD Faculty Members Top 2% Most-Cited Scientists 2025',
-            date: '2025-10-14',
-            description:
-                'Nine ISD Faculty Members Recognized Among the World’s Top 2% of Most-Cited Scientists for 2025.',
-        },
-        {
-            title: 'Event : [ISD Seminar] From Fragmented Conversations to Structured Signals',
-            date: '2025-09-18',
-            description:
-                'Multilingual Language AI for Sales Compliance, Business Insights, and Contact Center Analytics.',
-        },
-        {
-            title: 'Prof. Qijia SHAO Selected as Emerging Rockstar in IEEE Pervasive Computing magazine',
-            date: '2025-07-02',
-            description:
-                'Prof. Qijia SHAO was selected as an Emerging Rockstar and featured in an interview in IEEE Pervasive Computing magazine (Volume 24, Issue 2, April-June 2025)!',
-        },
-    ];
+    // const news = [
+    //     {
+    //         title: 'Nine ISD Faculty Members Top 2% Most-Cited Scientists 2025',
+    //         date: '2025-10-14',
+    //         description:
+    //             'Nine ISD Faculty Members Recognized Among the World’s Top 2% of Most-Cited Scientists for 2025.',
+    //     },
+    //     {
+    //         title: 'Event : [ISD Seminar] From Fragmented Conversations to Structured Signals',
+    //         date: '2025-09-18',
+    //         description:
+    //             'Multilingual Language AI for Sales Compliance, Business Insights, and Contact Center Analytics.',
+    //     },
+    //     {
+    //         title: 'Prof. Qijia SHAO Selected as Emerging Rockstar in IEEE Pervasive Computing magazine',
+    //         date: '2025-07-02',
+    //         description:
+    //             'Prof. Qijia SHAO was selected as an Emerging Rockstar and featured in an interview in IEEE Pervasive Computing magazine (Volume 24, Issue 2, April-June 2025)!',
+    //     },
+    // ];
+
+    const news = (data as NewsEntry[]).slice(0, 3);
 
     return (
         <div className="container overflow-clip flex flex-col py-section-gap gap-section-title-gap dot-pattern before:top-[-95px] before:right-0 [--dot-color:var(--isd-secondary-1)]">
@@ -40,7 +44,8 @@ export default function NewsAndEventsBlock() {
 
                 <div className="flex lg:flex-row flex-col lg:gap-component-gap-sm gap-component-gap">
                     {news.map((news, i) => (
-                        <div
+                        <a
+                            href={`/news/${news.id}`}
                             className={
                                 'flex flex-col text-black rounded-sm p-element-gap pt-component-gap-sm gap-[12px] ' +
                                 (i % 2
@@ -57,9 +62,9 @@ export default function NewsAndEventsBlock() {
                                 {news.date}
                             </span>
                             <p className="text-md text-isd-font-3 line-clamp-3">
-                                {news.description}
+                                {news.details.replace('# ', '')}
                             </p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
