@@ -73,11 +73,11 @@ export default function Navbar() {
                         href: '/academics#programs',
                         pathnameKeyword: 'programs',
                     },
-                    {
-                        name: 'Scholarships',
-                        href: '/academics/scholarships',
-                        pathnameKeyword: 'scholarships',
-                    },
+                    // {
+                    //     name: 'Scholarships',
+                    //     href: '/academics/scholarships',
+                    //     pathnameKeyword: 'scholarships',
+                    // },
                     {
                         name: 'Internship & Exchange',
                         href: '/academics/internship',

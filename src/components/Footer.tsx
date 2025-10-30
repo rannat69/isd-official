@@ -33,13 +33,13 @@ export default function Footer() {
             title: 'Academics',
             subheadings: [
                 'Programs',
-                'Scholarships',
+                // 'Scholarships',
                 'Internship & Exchange',
                 'Facilities',
             ],
             links: [
                 '/academics#programs',
-                '/academics/scholarships',
+                // '/academics/scholarships',
                 '/academics/internship',
                 '/academics/facilities',
             ],
