@@ -18,13 +18,13 @@ export default function JoinUsBlock() {
                     </div>
                     <p>multiple substantiation-track at all ranks</p>
                 </div>
-                <div className="flex flex-col lg:w-[452px] gap-[12px] border-l-3 border-isd-secondary px-component-gap-sm py-element-gap bg-isd-secondary-1 p-element-gap">
+                {/* <div className="flex flex-col lg:w-[452px] gap-[12px] border-l-3 border-isd-secondary px-component-gap-sm py-element-gap bg-isd-secondary-1 p-element-gap">
                     <div className="flex gap-[24px] items-center text-isd-secondary">
                         <h2 className="text-h2">Faculty Positions</h2>
                         <ArrowRight size={20} strokeWidth={3} />
                     </div>
                     <p>teaching-track</p>
-                </div>
+                </div> */}
             </div>
         </div>
     );
