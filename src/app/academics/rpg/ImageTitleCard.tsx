@@ -23,7 +23,7 @@ export default function ImageTitleCard({
                     alt={title}
                     className="w-full h-72 rounded-t-[10px] object-cover"
                 />
-                <h2 className="self-stretch justify-start text-isd-secondary lg:text-2xl text-h2 font-bold font-['Mulish'] leading-7 py-[18px] px-6">
+                <h2 className="self-stretch justify-start text-isd-secondary lg:text-2xl text-lg font-bold font-['Mulish'] leading-7 py-[18px] px-6">
                     {title}
                 </h2>
             </div>
