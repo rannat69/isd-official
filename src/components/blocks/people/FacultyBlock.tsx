@@ -7,10 +7,15 @@ import { Person } from '@/lib/peopleFilter';
 export default function FacultyBlock({
     type = 'faculty',
     people,
+    openName,
 }: {
     type?: 'faculty' | 'affiliate';
     people?: Person[];
+    /** optional name to open immediately */
+    openName?: string;
 }) {
+    const normalize = (s?: string) =>
+        (s ?? '').toString().trim().replace(/\s+/g, ' ').toLowerCase();
     return (
         <div
             className={
@@ -39,28 +44,37 @@ export default function FacultyBlock({
                         className="grid grid-col-1 gap-6 lg:grid-cols-2 lg:gap-x-component-gap lg:gap-y-section-title-gap scroll-mt-[295px]"
                         id={type === 'affiliate' ? 'affiliate' : 'faculty'}
                     >
-                        {list.map((person) => (
-                            <div key={person.name}>
-                                <FacultyCard
-                                    name={person.name}
-                                    role={(person.role ?? '') as string}
-                                    keywords={
-                                        Array.isArray(person.keywords)
-                                            ? person.keywords
-                                            : undefined
-                                    }
-                                    photo={resolvePersonPhoto(
-                                        person.photo ?? undefined
-                                    )}
-                                    email={person.email ?? undefined}
-                                    link={person.link ?? undefined}
-                                    phone={person.phone ?? undefined}
-                                    location={person.location ?? undefined}
-                                    details={person.details ?? undefined}
-                                    primaryApt={person.primaryApt ?? undefined}
-                                />
-                            </div>
-                        ))}
+                        {list.map((person) => {
+                            const shouldOpen =
+                                !!openName &&
+                                normalize(person.name) === normalize(openName);
+
+                            return (
+                                <div key={person.name}>
+                                    <FacultyCard
+                                        name={person.name}
+                                        role={(person.role ?? '') as string}
+                                        keywords={
+                                            Array.isArray(person.keywords)
+                                                ? person.keywords
+                                                : undefined
+                                        }
+                                        photo={resolvePersonPhoto(
+                                            person.photo ?? undefined
+                                        )}
+                                        email={person.email ?? undefined}
+                                        link={person.link ?? undefined}
+                                        phone={person.phone ?? undefined}
+                                        location={person.location ?? undefined}
+                                        details={person.details ?? undefined}
+                                        primaryApt={
+                                            person.primaryApt ?? undefined
+                                        }
+                                        open={shouldOpen}
+                                    />
+                                </div>
+                            );
+                        })}
                     </div>
                 );
             })()}

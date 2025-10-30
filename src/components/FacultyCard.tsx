@@ -4,7 +4,7 @@ import { Link2, Mail, MapPin, Phone, X } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 
 interface FacultyCardProps {
     name: string;
@@ -17,6 +17,8 @@ interface FacultyCardProps {
     link?: string;
     details?: string;
     primaryApt?: string;
+    /** if true, open the details modal on mount */
+    open?: boolean;
 }
 
 export default function FacultyCard({
@@ -30,8 +32,14 @@ export default function FacultyCard({
     link,
     details,
     primaryApt,
+    open,
 }: FacultyCardProps) {
     const [detailsOpen, setDetailsOpen] = useState(false);
+
+    // If parent asks to open this card, open the details modal.
+    useEffect(() => {
+        if (open) setDetailsOpen(true);
+    }, [open]);
 
     function format(input: string) {
         const ESC = '\u0000_ESC_BOLD_\u0000';
