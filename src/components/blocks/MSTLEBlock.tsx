@@ -2,6 +2,7 @@
 import { Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
+import Breadcrumb from '../Breadcrumb';
 
 export default function MSTLEBlock() {
     const [activeMenuId, setActiveMenuId] = useState('');
@@ -29,11 +30,19 @@ export default function MSTLEBlock() {
         {
             content: (
                 <div className="flex flex-col gap-component-gap-sm">
-                    <div className="flex flex-col lg:gap-component-gap-sm">
-                        <h1 className="text-h1 offset-text-background text-isd-font-1 ">
-                            Master of Science in Technology Leadership and
-                            Entrepreneurship
-                        </h1>
+                    <div className="flex flex-col">
+                        <div className="gap-element-gap flex flex-col">
+                            <Breadcrumb
+                                titles={[
+                                    'Academics',
+                                    'Master of Science in Technology Leadership and Entrepreneurship',
+                                ]}
+                            />
+                            <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
+                                Master of Science in Technology Leadership and
+                                Entrepreneurship
+                            </h1>
+                        </div>
                         <div className="w-auto overflow-clip">
                             <div className="lg:flex hidden w-full items-center gap-component-gap-sm text-isd-font-2">
                                 {menu.map((link) => (

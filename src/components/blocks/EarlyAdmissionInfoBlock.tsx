@@ -1,3 +1,5 @@
+import Breadcrumb from '../Breadcrumb';
+
 export default function EarlyAdmissionInfoBlock() {
     const faq = [
         {
@@ -25,9 +27,18 @@ export default function EarlyAdmissionInfoBlock() {
             content: (
                 <div className="flex flex-col gap-component-gap-sm">
                     <div className="flex flex-col">
-                        <h1 className="text-h1 offset-text-background text-isd-font-1 uppercase">
-                            Postgraduate Student Early Recruiting
-                        </h1>
+                        <div className="gap-element-gap flex flex-col">
+                            <Breadcrumb
+                                titles={[
+                                    'Academics',
+                                    'Postgraduate Student Early Recruiting',
+                                ]}
+                            />
+                            <h1 className="text-h1 offset-text-background text-isd-font-1">
+                                Postgraduate Student Early Recruiting
+                            </h1>
+                        </div>
+
                         <div className="h-[60px] flex items-center">
                             <h2 className="text-h2 uppercase tracking-wide text-isd-secondary">
                                 Fall 2027 Intake

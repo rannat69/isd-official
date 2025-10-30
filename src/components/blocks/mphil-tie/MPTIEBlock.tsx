@@ -9,6 +9,7 @@ import AcademicAndIndustrialPartnersBlock from './AcademicAndIndustrialPartnersB
 import ApplicationAndFinancialAssistanceBlock from './ApplicationAndFinancialAssistanceBlock';
 import ProgramContactBlock from './ProgramContactBlock';
 import Select from '@/components/Select';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function MPTIEBlock() {
     const [activeContentId, setActiveContentId] = useState('edu-obj');
@@ -81,6 +82,18 @@ export default function MPTIEBlock() {
                         MPhil in Technology Innovation <br /> and
                         Entrepreneurship (TIE)
                     </h1>
+                    <div className="gap-element-gap flex flex-col">
+                        <Breadcrumb
+                            titles={[
+                                'Academics',
+                                'MPhil in Technology Innovation and Entrepreneurship (TIE)',
+                            ]}
+                        />
+                        <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
+                            MPhil in Technology Innovation <br /> and
+                            Entrepreneurship (TIE)
+                        </h1>
+                    </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (
                             <span

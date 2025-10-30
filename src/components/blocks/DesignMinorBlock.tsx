@@ -1,3 +1,5 @@
+import Breadcrumb from '../Breadcrumb';
+
 export default function DesignMinorBlock() {
     const content = [
         {
@@ -116,9 +118,12 @@ export default function DesignMinorBlock() {
     return (
         <div className="w-full lg:dot-pattern before:top-[-120px] before:right-[10px] [--dot-color:var(--isd-primary-2)]">
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap-sm text-md  text-isd-font-1">
-                <h1 className="text-h1 offset-text-background text-isd-font-1">
-                    Design Minor
-                </h1>
+                <div className="gap-element-gap flex flex-col">
+                    <Breadcrumb titles={['Academics', 'Design Minor']} />
+                    <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
+                        Design Minor
+                    </h1>
+                </div>
 
                 <p className="text-sm">
                     Design for good. Design for a difference.

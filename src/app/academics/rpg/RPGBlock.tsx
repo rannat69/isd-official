@@ -3,6 +3,7 @@ import PerceptiveMobileImg from '@/assets/perceptive-mobile-network.jpg';
 import SmartWearablesImg from '@/assets/smart-wearables-design.png';
 import ArchitecturalDesignImg from '@/assets/architectural-design.jpg';
 import ImageTitleCard from './ImageTitleCard';
+import Breadcrumb from '@/components/Breadcrumb';
 export default function RPGBlock() {
     const ImageTitleCardContent = [
         {
@@ -155,9 +156,12 @@ export default function RPGBlock() {
     return (
         <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap text-md text-isd-font-1">
             <div className="flex flex-col gap-9">
-                <h1 className="text-h1 offset-text-background text-isd-font-1">
-                    MPhil & PhD Program
-                </h1>
+                <div className="gap-element-gap flex flex-col">
+                    <Breadcrumb titles={['Academics', 'MPhil & PhD Program']} />
+                    <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
+                        MPhil & PhD Program
+                    </h1>
+                </div>
                 <p className="text-sm">
                     The Division of ISD offers the opportunity for creative
                     students to engage in research on a wide variety of topics
