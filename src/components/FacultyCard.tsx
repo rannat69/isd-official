@@ -283,10 +283,10 @@ export default function FacultyCard({
                                     </h2>
                                 </div>
 
-                                <div className="lg:text-md text-sm text-isd-font-3 text-start">
-                                    <div className="whitespace-pre-wrap">
+                                <div className="lg:text-md text-sm text-isd-font-3">
+                                    <p className="whitespace-pre-wrap">
                                         <span>{format(details)}</span>
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
                         )}

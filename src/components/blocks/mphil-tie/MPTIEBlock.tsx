@@ -77,9 +77,9 @@ export default function MPTIEBlock() {
             />
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
                 <div className="flex flex-col gap-component-gap-sm">
-                    <h1 className="text-h1 offset-text-background text-isd-font-1 text-balance">
-                        MPhil in Technology Innovation and Entrepreneurship
-                        (TIE)
+                    <h1 className="text-h1 offset-text-background text-isd-font-1 text-pretty">
+                        MPhil in Technology Innovation <br /> and
+                        Entrepreneurship (TIE)
                     </h1>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (

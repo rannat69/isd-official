@@ -22,7 +22,7 @@ export default function HeadsMessageBlock() {
                             className="object-cover w-full h-full"
                         />
                     </div>
-                    <div className="flex flex-col lg:items-start items-center lg:text-start text-center lg:bg-isd-primary-2 py-element-gap lg:px-component-gap-sm px-component-gap gap-[12px]">
+                    <div className="flex flex-col lg:items-start items-center text-center lg:bg-isd-primary-2 py-element-gap lg:px-component-gap-sm px-component-gap gap-[12px]">
                         <h2 className="text-h2 leading-[32px] text-isd-primary">
                             Prof Qian ZHANG
                         </h2>
@@ -51,14 +51,14 @@ export default function HeadsMessageBlock() {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-bold text-isd-secondary lg:text-start text-justify">
+                            <p className="font-bold text-isd-secondary">
                                 Welcome to the Division of Integrative Systems
                                 and Design (ISD), the newest academic unit in
                                 the Academy of Interdisciplinary Studies at the
                                 Hong Kong University of Science and Technology.
                             </p>
                         </div>
-                        <div className="flex flex-col text-justify gap-[12px]">
+                        <p className="flex flex-col gap-[12px]">
                             In view of the ever-changing world and the rising
                             multi-faceted challenges, such as global warming,
                             energy crisis and the emergence of AI in human life,
@@ -105,7 +105,7 @@ export default function HeadsMessageBlock() {
                             You are free to explore our website and get to grips
                             with our division. If you have any comment or
                             suggestion, please contact us.
-                        </div>
+                        </p>
                     </div>
 
                     <div>

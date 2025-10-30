@@ -95,9 +95,7 @@ export default function FacilitiesBlock() {
                                         {section.subheading}
                                     </h3>
                                 )}
-                                <div className="text-justify text-sm">
-                                    {section.content}
-                                </div>
+                                <div className="text-sm">{section.content}</div>
                             </div>
                         ))}
                         <iframe

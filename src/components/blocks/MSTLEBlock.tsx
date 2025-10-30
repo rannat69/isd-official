@@ -60,7 +60,7 @@ export default function MSTLEBlock() {
     const content = [
         {
             id: 'edu-obj',
-            subheading: 'Educational Objectives & Learning Outcomes',
+            subheading: '',
             content: (
                 <div className="flex flex-col gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
