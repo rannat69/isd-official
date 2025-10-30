@@ -81,31 +81,31 @@ export default function InternshipBlock() {
                             </div>
                         ))}
 
-                        <div className="flex lg:flex-1 flex-wrap justify-center gap-component-gap-sm">
+                        <div className="flex lg:flex-1 flex-wrap items-center justify-center gap-component-gap-sm">
                             <Image
                                 src={Logo1}
                                 alt="logo1"
-                                className="self-stretch  w-[60px] h-[88px]"
+                                className="w-[60px] h-[88px]"
                             />
                             <Image
                                 src={Logo2}
                                 alt="logo2"
-                                className="self-stretch  w-[286px] h-[88px]"
+                                className="w-[176px] h-[54px] mx-6"
                             />
                             <Image
                                 src={Logo3}
                                 alt="logo3"
-                                className="self-stretch  w-[207px] h-[88px]"
+                                className="w-[207px] h-[88px]"
                             />
                             <Image
                                 src={Logo4}
                                 alt="logo4"
-                                className="self-stretch  w-[266px] h-[88px]"
+                                className="w-[266px] h-[88px] -mx-4"
                             />
                             <Image
                                 src={Logo5}
                                 alt="logo5"
-                                className="self-stretch  w-[194px] h-[88px]"
+                                className="w-[194px] h-[88px]"
                             />
                         </div>
                     </div>
