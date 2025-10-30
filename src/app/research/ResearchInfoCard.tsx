@@ -11,7 +11,9 @@ export default function ResearchInfoCard({
 }) {
     // encode supervisor for the `keyword` query param, using pluses for spaces
     const keyword = encodeURIComponent(supervisor).replace(/%20/g, '+');
-    const href = `/people/?role=faculty&area=all&tag=regular&keyword=${keyword}`;
+    // include a returnTo so the people page can navigate back to research after closing
+    const returnTo = encodeURIComponent('/research');
+    const href = `/people/?role=faculty&area=all&tag=regular&keyword=${keyword}&from=research&returnTo=${returnTo}`;
 
     return (
         <div className="self-stretch inline-flex flex-col justify-start items-start">

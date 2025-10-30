@@ -8,11 +8,14 @@ export default function FacultyBlock({
     type = 'faculty',
     people,
     openName,
+    openReturnTo,
 }: {
     type?: 'faculty' | 'affiliate';
     people?: Person[];
     /** optional name to open immediately */
     openName?: string;
+    /** optional returnTo url to navigate when an opened card is closed */
+    openReturnTo?: string;
 }) {
     const normalize = (s?: string) =>
         (s ?? '').toString().trim().replace(/\s+/g, ' ').toLowerCase();
@@ -71,6 +74,11 @@ export default function FacultyBlock({
                                             person.primaryApt ?? undefined
                                         }
                                         open={shouldOpen}
+                                        returnTo={
+                                            shouldOpen
+                                                ? openReturnTo
+                                                : undefined
+                                        }
                                     />
                                 </div>
                             );
