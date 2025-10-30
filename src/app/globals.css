@@ -3,6 +3,10 @@
 
 /* TODO add global font styles */
 
+p {
+    @apply lg:text-justify text-start
+}
+
 /* Design tokens */
 :root {
     /* Primary colors */

@@ -2,6 +2,7 @@
 import { Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
+import Breadcrumb from '../Breadcrumb';
 
 export default function MSTLEBlock() {
     const [activeMenuId, setActiveMenuId] = useState('');
@@ -29,11 +30,19 @@ export default function MSTLEBlock() {
         {
             content: (
                 <div className="flex flex-col gap-component-gap-sm">
-                    <div className="flex flex-col lg:gap-component-gap-sm">
-                        <h1 className="text-h1 offset-text-background text-isd-font-1 ">
-                            Master of Science in Technology Leadership and
-                            Entrepreneurship
-                        </h1>
+                    <div className="flex flex-col">
+                        <div className="gap-element-gap flex flex-col">
+                            <Breadcrumb
+                                titles={[
+                                    'Academics',
+                                    'Master of Science in Technology Leadership and Entrepreneurship',
+                                ]}
+                            />
+                            <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
+                                Master of Science in Technology Leadership and
+                                Entrepreneurship
+                            </h1>
+                        </div>
                         <div className="w-auto overflow-clip">
                             <div className="lg:flex hidden w-full items-center gap-component-gap-sm text-isd-font-2">
                                 {menu.map((link) => (
@@ -60,7 +69,7 @@ export default function MSTLEBlock() {
     const content = [
         {
             id: 'edu-obj',
-            subheading: 'Educational Objectives & Learning Outcomes',
+            subheading: '',
             content: (
                 <div className="flex flex-col gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
@@ -178,7 +187,7 @@ export default function MSTLEBlock() {
 
         {
             id: 'curriculum',
-            subheading: 'Curriculum',
+            subheading: <span className="lg:inline hidden">Curriculum</span>,
             content: (
                 <div className="flex flex-col lg:gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
@@ -223,7 +232,9 @@ export default function MSTLEBlock() {
         },
         {
             id: 'adm-app',
-            subheading: 'Admission & Application',
+            subheading: (
+                <div className="hidden lg:block">Admission & Application</div>
+            ),
             content: (
                 <div className="flex flex-col gap-component-gap  items-start">
                     <div className="flex flex-col gap-[24]">

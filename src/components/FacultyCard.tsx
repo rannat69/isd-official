@@ -4,7 +4,7 @@ import { Link2, Mail, MapPin, Phone, X } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 
 interface FacultyCardProps {
     name: string;
@@ -17,6 +17,8 @@ interface FacultyCardProps {
     link?: string;
     details?: string;
     primaryApt?: string;
+    /** if true, open the details modal on mount */
+    open?: boolean;
 }
 
 export default function FacultyCard({
@@ -30,8 +32,14 @@ export default function FacultyCard({
     link,
     details,
     primaryApt,
+    open,
 }: FacultyCardProps) {
     const [detailsOpen, setDetailsOpen] = useState(false);
+
+    // If parent asks to open this card, open the details modal.
+    useEffect(() => {
+        if (open) setDetailsOpen(true);
+    }, [open]);
 
     function format(input: string) {
         const ESC = '\u0000_ESC_BOLD_\u0000';
@@ -92,8 +100,8 @@ export default function FacultyCard({
                         sizes="221px"
                     />
                 </div>
-                <div className="flex flex-col justify-between flex-1 text-left">
-                    <div className="flex flex-col gap-footer-gap">
+                <div className="flex flex-col lg:justify-between justify-start flex-1 text-left lg:gap-0 gap-[8px]">
+                    <div className="flex flex-col lg:gap-footer-gap gap-[12px]">
                         <div className="lg:text-h2 text-lg font-bold text-isd-font-1">
                             {name}
                         </div>
@@ -283,10 +291,10 @@ export default function FacultyCard({
                                     </h2>
                                 </div>
 
-                                <div className="lg:text-md text-sm text-isd-font-3 text-start">
-                                    <div className="whitespace-pre-wrap">
+                                <div className="lg:text-md text-sm text-isd-font-3">
+                                    <p className="whitespace-pre-wrap">
                                         <span>{format(details)}</span>
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
                         )}

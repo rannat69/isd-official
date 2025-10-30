@@ -1,6 +1,6 @@
 import ImageCard from '@/components/ImageCard';
 
-import ScholarshipsImg from '@/assets/scholarships-img.png';
+// import ScholarshipsImg from '@/assets/scholarships-img.png';
 import ExcangeImg from '@/assets/exchange-img.jpg';
 import FacilitiesImg from '@/assets/facilities-img.png';
 
@@ -11,14 +11,14 @@ export default function ResourceBlock() {
                 Resource
             </h1>
             <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-component-gap-sm gap-component-gap">
-                <>
+                {/* <>
                     <ImageCard
                         imageSrc={ScholarshipsImg}
                         title="Scholarships"
                         link="/academics/scholarships"
                         description="Several dedicated partners share our vision of creating new modes of engineering education. As part of our partnership program, they provide valuable resources in forms of financial and in-kind support to the Division."
                     />
-                </>
+                </> */}
 
                 <>
                     <ImageCard

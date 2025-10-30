@@ -4,8 +4,8 @@ import Image from 'next/image';
 export default function CurriculumBlock() {
     return (
         <div className="flex flex-col gap-[24px]">
-            <h2 className="lg:text-[36px] text-h2 leading-[36px] font-bold text-isd-primary">
-                Educational Objectives
+            <h2 className="lg:text-[36px] hidden lg:block text-h2 leading-[36px] font-bold text-isd-primary">
+                Curriculum
             </h2>
 
             <div className="flex flex-col gap-component-gap-sm">

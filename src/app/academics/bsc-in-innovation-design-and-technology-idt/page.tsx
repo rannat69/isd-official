@@ -6,6 +6,7 @@ import IDTEduObjBlock from './IDTEduObjBlock';
 import IDTCurriculumBlock from './IDTCurriculumBlock';
 import IDTAdmissionBlock from './IDTAdmissionBlock';
 import Select from '@/components/Select';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function IDTPage() {
     const [activeMenuId, setActiveMenuId] = useState('edu-obj-menu');
@@ -36,9 +37,17 @@ export default function IDTPage() {
             <div className="container overflow-clip flex flex-col py-section-gap lg:gap-component-gap gap-component-gap-sm">
                 {/* FIXME - fix underline for multiple lines text */}
                 <div>
-                    <h1 className="text-h1 offset-text-background text-balance mb-component-gap-sm">
-                        BSc in Innovation, Design and Technology (IDT)
-                    </h1>
+                    <div className="gap-element-gap flex flex-col">
+                        <Breadcrumb
+                            titles={[
+                                'Academics',
+                                'BSc in Innovation, Design and Technology (IDT)',
+                            ]}
+                        />
+                        <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
+                            BSc in Innovation, Design and Technology (IDT)
+                        </h1>
+                    </div>
 
                     <div className="hidden lg:flex w-full items-center justify-start gap-component-gap-sm divide-isd-font-2/30 text-isd-font-2">
                         {menu.map((link) => (

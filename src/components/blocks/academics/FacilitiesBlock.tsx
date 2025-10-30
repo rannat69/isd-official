@@ -9,7 +9,6 @@ import F08 from '@/assets/academics/facilities/fac.08.jpg';
 import F09 from '@/assets/academics/facilities/fac.09.jpg';
 import F10 from '@/assets/academics/facilities/fac.10.jpg';
 import F11 from '@/assets/academics/facilities/fac.11.jpg';
-import Carousel from '@/components/Carousel';
 import CarouselTriple from '@/components/CarouselTriple';
 import Image from 'next/image';
 
@@ -96,9 +95,7 @@ export default function FacilitiesBlock() {
                                         {section.subheading}
                                     </h3>
                                 )}
-                                <div className="text-justify text-sm">
-                                    {section.content}
-                                </div>
+                                <div className="text-sm">{section.content}</div>
                             </div>
                         ))}
                         <iframe

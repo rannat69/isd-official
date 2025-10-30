@@ -9,7 +9,7 @@ export default function WhatIsISDBlock() {
             </h1>
 
             <div className="flex flex-col gap-component-gap-sm">
-                <p className="text-md text-isd-font-1 text-justify">
+                <p className="text-md text-isd-font-1">
                     Integrative Systems and Design is a new paradigm for
                     educating technologists and innovators. A more holistic
                     systems perspective is necessary to truly innovate and

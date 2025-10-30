@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ResearchInfoCard({
     title,
     description,
@@ -7,6 +9,10 @@ export default function ResearchInfoCard({
     description: string;
     supervisor: string;
 }) {
+    // encode supervisor for the `keyword` query param, using pluses for spaces
+    const keyword = encodeURIComponent(supervisor).replace(/%20/g, '+');
+    const href = `/people/?role=faculty&area=all&tag=regular&keyword=${keyword}`;
+
     return (
         <div className="self-stretch inline-flex flex-col justify-start items-start">
             <div className="self-stretch justify-start text-primary text-lg  font-bold capitalize">
@@ -16,7 +22,9 @@ export default function ResearchInfoCard({
                 {description}
             </div>
             <div className="self-stretch justify-start text-isd-secondary text-[12px] leading-[18px] capitalize">
-                {supervisor}
+                <Link href={href} className="underline">
+                    {supervisor}
+                </Link>
             </div>
         </div>
     );

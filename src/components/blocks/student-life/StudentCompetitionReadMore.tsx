@@ -38,24 +38,22 @@ export default function StudentCompetitionReadMore({
                     onClick={() => setDetailsOpen(null)}
                 >
                     <div
-                        className="flex flex-col w-full max-w-[1044px] bg-white my-[220px] px-component-gap py-component-gap-sm gap-component-gap-sm items-end"
+                        className="flex flex-col w-full max-w-[1044px] bg-white my-[220px] px-component-gap py-component-gap-sm gap-component-gap-sm items-center"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
-                            className="text-isd-primary cursor-pointer flex gap-footer-gap bg-isd-primary-2 w-section-gap h-component-gap-sm items-center justify-center"
+                            className="self-end text-isd-primary cursor-pointer flex gap-footer-gap bg-isd-primary-2 w-section-gap h-component-gap-sm items-center justify-center"
                             onClick={() => setDetailsOpen(null)}
                         >
                             <X size={24} />
                             <span className="text-sm">Close</span>
                         </button>
 
-                        <div className="flex justify-center relative w-full h-[506px] flex-shrink-0 overflow-hidden">
+                        <div className="flex justify-center relative overflow-hidden">
                             <Image
                                 src={resolveCompPhoto(picture)}
                                 alt={`${name}`}
-                                className="object-cover w-full"
-                                width={900}
-                                height={506}
+                                className="w-full h-full"
                             />
                         </div>
 

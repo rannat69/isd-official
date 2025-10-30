@@ -54,7 +54,7 @@ export default function InternshipReadMore({
                         </button>
 
                         {pictures.length > 1 ? (
-                            <div className="flex w-full gap-component-gap-sm">
+                            <div className="flex lg:flex-row flex-col w-full gap-component-gap-sm">
                                 {pictures.map((pic, index) => (
                                     <div
                                         key={index}

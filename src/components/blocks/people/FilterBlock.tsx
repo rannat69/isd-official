@@ -88,7 +88,7 @@ export default function FilterBlock() {
 
         // if  tag, add #faculty at the end
 
-        router.push(`/people${qs ? `?${qs}` : ''}#select`);
+        router.push(`/people${qs ? `?${qs}` : ''}`, { scroll: false });
     }
 
     function handleSearch() {
@@ -220,7 +220,7 @@ export default function FilterBlock() {
                                     });
                                 }
                             }}
-                            className={`text-sm lg:py-[10px] py-[6px] border rounded-full px-element-gap ${
+                            className={`text-sm cursor-pointer lg:py-[10px] py-[6px] border rounded-full px-element-gap ${
                                 tag === leTag.value
                                     ? 'text-isd-primary font-bold border-2'
                                     : 'text-isd-font-3'

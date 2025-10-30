@@ -1,3 +1,5 @@
+import Breadcrumb from '../Breadcrumb';
+
 export default function EarlyAdmissionInfoBlock() {
     const faq = [
         {
@@ -25,16 +27,25 @@ export default function EarlyAdmissionInfoBlock() {
             content: (
                 <div className="flex flex-col gap-component-gap-sm">
                     <div className="flex flex-col">
-                        <h1 className="text-h1 offset-text-background text-isd-font-1 uppercase">
-                            Postgraduate Student Early Recruiting
-                        </h1>
+                        <div className="gap-element-gap flex flex-col">
+                            <Breadcrumb
+                                titles={[
+                                    'Academics',
+                                    'Postgraduate Student Early Recruiting',
+                                ]}
+                            />
+                            <h1 className="text-h1 offset-text-background text-isd-font-1">
+                                Postgraduate Student Early Recruiting
+                            </h1>
+                        </div>
+
                         <div className="h-[60px] flex items-center">
                             <h2 className="text-h2 uppercase tracking-wide text-isd-secondary">
                                 Fall 2027 Intake
                             </h2>
                         </div>
                     </div>
-                    <p className="text-isd-font-1 text-sm">
+                    <p>
                         Are you ready to shape the future? The Division of
                         Integrative Systems and Design (ISD) at the Hong Kong
                         University of Science and Technology (HKUST) is on the
@@ -67,7 +78,7 @@ export default function EarlyAdmissionInfoBlock() {
             content: (
                 <ul className="flex flex-col gap-[24px] text-isd-primary">
                     <ul className="flex flex-col">
-                        <li className="flex before:text-center before:content-['•'] lg:text-h2 lg:leading-[48px] text-md mb-2 lg:mb-0 font-bold before:w-component-gap-sm">
+                        <li className="flex before:text-center before:content-['•'] text-h2 leading-[48px] font-bold before:w-component-gap-sm">
                             Vibrant Academic Community
                         </li>
                         <li className="flex pl-component-gap-sm text-isd-font-3">
@@ -78,7 +89,7 @@ export default function EarlyAdmissionInfoBlock() {
                         </li>
                     </ul>
                     <ul className="flex flex-col">
-                        <li className="flex before:text-center before:content-['•'] lg:text-h2 lg:leading-[48px] text-md mb-2 lg:mb-0 font-bold before:w-component-gap-sm">
+                        <li className="flex before:text-center before:content-['•'] text-h2 leading-[48px] font-bold before:w-component-gap-sm">
                             Scholarship Support
                         </li>
                         <li className="flex pl-component-gap-sm text-isd-font-3">
@@ -90,7 +101,7 @@ export default function EarlyAdmissionInfoBlock() {
                         </li>
                     </ul>
                     <ul className="flex flex-col">
-                        <li className="flex before:text-center before:content-['•'] lg:text-h2 lg:leading-[48px] text-md mb-2 lg:mb-0 font-bold before:w-component-gap-sm">
+                        <li className="flex before:text-center before:content-['•'] text-h2 leading-[48px] font-bold before:w-component-gap-sm">
                             Prestigious Hong Kong PhD Fellowship
                         </li>
                         <li className="flex pl-component-gap-sm text-isd-font-3">
@@ -118,7 +129,7 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: 'Important Dates to Remember',
             content: (
-                <div className="flex flex-col lg:flex-row gap-component-gap-sm">
+                <div className="flex gap-component-gap-sm">
                     <p className="flex-1">
                         Our recruitment process unfolds in two exciting phases.{' '}
                         <span className="bold text-isd-secondary font-bold">
@@ -135,7 +146,7 @@ export default function EarlyAdmissionInfoBlock() {
                         submitted to the HKUST Postgraduate Admissions.
                     </p>
                     <div className="flex-1 flex flex-col gap-[12px]">
-                        <span className="font-bold px-[12px] text-lg lg:leading-[28px] text-isd-primary justify-center flex lg:justify-start text-center">
+                        <span className="font-bold px-[12px] text-lg leading-[28px] text-isd-primary">
                             Timetable for Academic Year 2027/28
                         </span>
                         <table>
@@ -233,13 +244,13 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: 'Frequently Asked Questions',
             content: (
-                <div className="flex flex-col gap-component-gap-sm text-isd-font-1 lg:dot-pattern before:top-[-120px] before:left-[-210px] [--dot-color:var(--isd-secondary-1)]">
+                <div className="flex flex-col gap-component-gap-sm text-isd-font-1 dot-pattern before:top-[-120px] before:left-[-210px] [--dot-color:var(--isd-secondary-1)]">
                     {faq.map((item, idx) => (
                         <div
                             key={idx}
                             className="flex flex-col gap-[18px] border-l-5 odd:bg-isd-primary-2 odd:border-l-isd-primary even:bg-isd-secondary-1 even:border-l-isd-secondary p-component-gap-sm rounded-md"
                         >
-                            <p className="lg:text-h2 text-md lg:leading-[32px] font-bold">
+                            <p className="text-h2 leading-[32px]">
                                 {item.question}
                             </p>
                             <p className="text-isd-font-3">{item.answer}</p>
@@ -251,18 +262,15 @@ export default function EarlyAdmissionInfoBlock() {
     ];
 
     return (
-        <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap lg:dot-pattern before:top-[-95px] before:-mr-component-gap-sm before:right-0 [--dot-color:var(--isd-primary-2)]">
+        <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap dot-pattern before:top-[-95px] before:-mr-component-gap-sm before:right-0 [--dot-color:var(--isd-primary-2)]">
             {content.map((section, index) => (
-                <div
-                    key={index}
-                    className="flex flex-col lg:gap-component-gap-sm"
-                >
+                <div key={index} className="flex flex-col gap-component-gap-sm">
                     {section.subheading && (
-                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 mb-2 lg:mb-0">
+                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1">
                             {section.subheading}
                         </h3>
                     )}
-                    <div className="lg:text-lg text-sm lg:leading-[28px] text-isd-font-3">
+                    <div className="text-lg leading-[28px] text-isd-font-3">
                         {section.content}
                     </div>
                 </div>

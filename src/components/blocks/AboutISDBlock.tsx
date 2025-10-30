@@ -15,7 +15,7 @@ export default function AboutISDBlock() {
             </h1>
 
             <div className="flex flex-col gap-component-gap-sm">
-                <p className="text-md text-isd-font-1 lg:text-start text-justify">
+                <p className="text-md text-isd-font-1">
                     The mission of the Division of Integrative Systems and
                     Design is to nurture a new generation of innovators who can
                     work across multiple disciplines and create disruptive

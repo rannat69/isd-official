@@ -25,7 +25,7 @@ export default function IDTCurriculumBlock() {
     return (
         <div className="flex flex-col gap-[72px]">
             <div className="flex flex-col gap-9">
-                <h2 className="lg:text-4xl text-h2 font-bold text-primary">
+                <h2 className="lg:text-4xl text-h2 font-bold text-primary lg:block hidden">
                     Curriculum
                 </h2>
                 <div>
