@@ -178,7 +178,7 @@ export default function MSTLEBlock() {
 
         {
             id: 'curriculum',
-            subheading: 'Curriculum',
+            subheading: <span className="lg:inline hidden">Curriculum</span>,
             content: (
                 <div className="flex flex-col lg:gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
