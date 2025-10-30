@@ -59,6 +59,11 @@ export default function FacultyCard({
         if (open) setDetailsOpen(true);
     }, [open]);
 
+    // If parent asks to open this card, open the details modal.
+    useEffect(() => {
+        if (open) setDetailsOpen(true);
+    }, [open]);
+
     function format(input: string) {
         const ESC = '\u0000_ESC_BOLD_\u0000';
         // protect escaped \** so they don't become bold markers
