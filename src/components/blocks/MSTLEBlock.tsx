@@ -232,7 +232,9 @@ export default function MSTLEBlock() {
         },
         {
             id: 'adm-app',
-            subheading: 'Admission & Application',
+            subheading: (
+                <div className="hidden lg:block">Admission & Application</div>
+            ),
             content: (
                 <div className="flex flex-col gap-component-gap  items-start">
                     <div className="flex flex-col gap-[24]">
