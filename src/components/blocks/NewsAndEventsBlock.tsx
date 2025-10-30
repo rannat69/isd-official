@@ -61,9 +61,9 @@ export default function NewsAndEventsBlock() {
                             <span className="lg:text-lg text-md leading-[26px]">
                                 {news.date}
                             </span>
-                            <p className="text-md text-isd-font-3 line-clamp-3">
+                            <div className="text-md text-start text-isd-font-3 line-clamp-3">
                                 {news.details.replace('# ', '')}
-                            </p>
+                            </div>
                         </a>
                     ))}
                 </div>
