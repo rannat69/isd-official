@@ -255,7 +255,7 @@ export default function Navbar() {
                             />
                         )}
                     </Link>
-                    <Link href="/">
+                    <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                         {mobileMenuOpen ? (
                             <Image
                                 src={ISDLogoWhite}
