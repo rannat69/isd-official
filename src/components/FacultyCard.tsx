@@ -118,8 +118,8 @@ export default function FacultyCard({
                         sizes="221px"
                     />
                 </div>
-                <div className="flex flex-col lg:justify-between justify-start flex-1 text-left lg:gap-0 gap-[8px]">
-                    <div className="flex flex-col lg:gap-footer-gap gap-[12px]">
+                <div className="flex flex-col lg:justify-between justify-start flex-1 text-left lg:gap-0 gap-[24px]">
+                    <div className="flex flex-col gap-footer-gap">
                         <div className="lg:text-h2 text-lg font-bold text-isd-font-1">
                             {name}
                         </div>
