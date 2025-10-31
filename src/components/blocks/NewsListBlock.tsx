@@ -23,6 +23,17 @@ export default function NewsListBlock() {
     const pathname = usePathname();
     const [visibleCount, setVisibleCount] = useState<number>(5);
 
+    // Compute basePath for links in client: prefer NEXT_PUBLIC_BASE_PATH,
+    // then CI build flag, then detect from window.location if possible.
+    const buildBasePath =
+        process.env.NEXT_PUBLIC_BASE_PATH ??
+        (process.env.CI === 'true' ? '/isd-official' : '');
+    let clientBasePath = buildBasePath;
+    if (!clientBasePath && typeof window !== 'undefined') {
+        const first = window.location.pathname.split('/').filter(Boolean)[0];
+        if (first === 'isd-official') clientBasePath = '/isd-official';
+    }
+
     const category: CategoryFilter = useMemo(() => {
         return (searchParams.get('category') as CategoryFilter) || 'all';
     }, [searchParams]);
@@ -122,7 +133,11 @@ export default function NewsListBlock() {
 
                 <div className="flex flex-col lg:divide-y lg:gap-0 gap-component-gap-sm lg:py-0 py-component-gap-sm divide-isd-primary-3">
                     {visibleItems.map((item) => {
-                        const href = `/news/${item.id}`;
+                        // Use relative hrefs so links work whether the site is served
+                        // at root or under a basePath (e.g. /isd-official). A relative
+                        // link like "news/7" resolves to the current base path
+                        // automatically in the browser.
+                        const href = `${clientBasePath}/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
                         const formattedDate = formatDate(item.date);
                         if (item.type === 'events') {

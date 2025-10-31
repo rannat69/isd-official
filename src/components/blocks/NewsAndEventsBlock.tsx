@@ -25,6 +25,17 @@ export default function NewsAndEventsBlock() {
     //     },
     // ];
 
+    // Compute basePath for links in client: prefer NEXT_PUBLIC_BASE_PATH,
+    // then CI build flag, then detect from window.location if possible.
+    const buildBasePath =
+        process.env.NEXT_PUBLIC_BASE_PATH ??
+        (process.env.CI === 'true' ? '/isd-official' : '');
+    let clientBasePath = buildBasePath;
+    if (!clientBasePath && typeof window !== 'undefined') {
+        const first = window.location.pathname.split('/').filter(Boolean)[0];
+        if (first === 'isd-official') clientBasePath = '/isd-official';
+    }
+
     const news = (data as NewsEntry[]).slice(0, 3);
 
     return (
@@ -45,7 +56,7 @@ export default function NewsAndEventsBlock() {
                 <div className="flex lg:flex-row flex-col lg:gap-component-gap-sm gap-component-gap">
                     {news.map((news, i) => (
                         <a
-                            href={`/news/${news.id}`}
+                            href={`${clientBasePath}/news/${news.id}`}
                             className={
                                 'flex flex-col text-black rounded-sm p-element-gap pt-component-gap-sm gap-[12px] ' +
                                 (i % 2
