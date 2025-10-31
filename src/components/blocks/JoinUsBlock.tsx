@@ -11,13 +11,16 @@ export default function JoinUsBlock() {
             </h1>
 
             <div className="flex lg:flex-row flex-col gap-component-gap-sm">
-                <div className="flex flex-col lg:w-[452px] gap-[12px] border-l-3 border-isd-primary px-component-gap-sm py-element-gap bg-isd-primary-2 p-element-gap">
+                <a
+                    href="https://hrmsxprod.psft.ust.hk:8044/psp/hrmsxprod/EMPLOYEE/HRMS/c/HRS_HRAM.HRS_CE.GBL?Page=HRS_CE_JOB_DTL&Action=A&JobOpeningId=11081&SiteId=1000&PostingSeq=1"
+                    className="flex flex-col lg:w-[452px] gap-[12px] border-l-3 border-isd-primary px-component-gap-sm py-element-gap bg-isd-primary-2 p-element-gap"
+                >
                     <div className="flex gap-[24px] items-center text-isd-primary">
                         <h2 className="text-h2">Faculty Positions</h2>
                         <ArrowRight size={20} strokeWidth={3} />
                     </div>
                     <p>multiple substantiation-track at all ranks</p>
-                </div>
+                </a>
                 {/* <div className="flex flex-col lg:w-[452px] gap-[12px] border-l-3 border-isd-secondary px-component-gap-sm py-element-gap bg-isd-secondary-1 p-element-gap">
                     <div className="flex gap-[24px] items-center text-isd-secondary">
                         <h2 className="text-h2">Faculty Positions</h2>
