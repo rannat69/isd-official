@@ -5,6 +5,7 @@ import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface FacultyCardProps {
     name: string;
@@ -19,6 +20,8 @@ interface FacultyCardProps {
     primaryApt?: string;
     /** if true, open the details modal on mount */
     open?: boolean;
+    /** optional URL to navigate to when the card is closed */
+    returnTo?: string;
 }
 
 export default function FacultyCard({
@@ -33,8 +36,18 @@ export default function FacultyCard({
     details,
     primaryApt,
     open,
+    returnTo,
 }: FacultyCardProps) {
     const [detailsOpen, setDetailsOpen] = useState(false);
+    const router = useRouter();
+
+    function handleClose() {
+        setDetailsOpen(false);
+        if (returnTo) {
+            // navigate back to the provided returnTo path
+            router.push(returnTo);
+        }
+    }
 
     // If parent asks to open this card, open the details modal.
     useEffect(() => {
@@ -173,7 +186,7 @@ export default function FacultyCard({
             {detailsOpen && (
                 <div
                     className="fixed top-0 left-0 right-0 w-screen h-screen bg-[#1e1e1e]/50 flex flex-col items-center z-50 overflow-x-auto"
-                    onClick={() => setDetailsOpen(false)}
+                    onClick={handleClose}
                 >
                     <div
                         className="flex flex-col bg-white lg:m-[198px] p-component-gap gap-section-title-gap items-center"
@@ -181,7 +194,7 @@ export default function FacultyCard({
                     >
                         <button
                             className="lg:hidden text-isd-primary cursor-pointer flex gap-footer-gap h-component-gap-sm items-center justify-end sticky bg-white w-full z-10 top-0 py-component-gap"
-                            onClick={() => setDetailsOpen(false)}
+                            onClick={handleClose}
                         >
                             <X size={24} />
                             <span className="text-sm">Close</span>
@@ -301,7 +314,7 @@ export default function FacultyCard({
 
                         <button
                             className="hidden lg:flex text-isd-primary cursor-pointer gap-footer-gap bg-isd-primary-2 w-section-gap h-component-gap-sm items-center justify-center"
-                            onClick={() => setDetailsOpen(false)}
+                            onClick={handleClose}
                         >
                             <X size={24} />
                             <span className="text-sm">Close</span>

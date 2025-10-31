@@ -22,6 +22,10 @@ export default function PeopleContent() {
     // prepare an openName derived from keyword for opening a matching faculty card
     // the URL may use pluses for spaces (e.g. Qian+ZHANG); replace them with spaces
     const openName = keyword ? keyword.replace(/\+/g, ' ') : '';
+    // if a returnTo was provided in the query, decode it and forward to the block
+    const openReturnTo = searchParams.get('returnTo')
+        ? decodeURIComponent(searchParams.get('returnTo') || '')
+        : '';
 
     // Prepare filtered lists per role context
     const facultyList =
@@ -50,7 +54,11 @@ export default function PeopleContent() {
             {(role === 'all' || role === 'faculty') && (
                 <>
                     <div className="lg:dot-pattern before:top-[-115px] before:right-0 [--dot-color:var(--isd-secondary-1)]" />
-                    <FacultyBlock people={facultyList} openName={openName} />
+                    <FacultyBlock
+                        people={facultyList}
+                        openName={openName}
+                        openReturnTo={openReturnTo}
+                    />
                 </>
             )}
             {/*(role === 'all' || role === 'affiliate') && (
