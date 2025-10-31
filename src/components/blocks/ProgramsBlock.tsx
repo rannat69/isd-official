@@ -26,11 +26,11 @@ export default function ProgramBlock() {
             content: 'MPhil & PhD Program',
             link: '/academics/rpg',
         },
-        {
-            heading: 'Postgraduate',
-            content: 'Early Admissions Scheme',
-            link: '/academics/early-admission',
-        },
+        // {
+        //     heading: 'Postgraduate',
+        //     content: 'Early Admissions Scheme',
+        //     link: '/academics/early-admission',
+        // },
     ];
 
     return (
