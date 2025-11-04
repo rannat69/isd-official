@@ -78,7 +78,6 @@ export default function MPTIEBlock() {
             />
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
                 <div className="flex flex-col gap-component-gap-sm">
-     
                     <div className="gap-element-gap flex flex-col">
                         <Breadcrumb
                             titles={[
