@@ -1,16 +1,35 @@
 export default function ResearchAreasBlock() {
     const areas = [
-        'Marine Tech, Underwater Vision, Transport, Communications',
-        'Bio Health, Bio-inspired Design, [Tele] Medical Design, Wearable Healthcare Devices',
-        'AI Hardware, Edge AI',
-        'Low Energy System Design, Architectural Geometry, Sustainable Design',
-        'Design Theory, Innovative Design, Human-centred Design',
-        'Computer-Aided Design and Manufacturing (CAD/CAM)',
-        'Computer Vision, Computer Graphics, Computation Design',
-        'Augmented Reality, Pervasive and Cloud Computing',
-        'System Designs, Embedded Systems',
-        'Microelectronics, Beyond 5G, IoT',
-        'Robotics Dynamics and Control, Systems Simulation and Modelling',
+        {
+            title: 'Sustainable-Tech',
+            description:
+                'Energy storage solutions, zero-carbon architecture, urban 3D reconstruction, and modular building design for sustainable cities and infrastructure.',
+            link: '/research/#sustainable-tech',
+        },
+        {
+            title: 'Marine-Tech',
+            description:
+                'Maritime communication systems, non-disturbing marine surveying, underwater manipulation, and bioinspired ocean technology solutions.',
+            link: '/research/#marine-tech',
+        },
+        {
+            title: 'Health-Tech',
+            description:
+                'Wearable biomarker sensing, food 3D printing, elderly-friendly smart homes, ubiquitous computing, and minimally invasive surgical tools.',
+            link: '/research/#health-tech',
+        },
+        {
+            title: 'Design-Tech',
+            description:
+                '3D asset generation, video creation, fashion design, robot-aware assembly, wearable robotics, and AR/VR creative experiences..',
+            link: '/research/#design-tech',
+        },
+        {
+            title: 'Emergent-Themes',
+            description:
+                'Low-altitude economy infrastructure, construction automation, 3D LLM agents, autonomous driving simulators, and socio-technical AI integration.',
+            link: '/research/#emergent-themes',
+        },
     ];
 
     return (
@@ -26,16 +45,16 @@ export default function ResearchAreasBlock() {
                 program.
             </p>
 
-            <ul>
+            <div className="flex flex-col gap-[12px]">
                 {areas.map((area) => (
-                    <li
-                        key={area}
-                        className="flex before:text-center before:content-['•'] leading-[26px] before:w-component-gap-sm"
-                    >
-                        {area}
-                    </li>
+                    <div key={area.title}>
+                        <h3 className="text-isd-secondary font-bold cursor:pointer hover:underline">
+                            <a href={area.link}>{area.title}</a>
+                        </h3>
+                        <p className="text-md">{area.description}</p>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
