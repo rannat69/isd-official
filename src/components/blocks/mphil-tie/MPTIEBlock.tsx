@@ -78,10 +78,7 @@ export default function MPTIEBlock() {
             />
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
                 <div className="flex flex-col gap-component-gap-sm">
-                    <h1 className="text-h1 offset-text-background text-isd-font-1 text-pretty">
-                        MPhil in Technology Innovation <br /> and
-                        Entrepreneurship (TIE)
-                    </h1>
+     
                     <div className="gap-element-gap flex flex-col">
                         <Breadcrumb
                             titles={[
