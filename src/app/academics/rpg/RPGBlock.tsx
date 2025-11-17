@@ -81,7 +81,7 @@ export default function RPGBlock() {
                     application process, please visit the{' '}
                     <a
                         className="text-secondary underline font-bold"
-                        href="https://prog-crs.hkust.edu.hk/pgprog/2023-24/mphil-phd-isd"
+                        href="https://prog-crs.hkust.edu.hk/pgprog/2026-27/mphil-phd-isd"
                     >
                         program details page
                     </a>

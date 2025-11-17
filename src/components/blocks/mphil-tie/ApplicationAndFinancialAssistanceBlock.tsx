@@ -9,7 +9,7 @@ export default function ApplicationAndFinancialAssistanceBlock() {
                 For details on admission requirements and the application
                 process, please visit the{' '}
                 <a
-                    href="https://prog-crs.hkust.edu.hk/pgprog/2025-26/mphil-tie"
+                    href="https://prog-crs.hkust.edu.hk/pgprog/2026-27/mphil-tie"
                     className="font-bold text-isd-secondary underline"
                 >
                     Program Catalog

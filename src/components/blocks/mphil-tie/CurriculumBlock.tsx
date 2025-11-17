@@ -97,7 +97,7 @@ export default function CurriculumBlock() {
                     For details about the curriculum and specific course
                     offerings, please visit the&nbsp;
                     <a
-                        href="https://prog-crs.hkust.edu.hk/pgprog/2025-26/mphil-tie"
+                        href="https://prog-crs.hkust.edu.hk/pgprog/2026-27/mphil-tie"
                         className="font-bold text-isd-secondary underline"
                     >
                         Program Catalog.
