@@ -144,12 +144,23 @@
         "type": "events"
     },
     {
+        "date": "2025-11-13",
+        "details": "# Abstract \n\n This seminar will detail a systematic \"plant-to-bottle\" pipeline for developing and commercializing patented bioactives that target the fundamental hallmarks of aging in skin. The process starts with preparations of novel bioactives, progresses through large-scale screening and action mechanism studies, and culminates in multi-level validation using artificial skin model, leading to optimized delivery systems and successful clinical trials. The presentation will showcase two key examples of this translational success: an patented autophagy inducer developed to clear cellular damage and an extract from the Kinkeliba plant (Combretum micranthum) from west africa that provides significant anti-inflammaging benefits. Successfully translating this complex longevity science faces significant challenges, including establishing robust scale-up optimization technologies, navigating complex cosmetic regulatory frameworks while making science-backed claims, and clearly communicating complex biological concepts like autophagy and inflammaging to the consumer. This work illustrates the integration of biotechnology and life science to deliver validated skin longevity solutions with significant scientific, consumer, and societal impact, despite these commercial and technical hurdles. \n \n # Biography \n \n Dr. Shuting Hu is a scientist-entrepreneur bridging advanced academic discovery and real-world impact in skin longevity. She earned her Ph.D. in Biological Sciences from The University of Hong Kong, with research spanning autophagy, chronic inflammation, and DNA repair mechanism. She is the author of 10+ peer-reviewed publications and inventor on 9 patents (4 granted), developing novel bioactives including autophagy inducers and compounds for pigmentation disorder treatment, anti-inflammaging, and DNA photoprotection. \n \n As founder & CEO of Acaderma, a biotech skincare brand dedicated to skin longevity, Dr. Hu translates advanced longevity science into patented, ethically sourced skincare. Her research-led approach delivers products that target key hallmarks of ageing with proven efficacy. Her innovation has been recognized with Vogue Business's Beauty Game Changer Award (2025), the Longevity 100 Award, the IFSCC Young Cosmetic Scientist Award (2014), and selection as a Global Finalist in L'Oréal Innovation Runway (2017). She was also the first Asian entrepreneur in Sephora's Accelerate (2018). \n  \n Committed to social impact, she advances ethical sourcing and community empowerment through partnerships with African NGO ASNAPP, helping educate and equip women farmers with sustainable-farming skills and income opportunities. Dr. Hu’s work exemplifies rigorous science scaled through technology transfer, manufacturing optimization, and responsible commercialization—reshaping how we age through the lens of longevity",
+        "evt_date": "2025-11-13",
+        "evt_location": "Lecture Theater F (Lift 25/26), HKUST",
+        "evt_time": "11:00 AM ",
+        "id": 13,
+        "pictures": ["/src/assets/news/evt.2025.11.13.png"],
+        "title": "[ISD Seminar] Transforming Longevity Science to Skincare and Social Impact",
+        "type": "events"
+    },
+    {
         "date": "2025-11-06",
         "details": "Congratulations to our UG students for winning the Gold Prize at the 2025 Inter-university GenAI Hackathon for the SDGs under Track 4: Artistic and Cultural Innovation! \n \n A team of Year 3 students Shiqi FENG (Fiona), Yan LU (Lucy), Chun Ka WONG (Jeremy), and Yui Tung YUEN (Chloe) received this acclaim with their project “Legendary Horizons,” which offers an interactive solution for museums to provide visitors with personalized and engaging enrichment content instead of a one-size-fits-all experience. ",
         "evt_date": null,
         "evt_location": null,
         "evt_time": null,
-        "id": 13,
+        "id": 14,
         "pictures": ["/src/assets/news/news.2025.11.06.png"],
         "title": "ISD UG Students Won Gold Prize at 2025 Inter-university GenAI Hackathon for the SDGs",
         "type": "news"
