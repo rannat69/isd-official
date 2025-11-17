@@ -142,5 +142,16 @@
         "pictures": ["/src/assets/news/evt.2025.09.18.png"],
         "title": "[ISD Seminar] From Fragmented Conversations to Structured Signals: Multilingual Language AI for Sales Compliance, Business Insights, and Contact Center Analytics",
         "type": "events"
+    },
+    {
+        "date": "2025-11-06",
+        "details": "Congratulations to our UG students for winning the Gold Prize at the 2025 Inter-university GenAI Hackathon for the SDGs under Track 4: Artistic and Cultural Innovation! \n \n A team of Year 3 students Shiqi FENG (Fiona), Yan LU (Lucy), Chun Ka WONG (Jeremy), and Yui Tung YUEN (Chloe) received this acclaim with their project “Legendary Horizons,” which offers an interactive solution for museums to provide visitors with personalized and engaging enrichment content instead of a one-size-fits-all experience. ",
+        "evt_date": null,
+        "evt_location": null,
+        "evt_time": null,
+        "id": 13,
+        "pictures": ["/src/assets/news/news.2025.11.06.png"],
+        "title": "ISD UG Students Won Gold Prize at 2025 Inter-university GenAI Hackathon for the SDGs",
+        "type": "news"
     }
 ]
