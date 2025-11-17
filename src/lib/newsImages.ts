@@ -33,6 +33,8 @@ import event_2025_11_13 from '@/assets/news/evt.2025.11.13.png';
 
 import news_2025_11_06 from '@/assets/news/news.2025.11.06.png';
 
+import event_2025_11_20 from '@/assets/news/evt.2025.11.20.png';
+
 // Map by filename for easy lookup regardless of provided path prefix
 const imageByFileName: Record<string, StaticImageData> = {
     'ach.2024.03.08.jpg': ach_2024_03_08,
@@ -67,6 +69,7 @@ const imageByFileName: Record<string, StaticImageData> = {
 
     'news.2025.11.06.png': news_2025_11_06,
     'evt.2025.11.13.png': event_2025_11_13,
+    'evt.2025.11.20.png': event_2025_11_20,
 };
 
 export function resolveNewsImage(path?: string | null): StaticImageData {
