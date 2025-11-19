@@ -7,6 +7,7 @@ export default function HeroImage({ image }: { image: StaticImageData }) {
                 src={image}
                 alt={`Hero Banner Image`}
                 className="object-cover w-full h-full object-[25%_80%]"
+                loading='eager'
             />
         </div>
     );
