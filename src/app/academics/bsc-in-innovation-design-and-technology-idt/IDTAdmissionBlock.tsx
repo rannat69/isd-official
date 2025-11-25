@@ -47,7 +47,7 @@ export default function IDTAdmissionBlock() {
                                     extracurricular activities and upload the
                                     DTP to{' '}
                                     <a
-                                        href="https://ust.az1.qualtrics.com/jfe/form/SV_bHDsDNSi1bbbxzM"
+                                        href="https://ust.az1.qualtrics.com/jfe/form/SV_emTI9Oi6WBIDsvc"
                                         className="underline text-secondary font-bold"
                                     >
                                         the online DTP submission system
