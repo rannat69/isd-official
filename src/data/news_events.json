@@ -186,5 +186,16 @@
         "pictures": ["/src/assets/news/evt.2025.11.27.png"],
         "title": "Everywhere, Anywhere, All at Once for Today's Tech Entrepreneurs",
         "type": "events"
+    },
+    {
+        "date": "2025-12-08",
+        "details": "Congratulations  to our UG students on winning at the Cathay Hackathon 2025 \n \n Y4 Kei Ching CHAN (Evan), Saanvi Ravi KATYAYAN, Y3 Chuen Wai CHAN (Candbot) and Y2 Yash Mangesh RELEKAR alongside Harsh Chirag SHAH, teamed up and won 1st Runner Up and the Best Presentation Award with their project, Niki Jr, an AI-driven robot mascot designed to transform the airport waiting experience for families and first-time flyers into a positive and memorable one. \n \n  Inspired by \"Niki\", one of Cathay&apos;s first Douglas DC-3 aircraft, Niki Jr is a polaroid-taking robot that passengers can book through the Cathay Pacific app, capturing instant physical photos while engaging interactively with passengers. By blending robotics, AI, and human-machine interaction, it creates enjoyable moments during wait times while strengthening the Cathay brand by connecting the airline’s heritage with modern travel experiences.",
+        "evt_date": null,
+        "evt_location": null,
+        "evt_time": null,
+        "id": 17,
+        "pictures": ["/src/assets/news/news.2025.12.08.png"],
+        "title": "Cathay Hackaton 2025",
+        "type": "news"
     }
 ]
