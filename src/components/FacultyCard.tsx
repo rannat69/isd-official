@@ -12,6 +12,7 @@ interface FacultyCardProps {
     role: string;
     keywords?: string[];
     photo: StaticImageData | string;
+    photoAlt?: string;
     email?: string;
     phone?: string;
     location?: string;
@@ -29,6 +30,7 @@ export default function FacultyCard({
     role,
     keywords = [],
     photo,
+    photoAlt,
     email,
     phone,
     location,
@@ -40,6 +42,8 @@ export default function FacultyCard({
 }: FacultyCardProps) {
     const [detailsOpen, setDetailsOpen] = useState(false);
     const router = useRouter();
+
+    console.log('photoAlt', photoAlt);
 
     function handleClose() {
         setDetailsOpen(false);
@@ -104,14 +108,21 @@ export default function FacultyCard({
                 className="flex lg:gap-component-gap-sm gap-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200 p-2 -m-2 rounded-lg"
                 onClick={() => setDetailsOpen(true)}
             >
+                {' '}
                 <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden lg:border-l-3 border-isd-primary">
-                    <Image
-                        src={photo}
-                        alt={`${name}'s photo`}
-                        fill
-                        className="object-cover"
-                        sizes="221px"
-                    />
+                    {!photo.src.includes('noneImg') && (
+                        <Image
+                            src={photo}
+                            alt={`${name}'s photo`}
+                            fill
+                            className="object-cover"
+                            sizes="221px"
+                        />
+                    )}
+
+                    {photo.src.includes('noneImg') && (
+                        <img src={photoAlt}></img>
+                    )}
                 </div>
                 <div className="flex flex-col lg:justify-between justify-start flex-1 text-left lg:gap-0 gap-[8px]">
                     <div className="flex flex-col lg:gap-footer-gap gap-[12px]">
