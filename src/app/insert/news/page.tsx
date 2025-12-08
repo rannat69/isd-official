@@ -2,38 +2,20 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Test() {
-    const [articles, setArticles] = useState<any[]>([]);
-    const [name, setName] = useState('');
-    const [surname, setSurname] = useState('');
-    const [role, setRole] = useState('');
-    const [email, setEmail] = useState('');
-    const [link, setLink] = useState('');
-
-    const [phone, setPhone] = useState('');
-    const [location, setLocation] = useState('');
-    const [keywords, setKeywords] = useState<string[]>([]);
-    const [currentKeyword, setCurrentKeyword] = useState('');
-
-    const [photo, setPhoto] = useState<File>();
-    const [photoFilename, setPhotoFilename] = useState('');
-
-    const [tag, setTag] = useState('');
-
-    const [type, setType] = useState('');
-
+export default function InsertNews() {
+    const [title, setTitle] = useState('');
+    const [date, setDate] = useState('');
     const [details, setDetails] = useState('');
+    const [evtTime, setEvtTime] = useState('');
+    const [evtDate, setEvtDate] = useState('');
+    const [evtLocation, setEvtLocation] = useState('');
 
+    const [photos, setPhotos] = useState<File[]>();
+    const [photoFilenames, setPhotoFilenames] = useState<string[]>([]);
+    const [type, setType] = useState('');
     useEffect(() => {
         // Fetch articles as needed
     }, []);
-
-    const handleAddKeyword = () => {
-        if (currentKeyword) {
-            setKeywords([...keywords, currentKeyword]);
-            setCurrentKeyword('');
-        }
-    };
 
     const handlePictureChange = (
         event: React.ChangeEvent<HTMLInputElement>
@@ -41,8 +23,17 @@ export default function Test() {
         const files = event.target.files;
         if (files) {
             console.log('files', files[0]);
-            setPhoto(files[0]);
-            setPhotoFilename(files[0].name);
+            setPhotos(files);
+
+            const photoFilenamesTemp = [];
+
+            for (const file of files) {
+                console.log('file', file.name);
+
+                photoFilenamesTemp.push(file.name);
+            }
+
+            setPhotoFilenames(photoFilenamesTemp);
         }
     };
 
@@ -50,47 +41,40 @@ export default function Test() {
         //
 
         console.log('handle upload pre');
-        if (!photo) {
+        if (!photos) {
             alert('Please select a picture first.');
             return;
         }
 
-        const formData = new FormData();
-        formData.append('photo', photo);
+        console.log('handle upload', photos);
 
-        formData.append('type', 'news');
+        for (const photo of photos) {
+            const formData = new FormData();
+            formData.append('photo', photo);
 
-        const responseUpload = await fetch('/api/people/uploadPicture', {
-            method: 'POST',
-            body: formData,
-        });
+            formData.append('type', 'news');
 
-        console.log('handleUpload response', responseUpload);
+            const responseUpload = await fetch('/api/people/uploadPicture', {
+                method: 'POST',
+                body: formData,
+            });
 
-        if (responseUpload.ok) {
-            console.log('File uploaded successfully!');
-            setPhoto(null); // Clear selected file
-        } else {
-            alert('Error uploading file.');
+            console.log('handleUpload response', responseUpload);
+
+            if (responseUpload.ok) {
+                console.log('File uploaded successfully!');
+            } else {
+                alert('Error uploading file.');
+            }
         }
 
         const newFaculty = {
-            name,
-            surname,
-            role,
-            email,
-            phone,
-            link,
-            location,
-            keywords,
-            // Note: To send pictures, you usually use FormData
-            photoFilename, // This requires special handling below
-            area,
-            tag,
+            title,
             details,
+            photoFilenames, // This requires special handling below
         };
 
-        let response = await fetch('/api/people/createFaculty', {
+        let response = await fetch('/api/people/createNews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -101,18 +85,14 @@ export default function Test() {
         if (response.ok) {
             console.log('Faculty created');
             // Optionally, reset fields
-            setName('');
-            setSurname('');
-            setRole('');
-            setEmail('');
-            setPhone('');
-            setLocation('');
-            setKeywords([]);
-            setPhotoFilename('');
-            setTag('');
-            setArea('');
+            setTitle('');
             setDetails('');
-            setLink('');
+            setPhotoFilename('');
+            setPhotos([]);
+            setDate('');
+            setEvtDate('');
+            setEvtTime('');
+            setEvtLocation('');
         } else {
             console.error('Failed to create faculty');
         }
@@ -120,74 +100,18 @@ export default function Test() {
 
     return (
         <div className="min-h-screen flex flex-col items-center gap-2">
-            {articles.map((article) => (
-                <div key={article.id}>
-                    {article.email}
-                    <br />
-                </div>
-            ))}
-            Full Name
+            <p>Date</p>
+            <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+            ></input>
+            Title
             <input
                 className="border-1"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
             />
-            Surname
-            <input
-                className="border-1"
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
-            />
-            Role
-            <input
-                className="border-1"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-            />
-            Email
-            <input
-                className="border-1"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />{' '}
-            Link
-            <input
-                className="border-1"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-            />
-            Phone
-            <input
-                className="border-1"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-            />
-            Location
-            <input
-                className="border-1"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-            />
-            Keywords
-            <input
-                className="border-1"
-                value={currentKeyword}
-                onChange={(e) => setCurrentKeyword(e.target.value)}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        handleAddKeyword();
-                        e.preventDefault();
-                    }
-                }}
-            />
-            <button onClick={handleAddKeyword}>Add Keyword</button>
-            <div>
-                {keywords.map((k, index) => (
-                    <span key={index} className="m-1">
-                        {k}
-                    </span>
-                ))}
-            </div>
             Details
             <textarea
                 id="longText"
@@ -203,7 +127,8 @@ export default function Test() {
             <input
                 className="border-1"
                 type="file"
-                onChange={handlePictureChange} multiple
+                onChange={handlePictureChange}
+                multiple
             ></input>
             <div>
                 <p>Type</p>
@@ -228,6 +153,30 @@ export default function Test() {
                     Events
                 </label>
             </div>
+            {type === 'events' && (
+                <>
+                    <p>Event Date</p>
+                    <input
+                        type="date"
+                        value={evtDate}
+                        onChange={(e) => setEvtDate(e.target.value)}
+                    ></input>
+
+                    <p>Event Time</p>
+                    <input
+                        className="border-1"
+                        value={evtTime}
+                        onChange={(e) => setEvtTime(e.target.value)}
+                    />
+
+                    <p>Event Location</p>
+                    <input
+                        className="border-1"
+                        value={evtLocation}
+                        onChange={(e) => setEvtLocation(e.target.value)}
+                    />
+                </>
+            )}
             <button
                 className="border-1 rounded-xl p-2 hover:bg-gray-200"
                 onClick={handleCreate}
