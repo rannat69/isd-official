@@ -68,10 +68,30 @@ export default function InsertNews() {
             }
         }
 
+        // convert evtDate to yyyy-mm-dd
+        let evtDateFormatted = '';
+        if (evtDate === '') {
+            setEvtDate(date);
+        } else {
+            const evtDateTemp = new Date(evtDate);
+
+            evtDateFormatted = evtDateTemp.toISOString().split('T')[0];
+        }
+        // convert date to yyyy-mm-dd
+
+        const dateTemp = new Date(date);
+
+        const dateFormatted = dateTemp.toISOString().split('T')[0];
+
         const newFaculty = {
             title,
             details,
-            photoFilenames, // This requires special handling below
+            photoFilenames,
+            dateFormatted,
+            evtDateFormatted,
+            evtTime,
+            evtLocation,
+            type,
         };
 
         let response = await fetch('/api/people/createNews', {
@@ -87,7 +107,7 @@ export default function InsertNews() {
             // Optionally, reset fields
             setTitle('');
             setDetails('');
-            setPhotoFilename('');
+            setPhotoFilenames([]);
             setPhotos([]);
             setDate('');
             setEvtDate('');

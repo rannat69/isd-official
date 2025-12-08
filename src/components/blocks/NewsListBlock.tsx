@@ -17,6 +17,40 @@ import Select, { type Option } from '@/components/Select';
 import { ChevronsDown } from 'lucide-react';
 
 export default function NewsListBlock() {
+    useEffect(() => {
+        const fetchFaculty = async () => {
+            let data = await fetch('api/people/allFaculty', {
+                method: 'POST', // Specify the HTTP method as POST
+                headers: {
+                    'Content-Type': 'application/json', // Indicate the content type of the body
+                },
+                body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
+            });
+
+            const faculty = await data.json();
+
+            console.log('faculty', faculty);
+
+            if (data.ok) {
+                const facultyListTemp =
+                    role === 'staff'
+                        ? []
+                        : filterAndSortPeople(faculty as Person[], {
+                              keyword,
+                              area,
+                              context: 'faculty',
+                              tag,
+                          });
+
+                console.log('facultyListTemp', facultyListTemp);
+
+                setNList(facultyListTemp);
+            }
+        };
+
+        fetchFaculty();
+    }, []);
+
     const allItems = data as NewsEntry[];
     const searchParams = useSearchParams();
     const router = useRouter();

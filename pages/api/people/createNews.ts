@@ -16,7 +16,6 @@ export default async function handler(
         return;
     }
 
-
     try {
         // Read articles.json
         const data = fs.readFileSync(dataPath, 'utf8');
@@ -31,26 +30,20 @@ export default async function handler(
 
         console.log('req body', req.body);
 
+        const photoTemp = [];
+
+        for (const filename of req.body.photoFilenames) {
+            photoTemp.push('/pictures/news/' + filename);
+        }
+
         const newFaculty = {
             id: maxId + 1,
-            name: req.body.name,
-            surname: req.body.surname,
-            role: req.body.role,
-
-            phone: req.body.phone,
-            location: req.body.location,
-
+            date: req.body.dateFormatted,
+            evtDate: req.body.evtDateFormatted,
+            title: req.body.title,
             details: req.body.details,
-            email: req.body.email,
-
-            keywords: req.body.keywords,
-            link: req.body.link,
-
-            photo: '/pictures/people/' + req.body.photoFilename,
-
-            type: 'ISD Faculty',
-            area: req.body.area,
-            tags: req.body.tag,
+            photos: photoTemp,
+            type: req.body.type,
         };
         faculty.push(newFaculty);
 
