@@ -146,30 +146,7 @@
             "regular"
         ]
     },
-    {
-        "details": "I serve as a Research Assistant Professor at The Hong Kong University of Science and Technology, specializing in renewable energy technologies. Prior to this, I enriched my expertise as a Postdoctoral Fellow at the Hong Kong Polytechnic University's Department of Building Environment and Energy Engineering from May 2022 to November 2023. My academic journey began with a PhD from Shanghai Jiao Tong University (SJTU), completed in March 2022, where my research contributions earned me the title of an outstanding international student and a nomination for the prestigious \"Youth Footprint\" award. My commitment to advancing the field of renewable energy is evidenced by my portfolio, which includes a patent and over 20 papers published in high-impact SCI-indexed journals. In recognition of my contributions, I've been awarded an EB2 National Interest Waiver (NIW) for the United States and a Global Talent Visa for Australia in 2023, both acknowledging my potential to drive significant benefit to these countries' national interests. Beyond my research, I actively contribute to the scientific community by reviewing scholarly works for esteemed journals boasting impact factors above nine. I am thrilled to continue my pursuit of sustainable energy solutions here at HKUST and contribute to our shared vision of a greener future.",
-        "email": "arash@ust.hk",
-        "id": 301,
-        "keywords": [
-            "Renewable Energy Systems",
-            "Solar Technologies",
-            "Optimization",
-            "Predictive Analytics",
-            "Energy Analysis",
-            "Nanotechnology Applications"
-        ],
-        "link": null,
-        "location": "IAS1004",
-        "name": "Arash KAZEMIAN",
-        "phone": null,
-        "photo": "/src/assets/people/arash.jpg",
-        "role": "Research Assistant Professor",
-        "surname": "KAZEMIAN",
-        "type": "ISD Faculty",
-        "tags": [
-            "research_track"
-        ]
-    },
+ 
     {
         "details": "Prof. Wenqi Hu holds a Bachelor's degree in Microelectronics and a Ph.D. in Electrical Engineering, focusing on optically-controlled microrobots. After completing his Ph.D., Prof. Hu joined the Max Planck Institute for Intelligent Systems (MPI-IS) as a Humboldt research fellow and progressed to a senior scientist role in 2019, later becoming the head of the bioinspired autonomous miniature robots group in 2022. His research has contributed to the fields of soft magnetic materials and the control of miniature soft robots, with his work published in respected journals such as Nature and Science Robotics. Dr. Hu's research has garnered over 5,000 citations and received accolades like the ICRA 2012 Best Conference Paper Award Finalist, RSS 2019 Best Paper Award, and the Günter Petzow Prize from the Max Planck Society. Beyond his research, he also serves as an Associate Editor for the Journal of Micro-Bio Robotics and participates in various committees for conferences such as Living Machine and MARSS.",
         "email": "wenqi@ust.hk",
