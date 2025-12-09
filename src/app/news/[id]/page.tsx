@@ -1,27 +1,59 @@
 import { ArrowLeft, Calendar, Clock, MapPin } from 'lucide-react';
 import Link from 'next/link';
-import data from '@/data/news_events.json';
 import { resolveImages } from '@/lib/newsImages';
 import { type NewsEntry } from '@/lib/newsFilter';
 import Carousel from '@/components/Carousel';
 import Image from 'next/image';
 
-export function generateStaticParams() {
+/*export function generateStaticParams() {
     const items = data as NewsEntry[];
     return items.map((it) => ({ id: String(it.id) }));
-}
+}*/
 
 export default async function NewsDetailPage({
     params,
 }: {
     params: Promise<{ id: string }>;
 }) {
+    let item;
+
+    let data = await fetch('http://localhost:3000/api/news/allNews', {
+        method: 'POST', // Specify the HTTP method as POST
+        headers: {
+            'Content-Type': 'application/json', // Indicate the content type of the body
+        },
+        body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
+    });
+
+    console.log('data', data);
+
     const resolvedParams = await params;
 
-    const items = data as NewsEntry[];
-    const item = items.find((it) => String(it.id) === resolvedParams.id);
-    if (!item) return null;
-    const images = resolveImages(item.pictures);
+    let news = await data.json();
+
+    // Sort by date desc
+    news.sort((a: NewsEntry, b: NewsEntry) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+
+    const itemTemp = news.find((it) => String(it.id) === resolvedParams.id);
+
+    if (data.ok) {
+        item = itemTemp;
+    }
+
+    console.log('item', item);
+
+    //const [item, setItem] = useState<NewsEntry>();
+
+    // if (!item) return null;
+    let images = resolveImages(item.pictures);
+    console.log('images', images);
+
+    //remove from images pictures that contain noneImg
+    images = images.filter((image) => {
+        return !image.src.includes('noneImg');
+    });
 
     return (
         <div className="container pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">
@@ -39,20 +71,38 @@ export default async function NewsDetailPage({
                 >
                     <h1 className="text-h1">{item.title}</h1>
                     <div className="w-full relative">
-                        {images.length > 1 ? (
+                        {images.length > 0 && (
                             <div className="lg:h-[480px] h-[260px]">
-                                <Carousel images={images} />
+                                {images.length > 1 ? (
+                                    <Carousel images={images} />
+                                ) : (
+                                    <Image
+                                        src={images[0]}
+                                        alt={item.title}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                        }}
+                                    />
+                                )}
                             </div>
-                        ) : (
-                            <Image
-                                src={images[0]}
-                                alt={item.title}
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                }}
-                            />
                         )}
+
+                        {images.length === 0 &&
+                            (item.photos.length > 1 ? (
+                                <div className="lg:h-[480px] h-[260px]">
+                                    <Carousel images={item.photos} />
+                                </div>
+                            ) : (
+                                <img
+                                    src={item.photos[0]}
+                                    alt={item.title}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                />
+                            ))}
                     </div>
                     <div className="flex flex-col gap-[24px]">
                         {item.type === 'events' && (

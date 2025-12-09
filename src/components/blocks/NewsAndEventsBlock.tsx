@@ -1,9 +1,14 @@
+'use client';
+
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { NewsEntry } from '@/lib/newsFilter';
-import data from '@/data/news_events.json';
+
+import { useEffect, useState } from 'react';
 
 export default function NewsAndEventsBlock() {
+    const [newsList, setNewsList] = useState<NewsEntry[]>([]);
+
     // const news = [
     //     {
     //         title: 'Nine ISD Faculty Members Top 2% Most-Cited Scientists 2025',
@@ -36,7 +41,33 @@ export default function NewsAndEventsBlock() {
         if (first === 'isd-official') clientBasePath = '/isd-official';
     }
 
-    const news = (data as NewsEntry[]).slice(0, 3);
+    useEffect(() => {
+        const fetchNews = async () => {
+            let data = await fetch('api/news/allNews', {
+                method: 'POST', // Specify the HTTP method as POST
+                headers: {
+                    'Content-Type': 'application/json', // Indicate the content type of the body
+                },
+                body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
+            });
+
+            let news = await data.json();
+
+            // Sort by date desc
+            news.sort((a: NewsEntry, b: NewsEntry) => {
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
+            });
+
+            news = news.slice(0, 3);
+            console.log('news', news);
+
+            if (data.ok) {
+                setNewsList(news);
+            }
+        };
+
+        fetchNews();
+    }, []);
 
     return (
         <div className="container overflow-clip flex flex-col py-section-gap gap-section-title-gap dot-pattern before:top-[-95px] before:right-0 [--dot-color:var(--isd-secondary-1)]">
@@ -54,7 +85,7 @@ export default function NewsAndEventsBlock() {
                 </Link>
 
                 <div className="flex lg:flex-row flex-col lg:gap-component-gap-sm gap-component-gap">
-                    {news.map((news, i) => (
+                    {newsList.map((news, i) => (
                         <a
                             href={`${clientBasePath}/news/${news.id}`}
                             className={

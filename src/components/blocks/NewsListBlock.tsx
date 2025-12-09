@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import data from '@/data/news_events.json';
 import {
     filterNews,
     sortNews,
@@ -17,9 +16,11 @@ import Select, { type Option } from '@/components/Select';
 import { ChevronsDown } from 'lucide-react';
 
 export default function NewsListBlock() {
+    const [newsList, setNewsList] = useState<NewsEntry[]>([]);
+
     useEffect(() => {
-        const fetchFaculty = async () => {
-            let data = await fetch('api/people/allFaculty', {
+        const fetchNews = async () => {
+            let data = await fetch('api/news/allNews', {
                 method: 'POST', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body
@@ -27,31 +28,24 @@ export default function NewsListBlock() {
                 body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
             });
 
-            const faculty = await data.json();
+            let news = await data.json();
 
-            console.log('faculty', faculty);
+            // Sort by date desc
+            news.sort((a: NewsEntry, b: NewsEntry) => {
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
+            });
+
+         
+            console.log('news', news);
 
             if (data.ok) {
-                const facultyListTemp =
-                    role === 'staff'
-                        ? []
-                        : filterAndSortPeople(faculty as Person[], {
-                              keyword,
-                              area,
-                              context: 'faculty',
-                              tag,
-                          });
-
-                console.log('facultyListTemp', facultyListTemp);
-
-                setNList(facultyListTemp);
+                setNewsList(news);
             }
         };
 
-        fetchFaculty();
+        fetchNews();
     }, []);
 
-    const allItems = data as NewsEntry[];
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -87,15 +81,15 @@ export default function NewsListBlock() {
     ];
 
     const yearOptions: Option[] = useMemo(() => {
-        const ys = getYears(allItems);
+        const ys = getYears(newsList);
         return [
             { value: 'all', label: 'Year' },
             ...ys.map((y) => ({ value: y, label: String(y) })),
         ];
-    }, [allItems]);
+    }, [newsList]);
 
     const items = sortNews(
-        filterNews(allItems, {
+        filterNews(newsList, {
             category,
             year,
         })

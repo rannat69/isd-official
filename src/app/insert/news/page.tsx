@@ -54,7 +54,7 @@ export default function InsertNews() {
 
             formData.append('type', 'news');
 
-            const responseUpload = await fetch('/api/people/uploadPicture', {
+            const responseUpload = await fetch('/api/uploadPicture', {
                 method: 'POST',
                 body: formData,
             });
@@ -94,7 +94,7 @@ export default function InsertNews() {
             type,
         };
 
-        let response = await fetch('/api/people/createNews', {
+        let response = await fetch('/api/news/createNews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
