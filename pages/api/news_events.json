@@ -195,5 +195,17 @@
         "details": "XXX",
         "photos": ["/pictures/news/Screenshot 2025-12-08 120616.png"],
         "type": "news"
+    },
+    {
+        "id": 19,
+        "date": "2026-01-09",
+        "evtDate": "2025-12-31",
+        "title": "rrr",
+        "details": "rrrrrr",
+        "photos": [
+            "/pictures/news/Screenshot 2025-12-09 140614.png",
+            "/pictures/news/Screenshot 2025-12-08 120616.png"
+        ],
+        "type": "events"
     }
 ]

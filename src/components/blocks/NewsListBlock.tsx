@@ -35,7 +35,6 @@ export default function NewsListBlock() {
                 return new Date(b.date).getTime() - new Date(a.date).getTime();
             });
 
-         
             console.log('news', news);
 
             if (data.ok) {
@@ -167,7 +166,11 @@ export default function NewsListBlock() {
                         // automatically in the browser.
                         const href = `${clientBasePath}/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
+                        const imgAlt = item.photos ? item.photos[0] : ' ';
                         const formattedDate = formatDate(item.date);
+
+                        console.log('img alt', imgAlt);
+
                         if (item.type === 'events') {
                             return (
                                 <EventCard
@@ -178,6 +181,7 @@ export default function NewsListBlock() {
                                     time={item.evt_time ?? null}
                                     location={item.evt_location ?? null}
                                     image={img}
+                                    imageAlt={imgAlt}
                                 />
                             );
                         }
@@ -194,6 +198,7 @@ export default function NewsListBlock() {
                                 excerpt={stripTags(item.details)}
                                 date={formattedDate}
                                 image={img}
+                                imageAlt={imgAlt}
                             />
                         );
                     })}

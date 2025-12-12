@@ -9,6 +9,7 @@ export default function EventCard({
     time,
     location,
     image,
+    imageAlt,
 }: {
     href: string;
     title: string;
@@ -16,6 +17,7 @@ export default function EventCard({
     time?: string | null;
     location?: string | null;
     image: StaticImageData;
+    imageAlt: string;
 }) {
     return (
         <>
@@ -24,15 +26,28 @@ export default function EventCard({
                 className="hidden lg:flex gap-component-gap h-[360px] items-center"
             >
                 <div className="w-[396px] h-[240px] bg-isd-font-2/10">
-                    <Image
-                        src={image}
-                        alt={title}
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                        }}
-                    />
+                    {!image.src.includes('noneImg') && (
+                        <Image
+                            src={image}
+                            alt={title}
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    )}
+
+                    {image.src.includes('noneImg') && (
+                        <img
+                            src={imageAlt}
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    )}
                 </div>
                 <div className="flex-1 flex flex-col gap-[12px]">
                     <p className="text-h2 text-secondary">Event</p>

@@ -25,8 +25,6 @@ export default async function NewsDetailPage({
         body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
     });
 
-    console.log('data', data);
-
     const resolvedParams = await params;
 
     let news = await data.json();
@@ -74,7 +72,7 @@ export default async function NewsDetailPage({
                         {images.length > 0 && (
                             <div className="lg:h-[480px] h-[260px]">
                                 {images.length > 1 ? (
-                                    <Carousel images={images} />
+                                    <Carousel images={images} imagesAlt={[]} />
                                 ) : (
                                     <Image
                                         src={images[0]}
@@ -91,7 +89,10 @@ export default async function NewsDetailPage({
                         {images.length === 0 &&
                             (item.photos.length > 1 ? (
                                 <div className="lg:h-[480px] h-[260px]">
-                                    <Carousel images={item.photos} />
+                                    <Carousel
+                                        images={[]}
+                                        imagesAlt={item.photos}
+                                    />
                                 </div>
                             ) : (
                                 <img

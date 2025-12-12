@@ -13,9 +13,7 @@ export default function InsertNews() {
     const [photos, setPhotos] = useState<File[]>();
     const [photoFilenames, setPhotoFilenames] = useState<string[]>([]);
     const [type, setType] = useState('');
-    useEffect(() => {
-        // Fetch articles as needed
-    }, []);
+    useEffect(() => {}, []);
 
     const handlePictureChange = (
         event: React.ChangeEvent<HTMLInputElement>

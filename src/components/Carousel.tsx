@@ -6,9 +6,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselProps {
     images: StaticImageData[];
+    imagesAlt: string[];
 }
 
-export default function Carousel({ images }: CarouselProps) {
+export default function Carousel({ images, imagesAlt }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -40,6 +41,17 @@ export default function Carousel({ images }: CarouselProps) {
                     <Image
                         key={index}
                         src={image}
+                        alt={`Carousel Image ${index + 1}`}
+                        className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
+                            index === currentIndex ? 'opacity-100' : 'opacity-0'
+                        }`}
+                    />
+                ))}
+   
+                {imagesAlt.map((image, index) => (
+                    <img
+                        src={image}
+                        key={index}
                         alt={`Carousel Image ${index + 1}`}
                         className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
                             index === currentIndex ? 'opacity-100' : 'opacity-0'
