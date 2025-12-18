@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { login } from 'next-cas-client';
 
 export default function InsertNews() {
     const [title, setTitle] = useState('');
@@ -118,6 +119,7 @@ export default function InsertNews() {
 
     return (
         <div className="min-h-screen flex flex-col items-center gap-2">
+            <button onClick={() => login()}>Login</button>
             <p>Date</p>
             <input
                 type="date"
