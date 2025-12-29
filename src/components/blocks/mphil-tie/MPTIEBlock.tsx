@@ -104,7 +104,7 @@ export default function MPTIEBlock() {
                     </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (
-                            <a href={'#' + link.id}>
+                            <a href={'#' + link.id} key={link.id}>
                                 <span
                                     key={link.id}
                                     //onClick={() => setActiveContentId(link.id)}
