@@ -65,7 +65,7 @@ export default function AlumniSharingBlock() {
                                         className="text-isd-primary"
                                     />
                                     <div className="flex gap-[24px]  text-isd-primary">
-                                        <h2 className="text-h2">
+                                        <h2 className="text-lg font-bold">
                                             AIS LinkedIn
                                         </h2>
                                     </div>
@@ -76,7 +76,7 @@ export default function AlumniSharingBlock() {
                                     className="flex border-l-5 border-isd-primary px-element-gap py-element-gap bg-isd-primary-2"
                                 >
                                     <div className="  text-isd-primary">
-                                        <h2 className="text-h2">DAO Alumni</h2>
+                                        <h2 className="text-lg font-bold">DAO Alumni</h2>
                                     </div>
                                 </a>
                             </div>
