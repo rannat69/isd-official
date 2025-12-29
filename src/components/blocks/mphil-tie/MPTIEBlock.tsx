@@ -29,7 +29,19 @@ export default function MPTIEBlock() {
             content: (
                 <>
                     <SummaryBlock />
+
                     <EducationalObjectiveBlock />
+                    <div id="curriculum">
+                        <CurriculumBlock />
+                    </div>
+                    <div id="research">
+                        <ResearchAreasBlock />
+                    </div>
+                    <AcademicAndIndustrialPartnersBlock />
+                    <div id="app">
+                        <ApplicationAndFinancialAssistanceBlock />
+                    </div>
+                    <ProgramContactBlock />
                     {/*<LearningOutcomeBlock />*/}
                 </>
             ),
@@ -92,19 +104,18 @@ export default function MPTIEBlock() {
                     </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (
-                            <span
-                                key={link.id}
-                                onClick={() => setActiveContentId(link.id)}
-                                className={`text-h2 h-[60px] flex items-center box-border cursor-pointer ${
-                                    activeContentId === link.id
-                                        ? 'text-isd-secondary border-b-3 border-isd-secondary'
-                                        : 'text-isd-font-2'
-                                }`}
-                            >
-                                {link.title}
-                            </span>
+                            <a href={'#' + link.id}>
+                                <span
+                                    key={link.id}
+                                    //onClick={() => setActiveContentId(link.id)}
+                                    className={`text-h2 h-[60px] flex items-center box-border cursor-pointer text-isd-primary  `}
+                                >
+                                    {link.title}
+                                </span>
+                            </a>
                         ))}
                     </div>
+                    {/* 
                     <Select
                         triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
                         className="lg:hidden"
@@ -115,7 +126,7 @@ export default function MPTIEBlock() {
                         value={activeContentId}
                         onChange={(value) => handleMenuClick(value as string)}
                         itemClassName="px-[12px] py-[12px] text-xl text-isd-font-2"
-                    />
+                    />*/}
                 </div>
 
                 {content.map((section, index) => (
