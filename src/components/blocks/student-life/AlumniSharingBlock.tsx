@@ -1,4 +1,4 @@
-import StudentImage from '@/assets/studentlife/mashiat-lamisa.jpg';
+import StudentImage from '@/assets/studentlife/alumni/mashiat-lamisa.jpg';
 import LinkedinIconBlue from '@/assets/linkedin-icon-blue.svg';
 import Image from 'next/image';
 

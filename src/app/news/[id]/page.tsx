@@ -23,6 +23,8 @@ export default async function NewsDetailPage({
     if (!item) return null;
     const images = resolveImages(item.pictures);
 
+    console.log('images', images);
+
     return (
         <div className="container pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">
             <div className="flex flex-col gap-component-gap-sm">
@@ -39,6 +41,10 @@ export default async function NewsDetailPage({
                 >
                     <h1 className="text-h1">{item.title}</h1>
                     <div className="w-full relative">
+
+                            {JSON.stringify(images[0])}
+
+
                         {images.length > 1 ? (
                             <div className="lg:h-[480px] h-[260px]">
                                 <Carousel images={images} />
