@@ -153,6 +153,11 @@ export default function Navbar() {
                         pathnameKeyword: 'alumni',
                     },
                     {
+                        name: 'Student Projects',
+                        href: '/student-life?page=stud-proj',
+                        pathnameKeyword: 'stud-proj',
+                    },
+                    {
                         name: 'Useful Links',
                         href: '/student-life?page=links',
                         pathnameKeyword: 'links',
