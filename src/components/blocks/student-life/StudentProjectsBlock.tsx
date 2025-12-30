@@ -44,8 +44,6 @@ export const projImages: Record<string, Img> = {
 type Img = StaticImageData | string;
 
 export function resolveProjPhoto(photo?: string): Img {
-    
-
     if (!photo) return noneImg;
     // normalize: remove leading slashes and optional "src/" or "assets/" prefixes
     const cleaned = photo
@@ -64,6 +62,7 @@ interface StudentProject {
     description: string;
     members: string;
     youtube: string;
+    video: string;
     picture: string[];
 }
 
@@ -77,13 +76,13 @@ const studentComps: StudentProject[] = [
         members: 'Tweety KWAN',
         youtube: 'https://www.youtube.com/watch?v=NVaVRk-n3Ro',
         picture: ['/assets/studentlife/stud-proj/tweety-kwan.png'],
+        video: '',
     },
     {
         name: 'UnTaint',
         shortDescription:
             'UnTaint is a table cleaning robot conceived during the COVID-19 pandemic.',
-        description:
-            `UnTaint is a table cleaning robot conceived during the COVID-19 pandemic. Designed to work in restaurants and public areas, its autonomous cleaning and UV-C disinfection helps to reduce the restaurant staff's workload and improve public hygiene.`,
+        description: `UnTaint is a table cleaning robot conceived during the COVID-19 pandemic. Designed to work in restaurants and public areas, its autonomous cleaning and UV-C disinfection helps to reduce the restaurant staff's workload and improve public hygiene.`,
         members: 'Jasper WONG, Toby CHEUNG, Aidan YUAN',
         youtube: 'https://www.youtube.com/watch?v=efTgT3pP2c8',
         picture: [
@@ -96,6 +95,7 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/jasper-wong-07.jpg',
             '/assets/studentlife/stud-proj/jasper-wong-08.jpg',
         ],
+        video: '/stud-proj-video/Disinfection Robot(3).mp4',
     },
     {
         name: 'AUTOMÁNICA',
@@ -105,6 +105,7 @@ const studentComps: StudentProject[] = [
         members: 'Adam WEI, Max YAU',
         youtube: 'https://www.youtube.com/watch?v=e-3FP-k59Oc ',
         picture: ['/assets/studentlife/stud-proj/adam-wei-01.jpg'],
+        video: '',
     },
     {
         name: 'Year 2 Project Promo Video - Smart Shopping Cart: Lodge ',
@@ -123,6 +124,7 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/ruoyun-fang-05.jpg',
             '/assets/studentlife/stud-proj/ruoyun-fang-06.jpg',
         ],
+        video: '',
     },
 ];
 

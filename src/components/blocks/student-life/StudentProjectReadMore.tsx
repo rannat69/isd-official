@@ -13,6 +13,7 @@ interface StudentProject {
     members: string;
     youtube: string;
     picture: string[];
+    video: string;
 }
 
 interface StudentProjectReadMoreProps {
@@ -21,6 +22,7 @@ interface StudentProjectReadMoreProps {
     description: string;
     members: string;
     youtube: string;
+    video: string;
     setDetailsOpen: (value: StudentProject | null) => void;
     detailsOpen: boolean;
 }
@@ -30,6 +32,7 @@ export default function StudentProjectReadMore({
     name,
     description,
     youtube,
+    video,
     members,
     setDetailsOpen,
     detailsOpen,
@@ -94,6 +97,24 @@ export default function StudentProjectReadMore({
                                 <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
                                     <div>{description}</div>
                                 </div>
+
+                                {video && video != '' && (
+                                    <div className="flex justify-center">
+                                        {' '}
+                                        {/* Added a flex container to center the video */}
+                                        <video
+                                            width="320"
+                                            height="240"
+                                            controls
+                                            className="z-99"
+                                        >
+                                            <source
+                                                src={video}
+                                                type="video/mp4"
+                                            />
+                                        </video>
+                                    </div>
+                                )}
 
                                 <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
                                     <div>
