@@ -78,6 +78,7 @@ interface StudentProject {
     youtube: string;
     video: string;
     picture: string[];
+    course: string;
 }
 
 const studentComps: StudentProject[] = [
@@ -91,6 +92,7 @@ const studentComps: StudentProject[] = [
         youtube: 'https://www.youtube.com/watch?v=NVaVRk-n3Ro',
         picture: ['/assets/studentlife/stud-proj/tweety-kwan.png'],
         video: '',
+        course: 'ISDN2400',
     },
     {
         name: 'UnTaint',
@@ -110,6 +112,7 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/jasper-wong-08.jpg',
         ],
         video: '/stud-proj-video/Disinfection Robot(3).mp4',
+        course: 'ISDN2400',
     },
     {
         name: 'AUTOMÁNICA',
@@ -120,6 +123,7 @@ const studentComps: StudentProject[] = [
         youtube: 'https://www.youtube.com/watch?v=e-3FP-k59Oc ',
         picture: ['/assets/studentlife/stud-proj/adam-wei-01.jpg'],
         video: '',
+        course: 'ISDN4000U',
     },
     {
         name: 'Year 2 Project Promo Video - Smart Shopping Cart: Lodge ',
@@ -139,6 +143,7 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/ruoyun-fang-06.jpg',
         ],
         video: '',
+        course: 'ISDN4000U',
     },
     {
         name: 'Stridecool',

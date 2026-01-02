@@ -14,6 +14,7 @@ interface StudentProject {
     youtube: string;
     picture: string[];
     video: string;
+    course: string;
 }
 
 interface StudentProjectReadMoreProps {
@@ -23,6 +24,7 @@ interface StudentProjectReadMoreProps {
     members: string;
     youtube: string;
     video: string;
+    course: string;
     setDetailsOpen: (value: StudentProject | null) => void;
     detailsOpen: boolean;
 }
@@ -34,6 +36,7 @@ export default function StudentProjectReadMore({
     youtube,
     video,
     members,
+    course,
     setDetailsOpen,
     detailsOpen,
 }: StudentProjectReadMoreProps) {
@@ -44,12 +47,8 @@ export default function StudentProjectReadMore({
             pictureTemp
         ) as StaticImageData;
 
-        console.log('pictureTemp', pictureTemp);
-
         resolvedPictures.push(resolvedPicture);
     }
-
-    console.log('resolvedPictures', resolvedPictures);
 
     return (
         <>
@@ -122,6 +121,15 @@ export default function StudentProjectReadMore({
                                             Members :
                                         </p>{' '}
                                         {members}
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
+                                    <div>
+                                        <p className="font-bold text-primary">
+                                            Course :
+                                        </p>{' '}
+                                        {course}
                                     </div>
                                 </div>
 
