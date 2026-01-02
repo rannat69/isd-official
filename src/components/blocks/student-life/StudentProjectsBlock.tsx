@@ -149,7 +149,7 @@ const studentComps: StudentProject[] = [
         ],
     },
     {
-        name: 'Year 2 Project Promo Video - Smart Shopping Cart: Lodge ',
+        name: 'Smart Shopping Cart: Lodge',
         shortDescription:
             'This project features a 3D animated promotional video for a smart shopping cart concept originally developed as a Year 2 group project. The cart automatically follows users, supports flexible item selection, and uses RFID technology for real-time cost calculation and payment.',
         description:
