@@ -41,7 +41,7 @@ export default function CarouselStudProj({ images }: CarouselProps) {
                         key={index}
                         src={image}
                         alt={`Carousel Image ${index + 1}`}
-                        className={`object-cover w-full h-[300px] absolute transition-opacity linear duration-1000 ${
+                        className={`object-contain w-full h-[300px] absolute transition-opacity linear duration-1000 ${
                             index === currentIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                     />

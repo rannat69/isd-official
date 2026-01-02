@@ -99,8 +99,8 @@ export default function StudentProjectReadMore({
 
                                 {video && video != '' && (
                                     <div className="flex justify-center">
-                                        {' '}
-                                        {/* Added a flex container to center the video */}
+                                      
+                     
                                         <video
                                             width="320"
                                             height="240"
