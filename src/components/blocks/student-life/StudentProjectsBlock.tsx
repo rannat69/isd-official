@@ -79,6 +79,7 @@ interface StudentProject {
     video: string;
     picture: string[];
     course: string;
+    faculty: any;
 }
 
 const studentComps: StudentProject[] = [
@@ -93,6 +94,12 @@ const studentComps: StudentProject[] = [
         picture: ['/assets/studentlife/stud-proj/tweety-kwan.png'],
         video: '',
         course: 'ISDN2400',
+        faculty: [
+            {
+                name: 'Mitch LI',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=regular&keyword=mitch+li',
+            },
+        ],
     },
     {
         name: 'UnTaint',
@@ -113,6 +120,12 @@ const studentComps: StudentProject[] = [
         ],
         video: '/stud-proj-video/Disinfection Robot(3).mp4',
         course: 'ISDN2400',
+        faculty: [
+            {
+                name: 'Mitch LI',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=regular&keyword=mitch+li',
+            },
+        ],
     },
     {
         name: 'AUTOMÁNICA',
@@ -124,6 +137,16 @@ const studentComps: StudentProject[] = [
         picture: ['/assets/studentlife/stud-proj/adam-wei-01.jpg'],
         video: '',
         course: 'ISDN4000U',
+        faculty: [
+            {
+                name: 'Mitch LI',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=regular&keyword=mitch+li',
+            },
+            {
+                name: 'Larry KOO',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=&keyword=larry+koo',
+            },
+        ],
     },
     {
         name: 'Year 2 Project Promo Video - Smart Shopping Cart: Lodge ',
@@ -144,6 +167,16 @@ const studentComps: StudentProject[] = [
         ],
         video: '',
         course: 'ISDN4000U',
+        faculty: [
+            {
+                name: 'Mitch LI',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=regular&keyword=mitch+li',
+            },
+            {
+                name: 'Larry KOO',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=&keyword=larry+koo',
+            },
+        ],
     },
     {
         name: 'Stridecool',
@@ -160,6 +193,12 @@ const studentComps: StudentProject[] = [
         ],
         video: '',
         course: 'ISDN2603',
+        faculty: [
+            {
+                name: 'Mitch LI',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=regular&keyword=mitch+li',
+            },
+        ],
     },
     {
         name: 'FlameCoz',
@@ -177,6 +216,16 @@ const studentComps: StudentProject[] = [
         ],
         video: '',
         course: 'ISDN4000U',
+        faculty: [
+            {
+                name: 'Mitch LI',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=regular&keyword=mitch+li',
+            },
+            {
+                name: 'Larry KOO',
+                link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=&keyword=larry+koo',
+            },
+        ],
     },
 ];
 

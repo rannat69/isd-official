@@ -35,7 +35,7 @@ export default function CarouselStudProj({ images }: CarouselProps) {
     return (
         <>
             {/* Image Layer */}
-            <div className="absolute -z-1 w-1/2 lg:h-full h-[300px]">
+            <div className="absolute -z-1 w-1/2  h-[300px] ">
                 {images.map((image, index) => (
                     <Image
                         key={index}

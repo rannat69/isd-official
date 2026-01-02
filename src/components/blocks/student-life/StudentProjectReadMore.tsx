@@ -15,6 +15,7 @@ interface StudentProject {
     picture: string[];
     video: string;
     course: string;
+    faculty: any;
 }
 
 interface StudentProjectReadMoreProps {
@@ -27,6 +28,7 @@ interface StudentProjectReadMoreProps {
     course: string;
     setDetailsOpen: (value: StudentProject | null) => void;
     detailsOpen: boolean;
+    faculty: any;
 }
 
 export default function StudentProjectReadMore({
@@ -37,6 +39,7 @@ export default function StudentProjectReadMore({
     video,
     members,
     course,
+    faculty,
     setDetailsOpen,
     detailsOpen,
 }: StudentProjectReadMoreProps) {
@@ -99,8 +102,6 @@ export default function StudentProjectReadMore({
 
                                 {video && video != '' && (
                                     <div className="flex justify-center">
-                                      
-                     
                                         <video
                                             width="320"
                                             height="240"
@@ -130,6 +131,24 @@ export default function StudentProjectReadMore({
                                             Course :
                                         </p>{' '}
                                         {course}
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
+                                    <div>
+                                        <p className="font-bold text-primary">
+                                            Faculty members involved :
+                                        </p>{' '}
+                                        {faculty.map((fac: any, index) => (
+                                            <div key={index}>
+                                                <Link
+                                                    href={fac.link}
+                                                    className="cursor-pointer text-isd-primary  underline"
+                                                >
+                                                    {fac.name}
+                                                </Link>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
 
