@@ -16,6 +16,13 @@ import RuoyunFang03 from '@/assets/studentlife/stud-proj/ruoyun-fang-03.jpg';
 import RuoyunFang04 from '@/assets/studentlife/stud-proj/ruoyun-fang-04.jpg';
 import RuoyunFang05 from '@/assets/studentlife/stud-proj/ruoyun-fang-05.jpg';
 import RuoyunFang06 from '@/assets/studentlife/stud-proj/ruoyun-fang-06.jpg';
+import Twoo01 from '@/assets/studentlife/stud-proj/twoo-01.jpg';
+import Twoo02 from '@/assets/studentlife/stud-proj/twoo-02.jpg';
+import Twoo03 from '@/assets/studentlife/stud-proj/twoo-03.jpg';
+import Twoo201 from '@/assets/studentlife/stud-proj/twoo2-01.jpg';
+import Twoo202 from '@/assets/studentlife/stud-proj/twoo2-02.jpg';
+import Twoo203 from '@/assets/studentlife/stud-proj/twoo2-03.jpg';
+import Twoo204 from '@/assets/studentlife/stud-proj/twoo2-04.jpg';
 
 import noneImg from '@/assets/studentlife/noneImg.png';
 import { Fragment, useState } from 'react';
@@ -39,6 +46,13 @@ export const projImages: Record<string, Img> = {
     'ruoyun-fang-04.jpg': RuoyunFang04,
     'ruoyun-fang-05.jpg': RuoyunFang05,
     'ruoyun-fang-06.jpg': RuoyunFang06,
+    'twoo-01.jpg': Twoo01,
+    'twoo-02.jpg': Twoo02,
+    'twoo-03.jpg': Twoo03,
+    'twoo2-01.jpg': Twoo201,
+    'twoo2-02.jpg': Twoo202,
+    'twoo2-03.jpg': Twoo203,
+    'twoo2-04.jpg': Twoo204,
 };
 
 type Img = StaticImageData | string;
@@ -123,6 +137,37 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/ruoyun-fang-04.jpg',
             '/assets/studentlife/stud-proj/ruoyun-fang-05.jpg',
             '/assets/studentlife/stud-proj/ruoyun-fang-06.jpg',
+        ],
+        video: '',
+    },
+    {
+        name: 'Stridecool',
+        shortDescription:
+            'Modular Smart Shoes: breathable, waterproof uppers with a refillable cooling gel pad and an anti slip outsole. A LEGO inspired TPU clutch seals a replaceable hydrogel cooling insert while SBR rubber provides durable traction. ',
+        description:
+            'Smart Shoes integrate breathable, waterproof materials with a removable phase change hydrogel cooling pad and a sealed modular design for easy refill and maintenance. A TPU interlocking "LEGO style" stud/tube clutch creates a watertight mechanical seal between insole and outsole while neoprene and nonwoven polypropylene let moisture vapor escape but block liquid water. The sock area receives a localized nanoparticle waterproof coating that repels droplets without markedly reducing elasticity, and the hydrogel with PCM microcapsules provides 3–4°C of passive cooling and is removable for replacement. Structural TPU elements and a vulcanized SBR tread deliver load bearing support, abrasion resistance, and grip. Design tradeoffs prioritize physical hydrogel cooling over transient sensory methods, localized nano coating to preserve stretch, tunable TPU printing and clutch force for reliable sealing and serviceability, and material protections (additives or maintenance) to mitigate PP UV degradation and coating wear.',
+        members: 'Twoo, Anson LEUNG',
+        youtube: 'https://www.youtube.com/watch?v=QuSynWcBP6o ',
+        picture: [
+            '/assets/studentlife/stud-proj/twoo-01.jpg',
+            '/assets/studentlife/stud-proj/twoo-02.jpg',
+            '/assets/studentlife/stud-proj/twoo-03.jpg',
+        ],
+        video: '',
+    },
+    {
+        name: 'FlameCoz',
+        shortDescription:
+            '볼멍 (bol-meong) is a Korean sensibility: the quiet, restorative calm that washes over someone who zones out watching a fire. As urbanization and technology bring human from forests into a concrete jungle, that simple, primordial soothing—rooted in smell, sight, and sound—has been severed. This lamp is an attempt to translates the campfire’s essential stimuli—the scent of burning wood, the flicker of flame, the low hush of embers—into a deliberately designed, urban-appropriate ritual object ,introducing that elemental pause into contemporary life: a crafted object that reconstructs the psychological and sensory architecture of a campfire for the modern home.',
+        description:
+            'This piece asks: how do we reforge the broken tie between human and nature in a city of glass and asphalt? The lamp’s design treats smell, sight, and sound as equal partners in producing a calming state. Slow burning incense delivering  the aroma of burning wood that arrives as a gentle invitation. The artificial flame “breathes” with naturally irregular cadences which tied to the audio played. While getting emotional in late night, immersing into the state of flow of self reflection with scented smoke of a breathing flame. While as a social hearth it sits at the center of a small group, orienting conversation as an ambient companion. The piece also provokes questions about authenticity—if this is a product available in the market, can it substitute for the original?—and whether engineered calm risks commodifying stillness.',
+        members: 'Twoo, Zane CHENG',
+        youtube: 'https://www.youtube.com/watch?v=-H_z7ScNaIw',
+        picture: [
+            '/assets/studentlife/stud-proj/twoo2-01.jpg',
+            '/assets/studentlife/stud-proj/twoo2-02.jpg',
+            '/assets/studentlife/stud-proj/twoo2-03.jpg',
+            '/assets/studentlife/stud-proj/twoo2-04.jpg',
         ],
         video: '',
     },
