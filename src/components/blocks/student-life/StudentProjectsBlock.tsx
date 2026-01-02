@@ -159,6 +159,7 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/twoo-03.jpg',
         ],
         video: '',
+        course: 'ISDN2603',
     },
     {
         name: 'FlameCoz',
@@ -175,6 +176,7 @@ const studentComps: StudentProject[] = [
             '/assets/studentlife/stud-proj/twoo2-04.jpg',
         ],
         video: '',
+        course: 'ISDN4000U',
     },
 ];
 
