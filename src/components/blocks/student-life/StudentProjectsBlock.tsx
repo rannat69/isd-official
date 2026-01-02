@@ -79,7 +79,7 @@ interface StudentProject {
     video: string;
     picture: string[];
     course: string;
-    faculty: any;
+    faculty: { name: string; link: string }[];
 }
 
 const studentComps: StudentProject[] = [

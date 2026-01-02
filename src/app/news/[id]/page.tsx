@@ -23,7 +23,7 @@ export default async function NewsDetailPage({
     if (!item) return null;
     const images = resolveImages(item.pictures);
 
-    console.log('images', images);
+  
 
     return (
         <div className="container pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">

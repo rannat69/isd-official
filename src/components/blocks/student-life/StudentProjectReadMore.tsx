@@ -15,7 +15,7 @@ interface StudentProject {
     picture: string[];
     video: string;
     course: string;
-    faculty: any;
+    faculty: { name: string; link: string }[];
 }
 
 interface StudentProjectReadMoreProps {
@@ -28,7 +28,7 @@ interface StudentProjectReadMoreProps {
     course: string;
     setDetailsOpen: (value: StudentProject | null) => void;
     detailsOpen: boolean;
-    faculty: any;
+    faculty: { name: string; link: string }[];
 }
 
 export default function StudentProjectReadMore({
@@ -139,8 +139,8 @@ export default function StudentProjectReadMore({
                                         <p className="font-bold text-primary">
                                             Faculty members involved :
                                         </p>{' '}
-                                        {faculty.map((fac: any, index) => (
-                                            <div key={index}>
+                                        {faculty.map((fac) => (
+                                            <div key={fac.name}>
                                                 <Link
                                                     href={fac.link}
                                                     className="cursor-pointer text-isd-primary  underline"
