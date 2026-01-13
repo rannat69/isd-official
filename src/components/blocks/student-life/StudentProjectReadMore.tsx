@@ -125,33 +125,35 @@ export default function StudentProjectReadMore({
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
-                                    <div>
-                                        <p className="font-bold text-primary">
-                                            Course :
-                                        </p>{' '}
-                                        {course}
+                                {course.length > 0 && (
+                                    <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
+                                        <div>
+                                            <p className="font-bold text-primary">
+                                                Course :
+                                            </p>{' '}
+                                            {course}
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
-                                    <div>
-                                        <p className="font-bold text-primary">
-                                            Faculty members involved :
-                                        </p>{' '}
-                                        {faculty.map((fac) => (
-                                            <div key={fac.name}>
-                                                <Link
-                                                    href={fac.link}
-                                                    className="cursor-pointer text-isd-primary  underline"
-                                                >
-                                                    {fac.name}
-                                                </Link>
-                                            </div>
-                                        ))}
+                                )}
+                                {faculty.length > 0 && (
+                                    <div className="flex flex-col gap-footer-gap  whitespace-pre-line">
+                                        <div>
+                                            <p className="font-bold text-primary">
+                                                Faculty members involved :
+                                            </p>{' '}
+                                            {faculty.map((fac) => (
+                                                <div key={fac.name}>
+                                                    <Link
+                                                        href={fac.link}
+                                                        className="cursor-pointer text-isd-primary  underline"
+                                                    >
+                                                        {fac.name}
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-
+                                )}
                                 {youtube != '' && (
                                     <Link
                                         className="text-md text-isd-secondary underline"

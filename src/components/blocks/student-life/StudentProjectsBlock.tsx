@@ -24,6 +24,28 @@ import Twoo202 from '@/assets/studentlife/stud-proj/twoo2-02.jpg';
 import Twoo203 from '@/assets/studentlife/stud-proj/twoo2-03.jpg';
 import Twoo204 from '@/assets/studentlife/stud-proj/twoo2-04.jpg';
 
+import Floodu01 from '@/assets/studentlife/stud-proj/Year2/floodu/floodu01.png';
+import Veeeee01 from '@/assets/studentlife/stud-proj/Year2/veeeee/veeeee01.png';
+import DD01 from '@/assets/studentlife/stud-proj/Year2/dd/dd01.png';
+import FiveFive01 from '@/assets/studentlife/stud-proj/Year2/fivefive/fivefive01.png';
+import Lodge01 from '@/assets/studentlife/stud-proj/Year2/lodge/lodge01.png';
+import Zeth01 from '@/assets/studentlife/stud-proj/Year2/zeth/zeth01.png';
+
+import DigitalPaws01 from '@/assets/studentlife/stud-proj/Year3/digitalpaws/digitalpaws01.png';
+import Fibe01 from '@/assets/studentlife/stud-proj/Year3/fibe/fibe01.png';
+import Surfive01 from '@/assets/studentlife/stud-proj/Year3/surfive/surfive01.png';
+import IndoorLighting01 from '@/assets/studentlife/stud-proj/Year3/indoorlighting/indoorlighting01.png';
+import Biking01 from '@/assets/studentlife/stud-proj/Year3/biking/biking01.png';
+import Sailing01 from '@/assets/studentlife/stud-proj/Year3/sailing/sailing01.png';
+
+import TrackBot01 from '@/assets/studentlife/stud-proj/Year4/trackbot/trackbot01.png';
+import Dash01 from '@/assets/studentlife/stud-proj/Year4/dash/dash01.png';
+import MoneyLife01 from '@/assets/studentlife/stud-proj/Year4/moneylife/moneylife01.png';
+import BIPV01 from '@/assets/studentlife/stud-proj/Year4/bipv/bipv01.png';
+import Gulio01 from '@/assets/studentlife/stud-proj/Year4/gulio/gulio01.png';
+import AnyWear01 from '@/assets/studentlife/stud-proj/Year4/anywear/anywear01.png';
+import BrewSense01 from '@/assets/studentlife/stud-proj/Year4/brewsense/brewsense01.png';
+
 import noneImg from '@/assets/studentlife/noneImg.png';
 import { Fragment, useState } from 'react';
 import ImageCard from '@/components/ImageCard';
@@ -53,6 +75,42 @@ export const projImages: Record<string, Img> = {
     'twoo2-02.jpg': Twoo202,
     'twoo2-03.jpg': Twoo203,
     'twoo2-04.jpg': Twoo204,
+    'floodu01.png': Floodu01,
+    'veeeee01.png': Veeeee01,
+
+    'dd01.png': DD01,
+
+    'fivefive01.png': FiveFive01,
+
+    'lodge01.png': Lodge01,
+
+    'zeth01.png': Zeth01,
+
+    'digitalpaws01.png': DigitalPaws01,
+
+    'fibe01.png': Fibe01,
+
+    'surfive01.png': Surfive01,
+
+    'indoorlighting01.png': IndoorLighting01,
+
+    'biking01.png': Biking01,
+
+    'sailing01.png': Sailing01,
+
+    'trackbot01.png': TrackBot01,
+
+    'dash01.png': Dash01,
+
+    'moneylife01.png': MoneyLife01,
+
+    'bipv01.png': BIPV01,
+
+    'gulio01.png': Gulio01,
+
+    'anywear01.png': AnyWear01,
+
+    'brewsense01.png': BrewSense01,
 };
 
 type Img = StaticImageData | string;
@@ -226,6 +284,275 @@ const studentComps: StudentProject[] = [
                 link: 'https://isd.hkust.edu.hk/people/?role=faculty&area=all&tag=&keyword=larry+koo',
             },
         ],
+    },
+    {
+        name: 'FloodU',
+        shortDescription:
+            'A remote rescue platform to deliver life necessities and first-aid medications to the victims stuck in the floods via drone, as well as improve the safety and efficiency of the rescue procedure.',
+        description:
+            'A remote rescue platform to deliver life necessities and first-aid medications to the victims stuck in the floods via drone, as well as improve the safety and efficiency of the rescue procedure.',
+        members:
+            'CHENG, Ziheng HUI, Kan Lap LEUNG, King Wah LEUNG, Wai Yan WOO, Hiu Lam',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year2/floodu/floodu01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'VEEEEE!',
+        shortDescription:
+            'A system combined hardware and software to carry bikes to and from a remote parking facility without walking. Therefore, to enhance the cycling experience from end to end.',
+        description:
+            'A system combined hardware and software to carry bikes to and from a remote parking facility without walking. Therefore, to enhance the cycling experience from end to end.',
+        members:
+            'CHAN, Kei Ching CHAN, King Chung Bryce PAK, Wing Hin SHUM, Yu Hin YU, Hiu Lam',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year2/veeeee/veeeee01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'DD',
+        shortDescription:
+            "An IoT System that displays real-time queuing of the mini-bus station and available seat information on the incoming mini-bus, as well as forecasting the waiting time for passengers' better route planning of Mini-bus selection.",
+        description:
+            "An IoT System that displays real-time queuing of the mini-bus station and available seat information on the incoming mini-bus, as well as forecasting the waiting time for passengers' better route planning of Mini-bus selection.",
+        members:
+            'CHEN, Daniel Dao Cheng HUNG, Ka Hin LO, Tsz Chung TAM, Ho Wang TAM, Kwan Yiu XU, Ziyi',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year2/dd/dd01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'FiveFive',
+        shortDescription:
+            'A system with crowd control strategies by computer vision/ multiple sensing to optimize the crowd flow at specific MTR stations to increase the comfort of passengers traversing through the station, with comfort being minimized congestion and faster movement.',
+        description:
+            'A system with crowd control strategies by computer vision/ multiple sensing to optimize the crowd flow at specific MTR stations to increase the comfort of passengers traversing through the station, with comfort being minimized congestion and faster movement.',
+        members:
+            'KATYAYAN, Saanvi Ravi SHEN, Yuming WEI, Yang WU, Ziyao YAU, Hei Chung',
+        youtube: '',
+        picture: [
+            '/assets/studentlife/stud-proj/year2/fivefive/fivefive01.png',
+        ],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Lodge',
+        shortDescription:
+            'A smart shopping cart with self-check and auto-tracking functions to increase efficiency and satisfaction for customers in the high-end mall shopping experience.A smart shopping cart with self-check and auto-tracking functions to increase efficiency and satisfaction for customers in the high-end mall shopping experience.',
+        description:
+            'A smart shopping cart with self-check and auto-tracking functions to increase efficiency and satisfaction for customers in the high-end mall shopping experience.A smart shopping cart with self-check and auto-tracking functions to increase efficiency and satisfaction for customers in the high-end mall shopping experience.',
+        members:
+            'CHAN, Ying Tung FANG, Ruoyun KUEK, Kassie Ka Chai LIU, Hualin XU, Jusen',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year2/lodge/lodge01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Zeth',
+        shortDescription:
+            'A versatile and supportive carry-on luggage system for young adults to enjoy a more convenient, secure, and independent travel jouney.',
+        description:
+            'A versatile and supportive carry-on luggage system for young adults to enjoy a more convenient, secure, and independent travel jouney.',
+        members: 'AU, Tsz Ching KANDASAMY, Shalini LI, Jiayun PARK, Seojin',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year2/zeth/zeth01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Digital Paws',
+        shortDescription:
+            'Digital Paws addresses the challenges faced in locating lost dogs in Hong Kong, primarily arising from the absence of proper identification through pet microchipping. Our project aims to develop a comprehensive dog tracking system that fosters a robust community of dog owners, while also serving as a reliable master identification tool for keeping track of their beloved pets.',
+        description:
+            'Digital Paws addresses the challenges faced in locating lost dogs in Hong Kong, primarily arising from the absence of proper identification through pet microchipping. Our project aims to develop a comprehensive dog tracking system that fosters a robust community of dog owners, while also serving as a reliable master identification tool for keeping track of their beloved pets.',
+        members: 'LAU, Ho Fung TSE, Ka Ming WAN, Yan Ki WU, Chun Ming',
+        youtube: '',
+        picture: [
+            '/assets/studentlife/stud-proj/year3/digitalpaws/digitalpaws01.png',
+        ],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'F.I.B.E.',
+        shortDescription:
+            'F.I.B.E. is a smart snooker table with a score display and sensory feedback of light and sound capabilities. It aims to bring attention to billiard sports through an interactive product. Using computer vision technology, it detects and reacts to the situation on the table in real-time, providing players with information and sensory feedback if conditions are met.',
+        description:
+            'F.I.B.E. is a smart snooker table with a score display and sensory feedback of light and sound capabilities. It aims to bring attention to billiard sports through an interactive product. Using computer vision technology, it detects and reacts to the situation on the table in real-time, providing players with information and sensory feedback if conditions are met.',
+        members: 'JI, Yu LAM, Chun Yin YUAN, Qiaoyaxiao HO, Wing Tung',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year3/fibe/fibe01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Surfive',
+        shortDescription:
+            'Surfive is a groundbreaking water transportation service that aims to enhance and elevate the experience of being on the water. Our cutting-edge solution revolves around an electric buoyant, specially designed for individual riders, resembling a watertaxi. Equipped with a powerful motor, it ensures a smooth and enjoyable ride.\n\n To prioritize safety and convenience, we offer a wearable beacon that incorporates GPS functionality and a magnetic switch. In the event that users feel tired or require assistance, they can activate the magnetic switch, prompting the buoyant to autonomously navigate towards their location. Once connected, users have the flexibility to manually control their journey, whether they choose to return to their starting point or explore new destinations effortlessly.',
+        description:
+            'Surfive is a groundbreaking water transportation service that aims to enhance and elevate the experience of being on the water. Our cutting-edge solution revolves around an electric buoyant, specially designed for individual riders, resembling a watertaxi. Equipped with a powerful motor, it ensures a smooth and enjoyable ride.\n\n To prioritize safety and convenience, we offer a wearable beacon that incorporates GPS functionality and a magnetic switch. In the event that users feel tired or require assistance, they can activate the magnetic switch, prompting the buoyant to autonomously navigate towards their location. Once connected, users have the flexibility to manually control their journey, whether they choose to return to their starting point or explore new destinations effortlessly.',
+        members: 'CHAN, Ho FISILO, William Arvin LEE, Ho Yin WANG, Chaoyu',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year3/surfive/surfive01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Indoor Lighting',
+        shortDescription:
+            'Introducing a new lighting system for buildings that utilizes sunlight. A collector on the rooftop or wall captures and guides sunlight indoors via fibers. LED lights supplement when sunlight is insufficient. This sustainable solution reduces energy usage and provides consistent lighting conditions.',
+        description:
+            'Introducing a new lighting system for buildings that utilizes sunlight. A collector on the rooftop or wall captures and guides sunlight indoors via fibers. LED lights supplement when sunlight is insufficient. This sustainable solution reduces energy usage and provides consistent lighting conditions.',
+        members: 'HOU, Liangheng LI, Zerui',
+        youtube: '',
+        picture: [
+            '/assets/studentlife/stud-proj/year3/indoorlighting/indoorlighting01.png',
+        ],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Biking',
+        shortDescription:
+            'The team proposed several subsystems for the biking safety enhancement.\n Subsystem 1: Augmented Awareness Enhancement System (AAES) dedicated to enhancing cyclist safety by addressing the challenge of limited awareness and difficulty in monitoring blindspots for hazards. \n Subsystem 2: Low Distractive Information System (LDIS) to provide an abundance of information to cyclists, such as safety warnings, riding details, and communication, without the risk of distracting them during their ride and compromising their safety. \n Subsystem 3: A multi-sensing helmet to enhance the safety of e-bikers and motobikers.',
+        description:
+            'The team proposed several subsystems for the biking safety enhancement.\n Subsystem 1: Augmented Awareness Enhancement System (AAES) dedicated to enhancing cyclist safety by addressing the challenge of limited awareness and difficulty in monitoring blindspots for hazards. \n Subsystem 2: Low Distractive Information System (LDIS) to provide an abundance of information to cyclists, such as safety warnings, riding details, and communication, without the risk of distracting them during their ride and compromising their safety. \n Subsystem 3: A multi-sensing helmet to enhance the safety of e-bikers and motobikers.',
+
+        members:
+            'CHANDRA, Feren Aurelia Dyka FAN, Tsz Ho KWAN, Cheuk Yiu Tweety LEE, Wing Hong WONG, Lai Yin Garmisch',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year3/biking/biking01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Sailing',
+        shortDescription:
+            'The team proposed an IoT system to: \n Target 1: Simultaneously collect time-series data, including quantitative sailboat and sailor dynamic states in Optimist and Laser classes while providing a way to represent their corresponding quantitative performance.​\nTarget 2: Guarantee the safety of sailors during training and racing in open water environments, particularly when the coach is overseeing multiple sailors who might be out of sight.​',
+        description:
+            'The team proposed an IoT system to: \n Target 1: Simultaneously collect time-series data, including quantitative sailboat and sailor dynamic states in Optimist and Laser classes while providing a way to represent their corresponding quantitative performance.​\nTarget 2: Guarantee the safety of sailors during training and racing in open water environments, particularly when the coach is overseeing multiple sailors who might be out of sight.​',
+
+        members:
+            'CHEN, Jiayu CHEUNG, Chun To WONG, King Sang WONG, Pak Long ZHANG, Yuming',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year3/sailing/sailing01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'TrackBot',
+        shortDescription:
+            'An AI running companion in field tracks that provides new runners the assistance, motivation and guidance to start learning to run.​',
+        description:
+            'An AI running companion in field tracks that provides new runners the assistance, motivation and guidance to start learning to run.​',
+
+        members: 'CHAN, Ho Ching LI, Andrew King Lun WANG, Chaoyu',
+        youtube: '',
+        picture: [
+            '/assets/studentlife/stud-proj/year4/trackbot/trackbot01.png',
+        ],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Dash',
+        shortDescription:
+            'Dynamic Adaptive Study Hub, DASH, is an AI-infused online learning platform for university students to enhance the efficiency and effectiveness of learning with existing lecture recordings.​',
+        description:
+            'Dynamic Adaptive Study Hub, DASH, is an AI-infused online learning platform for university students to enhance the efficiency and effectiveness of learning with existing lecture recordings.​',
+
+        members: 'CHANG, Tianxing CHOI, Lok Man GUO, Qixuan',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year4/dash/dash01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Money Life',
+        shortDescription:
+            'A mobile educational app that uses a gamification approach to raise financial literacy for 9-12 years old students.​',
+        description:
+            'A mobile educational app that uses a gamification approach to raise financial literacy for 9-12 years old students​.',
+
+        members: 'FUNG, Chak Sang YU, Kin Wai CHOI, Yiu Hei',
+        youtube: '',
+        picture: [
+            '/assets/studentlife/stud-proj/year4/moneylife/moneylife01.png',
+        ],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'BIPV Mounting Robot',
+        shortDescription:
+            'A construction robot that reduces the labor cost and alleviates occupational injury while installing BIPV panels on building facades.​',
+        description:
+            'A construction robot that reduces the labor cost and alleviates occupational injury while installing BIPV panels on building facades​.',
+        members: 'LUK, Wang Lok TSE, Yui Kai WANG, Shijie YU, Mukai SONG, Chen',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year4/bipv/bipv01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'Gulio',
+        shortDescription:
+            'A robot playmate, Gulio, that tells, acts and creates stories by Generative AI, offering an alternative to children screentime.',
+        description:
+            'A robot playmate, Gulio, that tells, acts and creates stories by Generative AI, offering an alternative to children screentime.',
+        members: 'KWAN, Cheuk Kit WONG, Tsz Chun ZHAO, ZihanWAN, Ho Yan',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year4/gulio/gulio01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'AnyWear',
+        shortDescription:
+            'A wearable device that monitor, signal and mitigate heat stroke for people performing outdoor activities (e.g., hikers, mountain bikers).',
+        description:
+            'A wearable device that monitor, signal and mitigate heat stroke for people performing outdoor activities (e.g., hikers, mountain bikers).',
+        members: 'LAI, Kam Wai LAI, Yue Hin Alexander ZHONG, Haosong',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year4/anywear/anywear01.png'],
+        video: '',
+        course: '',
+        faculty: [],
+    },
+    {
+        name: 'BrewSense',
+        shortDescription:
+            'A device that provides coffee brewers a real-time visualization of the correlation between the brewing process and the properties that affects the taste of the coffee.',
+        description:
+            'A device that provides coffee brewers a real-time visualization of the correlation between the brewing process and the properties that affects the taste of the coffee.',
+        members: 'CHAN, Ming Chun GONG, Chuyue HO, Wing Tung LEUNG, Wai Man',
+        youtube: '',
+        picture: ['/assets/studentlife/stud-proj/year4/brewsense/brewsense01.png'],
+        video: '',
+        course: '',
+        faculty: [],
     },
 ];
 
