@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import TweetyKwan from '@/assets/studentlife/stud-proj/tweety-kwan.png';
 import JasperWong01 from '@/assets/studentlife/stud-proj/jasper-wong-01.jpg';
 import JasperWong02 from '@/assets/studentlife/stud-proj/jasper-wong-02.jpg';
