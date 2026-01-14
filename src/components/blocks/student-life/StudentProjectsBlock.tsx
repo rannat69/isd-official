@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
 import TweetyKwan from '@/assets/studentlife/stud-proj/tweety-kwan.png';
 import JasperWong01 from '@/assets/studentlife/stud-proj/jasper-wong-01.jpg';
 import JasperWong02 from '@/assets/studentlife/stud-proj/jasper-wong-02.jpg';
@@ -140,7 +138,7 @@ interface StudentProject {
     faculty: { name: string; link: string }[];
 }
 
-const studentComps: StudentProject[] = [
+let studentProjs: StudentProject[] = [
     {
         name: 'Blox',
         shortDescription:
@@ -558,6 +556,8 @@ const studentComps: StudentProject[] = [
     },
 ];
 
+studentProjs = studentProjs.sort((a, b) => a.name.localeCompare(b.name));
+
 export default function StudentProjectsBlock() {
     const [readMore, setReadMore] = useState<StudentProject | null>(null);
 
@@ -569,7 +569,7 @@ export default function StudentProjectsBlock() {
 
             <div className="flex flex-col gap-component-gap-sm">
                 <div className="lg:grid flex flex-col grid-cols-[repeat(auto-fill,minmax(360px,1fr))] auto-cols-min gap-component-gap-sm">
-                    {studentComps.map((comp, index) => (
+                    {studentProjs.map((comp, index) => (
                         <Fragment key={index}>
                             <ImageCard
                                 key={index}
