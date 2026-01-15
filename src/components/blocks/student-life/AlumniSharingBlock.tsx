@@ -39,8 +39,8 @@ const studentAlumni = [
         link: 'https://ais.hkust.edu.hk/whats-happening/news/igniting-innovative-spirit-how-isd-cultivates-next-generation-innovators',
     },
     {
-        title: 'Mashiat LAMISA (BSc ISD student)',
-        subtitle: 'Mashiat LAMISA [BSc in ISD 2021]',
+        title: 'Mashiat LAMISA',
+        subtitle: 'BSc in Integrative Systems and Design, Class of 2021',
         currentEmployer: 'Sparkmate Hong Kong',
         currentJob: 'Product Engineer',
         description:
@@ -59,7 +59,7 @@ export default function AlumniSharingBlock() {
 
             <>
                 {studentAlumni.map((s, index) => (
-                    <>
+                    <div key={index}>
                         <Image
                             src={s.image}
                             alt="Student"
@@ -92,7 +92,7 @@ export default function AlumniSharingBlock() {
                                 </div>
                             </div>
                         </div>
-                    </>
+                    </div>
                 ))}
                 <div className="flex flex-col gap-[12px]">
                     <div className="flex gap-section-title-gap">
@@ -120,7 +120,7 @@ export default function AlumniSharingBlock() {
                         >
                             <div className="  text-isd-primary">
                                 <h2 className="text-lg font-bold">
-                                    DAO Alumni
+                                    HKUST Alumni
                                 </h2>
                             </div>
                         </a>
