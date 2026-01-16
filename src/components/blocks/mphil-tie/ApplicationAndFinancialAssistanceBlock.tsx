@@ -28,14 +28,14 @@ export default function ApplicationAndFinancialAssistanceBlock() {
                 regulations, please visit the{' '}
                 <a
                     href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/scholarships-and-fees"
-                    className="font-bold text-isd-secondary underline"
+                    className="font-bold text-black underline"
                 >
                     FYTGS webpage
                 </a>{' '}
                 and{' '}
                 <a
                     href="https://fytgs.hkust.edu.hk/academics/Academic-Regulations-and-Requirements/Handbook-for-Research-Postgraduate-Studies/preface"
-                    className="font-bold text-isd-secondary underline"
+                    className="font-bold text-black underline"
                 >
                     Handbook for Research Postgraduate Studies
                 </a>{' '}
