@@ -1,6 +1,8 @@
-import Curriculum from '@/assets/academics/mphil-in-tie/TIE.website.png';
-import CurriculumRoadmap from '@/assets/academics/mphil-in-tie/TIE.website.roadmap.png';
+import Curriculum1 from '@/assets/academics/mphil-in-tie/curiculum.1.1.png';
+import Curriculum2 from '@/assets/academics/mphil-in-tie/curiculum.1.2.png';
+import Curriculum3 from '@/assets/academics/mphil-in-tie/curiculum.1.3.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function CurriculumBlock() {
     return (
@@ -21,64 +23,24 @@ export default function CurriculumBlock() {
                         engagement, and individual thesis research.
                     </b>
                 </p>
-
-                <Image src={Curriculum} alt="Curriculum Timeline" />
-                <Image src={CurriculumRoadmap} alt="Curriculum Roadmap" />
-                <ul>
-                    <li className="flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm">
-                        Students form diverse teams and iterate their prototypes
-                        with guidance from prime and supporting supervisors
-                        drawn from faculty and industry They will receive
-                        personalized feedback and resources to enhance their
-                        projects at every stage. Each team demonstrates its
-                        prototype or service and receives opportunities for
-                        commercialization and networking with industrial
-                        partners, ensuring they have the support needed to bring
-                        their innovative ideas to life.
-                    </li>
-
-                    <li className=" flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm">
-                        <div>
-                            The first year is funded by a{' '}
-                            <b>guaranteed HKUST postgraduate studentship;</b>{' '}
-                            after the first year, students are expected to seek
-                            external investment through organized pitch days and
-                            investor engagement sessions. Funding for the second
-                            year will be based on securing external support;
-                            students who are unable to obtain this may continue
-                            their studies as part of a standard research MPhil
-                            program.
-                        </div>
-                    </li>
-
-                    <li className=" flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm">
-                        <div>
-                            {' '}
-                            The curriculum integrates core modules on Design
-                            Thinking and Entrepreneurial Literacy, broad
-                            elective options (including marine tech, AIoT for
-                            healthcare, and systems design), professional
-                            development, and language courses for holistic
-                            growth. Significant emphasis is placed on industry
-                            workshops, field trips, and seminars for exposure
-                            and skill-building.
-                        </div>
-                    </li>
-                </ul>
-
+                <Image src={Curriculum1} alt="Curriculum" />
+                <Image src={Curriculum2} alt="Curriculum Timeline" />
+                <Image src={Curriculum3} alt="Curriculum Roadmap" />
                 <p>
                     Students are equipped for real-world challenges: from market
                     discovery, team formation, MVP development, testing,
-                    pitching, regulatory navigation, fundraising, scaling, and
-                    (ideally) launch—culminating in both team demonstration and
-                    an individual thesis tied to their group’s innovation.
+                    pitching, regulatory navigation,
+                </p>
+                <p>
+                    fundraising, scaling, and (ideally) launch—culminating in
+                    both team demonstration and an individual thesis tied to
+                    their group’s innovation.
                 </p>
 
                 <p>
                     To graduate from the TIE programme at HKUST, students must
-                    complete:
+                    complete :
                 </p>
-
                 <ul>
                     <li className="flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm">
                         <b>12 credits of specialized coursework</b> designed to
@@ -86,7 +48,7 @@ export default function CurriculumBlock() {
                         entrepreneurship.
                     </li>
 
-                    <li className="flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm">
+                    <li className=" flex before:text-center before:content-['•'] leading-[26px] before:min-w-component-gap-sm">
                         <b>An independent thesis research project</b>
                          demonstrating deep technical and entrepreneurial
                         expertise and original problem-solving.

@@ -10,6 +10,7 @@ import ApplicationAndFinancialAssistanceBlock from './ApplicationAndFinancialAss
 import ProgramContactBlock from './ProgramContactBlock';
 import Select from '@/components/Select';
 import Breadcrumb from '@/components/Breadcrumb';
+import FacultyAdvisorsBlock from './FacultyAdvisorsBlock';
 
 export default function MPTIEBlock() {
     const [activeContentId, setActiveContentId] = useState('edu-obj');
@@ -34,6 +35,9 @@ export default function MPTIEBlock() {
                     <div id="curriculum">
                         <CurriculumBlock />
                     </div>
+                    <div id="fac-adv">
+                        <FacultyAdvisorsBlock />
+                    </div>
                     <div id="research">
                         <ResearchAreasBlock />
                     </div>
@@ -57,10 +61,20 @@ export default function MPTIEBlock() {
             ),
         },
         {
+            /*  title: 'Faculty & Advisors',
+            id: 'fac-adv',
+            content: (
+                <>
+                    <FacultyAdvisorsBlock />
+                </>
+            ),*/
+        },
+        {
             title: 'Research & Collaborators',
             id: 'research',
             content: (
                 <>
+                    <FacultyAdvisorsBlock />
                     <ResearchAreasBlock />
                     <AcademicAndIndustrialPartnersBlock />
                 </>
@@ -104,15 +118,19 @@ export default function MPTIEBlock() {
                     </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (
-                            <a href={'#' + link.id} key={link.id}>
-                                <span
-                                    key={link.id}
-                                    //onClick={() => setActiveContentId(link.id)}
-                                    className={`text-h2 h-[60px] flex items-center box-border cursor-pointer text-isd-primary  `}
-                                >
-                                    {link.title}
-                                </span>
-                            </a>
+                            <span
+                                key={link.id}
+                                onClick={() =>
+                                    setActiveContentId(link.id ? link.id : '')
+                                }
+                                className={`text-h2 h-[60px] flex items-center box-border cursor-pointer ${
+                                    activeContentId === link.id
+                                        ? 'text-isd-secondary border-b-3 border-isd-secondary'
+                                        : 'text-isd-font-2'
+                                }`}
+                            >
+                                {link.title}
+                            </span>
                         ))}
                     </div>
                     {/* 

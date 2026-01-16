@@ -21,7 +21,7 @@ export default function ResearchAreasBlock() {
         {
             title: 'Design-Tech',
             description:
-                '3D asset generation, video creation, fashion design, robot-aware assembly, wearable robotics, and AR/VR creative experiences..',
+                '3D asset generation, video creation, fashion design, robot-aware assembly, wearable robotics, and AR/VR creative experiences.',
             link: '/research/#design-tech',
         },
         {
@@ -33,7 +33,7 @@ export default function ResearchAreasBlock() {
     ];
 
     return (
-        <div className="flex flex-col gap-[24px]">
+        <div className="flex flex-col gap-[14px]">
             <h2 className="lg:text-[36px] text-h2 leading-[36px] font-bold text-isd-primary">
                 Research Areas
             </h2>
@@ -45,9 +45,9 @@ export default function ResearchAreasBlock() {
                 program.
             </p>
 
-            <div className="flex flex-col gap-[12px]">
+            <div className="flex flex-col gap-[14px]">
                 {areas.map((area) => (
-                    <div key={area.title}>
+                    <div key={area.title} className="flex flex-col gap-[14px]">
                         <h3 className="text-isd-secondary font-bold cursor:pointer hover:underline">
                             <a href={area.link}>{area.title}</a>
                         </h3>
