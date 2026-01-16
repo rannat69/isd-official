@@ -94,12 +94,9 @@ export default function MPTIEBlock() {
 
     return (
         <>
+       
             <div
-                className="lg:dot-pattern before:bottom-[-1150px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]"
-                aria-hidden
-            />
-            <div
-                className="lg:dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
+                className="dot-pattern before:top-[5px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
                 aria-hidden
             />
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
@@ -115,6 +112,7 @@ export default function MPTIEBlock() {
                             MPhil in Technology Innovation <br /> and
                             Entrepreneurship (TIE)
                         </h1>
+                        
                     </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (

@@ -19,6 +19,10 @@ const objectives = [
 export default function EducationalObjectiveBlock() {
     return (
         <div className="flex flex-col gap-[24px]">
+            <div
+                className="dot-pattern before:bottom-[-200px] before:left-[-400px] [--dot-color:var(--isd-secondary-1)]"
+                aria-hidden
+            />
             <h2 className="lg:text-[36px] text-h2 leading-[36px] font-bold text-isd-primary">
                 Educational Objectives
             </h2>
