@@ -34,11 +34,13 @@ export default function AcademicAndIndustrialPartnersBlock() {
                 </h3>
                 <div className="flex gap-[50px] items-center mb-[24px]">
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner1}
-                            alt="Olin College of Engineering"
-                        />
+                        <a href="https://www.olin.edu/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner1}
+                                alt="Olin College of Engineering"
+                            />
+                        </a>
                     </div>
                     <div>
                         <Image
