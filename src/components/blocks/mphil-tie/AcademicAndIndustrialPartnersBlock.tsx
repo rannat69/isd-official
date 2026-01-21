@@ -43,25 +43,31 @@ export default function AcademicAndIndustrialPartnersBlock() {
                         </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12"
-                            src={Partner2}
-                            alt="Politecnico"
-                        />
+                        <a href="https://www.polimi.it/">
+                            <Image
+                                className="h-12"
+                                src={Partner2}
+                                alt="Politecnico"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner3}
-                            alt="Chinese Academy of Sciences"
-                        />
+                        <a href="https://www.cas.cn/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner3}
+                                alt="Chinese Academy of Sciences"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner4}
-                            alt="Fujita Health University"
-                        />
+                        <a href="https://www.fujita-hu.ac.jp/en/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner4}
+                                alt="Fujita Health University"
+                            />
+                        </a>
                     </div>
                 </div>
                 <h3 className="text-isd-secondary font-bold mb-[24px]">
@@ -69,72 +75,90 @@ export default function AcademicAndIndustrialPartnersBlock() {
                 </h3>
                 <div className="flex gap-[70px] items-center mb-[24px]">
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner5}
-                            alt=""
-                        />{' '}
+                        <a href="https://en.innoxsz.com/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner5}
+                                alt="Innoxsz"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-6 w-full object-contain"
-                            src={Partner6}
-                            alt="BotPark"
-                        />{' '}
+                        <a href="https://www.xbotpark.com/en/portfolio/">
+                            <Image
+                                className="h-6 w-full object-contain"
+                                src={Partner6}
+                                alt="BotPark"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner7}
-                            alt=""
-                        />{' '}
+                        <a href="https://sxic.cqu.edu.cn/mingyue">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner7}
+                                alt="sxic"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner8}
-                            alt="BotPark"
-                        />
+                        <a href="https://nbtechx.com/?about-us/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner8}
+                                alt="BotPark"
+                            />
+                        </a>
                     </div>
                 </div>
                 <h3 className="text-isd-secondary font-bold mb-[24px]">
                     Industrial Partners
-                </h3>{' '}
+                </h3>
                 <div className="flex gap-[50px] items-center">
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner9}
-                            alt=""
-                        />
+                        <a href="https://www.hkstp.org/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner9}
+                                alt="HKSTP"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12"
-                            src={Partner10}
-                            alt="Politecnico"
-                        />
+                        <a href="https://www.hkcrc.hk/hong-kong-center-construction-robotics-hkcrc">
+                            <Image
+                                className="h-12"
+                                src={Partner10}
+                                alt="Politecnico"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner11}
-                            alt=""
-                        />
+                        <a href="https://www.dji.com/cn">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner11}
+                                alt="DJI"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner12}
-                            alt=""
-                        />
+                        <a href="https://www.epropulsion.com/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner12}
+                                alt="EPropulsion"
+                            />
+                        </a>
                     </div>
                     <div>
-                        <Image
-                            className="h-12 w-full object-contain"
-                            src={Partner13}
-                            alt=""
-                        />
+                        <a href="https://www.taikang.com/">
+                            <Image
+                                className="h-12 w-full object-contain"
+                                src={Partner13}
+                                alt="Taikang"
+                            />
+                        </a>
                     </div>
                 </div>
             </div>
