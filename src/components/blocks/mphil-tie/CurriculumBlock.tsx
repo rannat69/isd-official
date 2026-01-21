@@ -67,7 +67,7 @@ export default function CurriculumBlock() {
                 </p>
 
                 <p>
-                    For details about the University's policy on Intellectual
+                    For details about the University&apos;s policy on Intellectual
                     Property, please visit&nbsp;
                     <a
                         href="https://okt.hkust.edu.hk"
