@@ -65,6 +65,17 @@ export default function CurriculumBlock() {
                         Program Catalog.
                     </a>
                 </p>
+
+                <p>
+                    For details about the University's policy on Intellectual
+                    Property, please visit&nbsp;
+                    <a
+                        href="https://okt.hkust.edu.hk"
+                        className="font-bold text-isd-secondary underline"
+                    >
+                        Office of Knowledge Transfer.
+                    </a>
+                </p>
             </div>
         </div>
     );
