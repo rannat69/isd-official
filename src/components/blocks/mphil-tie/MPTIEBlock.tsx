@@ -11,6 +11,11 @@ import ProgramContactBlock from './ProgramContactBlock';
 import Select from '@/components/Select';
 import Breadcrumb from '@/components/Breadcrumb';
 import FacultyAdvisorsBlock from './FacultyAdvisorsBlock';
+import {
+    LANGUAGE_CHINESE_SIMPLIFIED,
+    LANGUAGE_CHINESE_TRADITIONAL,
+    LANGUAGE_ENGLISH,
+} from '@/app/constants';
 
 export default function MPTIEBlock() {
     const [activeContentId, setActiveContentId] = useState('edu-obj');
@@ -23,9 +28,18 @@ export default function MPTIEBlock() {
         setActiveContentId(id);
     };
 
+    const language = sessionStorage.getItem('language');
+
     const content = [
         {
-            title: 'Educational Objectives',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Educational Objectives'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '教育目标'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? '教育目標'
+                        : '',
             id: 'edu-obj',
             content: (
                 <>
@@ -52,7 +66,14 @@ export default function MPTIEBlock() {
         },
 
         {
-            title: 'Curriculum',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Curriculum'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '课程设置'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
             id: 'curriculum',
             content: (
                 <>
@@ -70,7 +91,14 @@ export default function MPTIEBlock() {
             ),*/
         },
         {
-            title: 'Research & Collaborators',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Research & Collaborators'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '研究&合作伙伴'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
             id: 'research',
             content: (
                 <>
@@ -81,7 +109,14 @@ export default function MPTIEBlock() {
             ),
         },
         {
-            title: 'Application',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Application'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '申请'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
             id: 'app',
             content: (
                 <>
@@ -94,7 +129,6 @@ export default function MPTIEBlock() {
 
     return (
         <>
-       
             <div
                 className="dot-pattern before:top-[5px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
                 aria-hidden
@@ -109,10 +143,13 @@ export default function MPTIEBlock() {
                             ]}
                         />
                         <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
-                            MPhil in Technology Innovation <br /> and
-                            Entrepreneurship (TIE)
+                            {!language ||
+                                (language === LANGUAGE_ENGLISH &&
+                                    'MPhil in Technology Innovation \n and Entrepreneurship (TIE)')}
+
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                '技术创新与创业哲学硕士 (TIE)'}
                         </h1>
-                        
                     </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (

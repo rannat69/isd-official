@@ -1,3 +1,7 @@
+import Res1 from '@/assets/academics/mphil-in-tie/TIE.research.png';
+
+import Image from 'next/image';
+
 export default function ResearchAreasBlock() {
     const areas = [
         {
@@ -44,6 +48,10 @@ export default function ResearchAreasBlock() {
                 curiosity, and an aptitude for learning are ideal for this
                 program.
             </p>
+
+            <div className="flex flex-col gap-component-gap-sm">
+                <Image src={Res1} alt="Faculty and advisors" />
+            </div>
 
             <div className="flex flex-col gap-[14px]">
                 {areas.map((area) => (
