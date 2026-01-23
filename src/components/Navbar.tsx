@@ -8,7 +8,7 @@ import useHash from '@/lib/getHash';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import {
     LANGUAGE_CHINESE_SIMPLIFIED,
@@ -22,6 +22,12 @@ export default function Navbar() {
     const hash = useHash();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [expandedSubmenu, setExpandedSubmenu] = useState<string | null>(null);
+
+    const [language, setLanguage] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLanguage(sessionStorage.getItem('language'));
+    }, []);
 
     const navItems = [
         {
@@ -241,7 +247,8 @@ export default function Navbar() {
                     <div className="flex relative pb-2 text-nav divide-x-2">
                         <p
                             className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
-                                pathname.includes('xxx')
+                                !language ||
+                                language?.includes(LANGUAGE_ENGLISH)
                                     ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
                                     : 'text-isd-font-3'
                             }`}
@@ -257,7 +264,7 @@ export default function Navbar() {
                         </p>
                         <p
                             className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
-                                pathname.includes('xxx')
+                                language?.includes(LANGUAGE_CHINESE_SIMPLIFIED)
                                     ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
                                     : 'text-isd-font-3'
                             }`}
@@ -278,11 +285,12 @@ export default function Navbar() {
                                     : 'text-isd-font-3'
                             }`}
                             onClick={() => {
-                                sessionStorage.setItem(
+                                /* sessionStorage.setItem(
                                     'language',
                                     LANGUAGE_CHINESE_TRADITIONAL
-                                );
-                                window.location.reload();
+                                );*/
+                                //window.location.reload();
+                                alert('Coming soon');
                             }}
                         >
                             繁

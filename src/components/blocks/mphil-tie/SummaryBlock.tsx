@@ -1,12 +1,15 @@
 import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
+import { useEffect, useState } from 'react';
 
 export default function SummaryBlock() {
-    const language = sessionStorage.getItem('language');
+    const [language, setLanguage] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLanguage(sessionStorage.getItem('language'));
+    }, []);
 
     return (
         <div>
-    
-  
             {(language === LANGUAGE_ENGLISH || !language) &&
                 'The Hong Kong University of Science and Technology (HKUST) is committed to fostering the spirit of innovation and entrepreneurship, and has incubated over 1,700 active start-ups,            including 10 unicorns and 11 listed companies, creating more than            HK$400 billion of economic benefits for the community, and nurturing            tens of thousands of innovative talents rooted in a wide range of            industries. Today, Clear Water Bay has become a cradle of technology            innovations with rich resources and a strong eco-system.'}
             {language === LANGUAGE_CHINESE_SIMPLIFIED &&

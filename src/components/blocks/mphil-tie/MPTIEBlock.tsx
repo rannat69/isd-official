@@ -20,15 +20,16 @@ import {
 export default function MPTIEBlock() {
     const [activeContentId, setActiveContentId] = useState('edu-obj');
 
+    const [language, setLanguage] = useState<string | null>(null);
+
     useEffect(() => {
         setActiveContentId('edu-obj');
+        setLanguage(sessionStorage.getItem('language'));
     }, []);
 
     const handleMenuClick = (id: string) => {
         setActiveContentId(id);
     };
-
-    const language = sessionStorage.getItem('language');
 
     const content = [
         {
@@ -137,15 +138,23 @@ export default function MPTIEBlock() {
                 <div className="flex flex-col gap-component-gap-sm">
                     <div className="gap-element-gap flex flex-col">
                         <Breadcrumb
-                            titles={[
-                                'Academics',
-                                'MPhil in Technology Innovation and Entrepreneurship (TIE)',
-                            ]}
+                            titles={
+                                !language || language === LANGUAGE_ENGLISH
+                                    ? [
+                                          'Academics',
+                                          'MPhil in Technology Innovation and Entrepreneurship (TIE)',
+                                      ]
+                                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                                      ? [
+                                            '学术部分',
+                                            '技术创新与创业哲学硕士 (TIE)',
+                                        ]
+                                      : [] // Add a default case if needed
+                            }
                         />
                         <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
-                            {!language ||
-                                (language === LANGUAGE_ENGLISH &&
-                                    'MPhil in Technology Innovation \n and Entrepreneurship (TIE)')}
+                            {(!language || language === LANGUAGE_ENGLISH) &&
+                                'MPhil in Technology Innovation \n and Entrepreneurship (TIE)'}
 
                             {language === LANGUAGE_CHINESE_SIMPLIFIED &&
                                 '技术创新与创业哲学硕士 (TIE)'}

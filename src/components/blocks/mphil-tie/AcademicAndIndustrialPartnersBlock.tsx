@@ -12,25 +12,38 @@ import Partner11 from '@/assets/academics/mphil-in-tie/partner11.png';
 import Partner12 from '@/assets/academics/mphil-in-tie/partner12.png';
 import Partner13 from '@/assets/academics/mphil-in-tie/partner13.png';
 import Image from 'next/image';
+import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
+import { useEffect, useState } from 'react';
 
 export default function AcademicAndIndustrialPartnersBlock() {
+    const [language, setLanguage] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLanguage(sessionStorage.getItem('language'));
+    }, []);
+
     return (
         <div className="flex flex-col gap-[24px]">
             <h2 className="lg:text-[36px] text-h2 leading-[36px] font-bold text-isd-primary">
-                Academic and Industrial Partners
+                {(language === LANGUAGE_ENGLISH || !language) &&
+                    'Academic and Industrial Partners'}
+                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                    '学术及业界合作伙伴'}
             </h2>
 
             <p>
-                The TIE MPhil program is designed to bridge the gap between
-                academic research and real-world application. Our program
-                collaborates with a diverse range of academic institutions and
-                industrial partners to provide students with a comprehensive
-                learning experience.
+                {(language === LANGUAGE_ENGLISH || !language) &&
+                    'The TIE MPhil program is designed to bridge the gap between                academic research and real-world application. Our program                collaborates with a diverse range of academic institutions and                industrial partners to provide students with a comprehensive                learning experience.'}
+
+                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                    'TIE 哲学硕士（MPhil）项目旨在弥合学术研究与现实应用之间的鸿沟。通过与多元化的学术机构及业界伙伴开展广泛合作，我们致力于为学生提供全方位的学习体验。'}
             </p>
 
             <div className="flex flex-col">
                 <h3 className="text-isd-secondary font-bold mb-[24px]">
-                    Academic Incubators
+                    {(language === LANGUAGE_ENGLISH || !language) &&
+                        'Academic Incubators'}
+                    {language === LANGUAGE_CHINESE_SIMPLIFIED && '学术孵化'}
                 </h3>
                 <div className="flex gap-[50px] items-center mb-[24px]">
                     <div>
@@ -71,7 +84,9 @@ export default function AcademicAndIndustrialPartnersBlock() {
                     </div>
                 </div>
                 <h3 className="text-isd-secondary font-bold mb-[24px]">
-                    Partner Incubators
+                    {(language === LANGUAGE_ENGLISH || !language) &&
+                        'Partner Incubators'}
+                    {language === LANGUAGE_CHINESE_SIMPLIFIED && '协调孵化'}
                 </h3>
                 <div className="flex gap-[70px] items-center mb-[24px]">
                     <div>
@@ -112,7 +127,9 @@ export default function AcademicAndIndustrialPartnersBlock() {
                     </div>
                 </div>
                 <h3 className="text-isd-secondary font-bold mb-[24px]">
-                    Industrial Partners
+                    {(language === LANGUAGE_ENGLISH || !language) &&
+                        '                    Industrial Partners'}
+                    {language === LANGUAGE_CHINESE_SIMPLIFIED && '业界合作伙伴'}
                 </h3>
                 <div className="flex gap-[50px] items-center">
                     <div>

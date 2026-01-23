@@ -6,39 +6,74 @@ import {
 import EduObj1En from '@/assets/academics/mphil-in-tie/edu-obj1.eng.png';
 import EduObj1ZhSi from '@/assets/academics/mphil-in-tie/edu-obj1.zh.simp.png';
 import Image from 'next/image';
-
-const language = sessionStorage.getItem('language');
-
-const objectives = [
-    {
-        title:
-            language === LANGUAGE_ENGLISH || !language
-                ? 'A research-driven entrepreneurship education'
-                : language === LANGUAGE_CHINESE_SIMPLIFIED
-                  ? '科研驱动的创业教育'
-                  : language === LANGUAGE_CHINESE_TRADITIONAL
-                    ? ''
-                    : '',
-        body:
-            language === LANGUAGE_ENGLISH || !language
-                ? 'This approach ensures graduates are well-equipped to be technical experts in specific areas and are able to originate solutions and overcome technical barriers of complex problems.'
-                : language === LANGUAGE_CHINESE_SIMPLIFIED
-                  ? '此教学路径确保毕业生不仅能成为特定领域的顶尖技术专家，更具备从源头构思解决方案、攻克复杂技术壁垒的卓越能力。'
-                  : language === LANGUAGE_CHINESE_TRADITIONAL
-                    ? ''
-                    : '',
-    },
-    {
-        title: 'A research-to-industry ecosystem',
-        body: 'A synergistic ecosystem linking students with industry practitioners, investors, and other relevant stakeholders to offer practical experience in commercializing original research outcomes to resolve real-life challenges.',
-    },
-    {
-        title: 'Collaborative learning and personalized research endeavours',
-        body: 'TIE promotes teamwork and individual research contribution. Students will pursue individual thesis topics linked to a prototype/service developed by their team.',
-    },
-];
+import { useEffect, useState } from 'react';
 
 export default function EducationalObjectiveBlock() {
+    const [language, setLanguage] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLanguage(sessionStorage.getItem('language'));
+    }, []);
+
+    const objectives = [
+        {
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'A research-driven entrepreneurship education'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '科研驱动的创业教育'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
+            body:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'This approach ensures graduates are well-equipped to be technical experts in specific areas and are able to originate solutions and overcome technical barriers of complex problems.'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '此教学路径确保毕业生不仅能成为特定领域的顶尖技术专家，更具备从源头构思解决方案、攻克复杂技术壁垒的卓越能力。'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
+        },
+
+        {
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'A research-to-industry ecosystem'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '从科研到产业的协同生态'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
+            body:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'A synergistic ecosystem linking students with industry practitioners, investors, and other relevant stakeholders to offer practical experience in commercializing original research outcomes to resolve real-life challenges.'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '我们构建了一个联结学生、业界专家、投资者及相关利益方的协同生态圈。通过将原创科研成果商业化，学生能够获得解决现实世界挑战的宝贵实战经验。'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
+        },
+
+        {
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Collaborative learning and personalized research endeavours'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '协作式学习与个性化科研探索'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
+            body:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'TIE promotes teamwork and individual research contribution. Students will pursue individual thesis topics linked to a prototype/service developed by their team.'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? 'TIE 强调团队协作与个人科研贡献的有机统一。学生在围绕团队开发的“原型产品或服务”开展协作的同时，亦需独立完成与之紧密相关的个人学位论文研究。'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
+        },
+    ];
+
     return (
         <div className="flex flex-col gap-[24px]">
             <div
