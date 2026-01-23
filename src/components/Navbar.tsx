@@ -278,23 +278,23 @@ export default function Navbar() {
                         >
                             简
                         </p>
-                        <p
+                        {/* <p
                             className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
                                 pathname.includes('xxx')
                                     ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
                                     : 'text-isd-font-3'
                             }`}
                             onClick={() => {
-                                /* sessionStorage.setItem(
+                                 sessionStorage.setItem(
                                     'language',
                                     LANGUAGE_CHINESE_TRADITIONAL
-                                );*/
+                                );
                                 //window.location.reload();
                                 alert('Coming soon');
                             }}
                         >
                             繁
-                        </p>
+                        </p>*/}
                     </div>
                 </div>
             </div>
