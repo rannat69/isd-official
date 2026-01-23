@@ -1,10 +1,10 @@
 import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
-import Curriculum1 from '@/assets/academics/mphil-in-tie/curiculum.1.1.png';
-import Curriculum2 from '@/assets/academics/mphil-in-tie/curiculum.1.2.png';
-import Curriculum3 from '@/assets/academics/mphil-in-tie/curiculum.1.3.png';
-import Curriculum1CnSimp from '@/assets/academics/mphil-in-tie/curiculum.1.1.cn.simp.png';
-import Curriculum2CnSimp from '@/assets/academics/mphil-in-tie/curiculum.1.2.cn.simp.png';
-import Curriculum3CnSimp from '@/assets/academics/mphil-in-tie/curiculum.1.3.cn.simp.png';
+import Curriculum1 from '@/assets/academics/mphil-in-tie/curiculum.1.1.svg';
+import Curriculum2 from '@/assets/academics/mphil-in-tie/curiculum.1.2.svg';
+import Curriculum3 from '@/assets/academics/mphil-in-tie/curiculum.1.3.svg';
+import Curriculum1CnSimp from '@/assets/academics/mphil-in-tie/curiculum.1.1.cn.simp.svg';
+import Curriculum2CnSimp from '@/assets/academics/mphil-in-tie/curiculum.1.2.cn.simp.svg';
+import Curriculum3CnSimp from '@/assets/academics/mphil-in-tie/curiculum.1.3.cn.simp.svg';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 

@@ -3,8 +3,8 @@ import {
     LANGUAGE_CHINESE_TRADITIONAL,
     LANGUAGE_ENGLISH,
 } from '@/app/constants';
-import EduObj1En from '@/assets/academics/mphil-in-tie/edu-obj1.eng.png';
-import EduObj1ZhSi from '@/assets/academics/mphil-in-tie/edu-obj1.zh.simp.png';
+import EduObj1En from '@/assets/academics/mphil-in-tie/edu-obj1.eng.svg';
+import EduObj1ZhSi from '@/assets/academics/mphil-in-tie/edu-obj1.cn.simp.svg';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
