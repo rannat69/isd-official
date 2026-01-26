@@ -445,6 +445,36 @@ export default function Navbar() {
                             </div>
                         </div>
                     ))}
+                    <div>
+                        <div className="flex items-center justify-between border-b border-white">
+                            <div className="flex py-3 font-bold text-nav divide-x-2">
+                                <div
+                                    className="px-2"
+                                    onClick={() => {
+                                        sessionStorage.setItem(
+                                            'language',
+                                            LANGUAGE_ENGLISH
+                                        );
+                                        window.location.reload();
+                                    }}
+                                >
+                                    ENG
+                                </div>
+                                <div
+                                    className="px-2"
+                                    onClick={() => {
+                                        sessionStorage.setItem(
+                                            'language',
+                                            LANGUAGE_CHINESE_SIMPLIFIED
+                                        );
+                                        window.location.reload();
+                                    }}
+                                >
+                                    简
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )}
         </nav>
