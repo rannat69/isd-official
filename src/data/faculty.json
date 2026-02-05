@@ -700,5 +700,35 @@
         "surname": "CHOW",
         "type": "ISD Faculty",
         "tags": ["affiliate"]
+    },
+    {
+        "details": "Prof. Hong is currently the Vice President and Chief Sports Officer of Li-Ning (China) Sports Goods Co., Ltd. Over the past three decades, he has held multiple key positions at Li-Ning, including Head of the Asian Games Project, Head of the Olympic Project, General Manager of the Shanghai Branch, Chief Product Officer (CPO), and Chief Marketing Officer (CMO). He is a highly influential expert in China’s sports industry, with deep expertise in sports science, product innovation, and brand strategy.",
+        "email": "",
+        "id": 405,
+        "keywords": [],
+        "link": "",
+        "location": "",
+        "name": "Yuru HONG",
+        "phone": "",
+        "photo": "",
+        "role": "Adjunct Professor",
+        "surname": "HONG",
+        "type": "ISD Faculty",
+        "tags": ["adjunct"]
+    },
+    {
+        "details": "Prof. Lu is a seasoned venture capitalist with over two decades of experience financing and advising early-stage technology companies across the U.S. and Greater China. She is the Founder and Managing Partner of Atypical Ventures and Co-founder of DCM China, with a track record of backing more than 15 unicorns, 12 IPOs, and 6 successful M&A exits— including her signature investment in Kuaishou.",
+        "email": "",
+        "id": 406,
+        "keywords": [],
+        "link": "",
+        "location": "",
+        "name": "Ruby LU",
+        "phone": "",
+        "photo": "",
+        "role": "Adjunct Professor",
+        "surname": "LU",
+        "type": "ISD Faculty",
+        "tags": ["adjunct"]
     }
 ]
