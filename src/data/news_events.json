@@ -197,5 +197,16 @@
         "pictures": ["/src/assets/news/news.2025.12.08.png"],
         "title": "ISD UG Students Shone at Cathay Hackathon 2025",
         "type": "news"
+    },
+    {
+        "date": "2026-03-26",
+        "details": "# Abstract \n \n What if the most disruptive moments in life aren’t setbacks, but catalysts for invention? \n \n This session traces an unconventional trajectory that begins on the high-stakes floors of Goldman Sachs in 2007—just before the world faced one of the greatest financial upheavals in modern history. Navigating the 2008 global financial crisis offered early lessons in volatility, resilience, and the dynamics of rapid adaptation within complex systems.\n \n A decade later, disruption arose in a different domain: global education during the COVID-19 pandemic. The crisis revealed how innovation emerges when established structures are forced to transform— demonstrating the interplay between constraint, creativity, and systems design.\n \n Building on these lived experiences and doctoral research into cultivating innovative behaviors among teachers, the session introduces frameworks for designing organizations that learn and evolve. Through the lenses of systems thinking, learning organizations and leadership, we’ll explore how to intentionally foster cultures of curiosity and experimentation in an age increasingly shaped by AI. \n \n # Biography \n \n  Dr. Shirla Sum (岑雅韻) is the Secondary School Principal at Victoria Shanghai Academy. Previously, she served as Vice Principal (Education) and Director of the Yushan Academy Center for Design and Innovation at UWC Changshu China. An experienced IB examiner, Shirla has taught Economics, Business Management, and Individuals & Societies at international schools in both Hong Kong and mainland China. Before entering the field of education, she spent five years as an economist at Goldman Sachs in New York and Hong Kong, where she conducted macroeconomic research focusing on the US and Asia-Pacific economies.\n \n Shirla is a graduate of Pearson College UWC and holds a Bachelor of Arts in Economics and Philosophy from Wellesley College. She completed her Postgraduate Degree in Education (Economics) and Master of Education in Curriculum Studies at the University of Hong Kong, and earned her Doctor of Education (EdD) from Johns Hopkins University.  ",
+        "evt_date": "2026-03-26",
+        "evt_location": "Room 2502 (Lift 25/26), HKUST",
+        "evt_time": "2:00 PM ",
+        "id": 18,
+        "pictures": ["/src/assets/news/evt.2026.03.26.png"],
+        "title": "Resilience by Design : What the Financial Crisis, COVID, and AI Taught Me About Innovation",
+        "type": "events"
     }
 ]
