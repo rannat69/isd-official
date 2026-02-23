@@ -9,6 +9,7 @@ import ExchangeBlock from './student-life/ExchangeBlock';
 import AlumniSharingBlock from './student-life/AlumniSharingBlock';
 import UsefulLinksBlock from './student-life/UsefulLinksBlock';
 import Select from '../Select';
+import StudentProjectsBlock from './student-life/StudentProjectsBlock';
 
 type StudentLifePageKey =
     | 'stud-comp'
@@ -16,6 +17,7 @@ type StudentLifePageKey =
     | 'intern'
     | 'exchange'
     | 'alumni'
+    | 'stud-proj'
     | 'links';
 
 export default function StudentLifeBlock() {
@@ -40,6 +42,11 @@ export default function StudentLifeBlock() {
             key: 'alumni',
             name: 'Alumni Sharing',
             component: <AlumniSharingBlock />,
+        },
+        {
+            key: 'stud-proj',
+            name: 'Student Projects',
+            component: <StudentProjectsBlock />,
         },
         { key: 'links', name: 'Useful Links', component: <UsefulLinksBlock /> },
     ];

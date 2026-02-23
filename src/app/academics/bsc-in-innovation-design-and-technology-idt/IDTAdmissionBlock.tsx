@@ -459,12 +459,7 @@ export default function IDTAdmissionBlock() {
                                 communication skills into action and on display.
                             </p>
                         </div>
-                        <p className="text-secondary">
-                            **The BSc in Integrative Systems and Design program
-                            will be renamed as BSc in Innovation, Design and
-                            Technology, subject to the University&#39;s
-                            approval.
-                        </p>
+           
                     </div>
                 </div>
             </div>

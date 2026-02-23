@@ -8,8 +8,13 @@ import useHash from '@/lib/getHash';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import {
+    LANGUAGE_CHINESE_SIMPLIFIED,
+    LANGUAGE_CHINESE_TRADITIONAL,
+    LANGUAGE_ENGLISH,
+} from '@/app/constants';
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -17,6 +22,12 @@ export default function Navbar() {
     const hash = useHash();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [expandedSubmenu, setExpandedSubmenu] = useState<string | null>(null);
+
+    const [language, setLanguage] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLanguage(sessionStorage.getItem('language'));
+    }, []);
 
     const navItems = [
         {
@@ -153,6 +164,11 @@ export default function Navbar() {
                         pathnameKeyword: 'alumni',
                     },
                     {
+                        name: 'Student Projects',
+                        href: '/student-life?page=stud-proj',
+                        pathnameKeyword: 'stud-proj',
+                    },
+                    {
                         name: 'Useful Links',
                         href: '/student-life?page=links',
                         pathnameKeyword: 'links',
@@ -228,6 +244,58 @@ export default function Navbar() {
                             )}
                         </div>
                     ))}
+                    <div className="flex relative pb-2 text-nav divide-x-2">
+                        <p
+                            className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
+                                !language ||
+                                language?.includes(LANGUAGE_ENGLISH)
+                                    ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
+                                    : 'text-isd-font-3'
+                            }`}
+                            onClick={() => {
+                                sessionStorage.setItem(
+                                    'language',
+                                    LANGUAGE_ENGLISH
+                                );
+                                window.location.reload();
+                            }}
+                        >
+                            ENG
+                        </p>
+                        <p
+                            className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
+                                language?.includes(LANGUAGE_CHINESE_SIMPLIFIED)
+                                    ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
+                                    : 'text-isd-font-3'
+                            }`}
+                            onClick={() => {
+                                sessionStorage.setItem(
+                                    'language',
+                                    LANGUAGE_CHINESE_SIMPLIFIED
+                                );
+                                window.location.reload();
+                            }}
+                        >
+                            简
+                        </p>
+                        {/* <p
+                            className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
+                                pathname.includes('xxx')
+                                    ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
+                                    : 'text-isd-font-3'
+                            }`}
+                            onClick={() => {
+                                 sessionStorage.setItem(
+                                    'language',
+                                    LANGUAGE_CHINESE_TRADITIONAL
+                                );
+                                //window.location.reload();
+                                alert('Coming soon');
+                            }}
+                        >
+                            繁
+                        </p>*/}
+                    </div>
                 </div>
             </div>
 
@@ -377,6 +445,36 @@ export default function Navbar() {
                             </div>
                         </div>
                     ))}
+                    <div>
+                        <div className="flex items-center justify-between border-b border-white">
+                            <div className="flex py-3 font-bold text-nav divide-x-2">
+                                <div
+                                    className="px-2"
+                                    onClick={() => {
+                                        sessionStorage.setItem(
+                                            'language',
+                                            LANGUAGE_ENGLISH
+                                        );
+                                        window.location.reload();
+                                    }}
+                                >
+                                    ENG
+                                </div>
+                                <div
+                                    className="px-2"
+                                    onClick={() => {
+                                        sessionStorage.setItem(
+                                            'language',
+                                            LANGUAGE_CHINESE_SIMPLIFIED
+                                        );
+                                        window.location.reload();
+                                    }}
+                                >
+                                    简
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )}
         </nav>

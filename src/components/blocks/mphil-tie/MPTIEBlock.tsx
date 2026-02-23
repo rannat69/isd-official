@@ -10,12 +10,21 @@ import ApplicationAndFinancialAssistanceBlock from './ApplicationAndFinancialAss
 import ProgramContactBlock from './ProgramContactBlock';
 import Select from '@/components/Select';
 import Breadcrumb from '@/components/Breadcrumb';
+import FacultyAdvisorsBlock from './FacultyAdvisorsBlock';
+import {
+    LANGUAGE_CHINESE_SIMPLIFIED,
+    LANGUAGE_CHINESE_TRADITIONAL,
+    LANGUAGE_ENGLISH,
+} from '@/app/constants';
 
 export default function MPTIEBlock() {
     const [activeContentId, setActiveContentId] = useState('edu-obj');
 
+    const [language, setLanguage] = useState<string | null>(null);
+
     useEffect(() => {
         setActiveContentId('edu-obj');
+        setLanguage(sessionStorage.getItem('language'));
     }, []);
 
     const handleMenuClick = (id: string) => {
@@ -24,19 +33,48 @@ export default function MPTIEBlock() {
 
     const content = [
         {
-            title: 'Educational Objectives',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Educational Objectives'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '教育目标'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? '教育目標'
+                        : '',
             id: 'edu-obj',
             content: (
                 <>
                     <SummaryBlock />
+
                     <EducationalObjectiveBlock />
+                    <div id="curriculum">
+                        <CurriculumBlock />
+                    </div>
+                    <div id="fac-adv">
+                        <FacultyAdvisorsBlock />
+                    </div>
+                    <div id="research">
+                        <ResearchAreasBlock />
+                    </div>
+                    <AcademicAndIndustrialPartnersBlock />
+                    <div id="app">
+                        <ApplicationAndFinancialAssistanceBlock />
+                    </div>
+                    <ProgramContactBlock />
                     {/*<LearningOutcomeBlock />*/}
                 </>
             ),
         },
 
         {
-            title: 'Curriculum',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Curriculum'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '课程设置'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
             id: 'curriculum',
             content: (
                 <>
@@ -45,17 +83,41 @@ export default function MPTIEBlock() {
             ),
         },
         {
-            title: 'Research & Collaborators',
+            /*  title: 'Faculty & Advisors',
+            id: 'fac-adv',
+            content: (
+                <>
+                    <FacultyAdvisorsBlock />
+                </>
+            ),*/
+        },
+        {
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Research & Collaborators'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '研究&合作伙伴'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
             id: 'research',
             content: (
                 <>
+                    <FacultyAdvisorsBlock />
                     <ResearchAreasBlock />
                     <AcademicAndIndustrialPartnersBlock />
                 </>
             ),
         },
         {
-            title: 'Application',
+            title:
+                language === LANGUAGE_ENGLISH || !language
+                    ? 'Application'
+                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                      ? '申请'
+                      : language === LANGUAGE_CHINESE_TRADITIONAL
+                        ? ''
+                        : '',
             id: 'app',
             content: (
                 <>
@@ -69,32 +131,42 @@ export default function MPTIEBlock() {
     return (
         <>
             <div
-                className="lg:dot-pattern before:bottom-[-1150px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]"
-                aria-hidden
-            />
-            <div
-                className="lg:dot-pattern before:top-[-115px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
+                className="dot-pattern before:top-[5px] before:right-[10px] [--dot-color:var(--isd-primary-2)]"
                 aria-hidden
             />
             <div className="container overflow-y-clip flex flex-col py-section-gap gap-component-gap">
                 <div className="flex flex-col gap-component-gap-sm">
                     <div className="gap-element-gap flex flex-col">
                         <Breadcrumb
-                            titles={[
-                                'Academics',
-                                'MPhil in Technology Innovation and Entrepreneurship (TIE)',
-                            ]}
+                            titles={
+                                !language || language === LANGUAGE_ENGLISH
+                                    ? [
+                                          'Academics',
+                                          'MPhil in Technology Innovation and Entrepreneurship (TIE)',
+                                      ]
+                                    : language === LANGUAGE_CHINESE_SIMPLIFIED
+                                      ? [
+                                            '学术部分',
+                                            '技术创新与创业哲学硕士 (TIE)',
+                                        ]
+                                      : [] // Add a default case if needed
+                            }
                         />
                         <h1 className="text-h1 offset-text-background text-pretty mb-component-gap-sm">
-                            MPhil in Technology Innovation <br /> and
-                            Entrepreneurship (TIE)
+                            {(!language || language === LANGUAGE_ENGLISH) &&
+                                'MPhil in Technology Innovation \n and Entrepreneurship (TIE)'}
+
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                '技术创新与创业哲学硕士 (TIE)'}
                         </h1>
                     </div>
                     <div className="hidden w-full lg:flex items-center gap-component-gap-sm text-isd-font-2">
                         {content.map((link) => (
                             <span
                                 key={link.id}
-                                onClick={() => setActiveContentId(link.id)}
+                                onClick={() =>
+                                    setActiveContentId(link.id ? link.id : '')
+                                }
                                 className={`text-h2 h-[60px] flex items-center box-border cursor-pointer ${
                                     activeContentId === link.id
                                         ? 'text-isd-secondary border-b-3 border-isd-secondary'
@@ -105,6 +177,7 @@ export default function MPTIEBlock() {
                             </span>
                         ))}
                     </div>
+                    {/* 
                     <Select
                         triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
                         className="lg:hidden"
@@ -115,7 +188,7 @@ export default function MPTIEBlock() {
                         value={activeContentId}
                         onChange={(value) => handleMenuClick(value as string)}
                         itemClassName="px-[12px] py-[12px] text-xl text-isd-font-2"
-                    />
+                    />*/}
                 </div>
 
                 {content.map((section, index) => (
