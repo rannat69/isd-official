@@ -21,14 +21,15 @@ export default function NewsListBlock() {
     useEffect(() => {
         const fetchNews = async () => {
             let data = await fetch('api/news/allNews', {
-                method: 'POST', // Specify the HTTP method as POST
+                method: 'GET', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body
                 },
-                body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
             });
 
             let news = await data.json();
+
+            console.log('news', news);
 
             // Sort by date desc
             news.sort((a: NewsEntry, b: NewsEntry) => {

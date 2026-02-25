@@ -13,20 +13,49 @@ export default function Carousel({ images, imagesAlt }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
+        if (images.length === 0 || images[0].src.includes('noneImg')) {
+            images = images.splice(0, images.length);
+            return;
+        }
+
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 3000);
         return () => clearInterval(interval);
     }, [images.length, currentIndex]);
 
+    useEffect(() => {
+        if (imagesAlt.length === 0) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesAlt.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [imagesAlt.length, currentIndex]);
+
     const handlePrevious = () => {
-        setCurrentIndex(
-            (prevIndex) => (prevIndex - 1 + images.length) % images.length
-        );
+        if (images.length > 0) {
+            setCurrentIndex(
+                (prevIndex) => (prevIndex - 1 + images.length) % images.length
+            );
+        }
+
+        if (imagesAlt.length > 0) {
+            setCurrentIndex(
+                (prevIndex) =>
+                    (prevIndex - 1 + imagesAlt.length) % imagesAlt.length
+            );
+        }
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        if (images.length > 0) {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }
+
+        if (imagesAlt.length > 0) {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesAlt.length);
+        }
     };
 
     const handleDotClick = (index: number) => {
@@ -38,25 +67,33 @@ export default function Carousel({ images, imagesAlt }: CarouselProps) {
             {/* Image Layer */}
             <div className="absolute -z-1 w-full lg:h-full h-[260px]">
                 {images.map((image, index) => (
-                    <Image
-                        key={index}
-                        src={image}
-                        alt={`Carousel Image ${index + 1}`}
-                        className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
-                            index === currentIndex ? 'opacity-100' : 'opacity-0'
-                        }`}
-                    />
+                    <>
+                        <Image
+                            key={index}
+                            src={image}
+                            alt={`Carousel Image ${index + 1}`}
+                            className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
+                                index === currentIndex
+                                    ? 'opacity-100'
+                                    : 'opacity-0'
+                            }`}
+                        />
+                    </>
                 ))}
-   
+
                 {imagesAlt.map((image, index) => (
-                    <img
-                        src={image}
-                        key={index}
-                        alt={`Carousel Image ${index + 1}`}
-                        className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
-                            index === currentIndex ? 'opacity-100' : 'opacity-0'
-                        }`}
-                    />
+                    <>
+                        <img
+                            src={image}
+                            key={index}
+                            alt={`Carousel Image ${index + 1}`}
+                            className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
+                                index === currentIndex
+                                    ? 'opacity-100'
+                                    : 'opacity-0'
+                            }`}
+                        />
+                    </>
                 ))}
             </div>
 
