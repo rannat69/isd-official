@@ -208,5 +208,16 @@
         "pictures": ["/src/assets/news/evt.2026.03.26.png"],
         "title": "Resilience by Design : What the Financial Crisis, COVID, and AI Taught Me About Innovation",
         "type": "events"
+    },
+    {
+        "date": "2026-03-05",
+        "details": "# Abstract \n \n 6G is envisioned to be substantially more than just a next-generation wireless communication technology. It is thought of as a universal intelligent fabric that will have a transformative effect on societal structure, empowering the emergence of smart societies. A massive deployment of the new technology at the very edge of the network provides a limited, yet unique opportunity for the evolution of the Internet itself.  \n \n In this seminar, we aim to identify how the impact of a wide-scale 6G deployment can affect the Internet’s architecture, which has a long time been criticized for its ossified state. To take advantage of this chance, careful consideration must be taken at an early stage of the 6G infrastructure design. We investigate how to implement extensibility in 6G to enable deployment and proliferation of what essentially is layer 3.5, and, eventually, unbuckle the thin waist of the Internet. Also, we examine what clean-slate internet architectures appear to be the most promising in conjunction with the massive renewal of the Internet’s edge.This seminar serves as a call to action for making the Internet future-ready as 6G reshapes its edge. \n \n # Biography \n \n Jussi Kangasharju received his MSc from Helsinki University of Technology in 1998. He received his Diplome d'Etudes Approfondies (DEA) from the Ecole Superieure des Sciences Informatiques (ESSI) in Sophia Antipolis in 1998. In 2002 he received his PhD from University of Nice Sophia Antipolis/Institut Eurecom.  \n \n In 2002 he joined Darmstadt University of Technology (TUD), first as post-doctoral researcher, and from 2004 onwards as assistant professor. Since June 2007 Jussi is a professor at the department of computer science at University of Helsinki and from 2022 onwards he is the head of the department. Between 2009 and 2012 he was the director of the Future Internet research program at Helsinki Institute for Information Technology (HIIT). Jussi's research interests are information-centric networks, edge and cloud computing, content distribution, opportunistic networks, and green ICT. He is a member of IEEE and ACM. ",
+        "evt_date": "2026-03-05",
+        "evt_location": "Room 2502 (Lift 25/26), HKUST",
+        "evt_time": "2:00 PM ",
+        "id": 19,
+        "pictures": ["/src/assets/news/evt.2026.03.05.png"],
+        "title": "Resilience by Design : What the Financial Crisis, COVID, and AI Taught Me About Innovation",
+        "type": "events"
     }
 ]
