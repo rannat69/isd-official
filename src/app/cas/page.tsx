@@ -2,8 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 
+interface User {
+    username: string;
+}
+
 export default function Dashboard() {
-    const [user, setUser] = useState<any>(null);
+    const [user, setUser] = useState<User>();
 
     useEffect(() => {
         // Call an API that reads the server-side session from the cookie
