@@ -214,7 +214,7 @@ export default function Navbar() {
                             <Link
                                 href={item.href}
                                 className={`relative z-50 text-nav group-hover:underline group-hover:underline-offset-10 group-hover:decoration-isd-primary group-hover:decoration-4 ${
-                                    pathname.includes(item.pathnameKeyword)
+                                    pathname?.includes(item.pathnameKeyword)
                                         ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
                                         : 'text-isd-font-3'
                                 }`}
@@ -235,7 +235,7 @@ export default function Navbar() {
                                         <Link
                                             key={subItem.name}
                                             href={subItem.href}
-                                            className={`block px-4 py-2 text-nav-sub hover:bg-gray-100 whitespace-nowrap ${pathname.includes(subItem.pathnameKeyword) || searchParams.toString().includes(subItem.pathnameKeyword) || hash.includes(subItem.pathnameKeyword) ? 'text-isd-primary font-bold underline' : 'text-isd-font-3'}`}
+                                            className={`block px-4 py-2 text-nav-sub hover:bg-gray-100 whitespace-nowrap ${pathname?.includes(subItem.pathnameKeyword) || (searchParams && searchParams.toString().includes(subItem.pathnameKeyword)) || hash.includes(subItem.pathnameKeyword) ? 'text-isd-primary font-bold underline' : 'text-isd-font-3'}`}
                                         >
                                             {subItem.name}
                                         </Link>
@@ -380,7 +380,7 @@ export default function Navbar() {
                                         setMobileMenuOpen(false);
                                     }}
                                     className={`block py-3 text-nav ${
-                                        pathname.includes(item.pathnameKeyword)
+                                        pathname?.includes(item.pathnameKeyword)
                                             ? 'font-bold'
                                             : ''
                                     }`}
@@ -421,14 +421,15 @@ export default function Navbar() {
                                                             )
                                                         }
                                                         className={`block text-sm ${
-                                                            pathname.includes(
+                                                            pathname?.includes(
                                                                 subItem.pathnameKeyword
                                                             ) ||
-                                                            searchParams
-                                                                .toString()
-                                                                .includes(
-                                                                    subItem.pathnameKeyword
-                                                                ) ||
+                                                            (searchParams &&
+                                                                searchParams
+                                                                    .toString()
+                                                                    .includes(
+                                                                        subItem.pathnameKeyword
+                                                                    )) ||
                                                             hash.includes(
                                                                 subItem.pathnameKeyword
                                                             )

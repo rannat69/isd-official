@@ -35,11 +35,15 @@ export default function NewsListBlock() {
     }
 
     const category: CategoryFilter = useMemo(() => {
-        return (searchParams.get('category') as CategoryFilter) || 'all';
+        return (
+            (searchParams &&
+                (searchParams.get('category') as CategoryFilter)) ||
+            'all'
+        );
     }, [searchParams]);
 
     const year: number | 'all' = useMemo(() => {
-        const raw = searchParams.get('year');
+        const raw = searchParams && searchParams.get('year');
         if (!raw) return 'all';
         const n = Number(raw);
         return Number.isFinite(n) ? (n as number) : 'all';
@@ -81,7 +85,7 @@ export default function NewsListBlock() {
         category?: CategoryFilter;
         year?: number | 'all';
     }) {
-        const params = new URLSearchParams(searchParams.toString());
+        const params = new URLSearchParams(searchParams?.toString());
         if (next.category !== undefined) {
             const p = (() => {
                 return next.category === 'all' ? null : next.category;
@@ -94,7 +98,10 @@ export default function NewsListBlock() {
             else params.set('year', String(next.year));
         }
         const qs = params.toString();
-        router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+        const safePathname = pathname ?? '';
+        router.replace(qs ? `${safePathname}?${qs}` : safePathname, {
+            scroll: false,
+        });
     }
 
     return (
@@ -163,7 +170,7 @@ export default function NewsListBlock() {
                                         : 'News'
                                 }
                                 title={item.title}
-                                excerpt={stripTags(item.details)}
+                                excerpt={stripTags(item.details ?? '')}
                                 date={formattedDate}
                                 image={img}
                             />
