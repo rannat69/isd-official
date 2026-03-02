@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@svgr/webpack": "^8.1.0",
+        "fast-xml-parser": "^5.4.1",
         "jsonwebtoken": "^9.0.3",
         "lucide": "^0.544.0",
         "lucide-react": "^0.544.0",
@@ -20,6 +21,7 @@
         "react": "19.1.0",
         "react-dom": "19.1.0",
         "url-loader": "^4.1.1",
+        "xml-js": "^1.6.11",
         "xml2js": "^0.6.2"
     },
     "devDependencies": {
