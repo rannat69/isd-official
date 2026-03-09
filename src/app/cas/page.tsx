@@ -11,7 +11,7 @@ export default function Dashboard() {
     useEffect(() => {
         // Call an API that reads the server-side session from the cookie
 
-        fetch('api/hello', { credentials: 'include' })
+        fetch('/api/hello', { credentials: 'include' })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data); // Log the result
@@ -20,7 +20,7 @@ export default function Dashboard() {
                 console.error('Error fetching data:', error); // Log any errors
             });
 
-        fetch('api/cas/me', { credentials: 'include' })
+        fetch('/api/cas/me', { credentials: 'include' })
             .then((res) => res.json())
             .then((data) => setUser(data.user))
             .catch(() => {});
@@ -28,7 +28,7 @@ export default function Dashboard() {
 
     const handleLogin = () => {
         // Redirect to your login endpoint
-        fetch('api/cas/login', {
+        fetch('/api/cas/login', {
             method: 'POST', // Change to POST
             credentials: 'include',
             headers: {
