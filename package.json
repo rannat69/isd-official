@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@svgr/webpack": "^8.1.0",
+        "axios": "^1.13.6",
         "fast-xml-parser": "^5.4.1",
         "jsonwebtoken": "^9.0.3",
         "lucide": "^0.544.0",

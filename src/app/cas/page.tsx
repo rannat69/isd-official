@@ -3,42 +3,101 @@
 import React, { useEffect, useState } from 'react';
 
 export default function Dashboard() {
-
-
-
-    const [user, setUser] = useState<{ username: string } | null>(null);
+    const [user, setUser] = useState<string>('');
 
     useEffect(() => {
-        // Call an API that reads the server-side session from the cookie
+        console.log('useEffect');
 
-        fetch('/api/hello', { credentials: 'include' })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data); // Log the result
+        // Check for the ?ticket in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const ticket = urlParams.get('ticket'); // Get the value of the ticket parameter
+
+        if (ticket) {
+            console.log('Ticket found:', ticket); // Log the ticket if present
+            // Optionally, you can perform actions based on the ticket
+
+            fetch('/api/cas/serviceValidate', {
+                method: 'POST', // Specify the method as POST
+                credentials: 'include', // Include credentials
+                headers: {
+                    'Content-Type': 'application/json', // Set the content type to JSON
+                },
+                body: JSON.stringify({ ticket }), // Stringify the body object
             })
-            .catch((error) => {
-                console.error('Error fetching data:', error); // Log any errors
-            });
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data.message);
 
-        fetch('/api/cas/me', { credentials: 'include' })
-            .then((res) => res.json())
-            .then((data) => setUser(data.user))
-            .catch(() => {});
+                    // Function to parse the XML and extract needed values
+                    function extractUserInfo(xml: string) {
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(
+                            xml,
+                            'application/xml'
+                        );
+
+                        console.log(
+                            'xmlDoc',
+                            xmlDoc.getElementsByTagName('cas:name')
+                        );
+
+                        // Extract values using the appropriate tags
+                        const name =
+                            xmlDoc.getElementsByTagName('cas:name')[0]
+                                .textContent;
+                        const email =
+                            xmlDoc.getElementsByTagName('cas:mail')[0]
+                                .textContent;
+                        const departmentNumber = xmlDoc.getElementsByTagName(
+                            'cas:departmentNumber'
+                        )[0].textContent;
+
+                        // Extract all eduPersonAffiliation tags
+                        const eduPersonAffiliations = Array.from(
+                            xmlDoc.getElementsByTagName(
+                                'cas:eduPersonAffiliation'
+                            )
+                        ).map((elem) => elem.textContent);
+
+                        return {
+                            name,
+                            email,
+                            departmentNumber,
+                            eduPersonAffiliations,
+                        };
+                    }
+
+                    // Call the function and log the result
+                    const userInfo = extractUserInfo(data.message);
+                    console.log(userInfo);
+
+                    setUser(userInfo.email);
+                })
+                .catch((error) => {
+                    console.error('Error:', error); // Log any errors
+                });
+        } else {
+            location.href =
+                'https://cas.ust.hk/cas/login?service=http://localhost:3000/cas';
+        }
     }, []);
 
     const handleLogin = () => {
-        // Redirect to your login endpoint
-        fetch('/api/cas/login', {
-            method: 'POST', // Change to POST
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json', // Set content type
-            },
-            body: JSON.stringify({}), // Empty body
-        })
+        // Redirect to your login endpoint/*
+        /* fetch(
+            'https://cas.ust.hk/cas/login?service=https://isd.hkust.edu.hk/cas',
+            {
+                method: 'GET', // Change to POST
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json', // Set content type
+                },
+            }
+        )
             .then((res) => res.json())
             .then((data) => setUser(data.user))
-            .catch(() => {});
+           .catch(() => {});*/
+        // Redirect page
     };
 
     if (!user) {
@@ -53,7 +112,7 @@ export default function Dashboard() {
 
     return (
         <div>
-            <h1>Welcome, {user.username}</h1>
+            <h1>Welcome, {user}</h1>
             <p>You are authenticated via CAS.</p>
         </div>
     );
