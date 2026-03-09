@@ -12,6 +12,6 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse) {
     const params = {
         service: serviceCallback.toString(),
     };
-    const loginUrl = `https://cas.ust.hk/cas/login?${querystring.stringify(params)}`;
+    const loginUrl = `https://cas.ust.hk/cas/login?service=https://isd.hkust.edu.hk/`;
     res.redirect(loginUrl);
 }
