@@ -36,21 +36,51 @@ export default function Dashboard() {
                             'application/xml'
                         );
 
-                        console.log(
-                            'xmlDoc',
-                            xmlDoc.getElementsByTagName('cas:name')
-                        );
-
                         // Extract values using the appropriate tags
-                        const name =
-                            xmlDoc.getElementsByTagName('cas:name')[0]
-                                .textContent;
-                        const email =
-                            xmlDoc.getElementsByTagName('cas:mail')[0]
-                                .textContent;
-                        const departmentNumber = xmlDoc.getElementsByTagName(
-                            'cas:departmentNumber'
-                        )[0].textContent;
+                        const userElement =
+                            xmlDoc.getElementsByTagName('cas:user')[0];
+                        const nameElement =
+                            xmlDoc.getElementsByTagName('cas:name')[0];
+                        const emailElement =
+                            xmlDoc.getElementsByTagName('cas:mail')[0];
+                        const departmentNumberElement =
+                            xmlDoc.getElementsByTagName(
+                                'cas:departmentNumber'
+                            )[0];
+
+                        // Initialize variables
+                        let userTemp = null;
+                        let name = null;
+                        let email = null;
+                        let departmentNumber = null;
+
+                        // Check and assign textContent if elements are found
+                        if (userElement) {
+                            userTemp = userElement.textContent;
+                        } else {
+                            console.warn('User element not found.');
+                        }
+
+                        if (nameElement) {
+                            name = nameElement.textContent;
+                        } else {
+                            console.warn('Name element not found.');
+                        }
+
+                        if (emailElement) {
+                            email = emailElement.textContent;
+                        } else {
+                            console.warn('Email element not found.');
+                        }
+
+                        if (departmentNumberElement) {
+                            departmentNumber =
+                                departmentNumberElement.textContent;
+                        } else {
+                            console.warn(
+                                'Department number element not found.'
+                            );
+                        }
 
                         // Extract all eduPersonAffiliation tags
                         const eduPersonAffiliations = Array.from(
@@ -60,6 +90,7 @@ export default function Dashboard() {
                         ).map((elem) => elem.textContent);
 
                         return {
+                            userTemp,
                             name,
                             email,
                             departmentNumber,
@@ -71,7 +102,9 @@ export default function Dashboard() {
                     const userInfo = extractUserInfo(data.message);
                     console.log(userInfo);
 
-                    setUser(userInfo.email);
+                    setUser(
+                        userInfo.userTemp ? userInfo.userTemp : 'Unknown user'
+                    );
                 })
                 .catch((error) => {
                     console.error('Error:', error); // Log any errors
