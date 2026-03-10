@@ -57,13 +57,13 @@ export default function StudentLifeBlock() {
     const [page, setPage] = useState<StudentLifePageKey>('stud-comp');
 
     useEffect(() => {
-        const initialPage = searchParams.get('page') ?? 'stud-comp';
+        const initialPage = searchParams?.get('page') ?? 'stud-comp';
         setPage(initialPage as StudentLifePageKey);
     }, [searchParams]);
 
     const handlePageChange = (newPage: StudentLifePageKey) => {
         setPage(newPage);
-        const params = new URLSearchParams(searchParams.toString());
+        const params = new URLSearchParams(searchParams?.toString());
         params.set('page', newPage);
         router.push(`?${params.toString()}`, { scroll: false });
     };

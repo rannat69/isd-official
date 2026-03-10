@@ -6,7 +6,10 @@ import { Fragment } from 'react';
 
 export default function Breadcrumb({ titles }: { titles?: string[] }) {
     const pathname = usePathname();
-    const pathSegments = pathname.split('/').filter(Boolean);
+
+    const safePathname = pathname ?? '';
+
+    const pathSegments = safePathname.split('/').filter(Boolean);
 
     // Determine basePath in this priority order:
     // 1. runtime public env (NEXT_PUBLIC_BASE_PATH) if provided

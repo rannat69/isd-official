@@ -14,20 +14,32 @@ import { useEffect, useState } from 'react';
 export default function PeopleContent() {
     const searchParams = useSearchParams();
 
-    const role = searchParams.get('role') || 'all';
-    const area = searchParams.get('area') || 'all';
-    const keyword = searchParams.get('keyword') || '';
-    const tag = searchParams.get('tag') || '';
+    let role = 'all';
+    let area = 'all';
+    let keyword = '';
+    let tag = '';
+    let openName = '';
+    let openReturnTo = '';
+
 
     const [staffList, setStaffList] = useState<Person[]>([]);
     const [facultyList, setFacultyList] = useState<Person[]>([]);
-    // prepare an openName derived from keyword for opening a matching faculty card
-    // the URL may use pluses for spaces (e.g. Qian+ZHANG); replace them with spaces
-    const openName = keyword ? keyword.replace(/\+/g, ' ') : '';
-    // if a returnTo was provided in the query, decode it and forward to the block
-    const openReturnTo = searchParams.get('returnTo')
-        ? decodeURIComponent(searchParams.get('returnTo') || '')
-        : '';
+
+    if (searchParams) {
+        role = searchParams.get('role') || 'all';
+        area = searchParams.get('area') || 'all';
+        keyword = searchParams.get('keyword') || '';
+        tag = searchParams.get('tag') || '';
+
+        // prepare an openName derived from keyword for opening a matching faculty card
+        // the URL may use pluses for spaces (e.g. Qian+ZHANG); replace them with spaces
+        openName = keyword ? keyword.replace(/\+/g, ' ') : '';
+        // if a returnTo was provided in the query, decode it and forward to the block
+        openReturnTo = searchParams.get('returnTo')
+            ? decodeURIComponent(searchParams.get('returnTo') || '')
+            : '';
+    }
+
 
     // get staff from API
     useEffect(() => {

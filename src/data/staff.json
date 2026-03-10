@@ -6,7 +6,7 @@
         "link": "",
         "location": "Rm 4223",
         "name": "Remi ANNAT",
-        "phone": "23587114",
+        "phone": "2358 7114",
         "photo": "",
         "role": "Technical Officer",
         "surname": "ANNAT",
@@ -131,19 +131,6 @@
     },
     {
         "details": null,
-        "email": "egkatherine@ust.hk",
-        "id": 5,
-        "link": null,
-        "location": "Rm 5591",
-        "name": "Katherine WAN",
-        "phone": "23588256",
-        "photo": null,
-        "role": "Assistant Manager",
-        "surname": "WAN",
-        "type": "ISD Staff"
-    },
-    {
-        "details": null,
         "email": "atomyuen@ust.hk",
         "id": 8,
         "link": null,
@@ -192,19 +179,6 @@
         "photo": null,
         "role": "Teaching Associate",
         "surname": "YONG",
-        "type": "ISD Staff"
-    },
-    {
-        "details": null,
-        "email": "xiexinying@ust.hk",
-        "id": 14,
-        "link": null,
-        "location": "Rm 5589",
-        "name": "Xinying XIE",
-        "phone": "57491287",
-        "photo": null,
-        "role": "Instructional Assistant",
-        "surname": "XIE",
         "type": "ISD Staff"
     }
 ]

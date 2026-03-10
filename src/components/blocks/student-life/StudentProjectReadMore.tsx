@@ -2,8 +2,7 @@ import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 import { X } from 'lucide-react';
 import { resolveProjPhoto } from './StudentProjectsBlock';
-import Carousel from '@/components/Carousel';
-import CarouselTriple from '@/components/CarouselTriple';
+
 import CarouselStudProj from '@/components/CarouselStudProj';
 
 interface StudentProject {

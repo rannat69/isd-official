@@ -44,3 +44,4 @@ sudo npm i
 sudo npm run build
 
 pm2 start npx --name "isd official" -- serve@latest out
+pm2 start npm --name "isd official" -- start
