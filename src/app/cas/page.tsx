@@ -78,7 +78,9 @@ export default function Dashboard() {
                 });
         } else {
             location.href =
-                'https://cas.ust.hk/cas/login?service=http://localhost:3000/cas';
+                'https://cas.ust.hk/cas/login?service=' +
+                process.env.NEXT_PUBLIC_BASE_URL +
+                '/cas';
         }
     }, []);
 

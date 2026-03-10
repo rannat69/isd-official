@@ -12,7 +12,10 @@ export default async function handler(
 
     const getServiceValidate = async () => {
         const response = await axios.get(
-            'https://cas.ust.hk/cas/serviceValidate?service=http://localhost:3000/cas&ticket=' +
+            'https://cas.ust.hk/cas/serviceValidate?service=' +
+                process.env.NEXT_PUBLIC_BASE_URL +
+                '/cas' +
+                '&ticket=' +
                 _req.body.ticket
         ); // URL of the HTML page
         //res.send(response.data);

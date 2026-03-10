@@ -9,9 +9,13 @@ export default async function handler(
 
     const getServiceValidate = async () => {
         let currentUrl =
-            'https://cas.ust.hk/cas/login?service=http://localhost:3000/cas';
+            'https://cas.ust.hk/cas/login?service=' +
+            process.env.NEXT_PUBLIC_BASE_URL +
+            '/cas';
         currentUrl =
-            'https://shib.ust.hk/idp/profile/cas/login?service=http://localhost:3000/cas';
+            'https://shib.ust.hk/idp/profile/cas/login?service=' +
+            process.env.NEXT_PUBLIC_BASE_URL +
+            '/cas';
         let ticket = null;
 
         while (!ticket) {
