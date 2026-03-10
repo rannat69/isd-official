@@ -29,8 +29,11 @@ export default async function handler(
                 // If we get a 200 response and no other redirection
                 console.log('Final Response:', response.data);
                 break; // Exit the loop if we get a valid response
-            } catch (error: any) {
-                if (error.response && error.response.status === 302) {
+            } catch (error) {
+                if (
+                    axios.isAxiosError(error) &&
+                    error.response?.status === 302
+                ) {
                     // Capture the redirect URL from the response headers
                     currentUrl = error.response.headers.location;
                     console.log('Redirecting to:', currentUrl);
