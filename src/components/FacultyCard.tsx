@@ -110,7 +110,13 @@ export default function FacultyCard({
             >
                 {' '}
                 <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden lg:border-l-3 border-isd-primary">
-                    {!photo.src.includes('noneImg') && (
+                    {typeof photo === 'string' ? (
+                        !photo.includes('noneImg') ? (
+                            <img src={photo} alt={`${name}'s photo`} className="object-cover w-full h-full" />
+                        ) : (
+                            <img src={photoAlt} alt={`${name}'s photo`} />
+                        )
+                    ) : (
                         <Image
                             src={photo}
                             alt={`${name}'s photo`}
@@ -118,10 +124,6 @@ export default function FacultyCard({
                             className="object-cover"
                             sizes="221px"
                         />
-                    )}
-
-                    {photo.src.includes('noneImg') && (
-                        <img src={photoAlt}></img>
                     )}
                 </div>
                 <div className="flex flex-col lg:justify-between justify-start flex-1 text-left lg:gap-0 gap-[8px]">

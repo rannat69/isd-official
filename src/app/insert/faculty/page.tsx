@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 
 export default function Test() {
-    const [articles, setArticles] = useState<any[]>([]);
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [role, setRole] = useState('');
@@ -15,7 +14,7 @@ export default function Test() {
     const [keywords, setKeywords] = useState<string[]>([]);
     const [currentKeyword, setCurrentKeyword] = useState('');
 
-    const [photo, setPhoto] = useState<File>();
+    const [photo, setPhoto] = useState<File | null>();
     const [photoFilename, setPhotoFilename] = useState('');
 
     const [tag, setTag] = useState('');
@@ -107,7 +106,7 @@ export default function Test() {
             details,
         };
 
-        let response = await fetch('/api/people/createFaculty', {
+        const response = await fetch('/api/people/createFaculty', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -137,12 +136,6 @@ export default function Test() {
 
     return (
         <div className="min-h-screen flex flex-col items-center gap-2">
-            {articles.map((article) => (
-                <div key={article.id}>
-                    {article.email}
-                    <br />
-                </div>
-            ))}
             Full Name
             <input
                 className="border-1"

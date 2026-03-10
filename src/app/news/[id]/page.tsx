@@ -17,7 +17,7 @@ export default async function NewsDetailPage({
 }) {
     let item;
 
-    let data = await fetch('http://localhost:3000/api/news/allNews', {
+    const data = await fetch('http://localhost:3000/api/news/allNews', {
         method: 'POST', // Specify the HTTP method as POST
         headers: {
             'Content-Type': 'application/json', // Indicate the content type of the body
@@ -27,14 +27,16 @@ export default async function NewsDetailPage({
 
     const resolvedParams = await params;
 
-    let news = await data.json();
+    const news = await data.json();
 
     // Sort by date desc
     news.sort((a: NewsEntry, b: NewsEntry) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
-    const itemTemp = news.find((it) => String(it.id) === resolvedParams.id);
+    const itemTemp = news.find(
+        (it: NewsEntry) => String(it.id) === resolvedParams.id
+    );
 
     if (data.ok) {
         item = itemTemp;

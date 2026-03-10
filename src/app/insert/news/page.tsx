@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { login } from 'next-cas-client';
 
 export default function InsertNews() {
     const [title, setTitle] = useState('');
@@ -22,9 +21,9 @@ export default function InsertNews() {
         const files = event.target.files;
         if (files) {
             console.log('files', files[0]);
-            setPhotos(files);
+            setPhotos(Array.from(files));
 
-            const photoFilenamesTemp = [];
+            const photoFilenamesTemp:string[] = [];
 
             for (const file of files) {
                 console.log('file', file.name);
@@ -93,7 +92,7 @@ export default function InsertNews() {
             type,
         };
 
-        let response = await fetch('/api/news/createNews', {
+        const response = await fetch('/api/news/createNews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -119,7 +118,6 @@ export default function InsertNews() {
 
     return (
         <div className="min-h-screen flex flex-col items-center gap-2">
-            <button onClick={() => login()}>Login</button>
             <p>Date</p>
             <input
                 type="date"

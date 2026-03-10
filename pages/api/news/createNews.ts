@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { title } from 'process';
 
 const dataPath = path.join(process.cwd(), '/pages/api/news_events.json');
 
@@ -22,7 +21,7 @@ export default async function handler(
         const faculty = JSON.parse(data);
 
         // find max id in faculty and do +1
-        const maxId = faculty.reduce((max, article) => {
+        const maxId = faculty.reduce((max: number, article: { id: number }) => {
             return article.id > max ? article.id : max;
         }, 0);
 
@@ -30,7 +29,7 @@ export default async function handler(
 
         console.log('req body', req.body);
 
-        const photoTemp = [];
+        const photoTemp: string[] = [];
 
         for (const filename of req.body.photoFilenames) {
             photoTemp.push('/pictures/news/' + filename);

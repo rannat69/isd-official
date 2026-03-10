@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { title } from 'process';
 
 const dataPath = path.join(process.cwd(), '/pages/api/news_events.json');
 

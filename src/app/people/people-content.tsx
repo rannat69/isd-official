@@ -44,7 +44,7 @@ export default function PeopleContent() {
     // get staff from API
     useEffect(() => {
         const fetchStaff = async () => {
-            let data = await fetch('api/people/allStaff', {
+            const data = await fetch('api/people/allStaff', {
                 method: 'POST', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body
@@ -72,7 +72,7 @@ export default function PeopleContent() {
         fetchStaff();
 
         const fetchFaculty = async () => {
-            let data = await fetch('api/people/allFaculty', {
+            const data = await fetch('api/people/allFaculty', {
                 method: 'POST', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body

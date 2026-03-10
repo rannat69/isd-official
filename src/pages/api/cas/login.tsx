@@ -1,18 +1,29 @@
 import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+interface AxiosError {
+    response?: {
+        status: number;
+        headers: {
+            location: string;
+        };
+    };
+    // Include any other properties you expect
+    message?: string;
+}
+
 export default async function handler(
     _req: NextApiRequest,
     res: NextApiResponse
 ) {
     console.log(_req.body); // Log request body for debugging
 
-    const getServiceValidate = async () => {
+    const getServiceValidate = async (): Promise<string | null> => {
         let currentUrl =
             'https://cas.ust.hk/cas/login?service=http://localhost:3000/cas';
         currentUrl =
             'https://shib.ust.hk/idp/profile/cas/login?service=http://localhost:3000/cas';
-        let ticket = null;
+        let ticket: string | null = null;
 
         while (!ticket) {
             try {
@@ -25,8 +36,11 @@ export default async function handler(
                 // If we get a 200 response and no other redirection
                 console.log('Final Response:', response.data);
                 break; // Exit the loop if we get a valid response
-            } catch (error: any) {
-                if (error.response && error.response.status === 302) {
+            } catch (error: unknown) {
+                if (
+                    axios.isAxiosError(error) &&
+                    error.response?.status === 302
+                ) {
                     // Capture the redirect URL from the response headers
                     currentUrl = error.response.headers.location;
                     console.log('Redirecting to:', currentUrl);

@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { title } from 'process';
 
 const dataPath = path.join(process.cwd(), '/pages/api/faculty.json');
 
@@ -24,7 +23,7 @@ export default async function handler(
         const faculty = JSON.parse(data);
 
         // find max id in faculty and do +1
-        const maxId = faculty.reduce((max, article) => {
+        const maxId = faculty.reduce((max: number, article: { id: number }) => {
             return article.id > max ? article.id : max;
         }, 0);
 

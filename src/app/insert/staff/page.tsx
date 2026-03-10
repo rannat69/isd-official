@@ -24,7 +24,7 @@ export default function Test() {
             location,
         };
 
-        let response = await fetch('/api/people/createStaff', {
+        const response = await fetch('/api/people/createStaff', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -20,14 +20,14 @@ export default function NewsListBlock() {
 
     useEffect(() => {
         const fetchNews = async () => {
-            let data = await fetch('api/news/allNews', {
+            const data = await fetch('api/news/allNews', {
                 method: 'GET', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body
                 },
             });
 
-            let news = await data.json();
+            const news = await data.json();
 
             console.log('news', news);
 

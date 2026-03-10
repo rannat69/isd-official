@@ -10,6 +10,7 @@ export interface NewsEntry {
     evt_date?: string | null;
     evt_time?: string | null;
     evt_location?: string | null;
+    photos?: string[];
 }
 
 export type CategoryFilter = 'all' | NewsType;
