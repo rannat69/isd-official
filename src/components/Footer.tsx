@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import HKUSTLogoWhite from '@/assets/hkust-logo-white.svg';
+import HKUSTLogoWhite from '@/assets/hkust-logo-white-35.svg';
 import LinkedinIcon from '@/assets/linkedin-icon.png';
 import FacebookIcon from '@/assets/facebook-icon.png';
 import WechatIcon from '@/assets/wechat-icon.png';
@@ -166,8 +166,8 @@ export default function Footer() {
                     <Image
                         src={HKUSTLogoWhite}
                         alt="HKUST Logo"
-                        width={160}
-                        height={50}
+                        width={200}
+                        height={62}
                         // className="object-cover"
                     />
 

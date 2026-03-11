@@ -10,6 +10,8 @@ export default function Dashboard() {
 
     const [mode, setMode] = useState<string>('');
 
+    const authorisedUsers = ['remia', 'atomyuen'];
+
     useEffect(() => {
         console.log('useEffect');
 
@@ -54,10 +56,10 @@ export default function Dashboard() {
                             )[0];
 
                         // Initialize variables
-                        let userTemp = null;
-                        let name = null;
-                        let email = null;
-                        let departmentNumber = null;
+                        let userTemp: string = '';
+                        let name: string = '';
+                        let email: string = '';
+                        let departmentNumber: string = '';
 
                         // Check and assign textContent if elements are found
                         if (userElement) {
@@ -105,12 +107,24 @@ export default function Dashboard() {
 
                     // Call the function and log the result
                     const userInfo = extractUserInfo(data.message);
-                    
+
                     console.log(userInfo);
 
-                    setUser(
-                        userInfo.userTemp ? userInfo.userTemp : 'Unknown user'
-                    );
+                    if (
+                        userInfo.userTemp &&
+                        authorisedUsers.includes(userInfo.userTemp)
+                    ) {
+                        setUser(userInfo.userTemp || 'Unknown user');
+
+                        history.replaceState(
+                            { key: 'value' },
+                            'Title',
+                            process.env.NEXT_PUBLIC_BASE_URL + '/cas'
+                        );
+                    } else {
+                        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '/';
+                        location.href = baseUrl;
+                    }
                 })
                 .catch((error) => {
                     console.error('Error:', error); // Log any errors
@@ -123,30 +137,11 @@ export default function Dashboard() {
         }
     }, []);
 
-    const handleLogin = () => {
-        // Redirect to your login endpoint/*
-        /* fetch(
-            'https://cas.ust.hk/cas/login?service=https://isd.hkust.edu.hk/cas',
-            {
-                method: 'GET', // Change to POST
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json', // Set content type
-                },
-            }
-        )
-            .then((res) => res.json())
-            .then((data) => setUser(data.user))
-           .catch(() => {});*/
-        // Redirect page
-    };
-
     if (!user) {
         return (
             <div>
                 <h1>Dashboard</h1>
                 <p>You are not logged in.</p>
-                <button onClick={handleLogin}>Login with CAS</button>
             </div>
         );
     }

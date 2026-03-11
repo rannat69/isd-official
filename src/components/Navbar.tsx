@@ -1,7 +1,7 @@
 'use client';
 
-import HKUSTLogoWhiteFull from '@/assets/hkust-white-logo-full.svg';
-import HKUSTLogo from '@/assets/hkust-logo.svg';
+import HKUSTLogoWhiteFull from '@/assets/hkust-logo-white-35.svg';
+import HKUSTLogo from '@/assets/hkust-logo-35.svg';
 import ISDLogo from '@/assets/isd-logo.svg';
 import ISDLogoWhite from '@/assets/isd-logo-white.svg';
 import useHash from '@/lib/getHash';
@@ -193,7 +193,7 @@ export default function Navbar() {
                         <Image
                             src={HKUSTLogo}
                             alt="HKUST Logo"
-                            width={180}
+                            width={225}
                             height={44.4}
                             className="pr-[11px]"
                         />
@@ -313,13 +313,13 @@ export default function Navbar() {
                             <Image
                                 src={HKUSTLogoWhiteFull}
                                 alt="HKUST Logo"
-                                className="w-[112.1px] h-[27.7px] md:w-[180px] md:h-[44.4px] pr-[7px]"
+                                className="w-[140.1px] h-[27.7px] md:w-[180px] md:h-[44.4px] pr-[7px]"
                             />
                         ) : (
                             <Image
                                 src={HKUSTLogo}
                                 alt="HKUST Logo"
-                                className="w-[112.1px] h-[27.7px] md:w-[180px] md:h-[44.4px] pr-[7px]"
+                                className="w-[140.1px] h-[27.7px] md:w-[180px] md:h-[44.4px] pr-[7px]"
                             />
                         )}
                     </Link>

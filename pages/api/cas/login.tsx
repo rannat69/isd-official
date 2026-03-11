@@ -20,40 +20,36 @@ export default async function handler(
 
     const getServiceValidate = async (): Promise<string | null> => {
         let currentUrl =
-            'https://cas.ust.hk/cas/login?service=http://localhost:3000/cas';
-        currentUrl =
-            'https://shib.ust.hk/idp/profile/cas/login?service=http://localhost:3000/cas';
+            'https://shib.ust.hk/idp/profile/cas/login?service=' +
+            process.env.NEXT_PUBLIC_BASE_URL +
+            '/cas';
+
         let ticket: string | null = null;
 
-        while (!ticket) {
-            try {
-                console.log('Fetching:', currentUrl);
+        try {
+            console.log('Fetching:', currentUrl);
 
-                const response = await axios.get(currentUrl, {
-                    maxRedirects: 0,
-                    withCredentials: true,
-                });
-                // If we get a 200 response and no other redirection
-                console.log('Final Response:', response.data);
-                break; // Exit the loop if we get a valid response
-            } catch (error: unknown) {
-                if (
-                    axios.isAxiosError(error) &&
-                    error.response?.status === 302
-                ) {
-                    // Capture the redirect URL from the response headers
-                    currentUrl = error.response.headers.location;
-                    console.log('Redirecting to:', currentUrl);
+            const response = await axios.get(currentUrl, {
+                maxRedirects: 0,
+                withCredentials: true,
+            });
+            // If we get a 200 response and no other redirection
+            console.log('Final Response:', response.data);
+        } catch (error) {
+            if (axios.isAxiosError(error) && error.response?.status === 302) {
+                // Capture the redirect URL from the response headers
+                currentUrl = error.response.headers.location;
+                console.log('Redirecting to:', currentUrl);
 
-                    // Check for the ticket in the new redirect URL
-                    const url = new URL(currentUrl);
-                    ticket = url.searchParams.get('ticket');
-                } else {
-                    console.error('Error fetching:', error);
-                    throw error; // Handle other errors appropriately
-                }
+                // Check for the ticket in the new redirect URL
+                const url = new URL(currentUrl);
+                ticket = url.searchParams.get('ticket');
+            } else {
+                console.error('Error fetching:', error);
+                throw error; // Handle other errors appropriately
             }
         }
+
         return ticket; // Return the found ticket or null if none found
     };
 
