@@ -90,16 +90,16 @@ export default async function NewsDetailPage({
                         )}
 
                         {images.length === 0 &&
-                            (item.photos.length > 1 ? (
+                            (item.pictures.length > 1 ? (
                                 <div className="lg:h-[480px] h-[260px]">
                                     <Carousel
                                         images={[]}
-                                        imagesAlt={item.photos}
+                                        imagesAlt={item.pictures}
                                     />
                                 </div>
                             ) : (
                                 <img
-                                    src={item.photos[0]}
+                                    src={item.pictures[0]}
                                     alt={item.title}
                                     style={{
                                         width: '100%',

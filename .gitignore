@@ -42,3 +42,6 @@ next-env.d.ts
 
 # VS Code
 .vscode/*
+pages/api/staff.json
+pages/api/news_events.json
+pages/api/faculty.json

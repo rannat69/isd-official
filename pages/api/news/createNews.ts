@@ -41,7 +41,7 @@ export default async function handler(
             evtDate: req.body.evtDateFormatted,
             title: req.body.title,
             details: req.body.details,
-            photos: photoTemp,
+            pictures: photoTemp,
             type: req.body.type,
         };
         faculty.push(newFaculty);

@@ -12,7 +12,7 @@ export default function InsertNews() {
 
     const [photos, setPhotos] = useState<File[]>();
     const [photoFilenames, setPhotoFilenames] = useState<string[]>([]);
-    const [type, setType] = useState('');
+    const [type, setType] = useState('news');
     useEffect(() => {}, []);
 
     const handlePictureChange = (
@@ -23,7 +23,7 @@ export default function InsertNews() {
             console.log('files', files[0]);
             setPhotos(Array.from(files));
 
-            const photoFilenamesTemp:string[] = [];
+            const photoFilenamesTemp: string[] = [];
 
             for (const file of files) {
                 console.log('file', file.name);
@@ -41,6 +41,21 @@ export default function InsertNews() {
         console.log('handle upload pre');
         if (!photos) {
             alert('Please select a picture first.');
+            return;
+        }
+
+        if (!date) {
+            alert('Please select a date first.');
+            return;
+        }
+
+        if (!title || title.length === 0) {
+            alert('Please enter a title first.');
+            return;
+        }
+
+        if (!details || details.length === 0) {
+            alert('Please enter details first.');
             return;
         }
 
@@ -102,6 +117,7 @@ export default function InsertNews() {
 
         if (response.ok) {
             console.log('Faculty created');
+            alert('Entry created.');
             // Optionally, reset fields
             setTitle('');
             setDetails('');
@@ -136,7 +152,7 @@ export default function InsertNews() {
                 name="userText"
                 rows={10}
                 cols={50}
-                placeholder="Enter description here. **bold**  # title..."
+                placeholder="Enter description here.  # title..."
                 className="border-1"
                 onChange={(e) => setDetails(e.target.value)}
                 value={details}

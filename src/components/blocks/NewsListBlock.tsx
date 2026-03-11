@@ -174,10 +174,8 @@ export default function NewsListBlock() {
                         // automatically in the browser.
                         const href = `${clientBasePath}/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
-                        const imgAlt = item.photos ? item.photos[0] : ' ';
+                        const imgAlt = item.pictures ? item.pictures[0] : ' ';
                         const formattedDate = formatDate(item.date);
-
-                        console.log('img alt', imgAlt);
 
                         if (item.type === 'events') {
                             return (

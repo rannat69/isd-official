@@ -71,8 +71,18 @@ export default function InsertFaculty() {
             return;
         }
 
-        if (!name) {
+        if (!name || name.length === 0) {
             alert('Please enter a name.');
+            return;
+        }
+
+        if (!role || role.length === 0) {
+            alert('Please enter a role.');
+            return;
+        }
+
+        if (!tag || tag.length === 0) {
+            alert('Please select a tag.');
             return;
         }
 
@@ -81,7 +91,7 @@ export default function InsertFaculty() {
 
         formData.append('type', 'people');
 
-        const responseUpload = await fetch('/api/people/uploadPicture', {
+        const responseUpload = await fetch('/api/uploadPicture', {
             method: 'POST',
             body: formData,
         });
@@ -121,6 +131,7 @@ export default function InsertFaculty() {
 
         if (response.ok) {
             console.log('Faculty created');
+            alert('Faculty member created.');
             // Optionally, reset fields
             setName('');
             setSurname('');

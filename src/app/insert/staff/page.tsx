@@ -34,6 +34,7 @@ export default function InsertStaff() {
 
         if (response.ok) {
             console.log('Staff created');
+            alert('Staff member created.');
             // Optionally, reset the input fields
             setName('');
             setSurname('');

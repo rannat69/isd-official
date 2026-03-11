@@ -18,6 +18,7 @@ export default function NewsCard({
     image: StaticImageData;
     imageAlt: string;
 }) {
+
     return (
         <>
             <a

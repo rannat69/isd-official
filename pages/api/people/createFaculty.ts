@@ -30,6 +30,7 @@ export default async function handler(
         // Append the new article
 
         console.log('req body', req.body);
+
         const newFaculty = {
             id: maxId + 1,
             name: req.body.name,
@@ -48,8 +49,8 @@ export default async function handler(
             photo: '/pictures/people/' + req.body.photoFilename,
 
             type: 'ISD Faculty',
-            area: req.body.area,
-            tags: req.body.tag,
+            areas: [req.body.area],
+            tags: [req.body.tag],
         };
         faculty.push(newFaculty);
 

@@ -108,14 +108,31 @@ export default function FacultyCard({
                 className="flex lg:gap-component-gap-sm gap-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200 p-2 -m-2 rounded-lg"
                 onClick={() => setDetailsOpen(true)}
             >
-                {' '}
                 <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden lg:border-l-3 border-isd-primary">
                     {typeof photo === 'string' ? (
                         !photo.includes('noneImg') ? (
-                            <img src={photo} alt={`${name}'s photo`} className="object-cover w-full h-full" />
+                            <img
+                                src={photo}
+                                alt={`${name}'s photo`}
+                                className="object-cover w-full h-full"
+                            />
                         ) : (
                             <img src={photoAlt} alt={`${name}'s photo`} />
                         )
+                    ) : photoAlt && photoAlt.includes('/src') ? (
+                        <Image
+                            src={photo}
+                            alt={`${name}'s photo`}
+                            fill
+                            className="object-cover"
+                            sizes="221px"
+                        />
+                    ) : photoAlt && photoAlt.length > 0 ? (
+                        <img
+                            src={photoAlt}
+                            alt={`${name}'s photo`}
+                            className="object-cover w-full h-full"
+                        />
                     ) : (
                         <Image
                             src={photo}
@@ -214,13 +231,29 @@ export default function FacultyCard({
                         </button>
                         <div className="flex lg:flex-row flex-col items-center gap-component-gap-sm w-full text-wrap">
                             <div className="relative w-[221px] h-[288px] flex-shrink-0 overflow-hidden">
-                                <Image
-                                    src={photo}
-                                    alt={`${name}'s photo`}
-                                    fill
-                                    sizes="221px"
-                                    className="object-cover"
-                                />
+                                {photoAlt && photoAlt.includes('/src') ? (
+                                    <Image
+                                        src={photo}
+                                        alt={`${name}'s photo`}
+                                        fill
+                                        sizes="221px"
+                                        className="object-cover"
+                                    />
+                                ) : photoAlt && photoAlt.length > 0 ? (
+                                    <img
+                                        src={photoAlt}
+                                        alt={`${name}'s photo`}
+                                        className="object-cover w-full h-full"
+                                    />
+                                ) : (
+                                    <Image
+                                        src={photo}
+                                        alt={`${name}'s photo`}
+                                        fill
+                                        className="object-cover"
+                                        sizes="221px"
+                                    />
+                                )}
                             </div>
 
                             <div className="flex flex-col gap-[24px] w-full">
