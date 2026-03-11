@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import data from '@/data/news_events.json';
 import {
     filterNews,
     sortNews,
@@ -17,7 +16,36 @@ import Select, { type Option } from '@/components/Select';
 import { ChevronsDown } from 'lucide-react';
 
 export default function NewsListBlock() {
-    const allItems = data as NewsEntry[];
+    const [newsList, setNewsList] = useState<NewsEntry[]>([]);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            const data = await fetch('/api/news/allNews', {
+                method: 'POST', // Specify the HTTP method as POST
+                headers: {
+                    'Content-Type': 'application/json', // Indicate the content type of the body
+                },
+            });
+
+            const news = await data.json();
+
+            console.log('news', news);
+
+            // Sort by date desc
+            news.sort((a: NewsEntry, b: NewsEntry) => {
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
+            });
+
+            console.log('news', news);
+
+            if (data.ok) {
+                setNewsList(news);
+            }
+        };
+
+        fetchNews();
+    }, []);
+
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -57,15 +85,15 @@ export default function NewsListBlock() {
     ];
 
     const yearOptions: Option[] = useMemo(() => {
-        const ys = getYears(allItems);
+        const ys = getYears(newsList);
         return [
             { value: 'all', label: 'Year' },
             ...ys.map((y) => ({ value: y, label: String(y) })),
         ];
-    }, [allItems]);
+    }, [newsList]);
 
     const items = sortNews(
-        filterNews(allItems, {
+        filterNews(newsList, {
             category,
             year,
         })
@@ -146,7 +174,11 @@ export default function NewsListBlock() {
                         // automatically in the browser.
                         const href = `${clientBasePath}/news/${item.id}`;
                         const img = resolveImages(item.pictures)[0];
+                        const imgAlt = item.photos ? item.photos[0] : ' ';
                         const formattedDate = formatDate(item.date);
+
+                        console.log('img alt', imgAlt);
+
                         if (item.type === 'events') {
                             return (
                                 <EventCard
@@ -157,6 +189,7 @@ export default function NewsListBlock() {
                                     time={item.evt_time ?? null}
                                     location={item.evt_location ?? null}
                                     image={img}
+                                    imageAlt={imgAlt}
                                 />
                             );
                         }
@@ -173,6 +206,7 @@ export default function NewsListBlock() {
                                 excerpt={stripTags(item.details ?? '')}
                                 date={formattedDate}
                                 image={img}
+                                imageAlt={imgAlt}
                             />
                         );
                     })}

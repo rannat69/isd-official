@@ -1,9 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import InsertNews from '../insert/news/page';
+import InsertFaculty from '../insert/faculty/page';
+import InsertStaff from '../insert/staff/page';
 
 export default function Dashboard() {
     const [user, setUser] = useState<string>('');
+
+    const [mode, setMode] = useState<string>('');
 
     useEffect(() => {
         console.log('useEffect');
@@ -100,6 +105,7 @@ export default function Dashboard() {
 
                     // Call the function and log the result
                     const userInfo = extractUserInfo(data.message);
+                    
                     console.log(userInfo);
 
                     setUser(
@@ -149,6 +155,42 @@ export default function Dashboard() {
         <div>
             <h1>Welcome, {user}</h1>
             <p>You are authenticated via CAS.</p>
+
+            <div className="flex gap-3 m-[20px]">
+                <button
+                    className=" text-isd-primary cursor-pointer p-4 bg-isd-primary-2  items-center justify-center"
+                    onClick={() => setMode('faculty')}
+                >
+                    Faculty
+                </button>
+                <button
+                    className=" text-isd-primary cursor-pointer p-4 bg-isd-primary-2  items-center justify-center"
+                    onClick={() => setMode('staff')}
+                >
+                    Staff
+                </button>
+                <button
+                    className=" text-isd-primary cursor-pointer p-4 bg-isd-primary-2  items-center justify-center"
+                    onClick={() => setMode('news')}
+                >
+                    News and Events
+                </button>
+            </div>
+
+            {mode === 'people' && (
+                <div className="flex gap-3 m-[20px]">
+                    <h1>People</h1>
+                </div>
+            )}
+
+            {mode === 'faculty' && <InsertFaculty></InsertFaculty>}
+            {mode === 'staff' && <InsertStaff></InsertStaff>}
+            {mode === 'news' && (
+                <>
+                    <h1>News and Events</h1>
+                    <InsertNews></InsertNews>
+                </>
+            )}
         </div>
     );
 }

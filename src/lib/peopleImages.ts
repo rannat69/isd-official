@@ -42,6 +42,8 @@ import pengzhou from '@/assets/people/pengzhou.jpg';
 
 import aexzhang from '@/assets/people/aexzhang.jpg';
 
+import gabeHitch from '@/assets/people/gabe.hitch.png';
+
 type Img = StaticImageData | string;
 
 export const peopleImages: Record<string, Img> = {
@@ -83,6 +85,7 @@ export const peopleImages: Record<string, Img> = {
     'lqyang.jpeg': lqyang,
     'pengzhou.jpg': pengzhou,
     'aexzhang.jpg': aexzhang,
+    'gabe.hitch.png': gabeHitch,
 };
 
 /**

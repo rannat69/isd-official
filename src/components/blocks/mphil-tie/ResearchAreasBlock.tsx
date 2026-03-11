@@ -21,7 +21,7 @@ export default function ResearchAreasBlock() {
         setLanguage(sessionStorage.getItem('language'));
     }, []);
 
-    const areas = [
+    /*const areas = [
         {
             title: 'Sustainable-Tech',
             description:
@@ -52,7 +52,7 @@ export default function ResearchAreasBlock() {
                 'Low-altitude economy infrastructure, construction automation, 3D LLM agents, autonomous driving simulators, and socio-technical AI integration.',
             link: '/research/#emergent-themes',
         },
-    ];
+    ];*/
 
     return (
         <div className="flex flex-col gap-[14px]">

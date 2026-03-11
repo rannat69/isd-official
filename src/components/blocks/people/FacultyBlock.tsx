@@ -65,6 +65,7 @@ export default function FacultyBlock({
                                         photo={resolvePersonPhoto(
                                             person.photo ?? undefined
                                         )}
+                                        photoAlt={person.photo ?? undefined}
                                         email={person.email ?? undefined}
                                         link={person.link ?? undefined}
                                         phone={person.phone ?? undefined}

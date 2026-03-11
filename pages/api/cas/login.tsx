@@ -20,15 +20,9 @@ export default async function handler(
 
     const getServiceValidate = async (): Promise<string | null> => {
         let currentUrl =
-            'https://cas.ust.hk/cas/login?service=' +
-            process.env.NEXT_PUBLIC_BASE_URL +
-            '/cas';
+            'https://cas.ust.hk/cas/login?service=http://localhost:3000/cas';
         currentUrl =
-
-            'https://shib.ust.hk/idp/profile/cas/login?service=' +
-            process.env.NEXT_PUBLIC_BASE_URL +
-            '/cas';
-
+            'https://shib.ust.hk/idp/profile/cas/login?service=http://localhost:3000/cas';
         let ticket: string | null = null;
 
         while (!ticket) {
@@ -42,8 +36,7 @@ export default async function handler(
                 // If we get a 200 response and no other redirection
                 console.log('Final Response:', response.data);
                 break; // Exit the loop if we get a valid response
-
-            } catch (error) {
+            } catch (error: unknown) {
                 if (
                     axios.isAxiosError(error) &&
                     error.response?.status === 302

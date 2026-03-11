@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@svgr/webpack": "^8.1.0",
+        "formidable": "^3.5.4",
         "axios": "^1.13.6",
         "fast-xml-parser": "^5.4.1",
         "jsonwebtoken": "^9.0.3",
@@ -28,6 +29,7 @@
     "devDependencies": {
         "@eslint/eslintrc": "^3",
         "@tailwindcss/postcss": "^4",
+        "@types/formidable": "^3.4.6",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
