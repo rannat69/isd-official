@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Test() {
+export default function InsertStaff() {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [role, setRole] = useState('');

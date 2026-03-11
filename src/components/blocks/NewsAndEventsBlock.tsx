@@ -43,7 +43,7 @@ export default function NewsAndEventsBlock() {
 
     useEffect(() => {
         const fetchNews = async () => {
-            const data = await fetch('api/news/allNews', {
+            const data = await fetch('/api/news/allNews', {
                 method: 'POST', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body

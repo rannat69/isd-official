@@ -17,12 +17,13 @@ export default async function NewsDetailPage({
 }) {
     let item;
 
-    const data = await fetch('http://localhost:3000/api/news/allNews', {
+    console.log('NewsDetailPage params', await params);
+
+    const data = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/news/allNews', {
         method: 'POST', // Specify the HTTP method as POST
         headers: {
             'Content-Type': 'application/json', // Indicate the content type of the body
         },
-        body: JSON.stringify(''), // Convert the JavaScript object to a JSON string
     });
 
     const resolvedParams = await params;

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Test() {
+export default function InsertFaculty() {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [role, setRole] = useState('');
@@ -68,6 +68,11 @@ export default function Test() {
         console.log('handle upload pre');
         if (!photo) {
             alert('Please select a picture first.');
+            return;
+        }
+
+        if (!name) {
+            alert('Please enter a name.');
             return;
         }
 

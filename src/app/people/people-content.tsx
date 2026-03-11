@@ -21,7 +21,6 @@ export default function PeopleContent() {
     let openName = '';
     let openReturnTo = '';
 
-
     const [staffList, setStaffList] = useState<Person[]>([]);
     const [facultyList, setFacultyList] = useState<Person[]>([]);
 
@@ -40,11 +39,10 @@ export default function PeopleContent() {
             : '';
     }
 
-
     // get staff from API
     useEffect(() => {
         const fetchStaff = async () => {
-            const data = await fetch('api/people/allStaff', {
+            const data = await fetch('/api/people/allStaff', {
                 method: 'POST', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body
@@ -72,7 +70,7 @@ export default function PeopleContent() {
         fetchStaff();
 
         const fetchFaculty = async () => {
-            const data = await fetch('api/people/allFaculty', {
+            const data = await fetch('/api/people/allFaculty', {
                 method: 'POST', // Specify the HTTP method as POST
                 headers: {
                     'Content-Type': 'application/json', // Indicate the content type of the body
@@ -102,7 +100,7 @@ export default function PeopleContent() {
         };
 
         fetchFaculty();
-    }, []);
+    }, [searchParams]);
 
     return (
         <>
