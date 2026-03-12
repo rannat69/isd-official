@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import InsertNews from '../insert/news/page';
-import InsertFaculty from '../insert/faculty/page';
-import InsertStaff from '../insert/staff/page';
+import InsertNews from './insert/news/InsertNews';
+import InsertFaculty from './insert/faculty/InsertFaculty';
+import InsertStaff from './insert/staff/InsertStaff';
+import ListNews from './insert/news/ListNews';
+import ListFaculty from './insert/faculty/ListFaculty';
+import ListStaff from './insert/staff/ListStaff';
 
 export default function Dashboard() {
     const [user, setUser] = useState<string>('');
@@ -178,12 +181,31 @@ export default function Dashboard() {
                 </div>
             )}
 
-            {mode === 'faculty' && <InsertFaculty></InsertFaculty>}
-            {mode === 'staff' && <InsertStaff></InsertStaff>}
+            {mode === 'faculty' && (
+                <>
+                    <h1>Faculty</h1>
+                    <div className="flex gap-3 m-[20px]">
+                        <ListFaculty></ListFaculty>
+                        <InsertFaculty></InsertFaculty>
+                    </div>
+                </>
+            )}
+            {mode === 'staff' && (
+                <>
+                    <h1>Staff</h1>
+                    <div className="flex gap-3 m-[20px]">
+                        <ListStaff></ListStaff>
+                        <InsertStaff></InsertStaff>{' '}
+                    </div>
+                </>
+            )}
             {mode === 'news' && (
                 <>
                     <h1>News and Events</h1>
-                    <InsertNews></InsertNews>
+                    <div className="flex gap-3 m-[20px]">
+                        <ListNews></ListNews>
+                        <InsertNews></InsertNews>
+                    </div>
                 </>
             )}
         </div>

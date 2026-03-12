@@ -45,3 +45,5 @@ next-env.d.ts
 pages/api/staff.json
 pages/api/news_events.json
 pages/api/faculty.json
+public/pictures/news/*
+public/pictures/people/*
