@@ -20,7 +20,9 @@ export default async function handler(
         return;
     }
 
-    const form = new IncomingForm();
+    const form = new IncomingForm({
+        maxFileSize: 10 * 1024 * 1024, // 10 MB, for example
+    });
     const parsedForm = await form.parse(req);
 
     console.log('parsedForm', parsedForm);
@@ -31,7 +33,12 @@ export default async function handler(
     const typeArray = fields.type;
     const photoArray = files.photo;
 
-    if (!typeArray || !photoArray || typeArray.length === 0 || photoArray.length === 0) {
+    if (
+        !typeArray ||
+        !photoArray ||
+        typeArray.length === 0 ||
+        photoArray.length === 0
+    ) {
         res.status(400).json({ message: 'Missing type or file' });
         return;
     }
