@@ -35,12 +35,14 @@ export default async function handler(
             photoTemp.push('/pictures/news/' + filename);
         }
 
+        const formattedDetails = req.body.details.replaceAll('\n', ' \n ');
+
         const newFaculty = {
             id: maxId + 1,
             date: req.body.dateFormatted,
             evtDate: req.body.evtDateFormatted,
             title: req.body.title,
-            details: req.body.details,
+            details: formattedDetails,
             pictures: photoTemp,
             type: req.body.type,
         };

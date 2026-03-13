@@ -31,6 +31,8 @@ export default async function handler(
 
         console.log('req body', req.body);
 
+        const formattedDetails = req.body.details.replaceAll('\n', ' \n ');
+
         const newFaculty = {
             id: maxId + 1,
             name: req.body.name,
@@ -40,7 +42,7 @@ export default async function handler(
             phone: req.body.phone,
             location: req.body.location,
 
-            details: req.body.details,
+            details: formattedDetails,
             email: req.body.email,
 
             keywords: req.body.keywords,
