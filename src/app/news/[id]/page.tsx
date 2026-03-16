@@ -60,7 +60,7 @@ export default async function NewsDetailPage({
         return !image.src.includes('noneImg');
     });
 
-    const imagesArray = [];
+    const imagesArray: string[] = [];
 
     for (const picture of item.pictures) {
         console.log('picture', picture);
