@@ -66,19 +66,16 @@ export default function Carousel({ images, imagesAlt }: CarouselProps) {
         <>
             {/* Image Layer */}
             <div className="absolute -z-1 w-full lg:h-full h-[260px]">
+                
                 {images.map((image, index) => (
-                    <>
-                        <Image
-                            key={index}
-                            src={image}
-                            alt={`Carousel Image ${index + 1}`}
-                            className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
-                                index === currentIndex
-                                    ? 'opacity-100'
-                                    : 'opacity-0'
-                            }`}
-                        />
-                    </>
+                    <Image
+                        key={index}
+                        src={image}
+                        alt={`Carousel Image ${index + 1}`}
+                        className={`object-cover w-full h-full absolute transition-opacity linear duration-1000 ${
+                            index === currentIndex ? 'opacity-100' : 'opacity-0'
+                        }`}
+                    />
                 ))}
 
                 {imagesAlt.map((image, index) => (

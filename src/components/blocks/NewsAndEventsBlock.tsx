@@ -104,7 +104,7 @@ export default function NewsAndEventsBlock() {
                                 {news.date}
                             </span>
                             <div className="text-md text-start text-isd-font-3 line-clamp-3">
-                                {news.details.replace('# ', '')}
+                                {news.details && news.details.replace('# ', '')}
                             </div>
                         </a>
                     ))}
