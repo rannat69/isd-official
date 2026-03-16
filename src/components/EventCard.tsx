@@ -1,6 +1,8 @@
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import ImageCard from './ImageCard';
+import { useEffect, useState } from 'react';
+import path from 'path';
 
 export default function EventCard({
     href,
@@ -19,6 +21,37 @@ export default function EventCard({
     image: StaticImageData;
     imageAlt: string;
 }) {
+
+    const [imageUrl, setImageUrl] = useState('');
+
+    useEffect(() => {
+        const fetchPicture = async () => {
+            const type = 'news'; // Adjust this
+            const filename = path.basename(imageAlt);
+            const res = await fetch(
+                `/api/getPicture?type=${type}&filename=${filename}`
+            );
+            if (res.ok) {
+                const blob = await res.blob();
+
+                // Convert blob to Base64
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    const base64data = reader.result;
+                    setImageUrl(
+                        typeof base64data === 'string' ? base64data : ''
+                    );
+                };
+
+                reader.readAsDataURL(blob); // Convert the blob to Base64
+            } else {
+                console.error('Error fetching the image:', await res.json());
+            }
+        };
+
+        fetchPicture();
+    }, []);
+
     return (
         <>
             <a
@@ -40,7 +73,7 @@ export default function EventCard({
 
                     {image.src.includes('noneImg') && (
                         <img
-                            src={imageAlt}
+                            src={imageUrl}
                             style={{
                                 width: '100%',
                                 height: '100%',

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import path from 'path';
 
 interface FacultyCardProps {
     name: string;
@@ -41,6 +42,7 @@ export default function FacultyCard({
     returnTo,
 }: FacultyCardProps) {
     const [detailsOpen, setDetailsOpen] = useState(false);
+    const [imageUrl, setImageUrl] = useState('');
     const router = useRouter();
 
     console.log('photoAlt', photoAlt);
@@ -52,6 +54,34 @@ export default function FacultyCard({
             router.push(returnTo);
         }
     }
+
+    useEffect(() => {
+        const fetchPicture = async () => {
+            const type = 'news'; // Adjust this
+            const filename = path.basename(photoAlt ?? '');
+            const res = await fetch(
+                `/api/getPicture?type=${type}&filename=${filename}`
+            );
+            if (res.ok) {
+                const blob = await res.blob();
+
+                // Convert blob to Base64
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    const base64data = reader.result;
+                    setImageUrl(
+                        typeof base64data === 'string' ? base64data : ''
+                    );
+                };
+
+                reader.readAsDataURL(blob); // Convert the blob to Base64
+            } else {
+                console.error('Error fetching the image:', await res.json());
+            }
+        };
+
+        fetchPicture();
+    }, [photo]);
 
     // If parent asks to open this card, open the details modal.
     useEffect(() => {
@@ -109,37 +139,19 @@ export default function FacultyCard({
                 onClick={() => setDetailsOpen(true)}
             >
                 <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden lg:border-l-3 border-isd-primary">
-                    {typeof photo === 'string' ? (
-                        !photo.includes('noneImg') ? (
-                            <img
-                                src={photo}
-                                alt={`${name}'s photo`}
-                                className="object-cover w-full h-full"
-                            />
-                        ) : (
-                            <img src={photoAlt} alt={`${name}'s photo`} />
-                        )
-                    ) : photoAlt && photoAlt.includes('/src') ? (
+                    {(typeof photo === 'string' ? !photo.includes('noneImg') : !photo.src.includes('noneImg')) || photoAlt === '' ? (
                         <Image
                             src={photo}
                             alt={`${name}'s photo`}
                             fill
                             className="object-cover"
                             sizes="221px"
-                        />
-                    ) : photoAlt && photoAlt.length > 0 ? (
-                        <img
-                            src={photoAlt}
-                            alt={`${name}'s photo`}
-                            className="object-cover w-full h-full"
                         />
                     ) : (
-                        <Image
-                            src={photo}
+                        <img
+                            src={imageUrl}
                             alt={`${name}'s photo`}
-                            fill
-                            className="object-cover"
-                            sizes="221px"
+                            className="object-cover w-full h-full"
                         />
                     )}
                 </div>
@@ -231,27 +243,20 @@ export default function FacultyCard({
                         </button>
                         <div className="flex lg:flex-row flex-col items-center gap-component-gap-sm w-full text-wrap">
                             <div className="relative w-[221px] h-[288px] flex-shrink-0 overflow-hidden">
-                                {photoAlt && photoAlt.includes('/src') ? (
+                                {(typeof photo === 'string' ? !photo.includes('noneImg') : !photo.src.includes('noneImg')) ||
+                                photoAlt === '' ? (
                                     <Image
                                         src={photo}
                                         alt={`${name}'s photo`}
                                         fill
-                                        sizes="221px"
                                         className="object-cover"
-                                    />
-                                ) : photoAlt && photoAlt.length > 0 ? (
-                                    <img
-                                        src={photoAlt}
-                                        alt={`${name}'s photo`}
-                                        className="object-cover w-full h-full"
+                                        sizes="221px"
                                     />
                                 ) : (
-                                    <Image
-                                        src={photo}
+                                    <img
+                                        src={imageUrl}
                                         alt={`${name}'s photo`}
-                                        fill
-                                        className="object-cover"
-                                        sizes="221px"
+                                        className="object-cover w-full h-full"
                                     />
                                 )}
                             </div>
