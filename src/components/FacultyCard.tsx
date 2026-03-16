@@ -139,7 +139,9 @@ export default function FacultyCard({
                 onClick={() => setDetailsOpen(true)}
             >
                 <div className="relative lg:w-[221px] lg:h-[288px] w-28 h-44 flex-shrink-0 overflow-hidden lg:border-l-3 border-isd-primary">
-                    {(typeof photo === 'string' ? !photo.includes('noneImg') : !photo.src.includes('noneImg')) || photoAlt === '' ? (
+                    {(typeof photo != 'string' &&
+                        !photo.src.includes('noneImg')) ||
+                    photoAlt === '' ? (
                         <Image
                             src={photo}
                             alt={`${name}'s photo`}
@@ -150,7 +152,7 @@ export default function FacultyCard({
                     ) : (
                         <img
                             src={imageUrl}
-                            alt={`${name}'s photo`}
+                            alt={`${name}'s photo. `}
                             className="object-cover w-full h-full"
                         />
                     )}
@@ -243,7 +245,8 @@ export default function FacultyCard({
                         </button>
                         <div className="flex lg:flex-row flex-col items-center gap-component-gap-sm w-full text-wrap">
                             <div className="relative w-[221px] h-[288px] flex-shrink-0 overflow-hidden">
-                                {(typeof photo === 'string' ? !photo.includes('noneImg') : !photo.src.includes('noneImg')) ||
+                                {(typeof photo != 'string' &&
+                                    !photo.src.includes('noneImg')) ||
                                 photoAlt === '' ? (
                                     <Image
                                         src={photo}
@@ -255,7 +258,7 @@ export default function FacultyCard({
                                 ) : (
                                     <img
                                         src={imageUrl}
-                                        alt={`${name}'s photo`}
+                                        alt={`${name}'s photo. `}
                                         className="object-cover w-full h-full"
                                     />
                                 )}
