@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import ImageCard from './ImageCard';
+import { useEffect, useState } from 'react';
+import path from 'path';
 
 export default function NewsCard({
     href,
@@ -18,6 +20,33 @@ export default function NewsCard({
     image: StaticImageData;
     imageAlt: string;
 }) {
+    const [imageUrl, setImageUrl] = useState('');
+
+    useEffect(() => {
+        const fetchPicture = async () => {
+            const type = 'news'; // Adjust this
+            const filename = path.basename(imageAlt);
+            const res = await fetch(
+                `/api/getPicture?type=${type}&filename=${filename}`
+            );
+            if (res.ok) {
+                const blob = await res.blob();
+
+                // Convert blob to Base64
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    const base64data = reader.result;
+                    setImageUrl(typeof base64data === 'string' ? base64data : '');
+                };
+
+                reader.readAsDataURL(blob); // Convert the blob to Base64
+            } else {
+                console.error('Error fetching the image:', await res.json());
+            }
+        };
+
+        fetchPicture();
+    }, []);
 
     return (
         <>
@@ -26,9 +55,9 @@ export default function NewsCard({
                 className="hidden lg:flex gap-component-gap h-[360px] items-center"
             >
                 <div className="w-[396px] h-[240px] bg-isd-font-2/10">
-                    {!image.src.includes('noneImg') && (
+                    {!image.src.includes('noneImg') && imageUrl.length > 0 && (
                         <Image
-                            src={image}
+                            src={imageUrl}
                             alt={title}
                             style={{
                                 width: '100%',
@@ -37,6 +66,19 @@ export default function NewsCard({
                             }}
                         />
                     )}
+
+                    {!image.src.includes('noneImg') &&
+                        imageUrl.length === 0 && (
+                            <Image
+                                src={image}
+                                alt={title}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        )}
 
                     {image.src.includes('noneImg') && (
                         <img

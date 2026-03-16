@@ -4,6 +4,8 @@ import { resolveImages } from '@/lib/newsImages';
 import { type NewsEntry } from '@/lib/newsFilter';
 import Carousel from '@/components/Carousel';
 import Image from 'next/image';
+import fs from 'fs';
+import path from 'path';
 
 /*export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -19,12 +21,15 @@ export default async function NewsDetailPage({
 
     console.log('NewsDetailPage params', await params);
 
-    const data = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/news/allNews', {
-        method: 'POST', // Specify the HTTP method as POST
-        headers: {
-            'Content-Type': 'application/json', // Indicate the content type of the body
-        },
-    });
+    const data = await fetch(
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/news/allNews',
+        {
+            method: 'POST', // Specify the HTTP method as POST
+            headers: {
+                'Content-Type': 'application/json', // Indicate the content type of the body
+            },
+        }
+    );
 
     const resolvedParams = await params;
 
@@ -49,11 +54,38 @@ export default async function NewsDetailPage({
 
     // if (!item) return null;
     let images = resolveImages(item.pictures);
-    console.log('images', images);
 
     //remove from images pictures that contain noneImg
     images = images.filter((image) => {
         return !image.src.includes('noneImg');
+    });
+
+    const imagesArray = [];
+
+    for (const picture of item.pictures) {
+        console.log('picture', picture);
+
+        const filePath = path.join(process.cwd(), 'public/', picture);
+
+        try {
+            // Check if the file exists
+            await fs.promises.access(filePath); // Check if file exists
+
+            // Read the image as a Base64 string
+            const imageBuffer = await fs.promises.readFile(filePath); // Read the file
+            const base64 = imageBuffer.toString('base64'); // Convert to Base64
+            const imageUrl = `data:image/jpeg;base64,${base64}`; // Format the Base64 URL
+
+            imagesArray.push(imageUrl); // Add the image URL to the array
+        } catch (err) {
+            console.error('Error reading file:', err);
+            continue; // Skip this image and continue with the next
+        }
+    }
+
+    //remove from images pictures that come from public for testing purposes
+    item.pictures = item.pictures.filter((image) => {
+        return !image.includes('pictures');
     });
 
     return (
@@ -90,16 +122,16 @@ export default async function NewsDetailPage({
                         )}
 
                         {images.length === 0 &&
-                            (item.pictures.length > 1 ? (
+                            (imagesArray.length > 1 ? (
                                 <div className="lg:h-[480px] h-[260px]">
                                     <Carousel
                                         images={[]}
-                                        imagesAlt={item.pictures}
+                                        imagesAlt={imagesArray}
                                     />
                                 </div>
                             ) : (
                                 <img
-                                    src={item.pictures[0]}
+                                    src={imagesArray[0]}
                                     alt={item.title}
                                     style={{
                                         width: '100%',
