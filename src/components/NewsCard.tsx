@@ -36,7 +36,12 @@ export default function NewsCard({
                 const reader = new FileReader();
                 reader.onloadend = () => {
                     const base64data = reader.result;
-                    setImageUrl(typeof base64data === 'string' ? base64data : '');
+
+                    console.log('base64data', base64data);
+
+                    setImageUrl(
+                        typeof base64data === 'string' ? base64data : ''
+                    );
                 };
 
                 reader.readAsDataURL(blob); // Convert the blob to Base64
@@ -82,12 +87,13 @@ export default function NewsCard({
 
                     {image.src.includes('noneImg') && (
                         <img
-                            src={imageAlt}
+                            src={imageUrl}
                             style={{
                                 width: '100%',
                                 height: '100%',
                                 objectFit: 'cover',
                             }}
+                            alt={`News 3`}
                         />
                     )}
                 </div>
