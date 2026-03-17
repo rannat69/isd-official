@@ -76,7 +76,7 @@ export default function NewsCard({
                         imageUrl.length === 0 && (
                             <Image
                                 src={image}
-                                alt={title}
+                                alt={'-' + title + '-'}
                                 style={{
                                     width: '100%',
                                     height: '100%',
@@ -93,7 +93,7 @@ export default function NewsCard({
                                 height: '100%',
                                 objectFit: 'cover',
                             }}
-                            alt={`News 3`}
+                            alt={'--' + title + '--'}
                         />
                     )}
                 </div>

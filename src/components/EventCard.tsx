@@ -21,7 +21,6 @@ export default function EventCard({
     image: StaticImageData;
     imageAlt: string;
 }) {
-
     const [imageUrl, setImageUrl] = useState('');
 
     useEffect(() => {
@@ -59,9 +58,9 @@ export default function EventCard({
                 className="hidden lg:flex gap-component-gap h-[360px] items-center"
             >
                 <div className="w-[396px] h-[240px] bg-isd-font-2/10">
-                    {!image.src.includes('noneImg') && (
+                    {!image.src.includes('noneImg') && imageUrl.length > 0 && (
                         <Image
-                            src={image}
+                            src={imageUrl}
                             alt={title}
                             style={{
                                 width: '100%',
@@ -71,6 +70,19 @@ export default function EventCard({
                         />
                     )}
 
+                    {!image.src.includes('noneImg') &&
+                        imageUrl.length === 0 && (
+                            <Image
+                                src={image}
+                                alt={"-"+title+"-"}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        )}
+
                     {image.src.includes('noneImg') && (
                         <img
                             src={imageUrl}
@@ -79,6 +91,7 @@ export default function EventCard({
                                 height: '100%',
                                 objectFit: 'cover',
                             }}
+                            alt={"--" + title + "--"}
                         />
                     )}
                 </div>
