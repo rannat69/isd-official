@@ -78,8 +78,7 @@ const imageByFileName: Record<string, StaticImageData> = {
     'news.2025.12.08.png': news_2025_12_08,
     'evt.2026.03.26.png': event_2026_03_26,
     'evt.2026.03.05.png': event_2026_03_05,
-    'evt.2026.03.18.00.jpg': news_2026_03_18_00,
-
+    'news.2026.03.18.00.jpg': news_2026_03_18_00,
     'news.2026.03.18.01.png': news_2026_03_18_01,
     'news.2026.03.18.02.png': news_2026_03_18_02,
     'news.2026.03.18.03.png': news_2026_03_18_03,
