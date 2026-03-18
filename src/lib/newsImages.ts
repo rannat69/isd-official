@@ -36,6 +36,10 @@ import event_2025_11_27 from '@/assets/news/evt.2025.11.27.png';
 import news_2025_12_08 from '@/assets/news/news.2025.12.08.png';
 import event_2026_03_26 from '@/assets/news/evt.2026.03.26.png';
 import event_2026_03_05 from '@/assets/news/evt.2026.03.05.png';
+import news_2026_03_18_00 from '@/assets/news/news.2026.03.18.00.jpg';
+import news_2026_03_18_01 from '@/assets/news/news.2026.03.18.01.png';
+import news_2026_03_18_02 from '@/assets/news/news.2026.03.18.02.png';
+import news_2026_03_18_03 from '@/assets/news/news.2026.03.18.03.png';
 // Map by filename for easy lookup regardless of provided path prefix
 const imageByFileName: Record<string, StaticImageData> = {
     'ach.2024.03.08.jpg': ach_2024_03_08,
@@ -74,6 +78,11 @@ const imageByFileName: Record<string, StaticImageData> = {
     'news.2025.12.08.png': news_2025_12_08,
     'evt.2026.03.26.png': event_2026_03_26,
     'evt.2026.03.05.png': event_2026_03_05,
+    'evt.2026.03.18.00.jpg': news_2026_03_18_00,
+
+    'news.2026.03.18.01.png': news_2026_03_18_01,
+    'news.2026.03.18.02.png': news_2026_03_18_02,
+    'news.2026.03.18.03.png': news_2026_03_18_03,
 };
 
 export function resolveNewsImage(path?: string | null): StaticImageData {
