@@ -104,7 +104,7 @@ export default async function NewsDetailPage({
                     className={`flex flex-col ${item.type === 'events' ? 'gap-component-gap-sm' : 'gap-section-title-gap'}`}
                 >
                     <h1 className="text-h1">{item.title}</h1>
-                    <div className="w-full">
+                    <div className="w-full relative">
                         {images.length > 0 && (
                             <>
                                 {images.length > 1 ? (
