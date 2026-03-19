@@ -104,22 +104,28 @@ export default async function NewsDetailPage({
                     className={`flex flex-col ${item.type === 'events' ? 'gap-component-gap-sm' : 'gap-section-title-gap'}`}
                 >
                     <h1 className="text-h1">{item.title}</h1>
-                    <div className="w-full relative">
+                    <div className="w-full">
                         {images.length > 0 && (
-                            <div className="lg:h-[480px] h-[260px]">
+                            <>
                                 {images.length > 1 ? (
-                                    <Carousel images={images} imagesAlt={[]} />
+                                    <div className="lg:h-[480px] h-[260px]">
+                                        <Carousel
+                                            images={images}
+                                            imagesAlt={[]}
+                                        />
+                                    </div>
                                 ) : (
-                                    <Image
-                                        src={images[0]}
-                                        alt={item.title}
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                        }}
-                                    />
+                                    <div className="lg:h-[600px] h-[260px]">
+                                        <Image
+                                            src={images[0]}
+                                            alt={item.title}
+                                            style={{
+                                                width: '100%',
+                                            }}
+                                        />
+                                    </div>
                                 )}
-                            </div>
+                            </>
                         )}
 
                         {images.length === 0 &&
@@ -131,14 +137,16 @@ export default async function NewsDetailPage({
                                     />
                                 </div>
                             ) : (
-                                <img
-                                    src={imagesArray[0]}
-                                    alt={item.title}
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                    }}
-                                />
+                                <div className="lg:h-[600px] h-[260px]">
+                                    <img
+                                        src={imagesArray[0]}
+                                        alt={item.title}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                        }}
+                                    />
+                                </div>
                             ))}
                     </div>
                     <div className="flex flex-col gap-[24px]">
