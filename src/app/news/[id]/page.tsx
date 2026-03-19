@@ -106,7 +106,7 @@ export default async function NewsDetailPage({
                     <h1 className="text-h1">{item.title}</h1>
                     <div className="w-full relative">
                         {images.length > 0 && (
-                            <div className="lg:h-[480px] h-[260px]">
+                            <>
                                 {images.length > 1 ? (
                                     <div className="lg:h-[480px] h-[260px]">
                                         <Carousel
@@ -120,10 +120,11 @@ export default async function NewsDetailPage({
                                         alt={item.title}
                                         style={{
                                             width: '100%',
+                                            height: '100%',
                                         }}
                                     />
                                 )}
-                            </div>
+                            </>
                         )}
 
                         {images.length === 0 &&
