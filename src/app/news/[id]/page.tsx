@@ -6,6 +6,7 @@ import Carousel from '@/components/Carousel';
 import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
+import ISDFacultyRecognized51IntExhInv from './ISDFacultyRecognized51IntExhInv';
 
 /*export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -181,8 +182,14 @@ export default async function NewsDetailPage({
                                 </div>
                             </div>
                         )}
+                        {/*Specific case with pictures embedded in the description. Ugly, but it works. */}
                         <div className="flex flex-col gap-component-gap text-md text-isd-font-1">
-                            {renderContent(item.details)}
+                            {item.title ===
+                            'ISD Faculty Recognized at the 51st International Exhibition of Inventions Geneva' ? (
+                                <ISDFacultyRecognized51IntExhInv />
+                            ) : (
+                                renderContent(item.details)
+                            )}
                         </div>
                     </div>
                 </div>
