@@ -234,14 +234,42 @@ function renderContent(text: string) {
     }
 
     return groups.map((g, idx) => {
+        const urlRegex = /(https?:\/\/[^\s)]+)/g;
+
         const paragraphLines = g.paragraph
-            ? g.paragraph.split(/\n+/).map((l, i) => (
-                  <span key={i}>
-                      {l}
-                      <br />
-                  </span>
-              ))
+            ? // split paragraph into logical lines (preserve blank line groups)
+              g.paragraph.split(/\n+/).map((line, lineIdx) => {
+                  // split keeps URLs as separate tokens
+                  const tokens = line.split(urlRegex);
+                  return (
+                      <span key={lineIdx}>
+                          {tokens.map((token, tIdx) => {
+                              if (!token) return null;
+                              // token will match urlRegex for URLs because split preserves the separators
+                              if (urlRegex.test(token)) {
+                                  // reset lastIndex in case of global regex reuse
+                                  urlRegex.lastIndex = 0;
+                                  return (
+                                      <a
+                                          key={tIdx}
+                                          href={token}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="text-primary underline"
+                                      >
+                                          {token}
+                                      </a>
+                                  );
+                              } else {
+                                  return <span key={tIdx}>{token}</span>;
+                              }
+                          })}
+                          <br />
+                      </span>
+                  );
+              })
             : null;
+
         return (
             <div
                 key={idx}
