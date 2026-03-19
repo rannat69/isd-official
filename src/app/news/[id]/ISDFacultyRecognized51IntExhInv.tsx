@@ -35,7 +35,15 @@ export default function ISDFacultyRecognized51IntExhInv() {
                 </h2>
 
                 <div className="flex gap-component-gap-sm">
-                    <Image src={qianzh} width={200} alt="Zhang Qian"></Image>
+                    <div className="w-48 h-48 relative">
+                        <Image
+                            src={qianzh}
+                            alt="Zhang Qian"
+                            fill
+                            className="object-cover"
+                            sizes="192px"
+                        ></Image>
+                    </div>
                     <div className="flex">
                         <div className="font-bold">• Prof. Zhang Qian —</div>
                         <div className="italic">
@@ -45,7 +53,15 @@ export default function ISDFacultyRecognized51IntExhInv() {
                     </div>
                 </div>
                 <div className="flex gap-component-gap-sm">
-                    <Image src={lim} width={200} alt="Mo Li"></Image>
+                    <div className="w-48 h-48 relative">
+                        <Image
+                            src={lim}
+                            alt="Mo Li"
+                            fill
+                            className="object-cover"
+                            sizes="192px"
+                        ></Image>
+                    </div>
                     <div className="flex">
                         <div className="font-bold">• Prof. Mo Li —</div>
                         <div className="italic">
@@ -55,11 +71,16 @@ export default function ISDFacultyRecognized51IntExhInv() {
                 </div>
                 <h2 className="font-bold underline">Gold Medal</h2>
                 <div className="flex gap-component-gap-sm">
-                    <Image
-                        src={changyingx}
-                        width={200}
-                        alt="Changying Xiang"
-                    ></Image>
+                    <div className="w-48 h-48 relative">
+                        <Image
+                            src={changyingx}
+                            alt="Changying Xiang"
+                            fill
+                            className="object-cover"
+                            sizes="192px"
+                        ></Image>
+                    </div>
+
                     <div className="flex">
                         <div className="font-bold">
                             • Prof. Changying Xiang —
@@ -70,7 +91,15 @@ export default function ISDFacultyRecognized51IntExhInv() {
                     </div>
                 </div>
                 <div className="flex gap-component-gap-sm">
-                    <Image src={qianzh} width={200} alt="Zhang Qian"></Image>
+             <div className="w-48 h-48 relative">
+                        <Image
+                            src={qianzh}
+                            alt="Zhang Qian"
+                            fill
+                            className="object-cover"
+                            sizes="192px"
+                        ></Image>
+                    </div>
                     <div className="flex">
                         <div className="font-bold">• Prof. Zhang Qian —</div>
                         <div className="italic">
@@ -81,7 +110,17 @@ export default function ISDFacultyRecognized51IntExhInv() {
                 </div>
                 <h2 className="font-bold underline">Bronze Medal</h2>
                 <div className="flex gap-component-gap-sm">
-                    <Image src={mitchli} width={200} alt="Mitch Li"></Image>
+
+           <div className="w-48 h-48 relative">
+                        <Image
+                            src={mitchli}
+                            alt="Mitch Li"
+                            fill
+                            className="object-cover"
+                            sizes="192px"
+                        ></Image>
+                    </div>
+
                     <div className="flex">
                         <div className="font-bold">• Prof. Mitch Li —</div>
                         <div className="italic">
