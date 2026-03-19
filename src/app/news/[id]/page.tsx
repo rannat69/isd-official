@@ -115,7 +115,7 @@ export default async function NewsDetailPage({
                                         />
                                     </div>
                                 ) : (
-                                    <div className="lg:h-[480px] h-[260px]">
+                                    <div className="lg:h-full h-[260px]">
                                         <Image
                                             src={images[0]}
                                             alt={item.title}
@@ -137,7 +137,7 @@ export default async function NewsDetailPage({
                                     />
                                 </div>
                             ) : (
-                                <div className="lg:h-[480px] h-[260px]">
+                                <div className="lg:h-full h-[260px]">
                                     <img
                                         src={imagesArray[0]}
                                         alt={item.title}
