@@ -7,13 +7,14 @@ import Carousel3 from '@/assets/carousel-3.jpg';
 import Carousel4 from '@/assets/carousel-4.jpg';
 import Image from 'next/image';
 import Carousel from '@/components/Carousel';
+import CarouselObjCover from '../CarouselObjCover';
 
 export default function HeroCarouselBlock() {
     const images = [Carousel1, Carousel2, Carousel3, Carousel4];
 
     return (
         <div className="w-full relative overflow-hidden">
-            <Carousel images={images} imagesAlt={[]} />
+            <CarouselObjCover images={images} imagesAlt={[]} />
             <div className="absolute -z-1 w-full lg:h-full h-[260px] bg-gradient-to-b via-transparent to-black"></div>
             <div className="container z-1 text-white flex flex-col justify-end py-[32px] h-[260px] lg:py-[64px] lg:h-[612px]">
                 <div className="flex justify-between items-center gap-20 text-pretty">
