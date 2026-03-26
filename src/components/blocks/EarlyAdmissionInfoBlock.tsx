@@ -45,7 +45,7 @@ export default function EarlyAdmissionInfoBlock() {
                             </h2>
                         </div>
                     </div>
-                    <p>
+                    <p className="font-bold text-isd-font-1">
                         Are you ready to shape the future? The Division of
                         Integrative Systems and Design (ISD) at the Hong Kong
                         University of Science and Technology (HKUST) is on the
@@ -61,7 +61,7 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: 'Why Choose ISD?',
             content: (
-                <p>
+                <p className="font-bold">
                     In a rapidly evolving global landscape, issues like climate
                     change, energy shortages, and the integration of artificial
                     intelligence into daily life present urgent, multifaceted
@@ -136,14 +136,18 @@ export default function EarlyAdmissionInfoBlock() {
                             Early Recruiting (Phase One)
                         </span>{' '}
                         focuses on identifying top MPhil and PhD applicants
-                        through brief interviews. To apply, complete the
-                        preliminary application form (note: early admissions
-                        registration is currently closed). Early admission
-                        interviews will be held starting October 2026.
-                        Candidates will receive interview results within one to
-                        two weeks post-interview. Even after Phase One, don’t
-                        worry—regular application packages can still be
-                        submitted to the HKUST Postgraduate Admissions.
+                        through brief interviews. To apply, complete{' '}
+                        <a
+                            href="/resources/PG.Early.Admission.application.form_Fall2027.docx"
+                            className="font-bold text-isd-secondary underline"
+                        >
+                            the preliminary application form
+                        </a>
+                        . Early admission interviews will be held starting
+                        October 2026. Candidates will receive interview results
+                        within one to two weeks post-interview. Even after Phase
+                        One, don’t worry—regular application packages can still
+                        be submitted to the HKUST Postgraduate Admissions.
                     </p>
                     <div className="flex-1 flex flex-col gap-[12px]">
                         <span className="font-bold px-[12px] text-lg leading-[28px] text-isd-primary">
@@ -178,12 +182,6 @@ export default function EarlyAdmissionInfoBlock() {
                                         (Commencing in Sep 2027)
                                     </td>
                                     <td className="p-[12px] border-2 border-white">
-                                        Non-local Applicants: June 1, 2027
-                                        (Full-time)
-                                        <br />
-                                        Local Applicants: July 15,
-                                        2027(Full-time & Part-time)
-                                        <br />
                                         <span className="font-bold text-isd-primary">
                                             TBC
                                         </span>
@@ -196,12 +194,6 @@ export default function EarlyAdmissionInfoBlock() {
                                         (Commencing in Feb 2028)
                                     </td>
                                     <td className="p-[12px] border-2 border-white">
-                                        Non-local Applicants: November 1, 2027
-                                        (Full-time)
-                                        <br />
-                                        Local Applicants: December 15,
-                                        2027(Full-time & Part-time)
-                                        <br />
                                         <span className="font-bold text-isd-secondary">
                                             TBC
                                         </span>

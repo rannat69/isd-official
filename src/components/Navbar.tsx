@@ -99,6 +99,11 @@ export default function Navbar() {
                         href: '/academics/facilities',
                         pathnameKeyword: 'facilities',
                     },
+                    {
+                        name: 'Early Admissions Scheme',
+                        href: '/academics/early-admission',
+                        pathnameKeyword: 'early-admission',
+                    },
                 ],
             },
         },

@@ -36,12 +36,14 @@ export default function Footer() {
                 // 'Scholarships',
                 'Internship & Exchange',
                 'Facilities',
+                'Early Admissions Scheme',
             ],
             links: [
                 '/academics#programs',
                 // '/academics/scholarships',
                 '/academics/internship',
                 '/academics/facilities',
+                '/academics/early-admission',
             ],
         },
         {
