@@ -78,10 +78,10 @@ export default function EarlyAdmissionInfoBlock() {
             content: (
                 <ul className="flex flex-col gap-[24px] text-isd-primary">
                     <ul className="flex flex-col">
-                        <li className="flex before:text-center before:content-['•'] text-h2 leading-[48px] font-bold before:w-component-gap-sm">
+                        <li className="flex before:text-center before:content-['•'] lg:text-h2 text-sm leading-[48px] font-bold before:w-component-gap-sm">
                             Vibrant Academic Community
                         </li>
-                        <li className="flex pl-component-gap-sm text-isd-font-3">
+                        <li className="flex pl-component-gap-sm lg:text-lg text-sm text-isd-font-3">
                             Join a dynamic team of over 20 remarkable faculty
                             members and collaborate with about 40 MPhil and 50
                             PhD peers who are as passionate about innovation as
@@ -89,10 +89,10 @@ export default function EarlyAdmissionInfoBlock() {
                         </li>
                     </ul>
                     <ul className="flex flex-col">
-                        <li className="flex before:text-center before:content-['•'] text-h2 leading-[48px] font-bold before:w-component-gap-sm">
+                        <li className="flex before:text-center before:content-['•'] lg:text-h2 text-sm leading-[48px] font-bold before:w-component-gap-sm">
                             Scholarship Support
                         </li>
-                        <li className="flex pl-component-gap-sm text-isd-font-3">
+                        <li className="flex pl-component-gap-sm text-isd-font-3 lg:text-lg text-sm">
                             Enjoy substantial financial backing throughout your
                             studies at HKUST. Each postgraduate student is
                             awarded a generous scholarship of approximately HKD
@@ -101,10 +101,10 @@ export default function EarlyAdmissionInfoBlock() {
                         </li>
                     </ul>
                     <ul className="flex flex-col">
-                        <li className="flex before:text-center before:content-['•'] text-h2 leading-[48px] font-bold before:w-component-gap-sm">
+                        <li className="flex before:text-center before:content-['•'] lg:text-h2 text-sm leading-[48px] font-bold before:w-component-gap-sm">
                             Prestigious Hong Kong PhD Fellowship
                         </li>
-                        <li className="flex pl-component-gap-sm text-isd-font-3">
+                        <li className="flex pl-component-gap-sm text-isd-font-3 lg:text-lg text-sm">
                             Exceptional PhD candidates have the opportunity to
                             apply for the renowned Hong Kong PhD Fellowship
                             (HKPF), which provides around HKD 28,400 monthly
@@ -119,7 +119,7 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: "What We're Looking For?",
             content: (
-                <p>
+                <p className="lg:text-lg text-sm">
                     We seek applicants with strong academic records and a
                     Bachelor’s degree by the time they enroll. Proficiency in
                     English is also a requirement, as per university standards.
@@ -129,8 +129,8 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: 'Important Dates to Remember',
             content: (
-                <div className="flex gap-component-gap-sm">
-                    <p className="flex-1">
+                <div className="lg:flex gap-component-gap-sm">
+                    <p className="flex-1 lg:text-lg text-sm">
                         Our recruitment process unfolds in two exciting phases.{' '}
                         <span className="bold text-isd-secondary font-bold">
                             Early Recruiting (Phase One)
@@ -208,7 +208,7 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: 'PhD Applicants',
             content: (
-                <p>
+                <p className="lg:text-lg text-sm">
                     If you’re in the top 10% of your class, with an average
                     grade above 85/100 and outstanding English skills, we
                     encourage you to reach out about the HKPF application
@@ -220,7 +220,7 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: "We're Here to Help!",
             content: (
-                <p>
+            <p className="lg:text-lg text-sm">
                     Have questions? We’re just an email away at{' '}
                     <a
                         href="mailto:isdpg@ust.hk"
@@ -245,7 +245,7 @@ export default function EarlyAdmissionInfoBlock() {
                             <p className="text-h2 leading-[32px]">
                                 {item.question}
                             </p>
-                            <p className="text-isd-font-3">{item.answer}</p>
+                            <p className="lg:text-h2 text-sm text-isd-font-3">{item.answer}</p>
                         </div>
                     ))}
                 </div>
@@ -258,11 +258,11 @@ export default function EarlyAdmissionInfoBlock() {
             {content.map((section, index) => (
                 <div key={index} className="flex flex-col gap-component-gap-sm">
                     {section.subheading && (
-                        <h3 className="text-[36px] leading-[36px] font-bold font-isd-font-1">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1">
                             {section.subheading}
                         </h3>
                     )}
-                    <div className="text-lg leading-[28px] text-isd-font-3">
+                    <div className="lg:text-lg text-sm leading-[28px] text-isd-font-3">
                         {section.content}
                     </div>
                 </div>
