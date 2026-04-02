@@ -57,11 +57,13 @@ export default function FacultyCard({
 
     useEffect(() => {
         const fetchPicture = async () => {
-            const type = 'news'; // Adjust this
+            const type = 'people'; // Adjust this
             const filename = path.basename(photoAlt ?? '');
             const res = await fetch(
                 `/api/getPicture?type=${type}&filename=${filename}`
             );
+
+
             if (res.ok) {
                 const blob = await res.blob();
 
@@ -243,24 +245,31 @@ export default function FacultyCard({
                             <X size={24} />
                             <span className="text-sm">Close</span>
                         </button>
+
                         <div className="flex lg:flex-row flex-col items-center gap-component-gap-sm w-full text-wrap">
                             <div className="relative w-[221px] h-[288px] flex-shrink-0 overflow-hidden">
+                     
                                 {(typeof photo != 'string' &&
                                     !photo.src.includes('noneImg')) ||
                                 photoAlt === '' ? (
-                                    <Image
-                                        src={photo}
-                                        alt={`${name}'s photo`}
-                                        fill
-                                        className="object-cover"
-                                        sizes="221px"
-                                    />
+                                    <>
+                                        <Image
+                                            src={photo}
+                                            alt={`${name}'s photo`}
+                                            fill
+                                            className="object-cover"
+                                            sizes="221px"
+                                        />
+                                    </>
                                 ) : (
-                                    <img
-                                        src={imageUrl}
-                                        alt={`${name}'s photo. `}
-                                        className="object-cover w-full h-full"
-                                    />
+                                    <>
+                                        
+                                        <img
+                                            src={imageUrl}
+                                            alt={`${name}'s photo. `}
+                                            className="object-cover w-full h-full"
+                                        />
+                                    </>
                                 )}
                             </div>
 
