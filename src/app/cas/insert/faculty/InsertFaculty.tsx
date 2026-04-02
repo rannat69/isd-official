@@ -206,7 +206,7 @@ export default function InsertFaculty() {
                     }
                 }}
             />
-            <button onClick={handleAddKeyword}>Add Keyword</button>
+            <button className="border-1 font-bold rounded-xl p-2" onClick={handleAddKeyword}>Add Keyword</button>
             <div>
                 {keywords.map((k, index) => (
                     <span key={index} className="m-1">
@@ -260,7 +260,7 @@ export default function InsertFaculty() {
                 ))}
             </div>
             <button
-                className="border-1 rounded-xl p-2 hover:bg-gray-200"
+                className="border-1 rounded-xl p-2 hover:bg-gray-200 font-bold"
                 onClick={handleCreate}
             >
                 Create
