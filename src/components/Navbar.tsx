@@ -249,7 +249,7 @@ export default function Navbar() {
                             )}
                         </div>
                     ))}
-                    <div className="flex relative pb-2 text-nav divide-x-2">
+                    {/*<div className="flex relative pb-2 text-nav divide-x-2">
                         <p
                             className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
                                 !language ||
@@ -299,8 +299,8 @@ export default function Navbar() {
                             }}
                         >
                             繁
-                        </p>*/}
-                    </div>
+                        </p>
+                    </div>*/}
                 </div>
             </div>
 
