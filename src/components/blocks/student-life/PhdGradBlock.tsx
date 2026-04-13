@@ -50,7 +50,7 @@ export default function PhdGradBlock() {
     return (
         <div className="overflow-clip flex flex-col gap-section-title-gap">
             <h1 className="lg:block hidden text-h1 offset-text-background">
-                PhD Graduates
+                Selected PhD Graduates
             </h1>
             <div className="flex items-center">
                 <div className="text-black font-bold text-md">Grad Year</div>

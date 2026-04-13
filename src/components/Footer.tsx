@@ -63,7 +63,7 @@ export default function Footer() {
                 'Internship',
                 'Exchange',
                 'Alumni Sharing',
-                'PhD Graduates',
+                'Selected PhD Graduates',
                 'Student Projects',
             ],
             links: [
