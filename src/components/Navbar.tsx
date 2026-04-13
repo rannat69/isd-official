@@ -169,6 +169,11 @@ export default function Navbar() {
                         pathnameKeyword: 'alumni',
                     },
                     {
+                        name: 'PhD Graduates',
+                        href: '/student-life?page=phd-grad',
+                        pathnameKeyword: 'phd-grad',
+                    },
+                    {
                         name: 'Student Projects',
                         href: '/student-life?page=stud-proj',
                         pathnameKeyword: 'stud-proj',

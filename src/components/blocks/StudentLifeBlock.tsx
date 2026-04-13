@@ -7,6 +7,7 @@ import ExtraActivitivesBlock from './student-life/ExtraActivitiesBlock';
 import InternshipBlock from './student-life/InternshipBlock';
 import ExchangeBlock from './student-life/ExchangeBlock';
 import AlumniSharingBlock from './student-life/AlumniSharingBlock';
+import PhdGradBlock from './student-life/PhdGradBlock';
 import UsefulLinksBlock from './student-life/UsefulLinksBlock';
 import Select from '../Select';
 import StudentProjectsBlock from './student-life/StudentProjectsBlock';
@@ -17,6 +18,7 @@ type StudentLifePageKey =
     | 'intern'
     | 'exchange'
     | 'alumni'
+    | 'phd-grad'
     | 'stud-proj'
     | 'links';
 
@@ -42,6 +44,11 @@ export default function StudentLifeBlock() {
             key: 'alumni',
             name: 'Alumni Sharing',
             component: <AlumniSharingBlock />,
+        },
+        {
+            key: 'phd-grad',
+            name: 'PhD Graduates',
+            component: <PhdGradBlock />,
         },
         {
             key: 'stud-proj',

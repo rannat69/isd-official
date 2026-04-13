@@ -63,6 +63,7 @@ export default function Footer() {
                 'Internship',
                 'Exchange',
                 'Alumni Sharing',
+                'PhD Graduates',
                 'Student Projects',
             ],
             links: [
@@ -71,6 +72,7 @@ export default function Footer() {
                 '/student-life?page=intern',
                 '/student-life?page=exchange',
                 '/student-life?page=alumni',
+                '/student-life?page=phd-grad',
                 '/student-life?page=stud-proj',
             ],
         },

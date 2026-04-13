@@ -206,7 +206,7 @@ export default function InsertFaculty() {
                     }
                 }}
             />
-            <button className="border-1 font-bold rounded-xl p-2" onClick={handleAddKeyword}>Add Keyword</button>
+wD            <button className="border-1 font-bold rounded-xl p-2" onClick={handleAddKeyword}>Add Keyword</button>
             <div>
                 {keywords.map((k, index) => (
                     <span key={index} className="m-1">
