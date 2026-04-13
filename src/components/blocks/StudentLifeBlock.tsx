@@ -47,7 +47,7 @@ export default function StudentLifeBlock() {
         },
         {
             key: 'phd-grad',
-            name: 'PhD Graduates',
+            name: 'Selected PhD Graduates',
             component: <PhdGradBlock />,
         },
         {
