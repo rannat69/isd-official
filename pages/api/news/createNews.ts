@@ -37,16 +37,18 @@ export default async function handler(
 
         const formattedDetails = req.body.details.replaceAll('\n', ' \n ');
 
-        const newFaculty = {
+        const newNews = {
             id: maxId + 1,
             date: req.body.dateFormatted,
-            evtDate: req.body.evtDateFormatted,
+            evt_date: req.body.evtDateFormatted,
+            evt_time: req.body.evtTime,
+            evt_location: req.body.evtLocation,
             title: req.body.title,
             details: formattedDetails,
             pictures: photoTemp,
             type: req.body.type,
         };
-        faculty.push(newFaculty);
+        faculty.push(newNews);
 
         // Write the updated articles back to the JSON file
         fs.writeFileSync(dataPath, JSON.stringify(faculty, null, 2)); // Pretty print with 2 spaces

@@ -96,7 +96,7 @@ export default function InsertNews() {
 
         const dateFormatted = dateTemp.toISOString().split('T')[0];
 
-        const newFaculty = {
+        const newNews = {
             title,
             details,
             photoFilenames,
@@ -112,7 +112,7 @@ export default function InsertNews() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(newFaculty), // Send FormData
+            body: JSON.stringify(newNews), // Send FormData
         });
 
         if (response.ok) {
