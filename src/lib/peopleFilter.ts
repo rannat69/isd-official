@@ -22,30 +22,43 @@ type Options = {
     tag?: string;
 };
 
-// const facultyPositionOrder = [
-//     'head',
-//     'chair professor',
-//     'chair professor (joint)',
-//     'professor',
-//     'professor (joint)',
-//     'associate professor',
-//     'associate professor (joint)',
-//     'lecturer',
-//     'part-time lecturer',
-//     'research assistant professor',
-//     'adjunct professor',
-//     'assistant professor',
-// ];
+const facultyTagsOrder = [
+    'regular',
+    'joint_appointment',
+    'teaching_track',
+    'research_track',
+    'adjunct',
+    'emeritus',
+    'affiliate',
+];
 
-// const staffPositionOrder = [
-//     'senior manager',
-//     'assistant manager',
-//     'officer',
-//     'senior technical officer',
-//     'technical officer',
-//     'teaching associate',
-//     'instructional assistant',
-// ];
+const facultyPositionOrder = [
+    'head of isd / tencent professor of engineering and chair professor of cse',
+    'chair professor',
+    'chair professor (joint)',
+    'professor emeritus',
+    'professor',
+    'professor (joint)',
+    'associate professor',
+    'associate professor of engineering education',
+    'associate professor (joint)',
+    'lecturer',
+    'part-time lecturer',
+    'research assistant professor',
+    'adjunct professor',
+    'adjunct assistant professor',
+    'assistant professor',
+];
+
+const staffPositionOrder = [
+    'senior manager',
+    'assistant manager',
+    'officer',
+    'senior technical officer',
+    'technical officer',
+    'teaching associate',
+    'instructional assistant',
+];
 
 function normalize(s?: string | null) {
     if (!s) return '';
@@ -61,19 +74,19 @@ function nameKey(name?: string) {
     return (last + ' ' + first).toLowerCase();
 }
 
-// function positionRank(
-//     position?: string | null,
-//     context: Options['context'] = 'faculty'
-// ) {
-//     const pos = normalize(position);
-//     if (context === 'staff') {
-//         const idx = staffPositionOrder.findIndex((p) => pos.includes(p));
-//         return idx >= 0 ? idx : staffPositionOrder.length;
-//     }
-//     // faculty/affiliate or default
-//     const idx = facultyPositionOrder.findIndex((p) => pos.includes(p));
-//     return idx >= 0 ? idx : facultyPositionOrder.length;
-// }
+function positionRank(
+    position?: string | null,
+    context: Options['context'] = 'faculty'
+) {
+    const pos = normalize(position);
+    if (context === 'staff') {
+        const idx = staffPositionOrder.findIndex((p) => pos === p);
+        return idx >= 0 ? idx : staffPositionOrder.length;
+    }
+    // faculty/affiliate or default
+    const idx = facultyPositionOrder.findIndex((p) => pos === p);
+    return idx >= 0 ? idx : facultyPositionOrder.length;
+}
 
 export function filterAndSortPeople(items: Person[], options: Options = {}) {
     const {
@@ -98,6 +111,7 @@ export function filterAndSortPeople(items: Person[], options: Options = {}) {
             const k = it.keywords.map((s) => normalize(String(s))).join(' ');
             if (k) hay = (hay ? hay + ' ' : '') + k;
         }
+
         return tokens.every((t) => hay.includes(t));
     });
 
@@ -120,15 +134,26 @@ export function filterAndSortPeople(items: Person[], options: Options = {}) {
 
     const sorted = filtered.slice();
 
-    // sort by position using id then rank then name as tiebreaker
-    sorted.sort((a, b) => {
-        // First, compare by id
-        if (a.id !== b.id) return a.id - b.id; // Assuming id is numeric
+    console.log('sorted', sorted);
 
-        // Useless for now but might serve later
-        //const ra = positionRank(a.position ?? a.role ?? '', context);
-        //const rb = positionRank(b.position ?? b.role ?? '', context);
-        //if (ra !== rb) return ra - rb;
+    // sort by tag, then position, then last name
+    sorted.sort((a, b) => {
+        const tagA = facultyTagsOrder.indexOf(a.tags?.[0] ?? '');
+        const tagB = facultyTagsOrder.indexOf(b.tags?.[0] ?? '');
+        const tagRankA = tagA >= 0 ? tagA : facultyTagsOrder.length;
+        const tagRankB = tagB >= 0 ? tagB : facultyTagsOrder.length;
+        if (tagRankA !== tagRankB) return tagRankA - tagRankB;
+
+        const ra = positionRank(a.role ?? '', context);
+
+        console.log('ra', ra);
+
+        const rb = positionRank(b.role ?? '', context);
+
+        console.log('rb', rb);
+
+        if (ra !== rb) return ra - rb;
+
         return nameKey(a.name).localeCompare(nameKey(b.name));
     });
 
