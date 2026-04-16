@@ -1,3 +1,5 @@
+'use client';
+
 import F01 from '@/assets/academics/facilities/fac.01.jpg';
 import F02 from '@/assets/academics/facilities/fac.02.jpg';
 import F03 from '@/assets/academics/facilities/fac.03.jpg';
@@ -9,12 +11,17 @@ import F08 from '@/assets/academics/facilities/fac.08.jpg';
 import F09 from '@/assets/academics/facilities/fac.09.jpg';
 import F10 from '@/assets/academics/facilities/fac.10.jpg';
 import F11 from '@/assets/academics/facilities/fac.11.jpg';
+import Carousel2 from '@/assets/carousel-2.jpg';
 import CarouselTriple from '@/components/CarouselTriple';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const images = [F01, F02, F03, F04, F05, F06, F07, F08, F09, F10, F11];
 
 export default function FacilitiesBlock() {
+    const [openVideo, setOpenVideo] = useState(false);
+    const videoId = 'mzY63FfSwVc';
+
     const content = [
         {
             subheading: 'Design Studio',
@@ -98,15 +105,40 @@ export default function FacilitiesBlock() {
                                 <div className="text-sm">{section.content}</div>
                             </div>
                         ))}
-                        <iframe
-                            className=" aspect-[408/191]"
-                            src="https://www.youtube.com/embed/mzY63FfSwVc?si=smIVr0juADYSOqGu"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                        ></iframe>
+                        <div>
+                            {!openVideo ? (
+                                <button
+                                    type="button"
+                                    onClick={() => setOpenVideo(true)}
+                                    className="relative w-full aspect-[408/191] bg-black cursor-pointer"
+                                    aria-label="Play video"
+                                >
+                                    {/* Put your own thumbnail here */}
+                                    <Image
+                                        src={Carousel2}
+                                        alt="Video thumbnail"
+                                        className="h-full w-full object-cover"
+                                    />
+
+                                    {/* optional play icon overlay */}
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="rounded-full bg-black/60 p-4 text-white">
+                                            ▶
+                                        </div>
+                                    </div>
+                                </button>
+                            ) : (
+                                <iframe
+                                    className="w-full aspect-[408/191]"
+                                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                />
+                            )}
+                        </div>
                     </div>
                     <div className="flex flex-col lg:gap-[24px] gap-[12px]">
                         <h3 className="lg:text-[36px] text-h2 lg:leading-[36px] font-bold font-isd-font-1 text-isd-primary">
