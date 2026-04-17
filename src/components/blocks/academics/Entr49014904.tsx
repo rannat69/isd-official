@@ -274,7 +274,7 @@ export default function Entr49014904Block() {
                             Credit Allocation Mechanism
                         </h2>
                         <p>
-                            Credit level must be proposed up front in the team's
+                            Credit level must be proposed up front in the team&apos;s
                             Initial Proposal with justification and agreement
                             from both advisors. See the credit levels table
                             below for details.
