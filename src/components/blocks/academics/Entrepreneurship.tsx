@@ -1574,7 +1574,7 @@ export default function EntrepreneurshipBlock() {
                             </ul>
                             <p>
                                 These skills are not just for entrepreneurs –
-                                they're essential for EVERY career path in the
+                                they&apos;re essential for EVERY career path in the
                                 coming decades!
                             </p>
                         </CourseItem>
@@ -1586,10 +1586,10 @@ export default function EntrepreneurshipBlock() {
                             <p>
                                 ALL undergraduate students at HKUST with CGA of
                                 2.7 or above are eligible to apply. Whether
-                                you're in science, engineering, business, or any
+                                you&apos;re in science, engineering, business, or any
                                 other field, this minor is YOUR secret weapon.
                             </p>
-                            <p>Here's why:</p>
+                            <p>Here&apos;s why:</p>
                             <ul className="mx-5 list-disc list-inside">
                                 <li>
                                     85 million jobs may be displaced by 2025,
@@ -1673,8 +1673,8 @@ export default function EntrepreneurshipBlock() {
                                     href="http://arr.ust.hk/reg/forms/r-37.pdf"
                                 >
                                     {' '}
-                                    "Declaration/ Withdrawal of Undergraduate
-                                    Minor Program"
+                                    &quot;Declaration/ Withdrawal of Undergraduate
+                                    Minor Program&quot;
                                 </a>{' '}
                                 (RR-37) and follow the procedures specified.
                             </p>
