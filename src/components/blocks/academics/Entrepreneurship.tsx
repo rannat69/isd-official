@@ -1,7 +1,7 @@
 'use client';
 import { Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import Breadcrumb from '../Breadcrumb';
+import Breadcrumb from '../../Breadcrumb';
 
 interface CourseProps {
     title: string;
@@ -1513,7 +1513,7 @@ export default function EntrepreneurshipBlock() {
                                     personal and professional networks.
                                     <br />
                                     <a
-                                        href=""
+                                        href="/academics/entrepreneurship/entr-4901-4904"
                                         className="font-bold text-isd-primary"
                                     >
                                         More info here

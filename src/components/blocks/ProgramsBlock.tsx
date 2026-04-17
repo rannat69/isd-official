@@ -11,6 +11,11 @@ export default function ProgramBlock() {
             content: 'Design Minor',
             link: '/academics/design-minor',
         },
+              {
+            heading: 'Undergraduate',
+            content: 'Entrepreneurship',
+            link: '/academics/entrepreneurship',
+        },
         {
             heading: 'Postgraduate',
             content: 'Msc in Technology Leadership and Entrepreneurship',
