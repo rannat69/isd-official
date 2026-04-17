@@ -1,14 +1,16 @@
 'use client';
-import { Plus } from 'lucide-react';
+import Enroll from '@/assets/academics/entrepreneurship/enroll.png';
 import React, { useEffect, useState } from 'react';
 import Breadcrumb from '../../Breadcrumb';
+import Image from 'next/image';
 
 interface CourseProps {
     title: string;
+    big?: boolean;
     children: React.ReactNode;
 }
 
-const CourseItem = ({ title, children }: CourseProps) => {
+const CourseItem = ({ title, big, children }: CourseProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -16,10 +18,14 @@ const CourseItem = ({ title, children }: CourseProps) => {
             <h3>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="flex w-full items-center justify-between py-4 text-left font-semibold text-gray-900 bg-isd-primary-2 hover:bg-gray-50 transition-colors"
+                    className="flex w-full items-center justify-between p-4 text-left font-semibold text-gray-900 bg-isd-primary-2 hover:bg-gray-50 transition-colors"
                     aria-expanded={isOpen}
                 >
-                    <span className="text-isd-primary">{title}</span>
+                    <span
+                        className={`text-isd-primary ${big && 'text-[28px]'}`}
+                    >
+                        {title}
+                    </span>
                     <span
                         className={`text-xl transition-transform duration-200 ${isOpen ? 'rotate-45' : 'rotate-0'}`}
                     >
@@ -32,7 +38,7 @@ const CourseItem = ({ title, children }: CourseProps) => {
         Using a simple JS conditional to show/hide content.
       */}
             {isOpen && (
-                <div className="pb-6 text-gray-700 animate-fadeIn bg-isd-primary-2">
+                <div className="pt-4 px-4 pb-6 text-gray-700 animate-fadeIn bg-isd-primary-2">
                     {children}
                 </div>
             )}
@@ -1231,7 +1237,7 @@ export default function EntrepreneurshipBlock() {
         },
 
         {
-            id: 'curriculum',
+            id: 'entr-brief',
             subheading: (
                 <span className="lg:inline hidden">
                     {' '}
@@ -1270,6 +1276,56 @@ export default function EntrepreneurshipBlock() {
                             </ul>
                         </CourseItem>
 
+                        <CourseItem title="ENTR 2010 – Entrepreneurship Mentorship and Readings">
+                            <p>
+                                ENTR 2010 combines mentorship and curated
+                                readings to expose students to entrepreneurship
+                                in a flexible, interest-driven way, graded on a
+                                pass/fail basis.
+                            </p>
+                            <ul>
+                                <li>
+                                    Students engage with a mentor, choose focus
+                                    areas to study, and participate in
+                                    entrepreneurship activities; experiences are
+                                    later consolidated with the instructor.
+                                </li>
+                                <li>
+                                    Key outcomes include understanding success
+                                    and failure factors of startups, common
+                                    entrepreneurial terminology, risks and
+                                    benefits of entrepreneurship, and fit with
+                                    personal career goals.
+                                </li>
+                            </ul>
+                        </CourseItem>
+
+                        <CourseItem title="ENTR 3012 – Tech Startup and Entrepreneurs Ecosystem: Growth and Innovation">
+                            <p>
+                                ENTR 3012 provides hands-on experience in
+                                developing and implementing growth strategies
+                                for early-stage technology startups and digital
+                                services, emphasizing startup ecosystems and
+                                practitioner engagement.
+                            </p>
+                            <ul>
+                                <li>
+                                    Students apply tools and frameworks such as
+                                    the SAVE model and Blue Ocean ideas to
+                                    analyze markets, craft value propositions,
+                                    design growth campaigns, and develop
+                                    investor pitches.
+                                </li>
+                                <li>
+                                    Assessment typically includes in-class and
+                                    preparatory work, a major project, and
+                                    attainment of digital analytics
+                                    certifications that support data-driven
+                                    experimentation.
+                                </li>
+                            </ul>
+                        </CourseItem>
+
                         <CourseItem title="ENTR 3013 – Prototyping Skills for Entrepreneurs">
                             <p>
                                 ENTR 3013 is a hands-on, lab-based course that
@@ -1299,6 +1355,30 @@ export default function EntrepreneurshipBlock() {
                                 </li>
                             </ul>
                         </CourseItem>
+
+                        <CourseItem title="ENTR 3030 – Social Innovations and Entrepreneurship">
+                            <p>
+                                ENTR 3030 addresses how social enterprises and
+                                commercial entities can deliver social impact
+                                beyond what traditional government or charity
+                                models can easily achieve.
+                            </p>
+                            <ul>
+                                <li>
+                                    Topics include social enterprise objectives
+                                    and business models, CSR, sustainability,
+                                    team building, case studies, and strategies
+                                    for social innovation, often supported by
+                                    site visits and projects.
+                                </li>
+                                <li>
+                                    Students learn to identify social issues and
+                                    explore models and operations that create
+                                    measurable social value.
+                                </li>
+                            </ul>
+                        </CourseItem>
+
                         <CourseItem title="ENTR 3100 – Industrial &amp; Deep Tech Landscape: Understanding the Elements to Start a Business">
                             <p>
                                 ENTR 3100 acquaints students with the landscapes
@@ -1327,6 +1407,103 @@ export default function EntrepreneurshipBlock() {
                                 </li>
                             </ul>
                         </CourseItem>
+                        <CourseItem title="ENTR 3350 – Global Product Development">
+                            <p>
+                                ENTR 3350 (also ISDN 3350) is a joint lecture
+                                and project-based course in which global,
+                                interdisciplinary teams identify problems,
+                                design solutions, and build prototypes with
+                                partner institutions in multiple cities.
+                            </p>
+                            <ul>
+                                <li>
+                                    Students perform market research, apply
+                                    design tools and systems engineering, and
+                                    collaborate internationally across online
+                                    and face-to-face sessions.
+                                </li>
+                                <li>
+                                    They learn to articulate customer needs,
+                                    design global products, collaborate in
+                                    diverse teams, and present outcomes in
+                                    public exhibitions.
+                                </li>
+                            </ul>
+                        </CourseItem>
+
+                        <CourseItem title="ENTR 3360 – From Product Innovations to Successful Technology Startups">
+                            <p>
+                                ENTR 3360 (also ISDN 3360) targets students who
+                                wish to seriously pursue technology startups,
+                                building from existing project ideas and
+                                prototypes toward more complete venture
+                                concepts.
+                            </p>
+                            <ul>
+                                <li>
+                                    Lecture and mentoring topics span market
+                                    research, industrial design, IP, supply
+                                    chains, business models, and funding and
+                                    incubation opportunities.
+                                </li>
+                                <li>
+                                    Students analyze successful case studies,
+                                    explore business opportunities from
+                                    technology innovation, and connect with
+                                    manufacturing and sales networks.
+                                </li>
+                            </ul>
+                        </CourseItem>
+
+                        <CourseItem title="ENTR 4000 – Special Topics in Entrepreneurship">
+                            <p>
+                                ENTR 4000 covers selected emerging or hot topics
+                                in entrepreneurship that are not yet part of
+                                regular ENTR offerings.
+                            </p>
+                            <ul>
+                                <li>
+                                    The course may be graded using different
+                                    schemes, and students can repeat it for
+                                    credit when topics differ.
+                                </li>
+                                <li>
+                                    Across offerings, it aims to strengthen
+                                    entrepreneurial mindsets and the ability to
+                                    create or increase value in organizations.
+                                </li>
+                            </ul>
+                        </CourseItem>
+
+                        <CourseItem title="ENTR 4901–4904 – Student-led Entrepreneurship Acceleration Project">
+                            <p>
+                                ENTR 4901–4904 are project courses where small
+                                student teams accelerate an entrepreneurial
+                                endeavor with guidance from a faculty advisor.
+                            </p>
+                            <ul>
+                                <li>
+                                    Activities include ideation, prototyping,
+                                    operations planning, experiments, market
+                                    surveys, user feedback, business planning,
+                                    soft-launches, and pivoting.
+                                </li>
+                                <li>
+                                    Students synthesize technical, business, and
+                                    user insights to evaluate venture
+                                    survivability and societal impact, and build
+                                    personal and professional networks.
+                                    <br />
+                                    <a
+                                        href="/academics/entrepreneurship/entr-4901-4904"
+                                        className="font-bold text-isd-primary"
+                                    >
+                                        More info here
+                                    </a>
+                                </li>
+                            </ul>
+                        </CourseItem>
+
                         <CourseItem title="ENTR 4911 – IT Entrepreneurship">
                             <p>
                                 ENTR 4911 (alternate code COMP 4911) focuses on
@@ -1358,168 +1535,160 @@ export default function EntrepreneurshipBlock() {
                                 </li>
                             </ul>
                         </CourseItem>
-                        <CourseItem title="ENTR 2010 – Entrepreneurship Mentorship and Readings">
+                    </div>
+                </div>
+            ),
+        },
+        {
+            id: 'entr-faq',
+            subheading: <span className="lg:inline hidden"> FAQs</span>,
+            content: (
+                <div className="flex flex-col gap-[24px]">
+                    <div className="flex-1 flex flex-col gap-[12px]">
+                        <CourseItem
+                            big={true}
+                            title="Why should I minor in Entrepreneurship?"
+                        >
                             <p>
-                                ENTR 2010 combines mentorship and curated
-                                readings to expose students to entrepreneurship
-                                in a flexible, interest-driven way, graded on a
-                                pass/fail basis.
+                                By 2025, 50% of all employees will need
+                                reskilling as technology adoption increases.
                             </p>
-                            <ul>
+                            <p>
+                                The Entrepreneurship Minor prepares you for this
+                                future by developing:{' '}
+                            </p>
+                            <ul className="mx-5 list-disc list-inside">
                                 <li>
-                                    Students engage with a mentor, choose focus
-                                    areas to study, and participate in
-                                    entrepreneurship activities; experiences are
-                                    later consolidated with the instructor.
+                                    Critical thinking and problem-solving skills
+                                    (top skills for 2025)
                                 </li>
                                 <li>
-                                    Key outcomes include understanding success
-                                    and failure factors of startups, common
-                                    entrepreneurial terminology, risks and
-                                    benefits of entrepreneurship, and fit with
-                                    personal career goals.
+                                    Creative thinking and innovation
+                                    capabilities
                                 </li>
+                                <li>
+                                    Technological literacy, including AI and big
+                                    data knowledge{' '}
+                                </li>
+                                <li>Leadership and social influence</li>
                             </ul>
+                            <p>
+                                These skills are not just for entrepreneurs –
+                                they're essential for EVERY career path in the
+                                coming decades!
+                            </p>
                         </CourseItem>
-                        <CourseItem title="ENTR 3012 – Tech Startup and Entrepreneurs Ecosystem: Growth and Innovation">
+
+                        <CourseItem
+                            big={true}
+                            title="Who is the Entrepreneurship minor for?"
+                        >
                             <p>
-                                ENTR 3012 provides hands-on experience in
-                                developing and implementing growth strategies
-                                for early-stage technology startups and digital
-                                services, emphasizing startup ecosystems and
-                                practitioner engagement.
+                                ALL undergraduate students at HKUST with CGA of
+                                2.7 or above are eligible to apply. Whether
+                                you're in science, engineering, business, or any
+                                other field, this minor is YOUR secret weapon.
                             </p>
-                            <ul>
+                            <p>Here's why:</p>
+                            <ul className="mx-5 list-disc list-inside">
                                 <li>
-                                    Students apply tools and frameworks such as
-                                    the SAVE model and Blue Ocean ideas to
-                                    analyze markets, craft value propositions,
-                                    design growth campaigns, and develop
-                                    investor pitches.
+                                    85 million jobs may be displaced by 2025,
+                                    but 97 million new roles may emerge
                                 </li>
                                 <li>
-                                    Assessment typically includes in-class and
-                                    preparatory work, a major project, and
-                                    attainment of digital analytics
-                                    certifications that support data-driven
-                                    experimentation.
+                                    40% of workers will require reskilling of 6
+                                    months or less
+                                </li>
+                                <li>
+                                    Employers expect 39% of key skills required
+                                    in the job market to change by 2030
                                 </li>
                             </ul>
+                            <p>
+                                The Entrepreneurship Minor gives you the
+                                adaptability and innovation skills to thrive in
+                                this changing landscape, regardless of your
+                                career goals.
+                            </p>
                         </CourseItem>
-                        <CourseItem title="ENTR 3030 – Social Innovations and Entrepreneurship">
+                        <CourseItem title="I am interested to Minor in Entrepreneurship what should I do to satisfy the Minor requirements?">
                             <p>
-                                ENTR 3030 addresses how social enterprises and
-                                commercial entities can deliver social impact
-                                beyond what traditional government or charity
-                                models can easily achieve.
+                                To graduate with a minor in Entrepreneurship,
+                                you must have enrolled in the Minor Program and
+                                completed a minimum total of 18 credits and all
+                                of its requirements, as well as all the
+                                requirements of their major program of study. If
+                                you were admitted in 2016-17 or after, they are
+                                also required to attain an average grade point
+                                of at least 2.5 in courses taken within the
+                                Minor Program. For credit transfer, you can
+                                transfer a maximum total of 6 credits to the
+                                Minor Program. Out of the total credits required
+                                by the minor program,{' '}
+                                <strong>
+                                    at least 9 credits should be single-counted
+                                    within the minor
+                                </strong>{' '}
+                                and are not used to fulfill any other
+                                requirements for graduation except the
+                                120-credit degree requirement.
                             </p>
-                            <ul>
-                                <li>
-                                    Topics include social enterprise objectives
-                                    and business models, CSR, sustainability,
-                                    team building, case studies, and strategies
-                                    for social innovation, often supported by
-                                    site visits and projects.
-                                </li>
-                                <li>
-                                    Students learn to identify social issues and
-                                    explore models and operations that create
-                                    measurable social value.
-                                </li>
-                            </ul>
+
+                            <p>
+                                You may use{' '}
+                                <strong>
+                                    no more than 6 credits earned from courses
+                                    offered in pure online delivery mode
+                                </strong>{' '}
+                                to satisfy the graduation requirements of a
+                                degree program. This 6-credit limit does not
+                                apply to credits obtained through the credit
+                                transfer procedures of the University.{' '}
+                            </p>
                         </CourseItem>
-                        <CourseItem title="ENTR 3350 – Global Product Development">
+                        <CourseItem title="How and when can I enroll into the Entrepreneurship Minor?">
                             <p>
-                                ENTR 3350 (also ISDN 3350) is a joint lecture
-                                and project-based course in which global,
-                                interdisciplinary teams identify problems,
-                                design solutions, and build prototypes with
-                                partner institutions in multiple cities.
+                                You must declare their intention to enroll in
+                                the Minor Program no earlier than the first
+                                regular term of their second year of study but
+                                no later than the last day of the add/drop
+                                period in the first regular term of their final
+                                year of study. If you wish to withdraw from the
+                                Minor Program you should apply before the last
+                                day of the add/drop period in the last regular
+                                term of their final year of study.
                             </p>
-                            <ul>
-                                <li>
-                                    Students perform market research, apply
-                                    design tools and systems engineering, and
-                                    collaborate internationally across online
-                                    and face-to-face sessions.
-                                </li>
-                                <li>
-                                    They learn to articulate customer needs,
-                                    design global products, collaborate in
-                                    diverse teams, and present outcomes in
-                                    public exhibitions.
-                                </li>
-                            </ul>
+
+                            <Image
+                                src={Enroll}
+                                alt="Enroll"
+                                className="w-1/2 object-cover mx-auto block my-2"
+                            />
                         </CourseItem>
-                        <CourseItem title="ENTR 3360 – From Product Innovations to Successful Technology Startups">
+                        <CourseItem title="Application Procedures">
                             <p>
-                                ENTR 3360 (also ISDN 3360) targets students who
-                                wish to seriously pursue technology startups,
-                                building from existing project ideas and
-                                prototypes toward more complete venture
-                                concepts.
+                                Interested students please complete the{' '}
+                                <a
+                                    className="font-bold text-isd-primary"
+                                    href="http://arr.ust.hk/reg/forms/r-37.pdf"
+                                >
+                                    {' '}
+                                    "Declaration/ Withdrawal of Undergraduate
+                                    Minor Program"
+                                </a>{' '}
+                                (RR-37) and follow the procedures specified.
                             </p>
-                            <ul>
-                                <li>
-                                    Lecture and mentoring topics span market
-                                    research, industrial design, IP, supply
-                                    chains, business models, and funding and
-                                    incubation opportunities.
-                                </li>
-                                <li>
-                                    Students analyze successful case studies,
-                                    explore business opportunities from
-                                    technology innovation, and connect with
-                                    manufacturing and sales networks.
-                                </li>
-                            </ul>
                         </CourseItem>
-                        <CourseItem title="ENTR 4000 – Special Topics in Entrepreneurship">
+                        <CourseItem title="Enquiry">
                             <p>
-                                ENTR 4000 covers selected emerging or hot topics
-                                in entrepreneurship that are not yet part of
-                                regular ENTR offerings.
+                                Please email Aloysius at{' '}
+                                <a
+                                    className="font-bold text-isd-primary"
+                                    href="mailto:aloysius@ust.hk"
+                                >
+                                    aloysius@ust.hk
+                                </a>{' '}
                             </p>
-                            <ul>
-                                <li>
-                                    The course may be graded using different
-                                    schemes, and students can repeat it for
-                                    credit when topics differ.
-                                </li>
-                                <li>
-                                    Across offerings, it aims to strengthen
-                                    entrepreneurial mindsets and the ability to
-                                    create or increase value in organizations.
-                                </li>
-                            </ul>
-                        </CourseItem>
-                        <CourseItem title="ENTR 4901–4904 – Student-led Entrepreneurship Acceleration Project">
-                            <p>
-                                ENTR 4901–4904 are project courses where small
-                                student teams accelerate an entrepreneurial
-                                endeavor with guidance from a faculty advisor.
-                            </p>
-                            <ul>
-                                <li>
-                                    Activities include ideation, prototyping,
-                                    operations planning, experiments, market
-                                    surveys, user feedback, business planning,
-                                    soft-launches, and pivoting.
-                                </li>
-                                <li>
-                                    Students synthesize technical, business, and
-                                    user insights to evaluate venture
-                                    survivability and societal impact, and build
-                                    personal and professional networks.
-                                    <br />
-                                    <a
-                                        href="/academics/entrepreneurship/entr-4901-4904"
-                                        className="font-bold text-isd-primary"
-                                    >
-                                        More info here
-                                    </a>
-                                </li>
-                            </ul>
                         </CourseItem>
                     </div>
                 </div>
