@@ -20,7 +20,7 @@ import Res5 from '@/assets/academics/mphil-in-tie/res-area/5.svg';
 import Res5En from '@/assets/academics/mphil-in-tie/res-area/5.en.svg';
 import Res5Cn from '@/assets/academics/mphil-in-tie/res-area/5.cn.svg';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function ResearchAreasBlock() {
@@ -91,8 +91,8 @@ export default function ResearchAreasBlock() {
                         alt,
                         href,
                     }: {
-                        img: any;
-                        textImg: any;
+                        img: StaticImageData;
+                        textImg: StaticImageData;
                         alt: string;
                         href: string;
                     }) => (
