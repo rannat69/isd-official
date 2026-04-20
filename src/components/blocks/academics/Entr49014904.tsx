@@ -274,15 +274,15 @@ export default function Entr49014904Block() {
                             Credit Allocation Mechanism
                         </h2>
                         <p>
-                            Credit level must be proposed up front in the team&apos;s
-                            Initial Proposal with justification and agreement
-                            from both advisors. See the credit levels table
-                            below for details.
+                            Credit level must be proposed up front in the
+                            team&apos;s Initial Proposal with justification and
+                            agreement from both advisors. See the credit levels
+                            table below for details.
                         </p>
 
                         <table className="w-fit">
                             <tbody className="text-isd-font-1">
-                                <tr className="bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
+                                <tr className="hidden md:table-row bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
                                     <td className="p-[12px] border-x-2 border-white ">
                                         Credits
                                     </td>
@@ -296,14 +296,23 @@ export default function Entr49014904Block() {
                                         Milestones/Deliverables
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         1 Credit
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Scope
+                                        </span>
                                         Opportunity Validation Focus
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Required Commitment
+                                        </span>
                                         Early-stage inquiry: problem/opportunity
                                         ID and initial validation
                                         <ul className="mx-5 list-disc list-inside">
@@ -318,6 +327,9 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Milestones/Deliverables{' '}
+                                        </span>
                                         <ul className="mx-5 list-disc list-inside">
                                             <li>
                                                 Initial proposal (problem,
@@ -331,14 +343,23 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         2 Credits
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Scope
+                                        </span>
                                         MVP Build & Initial Testing
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Required Commitment
+                                        </span>
                                         Early-stage inquiry: MVP/prototype &
                                         initial market/user testing
                                         <ul className="mx-5 list-disc list-inside">
@@ -349,6 +370,9 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Milestones/Deliverables{' '}
+                                        </span>
                                         <ul className="mx-5 list-disc list-inside">
                                             <li>
                                                 Initial user/market test and
@@ -361,14 +385,23 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         3 Credits
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Scope
+                                        </span>
                                         Full Course Sequence
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Required Commitment
+                                        </span>
                                         Full sequence: Opportunity validation,
                                         MVP, comprehensive testing, final pitch
                                         <ul className="mx-5 list-disc list-inside">
@@ -383,6 +416,9 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Milestones/Deliverables{' '}
+                                        </span>
                                         <ul className="mx-5 list-disc list-inside">
                                             <li>Demo Day participation</li>
                                             <li>Business/impact plan</li>
@@ -393,14 +429,23 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         4 Credits
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Scope
+                                        </span>
                                         Advanced Venture Execution{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Required Commitment
+                                        </span>
                                         Full sequence plus advanced commitment
                                         outcome
                                         <ul className="mx-5 list-disc list-inside">
@@ -412,6 +457,9 @@ export default function Entr49014904Block() {
                                         </ul>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Milestones/Deliverables{' '}
+                                        </span>
                                         <ul className="mx-5 list-disc list-inside">
                                             <li>
                                                 Initial user/market test and
@@ -669,9 +717,9 @@ export default function Entr49014904Block() {
                             Details of Team Members:
                         </p>
 
-                        <table className="w-fit">
+                        <table className="w-full">
                             <tbody className="text-isd-font-1">
-                                <tr className="bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
+                                <tr className="hidden md:table-row bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
                                     <td className="p-[12px] border-x-2 border-white ">
                                         Student Name
                                     </td>
@@ -688,50 +736,165 @@ export default function Entr49014904Block() {
                                         Year of Study
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
                                         1. Contact person
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student Name
+                                        </span>
                                     </td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student ID
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Program of Study (e.g., BEng COMP)
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            ITSC Account{' '}
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Year of Study
+                                        </span>
+                                    </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
                                         2.
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student Name
+                                        </span>
                                     </td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student ID
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Program of Study (e.g., BEng COMP)
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            ITSC Account{' '}
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Year of Study
+                                        </span>
+                                    </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
                                         3. (if any)
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student Name
+                                        </span>
                                     </td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student ID
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Program of Study (e.g., BEng COMP)
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            ITSC Account{' '}
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Year of Study
+                                        </span>
+                                    </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
                                         4. (if any)
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student Name
+                                        </span>
                                     </td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student ID
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Program of Study (e.g., BEng COMP)
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            ITSC Account{' '}
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Year of Study
+                                        </span>
+                                    </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
                                         5. (if any)
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student Name
+                                        </span>
                                     </td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
-                                    <td className="p-[12px] border-x-2 border-white"></td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Student ID
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Program of Study (e.g., BEng COMP)
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            ITSC Account{' '}
+                                        </span>
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-white">
+                                        {' '}
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Year of Study
+                                        </span>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

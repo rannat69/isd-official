@@ -153,8 +153,8 @@ export default function EntrepreneurshipBlock() {
                             </span>
                         </div>*/}
 
-                        <div className="pathway-map flex flex-wrap items-stretch justify-center gap-4 my-2 bg-transparent">
-                            <div className="pathway-column flex-[1_1_260px] max-w-[340px] bg-isd-primary-2 rounded-[6px] px-[0.9rem] py-[0.8rem]">
+                        <div className="pathway-map flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-4 my-2 bg-transparent">
+                            <div className="pathway-column  flex-[1_1_260px] md:max-w-[340px] max-w-full bg-isd-primary-2 rounded-[6px] px-[0.9rem] py-[0.8rem]">
                                 <div className="pathway-column-header mb-2">
                                     <div className="pathway-step-label text-[0.78rem] font-semibold uppercase text-isd-primary">
                                         Start Here
@@ -185,11 +185,15 @@ export default function EntrepreneurshipBlock() {
                                 </div>
                             </div>
 
-                            <div className="pathway-arrow-large self-center text-[1.6rem] text-[#bbb]">
+                            <div className="md:block hidden pathway-arrow-large self-center text-[1.6rem] text-[#bbb]">
                                 ⟶
                             </div>
 
-                            <div className="pathway-column flex-[1_1_260px] max-w-[340px] bg-isd-primary-2 rounded-[6px] px-[0.9rem] py-[0.8rem]">
+                            <div className="md:hidden block pathway-arrow-large self-center text-[1.6rem] text-[#bbb]">
+                                ↓
+                            </div>
+
+                            <div className="pathway-column flex-[1_1_260px] md:max-w-[340px] max-w-full bg-isd-primary-2 rounded-[6px] px-[0.9rem] py-[0.8rem]">
                                 <div className="pathway-column-header mb-2">
                                     <div className="pathway-step-label text-[0.78rem] font-semibold uppercase text-isd-primary">
                                         Build Foundations
@@ -278,11 +282,15 @@ export default function EntrepreneurshipBlock() {
                                 </p>
                             </div>
 
-                            <div className="pathway-arrow-large self-center text-[1.6rem] text-[#bbb]">
+                            <div className="md:block hidden pathway-arrow-large self-center text-[1.6rem] text-[#bbb]">
                                 ⟶
                             </div>
 
-                            <div className="pathway-column flex-[1_1_260px] max-w-[340px] bg-isd-primary-2 rounded-[6px]  px-[0.9rem] py-[0.8rem]">
+                            <div className="md:hidden block pathway-arrow-large self-center text-[1.6rem] text-[#bbb]">
+                                ↓
+                            </div>
+
+                            <div className="pathway-column flex-[1_1_260px] md:max-w-[340px] max-w-full bg-isd-primary-2 rounded-[6px]  px-[0.9rem] py-[0.8rem]">
                                 <div className="pathway-column-header mb-2">
                                     <div className="pathway-step-label text-[0.78rem] font-semibold uppercase text-isd-primary">
                                         Develop Skills
@@ -354,7 +362,7 @@ export default function EntrepreneurshipBlock() {
 
                         <table className="w-fit">
                             <tbody className="text-isd-font-1">
-                                <tr className="bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
+                                <tr className="hidden md:table-row bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
                                     <td className="p-[12px] border-x-2 border-white ">
                                         Code
                                     </td>
@@ -368,8 +376,11 @@ export default function EntrepreneurshipBlock() {
                                         Role in Minor
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 1001
                                         <br />
                                         <div className="bg-[#900000] rounded-lg text-white text-xs p-1">
@@ -377,13 +388,22 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Entrepreneurship 1001: Designing Your
                                         Future
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role in Minor
+                                        </span>
                                         Signature foundation course for all
                                         Entrepreneurship Minor students; focuses
                                         on entrepreneurial mindset,
@@ -406,9 +426,9 @@ export default function EntrepreneurshipBlock() {
                             mentoring, and early acceleration.
                         </p>
 
-                        <table className="w-fit">
+                        <table className="w-full">
                             <tbody className="text-isd-font-1">
-                                <tr className="bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
+                                <tr className="hidden md:table-row bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
                                     <td className="p-[12px] border-x-2 border-white ">
                                         Code
                                     </td>
@@ -422,8 +442,11 @@ export default function EntrepreneurshipBlock() {
                                         Role
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ISOM 1380
                                         <br />
                                         <div className="bg-[#006644] rounded-lg text-white text-xs p-1">
@@ -431,21 +454,33 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Technology and Innovation: Social and
                                         Business Perspectives{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role
+                                        </span>
                                         Introduces how technology and innovation
                                         interact with society and business,
                                         forming a broad conceptual base for
                                         entrepreneurial thinking.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         MGMT 2011
                                         <br />
                                         <div className="bg-[#006644] rounded-lg text-white text-xs p-1">
@@ -453,20 +488,32 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         New Venture Creation
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role
+                                        </span>
                                         Guides students step-by-step through the
                                         new venture creation process, from
                                         opportunity evaluation to basic venture
                                         planning.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 2010
                                         <br />
                                         <div className="bg-[#006644] rounded-lg text-white text-xs p-1">
@@ -474,20 +521,32 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Entrepreneurship Mentorship and Readings
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         1
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role
+                                        </span>
                                         Mentorship-based course where students
                                         explore entrepreneurship through
                                         readings, self-directed activities, and
                                         consolidation with a faculty mentor.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 3030
                                         <br />
                                         <div className="bg-[#006644] rounded-lg text-white text-xs p-1">
@@ -495,12 +554,21 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Social Innovations and Entrepreneurship
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role
+                                        </span>
                                         Introduces social enterprises, social
                                         innovation models, and corporate social
                                         responsibility, emphasizing delivery of
@@ -508,8 +576,11 @@ export default function EntrepreneurshipBlock() {
                                         operations.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 3100
                                         <br />
                                         <div className="bg-[#006644] rounded-lg text-white text-xs p-1">
@@ -517,21 +588,33 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Industrial Landscape: Understanding the
                                         Elements to Start a Business
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role
+                                        </span>
                                         Surveys industry structures and
                                         ecosystems across sectors; students
                                         analyze companies and identify
                                         opportunities and competitive dynamics.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 4901–4904
                                         <br />
                                         <div className="bg-[#006644] rounded-lg text-white text-xs p-1">
@@ -539,13 +622,22 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Student-led Entrepreneurship
                                         Acceleration Project
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         1-4
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Role
+                                        </span>
                                         Team-based acceleration projects
                                         developing an idea from early stage
                                         towards market viability through
@@ -569,9 +661,9 @@ export default function EntrepreneurshipBlock() {
                         </p>
 
                         <div className="pathway-flow rounded-[6px] bg-isd-primary-2 p-4 my-2">
-                            <div className="flow-row flex flex-wrap items-stretch justify-center gap-[0.6rem] mb-[0.45rem]">
-                                <div className="flow-step flow-step-core min-w-[190px] max-w-[250px] rounded-[4px] border border-[#900000]/50 bg-[#fff5f5] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
-                                    <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
+                            <div className="flow-row flex md:flex-row flex-col flex-wrap items-stretch justify-center gap-[0.6rem] mb-[0.45rem]">
+                                <div className="flow-step flow-step-core min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#900000]/50 bg-[#fff5f5] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
+                                    <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem]  bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Start
                                     </div>
 
@@ -588,11 +680,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="flow-arrow text-[1.2rem] text-[#999] self-center">
+                                <div className="md:block hidden  text-[1.2rem] text-[#999] self-center">
                                     ⟶
                                 </div>
 
-                                <div className="flow-step flow-step-fund min-w-[190px] max-w-[250px] rounded-[4px] border border-[#dddddd] bg-[#f5fff8] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative border-[#006644]">
+                                <div className="md:hidden block text-[1.2rem] text-[#999] self-center">
+                                    ↓
+                                </div>
+
+                                <div className="flow-step flow-step-fund min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#dddddd] bg-[#f5fff8] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative border-[#006644]">
                                     <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Plan
                                     </div>
@@ -610,11 +706,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="flow-arrow text-[1.2rem] text-[#999] self-center">
+                                <div className="md:block hidden  text-[1.2rem] text-[#999] self-center">
                                     ⟶
                                 </div>
 
-                                <div className="flow-step flow-step-fund min-w-[190px] max-w-[250px] rounded-[4px] border border-[#dddddd] bg-[#f5fff8] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative border-[#006644]">
+                                <div className="md:hidden block text-[1.2rem] text-[#999] self-center">
+                                    ↓
+                                </div>
+
+                                <div className="flow-step flow-step-fund min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#dddddd] bg-[#f5fff8] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative border-[#006644]">
                                     <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Understand
                                     </div>
@@ -634,12 +734,12 @@ export default function EntrepreneurshipBlock() {
 
                             <div className="flow-row flow-row-secondary flex flex-wrap items-stretch justify-center gap-[0.6rem] mb-[0.45rem]">
                                 <div className="flow-arrow vertical text-[1rem] text-[#999] self-center">
-                                    ⬇
+                                    ↓
                                 </div>
                             </div>
 
-                            <div className="flow-row flex flex-wrap items-stretch justify-center gap-[0.6rem] mb-[0.45rem]">
-                                <div className="flow-step flow-step-skill min-w-[190px] max-w-[250px] rounded-[4px] border border-[#b35f00] bg-[#fff8f0] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
+                            <div className="flex-col md:flex-row flex flex-wrap items-stretch justify-center gap-[0.6rem] mb-[0.45rem]">
+                                <div className="flow-step flow-step-skill min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#b35f00] bg-[#fff8f0] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
                                     <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Build
                                     </div>
@@ -656,11 +756,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="flow-arrow text-[1.2rem] text-[#999] self-center">
+                                <div className="md:block hidden  text-[1.2rem] text-[#999] self-center">
                                     ⟶
                                 </div>
 
-                                <div className="flow-step flow-step-skill min-w-[190px] max-w-[250px] rounded-[4px] border border-[#b35f00] bg-[#fff8f0] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
+                                <div className="md:hidden block text-[1.2rem] text-[#999] self-center">
+                                    ↓
+                                </div>
+
+                                <div className="flow-step flow-step-skill min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#b35f00] bg-[#fff8f0] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
                                     <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Grow
                                     </div>
@@ -677,11 +781,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="flow-arrow text-[1.2rem] text-[#999] self-center">
+                                <div className="md:block hidden  text-[1.2rem] text-[#999] self-center">
                                     ⟶
                                 </div>
 
-                                <div className="flow-step flow-step-skill min-w-[190px] max-w-[250px] rounded-[4px] border border-[#b35f00] bg-[#fff8f0] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
+                                <div className="md:hidden block text-[1.2rem] text-[#999] self-center">
+                                    ↓
+                                </div>
+
+                                <div className="flow-step flow-step-skill min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#b35f00] bg-[#fff8f0] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
                                     <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Structure
                                     </div>
@@ -699,11 +807,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="flow-arrow text-[1.2rem] text-[#999] self-center">
+                                <div className="md:block hidden  text-[1.2rem] text-[#999] self-center">
                                     ⟶
                                 </div>
 
-                                <div className="flow-step flow-step-fund min-w-[190px] max-w-[250px] rounded-[4px] border border-[#006644] bg-[#f5fff8] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
+                                <div className="md:hidden block text-[1.2rem] text-[#999] self-center">
+                                    ↓
+                                </div>
+
+                                <div className="flow-step flow-step-fund min-w-[190px] md:max-w-[250px] max-w-full rounded-[4px] border border-[#006644] bg-[#f5fff8] p-[0.55rem] px-[0.6rem] text-[0.84rem] relative">
                                     <div className="flow-badge absolute top-[-0.6rem] left-[0.4rem] bg-[#f0f0f0] px-[0.4rem] py-[0.04rem] rounded-full text-[0.7rem] uppercase text-[#555]">
                                         Finish (and continue)
                                     </div>
@@ -744,8 +856,8 @@ export default function EntrepreneurshipBlock() {
                         </p>
 
                         <div className=" rounded-lg bg-isd-primary-2 p-4 lg:p-6 ">
-                            <div className="flex flex-wrap items-stretch gap-4 mb-4">
-                                <div className="relative min-w-[200px] max-w-xs flex-1 border border-red-800 bg-red-50 rounded-md p-3 pt-4 text-sm">
+                            <div className="flex flex-col md:flex-row flex-wrap items-stretch gap-4 mb-4">
+                                <div className="relative min-w-[200px] md:max-w-xs max-w-full flex-1 border border-red-800 bg-red-50 rounded-md p-3 pt-4 text-sm">
                                     <span className="absolute -top-2 left-2 bg-gray-100 px-2 py-0.5 rounded-full text-[10px] uppercase font-bold text-gray-600 border border-gray-200">
                                         Start
                                     </span>
@@ -763,11 +875,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="hidden lg:flex items-center text-gray-400 text-xl">
+                                <div className="md:block hidden  self-center text-gray-400 text-xl">
                                     ⟶
                                 </div>
 
-                                <div className="relative min-w-[200px] max-w-xs flex-1 border border-green-700 bg-green-50 rounded-md p-3 pt-4 text-sm">
+                                <div className="md:hidden self-center text-gray-400 text-xl">
+                                    ↓
+                                </div>
+
+                                <div className="relative min-w-[200px] md:max-w-xs max-w-full flex-1 border border-green-700 bg-green-50 rounded-md p-3 pt-4 text-sm">
                                     <span className="absolute -top-2 left-2 bg-gray-100 px-2 py-0.5 rounded-full text-[10px] uppercase font-bold text-gray-600 border border-gray-200">
                                         Focus
                                     </span>
@@ -784,11 +900,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="hidden lg:flex items-center text-gray-400 text-xl">
+                                <div className="md:block hidden  self-center text-gray-400 text-xl">
                                     ⟶
                                 </div>
 
-                                <div className="relative min-w-[200px] max-w-xs flex-1 border border-green-700 bg-green-50 rounded-md p-3 pt-4 text-sm">
+                                <div className="md:hidden self-center text-gray-400 text-xl">
+                                    ↓
+                                </div>
+
+                                <div className="relative min-w-[200px] md:max-w-xs max-w-full flex-1 border border-green-700 bg-green-50 rounded-md p-3 pt-4 text-sm">
                                     <span className="absolute -top-2 left-2 bg-gray-100 px-2 py-0.5 rounded-full text-[10px] uppercase font-bold text-gray-600 border border-gray-200">
                                         Understand
                                     </span>
@@ -807,12 +927,16 @@ export default function EntrepreneurshipBlock() {
                                 </div>
                             </div>
 
-                            <div className="flex justify-start lg:ml-32 my-2 text-gray-400 text-lg">
-                                ⬇
+                            <div className="md:hidden text-center  my-[16px]  text-gray-400 text-xl">
+                                ↓
                             </div>
 
-                            <div className="flex flex-wrap items-stretch gap-4">
-                                <div className="relative min-w-[200px] max-w-md flex-1 border border-blue-700 bg-white rounded-md p-3 pt-4 text-sm">
+                            <div className="hidden md:block   flex justify-start md:ml-32 my-2 text-gray-400 text-lg">
+                                ↓
+                            </div>
+
+                            <div className="flex flex-col md:flex-row flex-wrap items-stretch gap-4">
+                                <div className="relative min-w-[200px] md:max-w-md max-w-full flex-1 border border-blue-700 bg-white rounded-md p-3 pt-4 text-sm">
                                     <span className="absolute -top-2 left-2 bg-gray-100 px-2 py-0.5 rounded-full text-[10px] uppercase font-bold text-gray-600 border border-gray-200">
                                         Choose
                                     </span>
@@ -844,11 +968,15 @@ export default function EntrepreneurshipBlock() {
                                     </div>
                                 </div>
 
-                                <div className="hidden lg:flex items-center text-gray-400 text-xl">
+                                <div className="hidden md:flex items-center text-gray-400 text-xl">
                                     ⟶
                                 </div>
 
-                                <div className="relative min-w-[200px] max-w-md flex-1 border border-blue-700 bg-white rounded-md p-3 pt-4 text-sm">
+                                <div className="md:hidden text-center text-gray-400 text-xl">
+                                    ↓
+                                </div>
+
+                                <div className="relative min-w-[200px] md:max-w-md max-w-full flex-1 border border-blue-700 bg-white rounded-md p-3 pt-4 text-sm">
                                     <span className="absolute -top-2 left-2 bg-gray-100 px-2 py-0.5 rounded-full text-[10px] uppercase font-bold text-gray-600 border border-gray-200">
                                         Do
                                     </span>
@@ -889,9 +1017,9 @@ export default function EntrepreneurshipBlock() {
                             applied projects.
                         </p>
 
-                        <table className="w-fit">
+                        <table className="w-full">
                             <tbody className="text-isd-font-1">
-                                <tr className="bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
+                                <tr className="hidden md:table-row bg-isd-primary-2 text-primary font-bold border-y-2 border-white">
                                     <td className="p-[12px] border-x-2 border-white ">
                                         Code
                                     </td>
@@ -905,8 +1033,11 @@ export default function EntrepreneurshipBlock() {
                                         Notes
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 3012
                                         <br />
                                         <div className="bg-[#b35f00] rounded-lg text-white text-xs p-1">
@@ -914,13 +1045,22 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Tech Startup and Entrepreneurs
                                         Ecosystem: Growth and Innovation
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         New ENTR course focused on hands-on
                                         growth strategies for technology
                                         startups and innovative digital
@@ -930,8 +1070,11 @@ export default function EntrepreneurshipBlock() {
                                         experimentation.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 3013
                                         <br />
                                         <div className="bg-[#b35f00] rounded-lg text-white text-xs p-1">
@@ -939,12 +1082,21 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Prototyping Skills for Entrepreneurs
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         New ENTR course providing practical
                                         skills to build software, hardware, and
                                         mechanical prototypes, integrate
@@ -953,8 +1105,11 @@ export default function EntrepreneurshipBlock() {
                                         principles.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 3350 / ISDN 3350
                                         <br />
                                         <div className="bg-[#b35f00] rounded-lg text-white text-xs p-1">
@@ -962,12 +1117,21 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Global Product Development{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Joint project-based course where global,
                                         interdisciplinary teams identify
                                         user-centered problems and develop
@@ -975,8 +1139,11 @@ export default function EntrepreneurshipBlock() {
                                         prototypes across multiple campuses.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ENTR 3360 / ISDN 3360
                                         <br />
                                         <div className="bg-[#b35f00] rounded-lg text-white text-xs p-1">
@@ -984,13 +1151,22 @@ export default function EntrepreneurshipBlock() {
                                         </div>
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         From Product Innovations to Successful
                                         Technology Startups
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Guides students from initial product
                                         concepts and prototypes toward
                                         technology startup formation, covering
@@ -998,35 +1174,59 @@ export default function EntrepreneurshipBlock() {
                                         funding, and business models.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         BIBU 4820
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Biotechnology Entrepreneurship and
                                         Business Operations
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Sector-focused course on biotech venture
                                         operations and commercialization.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         COMP 4911 / ENTR 4911
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         IT Entrepreneurship
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Covers elements of starting and
                                         operating information technology
                                         ventures, including business planning,
@@ -1034,195 +1234,327 @@ export default function EntrepreneurshipBlock() {
                                         studies.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         FINA 2203 / 2303
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Fundamentals of Business Finance /
                                         Financial Management
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Provides finance foundations relevant
                                         for evaluating and managing startup
                                         financial decisions.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         IEDA 2150 / 2200
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Product Design / Engineering
                                         Management{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Develops design and management skills
                                         that support technology and
                                         product-oriented ventures.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ISOM 2030
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Business Protections for Innovations
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Introduces IP and related protections
                                         for innovations in business and
                                         technology contexts.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ISOM 4020
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Innovation Management and Technology
                                         Entrepreneurship{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Addresses innovation processes,
                                         technology entrepreneurship, and
                                         corporate innovation practices.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         LIFS 4820
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Entrepreneurship in Biotechnology
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Covers science-based innovation and
                                         venture topics in life sciences.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         MARK 2120
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Marketing Management
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Provides core marketing concepts and
                                         tools that underpin startup customer and
                                         market strategies.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         MGMT 3140 / 4220
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Negotiation / Entrepreneurship and
                                         Innovation{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         4
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Develops negotiation skills and advanced
                                         perspectives on entrepreneurship and
                                         innovation for would-be founders and
                                         leaders.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         OCES 4301
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Environmental Conservation
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Provides context for environmental and
                                         green ventures with conservation and
                                         sustainability themes.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         SCIE 4860
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Young Entrepreneurial Syndicate in
                                         Applied Sciences Project
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Applied science project course with
                                         entrepreneurial elements and team-based
                                         project work.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-rowbg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         IEDA 4170
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Product Design and Lifecycle
                                         Management{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white text-xs">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Removed from the Entrepreneurship Minor
                                         elective list because it has not been
                                         offered in recent years and has been
                                         deleted from the catalog.
                                     </td>
                                 </tr>
-                                <tr className="bg-isd-secondary-1 text-secondary">
+                                <tr className="flex flex-col md:table-row bg-isd-secondary-1 text-secondary">
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Code
+                                        </span>
                                         ISOM 4820
                                         <br />
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Title
+                                        </span>
                                         Revenue Management
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Credits
+                                        </span>
                                         3
                                     </td>
                                     <td className="p-[12px] border-x-2 border-white text-xs">
+                                        <span className="md:hidden font-bold block text-xs uppercase opacity-50">
+                                            Notes
+                                        </span>
                                         Removed from the Entrepreneurship Minor
                                         elective list because it has not been
                                         offered in recent years and has been
@@ -1545,10 +1877,7 @@ export default function EntrepreneurshipBlock() {
             content: (
                 <div className="flex flex-col gap-[24px]">
                     <div className="flex-1 flex flex-col gap-[12px]">
-                        <CourseItem
-                            big={true}
-                            title="Why should I minor in Entrepreneurship?"
-                        >
+                        <CourseItem title="Why should I minor in Entrepreneurship?">
                             <p>
                                 By 2025, 50% of all employees will need
                                 reskilling as technology adoption increases.
@@ -1574,20 +1903,18 @@ export default function EntrepreneurshipBlock() {
                             </ul>
                             <p>
                                 These skills are not just for entrepreneurs –
-                                they&apos;re essential for EVERY career path in the
-                                coming decades!
+                                they&apos;re essential for EVERY career path in
+                                the coming decades!
                             </p>
                         </CourseItem>
 
-                        <CourseItem
-                            big={true}
-                            title="Who is the Entrepreneurship minor for?"
-                        >
+                        <CourseItem title="Who is the Entrepreneurship minor for?">
                             <p>
                                 ALL undergraduate students at HKUST with CGA of
                                 2.7 or above are eligible to apply. Whether
-                                you&apos;re in science, engineering, business, or any
-                                other field, this minor is YOUR secret weapon.
+                                you&apos;re in science, engineering, business,
+                                or any other field, this minor is YOUR secret
+                                weapon.
                             </p>
                             <p>Here&apos;s why:</p>
                             <ul className="mx-5 list-disc list-inside">
@@ -1673,8 +2000,8 @@ export default function EntrepreneurshipBlock() {
                                     href="http://arr.ust.hk/reg/forms/r-37.pdf"
                                 >
                                     {' '}
-                                    &quot;Declaration/ Withdrawal of Undergraduate
-                                    Minor Program&quot;
+                                    &quot;Declaration/ Withdrawal of
+                                    Undergraduate Minor Program&quot;
                                 </a>{' '}
                                 (RR-37) and follow the procedures specified.
                             </p>
