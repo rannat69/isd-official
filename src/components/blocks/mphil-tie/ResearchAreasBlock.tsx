@@ -1,26 +1,17 @@
 import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
+import ResDesCnSimp from '@/assets/academics/mphil-in-tie/res.des.cn.simp.png';
+import ResSusCnSimp from '@/assets/academics/mphil-in-tie/res.sus.cn.simp.png';
+import ResHealthCnSimp from '@/assets/academics/mphil-in-tie/res.health.cn.simp.png';
+import ResEmerCnSimp from '@/assets/academics/mphil-in-tie/res.emer.cn.simp.png';
+import ResMarCnSimp from '@/assets/academics/mphil-in-tie/res.mar.cn.simp.png';
 
-import Res1 from '@/assets/academics/mphil-in-tie/res-area/1.svg';
-import Res1En from '@/assets/academics/mphil-in-tie/res-area/1.en.svg';
-import Res1Cn from '@/assets/academics/mphil-in-tie/res-area/1.cn.svg';
+import ResDes from '@/assets/academics/mphil-in-tie/res.des.png';
+import ResSus from '@/assets/academics/mphil-in-tie/res.sus.png';
+import ResHealth from '@/assets/academics/mphil-in-tie/res.health.png';
+import ResEmer from '@/assets/academics/mphil-in-tie/res.emer.png';
+import ResMar from '@/assets/academics/mphil-in-tie/res.mar.png';
 
-import Res2 from '@/assets/academics/mphil-in-tie/res-area/2.svg';
-import Res2En from '@/assets/academics/mphil-in-tie/res-area/2.en.svg';
-import Res2Cn from '@/assets/academics/mphil-in-tie/res-area/2.cn.svg';
-
-import Res3 from '@/assets/academics/mphil-in-tie/res-area/3.svg';
-import Res3En from '@/assets/academics/mphil-in-tie/res-area/3.en.svg';
-import Res3Cn from '@/assets/academics/mphil-in-tie/res-area/3.cn.svg';
-
-import Res4 from '@/assets/academics/mphil-in-tie/res-area/4.svg';
-import Res4En from '@/assets/academics/mphil-in-tie/res-area/4.en.svg';
-import Res4Cn from '@/assets/academics/mphil-in-tie/res-area/4.cn.svg';
-
-import Res5 from '@/assets/academics/mphil-in-tie/res-area/5.svg';
-import Res5En from '@/assets/academics/mphil-in-tie/res-area/5.en.svg';
-import Res5Cn from '@/assets/academics/mphil-in-tie/res-area/5.cn.svg';
-
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function ResearchAreasBlock() {
@@ -79,74 +70,66 @@ export default function ResearchAreasBlock() {
             </p>
 
             <div className="flex flex-col gap-component-gap-sm">
-                {(() => {
-                    const isCn = language === LANGUAGE_CHINESE_SIMPLIFIED;
-                    const textImgs = isCn
-                        ? [Res1Cn, Res4Cn, Res3Cn, Res2Cn, Res5Cn]
-                        : [Res1En, Res4En, Res3En, Res2En, Res5En];
-
-                    const ResLink = ({
-                        img,
-                        textImg,
-                        alt,
-                        href,
-                    }: {
-                        img: StaticImageData;
-                        textImg: StaticImageData;
-                        alt: string;
-                        href: string;
-                    }) => (
-                        <a href={href}>
-                            <Image src={img} alt={alt} className="mx-auto" />
-                            <Image
-                                src={textImg}
-                                alt={alt}
-                                className="mt-[20px] mx-auto"
-                            />
-                        </a>
-                    );
-
-                    return (
-                        <div className="flex flex-col md:flex-row gap-component-gap">
-                            <div className="flex flex-col gap-section-gap">
-                                <ResLink
-                                    img={Res1}
-                                    textImg={textImgs[0]}
-                                    alt="Design tech"
-                                    href="/research/#design-tech"
-                                />
-                                <ResLink
-                                    img={Res4}
-                                    textImg={textImgs[1]}
-                                    alt="Marine tech"
-                                    href="/research/#marine-tech"
-                                />
-                            </div>
-                            <div className="flex flex-col justify-center">
-                                <ResLink
-                                    img={Res3}
-                                    textImg={textImgs[2]}
-                                    alt="Sustainable tech"
-                                    href="/research/#sustainable-tech"
-                                />
-                            </div>
-                            <div className="flex flex-col gap-section-gap">
-                                <ResLink
-                                    img={Res2}
-                                    textImg={textImgs[3]}
-                                    alt="Health tech"
-                                    href="/research/#health-tech"
-                                />
-                                <ResLink
-                                    img={Res5}
-                                    textImg={textImgs[4]}
-                                    alt="Emergent themes"
-                                    href="/research/#emergent-themes"
-                                />
-                            </div>
+                {(language === LANGUAGE_ENGLISH || !language) && (
+                    <div className="flex gap-component-gap">
+                        <div className="flex flex-col gap-section-gap">
+                            <a href="/research/#design-tech">
+                                <Image src={ResDes} alt="Design tech" />
+                            </a>
+                            <a href="/research/#marine-tech">
+                                <Image src={ResMar} alt="Marine tech" />
+                            </a>
                         </div>
-                    );
-                })()}
+                        <div className="flex flex-col justify-center">
+                            <a href="/research/#sustainable-tech">
+                                <Image src={ResSus} alt="Sustainable tech" />
+                            </a>
+                        </div>
+                        <div className="flex flex-col gap-section-gap">
+                            <a href="/research/#health-tech">
+                                <Image src={ResHealth} alt="Health tech" />
+                            </a>
+                            <a href="/research/#emergent-themes">
+                                <Image src={ResEmer} alt="Emergent themes" />
+                            </a>
+                        </div>
+                    </div>
+                )}
+
+                {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                    <div className="flex gap-component-gap">
+                        <div className="flex flex-col gap-section-gap">
+                            <a href="/research/#design-tech">
+                                <Image src={ResDesCnSimp} alt="Design tech" />
+                            </a>
+                            <a href="/research/#marine-tech">
+                                <Image src={ResMarCnSimp} alt="Marine tech" />
+                            </a>
+                        </div>
+                        <div className="flex flex-col justify-center">
+                            <a href="/research/#sustainable-tech">
+                                <Image
+                                    src={ResSusCnSimp}
+                                    alt="Sustainable tech"
+                                />
+                            </a>
+                        </div>
+                        <div className="flex flex-col gap-section-gap">
+                            <a href="/research/#health-tech">
+                                <Image
+                                    src={ResHealthCnSimp}
+                                    alt="Health tech"
+                                />
+                            </a>
+                            <a href="/research/#emergent-themes">
+                                <Image
+                                    src={ResEmerCnSimp}
+                                    alt="Emergent themes"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* <div className="flex flex-col gap-[14px]">
