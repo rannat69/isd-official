@@ -1,15 +1,4 @@
 import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
-import ResDesCnSimp from '@/assets/academics/mphil-in-tie/res.des.cn.simp.png';
-import ResSusCnSimp from '@/assets/academics/mphil-in-tie/res.sus.cn.simp.png';
-import ResHealthCnSimp from '@/assets/academics/mphil-in-tie/res.health.cn.simp.png';
-import ResEmerCnSimp from '@/assets/academics/mphil-in-tie/res.emer.cn.simp.png';
-import ResMarCnSimp from '@/assets/academics/mphil-in-tie/res.mar.cn.simp.png';
-
-import ResDes from '@/assets/academics/mphil-in-tie/res.des.png';
-import ResSus from '@/assets/academics/mphil-in-tie/res.sus.png';
-import ResHealth from '@/assets/academics/mphil-in-tie/res.health.png';
-import ResEmer from '@/assets/academics/mphil-in-tie/res.emer.png';
-import ResMar from '@/assets/academics/mphil-in-tie/res.mar.png';
 
 import Res1 from '@/assets/academics/mphil-in-tie/res-area/1.svg';
 import Res1En from '@/assets/academics/mphil-in-tie/res-area/1.en.svg';
@@ -90,118 +79,74 @@ export default function ResearchAreasBlock() {
             </p>
 
             <div className="flex flex-col gap-component-gap-sm">
-                {(language === LANGUAGE_ENGLISH || !language) && (
-                    <div className="flex flex-col md:flex-row gap-component-gap ">
-                        <div className="flex flex-col gap-section-gap">
-                            <a href="/research/#design-tech">
-                                <Image src={Res1} alt="Design tech"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res1En}
-                                    alt="Design tech"
-                                    className="mt-[20px] mx-auto"
-                                />
-                            </a>
-                            <a href="/research/#marine-tech">
-                                <Image src={Res4} alt="Marine tech"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res4En}
-                                    alt="Marine tech"
-                                    className="mt-[20px] mx-auto"
-                                />
-                            </a>
-                        </div>
-                        <div className="flex flex-col justify-center">
-                            <a href="/research/#sustainable-tech">
-                                <Image
-                                    src={Res3}
-                                    alt="Sustainable tech"
-                                    className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res3En}
-                                    alt="Sustainable tech"
-                                    className="mt-[20px] mx-auto"
-                                />
-                            </a>
-                        </div>
-                        <div className="flex flex-col gap-section-gap">
-                            <a href="/research/#health-tech">
-                                <Image src={Res2} alt="Health tech"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res2En}
-                                    alt="Health tech"
-                                    className="mt-[20px] mx-auto"
-                                />
-                            </a>
-                            <a href="/research/#emergent-themes">
-                                <Image src={Res5} alt="Emergent themes"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res5En}
-                                    alt="Emergent themes"
-                                    className="mt-[20px] mx-auto"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                )}
+                {(() => {
+                    const isCn = language === LANGUAGE_CHINESE_SIMPLIFIED;
+                    const textImgs = isCn
+                        ? [Res1Cn, Res4Cn, Res3Cn, Res2Cn, Res5Cn]
+                        : [Res1En, Res4En, Res3En, Res2En, Res5En];
 
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && (
-                      <div className="flex flex-col md:flex-row gap-component-gap ">
-                        <div className="flex flex-col gap-section-gap">
-                            <a href="/research/#design-tech">
-                                <Image src={Res1} alt="Design tech"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res1Cn}
+                    const ResLink = ({
+                        img,
+                        textImg,
+                        alt,
+                        href,
+                    }: {
+                        img: any;
+                        textImg: any;
+                        alt: string;
+                        href: string;
+                    }) => (
+                        <a href={href}>
+                            <Image src={img} alt={alt} className="mx-auto" />
+                            <Image
+                                src={textImg}
+                                alt={alt}
+                                className="mt-[20px] mx-auto"
+                            />
+                        </a>
+                    );
+
+                    return (
+                        <div className="flex flex-col md:flex-row gap-component-gap">
+                            <div className="flex flex-col gap-section-gap">
+                                <ResLink
+                                    img={Res1}
+                                    textImg={textImgs[0]}
                                     alt="Design tech"
-                                    className="mt-[20px] mx-auto"
+                                    href="/research/#design-tech"
                                 />
-                            </a>
-                            <a href="/research/#marine-tech">
-                                <Image src={Res4} alt="Marine tech"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res4Cn}
+                                <ResLink
+                                    img={Res4}
+                                    textImg={textImgs[1]}
                                     alt="Marine tech"
-                                    className="mt-[20px] mx-auto"
+                                    href="/research/#marine-tech"
                                 />
-                            </a>
-                        </div>
-                        <div className="flex flex-col justify-center">
-                            <a href="/research/#sustainable-tech">
-                                <Image src={Res3} alt="Sustainable tech"  className=" mx-auto"
-                                />
-                                <Image
-                                    src={Res3Cn}
+                            </div>
+                            <div className="flex flex-col justify-center">
+                                <ResLink
+                                    img={Res3}
+                                    textImg={textImgs[2]}
                                     alt="Sustainable tech"
-                                    className="mt-[20px] mx-auto"
+                                    href="/research/#sustainable-tech"
                                 />
-                            </a>
-                        </div>
-                        <div className="flex flex-col gap-section-gap">
-                            <a href="/research/#health-tech">
-                                <Image src={Res2} alt="Health tech" className=" mx-auto"/>
-                                <Image
-                                    src={Res2Cn}
+                            </div>
+                            <div className="flex flex-col gap-section-gap">
+                                <ResLink
+                                    img={Res2}
+                                    textImg={textImgs[3]}
                                     alt="Health tech"
-                                    className="mt-[20px] mx-auto"
+                                    href="/research/#health-tech"
                                 />
-                            </a>
-                            <a href="/research/#emergent-themes">
-                                <Image src={Res5} alt="Emergent themes"className=" mx-auto"/>
-                                <Image
-                                    src={Res5Cn}
+                                <ResLink
+                                    img={Res5}
+                                    textImg={textImgs[4]}
                                     alt="Emergent themes"
-                                    className="mt-[20px] mx-auto"
+                                    href="/research/#emergent-themes"
                                 />
-                            </a>
+                            </div>
                         </div>
-                    </div>
-                )}
+                    );
+                })()}
             </div>
 
             {/* <div className="flex flex-col gap-[14px]">
