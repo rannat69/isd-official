@@ -1571,7 +1571,7 @@ export default function EntrepreneurshipBlock() {
         {
             id: 'entr-brief',
             subheading: (
-                <span className="lg:inline hidden">
+                <span>
                     {' '}
                     Brief ENTR Course Descriptions
                 </span>
@@ -1873,7 +1873,7 @@ export default function EntrepreneurshipBlock() {
         },
         {
             id: 'entr-faq',
-            subheading: <span className="lg:inline hidden"> FAQs</span>,
+            subheading: <span> FAQs</span>,
             content: (
                 <div className="flex flex-col gap-[24px]">
                     <div className="flex-1 flex flex-col gap-[12px]">
@@ -2039,7 +2039,7 @@ export default function EntrepreneurshipBlock() {
                         className={`flex flex-col gap-[24px] `}
                     >
                         {section.subheading && (
-                            <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
+                            <h3 className="md:text-[36px] text-h2 leading-[36px] text-isd-primary">
                                 {section.subheading}
                             </h3>
                         )}
