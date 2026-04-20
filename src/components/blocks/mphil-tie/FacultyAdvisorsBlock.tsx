@@ -31,11 +31,12 @@ export default function FacultyAdvisorsBlock() {
                 {(language === LANGUAGE_ENGLISH || !language) && (
                     <div className="flex flex-col  gap-4">
                         {/* <Image src={FacAdv1} alt="Faculty and advisors" />*/}
-                          iv className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto px-4">
-                            <div className="flex flex-col items-center text-center">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto px-4">
+                          <div className="flex flex-col items-center text-center">
                                 <Image
                                     src={Qianzhang}
                                     alt="Faculty and advisors"
+
                                     className=" object-cover h-[250px]"
                                 />
                                 <p className="text-isd-font-3 font-bold">
@@ -68,7 +69,8 @@ export default function FacultyAdvisorsBlock() {
                             </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 items-start">
-                            <div className="flex flex-col items-center text-center">
+
+                          <div className="flex flex-col items-center text-center">
                                 <Image
                                     src={Saikityeung}
                                     alt="Faculty and advisors"
@@ -171,7 +173,7 @@ export default function FacultyAdvisorsBlock() {
                 {language === LANGUAGE_CHINESE_SIMPLIFIED && (
                     <div className="flex flex-col  gap-4">
                         {/* <Image src={FacAdv1} alt="Faculty and advisors" />*/}
-                          iv className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto px-4">
                             <div className="flex flex-col items-center text-center">
                                 <Image
                                     src={Qianzhang}
@@ -304,8 +306,7 @@ export default function FacultyAdvisorsBlock() {
                             </div>
                         </div>
                     </div>
-                )}
-                         </p>
+                )})}                         </p>
                                 <p className="text-isd-font-3 font-bold">
                                     讲师
                                 </p>
