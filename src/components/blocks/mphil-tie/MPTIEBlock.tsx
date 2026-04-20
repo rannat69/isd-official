@@ -50,12 +50,12 @@ export default function MPTIEBlock() {
                     <div id="curriculum">
                         <CurriculumBlock />
                     </div>
-                    {/* <div id="fac-adv">
+                    <div id="fac-adv">
                         <FacultyAdvisorsBlock />
                     </div>
                     <div id="research">
                         <ResearchAreasBlock />
-                    </div>*/}
+                    </div>
                     <AcademicAndIndustrialPartnersBlock />
                     <div id="app">
                         <ApplicationAndFinancialAssistanceBlock />
