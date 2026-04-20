@@ -306,13 +306,6 @@ export default function FacultyAdvisorsBlock() {
                             </div>
                         </div>
                     </div>
-                )})}                         </p>
-                                <p className="text-isd-font-3 font-bold">
-                                    讲师
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 )}
             </div>
         </div>
