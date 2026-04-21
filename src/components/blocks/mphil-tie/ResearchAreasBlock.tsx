@@ -1,15 +1,15 @@
 import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
-import ResDesCnSimp from '@/assets/academics/mphil-in-tie/res.des.cn.simp.png';
-import ResSusCnSimp from '@/assets/academics/mphil-in-tie/res.sus.cn.simp.png';
-import ResHealthCnSimp from '@/assets/academics/mphil-in-tie/res.health.cn.simp.png';
-import ResEmerCnSimp from '@/assets/academics/mphil-in-tie/res.emer.cn.simp.png';
-import ResMarCnSimp from '@/assets/academics/mphil-in-tie/res.mar.cn.simp.png';
+import ResDesCnSimp from '@/assets/academics/mphil-in-tie/res.des.up.cn.simp.png';
+import ResSusCnSimp from '@/assets/academics/mphil-in-tie/res.sus.up.cn.simp.png';
+import ResHealthCnSimp from '@/assets/academics/mphil-in-tie/res.health.up.cn.simp.png';
+import ResEmerCnSimp from '@/assets/academics/mphil-in-tie/res.emer.up.cn.simp.png';
+import ResMarCnSimp from '@/assets/academics/mphil-in-tie/res.mar.up.cn.simp.png';
 
-import ResDes from '@/assets/academics/mphil-in-tie/res.des.png';
-import ResSus from '@/assets/academics/mphil-in-tie/res.sus.png';
-import ResHealth from '@/assets/academics/mphil-in-tie/res.health.png';
-import ResEmer from '@/assets/academics/mphil-in-tie/res.emer.png';
-import ResMar from '@/assets/academics/mphil-in-tie/res.mar.png';
+import ResDes from '@/assets/academics/mphil-in-tie/res.des.up.eng.png';
+import ResSus from '@/assets/academics/mphil-in-tie/res.sus.up.eng.png';
+import ResHealth from '@/assets/academics/mphil-in-tie/res.health.up.eng.png';
+import ResEmer from '@/assets/academics/mphil-in-tie/res.emer.up.eng.png';
+import ResMar from '@/assets/academics/mphil-in-tie/res.mar.up.eng.png';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -72,7 +72,7 @@ export default function ResearchAreasBlock() {
             <div className="flex flex-col gap-component-gap-sm">
                 {(language === LANGUAGE_ENGLISH || !language) && (
                     <div className="flex gap-component-gap">
-                        <div className="flex flex-col gap-section-gap">
+                        <div className="flex flex-col justify-between gap-section-gap">
                             <a href="/research/#design-tech">
                                 <Image src={ResDes} alt="Design tech" />
                             </a>
@@ -85,7 +85,7 @@ export default function ResearchAreasBlock() {
                                 <Image src={ResSus} alt="Sustainable tech" />
                             </a>
                         </div>
-                        <div className="flex flex-col gap-section-gap">
+                        <div className="flex flex-col  justify-between  gap-section-gap">
                             <a href="/research/#health-tech">
                                 <Image src={ResHealth} alt="Health tech" />
                             </a>

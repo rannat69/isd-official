@@ -1,5 +1,5 @@
-import FacAdv1 from '@/assets/academics/mphil-in-tie/fac-adv.1.png';
-import FacAdv1CnSimp from '@/assets/academics/mphil-in-tie/fac-adv.1.cn.simp.png';
+import FacAdv1 from '@/assets/academics/mphil-in-tie/fac-adv-up-eng.png';
+import FacAdv1CnSimp from '@/assets/academics/mphil-in-tie/fac-adv-up-cn-simp.png';
 import Image from 'next/image';
 import { LANGUAGE_CHINESE_SIMPLIFIED, LANGUAGE_ENGLISH } from '@/app/constants';
 import { useEffect, useState } from 'react';
