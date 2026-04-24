@@ -7,6 +7,7 @@ import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
 import ISDFacultyRecognized51IntExhInv from './ISDFacultyRecognized51IntExhInv';
+import HKUSTInnoBayBootcamp2026 from './HKUSTInnoBayBootcamp2026';
 
 /*export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -189,9 +190,10 @@ export default async function NewsDetailPage({
                         )}
                         {/*Specific case with pictures embedded in the description. Ugly, but it works. */}
                         <div className="flex flex-col gap-component-gap text-md text-isd-font-1">
-                            {item.title ===
-                            'ISD Faculty Recognized at the 51st International Exhibition of Inventions Geneva' ? (
+                            {item.title === 'ISD Faculty Recognized at the 51st International Exhibition of Inventions Geneva' ? (
                                 <ISDFacultyRecognized51IntExhInv />
+                            ) : item.title === 'HKUST InnoBay Bootcamp 2026: Your Gateway to Innovation and Entrepreneurship' ? (
+                                <HKUSTInnoBayBootcamp2026 />
                             ) : (
                                 renderContent(item.details)
                             )}
