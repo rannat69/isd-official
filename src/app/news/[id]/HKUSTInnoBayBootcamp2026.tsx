@@ -471,7 +471,7 @@ export default function HKUSTInnoBayBootcamp2026() {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
        <div className="flex flex-col items-center gap-4">
                     <p className="text-isd-secondary font-bold">
-                        This summer, let's
+                        This summer, let&apos;s
                     </p>
                     <p className="text-isd-secondary font-bold">
                         Meet at Clear Water Bay to empower sports with
