@@ -1,9 +1,16 @@
 import qianzh from '@/assets/people/qianzh.jpg';
-import changyingx from '@/assets/people/changyingx.jpg';
-import mitchli from '@/assets/people/mitchli.jpg';
+import lillyli from '@/assets/people/lillyli.jpg';
+import eewswleung from '@/assets/people/eewswleung.png';
+import qijiashao from '@/assets/people/qijiashao.jpg';
+import hongrigu from '@/assets/people/hongrigu.jpg';
+
 import image01 from '@/assets/news/HKUSTInnoBayBootcamp2026/01.jpg';
 import image02 from '@/assets/news/HKUSTInnoBayBootcamp2026/02.jpg';
 import image03 from '@/assets/news/HKUSTInnoBayBootcamp2026/03.jpg';
+
+import image04 from '@/assets/news/HKUSTInnoBayBootcamp2026/04.jpg';
+import image05 from '@/assets/news/HKUSTInnoBayBootcamp2026/05.jpg';
+import image06 from '@/assets/news/HKUSTInnoBayBootcamp2026/06.jpg';
 import Image from 'next/image';
 
 export default function HKUSTInnoBayBootcamp2026() {
@@ -236,128 +243,242 @@ export default function HKUSTInnoBayBootcamp2026() {
                 collaboration, with strong expertise in interdisciplinary
                 research and team-based teaching.
             </p>
-            <div>
-                <Image
-                    src={qianzh}
-                    alt="Zhang Qian"
-               
-                    sizes="64px"
-                ></Image>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div className="flex flex-col items-center gap-4">
+                    <Image
+                        src={qianzh}
+                        alt="Professor Zhang Qian"
+                        width={256}
+                        height={256}
+                        sizes="256px"
+                    />
+                    <p className="font-bold text-isd-primary">
+                        Professor Zhang Qian
+                    </p>
+                    <p>
+                        Academician of the Hong Kong Academy of Engineering
+                        Sciences, IEEE Fellow
+                    </p>
+                    <p>
+                        Director of the Division of Integrated Systems and
+                        Design, The Hong Kong University of Science and
+                        Technology
+                    </p>
+                    <p>
+                        Professor of Tencent Engineering, Hong Kong University
+                        of Science and Technology
+                    </p>
+                    <p>
+                        Chair Professor, Department of Computer Science and
+                        Engineering, Hong Kong University of Science and
+                        Technology
+                    </p>
+                    <p>
+                        Research Field: Computer Networks, Wireless Systems,
+                        Cyber-Physical Systems, Mobile Computing, Network
+                        Security
+                    </p>
+                    <Image
+                        src={lillyli}
+                        alt="Professor Li Li"
+                        width={256}
+                        height={256}
+                        sizes="256px"
+                    />
+                    <p className="font-bold text-isd-primary">
+                        Professor Li Li
+                    </p>
+                    <p>
+                        Professor, Department of Integrated Systems and Design,
+                        Hong Kong University of Science and Technology
+                    </p>
+                    <p>
+                        Research Interests: Sustainable Design, Smart Fiber
+                        Materials, Wearable Electronic Textiles, Tactile
+                        Interaction Design
+                    </p>
+                    <Image
+                        src={eewswleung}
+                        alt="Professor Winnie Leung"
+                        width={256}
+                        height={256}
+                        sizes="256px"
+                    />
+                    <p className="font-bold text-isd-primary">
+                        Professor Winnie Leung
+                    </p>
+                    <p>
+                        Associate Professor of Engineering Education, Division
+                        of Integrated Systems and Design, Hong Kong University
+                        of Science and Technology
+                    </p>
+                    <p>
+                        Vice President of Hong Kong Science and Technology
+                        Education Center
+                    </p>
+                    <p>
+                        Research Fields: Design Automation, Intelligent Control
+                        and Nonlinear Systems, Robotics
+                    </p>
+                    <Image
+                        src={qijiashao}
+                        alt="Professor Shao Qijia"
+                        width={256}
+                        height={256}
+                        sizes="256px"
+                    />
+                    <p className="font-bold text-isd-primary">
+                        Professor Shao Qijia
+                    </p>
+                    <p>
+                        Assistant Professor, Division of Integrated Systems and
+                        Design, The Hong Kong University of Science and
+                        Technology
+                    </p>
+                    <p>
+                        Research Interests: Mobile and pervasive computing,
+                        human-computer interaction, cyber-physical systems
+                    </p>
+
+                    <Image
+                        src={hongrigu}
+                        alt="Professor Richard Gu"
+                        width={256}
+                        height={256}
+                        sizes="256px"
+                    />
+                    <p className="font-bold text-isd-primary">
+                        Professor Richard Gu
+                    </p>
+                    <p>
+                        Assistant Professor, Division of Integrated Systems and
+                        Design, The Hong Kong University of Science and
+                        Technology
+                    </p>
+                    <p>
+                        Research Fields: Micro robots, soft robots, structured
+                        magnetic materials, medical devices
+                    </p>
+                </div>
             </div>
-            <div className="flex flex-col gap-component-gap-sm">
-                <h2 className="font-bold underline">
-                    Gold Medal with Congratulations of the Jury
-                </h2>
+            <p>
+                For more information about ISD professors, please visit the
+                official website:{' '}
+            </p>
+            <p className="cursor-pointer text-isd-primary underline">
+                <a href="https://isd.hkust.edu.hk/people#isd-faculty">
+                    https://isd.hkust.edu.hk/people#isd-faculty
+                </a>
+            </p>
 
-                <div className="flex gap-component-gap-sm">
-                    <div className="w-48 h-48 relative">
-                        <Image
-                            src={qianzh}
-                            alt="Zhang Qian"
-                            fill
-                            className="object-cover"
-                            sizes="192px"
-                        ></Image>
-                    </div>
-                    <div className="flex">
-                        <div className="font-bold">• Prof. Zhang Qian —</div>
-                        <div className="italic">
-                            AI-Powered Home Healthcare Management System for
-                            COPD Patients
-                        </div>
-                    </div>
-                </div>
-                <div className="flex gap-component-gap-sm">
-                    <div className="flex">
-                        <div className="font-bold">• Prof. Mo Li —</div>
-                        <div className="italic">
-                            Autonomous UAV First-Responder System
-                        </div>
-                    </div>{' '}
-                </div>
-                <h2 className="font-bold underline">Gold Medal</h2>
-                <div className="flex gap-component-gap-sm">
-                    <div className="w-48 h-48 relative">
-                        <Image
-                            src={changyingx}
-                            alt="Changying Xiang"
-                            fill
-                            className="object-cover"
-                            sizes="192px"
-                        ></Image>
-                    </div>
-
-                    <div className="flex">
-                        <div className="font-bold">
-                            • Prof. Changying Xiang —
-                        </div>
-                        <div className="italic">
-                            Modular General-purpose Aerial Work Robot
-                        </div>
-                    </div>
-                </div>
-                <div className="flex gap-component-gap-sm">
-                    <div className="w-48 h-48 relative">
-                        <Image
-                            src={qianzh}
-                            alt="Zhang Qian"
-                            fill
-                            className="object-cover"
-                            sizes="192px"
-                        ></Image>
-                    </div>
-                    <div className="flex">
-                        <div className="font-bold">• Prof. Zhang Qian —</div>
-                        <div className="italic">
-                            ACLGuard: AI Knee Monitoring System for ACL Injury
-                            Prevention
-                        </div>
-                    </div>
-                </div>
-                <h2 className="font-bold underline">Bronze Medal</h2>
-                <div className="flex gap-component-gap-sm">
-                    <div className="w-48 h-48 relative">
-                        <Image
-                            src={mitchli}
-                            alt="Mitch Li"
-                            fill
-                            className="object-cover"
-                            sizes="192px"
-                        ></Image>
-                    </div>
-
-                    <div className="flex">
-                        <div className="font-bold">• Prof. Mitch Li —</div>
-                        <div className="italic">
-                            Smart Autonomous Microheating Robot for
-                            Chemical-free Pest Control
-                        </div>
-                    </div>
-                </div>
-            </div>
             <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
-                Pushing Innovation Forward at ISD
+                Highlights of previous summer camps
             </h2>
+            <div className="flex flex-col gap-4">
+                <Image src={image04} alt="Highlight"></Image>
+                <Image src={image05} alt="Highlight"></Image>
+                <Image src={image06} alt="Highlight"></Image>
+            </div>
+
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+                Enrollment target
+            </h2>
+
             <p>
-                The recognition received by ISD faculty members underscores the
-                Division’s dedication to transformative research and impactful
-                design. ISD will continue fostering a culture of innovation and
-                collaboration, empowering faculty and students to shape future
-                technologies and solutions for society.{' '}
+                We welcome undergraduate or graduate students from any region,
+                especially those from mechanical, electronic, computer science,
+                data science, design, biomechanics, medical engineering, smart
+                hardware, and related interdisciplinary backgrounds.
             </p>
-            <b>Congratulations to all award recipients!</b>{' '}
             <p>
-                Click{' '}
+                Applicants with laboratory experience, project experience, or
+                entrepreneurial background will be preferred. Applicants with
+                other grades or backgrounds will be evaluated comprehensively on
+                a case-by-case basis.
+            </p>
+
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+                Registration time
+            </h2>
+
+            <p>From now until the end of April 2026.</p>
+
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+                How to apply
+            </h2>
+            <p className="font-bold text-isd-primary">
+                Method 1: Recommended quota
+            </p>
+
+            <p>
+                Each university can refer up to 10 students to participate in
+                the InnoBay Summer Camp. The project team will conduct further
+                interviews and make selective selections. Please email{' '}
                 <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary underline"
-                    href="https://hkust.edu.hk/news/hkust-wins-record-breaking-accolades-51st-international-exhibition-inventions-geneva"
+                    className="cursor-pointer text-isd-primary underline"
+                    href="mailto:innobay@ust.hk"
                 >
-                    here
+                    innobay@ust.hk
                 </a>{' '}
-                to read the full press release on the HKUST website.{' '}
+                and cc{' '}
+                <a
+                    className="cursor-pointer text-isd-primary underline"
+                    href="mailto:isdtie@ust.hk"
+                >
+                    isdtie@ust.hk
+                </a>{' '}
+                for recommendations.
             </p>
+
+            <p className="font-bold text-isd-primary">
+                Method 2: Open recruitment
+            </p>
+
+            <p>
+                Fill out the online application form at this link{' '}
+                <a
+                    className="cursor-pointer text-isd-primary underline"
+                    href="https://forms.office.com/r/ULu1g3HQhm"
+                >
+                    https://forms.office.com/r/ULu1g3HQhm
+                </a>
+                . Successful candidates will be notified of the follow-up
+                interview via email
+            </p>
+
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+                Contact information
+            </h2>
+
+            <p>
+                For more information, please email:{' '}
+                <a
+                    className="cursor-pointer text-isd-primary underline"
+                    href="mailto:innobay@ust.hk"
+                >
+                    innobay@ust.hk
+                </a>{' '}
+                or{' '}
+                <a
+                    className="cursor-pointer text-isd-primary underline"
+                    href="mailto:isdtie@ust.hk"
+                >
+                    isdtie@ust.hk
+                </a>
+                .
+            </p>
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+       <div className="flex flex-col items-center gap-4">
+                    <p className="text-isd-secondary font-bold">
+                        This summer, let's
+                    </p>
+                    <p className="text-isd-secondary font-bold">
+                        Meet at Clear Water Bay to empower sports with
+                        technology and connect future innovation.
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }
