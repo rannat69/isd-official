@@ -697,8 +697,7 @@ export default function HKUSTInnoBayBootcamp2026() {
                 >
                     https://forms.office.com/r/ULu1g3HQhm
                 </a>
-                . Successful candidates will be notified of the follow-up
-                interview via email
+
                 {(language === LANGUAGE_ENGLISH || !language) &&
                     '. Successful candidates will be notified of the follow-up interview via email'}
                 {language === LANGUAGE_CHINESE_SIMPLIFIED &&
