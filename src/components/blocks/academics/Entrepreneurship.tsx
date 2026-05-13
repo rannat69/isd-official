@@ -1500,7 +1500,7 @@ export default function EntrepreneurshipBlock() {
                                         project work.
                                     </td>
                                 </tr>
-                                <tr className="flex flex-col md:table-rowbg-isd-primary-2 text-primary">
+                                <tr className="flex flex-col md:table-row bg-isd-primary-2 text-primary">
                                     <td className="p-[12px] border-x-2 border-white">
                                         <span className="md:hidden font-bold block text-xs uppercase opacity-50">
                                             Code
