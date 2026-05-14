@@ -1037,7 +1037,7 @@ export default function InnovationSummerSchool2026() {
                             </strong>
                         </li>
                         <li>
-                            All classes and teaching/discussion sessions require
+                            All classes and teaching/discussion sessions require{' '}
                             <strong className="text-secondary">
                                 punctuality
                             </strong>
@@ -1092,10 +1092,9 @@ export default function InnovationSummerSchool2026() {
                             </strong>
                         </li>
                         <li>
-                            All classes and teaching/discussion sessions
-                            require&nbsp;
+                            All classes and teaching/discussion sessions require{' '}
                             <strong className="text-secondary">
-                                &nbsp;punctuality
+                                punctuality
                             </strong>
                             . Arriving late without valid reason may be recorded
                             as absence.
