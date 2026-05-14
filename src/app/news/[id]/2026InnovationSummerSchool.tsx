@@ -181,9 +181,9 @@ export default function InnovationSummerSchool2026() {
                     </h2>
 
                     <p>
-                        Guided by HKUST&apos;s teaching team, students combine AI
-                        tools, 3D modeling, hand sketching, and pitching skills
-                        to turn creative ideas into physical prototypes.
+                        Guided by HKUST&apos;s teaching team, students combine
+                        AI tools, 3D modeling, hand sketching, and pitching
+                        skills to turn creative ideas into physical prototypes.
                     </p>
 
                     <h2 className="lg:text-lg text-md leading-9 font-bold text-primary ">
@@ -221,9 +221,9 @@ export default function InnovationSummerSchool2026() {
                     </h2>
 
                     <p>
-                        Guided by HKUST&apos;s teaching team, students combine AI
-                        tools, 3D modeling, hand sketching, and pitching skills
-                        to turn creative ideas into physical prototypes.
+                        Guided by HKUST&apos;s teaching team, students combine
+                        AI tools, 3D modeling, hand sketching, and pitching
+                        skills to turn creative ideas into physical prototypes.
                     </p>
 
                     <h2 className="lg:text-lg text-md leading-9 font-bold text-primary ">
@@ -437,8 +437,7 @@ export default function InnovationSummerSchool2026() {
                 {(language === LANGUAGE_ENGLISH || !language) &&
                     'Program Schedule'}
 
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    'Program Schedule'}
+                {language === LANGUAGE_CHINESE_SIMPLIFIED && 'Program Schedule'}
             </h2>
 
             <div className="flex flex-col gap-[36px]    p-[36px] pl-[31px]">
@@ -510,13 +509,23 @@ export default function InnovationSummerSchool2026() {
                             {language === LANGUAGE_CHINESE_SIMPLIFIED &&
                                 'Language of Instruction'}
                         </td>
-                        <td className=" p-4">
-                            {(language === LANGUAGE_ENGLISH || !language) &&
-                                'Full English instruction to enhance students&apos; international competitiveness (Chinese-speaking teaching assistants available for support)'}
 
-                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                                'Full English instruction to enhance students&apos; international competitiveness (Chinese-speaking teaching assistants available for support)'}
-                        </td>
+                        {(language === LANGUAGE_ENGLISH || !language) && (
+                            <td className=" p-4">
+                                Full English instruction to enhance
+                                students&apos; international competitiveness
+                                (Chinese-speaking teaching assistants available
+                                for support)
+                            </td>
+                        )}
+                        {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                            <td className=" p-4">
+                                Full English instruction to enhance
+                                students&apos; international competitiveness
+                                (Chinese-speaking teaching assistants available
+                                for support)
+                            </td>
+                        )}
                     </tr>
 
                     <tr>
@@ -647,13 +656,21 @@ export default function InnovationSummerSchool2026() {
                     Learning Outcomes
                 </h2>
             )}
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <p>
+                    This course develops students&apos; Future-Ready Skills,
+                    building a strong foundation for university studies and
+                    career growth:
+                </p>
+            )}
 
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'This course develops students&apos; Future-Ready Skills, building a strong foundation for university studies and career growth:'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    'This course develops students&apos; Future-Ready Skills, building a strong foundation for university studies and career growth:'}
-            </p>
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <p>
+                    This course develops students&apos; Future-Ready Skills,
+                    building a strong foundation for university studies and
+                    career growth:
+                </p>
+            )}
 
             {(language === LANGUAGE_ENGLISH || !language) && (
                 <ul className="list-disc ml-5 mt-2 space-y-1 ">
@@ -773,8 +790,8 @@ export default function InnovationSummerSchool2026() {
                         <strong> 19th globally, 1st in Hong Kong </strong>
                     </li>
                     <li>
-                        <i>QS World University Subject Rankings 2025,</i> &quot;Data
-                        Science & Artificial Intelligence&quot;:
+                        <i>QS World University Subject Rankings 2025,</i>{' '}
+                        &quot;Data Science & Artificial Intelligence&quot;:
                         <strong> 17th globally, </strong>retaining the top
                         position among Hong Kong universities
                     </li>
@@ -802,8 +819,8 @@ export default function InnovationSummerSchool2026() {
                         <strong> 19th globally, 1st in Hong Kong </strong>
                     </li>
                     <li>
-                        <i>QS World University Subject Rankings 2025,</i> &quot;Data
-                        Science & Artificial Intelligence&quot;:
+                        <i>QS World University Subject Rankings 2025,</i>{' '}
+                        &quot;Data Science & Artificial Intelligence&quot;:
                         <strong> 17th globally, </strong>retaining the top
                         position among Hong Kong universities
                     </li>
@@ -822,12 +839,29 @@ export default function InnovationSummerSchool2026() {
                 </h2>
             )}
 
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Founded in 2017, ISD is dedicated to developing technology talent with systems thinking and innovation capabilities through interdisciplinary teaching and research. Programs span undergraduate, master&apos;s, and doctoral levels, providing a strong foundation for students to make a lasting impact in research, industry, and the global innovation ecosystem.'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    'Founded in 2017, ISD is dedicated to developing technology talent with systems thinking and innovation capabilities through interdisciplinary teaching and research. Programs span undergraduate, master&apos;s, and doctoral levels, providing a strong foundation for students to make a lasting impact in research, industry, and the global innovation ecosystem.'}
-            </p>
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <p>
+                    Founded in 2017, ISD is dedicated to developing technology
+                    talent with systems thinking and innovation capabilities
+                    through interdisciplinary teaching and research. Programs
+                    span undergraduate, master&apos;s, and doctoral levels,
+                    providing a strong foundation for students to make a lasting
+                    impact in research, industry, and the global innovation
+                    ecosystem.
+                </p>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <p>
+                    Founded in 2017, ISD is dedicated to developing technology
+                    talent with systems thinking and innovation capabilities
+                    through interdisciplinary teaching and research. Programs
+                    span undergraduate, master&apos;s, and doctoral levels,
+                    providing a strong foundation for students to make a lasting
+                    impact in research, industry, and the global innovation
+                    ecosystem.
+                </p>
+            )}
 
             <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
