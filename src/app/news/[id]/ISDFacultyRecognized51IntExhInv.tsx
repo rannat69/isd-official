@@ -2,6 +2,9 @@ import qianzh from '@/assets/people/qianzh.jpg';
 import changyingx from '@/assets/people/changyingx.jpg';
 import mitchli from '@/assets/people/mitchli.jpg';
 import lim from '@/assets/people/lim.jpg';
+import saikit from '@/assets/people/saikit.png';
+import robscharff from '@/assets/people/scharffrbn.jpeg';
+
 import Image from 'next/image';
 
 export default function ISDFacultyRecognized51IntExhInv() {
@@ -34,7 +37,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                     Gold Medal with Congratulations of the Jury
                 </h2>
 
-                <div className="flex gap-component-gap-sm">
+                <div className="flex  flex-col gap-component-gap-sm">
                     <div className="w-48 h-48 relative">
                         <Image
                             src={qianzh}
@@ -44,7 +47,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                             sizes="192px"
                         ></Image>
                     </div>
-                    <div className="flex">
+                    <div className="flex  flex-col">
                         <div className="font-bold">• Prof. Zhang Qian —</div>
                         <div className="italic">
                             AI-Powered Home Healthcare Management System for
@@ -52,7 +55,8 @@ export default function ISDFacultyRecognized51IntExhInv() {
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-component-gap-sm">
+
+                <div className="flex  flex-col gap-component-gap-sm">
                     <div className="w-48 h-48 relative">
                         <Image
                             src={lim}
@@ -62,7 +66,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                             sizes="192px"
                         ></Image>
                     </div>
-                    <div className="flex">
+                    <div className="flex  flex-col">
                         <div className="font-bold">• Prof. Mo Li —</div>
                         <div className="italic">
                             Autonomous UAV First-Responder System
@@ -70,7 +74,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                     </div>{' '}
                 </div>
                 <h2 className="font-bold underline">Gold Medal</h2>
-                <div className="flex gap-component-gap-sm">
+                <div className="flex  flex-col gap-component-gap-sm">
                     <div className="w-48 h-48 relative">
                         <Image
                             src={changyingx}
@@ -81,7 +85,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                         ></Image>
                     </div>
 
-                    <div className="flex">
+                    <div className="flex  flex-col">
                         <div className="font-bold">
                             • Prof. Changying Xiang —
                         </div>
@@ -90,8 +94,8 @@ export default function ISDFacultyRecognized51IntExhInv() {
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-component-gap-sm">
-             <div className="w-48 h-48 relative">
+                <div className="flex  flex-col gap-component-gap-sm">
+                    <div className="w-48 h-48 relative">
                         <Image
                             src={qianzh}
                             alt="Zhang Qian"
@@ -100,7 +104,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                             sizes="192px"
                         ></Image>
                     </div>
-                    <div className="flex">
+                    <div className="flex  flex-col">
                         <div className="font-bold">• Prof. Zhang Qian —</div>
                         <div className="italic">
                             ACLGuard: AI Knee Monitoring System for ACL Injury
@@ -108,10 +112,41 @@ export default function ISDFacultyRecognized51IntExhInv() {
                         </div>
                     </div>
                 </div>
-                <h2 className="font-bold underline">Bronze Medal</h2>
-                <div className="flex gap-component-gap-sm">
 
-           <div className="w-48 h-48 relative">
+                <div className="flex  flex-col gap-component-gap-sm">
+                    <div className="flex flex-col gap-component-gap-sm">
+                        <div className="w-48 h-48 relative">
+                            <Image
+                                src={saikit}
+                                alt="Sai Kit Yeung"
+                                fill
+                                className="object-cover"
+                                sizes="192px"
+                            ></Image>
+                        </div>
+                        <div className="w-48 h-48 relative">
+                            <Image
+                                src={robscharff}
+                                alt="Rob Scharff"
+                                fill
+                                className="object-cover"
+                                sizes="192px"
+                            ></Image>
+                        </div>
+                    </div>
+                    <div className=" flex-col">
+                        <div className="font-bold">
+                            • Prof. Yeung Sai-Kit and Prof. Rob Scharff —
+                        </div>
+                        <div className="italic">
+                            AI-Powered Commercial Pool Cleaning
+                        </div>
+                    </div>
+                </div>
+
+                <h2 className="font-bold underline">Bronze Medal</h2>
+                <div className="flex flex-col gap-component-gap-sm">
+                    <div className="w-48 h-48 relative">
                         <Image
                             src={mitchli}
                             alt="Mitch Li"
@@ -121,7 +156,7 @@ export default function ISDFacultyRecognized51IntExhInv() {
                         ></Image>
                     </div>
 
-                    <div className="flex">
+                    <div className="flex flex-col">
                         <div className="font-bold">• Prof. Mitch Li —</div>
                         <div className="italic">
                             Smart Autonomous Microheating Robot for
