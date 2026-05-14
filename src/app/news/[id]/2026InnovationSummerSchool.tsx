@@ -1092,7 +1092,8 @@ export default function InnovationSummerSchool2026() {
                             </strong>
                         </li>
                         <li>
-                            All classes and teaching/discussion sessions require{' '}
+                            All classes and teaching/discussion sessions
+                            require&nbsp;
                             <strong className="text-secondary">
                                 punctuality
                             </strong>
