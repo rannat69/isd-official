@@ -6,7 +6,7 @@ import aloysius from '@/assets/news/2026InnovationSummerSchool/3.webp';
 import image04 from '@/assets/news/2026InnovationSummerSchool/4.png';
 
 import image05 from '@/assets/news/2026InnovationSummerSchool/5.webp';
-import image06 from '@/assets/news/2026InnovationSummerSchool/6.webp';
+import image07 from '@/assets/news/2026InnovationSummerSchool/7.webp';
 import Image from 'next/image';
 
 import {
@@ -73,7 +73,7 @@ export default function InnovationSummerSchool2026() {
                             繁
                         </p>*/}
             </div>
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
                     ' HKUST Division of Integrative Systems and Design (ISD)'}
 
@@ -98,7 +98,7 @@ export default function InnovationSummerSchool2026() {
                                 Hong Kong University of Science and Technology
                                 (HKUST)
                             </strong>{' '}
-                            invites you to join us at one of Asia's leading
+                            invites you to join us at one of Asia&apos;s leading
                             research universities and take on a fast-paced
                             innovation challenge that blends{' '}
                             <strong>Design Thinking</strong> with{' '}
@@ -115,7 +115,7 @@ export default function InnovationSummerSchool2026() {
                 </div>
             )}
 
-            {(language === LANGUAGE_CHINESE_SIMPLIFIED || !language) && (
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
                 <div className="flex flex-col gap-[36px] border-l-[5px] border-isd-primary bg-isd-primary-2 p-[36px] pl-[31px]">
                     <ul className="pl-6 space-y-8">
                         <li>
@@ -132,7 +132,7 @@ export default function InnovationSummerSchool2026() {
                                 Hong Kong University of Science and Technology
                                 (HKUST)
                             </strong>{' '}
-                            invites you to join us at one of Asia's leading
+                            invites you to join us at one of Asia&apos;s leading
                             research universities and take on a fast-paced
                             innovation challenge that blends{' '}
                             <strong>Design Thinking</strong> with{' '}
@@ -149,7 +149,7 @@ export default function InnovationSummerSchool2026() {
                 </div>
             )}
 
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary ">
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
                     ' Program Highlights'}
 
@@ -181,7 +181,7 @@ export default function InnovationSummerSchool2026() {
                     </h2>
 
                     <p>
-                        Guided by HKUST's teaching team, students combine AI
+                        Guided by HKUST&apos;s teaching team, students combine AI
                         tools, 3D modeling, hand sketching, and pitching skills
                         to turn creative ideas into physical prototypes.
                     </p>
@@ -221,7 +221,7 @@ export default function InnovationSummerSchool2026() {
                     </h2>
 
                     <p>
-                        Guided by HKUST's teaching team, students combine AI
+                        Guided by HKUST&apos;s teaching team, students combine AI
                         tools, 3D modeling, hand sketching, and pitching skills
                         to turn creative ideas into physical prototypes.
                     </p>
@@ -337,12 +337,12 @@ export default function InnovationSummerSchool2026() {
                 </>
             )}
 
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary ">
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
-                    ' MEET THE INSTRUCTORS'}
+                    'Meet The Instructors'}
 
                 {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    ' MEET THE INSTRUCTORS'}
+                    'Meet The Instructors'}
             </h2>
 
             {(language === LANGUAGE_ENGLISH || !language) && (
@@ -433,12 +433,12 @@ export default function InnovationSummerSchool2026() {
                 </ul>
             </div>
 
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Programme Schedule'}
+                    'Program Schedule'}
 
                 {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    'Programme Schedule'}
+                    'Program Schedule'}
             </h2>
 
             <div className="flex flex-col gap-[36px]    p-[36px] pl-[31px]">
@@ -628,7 +628,7 @@ export default function InnovationSummerSchool2026() {
                 </tbody>
             </table>
 
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
                     'What You Will Gain'}
 
@@ -711,154 +711,364 @@ export default function InnovationSummerSchool2026() {
                 </ul>
             )}
 
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) && 'About Us'}
 
                 {language === LANGUAGE_CHINESE_SIMPLIFIED && 'About Us'}
             </h2>
 
             <div className="flex  gap-4">
-                <Image src={image05} alt="Highlight"></Image>
+                <Image src={image05} alt="About Us"></Image>
             </div>
+
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary border-l-[5px] border-isd-primary pl-6">
+                    Institution Background
+                </h2>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary border-l-[5px] border-isd-primary pl-6">
+                    Institution Background
+                </h2>
+            )}
+
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary ">
+                    Hong Kong University of Science and Technology (HKUST){' '}
+                </h2>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary">
+                    Hong Kong University of Science and Technology (HKUST){' '}
+                </h2>
+            )}
 
             <p>
                 {(language === LANGUAGE_ENGLISH || !language) &&
-                    'For more information about ISD professors, please visit the official website:'}
+                    ' HKUST is a world-class research university in Asia, consistently ranked among global leaders in data science, artificial intelligence, engineering, and innovation.'}
                 {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '更多综合系统与设计学部(ISD)教授资讯，详见官网:'}
+                    ' HKUST is a world-class research university in Asia, consistently ranked among global leaders in data science, artificial intelligence, engineering, and innovation.'}
             </p>
-            <p className="cursor-pointer text-isd-primary underline">
-                <a href="https://isd.hkust.edu.hk/people#isd-faculty">
-                    https://isd.hkust.edu.hk/people#isd-faculty
-                </a>
-            </p>
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Highlights of previous summer camps'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '往届夏令营精彩集锦'}
-            </h2>
-            <div className="flex flex-col gap-4">
-                <Image src={image04} alt="Highlight"></Image>
-                <Image src={image05} alt="Highlight"></Image>
-                <Image src={image06} alt="Highlight"></Image>
-            </div>
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Enrollment target'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '招生对象'}
-            </h2>
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'We welcome undergraduate or graduate students from any region, especially those from mechanical, electronic, computer science, data science, design, biomechanics, medical engineering, smart hardware, and related interdisciplinary backgrounds.'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '我们欢迎来自任何地区的大三（即学制倒数第二学年）本科生或研究生，特别是机械、电子、计算机科学、数据科学、设计、生物力学、医学工程、智能硬件及相关交叉学科背景的学生。'}
-            </p>
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Applicants with laboratory experience, project experience, or entrepreneurial background will be preferred. Applicants with other grades or backgrounds will be evaluated comprehensively on a case-by-case basis.'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '具备实验室经验、项目经验或创业背景的申请者将优先考虑。其他年级或背景的申请者将根据个案情况进行综合评估。'}
-            </p>
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Registration time'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '报名时间'}
-            </h2>
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'From now until the end of April 2026.'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '即日起至 2026 年4月底。'}
-            </p>
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
-                {(language === LANGUAGE_ENGLISH || !language) && 'How to apply'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '如何申请'}
-            </h2>
-            <p className="font-bold text-isd-primary">
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Method 1: Recommended quota'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '方式一：推荐名额'}
-            </p>
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Each university can refer up to 10 students to participate in the InnoBay Summer Camp. The project team will conduct further interviews and make selective selections. Please email'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '每所大学可推荐最多10名学生参与InnoBay Summer Camp。项目组将进一步面试并择优录取。请发送邮件至'}
-                <a
-                    className="cursor-pointer text-isd-primary underline"
-                    href="mailto:innobay@ust.hk"
-                >
-                    innobay@ust.hk
-                </a>{' '}
-                {(language === LANGUAGE_ENGLISH || !language) && (
-                    <>
-                        and cc{' '}
-                        <a
-                            className="cursor-pointer text-isd-primary underline"
-                            href="mailto:isdtie@ust.hk"
-                        >
-                            isdtie@ust.hk
-                        </a>{' '}
-                        for recommendations.
-                    </>
-                )}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && <>进行推荐。</>}
-            </p>
-            <p className="font-bold text-isd-primary">
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Method 2: Open recruitment'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '方式二：公开招募'}
-            </p>
-            <p>
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Fill out the online application form at this link '}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '于此链接 '}
-                <a
-                    className="cursor-pointer text-isd-primary underline"
-                    href="https://forms.office.com/r/ULu1g3HQhm"
-                >
-                    https://forms.office.com/r/ULu1g3HQhm
-                </a>
 
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    '. Successful candidates will be notified of the follow-up interview via email'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '填写线上申请表。提交后，入选者将通过电邮收到后续面试通知。'}
-            </p>
-            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary">
-                {(language === LANGUAGE_ENGLISH || !language) &&
-                    'Contact information'}
-                {language === LANGUAGE_CHINESE_SIMPLIFIED && '联系方式'}
-            </h2>
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <ul className="list-disc ml-5 mt-2 space-y-4 ">
+                    <li>
+                        <i>QS Asia University Rankings 2026:</i>
+                        <strong> 6th place </strong>
+                    </li>
+                    <li>
+                        <i>
+                            Times Higher Education Young University Rankings
+                            2024:
+                        </i>
+                        <strong> 3rd place </strong>
+                    </li>
+                    <li>
+                        <i>
+                            Times Higher Education University Impact Rankings
+                            2025:
+                        </i>
+                        <strong> 19th globally, 1st in Hong Kong </strong>
+                    </li>
+                    <li>
+                        <i>QS World University Subject Rankings 2025,</i> &quot;Data
+                        Science & Artificial Intelligence&quot;:
+                        <strong> 17th globally, </strong>retaining the top
+                        position among Hong Kong universities
+                    </li>
+                </ul>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <ul className="list-disc ml-5 mt-2 space-y-4 ">
+                    <li>
+                        <i>QS Asia University Rankings 2026:</i>
+                        <strong> 6th place </strong>
+                    </li>
+                    <li>
+                        <i>
+                            Times Higher Education Young University Rankings
+                            2024:
+                        </i>
+                        <strong> 3rd place </strong>
+                    </li>
+                    <li>
+                        <i>
+                            Times Higher Education University Impact Rankings
+                            2025:
+                        </i>
+                        <strong> 19th globally, 1st in Hong Kong </strong>
+                    </li>
+                    <li>
+                        <i>QS World University Subject Rankings 2025,</i> &quot;Data
+                        Science & Artificial Intelligence&quot;:
+                        <strong> 17th globally, </strong>retaining the top
+                        position among Hong Kong universities
+                    </li>
+                </ul>
+            )}
+
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary ">
+                    Division of Integrative Systems and Design (ISD)
+                </h2>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary">
+                    Division of Integrative Systems and Design (ISD)
+                </h2>
+            )}
+
             <p>
                 {(language === LANGUAGE_ENGLISH || !language) &&
-                    'For more information, please email: '}
+                    'Founded in 2017, ISD is dedicated to developing technology talent with systems thinking and innovation capabilities through interdisciplinary teaching and research. Programs span undergraduate, master&apos;s, and doctoral levels, providing a strong foundation for students to make a lasting impact in research, industry, and the global innovation ecosystem.'}
                 {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                    '如需更多资讯，请电邮联系：'}
-                <a
-                    className="cursor-pointer text-isd-primary underline"
-                    href="mailto:innobay@ust.hk"
-                >
-                    innobay@ust.hk.
-                </a>
+                    'Founded in 2017, ISD is dedicated to developing technology talent with systems thinking and innovation capabilities through interdisciplinary teaching and research. Programs span undergraduate, master&apos;s, and doctoral levels, providing a strong foundation for students to make a lasting impact in research, industry, and the global innovation ecosystem.'}
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div className="flex flex-col items-center gap-4">
-                    <p className="text-isd-secondary font-bold">
-                        {(language === LANGUAGE_ENGLISH || !language) &&
-                            "This summer, let's"}
-                        {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                            '这个夏天，让我们'}
-                    </p>
-                    <p className="text-isd-secondary font-bold">
-                        {(language === LANGUAGE_ENGLISH || !language) &&
-                            'Meet at Clear Water Bay to empower sports with technology and connect future innovation.'}
-                        {language === LANGUAGE_CHINESE_SIMPLIFIED &&
-                            '相约清水湾，以科技赋能体育，连接未来创新。'}
-                    </p>
+
+            <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
+                {(language === LANGUAGE_ENGLISH || !language) &&
+                    'Registration Details'}
+
+                {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                    'Registration Details'}
+            </h2>
+
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary border-l-[5px] border-isd-primary pl-6">
+                    How to Apply
+                </h2>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <h2 className="lg:text-lg text-md leading-9 font-bold text-primary border-l-[5px] border-isd-primary pl-6">
+                    How to Apply
+                </h2>
+            )}
+
+            <table className="w-full border-1 border-y-1 border-gray-200 ">
+                <tbody className=" divide-y divide-gray-200">
+                    <tr>
+                        <td className="text-isd-primary font-bold bg-isd-primary-2 border-r border-gray-200 p-4">
+                            {(language === LANGUAGE_ENGLISH || !language) &&
+                                'Target Applicants'}
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                'Target Applicants'}
+                        </td>
+                        {(language === LANGUAGE_ENGLISH || !language) && (
+                            <td className=" p-4">
+                                Secondary school students aged 13–18 who aspire
+                                to become{' '}
+                                <strong>Innovators, Technologists,</strong> and{' '}
+                                <strong>Entrepreneurs</strong>
+                            </td>
+                        )}
+
+                        {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                            <td className=" p-4">
+                                Secondary school students aged 13–18 who aspire
+                                to become{' '}
+                                <strong>Innovators, Technologists,</strong> and{' '}
+                                <strong>Entrepreneurs</strong>
+                            </td>
+                        )}
+                    </tr>
+                    <tr>
+                        <td className="text-isd-primary font-bold bg-isd-primary-2 border-r border-gray-200 p-4">
+                            {(language === LANGUAGE_ENGLISH || !language) &&
+                                'Course Fee'}
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                'Course Fee'}
+                        </td>
+                        {(language === LANGUAGE_ENGLISH || !language) && (
+                            <td className=" p-4">
+                                <strong>HKD 12,000</strong>
+                            </td>
+                        )}
+
+                        {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                            <td className=" p-4">
+                                <strong>HKD 12,000</strong>
+                            </td>
+                        )}
+                    </tr>
+
+                    <tr>
+                        <td className="text-isd-primary font-bold bg-isd-primary-2 border-r border-gray-200 p-4">
+                            {(language === LANGUAGE_ENGLISH || !language) &&
+                                'Application Deadline'}
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                'Application Deadline'}
+                        </td>
+                        {(language === LANGUAGE_ENGLISH || !language) && (
+                            <td className=" p-4">
+                                <strong>June 12, 2026</strong>
+                            </td>
+                        )}
+
+                        {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                            <td className=" p-4">
+                                <strong>June 12, 2026</strong>
+                            </td>
+                        )}
+                    </tr>
+
+                    <tr>
+                        <td className="text-isd-primary font-bold bg-isd-primary-2 border-r border-gray-200 p-4">
+                            {(language === LANGUAGE_ENGLISH || !language) &&
+                                'How to Apply'}
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                'How to Apply'}
+                        </td>
+                        <td className=" p-4">
+                            {' '}
+                            <Image
+                                src={image07}
+                                alt="Apply"
+                                width={128}
+                                height={128}
+                                sizes="128px"
+                                className="w-[128px] h-[128px] object-cover"
+                            />
+                            <p className="cursor-pointer text-isd-primary underline">
+                                <a href="https://ust.az1.qualtrics.com/jfe/form/SV_73qsUvFsXc9v5rM">
+                                    https://ust.az1.qualtrics.com/jfe/form/SV_73qsUvFsXc9v5rM
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td className="text-isd-primary font-bold bg-isd-primary-2 border-r border-gray-200 p-4">
+                            {(language === LANGUAGE_ENGLISH || !language) &&
+                                'Organizer'}
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                'Organizer'}
+                        </td>
+                        <td className=" p-4">
+                            {(language === LANGUAGE_ENGLISH || !language) &&
+                                'HKUST Division of Integrative Systems and Design (ISD)'}
+
+                            {language === LANGUAGE_CHINESE_SIMPLIFIED &&
+                                'HKUST Division of Integrative Systems and Design (ISD)'}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {(language === LANGUAGE_ENGLISH || !language) && (
+                <div className="flex flex-col gap-[36px] border-[1px] rounded-md border-isd-secondary bg-isd-secondary-1 p-[36px] pl-[31px]">
+                    <h2 className="lg:text-lg text-md leading-9 font-bold text-secondary">
+                        Important Notes
+                    </h2>
+
+                    <ul className="list-disc ml-5 mt-2 space-y-4 ">
+                        <li>
+                            Upon completing the course, students will receive a
+                            <strong className="text-secondary">
+                                {' '}
+                                Course Completion Certificate.
+                            </strong>
+                        </li>
+                        <li>
+                            You must confirm your availability to participate in
+                            the{' '}
+                            <strong className="text-secondary">
+                                entire course period
+                            </strong>{' '}
+                            (from start to finish).
+                        </li>
+                        <li>
+                            The course permits up to{' '}
+                            <strong className="text-secondary">
+                                20% absence
+                            </strong>{' '}
+                            due to emergency situations or sick leave, provided
+                            a valid and legitimate reason is given along with an
+                            official letterhead leave application document.
+                        </li>
+                        <li>
+                            Students who do not achieve a{' '}
+                            <strong className="text-secondary">
+                                80% attendance rate
+                            </strong>
+                            , or who fail to submit a legitimate reason with
+                            official documentation,{' '}
+                            <strong className="text-secondary">
+                                will not receive the Course Completion
+                                Certificate.
+                            </strong>
+                        </li>
+                        <li>
+                            All classes and teaching/discussion sessions require
+                            <strong className="text-secondary">
+                                punctuality
+                            </strong>
+                            . Arriving late without valid reason may be recorded
+                            as absence.
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            )}
+
+            {language === LANGUAGE_CHINESE_SIMPLIFIED && (
+                <div className="flex flex-col gap-[36px] border-[1px] rounded-md border-isd-secondary bg-isd-secondary-1 p-[36px] pl-[31px]">
+                    <h2 className="lg:text-lg text-md leading-9 font-bold text-secondary">
+                        Important Notes
+                    </h2>
+
+                    <ul className="list-disc ml-5 mt-2 space-y-4 ">
+                        <li>
+                            Upon completing the course, students will receive a
+                            <strong className="text-secondary">
+                                {' '}
+                                Course Completion Certificate.
+                            </strong>
+                        </li>
+                        <li>
+                            You must confirm your availability to participate in
+                            the{' '}
+                            <strong className="text-secondary">
+                                entire course period
+                            </strong>{' '}
+                            (from start to finish).
+                        </li>
+                        <li>
+                            The course permits up to{' '}
+                            <strong className="text-secondary">
+                                20% absence
+                            </strong>{' '}
+                            due to emergency situations or sick leave, provided
+                            a valid and legitimate reason is given along with an
+                            official letterhead leave application document.
+                        </li>
+                        <li>
+                            Students who do not achieve a{' '}
+                            <strong className="text-secondary">
+                                80% attendance rate
+                            </strong>
+                            , or who fail to submit a legitimate reason with
+                            official documentation,{' '}
+                            <strong className="text-secondary">
+                                will not receive the Course Completion
+                                Certificate.
+                            </strong>
+                        </li>
+                        <li>
+                            All classes and teaching/discussion sessions require
+                            <strong className="text-secondary">
+                                {' '}
+                                punctuality
+                            </strong>
+                            . Arriving late without valid reason may be recorded
+                            as absence.
+                        </li>
+                    </ul>
+                </div>
+            )}
         </div>
     );
 }
