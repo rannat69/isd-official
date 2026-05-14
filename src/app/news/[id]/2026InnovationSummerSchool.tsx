@@ -371,7 +371,7 @@ export default function InnovationSummerSchool2026() {
                             />
                         </div>
                         <h2 className="lg:text-lg text-md leading-9 font-bold text-primary ">
-                            Dr. Jack LEUNG
+                            Dr. Jac LEUNG
                         </h2>
                     </div>
                 </div>
@@ -419,8 +419,8 @@ export default function InnovationSummerSchool2026() {
 
                 <ul className="pl-6 space-y-8 list-disc">
                     <li>
-                        Executive Committee Member, Community of Practice in
-                        Design Thinking, The Education University of Hong Kong
+                        Executive Committee Member, Design thinking CoP, Hong
+                        Kong Teaching Excellence Alliance (HKTEA)
                     </li>
                     <li>
                         2022 University Grants Committee (UGC) Teaching Award
@@ -1092,9 +1092,8 @@ export default function InnovationSummerSchool2026() {
                             </strong>
                         </li>
                         <li>
-                            All classes and teaching/discussion sessions require
+                            All classes and teaching/discussion sessions require{' '}
                             <strong className="text-secondary">
-                                {' '}
                                 punctuality
                             </strong>
                             . Arriving late without valid reason may be recorded
