@@ -155,15 +155,17 @@ export default async function NewsDetailPage({
                                     Event Info
                                 </h2>
                                 <div className="flex flex-col gap-[4px]">
-                                    <div className="flex items-center gap-[12px]">
-                                        <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
-                                            <Calendar size={22} />
-                                        </div>
+                                    {item.evt_date && (
+                                        <div className="flex items-center gap-[12px]">
+                                            <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
+                                                <Calendar size={22} />
+                                            </div>
 
-                                        <p className="lg:text-md text-sm text-isd-font-3">
-                                            {item.evt_date}
-                                        </p>
-                                    </div>
+                                            <p className="lg:text-md text-sm text-isd-font-3">
+                                                {item.evt_date}
+                                            </p>
+                                        </div>
+                                    )}
                                     {item.evt_time ? (
                                         <div className="flex items-center gap-[12px]">
                                             <div className="p-[7px] text-isd-primary bg-isd-primary-2 rounded-full">
