@@ -25,54 +25,6 @@ export default function InnovationSummerSchool2026() {
 
     return (
         <div className="flex flex-col lg:gap-[24px] gap-[12px] lg:text-md text-sm">
-            <div className="flex relative pb-2 text-nav divide-x-2">
-                <p
-                    className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
-                        !language || language?.includes(LANGUAGE_ENGLISH)
-                            ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
-                            : 'text-isd-font-3'
-                    }`}
-                    onClick={() => {
-                        sessionStorage.setItem('language', LANGUAGE_ENGLISH);
-                        window.location.reload();
-                    }}
-                >
-                    ENG
-                </p>
-                <p
-                    className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
-                        language?.includes(LANGUAGE_CHINESE_SIMPLIFIED)
-                            ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
-                            : 'text-isd-font-3'
-                    }`}
-                    onClick={() => {
-                        sessionStorage.setItem(
-                            'language',
-                            LANGUAGE_CHINESE_SIMPLIFIED
-                        );
-                        window.location.reload();
-                    }}
-                >
-                    简
-                </p>
-                {/* <p
-                            className={`px-2 relative z-50 text-nav hover:underline hover:underline-offset-10 hover:decoration-isd-primary hover:decoration-4 ${
-                                pathname.includes('xxx')
-                                    ? 'text-isd-primary underline underline-offset-10 decoration-isd-primary decoration-4'
-                                    : 'text-isd-font-3'
-                            }`}
-                            onClick={() => {
-                                 sessionStorage.setItem(
-                                    'language',
-                                    LANGUAGE_CHINESE_TRADITIONAL
-                                );
-                                //window.location.reload();
-                                alert('Coming soon');
-                            }}
-                        >
-                            繁
-                        </p>*/}
-            </div>
             <h2 className="lg:text-[36px] text-lg leading-9 font-bold text-primary mt-8">
                 {(language === LANGUAGE_ENGLISH || !language) &&
                     ' HKUST Division of Integrative Systems and Design (ISD)'}
