@@ -9,6 +9,8 @@ import path from 'path';
 import ISDFacultyRecognized51IntExhInv from './ISDFacultyRecognized51IntExhInv';
 import HKUSTInnoBayBootcamp2026 from './HKUSTInnoBayBootcamp2026';
 import InnovationSummerSchool2026 from './2026InnovationSummerSchool';
+import TDTA2526 from './TDTA2526';
+import HKUSTLands3MillionGPTX from './HKUSTLands3MillionGPTX';
 
 /*export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -200,6 +202,12 @@ export default async function NewsDetailPage({
                             ) : item.title ===
                               '2026 Innovation Summer School' ? (
                                 <InnovationSummerSchool2026 />
+                            ) : item.title ===
+                              'Thetos Distinguished Teaching Awards 2025-26: Accolades for Dr. Jac Leung and Prof. Winnie Leung' ? (
+                                <TDTA2526 />
+                            ) : item.title ===
+                              'HKUST ISD Lands HK$3 Million Boost from GPTX to Launch Next-Gen Innovators' ? (
+                                <HKUSTLands3MillionGPTX />
                             ) : (
                                 renderContent(item.details)
                             )}
