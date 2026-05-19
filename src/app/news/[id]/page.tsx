@@ -94,7 +94,7 @@ export default async function NewsDetailPage({
     });
 
     return (
-        <div className="container pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">
+        <div className="container2 pt-component-gap-sm pb-section-gap min-h-screen flex flex-col items-stretch">
             <div className="flex flex-col gap-component-gap-sm">
                 <Link
                     className="flex gap-[6px] text-md items-center text-isd-primary"
