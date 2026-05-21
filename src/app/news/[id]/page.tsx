@@ -11,6 +11,7 @@ import HKUSTInnoBayBootcamp2026 from './HKUSTInnoBayBootcamp2026';
 import InnovationSummerSchool2026 from './2026InnovationSummerSchool';
 import TDTA2526 from './TDTA2526';
 import HKUSTLands3MillionGPTX from './HKUSTLands3MillionGPTX';
+import CarouselNews from '@/components/CarouselNews';
 
 /*export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -111,7 +112,16 @@ export default async function NewsDetailPage({
                     <div className="w-full relative">
                         {images.length > 0 && (
                             <>
-                                {images.length > 1 ? (
+                                <Image
+                                    src={images[0]}
+                                    alt={item.title}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                />
+
+                                {/*images.length > 1 ? (
                                     <div className="lg:h-[480px] h-[260px]">
                                         <Carousel
                                             images={images}
@@ -127,12 +137,12 @@ export default async function NewsDetailPage({
                                             height: '100%',
                                         }}
                                     />
-                                )}
+                                )*/}
                             </>
                         )}
 
-                        {images.length === 0 &&
-                            (imagesArray.length > 1 ? (
+                        {images.length === 0 && (
+                            /*(imagesArray.length > 1 ? (
                                 <div className="lg:h-[480px] h-[260px]">
                                     <Carousel
                                         images={[]}
@@ -148,7 +158,17 @@ export default async function NewsDetailPage({
                                         height: '100%',
                                     }}
                                 />
-                            ))}
+                            ))*/
+
+                            <img
+                                src={imagesArray[0]}
+                                alt={item.title}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            />
+                        )}
                     </div>
                     <div className="flex flex-col gap-[24px]">
                         {item.type === 'events' && (
@@ -213,6 +233,18 @@ export default async function NewsDetailPage({
                             ) : (
                                 renderContent(item.details)
                             )}
+
+                            <div className="w-full mt-4">
+                                {images.length > 1 ? (
+                                    <CarouselNews images={images.slice(1)} />
+                                ) : imagesArray.length > 1 ? (
+                                    <CarouselNews
+                                        images={imagesArray.slice(1)}
+                                    />
+                                ) : (
+                                    <></>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -291,7 +323,51 @@ function renderContent(text: string) {
                                       </a>
                                   );
                               } else {
-                                  return <span key={tIdx}>{token}</span>;
+                                  // --- NEW CODE: Split by <strong> tags ---
+                                  const strongRegex =
+                                      /(<strong>.*?<\/strong>)/g;
+                                  const textTokens = token.split(strongRegex);
+
+                                  return (
+                                      <span key={tIdx}>
+                                          {textTokens.map(
+                                              (textToken, ttIdx) => {
+                                                  if (!textToken) return null;
+
+                                                  // Check if the token is a <strong> tag
+                                                  if (
+                                                      textToken.startsWith(
+                                                          '<strong>'
+                                                      ) &&
+                                                      textToken.endsWith(
+                                                          '</strong>'
+                                                      )
+                                                  ) {
+                                                      return (
+                                                          <strong
+                                                              key={ttIdx}
+                                                              className="font-bold"
+                                                          >
+                                                              {/* Slice out the <strong> (8 chars) and </strong> (9 chars) */}
+                                                              {textToken.slice(
+                                                                  8,
+                                                                  -9
+                                                              )}
+                                                          </strong>
+                                                      );
+                                                  }
+
+                                                  // Otherwise return regular text
+                                                  return (
+                                                      <span key={ttIdx}>
+                                                          {textToken}
+                                                      </span>
+                                                  );
+                                              }
+                                          )}
+                                      </span>
+                                  );
+                                  // --- END NEW CODE ---
                               }
                           })}
                           <br />

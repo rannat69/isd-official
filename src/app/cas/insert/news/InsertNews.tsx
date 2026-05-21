@@ -152,7 +152,7 @@ export default function InsertNews() {
                 name="userText"
                 rows={10}
                 cols={50}
-                placeholder="Enter description here.  # title..."
+                placeholder="Enter description here.  # title... bold = <strong>xxx</strong>"
                 className="border-1"
                 onChange={(e) => setDetails(e.target.value)}
                 value={details}

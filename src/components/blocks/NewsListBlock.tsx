@@ -234,6 +234,7 @@ export default function NewsListBlock() {
 function stripTags(text: string) {
     // Remove custom xTx/xETx tags and collapse whitespace for preview
     return text
+        .replace(/<\/?strong>/gi, '') // Removes both <strong> and </strong>
         .replace(/x+EndTitlex+/gi, '')
         .replace(/xTx\s*/gi, '')
         .replace(/\s*xETx/gi, '')
