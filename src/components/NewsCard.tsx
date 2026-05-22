@@ -26,8 +26,10 @@ export default function NewsCard({
         const fetchPicture = async () => {
             const type = 'news'; // Adjust this
             const filename = path.basename(imageAlt);
+
+            console.log('imageAlt', imageAlt);
             const res = await fetch(
-                `/api/getPicture?type=${type}&filename=${filename}`
+                `/api/getPicture?type=${type}&filename=${imageAlt}`
             );
             if (res.ok) {
                 const blob = await res.blob();

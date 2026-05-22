@@ -21,15 +21,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Construct the file path
     const filePath = path.join(
         process.cwd(),
-        'public/pictures',
-        Array.isArray(type) ? type[0] : type,
+        'public/',
+
         Array.isArray(filename) ? filename[0] : filename
     );
 
     // Check if the file exists
     fs.stat(filePath, (err) => {
         if (err) {
-            return res.status(404).json({ message: 'File not found' });
+            return res
+                .status(404)
+                .json({ message: 'File  not found : ' + filePath });
         }
 
         // Set the appropriate content type and send the file

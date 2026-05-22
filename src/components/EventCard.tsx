@@ -28,7 +28,7 @@ export default function EventCard({
             const type = 'news'; // Adjust this
             const filename = path.basename(imageAlt);
             const res = await fetch(
-                `/api/getPicture?type=${type}&filename=${filename}`
+                `/api/getPicture?type=${type}&filename=${imageAlt}`
             );
             if (res.ok) {
                 const blob = await res.blob();

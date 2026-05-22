@@ -60,7 +60,7 @@ export default function FacultyCard({
             const type = 'people'; // Adjust this
             const filename = path.basename(photoAlt ?? '');
             const res = await fetch(
-                `/api/getPicture?type=${type}&filename=${filename}`
+                `/api/getPicture?type=${type}&filename=${photoAlt}`
             );
 
 
