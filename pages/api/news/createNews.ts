@@ -31,8 +31,15 @@ export default async function handler(
 
         const photoTemp: string[] = [];
 
+        // create folder name with date yyyymmdd
+        const date = new Date();
+        const folderName =
+            date.getFullYear().toString() +
+            (date.getMonth() + 1).toString().padStart(2, '0') +
+            date.getDate().toString().padStart(2, '0');
+
         for (const filename of req.body.photoFilenames) {
-            photoTemp.push('/pictures/news/' + filename);
+            photoTemp.push('/pictures/news/' + folderName + '/' + filename);
         }
 
         const formattedDetails = req.body.details.replaceAll('\n', ' \n ');

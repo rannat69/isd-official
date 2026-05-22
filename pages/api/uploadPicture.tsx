@@ -46,9 +46,21 @@ export default async function handler(
     const type = typeArray[0];
     const file = photoArray[0];
 
+    // create folder name with date yyyymmdd
+    const date = new Date();
+    const folderName =
+        date.getFullYear().toString() +
+        (date.getMonth() + 1).toString().padStart(2, '0') +
+        date.getDate().toString().padStart(2, '0');
+
+    // create directory if not exist
+    await fs.promises.mkdir('public/pictures/' + type + '/' + folderName, {
+        recursive: true,
+    });
+
     const newPath = path.join(
         process.cwd(),
-        'public/pictures/' + type,
+        'public/pictures/' + type + '/' + folderName,
         file.originalFilename ?? 'upload'
     );
 
