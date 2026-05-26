@@ -295,6 +295,15 @@ function renderContent(text: string) {
         }
     }
 
+    const getYouTubeEmbedUrl = (url) => {
+        const regExp =
+            /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        const videoId = match && match[2].length === 11 ? match[2] : null;
+
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+    };
+
     return groups.map((g, idx) => {
         const urlRegex = /(https?:\/\/[^\s)]+)/g;
 
@@ -311,6 +320,25 @@ function renderContent(text: string) {
                               if (urlRegex.test(token)) {
                                   // reset lastIndex in case of global regex reuse
                                   urlRegex.lastIndex = 0;
+
+                                  const embedUrl = getYouTubeEmbedUrl(token);
+
+                                  // Check if the token is a YouTube link
+                                  if (embedUrl) {
+                                      return (
+                                          <iframe
+                                              key={tIdx}
+                                              className="w-full aspect-[408/191] my-4"
+                                              src={`${embedUrl}?autoplay=1`}
+                                              title="YouTube video player"
+                                              frameBorder="0"
+                                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                              referrerPolicy="strict-origin-when-cross-origin"
+                                              allowFullScreen
+                                          />
+                                      );
+                                  }
+
                                   return (
                                       <a
                                           key={tIdx}
@@ -322,6 +350,17 @@ function renderContent(text: string) {
                                           {token}
                                       </a>
                                   );
+
+                                  // if link contains "youtube", create an iframe instead of a <a.
+                                  <iframe
+                                      className="w-full aspect-[408/191]"
+                                      src={`https://www.youtube.com/embed/I_l1_M-hSPU?autoplay=1`}
+                                      title="YouTube video player"
+                                      frameBorder="0"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                      referrerPolicy="strict-origin-when-cross-origin"
+                                      allowFullScreen
+                                  />;
                               } else {
                                   // --- NEW CODE: Split by <strong> tags ---
                                   const strongRegex =
