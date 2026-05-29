@@ -46,7 +46,7 @@ export default async function NewsDetailPage({
         return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
-    let itemTemp = news.find(
+    const itemTemp = news.find(
         (it: NewsEntry) => String(it.id) === resolvedParams.id
     );
 
