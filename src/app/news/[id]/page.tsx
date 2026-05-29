@@ -46,7 +46,7 @@ export default async function NewsDetailPage({
         return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
-    const itemTemp = news.find(
+    let itemTemp = news.find(
         (it: NewsEntry) => String(it.id) === resolvedParams.id
     );
 
@@ -54,7 +54,33 @@ export default async function NewsDetailPage({
         item = itemTemp;
     }
 
-    console.log('item', item);
+    // if news not found, search based on the title
+    // but format title like this word1-word2-word3-
+    // So basically, remove capital letters, replace spaces by -, and remove all punctuation and quotes
+    if (!item) {
+        const titleFormatted = resolvedParams.id
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+
+        console.log('titleFormatted', titleFormatted);
+
+        //const itemTemp = news.find((it) => it.title.toLowerCase().includes(resolvedParams.id));
+
+        // do the same filtering in news.title
+
+        const itemTemp = news.find((it: NewsEntry) =>
+            it.title
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '')
+                .includes(titleFormatted)
+        );
+
+        if (itemTemp) {
+            item = itemTemp;
+        }
+    }
 
     //const [item, setItem] = useState<NewsEntry>();
 
