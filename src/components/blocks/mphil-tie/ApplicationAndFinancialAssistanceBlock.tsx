@@ -60,6 +60,18 @@ export default function ApplicationAndFinancialAssistanceBlock() {
                     Online Application
                 </button>
             </a>
+
+            <p>
+                Applications are required to use the following template for the
+                supporting documents required.
+            </p>
+
+            <a
+                href="/resources/TIE_statement_of_purpose.docx"
+                className="font-bold text-isd-secondary underline"
+            >
+                Statement of purpose
+            </a>
         </div>
     ) : (
         language === LANGUAGE_CHINESE_SIMPLIFIED && (
@@ -107,6 +119,15 @@ export default function ApplicationAndFinancialAssistanceBlock() {
                     <button className="cursor-pointer bg-isd-primary-2 text-md font-bold text-isd-primary px-[36px] py-[10px] text-center">
                         线上申请
                     </button>
+                </a>
+
+                <p>申請時需使用以下範本提交所需證明文件。</p>
+
+                <a
+                    href="/resources/TIE_statement_of_purpose.docx"
+                    className="font-bold text-isd-secondary underline"
+                >
+                    宗旨聲明
                 </a>
             </div>
         )

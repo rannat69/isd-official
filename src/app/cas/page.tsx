@@ -13,10 +13,10 @@ export default function Dashboard() {
 
     const [mode, setMode] = useState<string>('');
 
-    const authorisedUsers = ['remia', 'atomyuen'];
+    const authorisedUsers = ['remia', 'atomyuen', 'janet.liu'];
 
     useEffect(() => {
-        console.log('useEffect');
+
 
         // Check for the ?ticket in the URL
         const urlParams = new URLSearchParams(window.location.search);
@@ -34,7 +34,21 @@ export default function Dashboard() {
                 },
                 body: JSON.stringify({ ticket }), // Stringify the body object
             })
-                .then((res) => res.json())
+                .then(async (res) => {
+                    const text = await res.text();
+                    console.log('HTTP status:', res.status);
+                    console.log('Response headers:', [
+                        ...res.headers.entries(),
+                    ]);
+                    console.log('Raw response body:', text);
+
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error('Failed to parse JSON. Body was:', text);
+                        throw e;
+                    }
+                })
                 .then((data) => {
                     console.log(data.message);
 
