@@ -69,6 +69,17 @@ export default function NewsAndEventsBlock() {
         fetchNews();
     }, []);
 
+    function stripTags(text: string) {
+        // Remove custom xTx/xETx tags and collapse whitespace for preview
+        return text
+            .replace(/<\/?strong>/gi, '') // Removes both <strong> and </strong>
+            .replace(/x+EndTitlex+/gi, '')
+            .replace(/xTx\s*/gi, '')
+            .replace(/\s*xETx/gi, '')
+            .replace(/\n+/g, ' ')
+            .trim();
+    }
+
     return (
         <div className="container overflow-clip flex flex-col py-section-gap gap-section-title-gap dot-pattern before:top-[-95px] before:right-0 [--dot-color:var(--isd-secondary-1)]">
             <h1 className="text-h1 offset-text-background uppercase">
@@ -104,7 +115,7 @@ export default function NewsAndEventsBlock() {
                                 {news.date}
                             </span>
                             <div className="text-md text-start text-isd-font-3 line-clamp-3">
-                                {news.details && news.details.replace('# ', '')}
+                                {news.details && stripTags(news.details.replace('# ', ''))}
                             </div>
                         </a>
                     ))}
