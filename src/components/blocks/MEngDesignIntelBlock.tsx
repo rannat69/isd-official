@@ -82,8 +82,8 @@ export default function MEngDesignIntelBlock() {
                         </p>
                         <p className="text-isd-font-1">
                             To address this gap, the Master of Engineering in
-                            Design Intelligence is proposed to cultivate "Design
-                            Strategists" and "Creative Technology Connectors."
+                            Design Intelligence is proposed to cultivate &quot;Design
+                            Strategists&quot; and &quot;Creative Technology Connectors.&quot;
                             Recognizing that creativity adds substantial
                             intangible value and competitiveness to products and
                             services, the program emphasizes innovation in both
@@ -97,14 +97,14 @@ export default function MEngDesignIntelBlock() {
                         </p>
                         <p className="text-isd-font-1">
                             This program directly aligns with the Hong Kong SAR
-                            government's strategic focus on the new creative
-                            economy. By leveraging Hong Kong's unique
-                            "east-meets-west" cultural positioning and
+                            government&apos;s strategic focus on the new creative
+                            economy. By leveraging Hong Kong&apos;s unique
+                            &quot;east-meets-west&quot; cultural positioning and
                             traditional economic strengths, the initiative aims
                             to produce tech-fluent creative talents. These
                             innovators will integrate AI into their pipelines to
                             design next-generation user experiences across the
-                            region's core sectors, including retail, finance,
+                            region&apos;s core sectors, including retail, finance,
                             and professional services.
                         </p>
                         <div className="flex flex-col gap-[24px]">
