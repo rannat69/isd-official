@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import InsertNews from './insert/news/InsertNews';
 import InsertFaculty from './insert/faculty/InsertFaculty';
 import InsertStaff from './insert/staff/InsertStaff';
@@ -13,11 +13,30 @@ export default function Dashboard() {
 
     const [mode, setMode] = useState<string>('');
 
+    const [newsToEdit, setNewsToEdit] = useState<any>(null);
+
+    const [editMode, setEditMode] = useState<any>(false);
+
     const authorisedUsers = ['remia', 'atomyuen', 'janet.liu'];
 
+    const editNews = useCallback(async (id: number): Promise<void> => {
+        console.log('id', id);
+
+        const response = await fetch('/api/news/getNews', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id }),
+        });
+
+        const newsEdit = await response.json();
+
+        console.log('newsEdit', newsEdit);
+
+        setNewsToEdit(newsEdit[0]);
+        setEditMode(true);
+    }, []);
+
     useEffect(() => {
-
-
         // Check for the ?ticket in the URL
         const urlParams = new URLSearchParams(window.location.search);
         const ticket = urlParams.get('ticket'); // Get the value of the ticket parameter
@@ -171,19 +190,31 @@ export default function Dashboard() {
             <div className="flex gap-3 m-[20px]">
                 <button
                     className=" text-isd-primary cursor-pointer p-4 bg-isd-primary-2  items-center justify-center"
-                    onClick={() => setMode('faculty')}
+                    onClick={() => {
+                        setMode('faculty');
+                        setNewsToEdit(null);
+                        setEditMode(false);
+                    }}
                 >
                     Faculty
                 </button>
                 <button
                     className=" text-isd-primary cursor-pointer p-4 bg-isd-primary-2  items-center justify-center"
-                    onClick={() => setMode('staff')}
+                    onClick={() => {
+                        setMode('staff');
+                        setNewsToEdit(null);
+                        setEditMode(false);
+                    }}
                 >
                     Staff
                 </button>
                 <button
                     className=" text-isd-primary cursor-pointer p-4 bg-isd-primary-2  items-center justify-center"
-                    onClick={() => setMode('news')}
+                    onClick={() => {
+                        setMode('news');
+                        setNewsToEdit(null);
+                        setEditMode(false);
+                    }}
                 >
                     News and Events
                 </button>
@@ -217,8 +248,11 @@ export default function Dashboard() {
                 <>
                     <h1>News and Events</h1>
                     <div className="flex gap-3 m-[20px]">
-                        <ListNews></ListNews>
-                        <InsertNews></InsertNews>
+                        <ListNews editNews={editNews}></ListNews>
+                        <InsertNews
+                            newsToEdit={newsToEdit}
+                            editMode={editMode}
+                        ></InsertNews>
                     </div>
                 </>
             )}

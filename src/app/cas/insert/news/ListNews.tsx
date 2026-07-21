@@ -1,6 +1,11 @@
 import { NewsEntry } from '@/lib/newsFilter';
 import { useEffect, useState } from 'react';
-export default function ListNews() {
+
+type Props = {
+    editNews: (id: number) => Promise<void>;
+};
+
+export default function ListNews({ editNews }: Props) {
     const [newsList, setNewsList] = useState<NewsEntry[]>([]);
 
     const fetchNews = async () => {
@@ -26,6 +31,8 @@ export default function ListNews() {
     useEffect(() => {
         fetchNews();
     }, []);
+
+
 
     async function deleteNews(id: number): Promise<void> {
         // Show confirmation dialog
@@ -62,6 +69,12 @@ export default function ListNews() {
                     <div className="flex-shrink-0 w-1/3">{news.title}</div>
 
                     <div className="flex-shrink-0 w-1/3">{news.date}</div>
+                    <div
+                        className="flex-shrink-0 w-1/12 text-center text-red-500 font-bold border-1 border-black cursor-pointer"
+                        onClick={() => editNews(news.id)}
+                    >
+                        Edit
+                    </div>
                     <div
                         className="flex-shrink-0 w-1/12 text-center text-red-500 font-bold cursor-pointer"
                         onClick={() => deleteNews(news.id)}
