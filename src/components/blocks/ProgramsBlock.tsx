@@ -11,7 +11,7 @@ export default function ProgramBlock() {
             content: 'Design Minor',
             link: '/academics/design-minor',
         },
-              {
+        {
             heading: 'Undergraduate',
             content: 'Entrepreneurship',
             link: '/academics/entrepreneurship',
@@ -35,6 +35,11 @@ export default function ProgramBlock() {
             heading: 'Postgraduate',
             content: 'Early Admissions Scheme',
             link: '/academics/early-admission',
+        },
+        {
+            heading: 'Postgraduate',
+            content: 'MEng in Design Intelligence',
+            link: '/academics/meng-in-design-intel',
         },
     ];
 

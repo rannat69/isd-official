@@ -37,6 +37,7 @@ export default function Footer() {
                 'Internship & Exchange',
                 'Facilities',
                 'Early Admissions Scheme',
+                'MEng in Design Intelligence',
             ],
             links: [
                 '/academics#programs',
@@ -44,6 +45,7 @@ export default function Footer() {
                 '/academics/internship',
                 '/academics/facilities',
                 '/academics/early-admission',
+                '/academics/meng-in-design-intel',
             ],
         },
         {
