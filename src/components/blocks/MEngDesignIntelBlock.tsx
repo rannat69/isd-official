@@ -3,6 +3,8 @@ import { Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
 import Breadcrumb from '../Breadcrumb';
+import Image from 'next/image';
+import EduObj1 from '@/assets/academics/meng-design-intel/Picture1.png';
 
 export default function MEngDesignIntelBlock() {
     const [activeMenuId, setActiveMenuId] = useState('');
@@ -82,31 +84,39 @@ export default function MEngDesignIntelBlock() {
                         </p>
                         <p className="text-isd-font-1">
                             To address this gap, the Master of Engineering in
-                            Design Intelligence is proposed to cultivate &quot;Design
-                            Strategists&quot; and &quot;Creative Technology Connectors.&quot;
-                            Recognizing that creativity adds substantial
-                            intangible value and competitiveness to products and
-                            services, the program emphasizes innovation in both
-                            product and service/process design. Its curriculum
-                            features four integrated course clusters—iProduct,
-                            iService, iConnect, and iMedia—each blending core
-                            and bridging elective courses. A broad selection of
-                            electives is also provided to help students
-                            customize their learning and broaden their
-                            knowledge.
+                            Design Intelligence is proposed to cultivate
+                            &quot;Design Strategists&quot; and &quot;Creative
+                            Technology Connectors.&quot; Recognizing that
+                            creativity adds substantial intangible value and
+                            competitiveness to products and services, the
+                            program emphasizes innovation in both product and
+                            service/process design. Its curriculum features four
+                            integrated course clusters—iProduct, iService,
+                            iConnect, and iMedia—each blending core and bridging
+                            elective courses. A broad selection of electives is
+                            also provided to help students customize their
+                            learning and broaden their knowledge.
                         </p>
                         <p className="text-isd-font-1">
                             This program directly aligns with the Hong Kong SAR
-                            government&apos;s strategic focus on the new creative
-                            economy. By leveraging Hong Kong&apos;s unique
-                            &quot;east-meets-west&quot; cultural positioning and
-                            traditional economic strengths, the initiative aims
-                            to produce tech-fluent creative talents. These
-                            innovators will integrate AI into their pipelines to
-                            design next-generation user experiences across the
-                            region&apos;s core sectors, including retail, finance,
-                            and professional services.
+                            government&apos;s strategic focus on the new
+                            creative economy. By leveraging Hong Kong&apos;s
+                            unique &quot;east-meets-west&quot; cultural
+                            positioning and traditional economic strengths, the
+                            initiative aims to produce tech-fluent creative
+                            talents. These innovators will integrate AI into
+                            their pipelines to design next-generation user
+                            experiences across the region&apos;s core sectors,
+                            including retail, finance, and professional
+                            services.
                         </p>
+
+                        <Image
+                            src={EduObj1}
+                            alt="Educational objectives"
+                            className="w-full h-auto object-contain"
+                        />
+
                         <div className="flex flex-col gap-[24px]">
                             <h2 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
                                 Educational Objectives
@@ -265,13 +275,13 @@ export default function MEngDesignIntelBlock() {
                             Placement (6 credits). <br />
                             For details, please refer to the {' '}
                             <span className="text-isd-secondary font-[700] underline">
-                                <a href="https://prog-crs.hkust.edu.hk/pgprog/2024-25/msc-tle">
+                                <a href="https://prog-crs.hkust.edu.hk/pgprog?token_post=58511409b721808ed781ce06aa81c6e1&is_s=Y&keyword=&school%5B%5D=SSCI&school%5B%5D=SENG&school%5B%5D=SBM&school%5B%5D=SHSS&school%5B%5D=IPO&area%5B%5D=1&area%5B%5D=7&area%5B%5D=11&area%5B%5D=12&area%5B%5D=3&area%5B%5D=13&area%5B%5D=14&area%5B%5D=16&area%5B%5D=8&area%5B%5D=9&area%5B%5D=10&check-all-degree-option=Y&check-allsub-degree-option1=Y&degree%5B%5D=MPHIL&degree%5B%5D=PHD&check-allsub-degree-option2=Y&degree%5B%5D=MENG&degree%5B%5D=DBA&degree%5B%5D=MBA&degree%5B%5D=MSC&degree%5B%5D=MA&degree%5B%5D=MPM&degree%5B%5D=MPP&degree%5B%5D=PGD&year=2026-27">
                                     Postgraduate Program
                                 </a>
                             </span>
                             , 
                             <span className="text-isd-secondary font-[700] underline">
-                                <a href="https://prog-crs.hkust.edu.hk/pgcourse/2022-23/MTLE">
+                                <a href="https://prog-crs.hkust.edu.hk/pgcourse">
                                     Course Catalog
                                 </a>
                             </span>
@@ -505,6 +515,18 @@ const CurriculumContent = () => (
                             <span className="ml-1"> (6 credits)</span>
                         </div>
                     </div>
+                    <div>
+                        <Plus
+                            className="mx-element-gap-sm text-isd-primary hidden lg:block"
+                            size={24}
+                        />
+                    </div>
+                    <div className="bg-isd-secondary-1 text-isd-secondary p-element-gap flex-1 w-full">
+                        <div className="flex lg:flex-col flex-wrap text-center justify-center w-full">
+                            <span>Internship Placement</span>
+                            <span className="ml-1"> (6 credits)</span>
+                        </div>
+                    </div>
                 </div>
                 <div className="text-sm flex gap-[6px] text-isd-font-3">
                     <div className="flex-1 bg-isd-primary-2 p-element-gap h-fit hidden lg:block">
@@ -520,6 +542,11 @@ const CurriculumContent = () => (
 
                     <div className="flex-1 bg-isd-primary-2 p-element-gap hidden lg:block">
                         {capstoneContent}
+                    </div>
+                    <div className="hidden lg:block w-[24px]"></div>
+
+                    <div className="flex-1 bg-isd-secondary-1 p-element-gap hidden lg:block">
+                        {internshipContent}
                     </div>
                 </div>
             </div>
@@ -559,5 +586,15 @@ const capstoneContent = (
         their capstone projects, and in such cases, the capstone project will be
         supervised or co-supervised by at least one faculty member and one
         indsutry expert.
+    </div>
+);
+
+const internshipContent = (
+    <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
+        Students are required to enroll in a year-long internship in Hong Kong,
+        the Greater Bay Area or Shanghai, normally in the second year of study.
+        Each internship will be co-supervised by one faculty member and one
+        industry expert. Students are required to complete the capstone project
+        while conducting the internship.
     </div>
 );
