@@ -22,11 +22,7 @@ export default async function handler(
 
         const idToGet = req.body.id;
 
-        console.log('idToGet', idToGet);
-
         const updatedNews = news.filter((article) => article.id === idToGet);
-
-        console.log('updatedNes', updatedNews);
 
         // Process your data here (e.g., modify articles or add new ones)
         // Assuming you want to return the articles

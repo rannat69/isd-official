@@ -24,10 +24,10 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
         setPhotosURL([]);
         setPhotoFilenames([]);
 
-        console.log('newsToEdit', newsToEdit);
+        let photosURLTemp: any[] = [];
+        let photosFilenamesTemp: any[] = [];
 
         if (newsToEdit) {
-            console.log('newsToEdit', newsToEdit);
             setTitle(newsToEdit.title);
             setDate(newsToEdit.date);
             setDetails(newsToEdit.details);
@@ -38,13 +38,25 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
             setEvtLocation(newsToEdit.evt_location);
 
             for (const photo of newsToEdit.pictures) {
-                const fileUrl = `/pictures/news_events/${photo}`;
+                let fileUrl = '';
+
+                if (photo.includes('/pictures')) {
+                    fileUrl = photo;
+                } else {
+                    fileUrl = `/pictures/news/${photo}`;
+                }
+
                 const url = { url: fileUrl, filename: photo };
 
-                photosURL.push(url);
+                photosURLTemp.push(url);
+                photosFilenamesTemp.push(fileUrl);
             }
 
-            setPhotosURL([...photosURL]);
+            console.log('photosURL', photosURLTemp);
+            console.log('photosFilenamesTemp', photosFilenamesTemp);
+
+            setPhotosURL(photosURLTemp);
+            setPhotoFilenames(photosFilenamesTemp);
         }
     }, [newsToEdit]);
 
@@ -169,12 +181,14 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
             // Optionally, reset fields
             setTitle('');
             setDetails('');
-            setPhotoFilenames([]);
-            setPhotos([]);
+
             setDate('');
             setEvtDate('');
             setEvtTime('');
             setEvtLocation('');
+            setPhotos([]);
+            setPhotosURL([]);
+            setPhotoFilenames([]);
         } else {
             console.error('Failed to create faculty');
         }
@@ -262,6 +276,8 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
             type,
         };
 
+        console.log('update photoFilenames', photoFilenames);
+
         const response = await fetch('/api/news/createNews', {
             method: 'POST',
             headers: {
@@ -276,8 +292,9 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
             // Optionally, reset fields
             setTitle('');
             setDetails('');
-            setPhotoFilenames([]);
             setPhotos([]);
+            setPhotosURL([]);
+            setPhotoFilenames([]);
             setDate('');
             setEvtDate('');
             setEvtTime('');
@@ -294,6 +311,10 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
 
         setPhotoFilenames([
             ...photoFilenames.filter((value) => value !== filename),
+        ]);
+
+        setPhotosURL([
+            ...photosURL.filter((value) => value.filename !== filename),
         ]);
     }
 
@@ -391,42 +412,38 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
                     Create
                 </button>
             )}
-            {photoFilenames.length > 0 && (
+            {photosURL.length > 0 && (
                 <div>
                     <p>Selected Images:</p>
-                    {photoFilenames.map((filename, index) => (
+                    {photosURL.map((file, index) => (
                         <div>
                             <div
                                 className="border-1 border-black text-center text-red-500 cursor-pointer font-bold"
-                                onClick={() => removePicture(filename)}
+                                onClick={() => removePicture(file.filename)}
                             >
                                 Remove picture
                             </div>
-                            <p key={index}>{filename}</p>
+                            <p key={index}>{file.filename}</p>
 
-                            <img
-                                style={{
-                                    width: '200px',
-                                    height: '200px',
-                                }}
-                                src={filename}
-                            ></img>
-                        </div>
-                    ))}
-
-                    {photosURL &&
-                        photosURL.map((photo, index) => (
-                            <div>
-                                Photos being added
+                            {file.filename.includes('/pictures') ? (
                                 <img
                                     style={{
                                         width: '200px',
                                         height: '200px',
                                     }}
-                                    src={photo}
+                                    src={file.filename}
                                 ></img>
-                            </div>
-                        ))}
+                            ) : (
+                                <img
+                                    style={{
+                                        width: '200px',
+                                        height: '200px',
+                                    }}
+                                    src={file.url}
+                                ></img>
+                            )}
+                        </div>
+                    ))}
                 </div>
             )}
         </div>

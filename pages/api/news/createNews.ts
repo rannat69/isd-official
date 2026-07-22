@@ -39,7 +39,11 @@ export default async function handler(
             date.getDate().toString().padStart(2, '0');
 
         for (const filename of req.body.photoFilenames) {
-            photoTemp.push('/pictures/news/' + folderName + '/' + filename);
+            if (!filename.includes('/pictures/news/')) {
+                photoTemp.push('/pictures/news/' + folderName + '/' + filename);
+            } else {
+                photoTemp.push(filename);
+            }
         }
 
         const formattedDetails = req.body.details.replaceAll('\n', ' \n ');
