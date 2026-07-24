@@ -70,7 +70,7 @@ export default function MEngDesignIntelBlock() {
     const content = [
         {
             id: 'edu-obj',
-            subheading: '',
+            subheading: ``,
             content: (
                 <div className="flex flex-col gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
@@ -240,13 +240,13 @@ export default function MEngDesignIntelBlock() {
                                             The key approach for program
                                             delivery is PBL, and the program is
                                             integrated with several industry
-                                            collaboration projects (ISDN5702) as
-                                            well as a capstone project
-                                            (ISDN6730) that requires students to
-                                            apply the learned skills to solve
-                                            real business problems, and deliver
-                                            design solutions in a practical,
-                                            portfolio-ready manner.
+                                            collaboration projects (ISDN5701 and
+                                            ISDN5702) as well as a capstone
+                                            project (ISDN6730) that requires
+                                            students to apply the learned skills
+                                            to solve real business problems, and
+                                            deliver design solutions in a
+                                            practical, portfolio-ready manner.
                                         </td>
                                     </tr>
                                 </tbody>
@@ -259,7 +259,7 @@ export default function MEngDesignIntelBlock() {
 
         {
             id: 'curriculum',
-            subheading: <span className="lg:inline hidden">Curriculum</span>,
+            subheading: <span className="">Curriculum</span>,
             content: (
                 <div className="flex flex-col lg:gap-component-gap">
                     <div className="flex flex-col gap-component-gap-sm">
@@ -304,9 +304,7 @@ export default function MEngDesignIntelBlock() {
         },
         {
             id: 'adm-app',
-            subheading: (
-                <div className="hidden lg:block">Admission & Application</div>
-            ),
+            subheading: <div className="">Admission & Application</div>,
             content: (
                 <div className="flex flex-col gap-component-gap  items-start">
                     <div className="flex flex-col gap-[24]">
@@ -432,7 +430,7 @@ export default function MEngDesignIntelBlock() {
                 {contentMenu.map((section, index) => (
                     <div key={index}>{section.content}</div>
                 ))}
-                <Select
+                {/*}<Select
                     triggerClassName="text-lg text-center cursor-pointer pb-[6px] text-isd-secondary border-b-3 border-isd-secondary flex items-center gap-[10px]"
                     className="lg:hidden"
                     options={menu.map((link) => ({
@@ -442,18 +440,37 @@ export default function MEngDesignIntelBlock() {
                     value={activeMenuId}
                     onChange={(value) => handleMenuClick(value as string)}
                     itemClassName="px-[12px] py-[12px] text-xl text-isd-font-2"
-                />
+                />*/}
 
                 {content.map((section, index) => (
                     <div
                         key={index}
                         id={section.id}
-                        className={`flex flex-col gap-[24px] ${
-                            activeMenuId === section.id ? '' : 'hidden'
-                        }`}
+                        className={`flex flex-col gap-[24px] block md:block lg:hidden `}
                     >
                         {section.subheading && (
                             <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
+                                {section.subheading}
+                            </h3>
+                        )}
+                        <div className="lg:text-md text-sm leading-[28px] text-isd-font-1">
+                            {section.content}
+                        </div>
+                    </div>
+                ))}
+
+                {content.map((section, index) => (
+                    <div
+                        key={index}
+                        id={section.id}
+                        className={`flex flex-col   ${
+                            activeMenuId === section.id
+                                ? 'lg:block'
+                                : 'lg:hidden'
+                        } hidden md:hidden `}
+                    >
+                        {section.subheading && (
+                            <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary mb-[24px]">
                                 {section.subheading}
                             </h3>
                         )}
@@ -512,6 +529,7 @@ const CurriculumContent = () => (
                         <div className="flex lg:flex-col flex-wrap text-center justify-center w-full">
                             <span>Capstone Project</span>
                             <span className="ml-1"> (6 credits)</span>
+                            <div className="lg:hidden">{capstoneContent}</div>
                         </div>
                     </div>
                     <div>
@@ -525,6 +543,7 @@ const CurriculumContent = () => (
                             <span>Internship Placement</span>
                             <span className="ml-1"> (6 credits)</span>
                         </div>
+                        <div className="lg:hidden">{internshipContent}</div>
                     </div>
                 </div>
                 <div className="text-sm flex gap-[6px] text-isd-font-3">
@@ -556,20 +575,28 @@ const CurriculumContent = () => (
 const coreCoursesContent = (
     <div className="flex flex-col text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
         <p>
-            <span className="font-bold text-[#36b1d3]">iProduct:</span> Product
-            Ideation and Development (ISDN5701)
+            <span className=" text-[#36b1d3]">
+                <span className="italic">i</span>Product
+            </span>
+            : Product Ideation and Development (ISDN5701)
         </p>
         <p>
-            <span className="font-bold text-[#98dd26]">iService:</span> Design
-            for Transformation (ISDN5702)
+            <span className=" text-[#98dd26]">
+                <span className="italic">i</span>Service
+            </span>
+            : Design for Transformation (ISDN5702)
         </p>
         <p>
-            <span className="font-bold text-[#e77f24]">iConnect:</span>Emerging
-            Technologies for Design Innovation (ISDN5703)
+            <span className=" text-[#e77f24]">
+                <span className="italic">i</span>Connect
+            </span>
+            : Emerging Technologies for Design Innovation (ISDN5703)
         </p>
         <p>
-            <span className="font-bold text-[#29cc59]">iMedia:</span>Transmedia
-            Design and Production (ISDN5704)
+            <span className=" text-[#29cc59]">
+                <span className="italic">i</span>Media
+            </span>
+            : Transmedia Design and Production (ISDN5704)
         </p>
     </div>
 );
@@ -577,18 +604,35 @@ const coreCoursesContent = (
 const electiveCoursesContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
         Students are required to complete 6-9 credits of bridging elective
-        courses, tailored to their academic backgrounds. Additionnally, they can
-        choose from a selection of 4i-related elective courses based on their
-        career aspirations and personal interests.{' '}
+        courses, including{' '}
+        <span className=" text-[#36b1d3]">
+            <span className="italic">i</span>Product
+        </span>
+        /<span className=" text-[#98dd26]">iService</span>: Design Identity and
+        Visual Communication (ISDN5711),{' '}
+        <span className=" text-[#e77f24]">
+            <span className="italic">i</span>
+            Connect
+        </span>
+        : Human Factors and Artificial Intelligence (ISDN5712),{' '}
+        <span className=" text-[#29cc59]">
+            <span className="italic">i</span>Media
+        </span>
+        : Big Data and Design Strategies for Media Communication (ISDN5713) ,
+        tailored to their academic backgrounds. Additionally, they can choose
+        from a selection of 4i-related elective courses based on their career
+        aspirations and personal interests.
     </div>
 );
 
 const capstoneContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
-        Students are required to complete a 6-credit capstone{' '}
-        <span className="font-bold text-[#704f97]">iProject (ISDN6730)</span>,
-        choosing one of the three specialisms: Product-design focused,
-        Service-design focused, or Research focused. Students will work
+        Students are required to complete a 6-credit capstone (
+        <span className=" text-[#704f97]">
+            <span className="italic">i</span>Project
+        </span>
+        : ISDN6730), choosing one of the three specialisms: Product-design
+        focused, Service-design focused, or Research focused. Students will work
         individually or in group on the capstone project.
         <br />
         <br />
@@ -603,10 +647,12 @@ const capstoneContent = (
 const internshipContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
         Students are required to enroll in a year-long internship{' '}
-        <span className="font-bold text-[#704f97]">(iProject :ISDN6740)</span>{' '}
-        in Hong Kong, the Greater Bay Area or Shanghai, normally in the second
-        year of study. Each internship will be co-supervised by one faculty
-        member and one industry expert. Students are required to complete the
-        capstone project while conducting the internship.
+        <span className="text-[#704f97]">
+            (<span className="italic">i</span>Project
+        </span>
+        : ISDN6740) in Hong Kong, the Greater Bay Area or Shanghai, normally in
+        the second year of study. Each internship will be co-supervised by one
+        faculty member and one industry expert. Students are required to
+        complete the capstone project while conducting the internship.
     </div>
 );
