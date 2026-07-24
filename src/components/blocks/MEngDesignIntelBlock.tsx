@@ -178,7 +178,7 @@ export default function MEngDesignIntelBlock() {
 
                     <div className="flex flex-col gap-[24px]">
                         <h2 className="lg:text-[36px] text-h2 leading-[36px] font-isd-font-1 text-isd-primary">
-                            Program characteristics
+                            Program Characteristics
                         </h2>
                         <div className="flex-1 flex flex-col gap-[12px]">
                             <table>
@@ -222,12 +222,13 @@ export default function MEngDesignIntelBlock() {
                                         <td className="p-[12px] border-x-2 border-x-white">
                                             A key differentiator, the program
                                             includes a dedicated year of
-                                            industry placement for full-time
-                                            students. This allows students to
-                                            gain real-world experience, build
-                                            professional networks, and enhance
-                                            their employability, creating a
-                                            seamless transition from academia to
+                                            industry placement (ISDN6740) for
+                                            full-time students. This allows
+                                            students to gain real-world
+                                            experience, build professional
+                                            networks, and enhance their
+                                            employability, creating a seamless
+                                            transition from academia to
                                             industry.
                                         </td>
                                     </tr>
@@ -239,13 +240,11 @@ export default function MEngDesignIntelBlock() {
                                             The key approach for program
                                             delivery is PBL, and the program is
                                             integrated with several industry
-                                            collaboration projects (ISDN5701
-                                            Product Ideation and Development and
-                                            ISDN5702 Design for Transformation)
-                                            as well as a capstone project that
-                                            requires students to apply the
-                                            learned skills to solve real
-                                            business problems, and deliver
+                                            collaboration projects (ISDN5702) as
+                                            well as a capstone project
+                                            (ISDN6730) that requires students to
+                                            apply the learned skills to solve
+                                            real business problems, and deliver
                                             design solutions in a practical,
                                             portfolio-ready manner.
                                         </td>
@@ -295,9 +294,9 @@ export default function MEngDesignIntelBlock() {
                         <CurriculumContent />
                     </div>
                     <div className="text-isd-font-3 text-sm">
-                        *Classes are normally held on weekday evenings from
-                        Monday to Friday; on Saturday mornings or afternoons.
-                        Each course typically meets once a week for
+                        Remarks: Classes are normally held on weekday evenings
+                        from Monday to Friday; on Saturday mornings or
+                        afternoons. Each course typically meets once a week for
                         approximately three hours. 
                     </div>
                 </div>
@@ -556,45 +555,58 @@ const CurriculumContent = () => (
 
 const coreCoursesContent = (
     <div className="flex flex-col text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
-        <p>Product Ideation and Development</p>
-        <p>Design for Transformation</p>
-        <p>Emerging Technologies for Design Innovation</p>
-        <p>Transmedia Design and Production</p>
+        <p>
+            <span className="font-bold text-[#36b1d3]">iProduct:</span> Product
+            Ideation and Development (ISDN5701)
+        </p>
+        <p>
+            <span className="font-bold text-[#98dd26]">iService:</span> Design
+            for Transformation (ISDN5702)
+        </p>
+        <p>
+            <span className="font-bold text-[#e77f24]">iConnect:</span>Emerging
+            Technologies for Design Innovation (ISDN5703)
+        </p>
+        <p>
+            <span className="font-bold text-[#29cc59]">iMedia:</span>Transmedia
+            Design and Production (ISDN5704)
+        </p>
     </div>
 );
 
 const electiveCoursesContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
         Students are required to complete 6-9 credits of bridging elective
-        courses within the 4i cluster areas, tailored to their academic
-        backgrounds. Additionnally, they can choose from a selection of
-        4i-related elective courses based on their career aspirations and
-        personal interests.{' '}
+        courses, tailored to their academic backgrounds. Additionnally, they can
+        choose from a selection of 4i-related elective courses based on their
+        career aspirations and personal interests.{' '}
     </div>
 );
 
 const capstoneContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
-        Students are required to complete a 6-credit capstone project, choosing
-        one of the three specialisms: Product-design focused, Service-design
-        focused, or Research focused. Students will work individually or in
-        group on the capstone project.
+        Students are required to complete a 6-credit capstone{' '}
+        <span className="font-bold text-[#704f97]">iProject (ISDN6730)</span>,
+        choosing one of the three specialisms: Product-design focused,
+        Service-design focused, or Research focused. Students will work
+        individually or in group on the capstone project.
         <br />
         <br />
         Each capstone project will be supervised by at least one faculty member.
         Students are encouraged to associate their internship training with
         their capstone projects, and in such cases, the capstone project will be
         supervised or co-supervised by at least one faculty member and one
-        indsutry expert.
+        industry expert.
     </div>
 );
 
 const internshipContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
-        Students are required to enroll in a year-long internship in Hong Kong,
-        the Greater Bay Area or Shanghai, normally in the second year of study.
-        Each internship will be co-supervised by one faculty member and one
-        industry expert. Students are required to complete the capstone project
-        while conducting the internship.
+        Students are required to enroll in a year-long internship{' '}
+        <span className="font-bold text-[#704f97]">(iProject :ISDN6740)</span>{' '}
+        in Hong Kong, the Greater Bay Area or Shanghai, normally in the second
+        year of study. Each internship will be co-supervised by one faculty
+        member and one industry expert. Students are required to complete the
+        capstone project while conducting the internship.
     </div>
 );
