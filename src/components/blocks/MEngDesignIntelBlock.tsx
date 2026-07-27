@@ -1,5 +1,5 @@
 'use client';
-import { Plus } from 'lucide-react';
+import { ArrowDown, ChevronDown, ChevronUp, Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
 import Breadcrumb from '../Breadcrumb';
@@ -175,7 +175,6 @@ export default function MEngDesignIntelBlock() {
                             </ul>
                         </div>
                     </div>
-
                     <div className="flex flex-col gap-[24px]">
                         <h2 className="lg:text-[36px] text-h2 leading-[36px] font-isd-font-1 text-isd-primary">
                             Program Characteristics
@@ -446,8 +445,40 @@ export default function MEngDesignIntelBlock() {
                     <div
                         key={index}
                         id={section.id}
-                        className={`flex flex-col gap-[24px] block md:block lg:hidden `}
+                        className={`flex flex-col gap-[24px] block md:block lg:hidden ${
+                            activeMenuId === section.id ? 'block' : 'hidden'
+                        }`}
                     >
+                        {/*Mobile*/}
+
+                        {activeMenuId === 'curriculum' && (
+                            <div
+                                onClick={() => setActiveMenuId('edu-obj')}
+                                className="relative w-full cursor-pointer bg-white "
+                            >
+                                <div className="py-5 text-center font-semibold text-isd-secondary">
+                                    <div>
+                                        <ChevronUp className="inline-block ml-[6px]" />
+                                    </div>
+                                    <div>Educational Objectives</div>
+                                </div>
+                            </div>
+                        )}
+
+                        {activeMenuId === 'adm-app' && (
+                            <div
+                                onClick={() => setActiveMenuId('curriculum')}
+                                className="relative w-full cursor-pointer bg-white "
+                            >
+                                <div className="py-5 text-center font-semibold text-isd-secondary">
+                                    <div>
+                                        <ChevronUp className="inline-block ml-[6px]" />
+                                    </div>
+                                    <div>Curriculum</div>
+                                </div>
+                            </div>
+                        )}
+
                         {section.subheading && (
                             <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
                                 {section.subheading}
@@ -456,6 +487,51 @@ export default function MEngDesignIntelBlock() {
                         <div className="lg:text-md text-sm leading-[28px] text-isd-font-1">
                             {section.content}
                         </div>
+
+                        {activeMenuId === 'edu-obj' && (
+                            <div
+                                onClick={() => {
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: 'smooth',
+                                    });
+
+                                    setTimeout(() => {
+                                        setActiveMenuId('curriculum');
+                                    }, 500);
+                                }}
+                            >
+                                <div className="py-5 text-center font-semibold text-isd-secondary">
+                                    <div>Curriculum</div>
+                                    <div>
+                                        <ChevronDown className="inline-block ml-[6px]" />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {activeMenuId === 'curriculum' && (
+                            <div
+                                onClick={() => {
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: 'smooth',
+                                    });
+                                    setTimeout(
+                                        () => setActiveMenuId('adm-app'),
+                                        500
+                                    );
+                                }}
+                                className="relative w-full cursor-pointer bg-white "
+                            >
+                                <div className="py-5 text-center font-semibold text-isd-secondary">
+                                    <div>Admission &amp; Application</div>
+                                    <div>
+                                        <ChevronDown className="inline-block ml-[6px]" />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ))}
 
@@ -469,6 +545,8 @@ export default function MEngDesignIntelBlock() {
                                 : 'lg:hidden'
                         } hidden md:hidden `}
                     >
+                        {/*Desktop*/}
+
                         {section.subheading && (
                             <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary mb-[24px]">
                                 {section.subheading}
