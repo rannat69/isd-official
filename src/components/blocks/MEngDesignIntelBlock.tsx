@@ -696,7 +696,7 @@ const electiveCoursesContent = (
         <span className=" text-[#29cc59]">
             <span className="italic">i</span>Media
         </span>
-        : Big Data and Design Strategies for Media Communication (ISDN5713) ,
+        : Big Data and Design Strategies for Media Communication (ISDN5713),
         tailored to their academic backgrounds. Additionally, they can choose
         from a selection of 4i-related elective courses based on their career
         aspirations and personal interests.
