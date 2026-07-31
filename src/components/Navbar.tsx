@@ -104,11 +104,6 @@ export default function Navbar() {
                         href: '/academics/early-admission',
                         pathnameKeyword: 'early-admission',
                     },
-                                   {
-                        name: 'MEng in Design Intelligence',
-                        href: '/academics/meng-in-design-intel',
-                        pathnameKeyword: 'meng-in-design-intel',
-                    },
                 ],
             },
         },
