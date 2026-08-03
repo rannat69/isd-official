@@ -1,5 +1,5 @@
 'use client';
-import { ArrowDown, ChevronDown, ChevronUp, Plus } from 'lucide-react';
+import { ArrowDown, ArrowUp, ChevronDown, ChevronUp, Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
 import Breadcrumb from '../Breadcrumb';
@@ -420,8 +420,89 @@ export default function MEngDesignIntelBlock() {
     ];
 
     return (
-        <>
-            {' '}
+        <div>
+            <div className="block md:block lg:hidden">
+                {activeMenuId === 'edu-obj' && (
+                    <button
+                        type="button"
+                        onClick={() => {
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth',
+                            });
+
+                            setTimeout(() => {
+                                setActiveMenuId('curriculum');
+                            }, 500);
+                        }}
+                        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                        aria-label="Educational Objectives"
+                    >
+                        <ArrowDown className="w-5 h-5 text-isd-secondary" />
+                    </button>
+                )}
+
+                {activeMenuId === 'curriculum' && (
+                    <>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+
+                                setTimeout(() => {
+                                    setActiveMenuId('edu-obj');
+                                }, 500);
+                            }}
+                            className="fixed bottom-50 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            aria-label="Educational Objectives"
+                        >
+                            <ArrowUp className="w-5 h-5 text-isd-secondary" />
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+
+                                setTimeout(() => {
+                                    setActiveMenuId('adm-app');
+                                }, 500);
+                            }}
+                            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            aria-label="Educational Objectives"
+                        >
+                            <ArrowDown className="w-5 h-5 text-isd-secondary" />
+                        </button>
+                    </>
+                )}
+
+                {activeMenuId === 'adm-app' && (
+                    <button
+                        type="button"
+                        onClick={() => {
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth',
+                            });
+
+                            setTimeout(() => {
+                                setActiveMenuId('curriculum');
+                            }, 500);
+                        }}
+                        className="fixed bottom-50 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                        aria-label="Educational Objectives"
+                    >
+                        <ArrowUp className="w-5 h-5 text-isd-secondary" />
+                    </button>
+                )}
+            </div>
+
             {activeMenuId === 'edu-obj' && (
                 <div className="lg:dot-pattern before:bottom-[-1110px] before:left-[-115px] [--dot-color:var(--isd-secondary-1)]" />
             )}
@@ -445,13 +526,12 @@ export default function MEngDesignIntelBlock() {
                     <div
                         key={index}
                         id={section.id}
-                        className={`flex flex-col gap-[24px] block md:block lg:hidden ${
-                            activeMenuId === section.id ? 'block' : 'hidden'
+                        className={`flex-col gap-[24px] lg:hidden ${
+                            activeMenuId === section.id ? 'flex' : 'hidden'
                         }`}
                     >
                         {/*Mobile*/}
-
-                        {activeMenuId === 'curriculum' && (
+                        {/*activeMenuId === 'curriculum' && (
                             <div
                                 onClick={() => setActiveMenuId('edu-obj')}
                                 className="relative w-full cursor-pointer bg-white "
@@ -463,9 +543,8 @@ export default function MEngDesignIntelBlock() {
                                     <div>Educational Objectives</div>
                                 </div>
                             </div>
-                        )}
-
-                        {activeMenuId === 'adm-app' && (
+                        )*/}
+                        {/*activeMenuId === 'adm-app' && (
                             <div
                                 onClick={() => setActiveMenuId('curriculum')}
                                 className="relative w-full cursor-pointer bg-white "
@@ -477,8 +556,7 @@ export default function MEngDesignIntelBlock() {
                                     <div>Curriculum</div>
                                 </div>
                             </div>
-                        )}
-
+                        )*/}
                         {section.subheading && (
                             <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary">
                                 {section.subheading}
@@ -487,8 +565,7 @@ export default function MEngDesignIntelBlock() {
                         <div className="lg:text-md text-sm leading-[28px] text-isd-font-1">
                             {section.content}
                         </div>
-
-                        {activeMenuId === 'edu-obj' && (
+                        {/*activeMenuId === 'edu-obj' && (
                             <div
                                 onClick={() => {
                                     window.scrollTo({
@@ -508,9 +585,8 @@ export default function MEngDesignIntelBlock() {
                                     </div>
                                 </div>
                             </div>
-                        )}
-
-                        {activeMenuId === 'curriculum' && (
+                        )*/}
+                        {/*activeMenuId === 'curriculum' && (
                             <div
                                 onClick={() => {
                                     window.scrollTo({
@@ -531,7 +607,7 @@ export default function MEngDesignIntelBlock() {
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        )*/}
                     </div>
                 ))}
 
@@ -539,14 +615,13 @@ export default function MEngDesignIntelBlock() {
                     <div
                         key={index}
                         id={section.id}
-                        className={`flex flex-col   ${
+                        className={`hidden ${
                             activeMenuId === section.id
-                                ? 'lg:block'
-                                : 'lg:hidden'
-                        } hidden md:hidden `}
+                                ? 'lg:flex lg:flex-col'
+                                : ''
+                        }`}
                     >
                         {/*Desktop*/}
-
                         {section.subheading && (
                             <h3 className="lg:text-[36px] text-h2 leading-[36px] text-isd-primary mb-[24px]">
                                 {section.subheading}
@@ -558,7 +633,7 @@ export default function MEngDesignIntelBlock() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 }
 

@@ -6,7 +6,7 @@ export default function HeroImageSmaller({
     image: StaticImageData;
 }) {
     return (
-        <div className="w-full relative overflow-hidden h-[200px] md:h-[400px] lg:h-[612px]">
+        <div className="w-full relative overflow-hidden h-[150px] md:h-[320px] lg:h-[550px]">
             <Image
                 src={image}
                 alt={`Hero Banner Image`}

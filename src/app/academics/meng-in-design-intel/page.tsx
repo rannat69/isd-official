@@ -1,4 +1,4 @@
-import HeroImageFile from '@/assets/academics/meng-design-intel/banner.jpg';
+import HeroImageFile from '@/assets/academics/meng-design-intel/meng.banner.jpg';
 
 import HeroImageSmaller from '@/components/HeroImageSmaller';
 import MEngDesignIntelBlock from '@/components/blocks/MEngDesignIntelBlock';
