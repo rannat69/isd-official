@@ -13,9 +13,9 @@ export default function Dashboard() {
 
     const [mode, setMode] = useState<string>('');
 
-    const [newsToEdit, setNewsToEdit] = useState<any>(null);
+    const [newsToEdit, setNewsToEdit] = useState(null);
 
-    const [editMode, setEditMode] = useState<any>(false);
+    const [editMode, setEditMode] = useState<boolean>(false);
 
     const authorisedUsers = ['remia', 'atomyuen', 'janet.liu'];
 

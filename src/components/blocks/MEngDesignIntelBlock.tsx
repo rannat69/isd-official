@@ -1,7 +1,7 @@
 'use client';
-import { ArrowDown, ArrowUp, ChevronDown, ChevronUp, Plus } from 'lucide-react';
+import { ArrowDown, ArrowUp, Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import Select from '@/components/Select';
+
 import Breadcrumb from '../Breadcrumb';
 import Image from 'next/image';
 import EduObj1 from '@/assets/academics/meng-design-intel/Picture1.png';

@@ -3,8 +3,13 @@
 import { useEffect, useState } from 'react';
 
 type Props = {
-    newsToEdit: any;
+    newsToEdit;
     editMode: boolean;
+};
+
+type UrlPicture = {
+    url: string;
+    filename;
 };
 
 export default function InsertNews({ newsToEdit, editMode }: Props) {
@@ -16,7 +21,7 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
     const [evtLocation, setEvtLocation] = useState('');
 
     const [photos, setPhotos] = useState<File[]>();
-    const [photosURL, setPhotosURL] = useState<any[]>([]);
+    const [photosURL, setPhotosURL] = useState<UrlPicture[]>([]);
     const [photoFilenames, setPhotoFilenames] = useState<string[]>([]);
     const [type, setType] = useState('news');
     useEffect(() => {
@@ -24,8 +29,8 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
         setPhotosURL([]);
         setPhotoFilenames([]);
 
-        let photosURLTemp: any[] = [];
-        let photosFilenamesTemp: any[] = [];
+        const photosURLTemp: UrlPicture[] = [];
+        const photosFilenamesTemp: string[] = [];
 
         if (newsToEdit) {
             setTitle(newsToEdit.title);
@@ -46,7 +51,7 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
                     fileUrl = `/pictures/news/${photo}`;
                 }
 
-                const url = { url: fileUrl, filename: photo };
+                const url: UrlPicture = { url: fileUrl, filename: photo };
 
                 photosURLTemp.push(url);
                 photosFilenamesTemp.push(fileUrl);
@@ -416,7 +421,7 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
                 <div>
                     <p>Selected Images:</p>
                     {photosURL.map((file, index) => (
-                        <div>
+                        <div key={index}>
                             <div
                                 className="border-1 border-black text-center text-red-500 cursor-pointer font-bold"
                                 onClick={() => removePicture(file.filename)}
