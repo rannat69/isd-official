@@ -423,7 +423,7 @@ export default function MEngDesignIntelBlock() {
         <div>
             <div className="block md:block lg:hidden">
                 {activeMenuId === 'edu-obj' && (
-                    <div className="fixed bottom-6 right-6 z-50 flex gap-2">
+                    <div className="fixed bottom-6 right-6 z-50 flex gap-x-8">
                         <button
                             type="button"
                             onClick={() => {
@@ -467,7 +467,7 @@ export default function MEngDesignIntelBlock() {
                 )}
 
                 {activeMenuId === 'curriculum' && (
-                    <div className="fixed bottom-6 right-6  z-50 flex gap-2">
+                    <div className="fixed bottom-6 right-6  z-50 flex gap-x-8">
                         <button
                             type="button"
                             onClick={() => {
@@ -510,7 +510,7 @@ export default function MEngDesignIntelBlock() {
                 )}
 
                 {activeMenuId === 'adm-app' && (
-                    <div className="fixed bottom-6 right-6  z-50 flex gap-2">
+                    <div className="fixed bottom-6 right-6  z-50 flex gap-x-8">
                         <button
                             type="button"
                             onClick={() => {
