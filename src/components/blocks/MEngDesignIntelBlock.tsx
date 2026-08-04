@@ -423,27 +423,7 @@ export default function MEngDesignIntelBlock() {
         <div>
             <div className="block md:block lg:hidden">
                 {activeMenuId === 'edu-obj' && (
-                    <button
-                        type="button"
-                        onClick={() => {
-                            window.scrollTo({
-                                top: 0,
-                                behavior: 'smooth',
-                            });
-
-                            setTimeout(() => {
-                                setActiveMenuId('curriculum');
-                            }, 500);
-                        }}
-                        className="fixed bottom-6 right-6 z-50 flex h-12  w-48  items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
-                        aria-label="Educational Objectives"
-                    >
-                        <div className="text-isd-secondary font-bold">Curriculum</div>
-                    </button>
-                )}
-
-                {activeMenuId === 'curriculum' && (
-                    <>
+                    <div className="fixed bottom-6 right-6 z-50 flex gap-2">
                         <button
                             type="button"
                             onClick={() => {
@@ -453,14 +433,14 @@ export default function MEngDesignIntelBlock() {
                                 });
 
                                 setTimeout(() => {
-                                    setActiveMenuId('edu-obj');
+                                    setActiveMenuId('curriculum');
                                 }, 500);
                             }}
-                            className="fixed bottom-50 right-6 z-50 flex h-12  w-48  items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            className="  h-12 w-36  items-center justify-center rounded-full bg-gray-100/[0.60]  shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
                             aria-label="Educational Objectives"
                         >
                             <div className="text-isd-secondary font-bold">
-                                Educational Objectives
+                                Curriculum
                             </div>
                         </button>
 
@@ -476,34 +456,101 @@ export default function MEngDesignIntelBlock() {
                                     setActiveMenuId('adm-app');
                                 }, 500);
                             }}
-                            className="fixed bottom-6 right-6 z-50 flex h-12  w-48  items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            className=" z-50 flex h-12  w-36  items-center justify-center rounded-full bg-gray-100/[0.60]  shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
                             aria-label="Educational Objectives"
                         >
                             <div className="text-isd-secondary font-bold">
-                                Admission & Application
+                                Admission
                             </div>
                         </button>
-                    </>
+                    </div>
+                )}
+
+                {activeMenuId === 'curriculum' && (
+                    <div className="fixed bottom-6 right-6  z-50 flex gap-2">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+
+                                setTimeout(() => {
+                                    setActiveMenuId('edu-obj');
+                                }, 500);
+                            }}
+                            className=" bottom-50      z-50 h-12  w-36  items-center justify-center rounded-full bg-gray-100/[0.60] shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            aria-label="Educational Objectives"
+                        >
+                            <div className="text-isd-secondary font-bold">
+                                Objectives
+                            </div>
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+
+                                setTimeout(() => {
+                                    setActiveMenuId('adm-app');
+                                }, 500);
+                            }}
+                            className=" z-50  h-12  w-36  items-center justify-center rounded-full bg-gray-100/[0.60]  shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            aria-label="Educational Objectives"
+                        >
+                            <div className="text-isd-secondary font-bold">
+                                Admission
+                            </div>
+                        </button>
+                    </div>
                 )}
 
                 {activeMenuId === 'adm-app' && (
-                    <button
-                        type="button"
-                        onClick={() => {
-                            window.scrollTo({
-                                top: 0,
-                                behavior: 'smooth',
-                            });
+                    <div className="fixed bottom-6 right-6  z-50 flex gap-2">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
 
-                            setTimeout(() => {
-                                setActiveMenuId('curriculum');
-                            }, 500);
-                        }}
-                        className="fixed bottom-50 right-6 z-50 flex h-12 w-48 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
-                        aria-label="Educational Objectives"
-                    >
-                        <div className="text-isd-secondary font-bold">Curriculum </div>
-                    </button>
+                                setTimeout(() => {
+                                    setActiveMenuId('edu-obj');
+                                }, 500);
+                            }}
+                            className="     z-50 h-12  w-36  items-center justify-center rounded-full bg-gray-100/[0.60] shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            aria-label="Educational Objectives"
+                        >
+                            <div className="text-isd-secondary font-bold">
+                                Objectives
+                            </div>
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+
+                                setTimeout(() => {
+                                    setActiveMenuId('curriculum');
+                                }, 500);
+                            }}
+                            className=" z-50  h-12 w-36 items-center justify-center rounded-full bg-gray-100/[0.60]  shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            aria-label="Educational Objectives"
+                        >
+                            <div className="text-isd-secondary font-bold">
+                                Curriculum{' '}
+                            </div>
+                        </button>
+                    </div>
                 )}
             </div>
 
