@@ -435,10 +435,10 @@ export default function MEngDesignIntelBlock() {
                                 setActiveMenuId('curriculum');
                             }, 500);
                         }}
-                        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                        className="fixed bottom-6 right-6 z-50 flex h-12  w-48  items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
                         aria-label="Educational Objectives"
                     >
-                        <ArrowDown className="w-5 h-5 text-isd-secondary" />
+                        <div className="text-isd-secondary font-bold">Curriculum</div>
                     </button>
                 )}
 
@@ -456,10 +456,12 @@ export default function MEngDesignIntelBlock() {
                                     setActiveMenuId('edu-obj');
                                 }, 500);
                             }}
-                            className="fixed bottom-50 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            className="fixed bottom-50 right-6 z-50 flex h-12  w-48  items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
                             aria-label="Educational Objectives"
                         >
-                            <ArrowUp className="w-5 h-5 text-isd-secondary" />
+                            <div className="text-isd-secondary font-bold">
+                                Educational Objectives
+                            </div>
                         </button>
 
                         <button
@@ -474,10 +476,12 @@ export default function MEngDesignIntelBlock() {
                                     setActiveMenuId('adm-app');
                                 }, 500);
                             }}
-                            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                            className="fixed bottom-6 right-6 z-50 flex h-12  w-48  items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
                             aria-label="Educational Objectives"
                         >
-                            <ArrowDown className="w-5 h-5 text-isd-secondary" />
+                            <div className="text-isd-secondary font-bold">
+                                Admission & Application
+                            </div>
                         </button>
                     </>
                 )}
@@ -495,10 +499,10 @@ export default function MEngDesignIntelBlock() {
                                 setActiveMenuId('curriculum');
                             }, 500);
                         }}
-                        className="fixed bottom-50 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
+                        className="fixed bottom-50 right-6 z-50 flex h-12 w-48 items-center justify-center rounded-full bg-gray-100 shadow-lg border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors"
                         aria-label="Educational Objectives"
                     >
-                        <ArrowUp className="w-5 h-5 text-isd-secondary" />
+                        <div className="text-isd-secondary font-bold">Curriculum </div>
                     </button>
                 )}
             </div>
