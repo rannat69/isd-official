@@ -5,10 +5,6 @@ import { Link2 } from 'lucide-react';
 export default function IDTCurriculumBlock() {
     const curriculumDetails = [
         {
-            year: '2022/2023',
-            href: 'https://ugadmin.hkust.edu.hk/prog_crs/ug/202223/pdf/22-23isdn.pdf',
-        },
-        {
             year: '2023/2024',
             href: 'https://ugadmin.hkust.edu.hk/prog_crs/ug/202324/pdf/23-24isdn.pdf',
         },
@@ -19,6 +15,10 @@ export default function IDTCurriculumBlock() {
         {
             year: '2025/2026',
             href: 'https://ugadmin.hkust.edu.hk/prog_crs/ug/202526/pdf/25-26isdn.pdf',
+        },
+        {
+            year: '2026/2027',
+            href: 'https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/26-27idt.pdf ',
         },
     ];
 
