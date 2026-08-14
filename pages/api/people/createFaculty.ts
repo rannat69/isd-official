@@ -33,6 +33,16 @@ export default async function handler(
 
         const formattedDetails = req.body.details.replaceAll('\n', ' \n ');
 
+        // create folder name with date yyyymmdd
+        const date = new Date();
+        const folderName =
+            date.getFullYear().toString() +
+            (date.getMonth() + 1).toString().padStart(2, '0') +
+            date.getDate().toString().padStart(2, '0');
+
+        const photoPath =
+            '/pictures/people/' + folderName + '/' + req.body.photoFilename;
+
         const newFaculty = {
             id: maxId + 1,
             name: req.body.name,
@@ -48,7 +58,7 @@ export default async function handler(
             keywords: req.body.keywords,
             link: req.body.link,
 
-            photo: '/pictures/people/' + req.body.photoFilename,
+            photo: photoPath,
 
             type: 'ISD Faculty',
             areas: [req.body.area],
