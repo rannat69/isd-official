@@ -206,12 +206,20 @@ export default function InsertFaculty() {
                     }
                 }}
             />
-wD            <button className="border-1 font-bold rounded-xl p-2" onClick={handleAddKeyword}>Add Keyword</button>
-            <div>
+            <button
+                className="border-1 font-bold rounded-xl p-2"
+                onClick={handleAddKeyword}
+            >
+                Add Keyword
+            </button>
+            <div className="flex flex-col">
                 {keywords.map((k, index) => (
-                    <span key={index} className="m-1">
-                        {k}
-                    </span>
+                    <>
+                        
+                        <span key={index} className="m-1">
+                            *{' '}{k}
+                        </span>
+                    </>
                 ))}
             </div>
             Details

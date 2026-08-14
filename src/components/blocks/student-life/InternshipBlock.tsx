@@ -121,6 +121,7 @@ export default function InternshipBlock() {
                                 key={index}
                                 title={intern.name}
                                 imageSrc={intern.pictures[0]}
+                                imageUrlSrc=''
                                 description={`Internship company: ${intern.company}\nInternship period: ${intern.period}`}
                                 onClick={() => setReadMore(intern)}
                             />

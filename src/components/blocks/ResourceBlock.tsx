@@ -23,6 +23,7 @@ export default function ResourceBlock() {
                 <>
                     <ImageCard
                         imageSrc={ExcangeImg}
+                        imageUrlSrc={''}
                         title="Internship & Exchange"
                         link="/academics/internship"
                         description="ISD students can enjoy a range of internship opportunities offered by our industrial partners, and participate in exchange program coordinated by Academy of Interdisciplinary Studies."
@@ -32,6 +33,7 @@ export default function ResourceBlock() {
                 <>
                     <ImageCard
                         imageSrc={FacilitiesImg}
+                        imageUrlSrc={''}
                         title="Facilities"
                         link="/academics/facilities"
                         description="The division has two main design and prototyping facilities. The Design Studio is a teaching unit as well as a small 3D printing unit with small hand tools. Most of the first year design classes are held in the Design Studio."

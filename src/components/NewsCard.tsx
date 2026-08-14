@@ -101,7 +101,7 @@ export default function NewsCard({
                 </div>
                 <div className="flex-1 flex flex-col gap-[12px]">
                     <p className="text-h2 text-secondary">{category}</p>
-                    <h2 className="text-h2 text-primary">{title}</h2>
+                    <h2 className="text-h2 text-primary">{title}--DESK</h2>
                     <p className="text-md text-isd-font-3 line-clamp-3">
                         {excerpt}
                     </p>
@@ -114,7 +114,7 @@ export default function NewsCard({
                     link={href}
                     title={
                         <span className="text-md overflow-hidden break-words line-clamp-2 pr-[12px]">
-                            {title}
+                            {title}---MOBIL
                         </span>
                     }
                     description={
@@ -127,6 +127,7 @@ export default function NewsCard({
                         </>
                     }
                     imageSrc={image}
+                    imageUrlSrc={imageUrl}
                 />
             </div>
         </>

@@ -147,6 +147,7 @@ export default function EventCard({
                         </>
                     }
                     imageSrc={image}
+                    imageUrlSrc={imageUrl}
                 />
             </div>
         </>

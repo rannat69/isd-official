@@ -322,6 +322,7 @@ export default function StudentCompetitionsBlock() {
                                 key={index}
                                 title={comp.name}
                                 imageSrc={resolveCompPhoto(comp.picture)}
+                                imageUrlSrc=''
                                 description={comp.description}
                                 onClick={() => setReadMore(comp)}
                                 lineLimit={2}

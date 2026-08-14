@@ -5,6 +5,7 @@ import { StaticImageData } from 'next/image';
 
 export default function ImageCard({
     imageSrc,
+    imageUrlSrc,
     title,
     link = '#',
     onClick,
@@ -12,6 +13,7 @@ export default function ImageCard({
     lineLimit,
 }: {
     imageSrc: StaticImageData | string;
+    imageUrlSrc: string;
     title: React.ReactNode;
     link?: string;
     onClick?: () => void;
@@ -27,15 +29,37 @@ export default function ImageCard({
         5: 'line-clamp-5',
     };
 
+    const imageStyle = {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover' as const,
+    };
+
+    const srcString = typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+    const isNoneImg = srcString.includes('noneImg');
+
     const content = () => (
         <div className="flex flex-col rounded-xl border border-isd-primary-3 cursor-pointer h-full overflow-hidden">
-            <Image
-                src={imageSrc}
-                alt={imageSrc.toString()}
-                className="h-[15.75rem] w-full object-cover rounded-t-lg"
-                width={500}
-                height={300}
-            />
+            {!isNoneImg && imageUrlSrc.length > 0 && (
+                <Image src={imageUrlSrc} alt={`${title}`} style={imageStyle} />
+            )}
+
+            {!isNoneImg && imageUrlSrc.length === 0 && (
+                <Image
+                    src={imageSrc} // Accepts either StaticImageData or string natively in Next.js
+                    alt={`-${title}-`}
+                    style={imageStyle}
+                />
+            )}
+
+            {isNoneImg && (
+                <img
+                    src={imageUrlSrc}
+                    alt={`--${title}--`}
+                    style={imageStyle}
+                />
+            )}
+
             <div className="flex-1">
                 <div className="py-element-gap px-[14px] flex flex-col gap-element-gap h-full">
                     <div className="flex flex-row text-primary items-center">

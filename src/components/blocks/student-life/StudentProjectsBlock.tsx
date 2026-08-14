@@ -576,6 +576,7 @@ export default function StudentProjectsBlock() {
                                 key={index}
                                 title={comp.name}
                                 imageSrc={resolveProjPhoto(comp.picture[0])}
+                                imageUrlSrc=''
                                 description={comp.shortDescription}
                                 onClick={() => setReadMore(comp)}
                                 lineLimit={2}

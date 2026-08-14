@@ -7,6 +7,7 @@ export default function AcademicsPage() {
     return (
         <div className="min-h-screen flex flex-col">
             <HeroImage image={HeroImageFile} />
+
             <ProgramBlock />
             <ResourceBlock />
         </div>
