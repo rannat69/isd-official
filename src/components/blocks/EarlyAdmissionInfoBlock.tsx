@@ -137,12 +137,9 @@ export default function EarlyAdmissionInfoBlock() {
                         </span>{' '}
                         focuses on identifying top MPhil and PhD applicants
                         through brief interviews. To apply, complete{' '}
-                        <a
-                            href="/resources/PG.Early.Admission.application.form_Fall2027.docx"
-                            className="font-bold text-isd-secondary underline"
-                        >
-                            the preliminary application form
-                        </a>
+                        <span className="font-bold text-isd-secondary underline">
+                            (registration for early admission has closed)
+                        </span>
                         . Early admission interviews will be held starting
                         October 2026. Candidates will receive interview results
                         within one to two weeks post-interview. Even after Phase
@@ -220,7 +217,7 @@ export default function EarlyAdmissionInfoBlock() {
         {
             subheading: "We're Here to Help!",
             content: (
-            <p className="lg:text-lg text-sm">
+                <p className="lg:text-lg text-sm">
                     Have questions? We’re just an email away at{' '}
                     <a
                         href="mailto:isdpg@ust.hk"
@@ -245,7 +242,9 @@ export default function EarlyAdmissionInfoBlock() {
                             <p className="text-h2 leading-[32px]">
                                 {item.question}
                             </p>
-                            <p className="lg:text-h2 text-sm text-isd-font-3">{item.answer}</p>
+                            <p className="lg:text-h2 text-sm text-isd-font-3">
+                                {item.answer}
+                            </p>
                         </div>
                     ))}
                 </div>
