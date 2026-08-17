@@ -136,7 +136,7 @@ export default function EarlyAdmissionInfoBlock() {
                             Early Recruiting (Phase One)
                         </span>{' '}
                         focuses on identifying top MPhil and PhD applicants
-                        through brief interviews. To apply, complete{' '}
+                        through brief interviews. To apply, complete the preliminary application form{' '}
                         <span className="font-bold text-isd-secondary underline">
                             (registration for early admission has closed)
                         </span>
