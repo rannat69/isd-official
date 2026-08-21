@@ -18,7 +18,7 @@ export default function ProgramBlock() {
         },
         {
             heading: 'Postgraduate',
-            content: 'Msc in Technology Leadership and Entrepreneurship',
+            content: 'MSc in Technology Leadership and Entrepreneurship',
             link: '/academics/msc-tle',
         },
         {

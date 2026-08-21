@@ -202,13 +202,13 @@ export default function MSTLEBlock() {
                             Policy, as well as a 9-credit project course. <br />
                             For details, please refer to the {' '}
                             <span className="text-isd-secondary font-[700] underline">
-                                <a href="https://prog-crs.hkust.edu.hk/pgprog/2024-25/msc-tle">
+                                <a href="https://prog-crs.hkust.edu.hk/pgprog/2027-28/msc-tle">
                                     Postgraduate Program
                                 </a>
                             </span>
                             , 
                             <span className="text-isd-secondary font-[700] underline">
-                                <a href="https://prog-crs.hkust.edu.hk/pgcourse/2022-23/MTLE">
+                                <a href="https://prog-crs.hkust.edu.hk/pgcourse/2026-27/MTLE">
                                     Course Catalog
                                 </a>
                             </span>
@@ -263,18 +263,19 @@ export default function MSTLEBlock() {
                                 Apply Now
                             </div>
                         </a>
-                        <div className="flex flex-col gap-[24]">
-                            <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
-                                Program Fee{' '}
-                            </h3>
+                    </div>
 
-                            <p className="text-isd-font-1">
-                                The nominal program fee for 2027/28 Fall intake
-                                is HK$300,000 (full-time study to be paid in 2
-                                installments and part-time study to be paid in 4
-                                installments).
-                            </p>
-                        </div>
+                    <div className="flex flex-col gap-[24]">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                            Program Fee{' '}
+                        </h3>
+
+                        <p className="text-isd-font-1">
+                            The nominal program fee for 2027/28 Fall intake is
+                            HK$300,000 (full-time study to be paid in 2
+                            installments and part-time study to be paid in 4
+                            installments).
+                        </p>
                     </div>
                     <div className="flex flex-col gap-[24]">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
