@@ -333,6 +333,17 @@ export default function MEngDesignIntelBlock() {
                             </div>
                         </a>
                     </div>
+
+                    <div className="flex flex-col gap-[24]">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                            Program Fee
+                        </h3>
+                        <p className="text-isd-font-1">
+                            The nominal program fee for 2027/28 Fall intake is
+                            HK$400,000 (paid in 2 installments).
+                        </p>
+                    </div>
+
                     <div className="flex flex-col gap-[24]">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Faculty Members
