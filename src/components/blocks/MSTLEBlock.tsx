@@ -327,7 +327,7 @@ export default function MSTLEBlock() {
                                             Address
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
-                                            Room 5591, Lift 29-30, The Hong Kong
+                                            Room 5313, 5/F, Lift 3, The Hong Kong
                                             University of Science and
                                             Technology, Clear Water Bay, Hong
                                             Kong

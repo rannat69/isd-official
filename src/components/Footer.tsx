@@ -83,7 +83,7 @@ export default function Footer() {
         {
             title: 'Division of Integrative Systems and Design',
             subtexts: [
-                'Location: Room 5591, Lift 29-30, The Hong Kong University of Science and Technology, Clear Water Bay, Hong Kong',
+                'Location: Room 5313, 5/F, Lift 3, The Hong Kong University of Science and Technology, Clear Water Bay, Hong Kong',
                 'Tel: +852 3469 2723',
                 'Fax: +852 3521 0943',
                 'Email: isd@ust.hk',
