@@ -57,6 +57,8 @@ const staffPositionOrder = [
     'officer',
     'senior technical officer',
     'technical officer',
+    'research engineer',
+    'assistant research engineer',
     'teaching associate',
     'instructional assistant',
 ];
