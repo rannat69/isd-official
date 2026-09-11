@@ -146,7 +146,7 @@ export default function IDTAdmissionBlock() {
                                     >
                                         International
                                     </Link>
-                                    /
+                                    /{' '}
                                     <Link
                                         href="https://join.hkust.edu.hk/admissions/post-secondary"
                                         className="underline text-secondary font-bold cursor-pointer"
