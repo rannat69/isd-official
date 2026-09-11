@@ -273,7 +273,7 @@ export default function MEngDesignIntelBlock() {
                             Placement (6 credits). <br />
                             For details, please refer to the {' '}
                             <span className="text-isd-secondary font-[700] underline">
-                                <a href="https://prog-crs.hkust.edu.hk/pgprog?token_post=58511409b721808ed781ce06aa81c6e1&is_s=Y&keyword=&school%5B%5D=SSCI&school%5B%5D=SENG&school%5B%5D=SBM&school%5B%5D=SHSS&school%5B%5D=IPO&area%5B%5D=1&area%5B%5D=7&area%5B%5D=11&area%5B%5D=12&area%5B%5D=3&area%5B%5D=13&area%5B%5D=14&area%5B%5D=16&area%5B%5D=8&area%5B%5D=9&area%5B%5D=10&check-all-degree-option=Y&check-allsub-degree-option1=Y&degree%5B%5D=MPHIL&degree%5B%5D=PHD&check-allsub-degree-option2=Y&degree%5B%5D=MENG&degree%5B%5D=DBA&degree%5B%5D=MBA&degree%5B%5D=MSC&degree%5B%5D=MA&degree%5B%5D=MPM&degree%5B%5D=MPP&degree%5B%5D=PGD&year=2026-27">
+                                <a href="https://prog-crs.hkust.edu.hk/pgprog/2027-28/meng-di">
                                     Postgraduate Program
                                 </a>
                             </span>
@@ -394,8 +394,8 @@ export default function MEngDesignIntelBlock() {
                                             Address
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
-                                            Room 5313, 5/F, Lift 3, The Hong Kong
-                                            University of Science and
+                                            Room 5313, 5/F, Lift 3, The Hong
+                                            Kong University of Science and
                                             Technology, Clear Water Bay, Hong
                                             Kong
                                         </td>
