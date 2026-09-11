@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function IDTAdmissionBlock() {
     return (
         <div className="flex flex-col gap-component-gap text-md">
@@ -48,7 +50,7 @@ export default function IDTAdmissionBlock() {
                                     DTP to{' '}
                                     <a
                                         href="https://ust.az1.qualtrics.com/jfe/form/SV_emTI9Oi6WBIDsvc"
-                                        className="underline text-secondary font-bold"
+                                        className="underline text-secondary font-bold cursor-pointer"
                                     >
                                         the online DTP submission system
                                     </a>
@@ -70,7 +72,7 @@ export default function IDTAdmissionBlock() {
                                                 Application Opens
                                             </td>
                                             <td className="p-[12px] border-x-2 border-white">
-                                                9 October 2025
+                                                7 October 2026
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-secondary-1 text-secondary">
@@ -78,7 +80,7 @@ export default function IDTAdmissionBlock() {
                                                 Application Closes
                                             </td>
                                             <td className="p-[12px] border-x-2 border-white">
-                                                3 December 2025
+                                                2 December 2026
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-primary-2 text-primary">
@@ -86,16 +88,16 @@ export default function IDTAdmissionBlock() {
                                                 DTP Submission Period
                                             </td>
                                             <td className="p-[12px] border-x-2 border-white">
-                                                9 October 2025 - 27 May 2026
+                                                7 October 2026 - 26 May 2027
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-secondary-1 text-secondary">
                                             <td className="p-[12px] border-x-2 border-white">
-                                                Modification of program choices
-                                                by students
+                                                Deadline for modification of
+                                                program choices by students
                                             </td>
                                             <td className="p-[12px] border-x-2 border-white">
-                                                27 May 2026
+                                                26 May 2027
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-primary-2 text-primary">
@@ -103,10 +105,10 @@ export default function IDTAdmissionBlock() {
                                                 DTP Submission Period
                                                 <br />
                                                 (for New Applicants who apply
-                                                for IDT between 16-18 Jul 2026)
+                                                for IDT between 14-16 Jul 2027)
                                             </td>
                                             <td className="p-[12px] border-x-2 border-white">
-                                                16-18 July 2026
+                                                14-16 July 2027
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-secondary-1 text-secondary">
@@ -114,7 +116,7 @@ export default function IDTAdmissionBlock() {
                                                 JUPAS Offer Announcement
                                             </td>
                                             <td className="p-[12px] border-x-2 border-white">
-                                                5 August 2026
+                                                4 August 2027
                                             </td>
                                         </tr>
                                     </tbody>
@@ -134,65 +136,25 @@ export default function IDTAdmissionBlock() {
                                     submit their DTP by the application deadline
                                     will not be considered for the admission.
                                 </p>
-                                <table className="w-fit">
-                                    <tbody className="text-isd-font-1">
-                                        <tr className="bg-isd-primary-2 text-primary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Application Opens
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                3 October 2025
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-secondary-1 text-secondary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Early Round Application Closes
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                20 November 2025
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-primary-2 text-primary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Early Round Offer Announcements
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Late December 2025 <br />
-                                                (Applicants who do not receive
-                                                our offer will be considered in
-                                                the main round with other
-                                                applicants)
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-secondary-1 text-secondary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Main Round Application Closes
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                8 January 2026
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-primary-2 text-primary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Main Round Offer Announcements
-                                                <br />
-                                                (for New Applicants who apply
-                                                for IDT between 16-18 Jul 2026)
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                February 2026 and onwards
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-secondary-1 text-secondary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Late Round Application Closes
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                30 June 2026
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+
+                                <p>
+                                    Please refer to Undergraduate Admissions
+                                    website (
+                                    <Link
+                                        href="https://join.hkust.edu.hk/admissions/international-qualifications"
+                                        className="underline text-secondary font-bold cursor-pointer"
+                                    >
+                                        International
+                                    </Link>
+                                    /
+                                    <Link
+                                        href="https://join.hkust.edu.hk/admissions/post-secondary"
+                                        className="underline text-secondary font-bold cursor-pointer"
+                                    >
+                                        Post-secondary
+                                    </Link>
+                                    ) for the timeline.
+                                </p>
                             </div>
                             <div className="flex flex-col gap-3">
                                 <p className="font-bold text-primary">
@@ -209,34 +171,17 @@ export default function IDTAdmissionBlock() {
                                     deadline will not be considered for the
                                     admission.
                                 </p>
-                                <table className="w-fit">
-                                    <tbody className="text-isd-font-1">
-                                        <tr className="bg-isd-primary-2 text-primary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Application Opens
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                3 October 2025
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-secondary-1 text-secondary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Application Closes
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                10 June 2026
-                                            </td>
-                                        </tr>
-                                        <tr className="bg-isd-primary-2 text-primary">
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                HKUST Offer Announcements
-                                            </td>
-                                            <td className="p-[12px] border-x-2 border-white">
-                                                Late June to Early July 2026
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <p>
+                                    Please refer to{' '}
+                                    <Link
+                                        href="https://join.hkust.edu.hk/admissions/gaokao"
+                                        className="underline text-secondary font-bold cursor-pointer"
+                                    >
+                                        Undergraduate Admissions website
+                                        (JEE){' '}
+                                    </Link>
+                                    for the timeline.
+                                </p>
                             </div>
                             <div className="flex flex-col gap-3">
                                 <p className="font-bold text-primary">
@@ -459,7 +404,6 @@ export default function IDTAdmissionBlock() {
                                 communication skills into action and on display.
                             </p>
                         </div>
-           
                     </div>
                 </div>
             </div>
