@@ -94,6 +94,12 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
                 photoFilenames.push(file.name);
             }
 
+            // order photoFilenames by name
+            photoFilenames.sort((a, b) => {
+                console.log('comparing', a, b);
+                return a.localeCompare(b);
+            });
+
             console.log('photo filenames', photoFilenames);
 
             setPhotoFilenames([...photoFilenames]);
