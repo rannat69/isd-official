@@ -13,32 +13,34 @@ export default function ProgramBlock() {
         },
         {
             heading: 'Undergraduate',
-            content: 'Entrepreneurship',
+            content: 'Entrepreneurship Minor',
             link: '/academics/entrepreneurship',
         },
+
         {
-            heading: 'Postgraduate',
-            content: 'MSc in Technology Leadership and Entrepreneurship',
-            link: '/academics/msc-tle',
-        },
-        {
-            heading: 'Postgraduate',
+            heading: 'Research Postgraduate',
             content: 'MPhil in Technology Innovation and Entrepreneurship',
             link: '/academics/mphil-in-tie',
         },
         {
-            heading: 'Postgraduate',
+            heading: 'Research Postgraduate',
             content: 'MPhil & PhD Program',
             link: '/academics/rpg',
         },
         {
-            heading: 'Postgraduate',
-            content: 'Early Admissions Scheme',
+            heading: 'Research Postgraduate',
+            content: 'Early Admissions Scheme (MPhil & PhD Program)',
             link: '/academics/early-admission',
         },
         {
-            heading: 'Postgraduate',
-            content: 'MEng in Design Intelligence',
+            heading: 'Taught Postgraduate',
+            content: 'MSc in Technology Leadership and Entrepreneurship (TLE)',
+            link: '/academics/msc-tle',
+        },
+
+        {
+            heading: 'Taught Postgraduate',
+            content: 'MEng in Design Intelligence (DI)',
             link: '/academics/meng-in-design-intel',
         },
     ];
@@ -49,7 +51,7 @@ export default function ProgramBlock() {
                 <h1 className="text-h1 offset-text-background uppercase">
                     Programs
                 </h1>
-                <div className="grid lg:grid-cols-4 justify-center items-center gap-[48px] lg:gap-section-title-gap">
+                <div className="grid lg:grid-cols-3 justify-center items-center gap-[48px] lg:gap-section-title-gap">
                     {programsInfo.map((program, index) => (
                         <TextCard
                             key={index}

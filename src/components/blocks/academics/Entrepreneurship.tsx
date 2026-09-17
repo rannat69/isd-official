@@ -63,10 +63,7 @@ export default function EntrepreneurshipBlock() {
                     <div className="flex flex-col">
                         <div className="gap-element-gap flex flex-col">
                             <Breadcrumb
-                                titles={[
-                                    'Entrepreneurship',
-                                    'Entrepreneurship Minor',
-                                ]}
+                                titles={['Academics', 'Entrepreneurship Minor']}
                             />
                             <h1 className="text-h1 offset-text-background text-pretty ">
                                 Entrepreneurship Minor
@@ -1570,12 +1567,7 @@ export default function EntrepreneurshipBlock() {
 
         {
             id: 'entr-brief',
-            subheading: (
-                <span>
-                    {' '}
-                    Brief ENTR Course Descriptions
-                </span>
-            ),
+            subheading: <span> Brief ENTR Course Descriptions</span>,
             content: (
                 <div className="flex flex-col gap-[24px]">
                     <div className="flex-1 flex flex-col gap-[12px]">
