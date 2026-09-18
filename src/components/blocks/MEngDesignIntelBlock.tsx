@@ -345,15 +345,15 @@ export default function MEngDesignIntelBlock() {
                         </a>
                     </div>
 
-                    <div className="flex flex-col gap-[24]">
+                    <div className="flex flex-col gap-[24] w-full">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Program Fee
                         </h3>
 
-                        <table className="w-full table-fixed">
+                        <table className="w-full table-auto">
                             <tbody className="leading-[16px] text-[12px]">
                                 <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
+                                    <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                         Normative Program Duration{' '}
                                     </td>
                                     <td className="p-[12px] border-x-2 border-x-white">
@@ -361,7 +361,7 @@ export default function MEngDesignIntelBlock() {
                                     </td>
                                 </tr>
                                 <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
+                                    <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                         Mode of Study
                                     </td>
                                     <td className="p-[12px] border-x-2 border-x-white">
@@ -369,7 +369,7 @@ export default function MEngDesignIntelBlock() {
                                     </td>
                                 </tr>
                                 <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white">
+                                    <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                         Program Fee
                                     </td>
                                     <td className="p-[12px] border-x-2 border-x-white">
@@ -454,7 +454,7 @@ export default function MEngDesignIntelBlock() {
                         </p>
                     </div>
 
-                    <div className="flex flex-col gap-[24]">
+                    <div className="flex flex-col gap-[24] w-full">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Application Deadlines
                         </h3>
@@ -464,17 +464,18 @@ export default function MEngDesignIntelBlock() {
                                 For 2027/28 Fall Term Intake (commencing in Sep
                                 2027):
                             </p>
-                            <table className="w-full table-fixed">
+
+                            <table className="w-full overflow-x-auto">
                                 <tbody className="leading-[16px] text-[12px]">
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                             Round 1
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
                                             1 December 2026
                                         </td>
                                     </tr>
-                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md w-px whitespace-nowrap">
                                         <td className="p-[12px] border-x-2 border-x-white">
                                             Round 2
                                         </td>
@@ -483,7 +484,7 @@ export default function MEngDesignIntelBlock() {
                                         </td>
                                     </tr>
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                             Round 3
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
@@ -509,16 +510,16 @@ export default function MEngDesignIntelBlock() {
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-[24]">
+                    <div className="flex flex-col gap-[24] w-full">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Contact Us{' '}
                         </h3>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
-                            <table className="w-full table-fixed">
+                            <table className="w-full table-auto">
                                 <tbody className="leading-[16px] text-[12px]">
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                             Email
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
@@ -528,7 +529,7 @@ export default function MEngDesignIntelBlock() {
                                         </td>
                                     </tr>
                                     <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                             Tel
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
@@ -536,7 +537,7 @@ export default function MEngDesignIntelBlock() {
                                         </td>
                                     </tr>
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                             Address
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
@@ -547,7 +548,7 @@ export default function MEngDesignIntelBlock() {
                                         </td>
                                     </tr>
                                     <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                             Social Media
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
