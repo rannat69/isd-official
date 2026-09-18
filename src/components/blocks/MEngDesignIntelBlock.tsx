@@ -519,7 +519,7 @@ export default function MEngDesignIntelBlock() {
                         </h3>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
-                            <div className="w-full  md:w-[90%] lg:w-[80%] overflow-x-auto mx-auto">
+                            <div className="w-full  md:w-[90%] lg:w-[81%] overflow-x-auto mx-auto">
                                 <table className="w-full table-auto ">
                                     <tbody className="leading-[16px] text-[12px]">
                                         <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
