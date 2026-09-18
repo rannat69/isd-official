@@ -314,26 +314,28 @@ export default function MEngDesignIntelBlock() {
             content: (
                 <div className="flex flex-col gap-component-gap  items-start">
                     <div className="flex flex-col gap-[24]">
-                        <div>
-                            <p className="text-isd-font-1">
-                                Applicants should have obtained a
-                                bachelor&apos;s degree in design, technological
-                                areas, business, or related disciplines (e.g.,
-                                communication, multimedia, psychology or
-                                ergonomics), from a recognized institution, or
-                                an approved equivalent qualification. For other
-                                general admission requirements of the University
-                                as well as then English Proficiency
-                                Requirements, please refer to HKUST Fok Ying
-                                Tung Graduate School.  {' '}
-                                <span className="text-isd-secondary font-[700] underline cursor-pointer">
-                                    <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
-                                        HKUST Fok Ying Tung Graduate School
-                                    </a>
-                                </span>
-                                .
-                            </p>
-                        </div>
+                        <p className="text-isd-font-1">
+                            Applicants should have obtained a bachelor&apos;s
+                            degree in design, technological areas, business, or
+                            related disciplines (e.g., communication,
+                            multimedia, psychology or ergonomics), from a
+                            recognized institution, or an approved equivalent
+                            qualification.
+                        </p>
+
+                        <p>
+                            For other general admission requirements of the
+                            University as well as then English Proficiency
+                            Requirements, please refer to HKUST Fok Ying Tung
+                            Graduate School.  {' '}
+                            <span className="text-isd-secondary font-[700] underline cursor-pointer">
+                                <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
+                                    HKUST Fok Ying Tung Graduate School
+                                </a>
+                            </span>
+                            .
+                        </p>
+
                         <a
                             className="cursor-pointer"
                             href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/online-application"
@@ -352,6 +354,36 @@ export default function MEngDesignIntelBlock() {
                             The nominal program fee for 2027/28 Fall intake is
                             HK$400,000 (paid in 2 installments).
                         </p>
+
+                        <table className="w-full table-fixed">
+                            <tbody className="leading-[16px] text-[12px]">
+                                <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                    <td className="p-[12px] border-x-2 border-x-white">
+                                        Normative Program Duration{' '}
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-x-white">
+                                        2 Years
+                                    </td>
+                                </tr>
+                                <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                    <td className="p-[12px] border-x-2 border-x-white">
+                                        Mode of Study
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-x-white">
+                                        Full-time
+                                    </td>
+                                </tr>
+                                <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                    <td className="p-[12px] border-x-2 border-x-white">
+                                        Program Fee
+                                    </td>
+                                    <td className="p-[12px] border-x-2 border-x-white">
+                                        HK$400,000 for 2027/28 Fall intake (paid
+                                        in 2 installments)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div className="flex flex-col gap-[24]">
@@ -437,7 +469,7 @@ export default function MEngDesignIntelBlock() {
                                 For 2027/28 Fall Term Intake (commencing in Sep
                                 2027):
                             </p>
-                            <table className="w-[60vw]">
+                            <table className="w-full table-fixed">
                                 <tbody className="leading-[16px] text-[12px]">
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md">
                                         <td className="p-[12px] border-x-2 border-x-white">
@@ -488,7 +520,7 @@ export default function MEngDesignIntelBlock() {
                         </h3>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
-                            <table className="w-[60vw]">
+                            <table className="w-full table-fixed">
                                 <tbody className="leading-[16px] text-[12px]">
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
                                         <td className="p-[12px] border-x-2 border-x-white">
