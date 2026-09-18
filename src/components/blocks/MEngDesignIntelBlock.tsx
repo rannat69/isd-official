@@ -326,8 +326,7 @@ export default function MEngDesignIntelBlock() {
                         <p>
                             For other general admission requirements of the
                             University as well as then English Proficiency
-                            Requirements, please refer to HKUST Fok Ying Tung
-                            Graduate School.  {' '}
+                            Requirements, please refer to{' '}
                             <span className="text-isd-secondary font-[700] underline cursor-pointer">
                                 <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
                                     HKUST Fok Ying Tung Graduate School
@@ -350,10 +349,6 @@ export default function MEngDesignIntelBlock() {
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Program Fee
                         </h3>
-                        <p className="text-isd-font-1">
-                            The nominal program fee for 2027/28 Fall intake is
-                            HK$400,000 (paid in 2 installments).
-                        </p>
 
                         <table className="w-full table-fixed">
                             <tbody className="leading-[16px] text-[12px]">
