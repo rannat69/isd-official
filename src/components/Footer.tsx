@@ -8,7 +8,7 @@ import YoutubeIcon from '@/assets/youtube-icon.png';
 import InstagramIcon from '@/assets/instagram-icon.png';
 import FootLogo from '@/assets/award-white.svg';
 
-import HKUSTWechat from '@/assets/mainsite_Wechat_Eng_new.jpg';
+import HKUSTWechat from '@/assets/academics/meng-design-intel/wechat.hkust.qrcode.jpg';
 
 export default function Footer() {
     const navTitles = [
@@ -263,7 +263,7 @@ export default function Footer() {
                             <Link
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://www.facebook.com/hkust/"
+                                href="https://www.facebook.com/hkust.isd/"
                             >
                                 <Image
                                     src={FacebookIcon}
@@ -276,7 +276,7 @@ export default function Footer() {
                             <Link
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://www.instagram.com/hkust/"
+                                href="https://www.instagram.com/hkust.isd/"
                             >
                                 <Image
                                     src={InstagramIcon}
@@ -289,7 +289,7 @@ export default function Footer() {
                             <Link
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://www.linkedin.com/school/hkust/"
+                                href="https://hk.linkedin.com/company/hkust-isd/"
                             >
                                 <Image
                                     src={LinkedinIcon}

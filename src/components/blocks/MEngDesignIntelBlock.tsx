@@ -1,10 +1,17 @@
 'use client';
-import { ArrowDown, ArrowUp, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 import Breadcrumb from '../Breadcrumb';
 import Image from 'next/image';
 import EduObj1 from '@/assets/academics/meng-design-intel/Picture1.png';
+
+import Link from 'next/link';
+import HKUSTWeChat from '@/assets/academics/meng-design-intel/wechat.hkust.qrcode.jpg';
+import LinkedinIcon from '@/assets/linkedin-icon.png';
+import FacebookIcon from '@/assets/facebook-icon.png';
+import WechatIcon from '@/assets/wechat-icon.png';
+import InstagramIcon from '@/assets/instagram-icon.png';
 
 export default function MEngDesignIntelBlock() {
     const [activeMenuId, setActiveMenuId] = useState('');
@@ -272,13 +279,13 @@ export default function MEngDesignIntelBlock() {
                             Project (6 credits) and a year-long Internship
                             Placement (6 credits). <br />
                             For details, please refer to the {' '}
-                            <span className="text-isd-secondary font-[700] underline">
+                            <span className="text-isd-secondary font-[700] underline cursor-pointer">
                                 <a href="https://prog-crs.hkust.edu.hk/pgprog/2027-28/meng-di">
                                     Postgraduate Program
                                 </a>
                             </span>
                             , 
-                            <span className="text-isd-secondary font-[700] underline">
+                            <span className="text-isd-secondary font-[700] underline cursor-pointer">
                                 <a href="https://prog-crs.hkust.edu.hk/pgcourse">
                                     Course Catalog
                                 </a>
@@ -310,18 +317,21 @@ export default function MEngDesignIntelBlock() {
                         <div>
                             <p className="text-isd-font-1">
                                 Applicants should have obtained a
-                                bachelor&apos;s degree from a recognized
-                                institution, or an approved equivalent
-                                qualification. For English Proficiency
-                                Requirements, please refer to {' '}
-                                <span className="text-isd-secondary font-[700] underline">
+                                bachelor&apos;s degree in design, technological
+                                areas, business, or related disciplines (e.g.,
+                                communication, multimedia, psychology or
+                                ergonomics), from a recognized institution, or
+                                an approved equivalent qualification. For other
+                                general admission requirements of the University
+                                as well as then English Proficiency
+                                Requirements, please refer to HKUST Fok Ying
+                                Tung Graduate School.  {' '}
+                                <span className="text-isd-secondary font-[700] underline cursor-pointer">
                                     <a href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/admission-requirements">
                                         HKUST Fok Ying Tung Graduate School
                                     </a>
                                 </span>
-                                . All applicants are considered on a competitive
-                                and rolling basis. Early online application is
-                                strongly recommended.
+                                .
                             </p>
                         </div>
                         <a
@@ -365,6 +375,111 @@ export default function MEngDesignIntelBlock() {
 
                     <div className="flex flex-col gap-[24]">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                            Additional Information
+                        </h3>
+                        <ul className="list-disc list-outside pl-6">
+                            <li>
+                                Applicants with a bachelor’s degree in any of
+                                the following disciplines are preferred,
+                                including Product or Industrial Design, Fashion
+                                and Textiles, Multimedia Communication,
+                                Marketing, Artificial Intelligence, Data
+                                Analytics, Machine Learning, Software
+                                Engineering, or Industrial Engineering
+                            </li>
+                            <li>
+                                Applicants with working experience are at an
+                                added advantage but it is not compulsory.
+                            </li>
+                            <li>
+                                Applicants should submit a personal statement of
+                                approximately 500 words in English.
+                            </li>
+                            <li>
+                                Applicants should submit a curriculum vitae
+                                (CV), proof of qualifications, academic
+                                transcripts, and awards, if any.
+                            </li>
+                            <li>
+                                Applicants may submit a portfolio (e.g.,
+                                collection of recent design work,
+                                demonstrations, publications, personal website,
+                                or Github repositories) in support of their
+                                applications.
+                            </li>
+                            <li className="text-callout">
+                                <span className="font-bold">
+                                    Merit-based Entrance Scholarships^
+                                </span>{' '}
+                                are available for high-calibre candidates who
+                                demonstrate outstanding academic achievement and
+                                strong potential for success in the program.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="flex flex-col gap-[24]">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
+                            Application Deadline
+                        </h3>
+                        <p>
+                            <span className="text-isd-secondary font-[700] underline cursor-pointer">
+                                <a href="https://fytgs.hkust.edu.hk/apply">
+                                    Apply now
+                                </a>
+                            </span>{' '}
+                            before the below application deadlines.
+                        </p>
+
+                        <div className="flex-1 flex flex-col gap-[12px]">
+                            <p className="text-isd-primary font-bold">
+                                For 2027/28 Fall Term Intake (commencing in Sep
+                                2027):
+                            </p>
+                            <table>
+                                <tbody className="leading-[16px] text-[12px]">
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
+                                        <td className="p-[12px] border-x-2 border-x-white"></td>
+                                        <td className="p-[12px] border-x-2 border-x-white font-bold">
+                                            Application Deadline
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Round 1
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            1 December 2026
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Round 2
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            15 February 2027
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Round 3
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            30 April 2027
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p>
+                                All applicants are considered on a competitive
+                                and rolling basis. Early online application is
+                                strongly recommended.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-[24]">
+                        <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
                             Contact Us{' '}
                         </h3>
 
@@ -402,27 +517,83 @@ export default function MEngDesignIntelBlock() {
                                     </tr>
                                     <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
                                         <td className="p-[12px] border-x-2 border-x-white">
-                                            Linkedin
+                                            Social Media
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
-                                            <a href="https://www.linkedin.com/school/hkust/">
+                                            <div className="flex gap-2">
                                                 {' '}
-                                                Click to view more
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            YouTube
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            <a href="https://www.youtube.com/user/hkust">
-                                                Click to view more
-                                            </a>
+                                                <Link
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    href="https://www.facebook.com/hkust.isd/"
+                                                >
+                                                    <Image
+                                                        src={FacebookIcon}
+                                                        alt="Facebook Logo"
+                                                        width={36}
+                                                        height={36}
+                                                        style={{
+                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                        }}
+                                                    />
+                                                </Link>
+                                                <Link
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    href="https://www.instagram.com/hkust.isd/"
+                                                >
+                                                    <Image
+                                                        src={InstagramIcon}
+                                                        alt="Instagram Logo"
+                                                        width={36}
+                                                        height={36}
+                                                        style={{
+                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                        }}
+                                                    />
+                                                </Link>
+                                                <Link
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    href="https://hk.linkedin.com/company/hkust-isd"
+                                                >
+                                                    <Image
+                                                        src={LinkedinIcon}
+                                                        alt="LinkedIn Logo"
+                                                        width={36}
+                                                        height={36}
+                                                        style={{
+                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                        }}
+                                                    />
+                                                </Link>
+                                                <Link
+                                                    href={HKUSTWeChat.src}
+                                                    target="_blank"
+                                                >
+                                                    <Image
+                                                        src={WechatIcon}
+                                                        alt="WeChat Logo"
+                                                        width={36}
+                                                        height={36}
+                                                        style={{
+                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                        }}
+                                                    />
+                                                </Link>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <p className="text-callout">
+                                ^ All eligible applicants will automatically be
+                                considered for the scholarships based on their
+                                application materials. No separate scholarship
+                                application is required. Successful candidates
+                                will be notified of any scholarship award by the
+                                MEng DI Program Office.
+                            </p>
                         </div>
                     </div>
                 </div>
