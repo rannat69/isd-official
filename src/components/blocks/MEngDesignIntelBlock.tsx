@@ -350,35 +350,37 @@ export default function MEngDesignIntelBlock() {
                             Program Fee
                         </h3>
 
-                        <table className="w-full table-auto">
-                            <tbody className="leading-[16px] text-[12px]">
-                                <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                        Normative Program Duration{' '}
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        2 Years
-                                    </td>
-                                </tr>
-                                <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                        Mode of Study
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        Full-time
-                                    </td>
-                                </tr>
-                                <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                    <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                        Program Fee
-                                    </td>
-                                    <td className="p-[12px] border-x-2 border-x-white">
-                                        HK$400,000 for 2027/28 Fall intake (paid
-                                        in 2 installments)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div className="w-full  md:w-[90%] lg:w-[85%] overflow-x-auto mx-auto">
+                            <table className="w-full table-auto ">
+                                <tbody className="leading-[16px] text-[12px]">
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            Normative Program Duration{' '}
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            2 Years
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            Mode of Study
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            Full-time
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            Program Fee
+                                        </td>
+                                        <td className="p-[12px] border-x-2 border-x-white">
+                                            HK$400,000 for 2027/28 Fall intake
+                                            (paid in 2 installments)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div className="flex flex-col gap-[24]">
@@ -464,35 +466,36 @@ export default function MEngDesignIntelBlock() {
                                 For 2027/28 Fall Term Intake (commencing in Sep
                                 2027):
                             </p>
-
-                            <table className="w-full overflow-x-auto">
-                                <tbody className="leading-[16px] text-[12px]">
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                            Round 1
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            1 December 2026
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md w-px whitespace-nowrap">
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            Round 2
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            15 February 2027
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                            Round 3
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            30 April 2027
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div className="w-full  md:w-[90%] lg:w-[85%] overflow-x-auto mx-auto">
+                                <table className="w-full  table-auto ">
+                                    <tbody className="leading-[16px] text-[12px]">
+                                        <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                                Round 1
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white">
+                                                1 December 2026
+                                            </td>
+                                        </tr>
+                                        <tr className="bg-isd-secondary-1 text-isd-secondary text-md w-px whitespace-nowrap">
+                                            <td className="p-[12px] border-x-2 border-x-white">
+                                                Round 2
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white">
+                                                15 February 2027
+                                            </td>
+                                        </tr>
+                                        <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                                Round 3
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white">
+                                                30 April 2027
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <p>
                                 All applicants are considered on a competitive
@@ -516,108 +519,110 @@ export default function MEngDesignIntelBlock() {
                         </h3>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
-                            <table className="w-full table-auto">
-                                <tbody className="leading-[16px] text-[12px]">
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                            Email
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            <a href="mailto:enquirydi@ust.hk">
-                                                enquirydi@ust.hk
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                            Tel
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            +852 3469 2957
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                            Address
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            Room 5313, 5/F, Lift 3, The Hong
-                                            Kong University of Science and
-                                            Technology, Clear Water Bay, Hong
-                                            Kong
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
-                                            Social Media
-                                        </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
-                                            <div className="flex gap-2">
-                                                {' '}
-                                                <Link
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    href="https://www.facebook.com/hkust.isd/"
-                                                >
-                                                    <Image
-                                                        src={FacebookIcon}
-                                                        alt="Facebook Logo"
-                                                        width={36}
-                                                        height={36}
-                                                        style={{
-                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
-                                                        }}
-                                                    />
-                                                </Link>
-                                                <Link
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    href="https://www.instagram.com/hkust.isd/"
-                                                >
-                                                    <Image
-                                                        src={InstagramIcon}
-                                                        alt="Instagram Logo"
-                                                        width={36}
-                                                        height={36}
-                                                        style={{
-                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
-                                                        }}
-                                                    />
-                                                </Link>
-                                                <Link
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    href="https://hk.linkedin.com/company/hkust-isd"
-                                                >
-                                                    <Image
-                                                        src={LinkedinIcon}
-                                                        alt="LinkedIn Logo"
-                                                        width={36}
-                                                        height={36}
-                                                        style={{
-                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
-                                                        }}
-                                                    />
-                                                </Link>
-                                                <Link
-                                                    href={HKUSTWeChat.src}
-                                                    target="_blank"
-                                                >
-                                                    <Image
-                                                        src={WechatIcon}
-                                                        alt="WeChat Logo"
-                                                        width={36}
-                                                        height={36}
-                                                        style={{
-                                                            filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
-                                                        }}
-                                                    />
-                                                </Link>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div className="w-full  md:w-[90%] lg:w-[85%] overflow-x-auto mx-auto">
+                                <table className="w-full table-auto ">
+                                    <tbody className="leading-[16px] text-[12px]">
+                                        <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                                Email
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                                <a href="mailto:enquirydi@ust.hk">
+                                                    enquirydi@ust.hk
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                                Tel
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                                +852 3469 2957
+                                            </td>
+                                        </tr>
+                                        <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                                Address
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                                Room 5313, 5/F, Lift 3, The Hong
+                                                Kong University of Science and
+                                                Technology, Clear Water Bay,
+                                                Hong Kong
+                                            </td>
+                                        </tr>
+                                        <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                                Social Media
+                                            </td>
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                                <div className="flex gap-2">
+                                                    {' '}
+                                                    <Link
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        href="https://www.facebook.com/hkust.isd/"
+                                                    >
+                                                        <Image
+                                                            src={FacebookIcon}
+                                                            alt="Facebook Logo"
+                                                            width={36}
+                                                            height={36}
+                                                            style={{
+                                                                filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                            }}
+                                                        />
+                                                    </Link>
+                                                    <Link
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        href="https://www.instagram.com/hkust.isd/"
+                                                    >
+                                                        <Image
+                                                            src={InstagramIcon}
+                                                            alt="Instagram Logo"
+                                                            width={36}
+                                                            height={36}
+                                                            style={{
+                                                                filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                            }}
+                                                        />
+                                                    </Link>
+                                                    <Link
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        href="https://hk.linkedin.com/company/hkust-isd"
+                                                    >
+                                                        <Image
+                                                            src={LinkedinIcon}
+                                                            alt="LinkedIn Logo"
+                                                            width={36}
+                                                            height={36}
+                                                            style={{
+                                                                filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                            }}
+                                                        />
+                                                    </Link>
+                                                    <Link
+                                                        href={HKUSTWeChat.src}
+                                                        target="_blank"
+                                                    >
+                                                        <Image
+                                                            src={WechatIcon}
+                                                            alt="WeChat Logo"
+                                                            width={36}
+                                                            height={36}
+                                                            style={{
+                                                                filter: 'brightness(0) saturate(100%) invert(14%) sepia(88%) saturate(3015%) hue-rotate(200deg) brightness(97%) contrast(102%)',
+                                                            }}
+                                                        />
+                                                    </Link>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
