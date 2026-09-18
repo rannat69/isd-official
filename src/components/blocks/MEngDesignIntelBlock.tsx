@@ -407,7 +407,7 @@ export default function MEngDesignIntelBlock() {
                                 or Github repositories) in support of their
                                 applications.
                             </li>
-                            <li className="text-callout">
+                            <li>
                                 <span className="font-bold">
                                     Merit-based Entrance Scholarships^
                                 </span>{' '}
@@ -416,35 +416,30 @@ export default function MEngDesignIntelBlock() {
                                 strong potential for success in the program.
                             </li>
                         </ul>
+
+                        <p className="text-[14px] italic">
+                            ^ All eligible applicants will automatically be
+                            considered for the scholarships based on their
+                            application materials. No separate scholarship
+                            application is required. Successful candidates will
+                            be notified of any scholarship award by the MEng DI
+                            Program Office.
+                        </p>
                     </div>
 
                     <div className="flex flex-col gap-[24]">
                         <h3 className="lg:text-[36px] text-h2 leading-[36px] font-bold font-isd-font-1 text-isd-primary">
-                            Application Deadline
+                            Application Deadlines
                         </h3>
-                        <p>
-                            <span className="text-isd-secondary font-[700] underline cursor-pointer">
-                                <a href="https://fytgs.hkust.edu.hk/apply">
-                                    Apply now
-                                </a>
-                            </span>{' '}
-                            before the below application deadlines.
-                        </p>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
                             <p className="text-isd-primary font-bold">
                                 For 2027/28 Fall Term Intake (commencing in Sep
                                 2027):
                             </p>
-                            <table>
+                            <table className="w-[60vw]">
                                 <tbody className="leading-[16px] text-[12px]">
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
-                                        <td className="p-[12px] border-x-2 border-x-white"></td>
-                                        <td className="p-[12px] border-x-2 border-x-white font-bold">
-                                            Application Deadline
-                                        </td>
-                                    </tr>
-                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
                                         <td className="p-[12px] border-x-2 border-x-white">
                                             Round 1
                                         </td>
@@ -452,7 +447,7 @@ export default function MEngDesignIntelBlock() {
                                             1 December 2026
                                         </td>
                                     </tr>
-                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
+                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
                                         <td className="p-[12px] border-x-2 border-x-white">
                                             Round 2
                                         </td>
@@ -460,7 +455,7 @@ export default function MEngDesignIntelBlock() {
                                             15 February 2027
                                         </td>
                                     </tr>
-                                    <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
+                                    <tr className="bg-isd-primary-2 text-isd-primary text-md">
                                         <td className="p-[12px] border-x-2 border-x-white">
                                             Round 3
                                         </td>
@@ -476,6 +471,15 @@ export default function MEngDesignIntelBlock() {
                                 and rolling basis. Early online application is
                                 strongly recommended.
                             </p>
+
+                            <p>
+                                <span className="text-isd-secondary font-[700] underline cursor-pointer">
+                                    <a href="https://fytgs.hkust.edu.hk/apply">
+                                        Apply now
+                                    </a>
+                                </span>{' '}
+                                before the above application deadlines.
+                            </p>
                         </div>
                     </div>
                     <div className="flex flex-col gap-[24]">
@@ -484,7 +488,7 @@ export default function MEngDesignIntelBlock() {
                         </h3>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
-                            <table>
+                            <table className="w-[60vw]">
                                 <tbody className="leading-[16px] text-[12px]">
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
                                         <td className="p-[12px] border-x-2 border-x-white">
@@ -586,14 +590,6 @@ export default function MEngDesignIntelBlock() {
                                     </tr>
                                 </tbody>
                             </table>
-                            <p className="text-callout">
-                                ^ All eligible applicants will automatically be
-                                considered for the scholarships based on their
-                                application materials. No separate scholarship
-                                application is required. Successful candidates
-                                will be notified of any scholarship award by the
-                                MEng DI Program Office.
-                            </p>
                         </div>
                     </div>
                 </div>
