@@ -350,30 +350,30 @@ export default function MEngDesignIntelBlock() {
                             Program Fee
                         </h3>
 
-                        <div className="w-full  md:w-[90%] lg:w-[80%] overflow-x-auto mx-auto">
-                            <table className="w-full table-auto ">
+                        <div className="w-full  md:w-[90%] lg:w-[80%] overflow-x-visible mx-auto">
+                            <table className="w-full table-fixed border-collapse ">
                                 <tbody className="leading-[16px] text-[12px]">
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words w-2/5 lg:w-1/5 ">
                                             Normative Program Duration{' '}
                                         </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words w-3/5 lg:w-4/5">
                                             2 Years
                                         </td>
                                     </tr>
                                     <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words w-2/5 lg:w-1/5 ">
                                             Mode of Study
                                         </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words w-3/5 lg:w-4/5">
                                             Full-time
                                         </td>
                                     </tr>
                                     <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                        <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words w-2/5 lg:w-1/5 ">
                                             Program Fee
                                         </td>
-                                        <td className="p-[12px] border-x-2 border-x-white">
+                                        <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words w-3/5 lg:w-4/5">
                                             HK$400,000 for 2027/28 Fall intake
                                             (paid in 2 installments)
                                         </td>
@@ -466,14 +466,14 @@ export default function MEngDesignIntelBlock() {
                                 For 2027/28 Fall Term Intake (commencing in Sep
                                 2027):
                             </p>
-                            <div className="w-full  md:w-[90%] lg:w-[80%] overflow-x-auto mx-auto">
+                            <div className="w-full  md:w-[90%] lg:w-[80%] overflow-x-visible mx-auto">
                                 <table className="w-full  table-auto ">
                                     <tbody className="leading-[16px] text-[12px]">
                                         <tr className="bg-isd-primary-2 text-isd-primary text-md">
                                             <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                                 Round 1
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words">
                                                 1 December 2026
                                             </td>
                                         </tr>
@@ -481,7 +481,7 @@ export default function MEngDesignIntelBlock() {
                                             <td className="p-[12px] border-x-2 border-x-white">
                                                 Round 2
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words">
                                                 15 February 2027
                                             </td>
                                         </tr>
@@ -489,7 +489,7 @@ export default function MEngDesignIntelBlock() {
                                             <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
                                                 Round 3
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words">
                                                 30 April 2027
                                             </td>
                                         </tr>
@@ -519,32 +519,32 @@ export default function MEngDesignIntelBlock() {
                         </h3>
 
                         <div className="flex-1 flex flex-col gap-[12px]">
-                            <div className="w-full  md:w-[90%] lg:w-[81%] overflow-x-auto mx-auto">
-                                <table className="w-full table-auto ">
+                            <div className="w-full  md:w-[90%] lg:w-[81%] overflow-x-visible mx-auto">
+                                <table className="w-full table-fixed border-collapse ">
                                     <tbody className="leading-[16px] text-[12px]">
                                         <tr className="bg-isd-primary-2 text-isd-primary text-md text-left">
-                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words w-2/5 lg:w-1/5 ">
                                                 Email
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal break-words w-3/5 lg:w-4/5 ">
                                                 <a href="mailto:enquirydi@ust.hk">
                                                     enquirydi@ust.hk
                                                 </a>
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words  w-2/5 lg:w-1/5 ">
                                                 Tel
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal break-words w-3/5 lg:w-4/5 ">
                                                 +852 3469 2957
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-primary-2 text-isd-primary text-md">
-                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words  w-2/5 lg:w-1/5 ">
                                                 Address
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal  break-words w-3/5 lg:w-4/5 ">
                                                 Room 5313, 5/F, Lift 3, The Hong
                                                 Kong University of Science and
                                                 Technology, Clear Water Bay,
@@ -552,10 +552,10 @@ export default function MEngDesignIntelBlock() {
                                             </td>
                                         </tr>
                                         <tr className="bg-isd-secondary-1 text-isd-secondary text-md">
-                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-nowrap">
+                                            <td className="p-[12px] border-x-2 border-x-white w-px whitespace-normal  break-words  w-2/5 lg:w-1/5 ">
                                                 Social Media
                                             </td>
-                                            <td className="p-[12px] border-x-2 border-x-white whitespace-nowrap ">
+                                            <td className="p-[12px] border-x-2 border-x-white whitespace-normal break-words w-3/5 lg:w-4/5 ">
                                                 <div className="flex gap-2">
                                                     {' '}
                                                     <Link
