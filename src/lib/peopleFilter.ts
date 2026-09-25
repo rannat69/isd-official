@@ -44,6 +44,7 @@ const facultyPositionOrder = [
     'associate professor (joint)',
     'lecturer',
     'part-time lecturer',
+    'research associate professor',
     'research assistant professor',
     'adjunct professor',
     'adjunct associate professor',
