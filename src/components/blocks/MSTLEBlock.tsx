@@ -194,12 +194,18 @@ export default function MSTLEBlock() {
                         <p className="text-isd-font-1">
                             Students are required to complete at least 30
                             credits of courses, including 9 credits of core
-                            courses, 6 credits of technical or science elective
-                            courses and 6 credits of entrepreneurship or
-                            leadership elective courses offered by the School
-                            Business and Management, the School of Engineering,
-                            the School of Science and the Division of Public
-                            Policy, as well as a 9-credit project course. <br />
+                            courses, 12 credits of elective courses, and a
+                            9-credit project course. A list of pre-approved
+                            electives offered in a particular year will be
+                            announced at the beginning of each academic year.
+                            <br /> <br />
+                            Students may take up to 3 credits of other relevant
+                            courses depending on the background requirement of
+                            their TLE projects, subject to the approval of the
+                            Program Director and/or project supervisors, and the
+                            availability of course quota from the offering
+                            departments. <br />
+                            <br />
                             For details, please refer to the {' '}
                             <span className="text-isd-secondary font-[700] underline">
                                 <a href="https://prog-crs.hkust.edu.hk/pgprog/2027-28/msc-tle">
@@ -327,8 +333,8 @@ export default function MSTLEBlock() {
                                             Address
                                         </td>
                                         <td className="p-[12px] border-x-2 border-x-white">
-                                            Room 5313, 5/F, Lift 3, The Hong Kong
-                                            University of Science and
+                                            Room 5313, 5/F, Lift 3, The Hong
+                                            Kong University of Science and
                                             Technology, Clear Water Bay, Hong
                                             Kong
                                         </td>
@@ -484,9 +490,36 @@ const coreCoursesContent = (
 
 const electiveCoursesContent = (
     <div className="text-sm font-normal justify-start text-left text-isd-font-3 lg:mt-0 mt-3">
-        Elective courses are a selection of entrepreneurship and leadership as
-        well as technology and science related courses chosen from the portfolio
-        of the School of Business and Management, the School of Engineering, the
-        School of Science and the Academy of Interdisciplinary Studies.
+        Elective courses are a selection of technology leadership and
+        entrepreneurship related courses chosen from the portfolio of the
+        Division of Integrative Systems and Design and the School of Business
+        and Management.
+        <br />
+        <br />A sample elective course list:
+        <ul className="list-disc list-outside pl-6">
+            <li>ISDN 5010 Design Methodologies (3 credits)</li>
+            <li>
+                ISDN 5101 Design Thinking for Technology Innovation and
+                Entrepreneurship (3 credits)
+            </li>
+            <li>
+                ISDN 5703 Emerging Technology for Design Innovation (3 credits)
+            </li>
+            <li>ISDN 5704 Transmedia Design and Production (3 credits)</li>
+            <li>
+                ISDN 5711 Design Identity and Visual Communication (3 credits)
+            </li>
+            <li>
+                ISDN 5713 Big Data and Design Strategies for Media Communication
+                (3 credits)
+            </li>
+            <li>
+                MTLE 5220 Product Management for Intrapreneurs and Entrepreneurs
+                (3 credits)
+            </li>
+            <li>ISOM 5370 Technology and Innovation Management (2 credits)</li>
+            <li>MARK 5692 Marketing for Startups (3 credits)</li>
+            SBMT 6020I AI-Driven Decision Making for Entrepreneurs (2 credits)
+        </ul>
     </div>
 );
