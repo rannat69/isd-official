@@ -519,7 +519,10 @@ const electiveCoursesContent = (
             </li>
             <li>ISOM 5370 Technology and Innovation Management (2 credits)</li>
             <li>MARK 5692 Marketing for Startups (3 credits)</li>
-            SBMT 6020I AI-Driven Decision Making for Entrepreneurs (2 credits)
+            <li>
+                SBMT 6020I AI-Driven Decision Making for Entrepreneurs (2
+                credits)
+            </li>
         </ul>
     </div>
 );
