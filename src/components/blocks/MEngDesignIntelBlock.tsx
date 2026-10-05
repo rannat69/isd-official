@@ -444,6 +444,21 @@ export default function MEngDesignIntelBlock() {
                                 demonstrate outstanding academic achievement and
                                 strong potential for success in the program.
                             </li>
+
+                            <li>
+                                Local applicants may also consider applying for
+                                the{' '}
+                                <span className="font-bold">
+                                    Hong Kong Future Talents Scholarship Scheme
+                                    for Advanced Studies.
+                                </span>{' '}
+                                For more information, please visit the{' '}
+                                <span className="text-isd-secondary font-[700] underline cursor-pointer">
+                                    <a href="https://www.ugc.edu.hk/eng/ugc/activity/ftss.html">
+                                        UGC website.
+                                    </a>
+                                </span>
+                            </li>
                         </ul>
 
                         <p className="text-[14px] italic">
