@@ -47,3 +47,4 @@ pages/api/news_events.json
 pages/api/faculty.json
 public/pictures/news/*
 public/pictures/people/*
+package-lock.json

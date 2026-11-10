@@ -1,4 +1,5 @@
 import Breadcrumb from '../Breadcrumb';
+import Link from 'next/link';
 
 export default function EarlyAdmissionInfoBlock() {
     const faq = [
@@ -136,7 +137,8 @@ export default function EarlyAdmissionInfoBlock() {
                             Early Recruiting (Phase One)
                         </span>{' '}
                         focuses on identifying top MPhil and PhD applicants
-                        through brief interviews. To apply, complete the preliminary application form{' '}
+                        through brief interviews. To apply, complete the
+                        preliminary application form{' '}
                         <span className="font-bold text-isd-secondary underline">
                             (registration for early admission has closed)
                         </span>
@@ -144,7 +146,13 @@ export default function EarlyAdmissionInfoBlock() {
                         October 2026. Candidates will receive interview results
                         within one to two weeks post-interview. Even after Phase
                         One, don’t worry—regular application packages can still
-                        be submitted to the HKUST Postgraduate Admissions.
+                        be submitted to the{' '}
+                        <Link
+                            href="https://fytgs.hkust.edu.hk/admissions/Admission-to-Hong-Kong-Campus/submitting-an-application/online-application"
+                            className="underline text-secondary font-bold cursor-pointer"
+                        >
+                            HKUST Postgraduate Admissions.
+                        </Link>
                     </p>
                     <div className="flex-1 flex flex-col gap-[12px]">
                         <span className="font-bold px-[12px] text-lg leading-[28px] text-isd-primary">
@@ -179,9 +187,8 @@ export default function EarlyAdmissionInfoBlock() {
                                         (Commencing in Sep 2027)
                                     </td>
                                     <td className="p-[12px] border-2 border-white">
-                                        <span className="font-bold text-isd-primary">
-                                            TBC
-                                        </span>
+                                        Non-local Applicants: 1 Jun 2027
+                                        <br /> Local Applicants: 15 Jul 2027
                                     </td>
                                 </tr>
                                 <tr className="bg-isd-secondary-1">
