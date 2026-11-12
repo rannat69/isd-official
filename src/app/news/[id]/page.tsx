@@ -12,6 +12,7 @@ import InnovationSummerSchool2026 from './2026InnovationSummerSchool';
 import TDTA2526 from './TDTA2526';
 import HKUSTLands3MillionGPTX from './HKUSTLands3MillionGPTX';
 import CarouselNews from '@/components/CarouselNews';
+import { redirect } from 'next/navigation';
 
 /*export function generateStaticParams() {
     const items = data as NewsEntry[];
@@ -80,6 +81,19 @@ export default async function NewsDetailPage({
         if (itemTemp) {
             item = itemTemp;
         }
+    } else {
+        // redirect to the link corresponding to the id
+
+        // For example, if you got here with localhost:3000/news/42
+        // and title of news 42 is Something crazy happened ! ,
+        // Then redirect to localhost:3000/news/something-crazy-happened
+
+        const slug = item.title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+
+        redirect(`/news/${slug}`);
     }
 
     //const [item, setItem] = useState<NewsEntry>();
