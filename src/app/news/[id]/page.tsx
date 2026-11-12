@@ -360,12 +360,12 @@ function renderContent(text: string) {
               g.paragraph.split(/\n+/).map((line, lineIdx) => {
                   // Regex to match either <Link&Title&URL> or standard URLs
                   const regex =
-                      /<Link&([^&]+)&(https?:\/\/[^>]+)>|(https?:\/\/[^\s)]+)/g;
-
+                      /<Link&([^&]+)&([^>]+?)>|(https?:\/\/[^\s)]+)|(<strong>[\s\S]*?<\/strong>)/gi;
                   type Token =
                       | { type: 'text'; content: string }
                       | { type: 'beacon'; title: string; url: string }
-                      | { type: 'url'; url: string };
+                      | { type: 'url'; url: string }
+                      | { type: 'strong'; html: string };
 
                   const tokens: Token[] = [];
                   let lastIndex = 0;
@@ -395,6 +395,12 @@ function renderContent(text: string) {
                               type: 'url',
                               url: match[3],
                           });
+                      } else if (match[4]) {
+                          // Strong tag found
+                          tokens.push({
+                              type: 'strong',
+                              html: match[4],
+                          });
                       }
 
                       lastIndex = regex.lastIndex;
@@ -412,6 +418,22 @@ function renderContent(text: string) {
                           {tokens.map((token, tIdx) => {
                               if (token.type === 'text') {
                                   return token.content;
+                              }
+
+                              if (token.type === 'strong') {
+                                  // Render using dangerouslySetInnerHTML to parse the <strong> tags,
+                                  // or you can strip/replace them if you prefer pure React elements.
+                                  return (
+                                      <strong
+                                          key={tIdx}
+                                          dangerouslySetInnerHTML={{
+                                              __html: token.html.replace(
+                                                  /<\/?strong>/gi,
+                                                  ''
+                                              ),
+                                          }}
+                                      />
+                                  );
                               }
 
                               if (token.type === 'beacon') {
