@@ -331,25 +331,93 @@ function renderContent(text: string) {
     };
 
     return groups.map((g, idx) => {
+        // if just a link, display as a link
+
         const urlRegex = /(https?:\/\/[^\s)]+)/g;
+
+        // if link beacon found, display link like this
+
+        // <Link&Title&http://toto.com/>
+
+        // <a href="http://toto.com">Title</a>
 
         const paragraphLines = g.paragraph
             ? // split paragraph into logical lines (preserve blank line groups)
               g.paragraph.split(/\n+/).map((line, lineIdx) => {
-                  // split keeps URLs as separate tokens
-                  const tokens = line.split(urlRegex);
+                  // Regex to match either <Link&Title&URL> or standard URLs
+                  const regex =
+                      /<Link&([^&]+)&(https?:\/\/[^>]+)>|(https?:\/\/[^\s)]+)/g;
+
+                  type Token =
+                      | { type: 'text'; content: string }
+                      | { type: 'beacon'; title: string; url: string }
+                      | { type: 'url'; url: string };
+
+                  const tokens: Token[] = [];
+                  let lastIndex = 0;
+                  let match;
+
+                  // Parse the line into tokens (text, beacons, and standard URLs)
+                  while ((match = regex.exec(line)) !== null) {
+                      if (match.index > lastIndex) {
+                          tokens.push({
+                              type: 'text',
+                              content: line.substring(lastIndex, match.index),
+                          });
+                      }
+
+                      console.log('match', match);
+
+                      if (match[2]) {
+                          // Beacon found: <Link&Title&URL>
+                          tokens.push({
+                              type: 'beacon',
+                              title: match[1],
+                              url: match[2],
+                          });
+                      } else if (match[3]) {
+                          // Standard URL found
+                          tokens.push({
+                              type: 'url',
+                              url: match[3],
+                          });
+                      }
+
+                      lastIndex = regex.lastIndex;
+                  }
+
+                  if (lastIndex < line.length) {
+                      tokens.push({
+                          type: 'text',
+                          content: line.substring(lastIndex),
+                      });
+                  }
+
                   return (
                       <span key={lineIdx}>
                           {tokens.map((token, tIdx) => {
-                              if (!token) return null;
-                              // token will match urlRegex for URLs because split preserves the separators
-                              if (urlRegex.test(token)) {
-                                  // reset lastIndex in case of global regex reuse
-                                  urlRegex.lastIndex = 0;
+                              if (token.type === 'text') {
+                                  return token.content;
+                              }
 
-                                  const embedUrl = getYouTubeEmbedUrl(token);
+                              if (token.type === 'beacon') {
+                                  return (
+                                      <a
+                                          key={tIdx}
+                                          href={token.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="text-primary underline"
+                                      >
+                                          {token.title}
+                                      </a>
+                                  );
+                              }
 
-                                  // Check if the token is a YouTube link
+                              if (token.type === 'url') {
+                                  const url = token.url;
+                                  const embedUrl = getYouTubeEmbedUrl(url);
+
                                   if (embedUrl) {
                                       return (
                                           <iframe
@@ -368,72 +436,17 @@ function renderContent(text: string) {
                                   return (
                                       <a
                                           key={tIdx}
-                                          href={token}
+                                          href={url}
                                           target="_blank"
                                           rel="noopener noreferrer"
                                           className="text-primary underline"
                                       >
-                                          {token}
+                                          {url}
                                       </a>
                                   );
-
-                                  // if link contains "youtube", create an iframe instead of a <a.
-                                  <iframe
-                                      className="w-full aspect-[408/191]"
-                                      src={`https://www.youtube.com/embed/I_l1_M-hSPU?autoplay=1`}
-                                      title="YouTube video player"
-                                      frameBorder="0"
-                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                      referrerPolicy="strict-origin-when-cross-origin"
-                                      allowFullScreen
-                                  />;
-                              } else {
-                                  // --- NEW CODE: Split by <strong> tags ---
-                                  const strongRegex =
-                                      /(<strong>.*?<\/strong>)/g;
-                                  const textTokens = token.split(strongRegex);
-
-                                  return (
-                                      <span key={tIdx}>
-                                          {textTokens.map(
-                                              (textToken, ttIdx) => {
-                                                  if (!textToken) return null;
-
-                                                  // Check if the token is a <strong> tag
-                                                  if (
-                                                      textToken.startsWith(
-                                                          '<strong>'
-                                                      ) &&
-                                                      textToken.endsWith(
-                                                          '</strong>'
-                                                      )
-                                                  ) {
-                                                      return (
-                                                          <strong
-                                                              key={ttIdx}
-                                                              className="font-bold"
-                                                          >
-                                                              {/* Slice out the <strong> (8 chars) and </strong> (9 chars) */}
-                                                              {textToken.slice(
-                                                                  8,
-                                                                  -9
-                                                              )}
-                                                          </strong>
-                                                      );
-                                                  }
-
-                                                  // Otherwise return regular text
-                                                  return (
-                                                      <span key={ttIdx}>
-                                                          {textToken}
-                                                      </span>
-                                                  );
-                                              }
-                                          )}
-                                      </span>
-                                  );
-                                  // --- END NEW CODE ---
                               }
+
+                              return null;
                           })}
                           <br />
                       </span>
