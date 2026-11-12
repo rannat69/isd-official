@@ -201,7 +201,7 @@ export default function NewsListBlock() {
                                         : 'News'
                                 }
                                 title={item.title}
-                                excerpt={stripTags(item.details ?? '')}
+                                excerpt={stripTags(item.details.replace('# ', '') ?? '')}
                                 date={formattedDate}
                                 image={img}
                                 imageAlt={imgAlt}
@@ -234,6 +234,7 @@ export default function NewsListBlock() {
 function stripTags(text: string) {
     // Remove custom xTx/xETx tags and collapse whitespace for preview
     return text
+        .replace(/<Link&[^&]+&[^>]+?>/gi, '') // Removes any <Link&Title&URL> or <Link&Title&URL/> beacons entirely
         .replace(/<\/?strong>/gi, '') // Removes both <strong> and </strong>
         .replace(/x+EndTitlex+/gi, '')
         .replace(/xTx\s*/gi, '')

@@ -72,6 +72,7 @@ export default function NewsAndEventsBlock() {
     function stripTags(text: string) {
         // Remove custom xTx/xETx tags and collapse whitespace for preview
         return text
+            .replace(/<Link&[^&]+&[^>]+?>/gi, '') // Removes any <Link&Title&URL> or <Link&Title&URL/> beacons entirely
             .replace(/<\/?strong>/gi, '') // Removes both <strong> and </strong>
             .replace(/x+EndTitlex+/gi, '')
             .replace(/xTx\s*/gi, '')
@@ -115,7 +116,8 @@ export default function NewsAndEventsBlock() {
                                 {news.date}
                             </span>
                             <div className="text-md text-start text-isd-font-3 line-clamp-3">
-                                {news.details && stripTags(news.details.replace('# ', ''))}
+                                {news.details &&
+                                    stripTags(news.details.replace('# ', ''))}
                             </div>
                         </a>
                     ))}

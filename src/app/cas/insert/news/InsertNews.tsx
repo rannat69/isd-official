@@ -349,7 +349,7 @@ export default function InsertNews({ newsToEdit, editMode }: Props) {
                 name="userText"
                 rows={10}
                 cols={50}
-                placeholder="Enter description here.  # title... bold = <strong>xxx</strong>"
+                placeholder="Enter description here.  # title... bold = <strong>xxx</strong> <Link&Title&https://site.com/>"
                 className="border-1"
                 onChange={(e) => setDetails(e.target.value)}
                 value={details}
