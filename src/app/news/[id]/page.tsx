@@ -447,7 +447,7 @@ function renderContent(text: string) {
                                           href={token.url}
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                          className="text-primary underline"
+                                          className="text-isd-secondary underline font-bold"
                                       >
                                           {token.title}
                                       </a>
@@ -479,7 +479,7 @@ function renderContent(text: string) {
                                           href={url}
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                          className="text-primary underline"
+                                          className="text-isd-secondary underline  font-bold"
                                       >
                                           {url}
                                       </a>
