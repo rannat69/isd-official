@@ -209,6 +209,10 @@ export default async function NewsDetailPage({
                                 }}
                             />
                         )}
+
+                        <span className="text-isd-font-3">
+                            {item.pictureNote || ''}
+                        </span>
                     </div>
                     <div className="flex flex-col gap-[24px]">
                         {item.type === 'events' && (
